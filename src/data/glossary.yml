@@ -1,0 +1,7 @@
+terms:
+  - key: ekg
+    term: EKG
+    definition: Elektrokardiogramm zur Erfassung elektrischer Herzaktivität.
+  - key: ct
+    term: CT
+    definition: Computertomographie als bildgebendes Querschnittsverfahren.

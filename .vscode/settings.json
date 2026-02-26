@@ -1,0 +1,10 @@
+{
+  "[typst]": { "editor.formatOnSave": true },
+
+  "tinymist.exportPdf": "onSave",
+  "tinymist.rootPath": "${workspaceFolder}",
+  "tinymist.systemFonts": false,
+
+  "tinymist.previewFeature": "enable",
+  "tinymist.semanticTokens": "enable"
+}

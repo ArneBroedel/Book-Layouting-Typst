@@ -1,0 +1,18 @@
+# Build output
+dist/
+
+# Node (optional tooling)
+node_modules/
+
+# Python (optional tooling)
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*.log
+
+# Local setup artifacts
+*.tmp
