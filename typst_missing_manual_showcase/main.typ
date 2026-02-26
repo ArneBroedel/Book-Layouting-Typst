@@ -2,7 +2,7 @@
 // Typst Missing Manual – Showcase
 // Einstiegspunkt fürs ganze Buch.
 
-#import "styles/theme.typ": palette, space, type
+#import "styles/theme.typ": palette, type
 #import "styles/page.typ": setup-pages
 #import "styles/typography.typ": setup-typography
 

@@ -27,9 +27,13 @@ typst --version
 
 ```bash
 # Live-Compile
-typst watch main.typ out/book.pdf
+typst watch main.typ main.pdf
 
 # Einmal bauen
+typst compile main.typ main.pdf
+
+# Optional: expliziter Ausgabeordner
+mkdir -p out
 typst compile main.typ out/book.pdf
 ```
 
@@ -69,8 +73,7 @@ typst-missing-manual-showcase/
   assets/
     images/
       placeholder.svg
-    patterns/
-  out/
+  png_output/
 ```
 
 ## 5) Was du hier lernst

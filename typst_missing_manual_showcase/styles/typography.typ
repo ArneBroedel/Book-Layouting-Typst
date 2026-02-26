@@ -29,9 +29,9 @@
   ]
 
   show heading.where(level: 2): it => [
-    #v(space.lg)
-    #text(size: type.h2, weight: 750, fill: palette.ink, it.body)
-    #v(space.sm)
+    #v(space.xl)
+    #text(size: type.h2, weight: 750, fill: palette.accent, it.body)
+    #v(space.md)
   ]
 
   show heading.where(level: 3): it => [

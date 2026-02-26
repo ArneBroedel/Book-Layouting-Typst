@@ -1,7 +1,5 @@
 // chapters/03-layout.typ
 #import "../styles/theme.typ": palette, space, type
-#import "../components/admonitions.typ": note, tip, warn
-#import "../components/figures.typ": fig
 
 = Layout: Raster, Kapitel-Opener, Marginalien, „magazinige“ Seiten
 
@@ -9,7 +7,7 @@
 #let chapter-opener(n, title, subtitle: none) = [
   #pagebreak()
   #block(
-    fill: palette.ink.mix(palette.paper),
+    fill: palette.muted.lighten(88%),
     radius: 16pt,
     inset: 22pt,
   )[
@@ -18,7 +16,7 @@
       #v(6pt)
       #text(size: 26pt, weight: 900)[#title]
       #v(6pt)
-      #set text(size: type.lead, fill: palette.muted)
+      #set text(size: type.lead, fill: palette.ink)
       #subtitle
     ]
   ]
@@ -50,23 +48,24 @@ Eine Marginalspalte ist didaktisch Gold: Definitionen, Merksätze, Testgüte –
   gutter: 14pt,
 )[
   [
-    *Fließtext-Spalte*  
-    Stell dir vor, du erklärst die Idee „Rule-out Test“.
-    Du willst den Gedankengang ruhig und linear halten.
+  *Fließtext-Spalte*
+  Stell dir vor, du erklärst die Idee „Rule-out Test“.
+  Du willst den Gedankengang ruhig und linear halten.
 
-    Dann kommt eine Marginalie, die in 2 Zeilen die Essenz sagt,
-    ohne den Lesefluss zu unterbrechen.
+  Dann kommt eine Marginalie, die in 2 Zeilen die Essenz sagt,
+  ohne den Lesefluss zu unterbrechen.
   ],
   [
-    #margin-note[
-      **Rule-out**: Hohe Sensitivität.  
-      Negatives Ergebnis macht die Diagnose unwahrscheinlich.
-    ]
+  #margin-note[
+    *Rule-out*: Hohe Sensitivität.
+    Negatives Ergebnis macht die Diagnose unwahrscheinlich.
+  ]
   ],
 ]
 
 == Full-bleed Optik (ohne echte Beschnittlogik)
-Typst kann Flächen über die Textbreite hinaus ziehen. Für echten Beschnitt brauchst du ggf. Prepress.
+Innerhalb des Satzspiegels kannst du starke Abschnittsflächen setzen.
+Für echten Beschnitt/Anschnitt brauchst du ein passendes Seiten-Setup und ggf. Prepress.
 
 #block(
   fill: palette.accent.mix(palette.paper),
@@ -96,12 +95,12 @@ Typst kann Flächen über die Textbreite hinaus ziehen. Für echten Beschnitt br
 
 #grid(columns: (1fr, 1fr), gutter: 12pt)[
   #card("Spondyloarthritis", [
-    Muster: entzündlich, Morgensteifigkeit, Besserung durch Bewegung.  
-    Red Flags? Systemisch?  
+    Muster: entzündlich, Morgensteifigkeit, Besserung durch Bewegung.
+    Red Flags? Systemisch?
     Frage nach Psoriasis, Uveitis, IBD.
   ], color: palette.bad),
   #card("Facettsyndrom", [
-    Muster: mechanisch, Extension/Rotation provoziert.  
+    Muster: mechanisch, Extension/Rotation provoziert.
     Besserung in Flexion, lokal, kein systemischer Kontext.
   ], color: palette.good),
 ]

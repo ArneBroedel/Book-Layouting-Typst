@@ -1,5 +1,5 @@
 // styles/page.typ
-#import "theme.typ": palette, space, type
+#import "theme.typ": palette, type
 
 // Seiten-Setup: A4 in mm, saubere Ränder, Header/Footer.
 // Du kannst hier später leicht auf 17x24cm, A5, US Letter usw. wechseln.

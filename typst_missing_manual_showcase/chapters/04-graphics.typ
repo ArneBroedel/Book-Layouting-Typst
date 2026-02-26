@@ -1,7 +1,6 @@
 // chapters/04-graphics.typ
 #import "../styles/theme.typ": palette, space, type
-#import "../components/admonitions.typ": note, tip, warn
-#import "../components/figures.typ": fig
+#import "../components/admonitions.typ": tip
 
 = Grafiken & Visuals: Icons, Overlays, kleine Infografiken
 
@@ -11,23 +10,27 @@ Das ist super für klinische Algorithmen oder „Highlight“-Grafiken.
 
 #let overlay-demo() = {
   let img = image("../assets/images/placeholder.svg", width: 100%)
-  stack(
-    dir: ttb,
-    spacing: 0pt,
-  )[
-    // Basisbild
-    #place(center)[#img]
 
-    // Overlay: semi-transparent Label oben links
-    #place(top + left, dx: 10pt, dy: 10pt)[
-      #box(
-        fill: palette.ink.mix(palette.paper),
-        radius: 8pt,
-        inset: (x: 10pt, y: 6pt),
-      )[
-        #set text(size: type.small, fill: palette.paper, weight: 700)
-        Algorithmus-Fokus
+  box(
+    width: 100%,
+    height: 72mm,
+    clip: true,
+    fill: palette.paper.mix(palette.muted),
+    radius: 8pt,
+    inset: 10pt,
+  )[
+    #stack(dir: ttb, spacing: 8pt)[
+      #align(left)[
+        #box(
+          fill: palette.ink.mix(palette.paper),
+          radius: 8pt,
+          inset: (x: 10pt, y: 6pt),
+        )[
+          #set text(size: type.small, fill: palette.paper, weight: 700)
+          Algorithmus-Fokus
+        ]
       ]
+      #align(center)[#img]
     ]
   ]
 }
@@ -42,13 +45,13 @@ Typst hat grundlegende Zeichenprimitive. Für viele Buchgrafiken reicht das.
   #let filled = w * (value / max)
   #grid(columns: (auto, 1fr), gutter: 8pt)[
     [
-      #set text(size: type.small, fill: palette.muted)
-      #label
+    #set text(size: type.small, fill: palette.muted)
+    #label
     ],
     [
-      #box(fill: palette.paper.mix(palette.muted), radius: 99pt, inset: 0pt)[
-        #box(width: filled, height: 8pt, fill: color, radius: 99pt)[] 
-      ]
+    #box(fill: palette.paper.mix(palette.muted), radius: 99pt, inset: 0pt)[
+      #box(width: filled, height: 8pt, fill: color, radius: 99pt)[]
+    ]
     ],
   ]
 ]
@@ -58,7 +61,7 @@ Typst hat grundlegende Zeichenprimitive. Für viele Buchgrafiken reicht das.
 #mini-bar(6, label: [Prätest-Relevanz], color: palette.good)
 
 #tip[
-Für komplexe Diagramme (Flowcharts, Netzwerke) lohnt sich ein spezialisiertes Package.
-Wenn du offline bleiben willst: Zeichne als SVG (Inkscape/Figma) und importiere.
+  Für komplexe Diagramme (Flowcharts, Netzwerke) lohnt sich ein spezialisiertes Package.
+  Wenn du offline bleiben willst: Zeichne als SVG (Inkscape/Figma) und importiere.
 ]
 

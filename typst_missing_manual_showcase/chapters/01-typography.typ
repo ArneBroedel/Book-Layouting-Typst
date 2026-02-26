@@ -1,6 +1,6 @@
 // chapters/01-typography.typ
 #import "../styles/theme.typ": palette, space, type
-#import "../components/admonitions.typ": note, tip, warn
+#import "../components/admonitions.typ": tip
 
 = Typografie, die „medizinisch“ wirkt (ohne langweilig zu sein)
 
@@ -15,9 +15,9 @@ Du willst eine Seite, die wie ein „klinisches Dashboard“ wirkt: klar, ruhig,
 ]
 
 #lead[
-Clinical Reasoning ist kein Talent, sondern ein trainierbares System.
-Wenn dein Layout diese Systematik widerspiegelt, lernt das Gehirn schneller:
-**Chunking**, **Signaling**, **Spacing** – und weniger visuelles Rauschen.
+  Clinical Reasoning ist kein Talent, sondern ein trainierbares System.
+  Wenn dein Layout diese Systematik widerspiegelt, lernt das Gehirn schneller:
+  *Chunking*, *Signaling*, *Spacing* – und weniger visuelles Rauschen.
 ]
 
 == „Signalwörter“ als Micro-Design
@@ -36,7 +36,7 @@ Wenn dein Layout diese Systematik widerspiegelt, lernt das Gehirn schneller:
 Im Text: #tag("Hypothese") #tag("Befund") #tag("Test") #tag("Entscheidung", color: palette.warn)
 
 == Hängepunktuation / optischer Randausgleich (Workaround)
-Typst bietet (Stand heute) nicht überall „hängende Interpunktion“ wie InDesign. Du kannst aber in kritischen Fällen
+Für optischen Randausgleich kannst du in kritischen Fällen
 mit einem *negativen Einzug* arbeiten:
 
 #let hang(body) = [
@@ -49,19 +49,19 @@ mit einem *negativen Einzug* arbeiten:
 Zwei Spalten sind didaktisch sinnvoll, wenn du *Definitionen*, *Klassifikationen* oder *Differenzierungen* parallel führst.
 
 #columns(2, gutter: 14pt)[
-  *Spalte A: Konzept*  
-  - „Red Flag“ als Heuristik  
-  - Sensitivität vs. Spezifität  
-  - Bayes: Prätest → Posttest  
+  *Spalte A: Konzept*
+  - „Red Flag“ als Heuristik
+  - Sensitivität vs. Spezifität
+  - Bayes: Prätest → Posttest
 
-  *Spalte B: Praxis*  
-  - Welche Frage ist am stärksten?  
-  - Welche Tests sind „Rule-out“?  
+  *Spalte B: Praxis*
+  - Welche Frage ist am stärksten?
+  - Welche Tests sind „Rule-out“?
   - Wie dokumentierst du sauber?
 ]
 
 #tip[
-Die wichtigste Typo-Regel: **Mach es langweilig, bis es wichtig wird.**
-Akzente sind wie Medikamente: wirksam in richtiger Dosis, toxisch in Überdosis.
+  Die wichtigste Typo-Regel: *Mach es langweilig, bis es wichtig wird.*
+  Akzente sind wie Medikamente: wirksam in richtiger Dosis, toxisch in Überdosis.
 ]
 

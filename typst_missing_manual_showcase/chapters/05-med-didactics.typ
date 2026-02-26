@@ -1,8 +1,6 @@
 // chapters/05-med-didactics.typ
 #import "../styles/theme.typ": palette, space, type
-#import "../components/admonitions.typ": note, tip, warn, redflag, checklist
-#import "../components/learning.typ": learning-goals, knowledge-check
-#import "../components/tables.typ": zebra-table
+#import "../components/learning.typ": knowledge-check
 
 = Medizinische Didaktik als Layout-System
 
@@ -13,44 +11,46 @@ Ein Track bleibt praxisnah. Der zweite Track liefert Evidenz, Testgüte, Leitlin
 
 #grid(columns: (2.2fr, 1fr), gutter: 14pt)[
   [
-    *Praxis-Track*  
-    Du beginnst mit Hypothesen, die die *Zeit* respektieren:
-    Was ist dringend? Was ist wahrscheinlich? Was wäre gefährlich zu übersehen?
+  *Praxis-Track*
+  Du beginnst mit Hypothesen, die die *Zeit* respektieren:
+  Was ist dringend? Was ist wahrscheinlich? Was wäre gefährlich zu übersehen?
 
-    Dann sammelst du Befunde in einer Reihenfolge, die deine Hypothesen maximal trennt.
+  Dann sammelst du Befunde in einer Reihenfolge, die deine Hypothesen maximal trennt.
   ],
   [
-    #block(
-      fill: palette.paper.mix(palette.muted),
-      radius: 10pt,
-      inset: 10pt,
-      stroke: (paint: palette.muted, thickness: 0.6pt),
-    )[
-      #set text(size: type.small, fill: palette.ink)
-      *Evidenz-Track*  
-      - Sensitivität ≠ Rule-out automatisch  
-      - LR− ist oft besser als Sens.  
-      - Basisrate dominiert
-    ]
+  #block(
+    fill: palette.paper.mix(palette.muted),
+    radius: 10pt,
+    inset: 10pt,
+    stroke: (paint: palette.muted, thickness: 0.6pt),
+  )[
+    #set text(size: type.small, fill: palette.ink)
+    *Evidenz-Track*
+    - Sensitivität ≠ Rule-out automatisch
+    - LR− ist oft besser als Sens.
+    - Basisrate dominiert
+  ]
   ]
 ]
 
 == Pattern 2: Illness Script als „Karte“
 #let illness-script(title, ..items) = [
   #block(
-    fill: palette.paper,
-    radius: 14pt,
-    inset: 14pt,
-    stroke: (paint: palette.accent.mix(palette.paper), thickness: 0.8pt),
+    fill: palette.accent.lighten(92%),
+    radius: 12pt,
+    inset: 16pt,
+    stroke: (paint: palette.accent, thickness: 1.2pt),
   )[
-    #text(weight: 900, size: 14pt)[#title]
-    #v(8pt)
-    #set list(marker: "•")
-    ..items
+    #text(weight: 900, size: 14pt, fill: palette.accent)[#title]
+    #v(12pt)
+    #set list(marker: "▸", spacing: 8pt)
+    #set par(leading: 1.3em)
+    #for it in items.pos() { it }
   ]
 ]
 
-#illness-script("Lumbar Radiculopathy – Kurzscript",
+#illness-script(
+  "Lumbar Radiculopathy – Kurzscript",
   [Leitsymptom: radikulärer Beinschmerz, Dermatom, evtl. Parästhesie.],
   [Provokation: Husten/Niesen möglich, SLR/SLUMP je nach Segment.],
   [DD: Hüfte, ISG, vaskulär, periphere Nerven, Red Flags.],
@@ -59,14 +59,16 @@ Ein Track bleibt praxisnah. Der zweite Track liefert Evidenz, Testgüte, Leitlin
 
 == Pattern 3: Entscheideräume (Decision Boxes)
 #block(
-  fill: palette.warn.mix(palette.paper),
+  fill: palette.warn.lighten(88%),
   radius: 12pt,
   inset: 14pt,
-  stroke: (paint: palette.warn, thickness: 0.9pt),
+  stroke: (paint: palette.warn, thickness: 1.2pt),
 )[
-  #text(weight: 900)[Entscheidungspunkt]
-  #v(6pt)
+  #text(weight: 900, size: 11pt, fill: palette.warn)[⚡ Entscheidungspunkt]
+  #v(12pt)
+  #set par(leading: 1.3em)
   Wenn *progressive neurologische Defizite* vorliegen → ärztliche Abklärung zeitnah.
+  #v(8pt)
   Wenn *stabil* und keine Red Flags → konservatives Management + Re-Evaluation.
 ]
 
@@ -75,6 +77,6 @@ Ein Track bleibt praxisnah. Der zweite Track liefert Evidenz, Testgüte, Leitlin
   title: "Spaced Retrieval – 30 Sekunden",
   [Nenne 3 Muster, die „entzündlich“ aussehen.],
   [Nenne 3 Red Flags bei LWS-Schmerz.],
-  [Was ist der Unterschied zwischen LR+ und LR−?]
+  [Was ist der Unterschied zwischen LR+ und LR−?],
 )
 
