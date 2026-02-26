@@ -16,6 +16,7 @@ Define grouped tokens:
 - neutrals: paper, ink, mute, borders
 - semantic tones: info, good, warn, bad (+ light variants)
 - editorial accents: primary/accent variants
+- gradient presets: define 2-3 `gradient.linear(...)` presets for decorative surfaces (cover backgrounds, heading bars, hero sections) — Mastery Part 6.4, 8.2
 
 ### 2.2 Contrast Matrix
 
@@ -34,9 +35,13 @@ Bind palette tokens into typography and components via `set` and `show` rules.
 
 ### 2.4 Grid/Table Color Semantics
 
-From Layout Mastery:
-- use `fill`/`stroke` functions when row/column logic is required
+From Layout Mastery Parts 3.3, 3.5, 8.3:
+- use functional `fill: (x, y) => ...` for striped/checkerboard grid patterns
+- use functional `stroke: (x, y) => ...` for conditional borders (e.g., every Nth row)
+- use `show grid.cell.where(x: 0): set text(weight: "bold")` for header column emphasis
+- use `show table.cell.where(y: 0): set text(fill: blue)` for header row emphasis
 - keep `table` semantic for data; avoid replacing with presentational `grid`
+- per-column `align: (left, center, right)` for mixed-alignment tables (Mastery Part 3.3)
 
 ### 2.5 Running Elements Color Pass
 
@@ -55,6 +60,8 @@ Apply restrained color use in headers/footers:
 - Semantic colors are consistent and non-conflicting.
 - Target text/background combinations pass AA.
 - No color-only meaning without typographic cue.
+- Gradient presets are defined for decorative surfaces.
+- Functional `fill(x, y)` / `stroke(x, y)` patterns are used in at least one grid/table component.
 
 ## Time Estimate
 
