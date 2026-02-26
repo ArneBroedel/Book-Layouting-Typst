@@ -82,3 +82,12 @@ typst-missing-manual-showcase/
 - Wiederverwendbare „Bausteine“: Merkkästen, Warnungen, Checklisten, Lernziele, Cases
 - Moderne Layouts: Kapitel-Opener, Marginalspalte, Karten, Tabellen, Infografiken
 - Fortgeschritten: Overlays, Full-bleed, grid-basierte Seiten, Micro-Layouts
+- **Mastery Patterns**:
+  - Book cover (stacked `place` + gradient)
+  - Classic sidebar layout
+  - Magazine layout (mixed width/column)
+  - Pull quote (margin float)
+  - Scientific two-column + title breakout
+  - Book layout (inside/outside margins)
+  - Dynamic gallery grid
+  - Adaptive layout (`layout(size => ...)`)

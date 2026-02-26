@@ -10,17 +10,36 @@
     margin: (
       top: 20mm,
       bottom: 22mm,
-      left: 22mm,
-      right: 18mm,
+      inside: 22mm,
+      outside: 18mm,
     ),
     // Seitenzahlen unten, dezente Kopfzeile oben
     header: context [
       #set text(size: type.small, fill: palette.muted)
-      #align(right)[Clinical Reasoning · HP Physio]
+      #let is-even = calc.even(here().page())
+
+      // Context-aware chapter title
+      #let headings = query(selector(heading.where(level: 1)).before(here()))
+      #let chapter-title = if headings.len() > 0 {
+        headings.last().body
+      } else {
+        [Typst Showcase]
+      }
+
+      #align(if is-even { left } else { right })[
+        #if is-even {
+          [Clinical Reasoning · HP Physio]
+        } else {
+          chapter-title
+        }
+      ]
+      #v(-0.5em)
+      #line(length: 100%, stroke: (paint: palette.border, thickness: 0.5pt))
     ],
     footer: context [
       #set text(size: type.small, fill: palette.muted)
-      #align(center)[#counter(page).display()]
+      #let is-even = calc.even(here().page())
+      #align(if is-even { left } else { right })[#counter(page).display()]
     ],
   )
 

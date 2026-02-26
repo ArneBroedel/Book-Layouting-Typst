@@ -7,7 +7,7 @@
       width: width,
       fill: palette.paper,
       radius: 6pt,
-      stroke: (paint: palette.muted, thickness: 0.6pt),
+      stroke: (paint: palette.border, thickness: 0.6pt),
       inset: 8pt,
     )[
       #image(img, width: 100%)

@@ -5,28 +5,24 @@
 #import "styles/theme.typ": palette, type
 #import "styles/page.typ": setup-pages
 #import "styles/typography.typ": setup-typography
+#import "components/spreads.typ": book-cover, chapter-opener
 
 // 1) Global Setup
 #setup-pages()
 #setup-typography()
 
 // 2) Titelblatt (minimal)
-#set page(header: none, footer: none)
-#align(center)[
-  #v(70mm)
-  #text(size: 42pt, weight: 900, fill: palette.ink)[Clinical Reasoning]
-  #v(10pt)
-  #text(size: 18pt, fill: palette.muted)[Differentialdiagnostik · Krankheitslehre]
-  #v(14pt)
-  #text(size: 12pt, fill: palette.muted)[Typst Showcase / „Missing Manual“]
-]
-#pagebreak()
+#book-cover(
+  "Clinical Reasoning",
+  "Differentialdiagnostik · Krankheitslehre",
+  "Typst Showcase / „Missing Manual“",
+)
 
 // 3) Kopf/Fußzeile wieder aktivieren
 #setup-pages()
 
 // 4) Frontmatter
-= Vorwort (Showcase)
+#chapter-opener("Vorwort (Showcase)")
 Dieses Dokument ist eine *Werkstatt*: Du kannst Bausteine herausziehen und in dein echtes Buch übernehmen.
 Es ist bewusst nicht „minimal“ – es zeigt Bandbreite.
 

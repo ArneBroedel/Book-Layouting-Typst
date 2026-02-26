@@ -1,107 +1,139 @@
 // chapters/03-layout.typ
 #import "../styles/theme.typ": palette, space, type
+#import "../components/spreads.typ": chapter-opener
+#import "../components/layouts.typ": magazine-layout, sidebar-layout
+#import "../components/blocks.typ": card, pull-quote, side-note
+#import "../components/inline.typ": badge
 
-= Layout: Raster, Kapitel-Opener, Marginalien, „magazinige“ Seiten
+#chapter-opener("Layout-Techniken", number: "03")
 
-== Kapitel-Opener (typisch: große Zahl + ruhige Fläche)
-#let chapter-opener(n, title, subtitle: none) = [
-  #pagebreak()
-  #block(
-    fill: palette.muted.lighten(88%),
-    radius: 16pt,
-    inset: 22pt,
-  )[
-    #align(left)[
-      #text(size: 60pt, weight: 900, fill: palette.accent)[#n]
-      #v(6pt)
-      #text(size: 26pt, weight: 900)[#title]
-      #v(6pt)
-      #set text(size: type.lead, fill: palette.ink)
-      #subtitle
-    ]
-  ]
-  #v(space.xl)
-]
-
-#chapter-opener("03", "Layout-Techniken", subtitle: [
-  Hier geht es um „buchige“ Seiten, die trotzdem modern wirken:
-  klare Raster, wiederkehrende Muster, und Layout, das Denken unterstützt.
-])
+Hier geht es um Seiten mit Buchcharakter, die trotzdem modern wirken:
+klare Raster, wiederkehrende Muster, und Layout, das Denken unterstützt.
 
 == Marginalspalte (Randnotizen)
-Eine Marginalspalte ist didaktisch Gold: Definitionen, Merksätze, Testgüte – ohne den Fließtext zu zerhacken.
+Eine Marginalspalte ist didaktisch Gold wert: Definitionen, Merksätze, Testgüte -- ohne den Fliesstext zu zerhacken.
 
-#let margin-note(body) = [
-  #box(
-    fill: palette.paper.mix(palette.info),
-    stroke: (paint: palette.info, thickness: 0.7pt),
-    radius: 6pt,
-    inset: 8pt,
-  )[
-    #set text(size: type.small, fill: palette.ink)
-    #body
-  ]
-]
-
-#grid(
-  columns: (3fr, 1.2fr),
-  gutter: 14pt,
-)[
+#side-note(
   [
-  *Fließtext-Spalte*
-  Stell dir vor, du erklärst die Idee „Rule-out Test“.
-  Du willst den Gedankengang ruhig und linear halten.
+    *Fliesstext-Spalte*
 
-  Dann kommt eine Marginalie, die in 2 Zeilen die Essenz sagt,
-  ohne den Lesefluss zu unterbrechen.
+    Stell dir vor, du erklaerst die Idee eines #badge[Rule-out Tests].
+    Du willst den Gedankengang ruhig und linear halten.
+
+    Dann kommt eine Marginalie, die in 2 Zeilen die Essenz sagt,
+    ohne den Lesefluss zu unterbrechen.
+
+    Das Prinzip: Haupttext bleibt frei von Details,
+    die nur Fortgeschrittene brauchen. Aber sie sind _da_.
   ],
   [
-  #margin-note[
-    *Rule-out*: Hohe Sensitivität.
+    *Rule-out*: Hohe Sensitivitaet.
     Negatives Ergebnis macht die Diagnose unwahrscheinlich.
-  ]
-  ],
-]
 
-== Full-bleed Optik (ohne echte Beschnittlogik)
-Innerhalb des Satzspiegels kannst du starke Abschnittsflächen setzen.
-Für echten Beschnitt/Anschnitt brauchst du ein passendes Seiten-Setup und ggf. Prepress.
+    #v(space.sm)
+    *Rule-in*: Hohe Spezifitaet.
+    Positives Ergebnis macht die Diagnose wahrscheinlich.
+  ],
+)
+
+== Full-bleed Optik
+Innerhalb des Satzspiegels kannst du starke Abschnittsflaechen setzen.
+Fuer echten Beschnitt brauchst du ein passendes Seiten-Setup und ggf. Prepress.
 
 #block(
-  fill: palette.accent.mix(palette.paper),
-  inset: 0pt,
-  radius: 0pt,
+  width: 100%,
+  fill: palette.accent,
+  inset: space.xl,
+  radius: 4pt,
 )[
   #align(center)[
-    #set text(size: 16pt, fill: palette.paper, weight: 800)
-    VISUELLE PAUSENSEITE – Abschnittsmarker
+    #set text(size: 16pt, fill: palette.paper, weight: 800, tracking: 2pt)
+    VISUELLE PAUSENSEITE
+    #v(space.sm)
+    #set text(size: type.small, weight: 400, tracking: 0pt)
+    Solche Marker trennen Abschnitte und geben dem Auge Rhythmus.
   ]
 ]
 
-== „Kartenlayout“ für Differentialdiagnosen
-#let card(title, body, color: palette.ink) = [
-  #block(
-    fill: palette.paper,
-    radius: 12pt,
-    stroke: (paint: color.mix(palette.paper), thickness: 0.8pt),
-    inset: 12pt,
-  )[
-    #text(weight: 800, fill: color)[#title]
-    #v(6pt)
-    #set text(size: type.small, fill: palette.muted)
-    #body
-  ]
-]
+== Kartenlayout fuer Differentialdiagnosen
 
-#grid(columns: (1fr, 1fr), gutter: 12pt)[
-  #card("Spondyloarthritis", [
-    Muster: entzündlich, Morgensteifigkeit, Besserung durch Bewegung.
+#grid(
+  columns: (1fr, 1fr),
+  gutter: 12pt,
+  card(title: "Spondyloarthritis", accent: palette.info)[
+    Muster: entzuendlich, Morgensteifigkeit, Besserung durch Bewegung.
     Red Flags? Systemisch?
     Frage nach Psoriasis, Uveitis, IBD.
-  ], color: palette.bad),
-  #card("Facettsyndrom", [
-    Muster: mechanisch, Extension/Rotation provoziert.
-    Besserung in Flexion, lokal, kein systemischer Kontext.
-  ], color: palette.good),
+  ],
+  card(title: "Mechanischer Rueckenschmerz", accent: palette.warn)[
+    Muster: belastungsabhaengig, Besserung in Ruhe.
+    Keine systemischen Zeichen.
+  ],
+)
+
+#v(space.md)
+
+#grid(
+  columns: (1fr, 1fr),
+  gutter: 12pt,
+  card(title: "Viszeraler Uebertragungsschmerz", accent: palette.bad)[
+    Unabhaengig von Bewegung oder Haltung.
+    Vegetative Begleitsymptome moeglich.
+    Immer: Red-Flag-Screening.
+  ],
+  card(title: "Neurogener Schmerz", accent: palette.good)[
+    Dermatomal oder peripher-neural.
+    Provokation durch mechanische Nerventests.
+    DD: zentral vs. peripher.
+  ],
+)
+
+== Sidebar-Layout
+
+Das klassische Sidebar-Layout eignet sich fuer Definitionen neben dem Haupttext:
+
+#sidebar-layout(
+  [
+    #set text(size: type.small)
+    *Glossar*
+
+    #badge(color: palette.info)[LR+] Likelihood Ratio positiv
+
+    #v(space.sm)
+    #badge(color: palette.warn)[LR--] Likelihood Ratio negativ
+
+    #v(space.sm)
+    #badge(color: palette.good)[PPV] Positiver praediktiver Wert
+  ],
+  [
+    *Klinische Entscheidungsfindung*
+
+    Die Likelihood Ratios sind ein zentrales Werkzeug,
+    um die diagnostische Wertigkeit eines Tests einzuordnen.
+
+    Ein LR+ von > 10 verschiebt die Posttestwahrscheinlichkeit stark nach oben.
+    Ein LR- von < 0.1 schliesst eine Diagnose mit hoher Sicherheit aus.
+
+    In der Praxis sind solche klaren Werte selten --
+    meistens bewegt man sich in Grauzonen.
+  ],
+)
+
+== Magazin-Layout
+
+#magazine-layout("Die Kunst der Diagnose", subtitle: "Ein Blick auf diagnostische Prozesse")[
+  Die Diagnosefindung ist ein komplexer Prozess, der sowohl analytisches Denken als auch Intuition erfordert.
+
+  #pull-quote(color: palette.info)[
+    Die Diagnose ist der erste Schritt zur Heilung.
+  ]
+
+  Oftmals sind die Symptome nicht eindeutig und erfordern eine sorgfaeltige Abwaegung verschiedener Moeglichkeiten.
+  Hierbei spielen Differentialdiagnosen eine entscheidende Rolle.
+
+  #colbreak()
+
+  Durch den systematischen Ausschluss von Erkrankungen naehert man sich der wahren Ursache an.
+  Dies erfordert nicht nur medizinisches Wissen, sondern auch Erfahrung und Empathie im Umgang mit dem Patienten.
 ]
 
