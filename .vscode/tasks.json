@@ -4,19 +4,19 @@
     {
       "label": "typst: build (fast)",
       "type": "shell",
-      "command": "typst compile --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf",
+      "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -Mode fast",
       "problemMatcher": []
     },
     {
       "label": "typst: watch",
       "type": "shell",
-      "command": "typst watch --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf",
+      "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -Mode watch",
       "problemMatcher": []
     },
     {
       "label": "typst: build (UA-1)",
       "type": "shell",
-      "command": "typst compile --root . --ignore-system-fonts --font-path fonts --pdf-standard ua-1 src/main.typ dist/book-ua.pdf",
+      "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -Mode ua",
       "problemMatcher": []
     }
   ]

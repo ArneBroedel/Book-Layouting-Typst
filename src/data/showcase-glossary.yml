@@ -1,0 +1,15 @@
+terms:
+  - key: red-flags
+    term: Red Flags
+    short: Klinische Warnzeichen
+    def: Hinweise auf potenziell ernsthafte Ursachen, die eine Priorisierung der Abklaerung erfordern.
+
+  - key: clinical-reasoning
+    term: Clinical Reasoning
+    short: Klinisches Denken
+    def: Strukturierte Entscheidungsfindung im klinischen Kontext unter Unsicherheit.
+
+  - key: ddx
+    term: Differentialdiagnostik
+    short: DDX
+    def: Systematische Eingrenzung moeglicher Diagnosen auf Basis von Anamnese, Befund, Verlauf und Tests.

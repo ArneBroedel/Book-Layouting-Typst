@@ -8,4 +8,4 @@
   author: [Arne Brödel],
 )
 
-#chapter_intro(clinical_pearl: clinical_pearl, red_flag: red_flag)
+#chapter_intro(clinical_pearl, red_flag)

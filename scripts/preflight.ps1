@@ -4,7 +4,30 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$commandsRequired = @("git", "typst", "node", "python", "pwsh")
+function Resolve-TypstExecutable {
+    $direct = Get-Command typst -ErrorAction SilentlyContinue
+    if ($direct) {
+        return $direct.Source
+    }
+
+    $base = Join-Path $env:LOCALAPPDATA "Microsoft\WinGet\Packages"
+    if (Test-Path $base) {
+        $candidate = Get-ChildItem -Path $base -Filter "typst.exe" -File -Recurse -ErrorAction SilentlyContinue |
+            Where-Object { $_.FullName -like "*Typst.Typst*" } |
+            Sort-Object LastWriteTime -Descending |
+            Select-Object -First 1
+
+        if ($candidate) {
+            return $candidate.FullName
+        }
+    }
+
+    return $null
+}
+
+$typstExe = Resolve-TypstExecutable
+
+$commandsRequired = @("git", "node", "python", "pwsh")
 $commandsRecommended = @("git-lfs")
 
 function Parse-VersionObject {
@@ -48,6 +71,13 @@ foreach ($cmd in $commandsRequired) {
     }
 }
 
+if ($typstExe) {
+    Write-Host "[OK] typst gefunden"
+}
+else {
+    Write-Error "[FEHLT] typst nicht gefunden"
+}
+
 Write-Host "`n== Empfehlungchecks ==" -ForegroundColor Cyan
 foreach ($cmd in $commandsRecommended) {
     if (Get-Command $cmd -ErrorAction SilentlyContinue) {
@@ -79,7 +109,7 @@ foreach ($relativePath in $requiredPaths) {
 
 Write-Host "`n== Versionen ==" -ForegroundColor Cyan
 $gitRaw = git --version
-$typstRaw = typst --version
+$typstRaw = & $typstExe --version
 $nodeRaw = node --version
 $pythonRaw = python --version
 $pwshRaw = $PSVersionTable.PSVersion.ToString()

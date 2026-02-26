@@ -8,7 +8,29 @@ $ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $root
 
-if (-not (Get-Command typst -ErrorAction SilentlyContinue)) {
+function Resolve-TypstExecutable {
+    $direct = Get-Command typst -ErrorAction SilentlyContinue
+    if ($direct) {
+        return $direct.Source
+    }
+
+    $base = Join-Path $env:LOCALAPPDATA "Microsoft\WinGet\Packages"
+    if (Test-Path $base) {
+        $candidate = Get-ChildItem -Path $base -Filter "typst.exe" -File -Recurse -ErrorAction SilentlyContinue |
+        Where-Object { $_.FullName -like "*Typst.Typst*" } |
+        Sort-Object LastWriteTime -Descending |
+        Select-Object -First 1
+
+        if ($candidate) {
+            return $candidate.FullName
+        }
+    }
+
+    return $null
+}
+
+$typstExe = Resolve-TypstExecutable
+if (-not $typstExe) {
     Write-Error "Typst CLI nicht gefunden. Bitte Typst installieren und PATH prüfen."
 }
 
@@ -24,12 +46,12 @@ if (-not (Get-ChildItem -Path "fonts" -File -ErrorAction SilentlyContinue)) {
 
 switch ($Mode) {
     "fast" {
-        typst compile --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf
+        & $typstExe compile --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf
     }
     "watch" {
-        typst watch --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf
+        & $typstExe watch --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf
     }
     "ua" {
-        typst compile --root . --ignore-system-fonts --font-path fonts --pdf-standard ua-1 src/main.typ dist/book-ua.pdf
+        & $typstExe compile --root . --ignore-system-fonts --font-path fonts --pdf-standard ua-1 src/main.typ dist/book-ua.pdf
     }
 }
