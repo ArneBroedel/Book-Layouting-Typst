@@ -122,6 +122,34 @@ The distinction between a code block `{...}` and a content block `[...]` is fund
 | Dictionary | `(x: 1pt, y: 2pt)` | Margin and inset configuration [^R17] |
 | Boolean | `true`, `false` | Conditional formatting flags [^R15] |
 
+### 3.4 Positional vs named function parameters
+
+Typst functions distinguish between **positional** and **named** parameters. Understanding this distinction prevents a common class of "unexpected argument" errors.
+
+- **Positional parameters** have no default value and must be passed in order at the call site. They cannot be referenced by name when calling the function.
+- **Named parameters** have a default value (e.g., `gutter: 12pt`) and are passed using `name: value` syntax.
+- The last positional parameter can receive trailing content via `[...]` syntax.
+
+```typst
+// Definition: hero and body are positional, column-count is named
+#let magazine-layout(hero, body, column-count: 2) = {
+  hero
+  columns(column-count)[#body]
+}
+
+// ✅ CORRECT — pass positionally
+#magazine-layout([Hero image], [Article body])
+
+// ✅ CORRECT — trailing content for last positional arg
+#magazine-layout([Hero image])[Article body]
+
+// ❌ WRONG — positional args can't use name labels
+#magazine-layout(hero: [Hero image], body: [Article body])
+// Error: "unexpected argument: hero"
+```
+
+This is especially important for reusable components that accept multiple content arguments (sidebars, comparison layouts, grids). Design functions with the most important content as the last positional parameter to enable trailing `[...]` syntax.
+
 ***
 
 ## Part 4 – Mastering Box Elements
@@ -404,6 +432,8 @@ Regular content will now flow over two columns and across pages.
 
 Page‑level columns are ideal for magazines, newspapers, and scientific papers.
 
+> **Important scoping note (practice):** Use `#set page(columns: 2)` only when you intend a document-level default. Inside reusable helper functions/components, it can unintentionally affect all following content. For scoped multi-column regions, prefer `#columns(2)[ ... ]`.
+
 ### 6.3 Breaking out of columns with `place`
 
 You can place elements outside the normal column flow, e.g. a full‑width title above two columns.[^R24]
@@ -472,6 +502,8 @@ To create floating elements that push other content away, use `float: true` and 
 )
 ```
 
+When using `float: true`, specify a vertical placement (`top` or `bottom`). Omitting this can cause compile errors in practice.
+
 Floating positioning, enabled with `float: true`, moves an element to the top or bottom of the container and forces the remaining text to flow around it.[^R20] The `clearance` parameter ensures a minimum vertical gap between the float and the body text.[^R20] In multi-column layouts, the `scope: "parent"` argument is invaluable, as it allows a floating element to break out of its current column and span the entire width of the page—a common requirement for article titles or large figures.[^R20]
 
 ### 7.3 Scope control
@@ -500,6 +532,7 @@ For positioning that includes the page margins, content can be placed into the `
 
 | Argument | Type | Default | Functional Role |
 | :---- | :---- | :---- | :---- |
+| align | Alignment | `top + left` | Anchor point for placement; with `float: true`, use `top` or `bottom` |
 | float | Boolean | false | Enables floating at top/bottom [^R20] |
 | scope | String | "column" | Determines if element spans columns [^R20] |
 | clearance | Length | 1.5em | Space between float and text [^R24] |
@@ -542,6 +575,8 @@ Set rules establish default parameter values for a function and are the backbone
 - `par` controls paragraph behavior (justification, line spacing, spacing between paragraphs).[^R39]
 - `text` sets font and text defaults.
 - `heading` configures automatic numbering.
+
+> **Practical caution:** `set` rules are scoped, but `set page(...)` is easy to misuse inside component helper functions. In real projects, this can lead to unexpected global layout changes. Keep page-level `set` calls in top-level setup code unless a full-section/page mode switch is intentional.
 
 ### 8.2 `show` rules for transformative styles
 
@@ -596,6 +631,39 @@ You can target `grid.cell` in `show` rules and style cells based on their coordi
 ```
 
 This produces a "header row / header column" style with minimal code.
+
+### 8.4 Setup functions using the closure pattern
+
+For multi-chapter books, setup functions that apply `set` rules to the entire document must use a **closure pattern** with `#show:`. This is the correct way to build reusable style configurations.
+
+```typst
+// styles/typography.typ
+#let setup-typography() = body => {
+  set text(font: "Libertinus Serif", size: 10.5pt, lang: "de")
+  set par(justify: true, leading: 0.65em, spacing: 1.2em)
+  set heading(numbering: "1.1")
+  show heading.where(level: 1): it => block(breakable: false)[
+    #text(size: 20pt, weight: "bold")[#it.body]
+  ]
+  body   // ← passes through all subsequent content
+}
+
+// main.typ
+#show: setup-typography()   // applies to everything after this line
+```
+
+The function returns a closure `body => { ... body }`. When applied via `#show:`, Typst passes all subsequent content as `body`, wrapping it in the set/show rules.
+
+**Common mistake:** Writing `{ set text(...); set par(...) }` without accepting and returning a `body` parameter. This produces a content block where the set rules die at the end of the braces, affecting nothing.[^R15][^R16]
+
+This pattern can be chained — multiple `#show:` calls stack their rules:
+
+```typst
+#show: setup-typography()   // fonts, headings, paragraph rules
+#include "chapters/00-cover.typ"
+#pagebreak()
+#show: setup-pages()        // margins, headers, footers
+```
 
 ***
 
@@ -688,20 +756,19 @@ Here, `scope: "parent"` ensures the image aligns with the page text block rather
 
 ### 10.3 Pull quotes
 
-A pull quote is a highlighted quote that "floats" into the margin or side of the text.
+A pull quote is a highlighted quote that can sit beside or within text flow.
 
 ```typst
-#let pull-quote(body) = place(
-  right,
-  dx: -2cm,
-  scope: "parent",
-  box(
-    width: 5cm,
-    fill: luma(95%),
-    inset: 1em,
-    text(1.2em, style: "italic", body),
-  ),
-)
+#let pull-quote(body, color: luma(80%)) = block(
+  width: 100%,
+  breakable: false,
+  inset: (x: 1.4em, y: 0.8em),
+  fill: color.lighten(50%),
+  radius: 4pt,
+)[
+  #set text(size: 1.1em, style: "italic")
+  #align(center)[#body]
+]
 
 #lorem(50)
 
@@ -711,6 +778,8 @@ A pull quote is a highlighted quote that "floats" into the margin or side of the
 
 #lorem(50)
 ```
+
+> **When to use `place` for pull quotes:** `place(...)` can work for decorative overlays in tightly controlled layouts, but hardcoded offsets (`dx`, `dy`) are fragile across page breaks, column flow, and margin changes. For robust book layouts, prefer in-flow `block`/`grid` pull quotes.
 
 ### 10.4 Complex book cover
 
@@ -759,3 +828,71 @@ Use `place` and vector shapes to design a full cover.
   ],
 )
 ```
+
+***
+
+## Part 11 – From Theory to Practice: High-Impact Pitfalls and Proven Patterns
+
+This section consolidates implementation lessons from real multi-page production work where layouts had to survive refactors, pagination changes, and component reuse.
+
+### 11.1 Parameter ownership (quick map)
+
+Many avoidable errors come from assigning parameters to the wrong function.
+
+| Concern | Correct owner | Example |
+| :---- | :---- | :---- |
+| Line spacing within paragraphs | `par` | `#set par(leading: 1.35em)` |
+| Font size/weight/fill | `text` | `#set text(size: 11pt, weight: 500)` |
+| Space between blocks | `block` | `#block(spacing: 8pt)[ ... ]` |
+| Inner padding | `box` / `block` | `inset: (x: 6pt, y: 3pt)` |
+
+### 11.2 Safer layout hierarchy: flow first, placement second
+
+Recommended order of preference:
+1. Flow elements (`block`, `stack`, `grid`, `columns`)
+2. Local float breakout (`place(..., float: true, scope: "parent")`)
+3. Absolute/overlay `place` only for decoration
+
+If content is semantically part of reading flow (side notes, pull quotes, key cards), prefer `grid`/`columns` over absolute `place`.
+
+### 11.3 Heading systems: avoid dual numbering sources
+
+If you use decorative chapter openers with manual numbers, avoid simultaneously enabling `#set heading(numbering: ...)` unless you explicitly reconcile both systems.
+
+Stable options:
+- Pure automatic numbering via heading rules.
+- Pure manual chapter opener numbering with heading numbering disabled.
+
+### 11.4 Scoped columns pattern for reusable components
+
+For reusable article/paper blocks, keep columns local:
+
+```typst
+#let article-block(body) = columns(2, gutter: 14pt)[
+  #body
+]
+```
+
+Reserve `#set page(columns: ...)` for document-level modes, not small reusable components.
+
+### 11.5 Grid input pattern that scales
+
+For dynamic galleries/lists, prefer spread + map:
+
+```typst
+#grid(
+  columns: 3,
+  gutter: 8pt,
+  ..items.enumerate().map(((i, item)) => [#item]),
+)
+```
+
+This remains maintainable when item count changes and supports deterministic style cycling.
+
+### 11.6 Production checklist before release
+
+- Compile PDF and PNG snapshots.
+- Check odd/even pages for header/footer logic.
+- Verify no component introduces unintended global `set page(...)` effects.
+- Validate pull quotes/notes at page and column boundaries.
+- Ensure table semantics remain `table`, not presentational `grid`, for data content.
