@@ -1,88 +1,94 @@
-# Showcase-v1: Visual Excellence & Competitive Proof-of-Concept
+# Showcase-v1: Spec (Mastery Baseline)
 
-## Vision
+## Product Goal
 
-Transform the Typst Missing Manual showcase from a **functional reference** into a **visually stunning, publishable book** that **proves Typst superiority** over LaTeX and Adobe InDesign for professional document design. The goal is not just code correctness but **visual confidence**—every page should scream "this is production-grade."
+Deliver a publication-grade Typst showcase that demonstrates professional book layout quality using documented Typst features and reusable architecture.
 
-## Why Current State Falls Short
+## Scope
 
-- **Typography**: Flat, academic—no breathing room or visual hierarchy
-- **Color**: Monochrome/minimal palette; no strategic accent usage
-- **Layout**: Grid-locked; no visual variation, rhythm, or intentional whitespace
-- **Imagery**: Placeholder SVGs; no data visualization or conceptual graphics
-- **Components**: Functional but bland—boxes lack sophistication
-- **Page Design**: No title spreads, no chapter breaks, no visual landmarks
-- **Micro-Polish**: No drop caps, ornaments, captions with style, or elegant details
+In scope:
+- Typography and spacing system.
+- Semantic color system with contrast validation.
+- Reusable component library.
+- Advanced layout patterns (spreads, multi-column, margin systems).
+- Context-aware running elements (headers/footers/page counters).
+- Content polish, visuals, and release-ready output.
 
-## Success Criteria
+Out of scope (core v1):
+- Mandatory external package dependencies.
+- HTML export workflows.
+- Interactive or runtime-dependent features.
 
-A showcase that when shown to:
-- **LaTeX users** → "I didn't know you could make PDFs look this good"
-- **InDesign users** → "This wasn't made in InDesign?"
-- **Typst competitors** → "We need to catch up"
+## Layout Architecture
 
-## Core Principles for Redesign
+### Primitive Selection Matrix
 
-1. **Modularity**: All visual systems must be reusable, not bespoke
-2. **Semantic**: Layout must support meaning (didactics, danger, insight)
-3. **Constraint-based**: Use Typst's strengths (functions, show rules, tokens) not workarounds
-4. **Performant**: No external packages initially; prove Typst's core can compete
-5. **Accessible**: Sufficient contrast, readable on screen and print
+| Need | Primary Primitive | Secondary |
+|---|---|---|
+| Inline emphasis/badges | `box` | `text` |
+| Structured page zones | `grid` | `columns` |
+| Multi-column reading flow | `columns` / `page(columns: ...)` | `colbreak` |
+| Full-width breakout in column layouts | `place(float: true, scope: "parent")` | dedicated spread block |
+| Overlay decoration | `place` overlay | page background/foreground |
+| Semantic data | `table` | grid-like styling |
 
-## Scope & Deliverables
+### Placement Rules
 
-### Typography Layer
-- Refined type scale (xs → xxl, micro → body → lead → h1–h3)
-- Proper cap-height alignment, baseline grids, optical sizing
-- Kerning pairs, ligatures, hanging quotes (via negative inset)
-- Font weights: 400 (body), 600 (emphasis), 700–800 (display)
+- Default to flow layout.
+- Use overlay `place` only for decorative content that must not shift flow.
+- Use floating `place` when surrounding content must reflow.
+- Use `scope: "parent"` for cross-column breakouts.
+- Keep absolute offsets (`dx`, `dy`) small and documented.
 
-### Color & Visual Hierarchy
-- Expanded palette: primaries (ink, paper), didactic (info/good/warn/bad), accents (2–3 tints each)
-- Strategic color use: decision points, emphasis, zones of content
-- Sufficient WCAG AA contrast everywhere
+## Styling Architecture
 
-### Layout & Spacing
-- Full-bleed chapter openers with asymmetric composition
-- Margin notes and sidebar content with careful optical alignment
-- Grid-based but broken strategically (not boring uniformity)
-- Page numbering, running headers tied to chapter context
+- Global defaults via `set` rules in central style modules.
+- Element transformations via `show` rules, scoped and testable.
+- Component APIs expose meaningful parameters (`title`, `tone`, `variant`, `width`).
+- No duplicate style literals across chapter files.
 
-### Components (Advanced)
-- **Admonitions**: Styled borders, icons (via Unicode), tinted backgrounds
-- **Callouts**: Emphasis boxes with quote-style left border
-- **Cards**: Multi-column layouts with shadow/depth illusion (via inset blend)
-- **Figures**: Captions with fine typography, optional callouts/annotations
-- **Tables**: Alternating rows, frozen headers, aligned decimal points
-- **Lists**: Custom markers (bullets, numbers, symbols), proper indentation
+## Book Structure Requirements
 
-### Showcase Features to Demonstrate
-- **Spread-style layouts** (why this isn't LaTeX/InDesign limitation)
-- **Dynamic page numbers & running headers** (context-aware)
-- **Algorithmic design** (computed bars, heat maps, mini-visualizations)
-- **Reference styling** (citations, cross-refs, footnotes with polish)
-- **Scripting for layout** (custom spacing, column breaking decisions)
+- Front matter, main matter, back matter behavior must be explicit.
+- Page numbering strategy documented (including resets if used).
+- Running header logic should degrade gracefully on pages with no prior heading.
 
-## Anti-Goals
+## Accessibility and Readability
 
-- **NOT about adding external packages** (cetz, etc.)—prove base Typst first
-- **NOT about photorealistic design**—elegant minimalism, not skeuomorphism
-- **NOT about sacrificing clarity**—educational goal remains primary
-- **NOT about dark mode hacks**—light background, strong contrast
+- Minimum contrast target: WCAG AA for body text.
+- No core reading text below 7.2pt.
+- Keep long-line body blocks within readable measure target.
+- Maintain clear hierarchy from chapter opener to caption/footnote.
 
-## Key Metrics (Post-Redesign)
+## Performance Constraints
 
-- Page count: ~20–24 (vs current ~14) with more breathing room
-- Warning/error count: **zero**
-- Load time: <2s compile (no regression)
-- File size: <500 KB PDF
-- Accessibility: WCAG AA on all text
+- Prefer flatter layout trees over deep nesting.
+- Avoid unnecessary `context` blocks.
+- Encapsulate repeated structures in functions.
+- Track compile time regressions in Phase 6.
 
-## Competitive Narrative
+## Testing and Validation
 
-This showcase **will prove**:
-1. Typst can produce **publication-ready layouts** without InDesign
-2. Typst's **function-based design** is superior to LaTeX macros for maintainability
-3. **No external dependencies** needed for professional results
-4. **Turnaround time** (sketch → print-ready) is dramatically faster
-5. **Collaboration** (Git-friendly .typ files) beats InDesign's binary format
+Per phase:
+- `typst compile main.typ main.pdf`
+- PNG render pass for visual regressions.
+- Spot-check odd/even page behavior.
+
+Final phase:
+- Full compile and warnings review.
+- Visual QA across chapter openers, tables, figures, notes, references.
+- Packaging checklist (metadata, README notes, reproducible commands).
+
+## Deliverables
+
+- Updated phase docs (0-6).
+- Updated plan with dependencies and gates.
+- Stable spec that governs implementation decisions.
+
+## Success Definition
+
+The showcase demonstrates:
+1. High-quality editorial layout.
+2. Clear Typst architectural discipline.
+3. Reusable component and styling systems.
+4. Predictable builds and release readiness.

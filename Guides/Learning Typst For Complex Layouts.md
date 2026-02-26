@@ -29,7 +29,7 @@ Code mode is the gateway to the system's scripting power, introduced by the hash
 | :---- | :---- | :---- | :---- |
 | Heading | \= Introduction | \#heading\[Introduction\] | Block-level 1 |
 | Bold Text | \*Strong\* | \#strong | Inline 13 |
-| Numbered List | \+ Item | \#list(marker:...) | Flow-controlled 12 |
+| Numbered List | \+ Item | \#enum\[Item\] | Flow-controlled 12 |
 | Reference | @label | \#ref(\<label\>) | Introspective 12 |
 | Math Block | $ x^2 $ | \#math.equation(...) | Block or Inline 1 |
 
@@ -65,7 +65,7 @@ Show rules provide the power of total transformation.16 They allow the designer 
 | Transform Rule | show heading: it \=\> \[...\] | Complete element reconstruction 16 |
 | Global Show | show: template | Document-wide wrapper 15 |
 
-The use of selectors in show rules is critical for advanced layout design. The .where() method allows rules to be applied selectively based on field values.16 For example, a designer can apply a specific style only to first-level headings that are not outlined in the table of contents by using show heading.where(level: 1, outlined: true):....16 Other complex selectors, such as before(here()) and after(here()), enable the document to react to the relative positioning of elements, which is essential for "nearest chapter" markers in headers.21
+The use of selectors in show rules is critical for advanced layout design. The .where() method allows rules to be applied selectively based on field values.16 For example, a designer can apply a specific style only to first-level headings that are not outlined in the table of contents by using show heading.where(level: 1, outlined: true):....16 Other complex selector methods, such as selector(heading).before(here()) and selector(heading).after(here()), enable the document to react to the relative positioning of elements, which is essential for "nearest chapter" markers in headers.21
 
 ## **Layout Primitives and Spatial Control**
 
@@ -79,7 +79,7 @@ The box function, by contrast, is an inline container.24 It is used to group con
 | :---- | :---- | :---- | :---- |
 | block | Block | width, height, breakable | Forced new line, vertical flow 24 |
 | box | Inline | width, baseline, inset | Stays in paragraph flow 24 |
-| stack | Block/Inline | dir, spacing | Linear arrangement along an axis 26 |
+| stack | Block | dir, spacing | Linear arrangement along an axis 26 |
 | grid | Block | columns, rows, gutter | Multi-dimensional track sizing 27 |
 
 For linear arrangements, the stack function places items along an axis: ltr (left-to-right), rtl (right-to-left), ttb (top-to-bottom), or btt (bottom-to-top).26 It is a simpler, more efficient alternative to a grid when content only needs to be arranged in one dimension with consistent spacing between elements.26
@@ -108,7 +108,8 @@ Floating positioning, enabled with float: true, moves an element to the top or b
 | scope | String | "column" | Determines if element spans columns 20 |
 | clearance | Length | 1.5em | Space between float and text 24 |
 | dx, dy | Relative | 0pt | Physical offset from alignment 24 |
-| placement | Auto/Top/Bottom | auto | Preferred location for figures 24 |
+
+Note: The placement parameter (auto/top/bottom) belongs to the figure element, not place. Use figure(placement: top) to float figures to the top or bottom of a page.24
 
 ## **Introspection: Creating Reactive and Context-Aware Documents**
 
@@ -184,53 +185,53 @@ For elements that defy the grid, the place function and absolute positioning pro
 
 #### **Referenzen**
 
-1. typst/typst: A markup-based typesetting system that is powerful and easy to learn. \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/typst/typst](https://github.com/typst/typst)  
-2. Exploring Typst: A LaTeX Alternative \- The PCLinuxOS Magazine, Zugriff am Februar 26, 2026, [https://pclosmag.com/html/Issues/202411/page08.html](https://pclosmag.com/html/Issues/202411/page08.html)  
-3. Function Type – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/foundations/function/](https://typst.app/docs/reference/foundations/function/)  
-4. Typst: A Possible LaTeX Replacement \- Hacker News, Zugriff am Februar 26, 2026, [https://news.ycombinator.com/item?id=45393842](https://news.ycombinator.com/item?id=45393842)  
-5. typst/docs/dev/architecture.md at main \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/typst/typst/blob/main/docs/dev/architecture.md](https://github.com/typst/typst/blob/main/docs/dev/architecture.md)  
-6. Syntax – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/syntax/](https://typst.app/docs/reference/syntax/)  
-7. Scripting – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/scripting/](https://typst.app/docs/reference/scripting/)  
-8. Image Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/visualize/image/](https://typst.app/docs/reference/visualize/image/)  
-9. dashing-dept-news – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/dashing-dept-news/](https://typst.app/universe/package/dashing-dept-news/)  
-10. Counters \- Typst Examples Book \- GitHub Pages, Zugriff am Februar 26, 2026, [https://sitandr.github.io/typst-examples-book/book/basics/states/counters.html](https://sitandr.github.io/typst-examples-book/book/basics/states/counters.html)  
-11. Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/for-latex-users/\#:\~:text=Typst%20differentiates%20between%20markup%20mode,and%20execute%20segments%20of%20code.](https://typst.app/docs/guides/for-latex-users/#:~:text=Typst%20differentiates%20between%20markup%20mode,and%20execute%20segments%20of%20code.)  
-12. Writing in Typst – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/writing-in-typst/](https://typst.app/docs/tutorial/writing-in-typst/)  
-13. For LaTeX Users – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/for-latex-users/](https://typst.app/docs/guides/for-latex-users/)  
-14. Heading Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/model/heading/](https://typst.app/docs/reference/model/heading/)  
-15. Making a Template – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/making-a-template/](https://typst.app/docs/tutorial/making-a-template/)  
-16. Styling – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/styling/](https://typst.app/docs/reference/styling/)  
-17. Formatting – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/formatting/](https://typst.app/docs/tutorial/formatting/)  
-18. Page Setup – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/page-setup/](https://typst.app/docs/guides/page-setup/)  
-19. Is there a more elegant way for an Enclosure chapter with main heading visible in outline, subchapters invisible, with custom titles shown and shown when referenced? \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/is-there-a-more-elegant-way-for-an-enclosure-chapter-with-main-heading-visible-in-outline-subchapters-invisible-with-custom-titles-shown-and-shown-when-referenced/7907](https://forum.typst.app/t/is-there-a-more-elegant-way-for-an-enclosure-chapter-with-main-heading-visible-in-outline-subchapters-invisible-with-custom-titles-shown-and-shown-when-referenced/7907)  
-20. Advanced Styling – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/advanced-styling/](https://typst.app/docs/tutorial/advanced-styling/)  
-21. Query Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/introspection/query/](https://typst.app/docs/reference/introspection/query/)  
-22. Using \`query\` together with \`counter.at\` · typst typst · Discussion \#1109 \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/typst/typst/discussions/1109](https://github.com/typst/typst/discussions/1109)  
-23. Query \- Typst Examples Book \- GitHub Pages, Zugriff am Februar 26, 2026, [https://sitandr.github.io/typst-examples-book/book/basics/states/query.html](https://sitandr.github.io/typst-examples-book/book/basics/states/query.html)  
-24. Place Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/place/](https://typst.app/docs/reference/layout/place/)  
-25. Box Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/box/](https://typst.app/docs/reference/layout/box/)  
-26. Stack Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/stack/](https://typst.app/docs/reference/layout/stack/)  
-27. Grid Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/grid/](https://typst.app/docs/reference/layout/grid/)  
-28. How to set up grid of rectangles with different cell width/height? \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-to-set-up-grid-of-rectangles-with-different-cell-width-height/7498](https://forum.typst.app/t/how-to-set-up-grid-of-rectangles-with-different-cell-width-height/7498)  
-29. Tables – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/tables/](https://typst.app/docs/guides/tables/)  
-30. Context – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/context/](https://typst.app/docs/reference/context/)  
-31. How do I highlight text context-dependent in the header section? \- Questions \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-do-i-highlight-text-context-dependent-in-the-header-section/6331](https://forum.typst.app/t/how-do-i-highlight-text-context-dependent-in-the-header-section/6331)  
-32. Counter Type – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/introspection/counter/](https://typst.app/docs/reference/introspection/counter/)  
-33. Layout Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/layout/](https://typst.app/docs/reference/layout/layout/)  
-34. Observations from this new Typst user \- General, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/observations-from-this-new-typst-user/6395](https://forum.typst.app/t/observations-from-this-new-typst-user/6395)  
-35. anti-matter – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/anti-matter/](https://typst.app/universe/package/anti-matter/)  
-36. How to structure a book project? \- Questions \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-to-structure-a-book-project/7298](https://forum.typst.app/t/how-to-structure-a-book-project/7298)  
-37. Format Front Matter, Body Matter, and Back Matter \- Amazon Kindle Direct Publishing, Zugriff am Februar 26, 2026, [https://kdp.amazon.com/help/topic/GDDYZG2C7RVF5N9J](https://kdp.amazon.com/help/topic/GDDYZG2C7RVF5N9J)  
-38. Zugriff am Januar 1, 1970, [https://sitandr.github.io/typst-examples-book/book/layout/index.html](https://sitandr.github.io/typst-examples-book/book/layout/index.html)  
-39. Layout – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/](https://typst.app/docs/reference/layout/)  
-40. statementsp – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/statementsp/](https://typst.app/universe/package/statementsp/)  
-41. Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/](https://typst.app/universe/)  
-42. Search — Typst: Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/search/](https://typst.app/universe/search/)  
-43. pinit – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/pinit/](https://typst.app/universe/package/pinit/)  
-44. showybox – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/showybox/](https://typst.app/universe/package/showybox/)  
-45. Showybox's Manual | PDF | Cartesian Coordinate System | Space \- Scribd, Zugriff am Februar 26, 2026, [https://www.scribd.com/document/700741506/Showybox-s-Manual](https://www.scribd.com/document/700741506/Showybox-s-Manual)  
-46. Layout \- Typst Examples Book \- GitHub Pages, Zugriff am Februar 26, 2026, [https://sitandr.github.io/typst-examples-book/book/packages/layout.html](https://sitandr.github.io/typst-examples-book/book/packages/layout.html)  
-47. drafting – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/drafting/](https://typst.app/universe/package/drafting/)  
+1. typst/typst: A markup-based typesetting system that is powerful and easy to learn. \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/typst/typst](https://github.com/typst/typst)
+2. Exploring Typst: A LaTeX Alternative \- The PCLinuxOS Magazine, Zugriff am Februar 26, 2026, [https://pclosmag.com/html/Issues/202411/page08.html](https://pclosmag.com/html/Issues/202411/page08.html)
+3. Function Type – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/foundations/function/](https://typst.app/docs/reference/foundations/function/)
+4. Typst: A Possible LaTeX Replacement \- Hacker News, Zugriff am Februar 26, 2026, [https://news.ycombinator.com/item?id=45393842](https://news.ycombinator.com/item?id=45393842)
+5. typst/docs/dev/architecture.md at main \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/typst/typst/blob/main/docs/dev/architecture.md](https://github.com/typst/typst/blob/main/docs/dev/architecture.md)
+6. Syntax – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/syntax/](https://typst.app/docs/reference/syntax/)
+7. Scripting – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/scripting/](https://typst.app/docs/reference/scripting/)
+8. Image Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/visualize/image/](https://typst.app/docs/reference/visualize/image/)
+9. dashing-dept-news – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/dashing-dept-news/](https://typst.app/universe/package/dashing-dept-news/)
+10. Counters \- Typst Examples Book \- GitHub Pages, Zugriff am Februar 26, 2026, [https://sitandr.github.io/typst-examples-book/book/basics/states/counters.html](https://sitandr.github.io/typst-examples-book/book/basics/states/counters.html)
+11. Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/for-latex-users/\#:\~:text=Typst%20differentiates%20between%20markup%20mode,and%20execute%20segments%20of%20code.](https://typst.app/docs/guides/for-latex-users/#:~:text=Typst%20differentiates%20between%20markup%20mode,and%20execute%20segments%20of%20code.)
+12. Writing in Typst – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/writing-in-typst/](https://typst.app/docs/tutorial/writing-in-typst/)
+13. For LaTeX Users – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/for-latex-users/](https://typst.app/docs/guides/for-latex-users/)
+14. Heading Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/model/heading/](https://typst.app/docs/reference/model/heading/)
+15. Making a Template – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/making-a-template/](https://typst.app/docs/tutorial/making-a-template/)
+16. Styling – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/styling/](https://typst.app/docs/reference/styling/)
+17. Formatting – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/formatting/](https://typst.app/docs/tutorial/formatting/)
+18. Page Setup – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/page-setup/](https://typst.app/docs/guides/page-setup/)
+19. Is there a more elegant way for an Enclosure chapter with main heading visible in outline, subchapters invisible, with custom titles shown and shown when referenced? \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/is-there-a-more-elegant-way-for-an-enclosure-chapter-with-main-heading-visible-in-outline-subchapters-invisible-with-custom-titles-shown-and-shown-when-referenced/7907](https://forum.typst.app/t/is-there-a-more-elegant-way-for-an-enclosure-chapter-with-main-heading-visible-in-outline-subchapters-invisible-with-custom-titles-shown-and-shown-when-referenced/7907)
+20. Advanced Styling – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/advanced-styling/](https://typst.app/docs/tutorial/advanced-styling/)
+21. Query Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/introspection/query/](https://typst.app/docs/reference/introspection/query/)
+22. Using \`query\` together with \`counter.at\` · typst typst · Discussion \#1109 \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/typst/typst/discussions/1109](https://github.com/typst/typst/discussions/1109)
+23. Query \- Typst Examples Book \- GitHub Pages, Zugriff am Februar 26, 2026, [https://sitandr.github.io/typst-examples-book/book/basics/states/query.html](https://sitandr.github.io/typst-examples-book/book/basics/states/query.html)
+24. Place Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/place/](https://typst.app/docs/reference/layout/place/)
+25. Box Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/box/](https://typst.app/docs/reference/layout/box/)
+26. Stack Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/stack/](https://typst.app/docs/reference/layout/stack/)
+27. Grid Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/grid/](https://typst.app/docs/reference/layout/grid/)
+28. How to set up grid of rectangles with different cell width/height? \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-to-set-up-grid-of-rectangles-with-different-cell-width-height/7498](https://forum.typst.app/t/how-to-set-up-grid-of-rectangles-with-different-cell-width-height/7498)
+29. Tables – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/tables/](https://typst.app/docs/guides/tables/)
+30. Context – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/context/](https://typst.app/docs/reference/context/)
+31. How do I highlight text context-dependent in the header section? \- Questions \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-do-i-highlight-text-context-dependent-in-the-header-section/6331](https://forum.typst.app/t/how-do-i-highlight-text-context-dependent-in-the-header-section/6331)
+32. Counter Type – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/introspection/counter/](https://typst.app/docs/reference/introspection/counter/)
+33. Layout Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/layout/](https://typst.app/docs/reference/layout/layout/)
+34. Observations from this new Typst user \- General, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/observations-from-this-new-typst-user/6395](https://forum.typst.app/t/observations-from-this-new-typst-user/6395)
+35. anti-matter – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/anti-matter/](https://typst.app/universe/package/anti-matter/)
+36. How to structure a book project? \- Questions \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-to-structure-a-book-project/7298](https://forum.typst.app/t/how-to-structure-a-book-project/7298)
+37. Format Front Matter, Body Matter, and Back Matter \- Amazon Kindle Direct Publishing, Zugriff am Februar 26, 2026, [https://kdp.amazon.com/help/topic/GDDYZG2C7RVF5N9J](https://kdp.amazon.com/help/topic/GDDYZG2C7RVF5N9J)
+38. Zugriff am Januar 1, 1970, [https://sitandr.github.io/typst-examples-book/book/layout/index.html](https://sitandr.github.io/typst-examples-book/book/layout/index.html)
+39. Layout – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/](https://typst.app/docs/reference/layout/)
+40. statementsp – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/statementsp/](https://typst.app/universe/package/statementsp/)
+41. Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/](https://typst.app/universe/)
+42. Search — Typst: Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/search/](https://typst.app/universe/search/)
+43. pinit – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/pinit/](https://typst.app/universe/package/pinit/)
+44. showybox – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/showybox/](https://typst.app/universe/package/showybox/)
+45. Showybox's Manual | PDF | Cartesian Coordinate System | Space \- Scribd, Zugriff am Februar 26, 2026, [https://www.scribd.com/document/700741506/Showybox-s-Manual](https://www.scribd.com/document/700741506/Showybox-s-Manual)
+46. Layout \- Typst Examples Book \- GitHub Pages, Zugriff am Februar 26, 2026, [https://sitandr.github.io/typst-examples-book/book/packages/layout.html](https://sitandr.github.io/typst-examples-book/book/packages/layout.html)
+47. drafting – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/drafting/](https://typst.app/universe/package/drafting/)
 48. Typst: The new foundation for documents, Zugriff am Februar 26, 2026, [https://typst.app/](https://typst.app/)
 
 [image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAaCAYAAACO5M0mAAAAu0lEQVR4XmNgGAW0BjxALIYuiAzUgPg4ED8C4hNAHA7EjCgqgMAFiJ8DcT4QM0PFfgKxJVwFFDwD4ulAzIIk9h+IJyHxwcZ/BWJjZEEGiMKFyAJ+QNyKLAAE3AwQhenIgiBFIMXIQBOInwCxIkwAFBQHgFgHJgAF5UCcgSygxADxbQySGCgE3gExK5IY2EqQW0DhtgWKQSEQiawIZu1bZEFsAGbtATRxDODJALEWPWgwQCIDxER9dImhBgBnnh/2TCJJ+QAAAABJRU5ErkJggg==>

@@ -1,114 +1,85 @@
-# Showcase-v1: Development Plan (Extended)
+# Showcase-v1: Development Plan (Mastery Extended)
 
 ## Overview
 
-This plan upgrades the current 5-phase track with an explicit **Typst-first architecture workflow**:
-1. Visual deconstruction before implementation
-2. Strong foundation in set/show rules and layout primitives
-3. Reactive page systems via introspection (`context`, `query`, `counter`)
-4. Controlled escalation from core Typst to optional packages only if needed
+This devtrack is aligned to `Guides/Typst Layout Mastery.md` and keeps the project on a documented, maintainable Typst path.
 
-The existing phase docs remain valid and are now orchestrated by stricter gates and dependencies.
+Core approach:
+1. Deconstruct layout before styling.
+2. Build on Typst primitives (`box`, `grid`, `columns`, `place`, `page`).
+3. Use `set` for defaults and `show` for transformations.
+4. Add context-aware behavior only where needed (`context`, `query`, `counter`).
+5. Enforce compile, readability, and performance gates in every phase.
 
-## Extended Phase Breakdown
+## Phase Map
 
-| Phase | Name | Focus | Effort | Dependencies | Primary Files |
-|-------|------|-------|--------|--------------|---------------|
-| 0 | **Layout Deconstruction & Target Mapping** | Map intended visual system to Typst primitives (`grid`, `block`, `place`, `stack`) and define acceptance snapshots | 0.5–1 day | None | `showcase-v1-spec.md`, `main.typ` |
-| [Phase 1](showcase-v1-phase1.md) | **Typography & Spacing** | Type scale, rhythm, baseline intent, paragraph/list behavior | 2–3 days | Phase 0 | `styles/theme.typ`, `styles/typography.typ` |
-| [Phase 2](showcase-v1-phase2.md) | **Color & Contrast** | Semantic palette, WCAG validation, visual hierarchy rules | 1–2 days | Phase 1 | `styles/theme.typ`, style/component files |
-| [Phase 3](showcase-v1-phase3.md) | **Components (Base & Advanced)** | Reusable components with consistent semantics and spacing contracts | 2–3 days | Phases 1–2 | `components/*.typ` |
-| [Phase 4](showcase-v1-phase4.md) | **Layout & Spreads** | Chapter spreads, multi-column systems, breakouts, margin logic, full-bleed sections | 3–4 days | Phases 1–3 | `styles/page.typ`, `components/layouts.typ`, `components/spreads.typ`, `main.typ` |
-| [Phase 5](showcase-v1-phase5.md) | **Content & Polish** | Narrative rewrite, diagrams, references/footnotes, final editorial polish | 3–4 days | Phases 1–4 | Chapter files, assets, `main.typ` |
-| 6 | **Reactive QA & Release Hardening** | Introspection validation, compile performance checks, print/export readiness, release packaging | 1 day | Phases 0–5 | whole project |
+| Phase | Name | Focus | Effort | Dependencies |
+|---|---|---|---|---|
+| [Phase 0](showcase-v1-phase0.md) | Layout Deconstruction | Visual target mapping, primitive selection, snapshot baseline | 0.5-1 day | None |
+| [Phase 1](showcase-v1-phase1.md) | Typography and Spacing | Type tokens, paragraph rhythm, baseline behavior | 2-3 days | Phase 0 |
+| [Phase 2](showcase-v1-phase2.md) | Color and Contrast | Semantic palette, contrast matrix, color semantics | 1-2 days | Phase 1 |
+| [Phase 3](showcase-v1-phase3.md) | Components | Box-first component library, tables/figures/lists | 2-3 days | Phases 1-2 |
+| [Phase 4](showcase-v1-phase4.md) | Layout and Spreads | Grid/columns systems, full-width breaks, running heads | 3-4 days | Phases 1-3 |
+| [Phase 5](showcase-v1-phase5.md) | Content and Polish | Narrative rewrite, data visuals, appendix, metadata | 3-4 days | Phases 1-4 |
+| [Phase 6](showcase-v1-phase6.md) | QA and Release | Regression checks, compile budget, release package | 1 day | Phases 0-5 |
 
-**Estimated Total**: 13–18 days.
+Estimated total: 13-18 days.
 
-## Workstreams (Parallelizable)
+## Mastery Constraints
 
-| Workstream | Scope | Can Start | Notes |
-|------------|-------|-----------|-------|
-| A: Foundations | Tokens, typography, palette | Phase 0 | Must complete before stable component styling |
-| B: Components | Admonitions/cards/tables/figures | Late Phase 1 | Build against token contracts only |
-| C: Layout Systems | Spreads, headers, margin notes, full-bleed | Phase 2 | Depends on stable color + component API |
-| D: Content/Assets | Chapter rewrites, SVG assets | Phase 3 | Use finalized component/layout patterns |
-| E: QA/Release | Compile checks, render comparisons, metadata | Continuous, final in Phase 6 | No skipped quality gates |
+- Prefer `grid` for structural layout and `table` for semantic data.
+- Prefer flow layout first; use `place` only for justified exceptions.
+- If `place` is used:
+  - `float: true` for flow-aware breakouts.
+  - `scope: "parent"` for across-column/page-body elements.
+  - Overlay mode only for decorative non-blocking elements.
+- Keep layout trees shallow where possible; avoid unnecessary nested grids/columns.
+- Reuse component functions instead of repeating inline markup.
 
-## Gate Criteria (Per Phase)
+## Workstreams
 
-Every phase must pass:
-- `typst compile` succeeds with zero errors
-- no new warnings introduced without explicit tracking
-- visual diff checked via PNG renders
-- readability preserved at 100% zoom
-- changes committed as focused phase commit
+| Workstream | Scope | Start | Notes |
+|---|---|---|---|
+| Foundations | Type, spacing, palette, page defaults | Phase 0 | Required for stable components |
+| Components | Admonitions, cards, tables, figures, lists | Late Phase 1 | Must consume tokens only |
+| Layout Systems | Columns, spread patterns, breakouts, headers | Phase 2 | Depends on stable components |
+| Content and Assets | Chapter rewrite and SVG assets | Phase 3 | Uses final component/layout APIs |
+| QA and Release | Build checks, render checks, packaging | Continuous, final in Phase 6 | Hard gate for completion |
 
-Additional gates by phase:
-- Phase 0: Deconstruction map exists (grid, flow, exceptions, introspection candidates)
-- Phase 1: Type/spacing tokens finalized and reused globally
-- Phase 2: Text/background combinations pass WCAG AA
-- Phase 3: Component inventory documented and reusable
-- Phase 4: Running headers/footers use context-aware logic safely
-- Phase 5: Content quality and reference styling consistent across chapters
-- Phase 6: Export + print-readiness validated, release notes complete
+## Gate Criteria
 
-## Typst Architecture Checklist (Must Be Visible in Implementation)
+Every phase:
+- `typst compile` succeeds.
+- No untracked warnings are introduced.
+- PNG render comparison is reviewed.
+- Readability at 100% zoom is preserved.
+- Changes are committed as a focused phase unit.
 
-- **Styling model**: clear separation of `set` defaults vs `show` transformations
-- **Layout primitives**: explicit use of `block`/`box`/`grid`/`stack` by intent
-- **Advanced placement**: `place` used only for true flow exceptions
-- **Introspection**: context-aware headers and counters with stable logic
-- **Book structure**: front/main/back matter behavior tracked (numbering + headers)
-- **Semantic discipline**: table vs grid usage decided by content meaning
+Additional gates:
+- Phase 0: Deconstruction matrix exists (flow, grid, exceptions, context points).
+- Phase 1: Text defaults (`set text`, `set par`, heading scale) are centralized.
+- Phase 2: Contrast matrix is documented and validated.
+- Phase 3: Component catalog includes usage and parameter contracts.
+- Phase 4: Column breakout and header logic are stable on odd/even pages.
+- Phase 5: Content narrative and references are consistent across chapters.
+- Phase 6: Final build/regression report and release checklist completed.
 
-## Risk Register
+## Locked Decisions
 
-| Risk | Impact | Mitigation |
-|------|--------|------------|
-| Over-styling early phases | Rework in later layout phases | Freeze token contracts before component expansion |
-| Excessive absolute placement | Fragile pagination | Prefer flow/grid; reserve `place` for justified exceptions |
-| Introspection instability | Header/counter glitches | Isolate and test context/query logic in small fixtures |
-| Scope creep in assets | Timeline slips | Lock minimum asset set before Phase 5 production |
-| Accessibility drift | Poor readability/contrast | Phase 2 contrast matrix + final QA recheck |
-
-## Decision Log (Locked)
-
-1. No external packages during core redesign; optional package experiments only after Phase 6 baseline.
-2. A4 format stays.
-3. German content stays.
-4. Medical/didactic theme stays.
-5. Grid-first and semantic-first implementation is required before decorative additions.
+1. No external packages in core redesign.
+2. A4 format remains.
+3. German content remains.
+4. Medical/didactic theme remains.
+5. Grid-first, semantic-first layout rules take priority over decoration.
 
 ## Rollout Strategy
 
-1. Work in-place in the showcase folder (`v0 → v1`).
-2. Commit at each phase boundary with concise scope.
-3. Generate PNG renders after each phase for visual verification.
-4. Run compile checks before every commit.
-5. Keep a short changelog section in each phase file for traceability.
-
-## Workflow Snapshot
-
-```
-Current State (v0)
-    ↓
-Phase 0: Visual deconstruction + target map
-    ↓
-Phase 1: Typography and spacing contracts
-    ↓
-Phase 2: Semantic color and contrast system
-    ↓
-Phase 3: Reusable component layer
-    ↓
-Phase 4: Advanced layout + spreads + reactive pages
-    ↓
-Phase 5: Content, diagrams, editorial polish
-    ↓
-Phase 6: QA hardening + release packaging
-    ↓
-Showcase-v1 (production-ready)
-```
+1. Work in place (`v0 -> v1`) in the main showcase folder.
+2. Commit per phase boundary.
+3. Render PNG pages after each phase.
+4. Run compile checks before each commit.
+5. Keep short changelog notes in each phase file.
 
 ## Next Step
 
-Start with Phase 0 deconstruction notes in `showcase-v1-spec.md`, then execute [Phase 1: Typography & Spacing](showcase-v1-phase1.md).
+Start with [Phase 0](showcase-v1-phase0.md), then execute [Phase 1](showcase-v1-phase1.md).
