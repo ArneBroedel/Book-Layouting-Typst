@@ -46,5 +46,15 @@
 #include "chapters/05-layout.typ"
 #include "chapters/06-advanced.typ"
 
+// ── Part III: Erweiterbarkeit ──────────────────────────────────
+#{
+  import "components/spreads.typ": part-page
+  part-page(number: "Teil III", title: [Erweiterbarkeit])
+}
+
+#include "chapters/08-packages.typ"
+#include "chapters/09-data-driven.typ"
+#include "chapters/10-tooling.typ"
+
 // ── Back Matter ────────────────────────────────────────────────
 #include "chapters/07-backmatter.typ"
