@@ -30,6 +30,125 @@ Typst provides a dual-rule system for styling that separates property configurat
 
 Show rules represent a deeper level of extension, allowing developers to intercept the rendering of any element. By providing a custom function to a show rule, a developer can completely transform how a heading, a list, or even a specific string of text appears.11 A common pattern for enterprise-grade templates involves wrapping the entire document in an "everything" show rule. This pattern passes the document's body to a configuration function that applies a suite of set and show rules, effectively creating a domain-specific layout environment that is both powerful and easy for the end-user to invoke.10
 
+## **Practitioner's Reference: Common Pitfalls and Integration Patterns**
+
+This section captures hard-won insights from building real multi-chapter Typst documents, particularly when integrating third-party packages, external data sources, and mixed content types. Understanding these patterns early prevents hours of debugging and leads to more robust document engineering.
+
+### **Escape Character Reference**
+
+Certain characters trigger Typst's parser in content mode and must be escaped with a backslash when used literally. The following table summarises the most common cases:
+
+| Character sequence | Context | Problem | Fix |
+| :---- | :---- | :---- | :---- |
+| `@preview/...` | Package name printed in text | Starts a `@label` reference | `\@preview/...` |
+| `<140/90` | Inside table cells or markup | Opens a `<label>` declaration | `\<140/90` |
+| `>95%` | Inside table cells or markup | Unexpectedly closes a label | `\>95%` |
+| `_#expr_` | Emphasis wrapping inline code | Unclosed emphasis delimiter | `_#{expr}_` (block form) |
+
+The `_#{expr}_` pattern deserves special attention: using `_#expr_` to wrap an inline expression inside emphasis leaves an open delimiter that the parser cannot resolve. Switching to the block form `_#{expr}_` explicitly closes the expression before the closing underscore, resolving the parse error.
+
+### **Content vs. Value: Typst's Type System in Practice**
+
+Typst enforces a strict distinction between *content* (markup enclosed in `[...]`) and scalar *values* (strings, integers, arrays). Many functions that appear to accept "text" actually require a specific value type, and passing `[content]` where a scalar is expected will produce a runtime error.
+
+Key rules for practical work:
+
+* **`str()` accepts only strings and integers, not content.** If a reusable component calls `str()` internally—for example, to auto-format a chapter number—pass a raw integer (`number: 8`) rather than a content block (`number: [8]`).
+* **`sys.inputs` values are always strings.** Even when passing `--input n=5` on the command line, inside the document `sys.inputs.n` is the string `"5"`, not the integer `5`. Always convert with `int()` before performing arithmetic.
+* **JSON integer fields arrive as integers.** When loading data with `json()`, numeric fields retain their type and do not require conversion. Field names must match the JSON key exactly, including case.
+
+### **Show Rule Scope Hygiene**
+
+Package initialisation functions that apply show rules via `show: package.init` install those rules **globally for the remainder of the document**, even when called deep inside a function or component. When multiple packages use conflicting show rules for the same element (e.g., for `raw` blocks), the last one applied wins and earlier rules are silently overridden.
+
+To limit a package's show rules to a specific content region, wrap the call in a code block:
+
+```typst
+// Scoped: the codly show rule only applies inside this block
+#{
+  show: codly.init.with(/* options */)
+  [
+    #raw(lang: "json", block: true, "{ ... }")
+  ]
+}
+```
+
+This scoping technique is essential whenever two packages compete over the same element type, or when a package's visual style should apply only to a specific chapter or section.
+
+### **The `sym.*` Namespace: What Does and Doesn't Exist**
+
+The `sym` module covers Unicode mathematical operators, arrows, and typographic marks. It does **not** cover general-purpose UI or application icons. Many intuitively named paths do not exist and will produce a compile-time error.
+
+| Path that does NOT exist | Recommended alternative |
+| :---- | :---- |
+| `sym.keyboard` | `sym.hash` or `@preview/fontawesome` |
+| `sym.eye` | `@preview/fontawesome` (`fa-eye()`) |
+| `sym.chart.bar` | `@preview/fontawesome` or a CeTZ drawing |
+| `sym.magnifier` | `sym.quest` or `@preview/fontawesome` |
+| `sym.bolt` | `sym.dash.em` or `@preview/fontawesome` |
+| `sym.checkmark.double` | `sym.checkmark` (single variant only) |
+| `sym.square.stroked` | `sym.square` |
+| `sym.diamond.stroked` | `sym.diamond` |
+| `sym.document` | `sym.pilcrow` |
+
+**Rule of thumb:** if the symbol looks like a UI or application icon, use `@preview/fontawesome`. Reserve `sym.*` for mathematical operators, Greek letters, arrows, and typographic punctuation.
+
+### **Package Namespace Collisions**
+
+Importing a package with `import pkg: *` (or using a package's drawing context) introduces its functions into the local scope. When a package defines a function with the same name as a Typst built-in, the package version **shadows** the built-in silently—the code compiles but behaves unexpectedly.
+
+A concrete example: inside a `cetz.canvas` context, CeTZ defines its own `rotate` function. Calling `rotate(90deg, ...)` invokes CeTZ's version, not Typst's layout `rotate`. To rotate content inside a canvas, use CeTZ's `content()` with the `angle:` parameter instead:
+
+```typst
+import cetz.draw: *
+canvas({
+  // Wrong — shadows Typst's rotate, unexpected behavior:
+  // rotate(90deg, text("label"))
+
+  // Correct — CeTZ content element accepts an angle directly:
+  content((0, 1), angle: 90deg, text("Y-Achse"))
+})
+```
+
+When layout primitives seem to misbehave inside a package's drawing or configuration context, check for shadowed names first before investigating deeper causes.
+
+### **JSON and CSV Data Loading Idioms**
+
+Typst provides first-class support for loading external data, but the loading functions have subtle behaviours worth knowing before writing a data-driven document.
+
+**Loading JSON:**
+
+```typst
+let data = json("path/to/file.json")
+// Access nested arrays directly:
+for item in data.patienten { ... }
+// Filter and map with functional methods:
+let critical = data.patienten.filter(p => p.status == "kritisch")
+let names    = data.patienten.map(p => p.name)
+```
+
+Dictionary keys use dot-access for known fields (`data.field`) and `at()` for dynamic access (`data.at(key)`). Numeric JSON fields remain integers and do not require conversion.
+
+**Loading CSV:**
+
+```typst
+let raw     = csv("path/to/file.csv")
+let headers = raw.first()    // first row = header
+let rows    = raw.slice(1)   // remaining rows = data
+```
+
+Importantly, **all CSV values are strings**, regardless of the source data type. Convert to numeric types with `int()` or `float()` before any arithmetic. The `first()` / `slice(1)` pattern is the idiomatic way to split headers from data rows and should be applied immediately after loading.
+
+### **Package Version Discipline**
+
+Always pin package versions using the full `@preview/name:X.Y.Z` syntax. Unpinned imports resolve to the latest available version, which can introduce breaking changes silently when collaborators or CI systems resolve packages at different points in time.
+
+Additional practices:
+
+* **Read changelogs before upgrading.** For example, `@preview/codly:1.2.0` renamed its `pattern:` parameter to `tiling:`, generating deprecation warnings on every compile for documents using the old name. This is low-severity but becomes noisy at scale and masks real warnings.
+* **Check for transitive dependencies.** Some packages depend on other packages. The Typst Universe package page lists known dependencies; verify that your pinned versions are mutually compatible.
+* **Treat each package upgrade as a code change.** Compile and visually verify affected pages after every version bump, not just after major releases.
+
 ## **WebAssembly Plugins and Low-Level Extensibility**
 
 When the native scripting language reaches its performance or capability limits, Typst allows for the integration of WebAssembly (WASM) plugins. These plugins are compiled from languages like Rust or C++ and follow a specific 32-bit shared library protocol.8
@@ -86,9 +205,9 @@ Extending Typst is not limited to the document's content; it also involves the t
 
 The Tinymist language server has become the standard for Typst development, providing features that bridge the gap between markup editing and full-scale software development.5 Beyond standard syntax highlighting and autocompletion, Tinymist offers:
 
-* **Workspace Symbols:** The ability to search for definitions and symbols across an entire multi-file project.5  
-* **Symbol Renaming:** A robust mechanism for renaming variables or functions across all document files, ensuring that structural changes do not introduce errors.5  
-* **Document Profiling:** The tinymist.profileCurrentFile command allows developers to trace the execution of a document, identifying specific functions or layout phases that are causing performance bottlenecks.5  
+* **Workspace Symbols:** The ability to search for definitions and symbols across an entire multi-file project.5
+* **Symbol Renaming:** A robust mechanism for renaming variables or functions across all document files, ensuring that structural changes do not introduce errors.5
+* **Document Profiling:** The tinymist.profileCurrentFile command allows developers to trace the execution of a document, identifying specific functions or layout phases that are causing performance bottlenecks.5
 * **Syntax-Only Mode:** A resource-saving feature that disables heavy layout computations while maintaining syntax checking and formatting—crucial for working on massive projects or under power-saving constraints.21
 
 ### **Formatting and Code Quality**
@@ -123,17 +242,17 @@ The speed and light weight of the Typst binary (approximately 40MB) make it an i
 
 For organizations generating millions of documents per day—such as invoices or personalized transactional reports—the Typst blog recommends several advanced strategies:
 
-* **Rust Library Integration:** To eliminate the overhead of process spawning and font discovery (saving 5ms to 100ms per document), high-volume tasks should integrate Typst as a Rust library rather than calling the CLI.27  
-* **Data-Driven Templates:** By passing JSON or CSV data through the \--input flag, developers can create templates that analyze and transform data directly within the document logic.27  
-* **Parallel Processing:** Typst’s design allows for massive parallelization, enabling organizations to maximize throughput in high-concurrency environments.27
+* **Rust Library Integration:** To eliminate the overhead of process spawning and font discovery (saving 5ms to 100ms per document), high-volume tasks should integrate Typst as a Rust library rather than calling the CLI.27
+* **Data-Driven Templates:** By passing JSON or CSV data through the `--input` flag or by loading files directly with `json()` and `csv()`, developers can create templates that analyse and transform data within the document logic.27 The canonical idiom for CSV data is `raw.first()` (headers) and `raw.slice(1)` (data rows); all CSV values arrive as strings and must be converted with `int()` or `float()` before arithmetic. For JSON, nested arrays and objects are accessed via dot-notation (`data.patients`) and standard functional methods (`filter`, `map`, `fold`). Note that `sys.inputs` values injected via `--input` are **always strings**, even when the passed value looks numeric—convert explicitly with `int()` before use.
+* **Parallel Processing:** Typst's design allows for massive parallelisation, enabling organisations to maximise throughput in high-concurrency environments.27
 
 ### **CI/CD and DevOps Integration**
 
 The setup-typst GitHub Action simplifies the integration of Typst into CI/CD workflows, providing automated installation, dependency caching, and font management.28 A typical enterprise pipeline might involve:
 
-1. **Linting and Syntax Check:** Using the CLI to ensure code quality.5  
-2. **Automated Testing:** Compiling documents with sample data to verify that template changes do not cause regressions.5  
-3. **Accessibility Validation:** Opting into PDF/UA-1 export to automatically surface accessibility issues such as missing alternative text for images.27  
+1. **Linting and Syntax Check:** Using the CLI to ensure code quality.5
+2. **Automated Testing:** Compiling documents with sample data to verify that template changes do not cause regressions.5
+3. **Accessibility Validation:** Opting into PDF/UA-1 export to automatically surface accessibility issues such as missing alternative text for images.27
 4. **Artifact Distribution:** Uploading the final PDFs to a release or web portal.31
 
 ## **Academic Excellence and Bibliography Management**
@@ -164,8 +283,8 @@ The decision to extend or migrate to Typst is often driven by the limitations of
 
 While LaTeX offers unparalleled typographic heritage, it is often seen as a "behemoth" due to its massive installation size (\>1GB) and opaque error messages.2 Its macro-expansion language is functionally different from modern programming paradigms, making customization an "arcane" task.2 Typst solves these issues by providing:
 
-* **Speed:** Millisecond compilation vs. multiple seconds per document.9  
-* **Simplicity:** Markdown-inspired syntax that is intuitive for both beginners and experts.2  
+* **Speed:** Millisecond compilation vs. multiple seconds per document.9
+* **Simplicity:** Markdown-inspired syntax that is intuitive for both beginners and experts.2
 * **Modern Error Handling:** Precise diagnostics that point to the exact source of an error, often accompanied by helpful assists in the web app.1
 
 ### **Comparison with Browser-Based Solutions**
@@ -195,8 +314,8 @@ Building an enterprise-grade document system using Typst requires a modular and 
 
 An effective enterprise system should be built around a core set of private packages. These packages should separate the different concerns of document design:
 
-1. **Foundation Package:** Contains low-level utility functions, math shorthands, and global set rules that define the baseline typography and document structure.10  
-2. **Branding Package:** Manages the corporate visual identity, including logos, standardized colors, and font-specific show rules.11  
+1. **Foundation Package:** Contains low-level utility functions, math shorthands, and global set rules that define the baseline typography and document structure.10
+2. **Branding Package:** Manages the corporate visual identity, including logos, standardized colors, and font-specific show rules.11
 3. **Template Library:** A collection of high-level functions that implement specific document types (e.g., invoice(), whitepaper(), memo()) by composing the Foundation and Branding packages.4
 
 ### **Data-Driven Workflow Integration**
@@ -207,8 +326,8 @@ To maximize efficiency, document generation should be decoupled from data acquis
 
 For high-volume production, developers must minimize the startup costs of the compiler. The following optimizations are recommended:
 
-* **Explicit Font Paths:** Use the \--font-path flag and \--ignore-system-fonts to prevent the compiler from scanning the entire system for fonts on every run.21  
-* **Local Package Caching:** Ensure that all package dependencies are available in the local environment to avoid network latency during compilation.24  
+* **Explicit Font Paths:** Use the \--font-path flag and \--ignore-system-fonts to prevent the compiler from scanning the entire system for fonts on every run.21
+* **Local Package Caching:** Ensure that all package dependencies are available in the local environment to avoid network latency during compilation.24
 * **Resource Limiting:** Utilize tools like the layout-ltd package to set hard limits on layout iterations, preventing rogue templates from consuming excessive CPU resources in a multi-tenant environment.39
 
 ## **Conclusion: Synthesizing the Typst Advantage**
@@ -219,42 +338,42 @@ For the writer, the "Typst advantage" is manifested in a fluid, distraction-free
 
 #### **Referenzen**
 
-1. typst-cli \- crates.io: Rust Package Registry, Zugriff am Februar 26, 2026, [https://crates.io/crates/typst-cli](https://crates.io/crates/typst-cli)  
-2. Typst: a possible LaTeX replacement \- LWN.net, Zugriff am Februar 26, 2026, [https://lwn.net/Articles/1037577/](https://lwn.net/Articles/1037577/)  
-3. TeX and Typst: Layout Models \- Laurenz's Blog, Zugriff am Februar 26, 2026, [https://laurmaedje.github.io/posts/layout-models/](https://laurmaedje.github.io/posts/layout-models/)  
-4. Typst: The new foundation for documents, Zugriff am Februar 26, 2026, [https://typst.app/](https://typst.app/)  
-5. Myriad-Dreamin/tinymist: Tinymist \[ˈtaɪni mɪst\] is an ... \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/Myriad-Dreamin/tinymist](https://github.com/Myriad-Dreamin/tinymist)  
-6. The killer features of LaTeX that does not let me go with typst (Although I like... | Hacker News, Zugriff am Februar 26, 2026, [https://news.ycombinator.com/item?id=45694955](https://news.ycombinator.com/item?id=45694955)  
-7. Scripting – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/scripting/](https://typst.app/docs/reference/scripting/)  
-8. Plugin Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/foundations/plugin/](https://typst.app/docs/reference/foundations/plugin/)  
-9. For LaTeX Users – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/for-latex-users/](https://typst.app/docs/guides/for-latex-users/)  
-10. Making a Template – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/making-a-template/](https://typst.app/docs/tutorial/making-a-template/)  
-11. Advanced Styling – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/advanced-styling/](https://typst.app/docs/tutorial/advanced-styling/)  
-12. Formatting – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/formatting/](https://typst.app/docs/tutorial/formatting/)  
-13. mephistypsteles – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/mephistypsteles/](https://typst.app/universe/package/mephistypsteles/)  
-14. Grid Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/grid/](https://typst.app/docs/reference/layout/grid/)  
-15. Columns Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/columns/](https://typst.app/docs/reference/layout/columns/)  
-16. Layout – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/](https://typst.app/docs/reference/layout/)  
-17. Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/](https://typst.app/universe/)  
-18. Layout Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/layout/](https://typst.app/docs/reference/layout/layout/)  
-19. Introspection – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/introspection/](https://typst.app/docs/reference/introspection/)  
-20. Context – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/context/](https://typst.app/docs/reference/context/)  
-21. Tinymist Typst \- Visual Studio Marketplace, Zugriff am Februar 26, 2026, [https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist)  
-22. Tinymist Helix Support for Typst \- GitHub Pages, Zugriff am Februar 26, 2026, [https://myriad-dreamin.github.io/tinymist/frontend/helix.html](https://myriad-dreamin.github.io/tinymist/frontend/helix.html)  
-23. Private Packages – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/web-app/private-packages/](https://typst.app/docs/web-app/private-packages/)  
-24. Packages for Typst. \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/typst/packages](https://github.com/typst/packages)  
-25. Typst Basics – Quarto, Zugriff am Februar 26, 2026, [https://quarto.org/docs/output-formats/typst.html](https://quarto.org/docs/output-formats/typst.html)  
-26. How to Make High-Quality PDFs with Quarto and Typst \- R for the Rest of Us, Zugriff am Februar 26, 2026, [https://rfortherestofus.com/2025/11/quarto-typst-pdf](https://rfortherestofus.com/2025/11/quarto-typst-pdf)  
-27. Automated PDF Generation with Typst – Typst Blog \- Typst, Zugriff am Februar 26, 2026, [https://typst.app/blog/2025/automated-generation/](https://typst.app/blog/2025/automated-generation/)  
-28. Actions · GitHub Marketplace \- Setup Typst, Zugriff am Februar 26, 2026, [https://github.com/marketplace/actions/setup-typst](https://github.com/marketplace/actions/setup-typst)  
-29. Case Study \- Seamless CI/CD, Zugriff am Februar 26, 2026, [https://seamless-cicd.github.io/case-study](https://seamless-cicd.github.io/case-study)  
-30. How to create accessible PDFs from the start – Typst Blog, Zugriff am Februar 26, 2026, [https://typst.app/blog/2025/accessible-pdf/](https://typst.app/blog/2025/accessible-pdf/)  
-31. Creating Your First CI/CD Pipeline Using GitHub Actions | by Brandon Kindred \- Medium, Zugriff am Februar 26, 2026, [https://brandonkindred.medium.com/creating-your-first-ci-cd-pipeline-using-github-actions-81c668008582](https://brandonkindred.medium.com/creating-your-first-ci-cd-pipeline-using-github-actions-81c668008582)  
-32. Publish example PDFs using GitHub Pages \- Showcase \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/publish-example-pdfs-using-github-pages/5781](https://forum.typst.app/t/publish-example-pdfs-using-github-pages/5781)  
-33. Bibliography Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/model/bibliography/](https://typst.app/docs/reference/model/bibliography/)  
-34. How do I use a Hayagriva .yaml bibliography file with a Typst .typ document?, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-do-i-use-a-hayagriva-yaml-bibliography-file-with-a-typst-typ-document/4359](https://forum.typst.app/t/how-do-i-use-a-hayagriva-yaml-bibliography-file-with-a-typst-typ-document/4359)  
-35. How can i use custom .csl files in my template? \- Questions \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-can-i-use-custom-csl-files-in-my-template/7373](https://forum.typst.app/t/how-can-i-use-custom-csl-files-in-my-template/7373)  
-36. How to Hack Together an Author-Date sorting for Bibliography? \- Questions \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-to-hack-together-an-author-date-sorting-for-bibliography/3032](https://forum.typst.app/t/how-to-hack-together-an-author-date-sorting-for-bibliography/3032)  
-37. pergamon – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/pergamon/](https://typst.app/universe/package/pergamon/)  
-38. Client PDF Bundles \- typst \- Reddit, Zugriff am Februar 26, 2026, [https://www.reddit.com/r/typst/comments/1ibdhm5/client\_pdf\_bundles/](https://www.reddit.com/r/typst/comments/1ibdhm5/client_pdf_bundles/)  
+1. typst-cli \- crates.io: Rust Package Registry, Zugriff am Februar 26, 2026, [https://crates.io/crates/typst-cli](https://crates.io/crates/typst-cli)
+2. Typst: a possible LaTeX replacement \- LWN.net, Zugriff am Februar 26, 2026, [https://lwn.net/Articles/1037577/](https://lwn.net/Articles/1037577/)
+3. TeX and Typst: Layout Models \- Laurenz's Blog, Zugriff am Februar 26, 2026, [https://laurmaedje.github.io/posts/layout-models/](https://laurmaedje.github.io/posts/layout-models/)
+4. Typst: The new foundation for documents, Zugriff am Februar 26, 2026, [https://typst.app/](https://typst.app/)
+5. Myriad-Dreamin/tinymist: Tinymist \[ˈtaɪni mɪst\] is an ... \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/Myriad-Dreamin/tinymist](https://github.com/Myriad-Dreamin/tinymist)
+6. The killer features of LaTeX that does not let me go with typst (Although I like... | Hacker News, Zugriff am Februar 26, 2026, [https://news.ycombinator.com/item?id=45694955](https://news.ycombinator.com/item?id=45694955)
+7. Scripting – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/scripting/](https://typst.app/docs/reference/scripting/)
+8. Plugin Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/foundations/plugin/](https://typst.app/docs/reference/foundations/plugin/)
+9. For LaTeX Users – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/guides/for-latex-users/](https://typst.app/docs/guides/for-latex-users/)
+10. Making a Template – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/making-a-template/](https://typst.app/docs/tutorial/making-a-template/)
+11. Advanced Styling – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/advanced-styling/](https://typst.app/docs/tutorial/advanced-styling/)
+12. Formatting – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/tutorial/formatting/](https://typst.app/docs/tutorial/formatting/)
+13. mephistypsteles – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/mephistypsteles/](https://typst.app/universe/package/mephistypsteles/)
+14. Grid Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/grid/](https://typst.app/docs/reference/layout/grid/)
+15. Columns Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/columns/](https://typst.app/docs/reference/layout/columns/)
+16. Layout – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/](https://typst.app/docs/reference/layout/)
+17. Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/](https://typst.app/universe/)
+18. Layout Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/layout/layout/](https://typst.app/docs/reference/layout/layout/)
+19. Introspection – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/introspection/](https://typst.app/docs/reference/introspection/)
+20. Context – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/context/](https://typst.app/docs/reference/context/)
+21. Tinymist Typst \- Visual Studio Marketplace, Zugriff am Februar 26, 2026, [https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist)
+22. Tinymist Helix Support for Typst \- GitHub Pages, Zugriff am Februar 26, 2026, [https://myriad-dreamin.github.io/tinymist/frontend/helix.html](https://myriad-dreamin.github.io/tinymist/frontend/helix.html)
+23. Private Packages – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/web-app/private-packages/](https://typst.app/docs/web-app/private-packages/)
+24. Packages for Typst. \- GitHub, Zugriff am Februar 26, 2026, [https://github.com/typst/packages](https://github.com/typst/packages)
+25. Typst Basics – Quarto, Zugriff am Februar 26, 2026, [https://quarto.org/docs/output-formats/typst.html](https://quarto.org/docs/output-formats/typst.html)
+26. How to Make High-Quality PDFs with Quarto and Typst \- R for the Rest of Us, Zugriff am Februar 26, 2026, [https://rfortherestofus.com/2025/11/quarto-typst-pdf](https://rfortherestofus.com/2025/11/quarto-typst-pdf)
+27. Automated PDF Generation with Typst – Typst Blog \- Typst, Zugriff am Februar 26, 2026, [https://typst.app/blog/2025/automated-generation/](https://typst.app/blog/2025/automated-generation/)
+28. Actions · GitHub Marketplace \- Setup Typst, Zugriff am Februar 26, 2026, [https://github.com/marketplace/actions/setup-typst](https://github.com/marketplace/actions/setup-typst)
+29. Case Study \- Seamless CI/CD, Zugriff am Februar 26, 2026, [https://seamless-cicd.github.io/case-study](https://seamless-cicd.github.io/case-study)
+30. How to create accessible PDFs from the start – Typst Blog, Zugriff am Februar 26, 2026, [https://typst.app/blog/2025/accessible-pdf/](https://typst.app/blog/2025/accessible-pdf/)
+31. Creating Your First CI/CD Pipeline Using GitHub Actions | by Brandon Kindred \- Medium, Zugriff am Februar 26, 2026, [https://brandonkindred.medium.com/creating-your-first-ci-cd-pipeline-using-github-actions-81c668008582](https://brandonkindred.medium.com/creating-your-first-ci-cd-pipeline-using-github-actions-81c668008582)
+32. Publish example PDFs using GitHub Pages \- Showcase \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/publish-example-pdfs-using-github-pages/5781](https://forum.typst.app/t/publish-example-pdfs-using-github-pages/5781)
+33. Bibliography Function – Typst Documentation, Zugriff am Februar 26, 2026, [https://typst.app/docs/reference/model/bibliography/](https://typst.app/docs/reference/model/bibliography/)
+34. How do I use a Hayagriva .yaml bibliography file with a Typst .typ document?, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-do-i-use-a-hayagriva-yaml-bibliography-file-with-a-typst-typ-document/4359](https://forum.typst.app/t/how-do-i-use-a-hayagriva-yaml-bibliography-file-with-a-typst-typ-document/4359)
+35. How can i use custom .csl files in my template? \- Questions \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-can-i-use-custom-csl-files-in-my-template/7373](https://forum.typst.app/t/how-can-i-use-custom-csl-files-in-my-template/7373)
+36. How to Hack Together an Author-Date sorting for Bibliography? \- Questions \- Typst Forum, Zugriff am Februar 26, 2026, [https://forum.typst.app/t/how-to-hack-together-an-author-date-sorting-for-bibliography/3032](https://forum.typst.app/t/how-to-hack-together-an-author-date-sorting-for-bibliography/3032)
+37. pergamon – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/pergamon/](https://typst.app/universe/package/pergamon/)
+38. Client PDF Bundles \- typst \- Reddit, Zugriff am Februar 26, 2026, [https://www.reddit.com/r/typst/comments/1ibdhm5/client\_pdf\_bundles/](https://www.reddit.com/r/typst/comments/1ibdhm5/client_pdf_bundles/)
 39. layout-ltd – Typst Universe, Zugriff am Februar 26, 2026, [https://typst.app/universe/package/layout-ltd/](https://typst.app/universe/package/layout-ltd/)
