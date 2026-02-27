@@ -849,6 +849,7 @@ Many avoidable errors come from assigning parameters to the wrong function.
 ### 11.2 Safer layout hierarchy: flow first, placement second
 
 Recommended order of preference:
+
 1. Flow elements (`block`, `stack`, `grid`, `columns`)
 2. Local float breakout (`place(..., float: true, scope: "parent")`)
 3. Absolute/overlay `place` only for decoration
@@ -860,6 +861,7 @@ If content is semantically part of reading flow (side notes, pull quotes, key ca
 If you use decorative chapter openers with manual numbers, avoid simultaneously enabling `#set heading(numbering: ...)` unless you explicitly reconcile both systems.
 
 Stable options:
+
 - Pure automatic numbering via heading rules.
 - Pure manual chapter opener numbering with heading numbering disabled.
 
@@ -896,3 +898,35 @@ This remains maintainable when item count changes and supports deterministic sty
 - Verify no component introduces unintended global `set page(...)` effects.
 - Validate pull quotes/notes at page and column boundaries.
 - Ensure table semantics remain `table`, not presentational `grid`, for data content.
+
+***
+
+## References
+
+[^R1]: Typst Documentation — Overview and design principles. <https://typst.app/docs/>
+[^R2]: Typst Documentation — Syntax: markup mode. <https://typst.app/docs/reference/syntax/>
+[^R3]: Typst Documentation — Scripting: functions, purity, and code blocks. <https://typst.app/docs/reference/scripting/>
+[^R5]: Typst Documentation — Compiler pipeline (parsing, evaluation, layout, export). <https://typst.app/docs/reference/foundations/>
+[^R6]: Typst Documentation — Styling: set rules and parameter defaults. <https://typst.app/docs/reference/styling/>
+[^R7]: Typst Documentation — Scripting: content blocks and data types. <https://typst.app/docs/reference/scripting/#blocks>
+[^R9]: Typst Documentation — Export and output formats. <https://typst.app/docs/reference/foundations/content/>
+[^R10]: Typst Documentation — Counter. <https://typst.app/docs/reference/introspection/counter/>
+[^R12]: Typst Documentation — Model: headings, lists, and references. <https://typst.app/docs/reference/model/>
+[^R13]: Typst Documentation — Content and string types. <https://typst.app/docs/reference/foundations/content/>
+[^R15]: Typst Documentation — Set rules. <https://typst.app/docs/reference/styling/#set-rules>
+[^R16]: Typst Documentation — Show rules and selectors. <https://typst.app/docs/reference/styling/#show-rules>
+[^R17]: Typst Documentation — Box element. <https://typst.app/docs/reference/layout/box/>
+[^R18]: Typst Documentation — Page setup. <https://typst.app/docs/reference/layout/page/>
+[^R20]: Typst Documentation — Place (floating placement). <https://typst.app/docs/reference/layout/place/>
+[^R21]: Typst Documentation — Query. <https://typst.app/docs/reference/introspection/query/>
+[^R22]: Typst Documentation — State. <https://typst.app/docs/reference/introspection/state/>
+[^R23]: Typst Documentation — Context and introspection. <https://typst.app/docs/reference/context/>
+[^R24]: Typst Documentation — Block and Place elements. <https://typst.app/docs/reference/layout/block/>
+[^R25]: Typst Documentation — Color and gradient. <https://typst.app/docs/reference/visualize/color/>
+[^R26]: Typst Documentation — Stack. <https://typst.app/docs/reference/layout/stack/>
+[^R27]: Typst Documentation — Grid. <https://typst.app/docs/reference/layout/grid/>
+[^R30]: Typst Documentation — Math mode. <https://typst.app/docs/reference/math/>
+[^R33]: Typst Documentation — Layout, measure, and layout function. <https://typst.app/docs/reference/layout/>
+[^R38]: Typst Documentation — Columns. <https://typst.app/docs/reference/layout/columns/>
+[^R39]: Typst Documentation — Paragraph. <https://typst.app/docs/reference/model/par/>
+[^R40]: Typst Documentation — Page width vs layout width. <https://typst.app/docs/reference/layout/page/>
