@@ -101,11 +101,15 @@ Wenn Pinit nicht das tut, was du willst, prüfe diese Liste in Reihenfolge:
     Fehlt die Leerzeile vorher oder das `#box()` nachher?
 2.  **Pfeilspitze schneidet in das markierte Wort oben rein?** \
     Passe `pin-dy` an (z.B. `pin-dy: 5pt` oder `10pt`), um die Nadel etwas abzusenken.
-3.  **Pferil durchkreuzt die Annotation (den Erklärungstext)?** \
-    Wrappe die Annotation in `#block(inset: (left: Xpt))`, (oder `right:`,   `top:`, je nach Richtung).
-4.  **Der Pfeilwinkel ist falsch (er zeigt nicht auf den Pin, sondern woanders hin)?** \
-    Du hast wahrscheinlich `body-dx/dy` missbraucht, um den Text zu verschieben. Nutze dafür `offset-dx/dy` und setze `body-dx/dy` zurück auf kleine, klare Vektoren (z.B. (0, -10)).
-5.  **Das Layout sprengt die Seite / ragt in die Caption?** \
-    Achte darauf, dass nach der `#box()` genug Abstand folgt. Setze notfalls ein `#v(10em)` (oder mehr), da absolut positionierte Elemente keinen Platz im Textfluss verbrauchen! Der nachfolgende Text würde sonst einfach durch die Annotation hindurchlaufen.
-6.  **Pinit in Code-Blöcken ignoriert Pins?** \
-    Syntax-Highlighting bricht Pins. Es wird ein regulärer Ausdruck benötigt, um die Pins *vor* dem Highlighting zu evaluieren. Siehe offizielle Dokumentation: *„Pinit for raw“*.
+3.  **Pfeil durchkreuzt die Annotation (den Erklärungstext)?** \
+    Zwei Ursachen möglich:
+    *   Du hast kein `#block(inset: ...)` verwendet.
+    *   Dein Pfeil wächst genau von dort heraus, wo der Text steht. Platziere den Ankerpunkt des Pfeils mittels `body-dx`/`body-dy` so, dass er am Rand des Textblocks ansetzt, nicht in dessen Mitte.
+4.  **Der Text taucht gar nicht auf oder überlappt den normalen Absatz massiv?** \
+    *Die Mentale Falle hat zugeschnappt!* Du hast wahrscheinlich `offset-dx/dy` massiv hochgesetzt, in dem Versuch, den Text weit wegzuschieben. Reduziere die Werte! Behalte den Text nah am Pin und lass stattdessen den Pfeil (`body`) sanft dorthin wandern.
+5.  **Das Layout sprengt die Seite / ragt in tieferliegende Container?** \
+    Pinit verbraucht keinen physischen Platz im Dokumentfluss. Wenn du eine Annotation unterhalb zeichnest, baue mit `#v(4em)` manuell Platz dafür ein, sonst ignoriert die nächste Überschrift deine Zeichnung völlig.
+6.  **`#pinit-point-to` macht Probleme beim Anchor-Alignment?** \
+    `#pinit-point-to` zielt vom "leeren Raum" auf den Pin. Das ist oft schwieriger berechenbar als `#pinit-point-from`, wo der Text der klare Anker ist. Wenn `point-to` nicht klappt, benutze `point-from` – es ist weitaus robuster im Umgang mit Textblöcken.
+7.  **Pinit in Code-Blöcken ignoriert Pins?** \
+    Syntax-Highlighting bricht Pins. Es wird ein regulärer Ausdruck benötigt, um die Pins *vor* dem Highlighting zu evaluieren. (Siehe Code-Beispiel in Phase 3).
