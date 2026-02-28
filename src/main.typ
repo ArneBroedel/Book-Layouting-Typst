@@ -56,5 +56,16 @@
 #include "chapters/09-data-driven.typ"
 #include "chapters/10-tooling.typ"
 
+// ── Part IV: Community-Pakete ──────────────────────────────────
+#{
+  import "components/spreads.typ": part-page
+  part-page(number: "Teil IV", title: [Community-Pakete])
+}
+
+#include "chapters/11-academic.typ"
+#include "chapters/12-beyond-flow.typ"
+#include "chapters/13-wasm-meta.typ"
+#include "chapters/14-templates.typ"
+
 // ── Back Matter ────────────────────────────────────────────────
 #include "chapters/07-backmatter.typ"

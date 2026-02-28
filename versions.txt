@@ -1,0 +1,14 @@
+touying: [Package] v0.6.1
+calmly-touying: [Template] v0.2.0
+touying-aqua: [Template] v0.6.0
+brilliant-cv: [Template] v3.1.2
+mantys: [Template] v1.0.2
+ilm: [Template] v2.0.0
+tieffiction: [Template] v0.2.0
+toffee-tufte: [Template] v0.1.1
+wonderous-book: [Template] v0.1.2
+soviet-matrix: [Template] v0.2.1
+badformer: [Template] v0.1.0
+glossarium: [Package] v0.5.10
+aspirationally: [Template] v0.1.1
+caidan: [Template] v0.1.0

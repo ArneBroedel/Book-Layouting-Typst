@@ -369,13 +369,13 @@ Pakete, die den Arbeitsalltag erleichtern:
   [Markdown-Tabellensyntax],
   [`\@preview/tablem`],
   [fontawesome],
-  [Professionelle Icons (Font Awesome 6)],
+  [Professionelle Icons (Font Awesome 6) → Kapitel 12],
   [`\@preview/fontawesome`],
   [glossarium],
-  [Strukturierte Glossarverwaltung],
+  [Strukturierte Glossarverwaltung → Kapitel 11],
   [`\@preview/glossarium`],
   [Touying],
-  [Präsentationsfolien],
+  [Präsentationsfolien → Kapitel 14],
   [`\@preview/touying`],
 )
 
