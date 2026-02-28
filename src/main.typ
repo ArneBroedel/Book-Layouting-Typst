@@ -67,5 +67,15 @@
 #include "chapters/13-wasm-meta.typ"
 #include "chapters/14-templates.typ"
 
+// ── Part V: Template-Muster und Architektur ───────────────────
+#{
+  import "components/spreads.typ": part-page
+  part-page(number: "Teil V", title: [Template-Muster und Architektur])
+}
+
+#include "chapters/15-book-patterns.typ"
+#include "chapters/16-margin-patterns.typ"
+#include "chapters/17-visual-hierarchy.typ"
+
 // ── Back Matter ────────────────────────────────────────────────
 #include "chapters/07-backmatter.typ"
