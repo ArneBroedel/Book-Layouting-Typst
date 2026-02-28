@@ -165,7 +165,7 @@ Erst wenn das sitzt: Templates/Pakete ergänzen – nicht vorher.
 2. Install: **Typst CLI**
 3. VS Code: **Tinymist + Markdownlint + EditorConfig**
 4. Repo anlegen + Ordnerstruktur + `.editorconfig` + `.vscode/extensions.json`
-5. `scripts/build.ps1` + `scripts/build.sh` (einheitliche Build-Kommandos)
+5. `scripts/build.ps1` + `scripts/preflight.ps1` (einheitliche Build-Kommandos)
 6. Optional: **WSL2**, dann **Docker Desktop**
 
 ---
@@ -236,26 +236,36 @@ Ziel: Du testest **genau die Seiten**, die später Schmerzen machen.
 book/
 ├─ src/
 │  ├─ main.typ                 # Buch-Driver
-│  ├─ templates/
-│  │  ├─ theme.typ             # Tokens (Schriftgrößen, Farben, Spacing)
-│  │  ├─ layout.typ            # Raster, Kopf/Fuß, Kapitelstarts, Seitentypen
-│  │  ├─ components.typ        # Boxen, Tabellenstyles, Figure-Regeln
-│  │  └─ refs.typ              # Labels, Querverweise, Zitier-Helpers
+│  ├─ styles/
+│  │  ├─ theme.typ             # Tokens (Farben, Schriften, Spacing)
+│  │  ├─ typography.typ        # Typografie-Regeln (Set/Show)
+│  │  └─ page.typ              # Seitengeometrie, Kopf/Fuß
+│  ├─ components/
+│  │  ├─ blocks.typ            # Callout, Card, Blockquote, Side-Note, etc.
+│  │  ├─ inline.typ            # Badge, Tag, Kbd, Icon-Text
+│  │  ├─ tables.typ            # Styled-Table, Comparison-Table
+│  │  ├─ grids.typ             # Gallery/Feature/Stats/Comparison-Grid
+│  │  ├─ layouts.typ           # Sidebar, Magazine, Scientific-Paper, etc.
+│  │  └─ spreads.typ           # Book-Cover, Chapter-Opener, Part-Page
 │  ├─ chapters/
+│  │  ├─ 00-cover.typ
 │  │  ├─ 01-intro.typ
 │  │  ├─ 02-...typ
 │  │  └─ ...
 │  └─ data/
 │     ├─ glossary.yml
-│     └─ meta.yml
+│     ├─ references.bib
+│     ├─ sample-patients.json
+│     └─ sample-study.csv
 ├─ assets/
 │  ├─ figures/                 # bevorzugt PDF für Vektor
 │  └─ photos/                  # PNG/JPG (vorsichtig bei CMYK)
 ├─ fonts/                      # alle Buchfonts lokal, reproduzierbar
 ├─ dist/
 ├─ scripts/
-│  ├─ build.sh
-│  └─ preflight.sh
+│  ├─ build.ps1
+│  ├─ preflight.ps1
+│  └─ setup.ps1
 └─ .vscode/
    ├─ settings.json
    └─ tasks.json

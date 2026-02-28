@@ -13,9 +13,9 @@ function Resolve-TypstExecutable {
     $base = Join-Path $env:LOCALAPPDATA "Microsoft\WinGet\Packages"
     if (Test-Path $base) {
         $candidate = Get-ChildItem -Path $base -Filter "typst.exe" -File -Recurse -ErrorAction SilentlyContinue |
-            Where-Object { $_.FullName -like "*Typst.Typst*" } |
-            Sort-Object LastWriteTime -Descending |
-            Select-Object -First 1
+        Where-Object { $_.FullName -like "*Typst.Typst*" } |
+        Sort-Object LastWriteTime -Descending |
+        Select-Object -First 1
 
         if ($candidate) {
             return $candidate.FullName
@@ -90,8 +90,11 @@ foreach ($cmd in $commandsRecommended) {
 
 $requiredPaths = @(
     "src/main.typ",
-    "src/templates/layout.typ",
-    "src/chapters/01-intro.typ",
+    "src/styles/theme.typ",
+    "src/styles/typography.typ",
+    "src/styles/page.typ",
+    "src/components/blocks.typ",
+    "src/chapters/00-cover.typ",
     "fonts",
     "assets",
     "dist"
@@ -130,7 +133,7 @@ $pwshVersion = [version]$pwshRaw
 Assert-MinVersion -Name "git" -Current $gitVersion -Minimum ([version]"2.40.0")
 Assert-MinVersion -Name "typst" -Current $typstVersion -Minimum ([version]"0.14.2")
 Assert-MinVersion -Name "node" -Current $nodeVersion -Minimum ([version]"20.0.0")
-Assert-MinVersion -Name "python" -Current $pythonVersion -Minimum ([version]"3.12.0")
+Assert-MinVersion -Name "python" -Current $pythonVersion -Minimum ([version]"3.10.0")
 Assert-MinVersion -Name "pwsh" -Current $pwshVersion -Minimum ([version]"7.0.0")
 
 if ($RunBuildTest) {

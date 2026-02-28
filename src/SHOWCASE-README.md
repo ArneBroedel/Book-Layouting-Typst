@@ -1,35 +1,36 @@
 # Typst Showcase v2
 
 A publication-grade, 30-page showcase of Typst's layout capabilities.
-German content with a medical/didactic theme, A4 format, zero external dependencies.
+German content with a medical/didactic theme, A4 format.
+Chapters 01–07 have zero external dependencies; chapters 08–10 demonstrate optional @preview ecosystem packages.
 
 ## Quick Start
 
 ```sh
-cd typst_showcase_v2
-typst compile main.typ "Typst-Showcase-v2.pdf"   # canonical output
+typst compile src/main.typ dist/book.pdf --ignore-system-fonts --font-path fonts
 ```
 
 ## PNG Export
 
 ```sh
-typst compile --format png --ppi 200 main.typ "png_output/page-{0p}.png"
+typst compile --format png --ppi 200 src/main.typ "png_output/page-{0p}.png"
 ```
 
 ## Key Metrics
 
 | Metric | Value |
 |--------|-------|
-| Pages | 30 |
-| Compile time | ~0.6 s |
+| Pages | ~83 |
 | Components | 28 |
 | Layout patterns | 15 |
-| External deps | 0 |
+| Core deps (Ch. 01–07) | 0 |
+| Ecosystem demos (Ch. 08–10) | CeTZ, Fletcher, Codly, Showybox, Tablem |
 
 ## Architecture
 
 ```
-main.typ                  ← Assembly file
+src/
+├── main.typ              ← Assembly file
 ├── styles/
 │   ├── theme.typ          ← Design tokens (colors, fonts, spacing)
 │   ├── typography.typ     ← Typography set/show rules
@@ -38,7 +39,6 @@ main.typ                  ← Assembly file
 │   ├── blocks.typ         ← Callout, card, blockquote, pull-quote, side-note, code-block, key-concept
 │   ├── inline.typ         ← Badge, tag, highlight-text, kbd, icon-text
 │   ├── tables.typ         ← Styled-table, comparison-table
-│   ├── figures.typ        ← Figure show rules
 │   ├── layouts.typ        ← Sidebar, magazine, scientific-paper, comparison, adaptive, breakout
 │   ├── grids.typ          ← Gallery-grid, feature-grid, stats-grid, comparison-grid
 │   └── spreads.typ        ← Book-cover, chapter-opener, section-break, part-page
@@ -50,10 +50,15 @@ main.typ                  ← Assembly file
 │   ├── 04-components.typ  ← Component showcase
 │   ├── 05-layout.typ      ← Layout patterns
 │   ├── 06-advanced.typ    ← Advanced techniques
-│   └── 07-backmatter.typ  ← Glossary, index, bibliography
+│   ├── 07-backmatter.typ  ← Glossary, index, bibliography
+│   ├── 08-packages.typ    ← @preview package demos (CeTZ, Fletcher, Codly, Showybox, Tablem)
+│   ├── 09-data-driven.typ ← Data-driven documents (JSON/CSV)
+│   └── 10-tooling.typ     ← IDE, CI/CD, PDF/UA, enterprise patterns
 └── data/
     ├── glossary.yml       ← German medical terms
-    └── references.bib     ← Academic references
+    ├── references.bib     ← Academic references
+    ├── sample-patients.json ← Sample patient data
+    └── sample-study.csv   ← Sample study results
 ```
 
 ## 15 Layout Patterns Demonstrated
@@ -82,4 +87,4 @@ main.typ                  ← Assembly file
 
 ## Devtrack
 
-See `devtracks/showcase-v2/` for the full 8-phase development plan.
+See `devtracks/` for the development methodology.
