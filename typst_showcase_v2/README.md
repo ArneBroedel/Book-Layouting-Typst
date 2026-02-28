@@ -7,8 +7,7 @@ German content with a medical/didactic theme, A4 format, zero external dependenc
 
 ```sh
 cd typst_showcase_v2
-typst compile main.typ                           # → main.pdf
-typst compile main.typ "Typst-Showcase-v2.pdf"   # → named PDF
+typst compile main.typ "Typst-Showcase-v2.pdf"   # canonical output
 ```
 
 ## PNG Export

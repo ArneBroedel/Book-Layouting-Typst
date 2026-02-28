@@ -44,7 +44,7 @@ Danach läuft der normale Workflow sofort.
 - Trennung der Zuständigkeiten:
   - `src/` = Buchlogik
   - `assets/` = Bilder/Tabellenquellen
-  - `templates/` = Design-System
+  - `src/templates/` = Design-System
   - `dist/` = Build-Artefakte (nicht versionieren)
 
 ## Tasks

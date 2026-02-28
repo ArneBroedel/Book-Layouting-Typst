@@ -1,5 +1,6 @@
 # Build output
 dist/
+**/png_output/
 
 # Node (optional tooling)
 node_modules/
@@ -16,3 +17,11 @@ Thumbs.db
 
 # Local setup artifacts
 *.tmp
+
+# Typst showcase transient PDFs (keep named release PDFs)
+typst_showcase_v2/main.pdf
+typst_showcase_v2/output.pdf
+typst_showcase_v2/_test-packages.pdf
+typst_showcase_v2/showcase-v2-full.pdf
+typst_showcase_v2/components/*.pdf
+typst_showcase_v2/styles/*.pdf

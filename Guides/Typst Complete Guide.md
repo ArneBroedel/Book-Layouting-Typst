@@ -899,6 +899,22 @@ This remains maintainable when item count changes and supports deterministic sty
 - Validate pull quotes/notes at page and column boundaries.
 - Ensure table semantics remain `table`, not presentational `grid`, for data content.
 
+### 11.7 Performance and design best practices
+
+When documents become large and layouts complex, keep these practices in mind:
+
+- Prefer `auto` sizing where possible and only fix sizes when needed.
+- Avoid deeply nesting many `grid` and `columns` blocks when a flatter structure would suffice.
+- Reuse components via functions and `show` rules instead of repeating complex structures inline.
+- Test layouts incrementally: start from a minimal example and gradually add complexity.
+
+Beyond pure performance, keep these design guidelines in mind:
+
+- Establish a typographic scale and apply it consistently.
+- Use `set` rules to centralize styling decisions so global changes remain easy.
+- Encapsulate recurring layout patterns (pull quotes, callouts, figure grids) in functions.
+- Use `context` only where layout-dependent behavior is truly required.
+
 ***
 
 ## References
