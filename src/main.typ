@@ -66,6 +66,7 @@
 #include "chapters/12-beyond-flow.typ"
 #include "chapters/13-wasm-meta.typ"
 #include "chapters/14-templates.typ"
+#include "chapters/18-pinit-showcase.typ"
 
 // ── Part V: Template-Muster und Architektur ───────────────────
 #{

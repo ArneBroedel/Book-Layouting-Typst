@@ -113,65 +113,64 @@ begrenzten Blocks, ohne die Seitenränder dieses Buchs zu
 verändern:
 
 #{
-  // Self-contained margin note demo within a fixed block
-  let demo-margin-note(note-text, y-offset, color: palette.info) = {
-    place(
-      right,
-      dx: -4pt,
-      dy: y-offset,
-      block(
-        width: 35%,
-        inset: space.sm,
-        fill: color.lighten(90%),
-        stroke: (left: 2pt + color),
-        radius: (right: 3pt),
-        text(size: type-scale.small, fill: color.darken(20%), note-text),
-      ),
+  // Helper for a styled margin note block
+  let note-block(note-text, color: palette.info) = {
+    block(
+      width: 100%,
+      inset: space.sm,
+      fill: color.lighten(90%),
+      stroke: (left: 2pt + color),
+      radius: (right: 3pt),
+      text(size: type-scale.small, fill: color.darken(20%), note-text),
     )
   }
 
   figure(
     block(
       width: 100%,
-      height: 10cm,
       inset: space.md,
       fill: white,
       stroke: 0.5pt + palette.border-light,
       radius: 4pt,
       {
-        // Simulated main text column (left 60%)
-        block(width: 58%, {
-          text(size: type-scale.body)[
-            Die Differentialdiagnose der akuten Dyspnoe erfordert eine
-            systematische Evaluation kardialer, pulmonaler und
-            metabolischer Ursachen. Die initiale Abklärung umfasst
-            Anamnese, körperliche Untersuchung und gezielte
-            Basisdiagnostik.
-          ]
-          v(space.md)
-          text(size: type-scale.body)[
-            Besondere Aufmerksamkeit verdient die Abgrenzung zwischen
-            akutem Koronarsyndrom und Lungenembolie, da beide
-            Krankheitsbilder eine sofortige Intervention erfordern.
-          ]
-          v(space.md)
-          text(size: type-scale.body)[
-            Die Bestimmung von D-Dimeren, BNP und Troponin bildet
-            die laborchemische Trias der Notfalldiagnostik.
-          ]
-        })
-
-        // Simulated margin notes
-        demo-margin-note([Kardiale Ursachen: ACS, Herzinsuffizienz,
-          Perikardtamponade], 0pt)
-
-        demo-margin-note([Cave: Wells-Score zur Einschätzung
-          der Vortestwahrscheinlichkeit für Lungenembolie], 3.5cm,
-          color: palette.warning)
-
-        demo-margin-note([D-Dimere: hohe Sensitivität,
-          geringe Spezifität — Ausschlussdiagnostik], 6.5cm,
-          color: palette.success)
+        grid(
+          columns: (3fr, 2fr),
+          column-gutter: space.md,
+          // Left: main text column
+          {
+            text(size: type-scale.body)[
+              Die Differentialdiagnose der akuten Dyspnoe erfordert eine
+              systematische Evaluation kardialer, pulmonaler und
+              metabolischer Ursachen. Die initiale Abklärung umfasst
+              Anamnese, körperliche Untersuchung und gezielte
+              Basisdiagnostik.
+            ]
+            v(space.md)
+            text(size: type-scale.body)[
+              Besondere Aufmerksamkeit verdient die Abgrenzung zwischen
+              akutem Koronarsyndrom und Lungenembolie, da beide
+              Krankheitsbilder eine sofortige Intervention erfordern.
+            ]
+            v(space.md)
+            text(size: type-scale.body)[
+              Die Bestimmung von D-Dimeren, BNP und Troponin bildet
+              die laborchemische Trias der Notfalldiagnostik.
+            ]
+          },
+          // Right: stacked margin notes
+          {
+            note-block([Kardiale Ursachen: ACS, Herzinsuffizienz,
+              Perikardtamponade], color: palette.info)
+            v(space.sm)
+            note-block([Cave: Wells-Score zur Einschätzung
+              der Vortestwahrscheinlichkeit für Lungenembolie],
+              color: palette.warning)
+            v(space.sm)
+            note-block([D-Dimere: hohe Sensitivität,
+              geringe Spezifität — Ausschlussdiagnostik],
+              color: palette.success)
+          },
+        )
       },
     ),
     caption: [Randnotiz-Architektur im Miniaturformat — drei kollisionsfreie Annotationen im simulierten Seitenrand.],

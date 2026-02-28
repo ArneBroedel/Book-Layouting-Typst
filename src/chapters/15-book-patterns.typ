@@ -268,25 +268,32 @@ TiefFiction implementiert sie als wiederverwendbare Funktion.
   ```
 ]
 
-// Scoped live demo of a drop cap
+// Scoped live demo of a drop cap using grid layout
 #{
-  let demo-dropcap(size: 42pt, color: palette.primary, body) = {
-    let full = if type(body) == str { body } else { repr(body) }
-    let first = full.first()
-    let rest = full.slice(1)
-    block(width: 100%, inset: space.md, fill: palette.bg-subtle, radius: 4pt, {
-      box(
-        height: 0pt,
-        text(size: size, weight: "bold", fill: color, baseline: -0.2em, first),
-      )
-      h(0.15em)
-      text(size: type-scale.body, rest)
-    })
-  }
+  let demo-text = "ie Differentialdiagnose der akuten Brustschmerzen umfasst kardiale, pulmonale und muskuloskelettale Ursachen. Eine systematische Anamnese ist der Schlüssel zur frühzeitigen Eingrenzung."
 
   figure(
-    demo-dropcap(
-      "Die Differentialdiagnose der akuten Brustschmerzen umfasst kardiale, pulmonale und muskuloskelettale Ursachen. Eine systematische Anamnese ist der Schlüssel zur frühzeitigen Eingrenzung.",
+    block(
+      width: 100%,
+      inset: space.md,
+      fill: palette.bg-subtle,
+      radius: 4pt,
+      {
+        grid(
+          columns: (auto, 1fr),
+          column-gutter: 4pt,
+          // Large drop cap letter in left column
+          align(top, text(
+            size: 48pt,
+            weight: "bold",
+            fill: palette.primary,
+            font: fonts.serif,
+            "D",
+          )),
+          // Remaining text in right column, wrapping naturally
+          align(horizon, text(size: type-scale.body, demo-text)),
+        )
+      },
     ),
     caption: [Schmuckinitiale — vereinfachte Demonstration des TiefFiction-Musters.],
   )

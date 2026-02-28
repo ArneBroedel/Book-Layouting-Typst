@@ -24,28 +24,40 @@ Während Typst mit `place` Elemente relativ zum Layout platzieren kann, ermögli
 
 #figure(
   card()[
-    *Warnhinweis zur Medikation:* Die gleichzeitige Einnahme von #pin(1)Macrolid-Antibiotika#pin(2) (wie Clarithromycin) und Statinen ist bei diesem Patienten aufgrund des erhöhten Risikos einer #pin(3)Rhabdomyolyse#pin(4) streng zu überwachen.
+    #v(3.5em)
 
-    #pinit-highlight(1, 2, fill: palette.danger.transparentize(80%))
-    #pinit-highlight(3, 4, fill: palette.warning.transparentize(80%))
-    
+    #box(width: 100%, align(left)[
+      #text(size: 1.25em)[
+        Ein wichtiges Detail: #pin(1)Macrolid-Antibiotika#pin(2)
+      ]
+    ])
+
+    #pinit-highlight(1, 2, fill: palette.danger.transparentize(80%), radius: 3pt)
+
     #pinit-point-from(
-      2,
+      (1, 2),
       pin-dx: 0pt,
       pin-dy: 8pt,
-      body-dx: 40pt,
-      body-dy: 40pt,
-      offset-dx: 0pt,
-      offset-dy: 0pt,
+      body-dx: 0pt,
+      body-dy: -10pt,
+      offset-dx: 120pt,
+      offset-dy: 60pt,
+      fill: palette.danger.darken(10%),
     )[
-      #rect(fill: palette.danger.lighten(90%), stroke: 1pt + palette.danger, radius: 4pt, inset: 6pt)[
-        #text(size: type-scale.small, fill: palette.danger.darken(20%))[
-          *Kontraindikation!* \ Interaktion via CYP3A4
+      #block(inset: (left: 35pt))[
+        #text(size: 1.1em, fill: palette.danger.darken(10%), weight: "bold")[
+          Kontraindikation!
+        ] \
+        #text(size: 0.9em, fill: palette.danger.darken(20%))[
+          Massive CYP3A4-Interaktion.
         ]
       ]
     ]
+    #box()
+
+    #v(10em)
   ],
-  caption: [Ein mit Pinit annotierter Text. Der Pfeil und die Box sind absolut zum Text positioniert.]
+  caption: [Ein mit Pinit annotierter Text. Der Pfeil positioniert sich absolut und entflieht dem Raster.]
 )
 
 #callout(tone: "info")[
