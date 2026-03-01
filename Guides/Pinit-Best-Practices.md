@@ -52,6 +52,18 @@ Oft ragt der Pfeil tief in den Text deines `[Body]` hinein (z.B. durchkreuzt den
 
 **Lösung:** Wrappe den Text immer in einen `#block(inset: ...)`! Das Inset generiert ein unsichtbares Kraftfeld um den Text, an dessen Rand der Pfeil perfekt und sauber andockt.
 
+### ⚠ Kritischer Dokumentationsfehler (empirisch verifiziert)
+
+Die offizielle Dokumentation behauptet, `offset-dx` in `pinit-point-from` sei „relativ zur linken Seitenkante". **Das ist falsch.** Verifiziert mit `@preview/pinit:0.2.2`: Pin bei (50pt, 50pt), Aufruf mit `offset-dx: 20pt, offset-dy: 20pt` → Annotation landet bei (70pt, 70pt), nicht bei (20pt, 20pt). Beide Funktionen (`pinit-point-from` **und** `pinit-point-to`) verwenden Pin-relative Offsets. Es gibt keinen seitenabsoluten Offset-Modus in Pinit.
+
+**Konsequenz:** Mit `offset-dx` lässt sich keine einheitliche absolute Spalte erzeugen. Wenn alle Annotationen auf derselben x-Koordinate ausgerichtet sein sollen (z.B. im linken Rand), muss Recipe C (Abschnitt 5) verwendet werden.
+
+### ⚠ Multi-Pin-Mittelpunkt-Falle
+
+Wenn ein Pin-Array `(1, 2)` übergeben wird, ist der Ankerpunkt für `offset-dx/dy` der **geometrische Mittelpunkt** aller Pins – **nicht** Pin[0]. Beispiel: Pin 1 bei x=60pt, Pin 2 bei x=240pt → Mittelpunkt x=150pt. Mit `offset-dx: 50pt` landet die Annotation bei x=200pt, nicht bei x=110pt.
+
+**Formel:** `offset-dx = Ziel-x − Mittelpunkt-x`
+
 ## 4. Das perfekte Praxis-Beispiel (Template)
 
 Hier ist das kugelsichere Template für eine elegante Annotation („Langer Pfeil zeigt von Erklärungstext auf eine Markierung“).
@@ -93,7 +105,85 @@ Ein wichtiges Detail ist die #pin(1)Risikogruppe#pin(2) bei dieser Indikation.
 #box()
 ```
 
-## 5. Checkliste für Troubleshooting
+## 5. Recipe C: Absolut-Positionierte Randnotizen
+
+Verwende Recipe C, wenn alle Annotationsboxen in einer **festen absoluten x-Spalte** erscheinen sollen (z.B. linker Rand), während die y-Koordinate jeweils dem Pin folgt. Weder Recipe A noch Recipe B können das leisten – alle Pinit-Offsets sind Pin-relativ (nicht seitenabsolut, trotz anderslautender Dokumentation).
+
+### Warum Pinit-Offsets hier versagen
+
+Mit `offset-dx: 50pt` und Pins bei x=80pt, x=140pt, x=200pt landen die Boxen bei x=130pt, x=190pt, x=250pt – keine einheitliche Spalte.
+
+### Implementierung
+
+```typst
+// Schritt 1: Pin-Koordinaten in State speichern
+#let _pincoords = state("pincoords", (:))
+
+#let record-pin(n) = {
+  pin(n)
+  context {
+    let pos = here().position()   // wirklich seitenabsolut, Ursprung oben-links
+    _pincoords.update(old => {
+      let m = if old == none { (:) } else { old }
+      m.insert(str(n), pos)
+      m
+    })
+  }
+}
+
+// Schritt 2: Randnotiz-Funktion
+// note-x : absoluter x-Wert der linken Boxkante (von Seitenkante)
+// note-w : Boxbreite — note-x + note-w MUSS < linken Randbreite (in pt) bleiben
+// dy     : vertikaler Versatz vom Pin (gestapelte Notizen: 0, 36, 72 ...)
+#let randnotiz(pins, note-x: 5pt, note-w: 100pt, dy: 0pt, content) = {
+  let anchor = str(pins.at(0))
+  context {
+    let coords = _pincoords.get()
+    if coords != none and anchor in coords {
+      let pinpos = coords.at(anchor)
+      let box-y  = pinpos.y + dy
+
+      // Box an exakter seitenabsoluter Position
+      absolute-place(dx: note-x, dy: box-y)[
+        #block(width: note-w, inset: (x: 4pt, y: 3pt),
+               stroke: 0.6pt + rgb("#8b0000"), radius: 2pt,
+               fill: rgb("#fff5f5"))[
+          #text(size: 6.5pt, fill: rgb("#8b0000"))[#content]
+        ]
+      ]
+
+      // Verbindungslinie vom Pin zur Box
+      absolute-place(dx: 0pt, dy: 0pt)[
+        #line(
+          start: (pinpos.x, pinpos.y + 4pt),
+          end:   (note-x + note-w + 2pt, box-y + 7pt),
+          stroke: 0.8pt + rgb("#8b0000"),
+        )
+      ]
+    }
+  }
+}
+```
+
+### Verwendung
+
+```typst
+// record-pin statt pin() überall dort, wo die y-Position später gebraucht wird
+Zur Zeit von #record-pin(1)*Reza Shah*#record-pin(2) gab es mehrere Kriege.
+
+#pinit-highlight(1, 2, fill: rgb(139, 0, 0, 30), radius: 2pt)
+#box()
+#randnotiz((1, 2), note-x: 5pt, note-w: 100pt)[Krieg 1941]
+#randnotiz((1, 2), note-x: 5pt, note-w: 100pt, dy: 36pt)[Besatzung 1941–46]
+```
+
+### Größenreferenz (4 cm linker Rand)
+
+- 4 cm ≈ 113pt linker Randbereich
+- `note-x: 5pt, note-w: 100pt` → Box von x=5 bis x=105pt, 8pt Abstand zum Textbereich
+- Gestapelte Notizen: `dy` jeweils um ~36pt erhöhen
+
+## 6. Checkliste für Troubleshooting
 
 Wenn Pinit nicht das tut, was du willst, prüfe diese Liste in Reihenfolge:
 
@@ -113,3 +203,7 @@ Wenn Pinit nicht das tut, was du willst, prüfe diese Liste in Reihenfolge:
     `#pinit-point-to` zielt vom "leeren Raum" auf den Pin. Das ist oft schwieriger berechenbar als `#pinit-point-from`, wo der Text der klare Anker ist. Wenn `point-to` nicht klappt, benutze `point-from` – es ist weitaus robuster im Umgang mit Textblöcken.
 7.  **Pinit in Code-Blöcken ignoriert Pins?** \
     Syntax-Highlighting bricht Pins. Es wird ein regulärer Ausdruck benötigt, um die Pins *vor* dem Highlighting zu evaluieren. (Siehe Code-Beispiel in Phase 3).
+8.  **Offset-Mathematik stimmt laut Debug-Koordinaten, aber Box landet trotzdem am falschen x?** \
+    Die Dokumentation behauptet, `offset-dx` in `pinit-point-from` sei seitenabsolut – das ist **falsch** (verifiziert). Der Wert ist Pin-relativ. Für absolute x-Positionierung → Recipe C (Abschnitt 5).
+9.  **Box-Position driftet bei jedem Text-Edit, weil der Pin an anderen x-Stellen landet?** \
+    Recipe C (Abschnitt 5). Die Box-x ist dort vollständig unabhängig von der Pin-x.

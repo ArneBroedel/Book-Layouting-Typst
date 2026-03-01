@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("fast", "watch", "ua")]
+    [ValidateSet("fast", "watch", "ua", "test", "test-watch")]
     [string]$Mode = "fast"
 )
 
@@ -34,8 +34,11 @@ if (-not $typstExe) {
     Write-Error "Typst CLI nicht gefunden. Bitte Typst installieren und PATH prüfen."
 }
 
-if (-not (Test-Path "src/main.typ")) {
+if ($Mode -notin @("test", "test-watch") -and -not (Test-Path "src/main.typ")) {
     Write-Error "Einstiegsdatei fehlt: src/main.typ"
+}
+if ($Mode -in @("test", "test-watch") -and -not (Test-Path "test/main.typ")) {
+    Write-Error "Einstiegsdatei fehlt: test/main.typ"
 }
 
 New-Item -ItemType Directory -Force -Path "dist" | Out-Null
@@ -53,5 +56,11 @@ switch ($Mode) {
     }
     "ua" {
         & $typstExe compile --root . --ignore-system-fonts --font-path fonts --pdf-standard ua-1 src/main.typ dist/book-ua.pdf
+    }
+    "test" {
+        & $typstExe compile --root . --ignore-system-fonts --font-path fonts test/main.typ dist/test.pdf
+    }
+    "test-watch" {
+        & $typstExe watch --root . --ignore-system-fonts --font-path fonts test/main.typ dist/test.pdf
     }
 }

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pinit Clickmap: Pixel → pt</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 16px; }
+    .row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .panel { border: 1px solid #ccc; padding: 12px; border-radius: 8px; }
+    canvas { border: 1px solid #999; max-width: 100%; height: auto; cursor: crosshair; }
+    label { display:block; margin: 8px 0 4px; }
+    input[type="number"] { width: 120px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <h1>Pinit Clickmap</h1>
+  <p>
+    Lade ein PNG, klicke einen Punkt, gib PPI ein.
+    Das Tool berechnet Typst-Koordinaten in pt: pt = px * 72 / ppi.
+  </p>
+
+  <div class="row">
+    <div class="panel">
+      <label>PNG auswählen</label>
+      <input id="file" type="file" accept="image/png,image/jpeg,image/webp" />
+
+      <label>PPI (Exportauflösung)</label>
+      <input id="ppi" type="number" value="288" min="1" />
+
+      <label>Letzter Klick (Pixel)</label>
+      <div class="mono" id="pxout">-</div>
+
+      <label>Umrechnung (pt)</label>
+      <div class="mono" id="ptout">-</div>
+
+      <label>Copy-Paste Snippet</label>
+      <div class="mono" id="snippet">-</div>
+    </div>
+
+    <div class="panel">
+      <canvas id="cv"></canvas>
+    </div>
+  </div>
+
+<script>
+const file = document.getElementById('file');
+const ppiInput = document.getElementById('ppi');
+const pxout = document.getElementById('pxout');
+const ptout = document.getElementById('ptout');
+const snippet = document.getElementById('snippet');
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+
+let img = new Image();
+
+function draw() {
+  if (!img.src) return;
+  cv.width = img.naturalWidth;
+  cv.height = img.naturalHeight;
+  ctx.drawImage(img, 0, 0);
+}
+
+file.addEventListener('change', (e) => {
+  const f = e.target.files?.[0];
+  if (!f) return;
+  const url = URL.createObjectURL(f);
+  img = new Image();
+  img.onload = () => { draw(); };
+  img.src = url;
+});
+
+cv.addEventListener('click', (e) => {
+  const rect = cv.getBoundingClientRect();
+  const scaleX = cv.width / rect.width;
+  const scaleY = cv.height / rect.height;
+
+  const x = Math.round((e.clientX - rect.left) * scaleX);
+  const y = Math.round((e.clientY - rect.top) * scaleY);
+
+  const ppi = Number(ppiInput.value) || 288;
+  const xpt = (x * 72 / ppi);
+  const ypt = (y * 72 / ppi);
+
+  pxout.textContent = `x=${x}px  y=${y}px`;
+  ptout.textContent = `x=${xpt.toFixed(2)}pt  y=${ypt.toFixed(2)}pt`;
+  snippet.textContent = `offset-dx: ${xpt.toFixed(2)}pt, offset-dy: ${ypt.toFixed(2)}pt`;
+});
+</script>
+</body>
+</html>

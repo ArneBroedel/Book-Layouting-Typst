@@ -18,6 +18,18 @@
       "type": "shell",
       "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -Mode ua",
       "problemMatcher": []
+    },
+    {
+      "label": "typst: test (build)",
+      "type": "shell",
+      "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -Mode test",
+      "problemMatcher": []
+    },
+    {
+      "label": "typst: test (watch)",
+      "type": "shell",
+      "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -Mode test-watch",
+      "problemMatcher": []
     }
   ]
 }
