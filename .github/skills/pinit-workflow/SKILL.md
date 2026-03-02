@@ -327,7 +327,52 @@ still works normally. Use it wherever you later need the pin's y-coordinate.
 
 ---
 
-## 8 — Special Cases
+## 8 — Radial Showcase Patterns (Field-Tested)
+
+Validated while building `test/pinit-radial.typ`.
+
+### 8.1 Decoupled endpoint pattern (Recipe B++)
+
+Use `pinit-place` to lock the label location, and draw the arrow separately with empty body `[]`.
+This prevents label drift when changing arrow length/angle.
+
+```typst
+#pinit-place(dx: X, dy: Y, 1)[#ann-box[1:30]]
+#box()
+#pinit-point-from(1, offset-dx: X, offset-dy: Y, ... )[]
+#box()
+```
+
+### 8.2 Elbow/shelf callout with zero-gap join
+
+If you mix a diagonal pinit arrow with a horizontal `line()` shelf, both must share the exact
+same elbow coordinates. Set `body-dx: 0pt` and `body-dy: 0pt` in the pinit arrow and compute one
+common corner point for both primitives.
+
+### 8.3 Absolute page-corner target
+
+For "point to page corner, not object" scenarios:
+
+1. Define absolute pin target (e.g. `p9-x = page-w - 10pt`, `p9-y = 10pt`).
+2. Define absolute label anchor (centre or bottom-centre).
+3. Compute pin-relative offsets explicitly:
+  `off-dx = anchor-x - p9-x`, `off-dy = anchor-y - p9-y`.
+
+This is Recipe C geometry, even if the arrow primitive is `pinit-point-from`.
+
+### 8.4 Edge clipping guard
+
+When the tip is at/near page border, pull the tip back by 2–4pt with `pin-dx/pin-dy` to avoid
+visual clipping of the arrowhead in raster/PDF viewers.
+
+### 8.5 Deterministic label geometry
+
+If offsets depend on label centre or bottom edge, set explicit label dimensions (`width`, `height`)
+instead of relying only on content + inset. This makes coordinate math reproducible.
+
+---
+
+## 9 — Special Cases
 
 ### Formulas
 
@@ -406,7 +451,7 @@ diverges from any individual pin. Always compute `offset-dx/dy` from the midpoin
 
 ---
 
-## 9 — Troubleshooting Checklist
+## 10 — Troubleshooting Checklist
 
 Work through this in order before changing any parameter:
 
@@ -443,11 +488,11 @@ Work through this in order before changing any parameter:
    Recipe C. Box x is fully independent of pin x in Recipe C.
 
 10. **Annotation inside math or code block not rendering:**
-    See Section 8 (Special Cases).
+  See Section 9 (Special Cases).
 
 ---
 
-## 10 — AI-Assisted Correction Prompts
+## 11 — AI-Assisted Correction Prompts
 
 When asking an AI to fix a pinit annotation, always provide:
 
@@ -466,7 +511,7 @@ When asking an AI to fix a pinit annotation, always provide:
 
 ---
 
-## 11 — Quick Reference
+## 12 — Quick Reference
 
 ```
 WORKFLOW
@@ -476,6 +521,7 @@ WORKFLOW
   4. Compile → classify problem → one group change → repeat
   5. If 3+ iterations: activate debug, read coordinates, or switch to Recipe B
   6. If BOX_FIXED_COLUMN (need absolute column alignment): switch to Recipe C
+  7. For radial/elbow/page-corner patterns: use Section 8 formulas before trial-and-error
 
 DOCS BUG (verified, @preview/pinit:0.2.2)
   offset-dx/dy in pinit-point-from is PIN-RELATIVE, not page-absolute (docs lie)
@@ -504,6 +550,12 @@ RECIPE C — when boxes need absolute page-column alignment (margin/sidebar note
   absolute-place(dx: col-x, dy: pinpos.y + dy)[#box(...)[content]]      ← box
   absolute-place(dx: 0pt, dy: 0pt)[#line(start: ..., end: ...)]         ← arrow
   absolute-place IS truly page-absolute; pinit offset-dx/dy is NOT
+
+RADIAL/PAGE-CORNER PATTERNS (Section 8)
+  Decouple: place label with pinit-place, draw arrow with pinit-point-from []
+  Elbow: pinit tail and line() start must share exactly one corner coordinate
+  Corner target math: off-dx = anchor-x - pin-x ; off-dy = anchor-y - pin-y
+  Near page edge: add pin pull-back (2–4pt) to avoid clipped arrowheads
 
 SAFE DEFAULTS (before reading actual coordinates)
   pin-dy: 8pt   body-dy: -10pt   offset-dx: 70pt   offset-dy: 50pt

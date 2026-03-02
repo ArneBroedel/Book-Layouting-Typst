@@ -183,7 +183,32 @@ Zur Zeit von #record-pin(1)*Reza Shah*#record-pin(2) gab es mehrere Kriege.
 - `note-x: 5pt, note-w: 100pt` → Box von x=5 bis x=105pt, 8pt Abstand zum Textbereich
 - Gestapelte Notizen: `dy` jeweils um ~36pt erhöhen
 
-## 6. Checkliste für Troubleshooting
+## 6. Radial-Showcase Learnings (Praxis, verifiziert)
+
+Die Arbeit an `test/pinit-radial.typ` hat einige robuste Muster geliefert, die in echten Layouts sofort helfen:
+
+1. **Recipe B für stabile Endpunkte (entkoppelt):**
+  Label mit `#pinit-place` setzen, Pfeil separat mit leerem Body `[]` zeichnen. So bleibt der Label-Ort stabil, wenn nur Pfeillänge/Winkel geändert werden.
+
+2. **Länge sauber steuern (ohne Label-Drift):**
+  Für längere/kürzere Pfeile nur den Pfeil-Offset ändern (bzw. eigene Distanz-Variable wie `o-long`, `od-short`), nicht die Labelbox selbst verschieben.
+
+3. **Elbow/Shelf-Callout ohne Lücke:**
+  Bei kombinierten Formen (`pinit-point-from` + `line()`):
+  Startpunkt der `line()` muss exakt der Pfeil-Tail-Koordinate entsprechen.
+  Praktisch heißt das: gemeinsamer Eckpunkt in absoluten Koordinaten, `body-dx: 0pt`, `body-dy: 0pt` im Pinit-Teil.
+
+4. **Seitenfeste Zielpunkte (z.B. rechte obere Ecke):**
+  Wenn der Pfeil auf eine absolute Seitenposition zeigen soll, Pin selbst absolut setzen (oder absolute Zielkoordinate rechnen) und Offsets explizit aus Geometrie berechnen:
+  `off-dx = anchor-x - pin-x`, `off-dy = anchor-y - pin-y`.
+
+5. **Near-Edge Clipping vermeiden:**
+  Bei Targets an der Blattkante die Spitze minimal zurückziehen (`pin-dx/pin-dy` um 2–4pt), damit die Pfeilspitze nicht abgeschnitten wirkt.
+
+6. **Konsistentes Label-Maß für reproduzierbare Mathematik:**
+  Wenn Pfeile auf Label-Mitte oder Label-Unterkante zeigen sollen, Label-Höhe explizit setzen (`height: ...`) statt nur `inset` zu benutzen. Das macht `off-dy` berechenbar und stabil.
+
+## 7. Checkliste für Troubleshooting
 
 Wenn Pinit nicht das tut, was du willst, prüfe diese Liste in Reihenfolge:
 
