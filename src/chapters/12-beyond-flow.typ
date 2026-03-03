@@ -57,7 +57,7 @@ Während Typst mit `place` Elemente relativ zum Layout platzieren kann, ermögli
 
     #v(10em)
   ],
-  caption: [Ein mit Pinit annotierter Text. Der Pfeil positioniert sich absolut und entflieht dem Raster.]
+  caption: [Ein mit Pinit annotierter Text. Der Pfeil positioniert sich absolut und entflieht dem Raster.],
 )
 
 #callout(tone: "info")[
@@ -84,10 +84,10 @@ Typsts natives `grid` erfordert feste Spalten- oder Zeilendefinitionen. Wenn Sie
       badge(color: palette.warning)[Radiologie],
       badge(color: palette.danger)[Notfallmedizin],
       badge(color: palette.accent)[Pädiatrie],
-      badge(color: palette.primary)[Gastroenterologie]
+      badge(color: palette.primary)[Gastroenterologie],
     )
   ],
-  caption: [Biceps verteilt die Badges automatisch auf mehrere Zeilen basierend auf ihrer individuellen Breite.]
+  caption: [Biceps verteilt die Badges automatisch auf mehrere Zeilen basierend auf ihrer individuellen Breite.],
 )
 
 #side-note(title: [Im Vergleich zum Grid])[
@@ -97,7 +97,7 @@ Typsts natives `grid` erfordert feste Spalten- oder Zeilendefinitionen. Wenn Sie
 // ════════════════════════════════════════════════════════════════
 == Icon-Integration mit Fontawesome
 
-#import "@preview/fontawesome:0.6.0": *
+#import "@preview/fontawesome:0.5.0": *
 
 Für professionelle, ikonografische Layouts (z. B. in Lebensläufen oder Dashboards) bietet das Fontawesome-Paket eine direkte Integration der bekannten Icon-Bibliothek.
 
@@ -108,15 +108,18 @@ Für professionelle, ikonografische Layouts (z. B. in Lebensläufen oder Dashboa
       row-gutter: 12pt,
       icon-text(fa-stethoscope(fill: palette.primary), [Stethoskop]),
       icon-text(fa-heart-pulse(fill: palette.danger), [Herzschlag]),
+
       icon-text(fa-user-doctor(fill: palette.info), [Facharzt]),
       icon-text(fa-file-medical(fill: palette.primary), [Patientenakte]),
+
       icon-text(fa-hospital(fill: palette.primary.darken(20%)), [Klinikum]),
       icon-text(fa-truck-medical(fill: palette.warning), [Krankenwagen]),
+
       icon-text(fa-virus(fill: palette.danger.darken(20%)), [Virologie]),
       icon-text(fa-pills(fill: palette.success), [Medikation]),
     )
   ],
-  caption: [Auswahl an medizinischen Icons, gerendert über das Fontawesome-Paket.]
+  caption: [Auswahl an medizinischen Icons, gerendert über das Fontawesome-Paket.],
 )
 
 #callout(tone: "warning")[

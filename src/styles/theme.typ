@@ -60,8 +60,14 @@
 )
 
 // ── Font Families ──────────────────────────────────────────────
+// Only fonts available under --ignore-system-fonts (confirmed via
+// `typst fonts --ignore-system-fonts --font-path fonts`):
+//   Libertinus Serif · New Computer Modern · DejaVu Sans Mono
+// To use system fonts (Calibri, Arial etc.) on Windows, remove
+// --ignore-system-fonts from scripts/build.ps1 and restore the
+// original fallback chains.
 #let fonts = (
-  serif: ("Libertinus Serif", "Georgia", "Times New Roman"),
-  sans: ("Calibri", "Segoe UI", "Arial"),
-  mono: ("Inconsolata", "Consolas", "DejaVu Sans Mono"),
+  serif: ("Libertinus Serif",),
+  sans: ("Libertinus Serif",), // no sans font embedded; bold/size provide hierarchy
+  mono: ("DejaVu Sans Mono",),
 )
