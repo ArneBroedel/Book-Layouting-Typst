@@ -26,12 +26,18 @@ harmlose diagraph-`sans-serif`-Warnung):
 - ✅ **Bonus** — latenter Bug behoben: eingerückte Tidy-Docstring (Kap. 13) ergab leere
   API-Abbildung; Docstring auf Spalte 0 → rendert jetzt korrekt.
 
-**Bewusst aufgeschoben (brauchen eine Design-/Inhaltsentscheidung):**
+Nachträglich umgesetzt (Erweiterung „b", real kompiliert + verifiziert, 86 Seiten):
 
-- ⏸ **Native Mehrfach-Bibliographien (0.15)** statt Alexandria in Kap. 11 — Kapitel 11 *lehrt*
-  Alexandria als Multi-Biblio-Lösung; ein Wechsel ändert den **didaktischen Inhalt**, nicht nur Code.
-- ⏸ **zero-Paket-Pilot** für Vital-/Laborwert-Tabellen — optionale Optimierung, neue Abhängigkeit.
-- ⏸ **page(bleed:)/Spot-Farben/Variable Fonts/divider** — optionale Erweiterungen ohne akuten Bedarf.
+- ✅ **Native Mehrfach-Bibliographien (0.15)** in Kap. 11 — echtes, kompiliertes Demo (Zitation
+  bindet ans nächste folgende Verzeichnis, unabhängige Nummerierung). Die Alexandria-Didaktik
+  bleibt erhalten, neu eingeordnet als **Pre-0.15-Alternative** (Präfix-Ansatz).
+- ✅ **zero-Pilot** in Kap. 09 — `ztable` mit Dezimalpunkt-Ausrichtung der numerischen
+  CSV-Studienspalten, daten-getrieben aus denselben `study-rows`.
+
+**Weiterhin optional offen (kein akuter Bedarf):**
+
+- ⏸ **page(bleed:)/Spot-Farben/Variable Fonts/divider** — optionale 0.15-Erweiterungen für
+  Prepress bzw. Repo-Verschlankung; bei konkretem Druck-/Font-Bedarf nachziehen.
 
 ---
 
