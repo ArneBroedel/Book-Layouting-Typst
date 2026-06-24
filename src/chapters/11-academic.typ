@@ -106,26 +106,31 @@ Glossarium ermöglicht eine automatisierte Verwaltung von Abkürzungen. Beim ers
 #print-glossary(dict)
 
 // ════════════════════════════════════════════════════════════════
-== Mehrere Literaturverzeichnisse mit Alexandria
+== Mehrere Literaturverzeichnisse — nativ seit Typst 0.15
 
-#import "@preview/alexandria:0.2.2"
+Bis Typst 0.14 unterstützte der Compiler nur ein einziges `bibliography`-Element pro Dokument. Seit *Typst 0.15* ist diese Einschränkung aufgehoben: Mehrere `bibliography`-Elemente sind nativ erlaubt — ganz ohne Zusatzpaket. Jede Zitation bindet automatisch an das *nächste folgende* Verzeichnis, und jedes Verzeichnis nummeriert unabhängig. Für feinere Kontrolle steuern die Parameter `target` und `group` die Zuordnung explizit.
 
-Der native Typst-Compiler unterstützt nur ein einziges `bibliography`-Element pro Dokument. In akademischen Arbeiten werden jedoch häufig getrennte Verzeichnisse für verschiedene Quellenarten oder Themen benötigt. Alexandria bietet hierfür eine elegante Lösung über ein Präfix-System.
+Das folgende Beispiel rendert zwei getrennte, real kompilierte Verzeichnisse — eines für klinische, eines für Grundlagenquellen:
 
-Mit Präfixen wie `klinisch:` und `grundlagen:` können Sie Quellen gezielt dem jeweiligen Verzeichnis zuweisen. So verweist `@klinisch:smith2024` auf das klinische Literaturverzeichnis, während `@grundlagen:jones2023` in das Grundlagen-Verzeichnis sortiert wird.
+#heading(level: 3, outlined: false, numbering: none)[Klinische Literatur]
+Die Notaufnahme-Praxis @smith2024 illustriert den klinischen Quellentyp.
+#bibliography("../data/klinisch.bib", title: none)
 
-#callout(tone: "success")[
-  Alexandria umgeht die Limitierung des Compilers über Typsts Show-Rule-Interception. Das Paket fängt die nativen Bibliografie-Aufrufe ab und filtert sie nach den definierten Präfixen.
+#heading(level: 3, outlined: false, numbering: none)[Grundlagenliteratur]
+Die kardiovaskuläre Anatomie @jones2023 steht für den Grundlagentyp.
+#bibliography("../data/grundlagen.bib", title: none)
+
+#callout(tone: "info")[
+  Die Zitation `@smith2024` bindet an das unmittelbar folgende klinische Verzeichnis, `@jones2023` an das Grundlagenverzeichnis. Die Nummerierung ist pro Verzeichnis unabhängig — beide beginnen bei `[1]`.
 ]
 
+=== Alternative vor 0.15: Präfixe mit Alexandria
+
+Vor Typst 0.15 löste das Paket *Alexandria* dieselbe Aufgabe über ein Präfix-System (Show-Rule-Interception): `@klinisch:smith2024` und `@grundlagen:jones2023` sortieren in getrennte Verzeichnisse. Für Projekte auf älteren Compilern bleibt dies eine valide Lösung.
+
 ```typ
-// Beispielhafter Aufruf mit Alexandria
 #import "@preview/alexandria:0.2.2": bibliography
-
-#heading(level: 3)[Klinische Literatur]
 #bibliography("klinisch.bib", prefix: "klinisch:")
-
-#heading(level: 3)[Grundlagenliteratur]
 #bibliography("grundlagen.bib", prefix: "grundlagen:")
 ```
 

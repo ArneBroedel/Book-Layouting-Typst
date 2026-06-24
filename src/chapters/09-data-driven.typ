@@ -7,6 +7,7 @@
 #import "../components/inline.typ": badge
 #import "../components/grids.typ": feature-grid, stats-grid
 #import "../components/tables.typ": styled-table
+#import "@preview/zero:0.6.1": ztable
 
 // ════════════════════════════════════════════════════════════════
 // DATA LOADING
@@ -163,6 +164,30 @@ sowohl die direkte Darstellung als auch berechnete Analysen.
     ..study-rows.flatten(),
   ),
   caption: [Klinische Studienergebnisse — automatisch aus CSV generiert.],
+)
+
+=== Dezimal-Ausrichtung mit Zero
+
+Für numerische Tabellen ist die Ausrichtung am Dezimaltrennzeichen entscheidend
+für die Lesbarkeit. Das Paket *Zero* bietet mit `ztable` einen Drop-in-Ersatz für
+`table`, der über den `format`-Parameter pro Spalte die Zahlenausrichtung aktiviert
+(`auto` = ausrichten, `none` = unverändert):
+
+#figure(
+  ztable(
+    columns: (2fr, auto, auto, auto, auto, auto),
+    align: (left, right, right, right, right, right),
+    inset: (x: 8pt, y: 5pt),
+    fill: (x, y) => if y == 0 { palette.bg-subtle },
+    stroke: (x, y) => if y == 0 { (bottom: 0.8pt + palette.primary) } else {
+      (bottom: 0.4pt + palette.border-light)
+    },
+    // Spalte 0 (Therapie) und 5 (p-Wert mit "<0.001") als Text; 1–4 numerisch ausrichten.
+    format: (none, auto, auto, auto, auto, none),
+    table.header(..study-headers.map(h => strong(h))),
+    ..study-rows.flatten(),
+  ),
+  caption: [Dieselben CSV-Daten mit Zero — die Zahlenspalten sind am Dezimalpunkt ausgerichtet.],
 )
 
 === Berechnete Analyse
