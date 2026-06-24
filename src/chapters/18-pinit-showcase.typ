@@ -165,7 +165,7 @@
 
   Integration mit Fletcher (Diagramm-Kanten):
 
-  #import "@preview/fletcher:0.5.7" as fletcher: diagram, edge, node
+  #import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node
   #v(1em)
 
   In einem Diagramm können wir Pins nutzen, um externe Erklärungen anzubinden:

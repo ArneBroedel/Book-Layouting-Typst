@@ -18,7 +18,7 @@
 // ════════════════════════════════════════════════════════════════
 == Graphviz direkt in Typst mit Diagraph
 
-#import "@preview/diagraph:0.3.1": *
+#import "@preview/diagraph:0.3.7": *
 
 #figure(
   raw-render(
@@ -46,21 +46,24 @@
 // ════════════════════════════════════════════════════════════════
 == API-Dokumentation aus Docstrings mit Tidy
 
-#import "@preview/tidy:0.4.2"
+#import "@preview/tidy:0.4.3"
 
 #figure(
   card(
     tidy.show-module(
+      // Docstring-Zeilen MÜSSEN auf Spalte 0 stehen: Typst dedentet den Raw-Block
+      // nur um die gemeinsame Mindesteinrückung; verbliebene Leerzeichen vor `///`
+      // lassen tidy.parse-module 0 Funktionen finden (leere Abbildung).
       tidy.parse-module(```typ
-        /// Formatiert den Namen eines Patienten gemäß den Datenschutzrichtlinien.
-        ///
-        /// - name (string): Der volle Name des Patienten.
-        /// - anonymize (boolean): Ob der Name abgekürzt werden soll.
-        /// -> string
-        #let format-patient(name, anonymize: false) = {
-          // Implementation
-        }
-      ```.text)
+/// Formatiert den Namen eines Patienten gemäß den Datenschutzrichtlinien.
+///
+/// - name (string): Der volle Name des Patienten.
+/// - anonymize (boolean): Ob der Name abgekürzt werden soll.
+/// -> string
+#let format-patient(name, anonymize: false) = {
+  // Implementation
+}
+```.text)
     )
   ),
   caption: [Automatisch generierte API-Referenz — Tidy analysiert Docstrings direkt zur Kompilierzeit.]
@@ -73,17 +76,19 @@
 // ════════════════════════════════════════════════════════════════
 == JavaScript-Auswertung via WASM mit CtxJS
 
-#import "@preview/ctxjs:0.3.2"
+#import "@preview/ctxjs:0.5.0"
 
 Manchmal reicht die native Typst-Skriptsprache nicht aus oder es existieren bereits komplexe Berechnungen in JavaScript. CtxJS bettet eine vollständige QuickJS-Runtime über WASM ein.
 
 #let js-code = "Math.round(Math.pow(1.05, 10) * 100) / 100"
 #let js-ctx = ctxjs.new-context()
+// ctxjs 0.5.0: ctx.eval gibt nun ein (context, value)-Tupel zurück → destrukturieren.
+#let (_, js-result) = ctxjs.ctx.eval(js-ctx, js-code)
 
 #figure(
   card()[
-    *JS-Ausdruck:* `Math.round(Math.pow(1.05, 10) * 100) / 100` 
-    *Ergebnis via CtxJS:* #ctxjs.ctx.eval(js-ctx, js-code)
+    *JS-Ausdruck:* `Math.round(Math.pow(1.05, 10) * 100) / 100`
+    *Ergebnis via CtxJS:* #js-result
   ],
   caption: [Auswertung mathematischer Formeln über die eingebettete JS-Runtime.]
 )

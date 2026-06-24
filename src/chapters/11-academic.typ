@@ -60,7 +60,7 @@ Ebenso erleichtert das Paket die Eingabe von Matrizen, Vektoren und anderen Oper
 // ════════════════════════════════════════════════════════════════
 == Intelligente Abkürzungsverwaltung mit Glossarium
 
-#import "@preview/glossarium:0.5.4": make-glossary, print-glossary, gls, glspl
+#import "@preview/glossarium:0.5.10": make-glossary, print-glossary, gls, glspl
 
 #show: make-glossary
 
@@ -85,7 +85,7 @@ Ebenso erleichtert das Paket die Eingabe von Matrizen, Vektoren und anderen Oper
 
 #{
   // Register dictionary (local scope to avoid leaking)
-  import "@preview/glossarium:0.5.4": register-glossary
+  import "@preview/glossarium:0.5.10": register-glossary
   register-glossary(dict)
 }
 
@@ -145,12 +145,12 @@ Während Typst CSL (Citation Style Language) für das Styling von Bibliografien 
   [
     *Mit Pergamon*
     ```typ
-    #import "@preview/pergamon:0.2.0": *
-    #print-bibliography(
-      bibliography("pergamon.bib"),
-      format: "apa",
-      theme: custom-theme
-    )
+    #import "@preview/pergamon:0.8.0": *
+    #add-bib-resource(read("pergamon.bib"))
+    #refsection(style: numeric-style())[
+      // ... zitierter Text ...
+      #print-bibliography()
+    ]
     ```
     _Erlaubt das Überschreiben des Layouts mit Typst-Funktionen._
   ]

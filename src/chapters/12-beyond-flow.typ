@@ -97,7 +97,12 @@ Typsts natives `grid` erfordert feste Spalten- oder Zeilendefinitionen. Wenn Sie
 // ════════════════════════════════════════════════════════════════
 == Icon-Integration mit Fontawesome
 
-#import "@preview/fontawesome:0.5.0": *
+#import "@preview/fontawesome:0.6.1": *
+
+// fontawesome 0.6.x nutzt standardmäßig die Font-Awesome-7-Maps/-Fonts.
+// Das Repo bündelt die FA6-Fonts (fonts/), daher deterministisch auf FA6 pinnen —
+// vermeidet die FA7-Font-Abhängigkeit im Build und hält den Build reproduzierbar.
+#fa-version("6")
 
 Für professionelle, ikonografische Layouts (z. B. in Lebensläufen oder Dashboards) bietet das Fontawesome-Paket eine direkte Integration der bekannten Icon-Bibliothek.
 

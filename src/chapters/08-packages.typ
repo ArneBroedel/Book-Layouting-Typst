@@ -9,8 +9,8 @@
 #import "../components/tables.typ": styled-table
 
 // ── Package imports ────────────────────────────────────────────
-#import "@preview/cetz:0.3.4": canvas, draw
-#import "@preview/fletcher:0.5.7" as fletcher: diagram, edge, node
+#import "@preview/cetz:0.5.2": canvas, draw
+#import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node
 
 #chapter-opener(
   title: [Pakete & Ökosystem],
@@ -186,7 +186,7 @@ Syntax für Knoten und Kanten.
   diagram(
     spacing: (12mm, 14mm),
     node-stroke: 0.8pt + palette.text-muted,
-    node-inset: 8pt,
+    node-inset: 4pt, // fletcher 0.5.8: inset-Halbierungs-Fix (war effektiv 4pt bei 8pt-Angabe)
 
     node((0, 0), [*Brustschmerz*], shape: fletcher.shapes.pill, fill: palette.primary.lighten(80%)),
 
@@ -224,7 +224,7 @@ _Codly_ professionelle Syntax-Hervorhebung mit Zeilennummern und
 visueller Struktur.
 
 #{
-  import "@preview/codly:1.2.0": codly, codly-init
+  import "@preview/codly:1.3.0": codly, codly-init
   show: codly-init
 
   codly(
@@ -325,7 +325,7 @@ Für schnelle Tabellen bietet _Tablem_ eine Markdown-kompatible Syntax
 direkt in Typst:
 
 #{
-  import "@preview/tablem:0.2.0": tablem
+  import "@preview/tablem:0.3.0": tablem
 
   figure(
     tablem[
