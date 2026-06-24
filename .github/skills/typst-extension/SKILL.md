@@ -532,13 +532,21 @@ For generating millions of documents, integrate Typst as a Rust library (`typst`
 
 ## 7 — PDF/UA Accessibility
 
-### Enabling PDF/UA-1 export
+### Tagging is on by default (Typst ≥ 0.14)
+
+Since Typst 0.14, every PDF is **tagged/accessible by default** — no flag required. Pass
+`--no-pdf-tags` only if you explicitly need an untagged PDF.
+
+### Enforcing strict PDF/UA-1 conformance
 
 ```shell
-typst compile --pdf-standard a-2b main.typ accessible.pdf
+typst compile --pdf-standard ua-1 main.typ accessible.pdf
 ```
 
-This enforces rigorous accessibility checks during export and surfaces errors for missing data.
+Use `ua-1` for PDF/UA-1 (accessibility). This is **independent** of PDF/A archival profiles
+(`a-1b`, `a-2b`, `a-3b`, `a-2a`, …) — `a-2b` is a PDF/A profile, **not** PDF/UA. Since Typst 0.15
+a single compile can target several compatible standards at once, e.g.
+`--pdf-standard ua-1,a-2a`. The strict `ua-1` flag surfaces errors for missing accessibility data.
 
 ### What Typst auto-tags
 

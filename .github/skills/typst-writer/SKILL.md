@@ -205,6 +205,13 @@ place(float: true, top, scope: "parent")[...]
 
 `set` rules apply to all subsequent content in the current scope (`{ }` or `[ ]`).
 
+> **Paragraph model (Typst ≥ 0.13):** `set par(...)` (first-line-indent, leading, hanging-indent)
+> affects only **proper paragraphs** — not inline-only content. Component bodies that contain a single
+> inline run (badges, one-line cards, side-notes) are *not* treated as paragraphs, so paragraph styling
+> silently does not apply there. Wrap such content in a `block`/`par` if you need the styling.
+> Tip (0.14): `par.justification-limits` enables character-level justification on top of word-level
+> for noticeably better justified body text.
+
 **Critical scoping rule:** Most `set` rules are safely scoped inside functions. But `set page(...)` is special — page-level settings can leak beyond a function's scope into subsequent content. Keep `set page(...)` at the top level or in dedicated setup functions.
 
 ### `show` rules — transform element rendering
@@ -320,6 +327,15 @@ header: context {
 ```
 
 `context` is required for `here()`, `query()`, and `counter().display()`. Odd/even detection: `calc.even(here().page())` inside a `context` block.
+
+> **Best practice (multi-chapter books):** the manual `before(here())` query above is fragile for
+> numbered/nested headings and page-boundary cases. Prefer **`@preview/hydra`** (0.6.x) for running
+> headers, or — on Typst ≥ 0.15 — the new **`within` selector**, which scopes an introspection query
+> to descendants of a given ancestor (e.g. the current chapter) and removes most manual bookkeeping.
+
+> **Typst ≥ 0.13 introspection note:** `state.display` is gone, and the `location` argument of
+> `query`/`counter.at`/`state.at` was removed — always read state inside a `context` expression.
+> `measure()` lost its `styles` argument; use a `context` expression instead.
 
 ---
 

@@ -9,7 +9,12 @@ Place stable, visually correct pinit annotations in Typst documents without tria
 This skill encodes a full workflow: mental model → boilerplate → initial placement →
 debug-assisted coordinate reading → systematic correction → stabilisation via Recipe B.
 
-All patterns are verified against `@preview/pinit:0.2.2`.
+All patterns are verified against `@preview/pinit:0.2.2` (latest) on Typst ≥ 0.15.
+
+> **Typst ≥ 0.13 note:** the location-passing introspection APIs are gone — `query`, `counter.at`,
+> and `state.at` no longer accept a `location` argument, and `state.display` was removed. Recipe C's
+> `here().position()` and `state(...).get()` inside `context` remain correct; just never write the
+> old location-argument form.
 
 **Project debug module:** `devtracks/pinit-workflow/components/pinit-debug.typ`
 **Regression tests:** `devtracks/pinit-workflow/debug/pinit-regression.typ`
