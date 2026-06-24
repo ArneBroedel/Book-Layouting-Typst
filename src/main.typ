@@ -78,5 +78,15 @@
 #include "chapters/16-margin-patterns.typ"
 #include "chapters/17-visual-hierarchy.typ"
 
+// ── Part VI: Medizinische Fachbuch-Fähigkeiten ────────────────
+#{
+  import "components/spreads.typ": part-page
+  part-page(number: "Teil VI", title: [Medizinische Fachbuch-Fähigkeiten])
+}
+
+#include "chapters/19-didaktik.typ"
+#include "chapters/20-datenvisualisierung.typ"
+#include "chapters/21-diagramme.typ"
+
 // ── Back Matter ────────────────────────────────────────────────
 #include "chapters/07-backmatter.typ"

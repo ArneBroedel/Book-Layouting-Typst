@@ -2,7 +2,8 @@
 
 #import "../styles/theme.typ": fonts, palette, space, type-scale
 #import "../components/spreads.typ": chapter-opener
-#import "../components/tables.typ": styled-table
+#import "../components/tables.typ": long-table, styled-table
+#import "@preview/in-dexter:0.7.2": make-index
 
 #chapter-opener(
   title: [Anhang],
@@ -56,7 +57,7 @@
 
 == Komponentenverzeichnis
 
-#styled-table(
+#long-table(
   columns: (auto, 1fr, auto),
   table.header(
     text(fill: white, weight: "bold", size: type-scale.small)[Komponente],
@@ -144,6 +145,78 @@
   [part-page],
   [Ganzseitiger Teiltrenner],
   [spreads.typ],
+  [feature-spread],
+  [Zwei-Seiten-Spread (Doppelseite)],
+  [spreads.typ],
+  [clinical-case-spread],
+  [Fall/Diskussion über zwei Seiten],
+  [spreads.typ],
+  [learning-objectives],
+  [Lernziele-Box mit Checkliste],
+  [didactics.typ],
+  [summary-box],
+  [Zusammenfassung / „In Kürze"],
+  [didactics.typ],
+  [memo],
+  [Merksatz / Key Point],
+  [didactics.typ],
+  [definition],
+  [Formale Begriffsdefinition],
+  [didactics.typ],
+  [clinical-pearl],
+  [Praxistipp / Clinical Pearl],
+  [didactics.typ],
+  [cave],
+  [Cave / Red-Flag-Warnung],
+  [didactics.typ],
+  [excursus],
+  [Exkurs / Vertiefung],
+  [didactics.typ],
+  [mnemonic],
+  [Eselsbrücke mit Merkphrase],
+  [didactics.typ],
+  [ddx-box],
+  [Differenzialdiagnose-Box],
+  [didactics.typ],
+  [clinical-case],
+  [Strukturierter klinischer Fall],
+  [didactics.typ],
+  [mc-question / solution-key],
+  [MCQ-Selbsttest mit Lösungsschlüssel],
+  [exam.typ],
+  [evidence-badge / loe-badge],
+  [Empfehlungsgrad / Evidenzlevel],
+  [inline.typ],
+  [qty / qty-range],
+  [Wert + Einheit, Bereichsangabe],
+  [inline.typ],
+  [score-table],
+  [Score-Tabelle mit Summe],
+  [tables.typ],
+  [reference-table],
+  [Normwert-Tabelle mit Abweichung],
+  [tables.typ],
+  [long-table / cspan / rspan],
+  [Mehrseitige Tabelle, Zell-Spanning],
+  [tables.typ],
+  [margin-note / margin-setup],
+  [Kollisionsfreie Randnotizen],
+  [layouts.typ],
+  [bar-chart / box-plot],
+  [Balkendiagramm, Box-Plot],
+  [charts.typ],
+  [km-curve / roc-curve],
+  [Kaplan-Meier, ROC-Kurve],
+  [charts.typ],
+  [percentile-chart / forest-plot],
+  [Perzentilkurven, Forest-Plot],
+  [charts.typ],
+  [cycle-diagram / pathway-diagram],
+  [Zyklus-, Pathway-Diagramm],
+  [diagrams.typ],
+  [pedigree],
+  [Stammbaum (Genetik)],
+  [pedigree.typ],
 )
 
 == Literaturverzeichnis
@@ -173,3 +246,12 @@
 
 + Sweller, J. (1988). Cognitive Load During Problem Solving: Effects
   on Learning. _Cognitive Science_, 12(2), 257–285.
+
+#set text(size: type-scale.body)
+
+== Index
+
+Das Stichwortverzeichnis wird automatisch aus den im Fließtext gesetzten
+`index`-Markierungen erzeugt (Paket `@preview/in-dexter`).
+
+#columns(2, make-index(title: none, outlined: false))

@@ -1,6 +1,47 @@
 // components/layouts.typ — Layout components
 
 #import "../styles/theme.typ": fonts, gradients, palette, space, type-scale
+#import "@preview/marginalia:0.3.1" as marginalia
+
+// ── Margin notes (Tufte-style, collision-free) ─────────────────
+// Real margin notes via @preview/marginalia: notes stack in the outer
+// margin without overlapping. A chapter must enable the margin column
+// once with `#show: marginalia-setup` (which reserves the space and
+// MUST be applied before the notes are used).
+//
+// Note markers use superscript numbers in our embedded fonts — this
+// deliberately avoids marginalia's default "Inter" marker style.
+#let _margin-numbering = (..i) => text(
+  fill: palette.primary,
+  weight: "bold",
+  size: 6.5pt,
+)[#super(numbering("1", ..i.pos()))]
+
+#let margin-note(body, title: none) = marginalia.note(
+  numbering: _margin-numbering,
+  {
+    set text(size: type-scale.tiny, fill: palette.text-body)
+    set par(justify: false, leading: 0.55em)
+    if title != none {
+      text(weight: "bold", font: fonts.sans, fill: palette.primary-dark, title)
+      linebreak()
+    }
+    body
+  },
+)
+
+// Page setup show-rule for a chapter that uses margin notes. Outer
+// margin is widened to hold the note column; inner (binding) stays
+// generous. `book: true` keeps inside/outside alternation.
+// Binding (inner) margin stays at the book's 25mm; only the outer edge
+// is widened to ~32mm to hold the note column.
+#let margin-setup = marginalia.setup.with(
+  book: true,
+  inner: (far: 25mm, width: 0mm, sep: 0mm),
+  outer: (far: 5mm, width: 22mm, sep: 5mm),
+  top: 25mm,
+  bottom: 25mm,
+)
 
 // ── Sidebar layout ─────────────────────────────────────────────
 // Fixed sidebar + fluid main content via grid.

@@ -71,3 +71,34 @@
   sans: ("Libertinus Serif",), // no sans font embedded; bold/size provide hierarchy
   mono: ("DejaVu Sans Mono",),
 )
+
+// ── Didactic box semantics ─────────────────────────────────────
+// Data-driven labels + colors for the medical-didactic box family
+// (components/didactics.typ). Each entry: a header label (German,
+// idiomatic for medical textbooks) and a base color from `palette`.
+#let didactics = (
+  objectives: (label: "Lernziele", color: palette.primary),
+  summary: (label: "In Kürze", color: palette.primary-dark),
+  memo: (label: "Merke", color: palette.accent-dark),
+  case: (label: "Klinischer Fall", color: palette.info),
+  pearl: (label: "Praxistipp", color: palette.success),
+  cave: (label: "Cave", color: palette.danger),
+  definition: (label: "Definition", color: palette.primary),
+  excursus: (label: "Exkurs", color: palette.text-muted),
+  mnemonic: (label: "Merkhilfe", color: palette.accent),
+  ddx: (label: "Differenzialdiagnose", color: palette.warning),
+)
+
+// ── Evidence grading ───────────────────────────────────────────
+// Empfehlungsgrade (A–D) and Evidenzlevel (LOE 1–5) color coding for
+// the evidence badges in components/inline.typ.
+#let evidence = (
+  grade: (
+    "A": palette.success,
+    "B": palette.info,
+    "C": palette.warning,
+    "D": palette.danger,
+  ),
+  // LOE 1 (highest) → 5 (lowest), indexed by level-1
+  loe: (palette.success, palette.info, palette.primary, palette.warning, palette.danger),
+)

@@ -1,6 +1,7 @@
 // components/spreads.typ — Full-page constructs
 
 #import "../styles/theme.typ": fonts, gradients, palette, space, type-scale
+#import "didactics.typ": clinical-case
 
 // ── Book cover ─────────────────────────────────────────────────
 // Full-bleed cover with gradient, title, decorative overlays.
@@ -142,6 +143,62 @@
   )
   v(space.xl)
 }
+
+// ── Spread start ───────────────────────────────────────────────
+// Ensure the following content begins on a verso (even/left) page so a
+// two-page feature occupies a true facing spread.
+#let spread-start() = pagebreak(to: "even", weak: true)
+
+// ── Feature spread (two facing pages) ──────────────────────────
+// Designed left/right pages forming one visual unit. Starts on a verso
+// page; `left-page` fills the left, `right-page` the right. An optional
+// title band spans the top of the left page.
+#let feature-spread(
+  left-page,
+  right-page,
+  title: none,
+) = {
+  spread-start()
+
+  if title != none {
+    block(
+      width: 100%,
+      fill: gradients.chapter,
+      inset: (x: space.lg, y: space.md),
+      radius: 4pt,
+      below: space.lg,
+      text(size: type-scale.h3, weight: "bold", fill: white, font: fonts.sans, title),
+    )
+  }
+  left-page
+
+  pagebreak()
+  right-page
+}
+
+// ── Clinical-case spread ───────────────────────────────────────
+// Verso: structured clinical case. Recto: differential/discussion. The
+// `discussion` content is rendered on the facing right page.
+#let clinical-case-spread(
+  title: none,
+  anamnese: none,
+  befund: none,
+  diagnose: none,
+  therapie: none,
+  discussion: none,
+) = feature-spread(
+  title: title,
+  clinical-case(
+    anamnese: anamnese,
+    befund: befund,
+    diagnose: diagnose,
+    therapie: therapie,
+  ),
+  {
+    block(below: space.md, text(size: type-scale.h3, weight: "bold", font: fonts.sans, fill: palette.primary)[Diskussion])
+    discussion
+  },
+)
 
 // ── Part page ──────────────────────────────────────────────────
 // Full-page divider for book parts.
