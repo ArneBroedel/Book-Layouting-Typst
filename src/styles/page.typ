@@ -1,6 +1,7 @@
 // styles/page.typ — Page geometry, margins, running headers/footers
 
 #import "theme.typ": fonts, palette, space, type-scale
+#import "@preview/hydra:0.6.3": hydra
 
 #let setup-pages() = body => {
   set page(
@@ -13,21 +14,24 @@
     ),
 
     // ── Running header ───────────────────────────────────────
+    // @preview/hydra liefert den aktuellen Level-1-Kapiteltitel robust gegen
+    // nummerierte/verschachtelte Headings und Seitenränder; das `display`-Callback
+    // zeigt nur den Heading-Body (ohne Nummer). Im Front-Matter (vor dem ersten
+    // Kapitel) gibt hydra `none` zurück.
+    // Kapitel-Startseiten werden zusätzlich explizit unterdrückt: Der
+    // `chapter-opener` setzt die große Kapitelnummer ÜBER das Heading, daher
+    // greift hydras `skip-starting` hier nicht (an der Header-Position ist das
+    // vorige Kapitel noch „aktuell"). Diese Designregel bleibt projektseitig.
     header: context {
       let current-page = here().page()
-
-      // Suppress header on pages that start a chapter
-      let chapter-starts = query(heading.where(level: 1))
-      let on-chapter-start = chapter-starts.any(h => {
+      let starts-here = query(heading.where(level: 1)).any(h => (
         h.location().page() == current-page
-      })
-      if on-chapter-start { return }
+      ))
+      if starts-here { return } // Kapitel-Startseite — kein Header
 
-      // Find the most recent level-1 heading
-      let headings = query(heading.where(level: 1).before(here()))
-      if headings.len() == 0 { return } // front-matter — no header
+      let chapter-title = hydra(1, display: (ctx, candidate) => candidate.body)
+      if chapter-title == none { return } // Front-Matter
 
-      let chapter-title = headings.last().body
       let is-even = calc.even(current-page)
 
       set text(size: type-scale.small, fill: palette.text-muted, font: fonts.sans)

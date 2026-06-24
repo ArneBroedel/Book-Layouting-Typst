@@ -20,6 +20,9 @@
     spacing: 1.2em,
     justify: true,
     first-line-indent: 0pt,
+    // Typst 0.14+: Character-Level-Justification — erlaubt minimales Tracking
+    // zusätzlich zum Wort-Spacing für gleichmäßigeren Blocksatz im Fließtext.
+    justification-limits: (tracking: (min: 0em, max: 0.04em)),
   )
 
   // ── Heading numbering (auto — no manual numbers anywhere) ───
