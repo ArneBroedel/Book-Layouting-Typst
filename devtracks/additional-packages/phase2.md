@@ -18,14 +18,14 @@ This phase creates **Chapter 12** (`src/chapters/12-beyond-flow.typ`), demonstra
 
 ### Biceps — Flexbox-Wrapping für Typst
 
-- [ ] Import `@preview/biceps:0.2.0`.
+- [ ] Import `@preview/biceps:0.0.1`.
 - [ ] Create a demo with at least 5–6 content blocks of **varying widths** (e.g. medical specialty badges or card-like elements). This is essential — the wrapping behaviour is only visible when items have different intrinsic sizes.
 - [ ] Show the items wrapping across multiple rows, demonstrating that Biceps distributes them like CSS Flexbox `flex-wrap: wrap`.
 - [ ] Add a `side-note()` contrasting Biceps with a native `grid(columns: (1fr, 1fr, 1fr))` — the grid forces equal columns, while Biceps respects intrinsic widths.
 
 ### Fontawesome — Icon-Integration
 
-- [ ] Import `@preview/fontawesome:0.6.0`.
+- [ ] Import `@preview/fontawesome:0.6.1`.
 - [ ] Create a richer demo than a simple inline icon — build an icon-rich sidebar or feature list using `icon-text()` from the project's own components, but powered by Fontawesome icons instead of `sym.*` characters.
 - [ ] Show at least 6–8 different icons to demonstrate the breadth of the library.
 - [ ] Use a `callout(tone: "warning")` noting that `sym.*` does **not** include UI/application icons (refer to the table in `Typst Extensibility.md`). Fontawesome fills that gap.

@@ -24,8 +24,8 @@ The following packages have been identified from the report. Packages are groupe
 2. **Beyond Standard Flow** (Chapter 12: _Jenseits des Standardflusses_)
    Unifying idea: what happens when Typst's built-in `grid`/`place`/`columns` aren't enough.
    - `Pinit` (`@preview/pinit:0.2.2`) — Absolute annotations relative to text anchors
-   - `Biceps` (`@preview/biceps:0.2.0`) — Flexbox-style wrapping layout
-   - `Fontawesome` (`@preview/fontawesome:0.6.0`) — Icon integration in text and layout (extends ch. 08 reference)
+   - `Biceps` (`@preview/biceps:0.0.1`) — Flexbox-style wrapping layout
+   - `Fontawesome` (`@preview/fontawesome:0.6.1`) — Icon integration in text and layout (extends ch. 08 reference)
 
 3. **WebAssembly & Metaprogramming** (Chapter 13: _WASM-Plugins und Metaprogrammierung_)
    - `Diagraph` (`@preview/diagraph:0.3.1`) — Graphviz layout via WASM (visual anchor)

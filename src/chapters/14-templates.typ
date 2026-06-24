@@ -21,7 +21,7 @@
 Touying ist das mächtigste Präsentations-Framework in Typst und unterstützt komplexe Animationen, globale Themes und einen eigenen Compiler-State für Folienübergänge.
 
 ```typ
-#import "@preview/touying:0.6.1": *
+#import "@preview/touying:0.7.4": *
 #import themes.simple: *
 
 #show: simple-theme.with(aspect-ratio: "16-9")
@@ -56,11 +56,11 @@ Hier ist Inhalt, der nach dem ersten Klick erscheint.
 Ilm bietet eine "One-Liner"-API, um komplexe Dokumente sofort in einem sauberen, wissenschaftlichen Stil zu formatieren.
 
 ```typ
-#import "@preview/ilm:2.0.0": *
+#import "@preview/ilm:2.1.1": *
 
 #show: ilm.with(
   title: [Medizinischer Bericht],
-  author: [Dr. Max Mustermann],
+  authors: [Dr. Max Mustermann], // ilm 2.1.x: `author` entfernt → `authors`
   date: datetime(year: 2026, month: 2, day: 28),
   table-of-contents: true
 )
@@ -103,7 +103,9 @@ Brilliant-CV zeigt einen völlig anderen Ansatz: Die Trennung von Daten (YAML/TO
 )
 
 ```typ
-// Beispielhafter Aufruf von Brilliant-CV
+// Beispielhafter Aufruf von Brilliant-CV (klassisches Root-Metadata-Muster).
+// Hinweis: brilliant-cv 4.x nutzt ein profilbasiertes Modell
+// (profile_<name>/metadata.toml, Auswahl via --input profile=<name>).
 #import "@preview/brilliant-cv:2.1.0": cv
 #let metadata = toml("metadata.toml")
 #show: cv.with(metadata)
