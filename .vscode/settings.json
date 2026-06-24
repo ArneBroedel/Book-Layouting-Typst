@@ -4,6 +4,7 @@
   "tinymist.exportPdf": "onSave",
   "tinymist.rootPath": "${workspaceFolder}",
   "tinymist.systemFonts": false,
+  "tinymist.formatterMode": "typstyle",
 
   "tinymist.previewFeature": "enable",
   "tinymist.semanticTokens": "enable",

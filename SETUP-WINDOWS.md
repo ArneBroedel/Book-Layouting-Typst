@@ -33,7 +33,7 @@ Nach dem Setup: Terminal neu öffnen.
 Erwartetes Ergebnis:
 
 - Alle Pflicht-Tools gefunden
-- Mindestversionen erfüllt (Python ≥ 3.10, Typst ≥ 0.14.2)
+- Mindestversionen erfüllt (Python ≥ 3.10, Typst ≥ 0.15.0)
 - `dist/book.pdf` erfolgreich erzeugt
 
 ## 4) Täglicher Workflow

@@ -1,0 +1,42 @@
+name: Build Book
+
+# Reproduzierbarer Build mit gepinntem Typst-Compiler (siehe devtracks/tool-updates).
+# Compiler-Version hier ist die Single Source of Truth für CI-Parität.
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - "src/**"
+      - "fonts/**"
+      - ".github/workflows/build.yml"
+  pull_request:
+    paths:
+      - "src/**"
+      - "fonts/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Typst (pinned)
+        uses: typst-community/setup-typst@v4
+        with:
+          typst-version: "0.15.0"
+
+      - name: Build (reproducible flags)
+        run: |
+          mkdir -p dist
+          typst compile --root . \
+            --ignore-system-fonts --font-path fonts \
+            src/main.typ dist/book.pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: dist/book.pdf

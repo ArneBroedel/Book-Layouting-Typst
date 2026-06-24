@@ -13,7 +13,7 @@ Alles klar – wir bauen dir einen **robusten, reproduzierbaren “Publishing-St
 ### Sehr empfohlen
 
 - **WSL2 (Ubuntu)**: macht CLI, CI-Nähe und Font-/Tooling-Consistency viel angenehmer.
-- **Docker Desktop**: nicht zwingend – aber Gold wert für _pinnbare Builds_ (z.B. typst:0.14.2), CI-Parität, “läuft überall gleich”.
+- **Docker Desktop**: nicht zwingend – aber Gold wert für _pinnbare Builds_ (z.B. typst:0.15.0), CI-Parität, “läuft überall gleich”.
 
 **Minimal-Ansatz:** Git + VS Code + Typst CLI reicht zum Start.
 **Pro-Ansatz:** + WSL2 + Docker, damit du später nicht an “läuft nur auf meinem Rechner”-Quatsch stirbst.
@@ -377,7 +377,7 @@ jobs:
           mkdir -p dist
           docker run --rm \
             -v "$PWD:/work" -w /work \
-            ghcr.io/typst/typst:0.14.2 \
+            ghcr.io/typst/typst:0.15.0 \
             compile --root . \
             --ignore-system-fonts --font-path fonts \
             src/main.typ dist/book.pdf
@@ -391,6 +391,12 @@ jobs:
 ---
 
 ## 7) Prepress-Risiken (ehrlich) + robuste Gegenmaßnahmen
+
+> **Update (Typst 0.15, Stand Mitte 2026):** Einige der unten genannten Lücken sind inzwischen
+> teilweise geschlossen — der `page(bleed: ...)`-Parameter macht Beschnitt erstklassig (statt
+> Full-Bleed-Block-Hacks), Spot-/Separation-Farben unterstützen Offsetdruck, und ein einzelner
+> Compile kann mehrere PDF-Standards zugleich zielen (z. B. `ua-1,a-2a`). **PDF/X** (X-1a/X-4)
+> bleibt jedoch weiterhin nicht nativ — für PDF/X-Pflicht gilt die Hybrid-/Konvertierungsstufe unten.
 
 ### Risiko A: PDF/X fehlt (oder ist noch nicht da)
 
