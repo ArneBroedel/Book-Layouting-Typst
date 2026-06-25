@@ -22,3 +22,14 @@ This devtrack adds four new chapters (11–14) to the book under a new **Teil IV
 - Pin every package import with the full `@preview/name:X.Y.Z` syntax.
 - All chapters use German prose consistent with the medical/didactic theme.
 - After each phase, `include` the new chapter in `main.typ` inside the Teil IV block and compile the full document to verify no regressions.
+
+
+---
+
+## Harvested into
+
+Status correction: this track was FULLY IMPLEMENTED (chapters 11–14, all 14 @preview packages, Teil IV divider, ch08 forward-refs to 11/12/14) but never closed — the `[ ]` checkboxes reflect the pre-implementation state and are obsolete.
+- Package/version learnings were already harvested by the `tool-updates` track (versions are now CURRENT in the chapters, ahead of this spec: pergamon 0.8.0, ctxjs 0.5.0, touying 0.7.4, …) → `typst-extension §10`.
+- No new harvest required; nothing remained open.
+
+Archived as frozen provenance (see `docs/KNOWLEDGE-MAP.md`).

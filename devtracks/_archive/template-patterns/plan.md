@@ -27,3 +27,15 @@ This devtrack adds three new chapters (15–17) to the book under a new **Teil V
 - Add explicit cross-references to Chapter 14 wherever Touying, Ilm, or Brilliant-CV patterns are mentioned.
 - All chapters use German prose consistent with the medical/didactic theme.
 - After each phase, `include` the new chapter in `main.typ` inside the Teil V block and compile the full document to verify no regressions.
+
+
+---
+
+## Harvested into
+
+Status correction: this track was FULLY IMPLEMENTED (chapters 15–17, Teil V, all four patterns and templates) but never closed; checkboxes are obsolete. Template versions match the current ecosystem survey (no drift).
+- **Skill `typst-writer §19`** — document-engineering patterns: dynamic extraction (`query`/`context`), margin architecture (`measure`+`place`+`state`), thematic overrides (scoped `show`).
+- **Skill `typst-extension §10`** — full-page template packages override global geometry (demonstrate as code/scoped, not live); data-separation spectrum (brilliant-cv YAML vs raw JSON/CSV).
+- Note: the planned "ch08 forward-refs to ch15/16" item does NOT apply — ch08 is a package quick-reference (CeTZ/Fletcher/Codly/…) with zero overlap with the template packages shown in 15–17.
+
+Archived as frozen provenance (see `docs/KNOWLEDGE-MAP.md`).

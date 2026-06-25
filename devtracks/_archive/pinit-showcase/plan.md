@@ -23,3 +23,14 @@ Develop a new chapter demonstrating all `pinit` features, strictly adhering to t
 *   Integrate Pinit inside `raw` code blocks (Regex matching).
 *   Demonstrate mathematical equations (`equation-desc` style from official docs).
 *   Add a troubleshooting / "Notice" section directly referring to the Typst absolute placement limitations.
+
+
+---
+
+## Harvested into
+
+Status correction: this track was FULLY IMPLEMENTED (chapter 18, all pinit features, and a bonus radial showcase that exceeds the spec) — its phase acceptance criteria were already `[x]`.
+- Pinit know-how lives in the self-contained `pinit-workflow` skill (debug module, recipes A/B/C, AI playbook); the chapter is the published demonstration. No duplication, nothing left open.
+- No new harvest required.
+
+Archived as frozen provenance (see `docs/KNOWLEDGE-MAP.md`).
