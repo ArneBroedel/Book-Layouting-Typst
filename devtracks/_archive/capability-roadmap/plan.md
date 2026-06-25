@@ -101,3 +101,15 @@ und PDF/UA-Build kompilieren nun beide ohne Errors **und** ohne Warnungen.
 `marginalia` (Randnotizen), `in-dexter` (Index), `alchemist` (Strukturformeln),
 `timeliney` (Zeitleisten). Charts/Diagramme/Pedigree als CeTZ-Eigenbau für eine
 konsistente visuelle Sprache (keine neuen Plot-Abhängigkeiten).
+
+
+---
+
+## Harvested into
+
+This completed track was harvested before archiving:
+- **Skill `typst-extension` §10** — medical capability set: CeTZ-native charts, marginalia, in-dexter, unify/zero.
+- **Skill `typst-writer` §19** — didactic boxes via native box+token, `table.header(repeat:true)`, verso-spread "DOPPELSEITE" divider, CSV display-name mapping.
+- **Guide** → "Lessons harvested from devtracks (2026)" → "Medical/didactic capability set".
+
+Archived as frozen provenance (see `docs/KNOWLEDGE-MAP.md`).

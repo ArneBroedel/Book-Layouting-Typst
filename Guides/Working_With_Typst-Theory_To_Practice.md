@@ -2,6 +2,9 @@
 
 > Lessons learned from building a 23-page medical textbook showcase with Typst.
 > Every section documents a real mistake we made, the root cause, and the proven fix.
+>
+> **Encoded in skills:** `typst-writer` (§19) and `typst-extension` (§10) — this guide is the
+> long-form *why*; the skills carry the actionable *what*. See `docs/KNOWLEDGE-MAP.md`.
 
 ---
 
@@ -701,3 +704,66 @@ These were verified through trial-and-error during the project:
 15. **`gradient.linear(color1, color2, angle: 45deg)`** creates a gradient fill usable on `block` or `page`.
 16. **Inside/outside margins** (`margin: (inside: ..., outside: ...)`) auto-mirror for odd/even pages.
 17. **`sym.` namespace** is limited — not every Unicode symbol has a named alias (e.g., `sym.lightning` does not exist). When in doubt, paste the Unicode character directly or use a text-based fallback.
+
+---
+
+## Lessons harvested from devtracks (2026)
+
+Long-form "we hit X, root cause Y, fix Z" records, harvested from completed devtracks. The actionable
+one-liners are encoded in the `typst-writer` and `typst-extension` skills (§19 / §10); this section keeps
+the reasoning. *Encoded in skills: `typst-writer`, `typst-extension`.*
+
+### Image integration & text-image flow (devtrack: image-flow)
+
+**"The figure is too small" was a width-resolution bug, not an aspect-ratio problem.** A `wrap-figure`
+put `image(width: 100%)` inside a frameless box and wrapped that in `box(width: 46%)`. The inner `100%`
+resolved against a width-less box, so the image fell back to its *natural* size and the `46%` never
+reached it. A standalone test resolved percentages differently and gave a false "fixed" — the defect only
+showed in the real A4 book. Root cause: fractional widths need a definite container. Fix: resolve the
+fraction to an absolute length with `layout(size => width * size.width)` and pass it straight to `image`.
+Two lessons compounded: (1) verify sizing in the real document context, never a simplified standalone;
+(2) diagnose root cause (width plumbing) before changing assets (we first wrongly swapped the SVG aspect).
+
+**Typst cannot wrap text around images natively** (typst/typst#553), so the stack is `wrap-it` (simple,
+rectangular) and `meander` (contour engine). Three non-obvious traps surfaced: `meander`'s caption must
+sit *outside* the obstacle or flowing text floods the cut-out; a true round contour needs a *transparent*
+image background or the rectangular bbox shows; and `@preview/magnifying-glass:0.1.0` is broken on Typst
+0.15 (old `scale()` signature → `expected content, found float`), so a self-built clipped-circle magnifier
+was the right call. For per-chapter figure numbers, `i-figured` clashes with `subpar` (it renumbers
+sub-figures (a)(b) → (b)(d)); native `set figure(numbering: …)` keyed on the heading counter is both
+lighter and conflict-free, and `subpar` needs its parent `numbering:` passed explicitly because it does
+not inherit the global set-rule.
+
+### PDF/UA-1 accessibility (devtrack: pdf-ua-compliance)
+
+**One package's auto-heading hard-aborted the whole UA export.** `tidy.show-module`'s default style emits a
+"Parameters" heading whose title is a `context` expression the UA tagger cannot resolve statically, aborting
+with `heading title could not be determined` and masking every other UA error. The fix was a project-local
+style wrapping `tidy.styles.minimal` that overrides `show-parameter-list` to drop the heading entirely.
+Two systemic rules fell out: emoji glyphs are absent under `--ignore-system-fonts` (use `@preview/fontawesome`
+instead), and package-generated figures (codly, zero, glossarium) carry no alt-text — a global
+`set figure(alt: "…")` + `set math.equation(alt: "…")` fallback in the typography setup makes them compliant
+while explicit per-figure `alt:` overrides it. The accessibility flag is `--pdf-standard ua-1`, distinct from
+PDF/A's `a-2b`.
+
+### Toolchain & package bumps (devtrack: tool-updates)
+
+**Pinning the compiler first was the highest-leverage move.** An unpinned compiler let three contradictory
+version strings drift across docs, CI and setup files; pinning it (≥ 0.14.2, which also closes a WASM
+use-after-free) gave every compiler-gated package a stable base. The biggest realisation: most "outdated"
+imports lived only inside ` ```typ ` code blocks and were never compiled — auditing compiled-vs-documentation
+imports shrank the real surface from 27 to <10 packages. Phantom versions (`codly:1.3.1`, `biceps:0.2.0`)
+do not exist and fail only at compile time, so registry cross-checks are mandatory. Running two independent
+research passes and diffing them is what surfaced the genuinely breaking items (ctxjs 0.5.0's tuple return,
+fletcher 0.5.8's halved `node-inset`) — the disagreements between sources are exactly where the risk lives.
+
+### Medical/didactic capability set (devtrack: capability-roadmap)
+
+**Most "missing" capabilities needed no package at all.** Classifying gaps into Class A (authoring components
+the writer uses) vs Class B (visual showcases) before coding kept scope clear: Class A items (the full
+didactic box family) are native `box` + icon + design token, and Class B charts (bar/box/Kaplan-Meier/ROC/
+forest/percentile) plus a genetics pedigree were best hand-built in CeTZ for one consistent visual language,
+reaching for a plot library only when a chart was genuinely hard in raw CeTZ. Two layout lessons: two-page
+spreads that must begin on a verso page should fill the alignment page with a *labeled* "DOPPELSEITE" divider
+rather than an unexplained blank; and CSV-driven tables need a display-name mapping plus `1fr` proportional
+widths, or raw `underscore_column` names overflow narrow cells.

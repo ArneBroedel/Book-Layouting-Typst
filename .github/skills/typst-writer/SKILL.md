@@ -731,3 +731,32 @@ pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -Mode fast
 - **Introspection/query**: https://typst.app/docs/reference/introspection/query/
 - **Typst packages (Universe)**: https://typst.app/universe
 - **Context7 MCP library ID**: `/typst/typst` (use with `mcp_context7_query-docs`)
+
+---
+
+## 19 — Harvested Gotchas: Figures, Images & Didactic Layout
+
+Distilled from completed devtracks (image-flow, tool-updates, pdf-ua-compliance, capability-roadmap). Package-specific details live in the `typst-extension` skill; long-form rationale in `Guides/Working_With_Typst-Theory_To_Practice.md`.
+
+### Images & figures
+- **Fractional figure width is unreliable unless resolved to an absolute length.** `image(width: 100%)` inside a width-less box collapses to the image's NATURAL size, so a `box(width: 46%)` wrapper has no effect. Fix: resolve the fraction against the real text width with `layout`: `layout(size => { let w = width * size.width; image(.., width: w) })`. Context-independent.
+- **Set `figure(kind: image)` explicitly** when the figure body is not a bare `image` (e.g. a framed `box`) — else Typst errors "unable to determine figure kind".
+- **`image()` resolves paths relative to the calling FILE.** In a shared component file (`components/figures.typ`), callers must pass root-absolute paths (`/src/assets/…`), not chapter-relative ones.
+- **Native per-chapter figure numbering** (no package, subpar-safe): `set figure(numbering: n => numbering("1.1", counter(heading).get().first(), n))` plus a level-1 heading show rule that resets `counter(figure.where(kind: image)).update(0)`. (i-figured conflicts with subpar — avoid it.)
+- **Always verify a layout/sizing fix in the REAL document context** (full A4 + `setup-pages`), not a simplified standalone — percentage/float resolution differs by container, so a standalone can give a false "fixed". Diagnose root cause before changing assets/format.
+
+### PDF/UA-1 source rules
+- **Never put emoji glyphs** (📐📝📋ℹ️) in source under `--ignore-system-fonts` — absent from embedded fonts → render warning + UA error. Use `@preview/fontawesome` icons (`fa-table-cells`, `fa-circle-info`, …), which embed.
+- **Every content `figure` needs `alt: "…"`.** For figures emitted internally by packages, set a global fallback in `setup-typography()`: `set figure(alt: "Abbildung.")` and `set math.equation(alt: "…")`; explicit per-figure `alt:` overrides it.
+- **Tidy docstrings must start at column 0** — an indented docstring silently renders a blank API figure (no error).
+
+### Migration & layout rules (Typst 0.13–0.15)
+- Before compiling on 0.15, grep for and migrate: `path(` → `curve(`; also audit `state.display`, positional `location:` args to `query`/`counter.at`/`state.at`, `pdf.embed`→`pdf.attach`, and backslash separators in `#import`/`image()` (forbidden in 0.15).
+- Since 0.13, `set par(first-line-indent:, leading:)` applies only to true block paragraphs — inline-only component bodies (badges, single-line cards) do NOT inherit `par` rules.
+- Running headers: prefer `@preview/hydra` or the native `within` selector over the fragile `query(heading.where(..)).before(here())` idiom; the hybrid (hydra title + explicit chapter-start suppression) is proven.
+
+### Didactic / book layout
+- The full didactic box family needs NO package — native `box` + icon + design token (`theme.typ`). Keep all color/label constants in tokens so components stay configurable without code edits.
+- Multi-page tables: `table.header(repeat: true)` (native 0.15); wrap merged cells in `cspan`/`rspan` helpers over inline `table.cell(colspan:/rowspan:)`.
+- Spreads that must start on a verso page: use a `context` page-parity check and insert a LABELED divider ("DOPPELSEITE") on the alignment page — never an unexplained blank.
+- Data-driven tables from CSV: map raw underscore column names to display names at the call site and pass `1fr` proportional widths to avoid character-level breaks in narrow columns.

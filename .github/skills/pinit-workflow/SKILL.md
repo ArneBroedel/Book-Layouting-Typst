@@ -6,6 +6,8 @@ description: "Place, debug, and fix pinit annotations in Typst documents. ALWAYS
 # Pinit Workflow
 
 Place stable, visually correct pinit annotations in Typst documents without trial-and-error.
+
+> **Background:** `Guides/Pinit-Best-Practices.md` carries the long-form *why* behind these rules.
 This skill encodes a full workflow: mental model → boilerplate → initial placement →
 debug-assisted coordinate reading → systematic correction → stabilisation via Recipe B.
 
@@ -16,10 +18,14 @@ All patterns are verified against `@preview/pinit:0.2.2` (latest) on Typst ≥ 0
 > `here().position()` and `state(...).get()` inside `context` remain correct; just never write the
 > old location-argument form.
 
-**Project debug module:** `devtracks/pinit-workflow/components/pinit-debug.typ`
-**Regression tests:** `devtracks/pinit-workflow/debug/pinit-regression.typ`
-**Style guide:** `devtracks/pinit-workflow/docs/pinit-style-guide.md`
-**AI playbook:** `devtracks/pinit-workflow/docs/pinit-ai-playbook.md`
+This skill is self-contained — these assets ship alongside this `SKILL.md`:
+
+**Debug module:** `components/pinit-debug.typ` (copy into your project's `components/` to use)
+**Regression tests:** `debug/pinit-regression.typ` (+ reference `debug/pinit-regression.pdf`)
+**Known-issue inventory:** `debug/pinit-issues.md`
+**Style guide:** `docs/pinit-style-guide.md`
+**AI playbook:** `docs/pinit-ai-playbook.md`
+**Coordinate roundtrip:** `docs/pinit-coordinate-roundtrip.md` · **Click map tool:** `tools/pinit-clickmap.html`
 
 ---
 
@@ -534,7 +540,7 @@ DOCS BUG (verified, @preview/pinit:0.2.2)
   Correct formula: offset-dx = desired_x − midpoint_x  (NOT desired_x − pin0.x)
   For true page-absolute placement: use absolute-place (Recipe C)
 
-DEBUG MODULE (devtracks/pinit-workflow/components/pinit-debug.typ)
+DEBUG MODULE (components/pinit-debug.typ — ships with this skill)
   #enable-pinit-debug        activate (state-based, works across module boundary)
   #disable-pinit-debug       deactivate
   #dbg-grid()                draw coordinate grid on this page

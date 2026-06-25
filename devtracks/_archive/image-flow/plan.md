@@ -62,3 +62,15 @@ grün, alle Komponenten visuell im A4-Kontext geprüft).
 - `wrap-top-bottom` (mehrere Bilder im selben Absatz) als weitere Variante.
 - Index-Marker (`in-dexter`) gezielter über die Bildbegriffe streuen.
 - Echte Raster-Beispielbilder (Foto/Histologie) als zusätzliche Assets.
+
+
+---
+
+## Harvested into
+
+This completed track was harvested before archiving:
+- **Skill `typst-extension` §10** — image/text-flow packages (wrap-it, meander, subpar; i-figured↔subpar conflict; magnifying-glass↔0.15 incompatibility).
+- **Skill `typst-writer` §19** — `layout()` width resolution, `figure(kind: image)`, `image()` path resolution, native per-chapter numbering, verify-in-real-context.
+- **Guide** `Working_With_Typst-Theory_To_Practice.md` → "Lessons harvested from devtracks (2026)" → "Image integration & text-image flow".
+
+Archived as frozen provenance (see `docs/KNOWLEDGE-MAP.md`).

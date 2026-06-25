@@ -637,3 +637,34 @@ When upgrading a package version:
 6. Commit the version bump as its own change, separate from content edits
 
 **Real example:** `@preview/codly` renamed `pattern:` to `tiling:` in v1.2.0. Documents using the old parameter name compiled with deprecation warnings (not errors), which became noisy at scale and masked real warnings. The fix: update the parameter name when upgrading.
+
+---
+
+## 10 — Harvested Gotchas (figures, version bumps, PDF/UA)
+
+Distilled from completed devtracks (image-flow, tool-updates, pdf-ua-compliance, capability-roadmap). Long-form rationale: `Guides/Working_With_Typst-Theory_To_Practice.md`.
+
+### Image & text-flow packages
+Typst has no native text-wrap-around-image (typst/typst#553). Stack:
+
+- **`@preview/wrap-it`** — `wrap-content(figure, body, align: top + right, column-gutter: …)`. Simple, rectangular, left/right only. The figure's width must be a definite length (see the `layout()` rule in **typst-writer §19**), not a `box(width: 46%)` wrapper.
+- **`@preview/meander`** — contour-wrap engine: `reflow({ placed(align, boundary: contour.margin(..) + contour.grid(div:, fn), img); container(width: 48%); container(align: right, width: 48%); content[..] })`. Centered "circle-hole" = `center + horizon` + two containers. Bound it inside `block(height: …)` so it does not claim the whole page. Put the caption OUTSIDE the obstacle (wrap the whole reflow in `figure`), else text floods the cut-out. The image needs a **transparent background** for a true contour, else its rectangular bbox shows.
+- **`@preview/subpar`** — sub-figures (a)(b). It sets the SUPER-figure numbering itself and does NOT inherit a global `set figure(numbering: …)` — pass `numbering:` to `subpar.grid` explicitly.
+- **`@preview/i-figured`** — AVOID for per-chapter numbering when `subpar` is present: it renumbers subpar sub-figures ((a)(b) → (b)(d)). Use native numbering (typst-writer §19) instead.
+- **`@preview/magnifying-glass:0.1.0`** — BROKEN on Typst 0.15 (old `scale()` signature → `expected content, found float`). Build the magnifier yourself: `box(width: 2r, height: 2r, radius: 50%, clip: true, move(dx:, dy:, image(width: w * zoom)))` + a connector `line`.
+
+### Version-bump gotchas (verify against `packages.typst.org/preview/index.json`)
+- Phantom versions are silent: `codly:1.3.1`, `biceps:0.2.0` do NOT exist (latest `1.3.0` / `0.0.1`). A bad pin only fails when actually compiled.
+- **Compiler gates:** `codly` needs compiler ≥ 0.13.1; check a package's `typst.toml` `[package] compiler` before bumping. Pin the compiler FIRST (highest-leverage step), and pin ≥ 0.14.2 — it fixes a WASM use-after-free relevant to any WASM plugin (diagraph, ctxjs, badformer, soviet-matrix).
+- **Breaking changes:** `ctxjs` 0.3.x→0.5.0: `new-context(module)` + `ctx.eval()` returns a `(context, value)` tuple to destructure (update live call-sites AND displayed snippets). `fletcher` 0.5.7→0.5.8 halves `node-inset` internally → adjust hardcoded `8pt`→`4pt`. `tablem` 0.3.0 auto-detects `|---|` header rows — re-verify tables. `fontawesome:0.6.1` bundles FA6 and needs `fa-version("6")`.
+- Audit first: many "outdated" imports live only inside ` ```typ ` code blocks (never compiled, zero risk). Separate compiled imports from documentation-only ones. Run two independent research sources and diff — disagreements are where the real risk lives.
+
+### PDF/UA-1 (`--pdf-standard ua-1`)
+- The accessibility flag is `ua-1` (PDF/UA-1), NOT `a-2b` (PDF/A archival). Tagging is on by default since 0.14; `ua-1` adds the UA layer; UA-1 + PDF/A-2a can combine.
+- `tidy.show-module` default style hard-aborts UA (`heading title could not be determined` — its "Parameters" heading is a `context` expr). Fix: a local style wrapping `tidy.styles.minimal` that overrides `show-parameter-list` to drop the heading, called as `show-module(.., style: ua-style, show-module-name: false)`.
+- `diagraph`/Graphviz: set `fontname="Libertinus Serif"` in the DOT source — `fontname="sans-serif"` warns under `--ignore-system-fonts`.
+- The `set figure(alt:)` global fallback and emoji→fontawesome rules live in **typst-writer §19**.
+
+### Medical / didactic capability set
+- The full didactic box family (objectives, summary, memo, definition, pearl, cave, excursus, mnemonic, DDx, case) needs NO package — native `box` + icon + design token. Medical charts (bar/box/KM/ROC/forest/percentile) and a genetics pedigree are best hand-built in **`@preview/cetz`** for one consistent visual language; reach for `@preview/lilaq` only when a chart is genuinely hard in raw CeTZ.
+- `@preview/marginalia` for collision-free margin notes (coordinate with `page.typ` binding geometry). `@preview/in-dexter` `index[…]` markers in chapters → collected in `main.typ` back matter. `@preview/unify` (or `@preview/zero` for decimal alignment) for `qty`/units.

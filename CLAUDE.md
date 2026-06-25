@@ -44,13 +44,25 @@ When editing a component, change tokens in `theme.typ` rather than inlining colo
 
 - **typst-writer** — use for *any* `.typ` creation/edit, compile-error fix, or layout-defect debugging.
 - **typst-extension** — use when importing any `@preview` package, loading JSON/CSV data, or configuring `typst.toml`/CI.
-- **pinit-workflow** — use for any `#pin*` / pinit annotation work; references `devtracks/pinit-workflow/` (debug module, regression tests, style guide, AI playbook).
+- **pinit-workflow** — use for any `#pin*` / pinit annotation work; self-contained (debug module, regression tests, style guide, and AI playbook ship inside the skill).
 - **git-steward** — strict Git/GitHub policy: never branch/switch without explicit request, never commit on `master`/`main`, prefer PR flow, never `reset --hard`/`clean -fd`/force-push without approval.
+
+## Knowledge architecture
+
+Knowledge is organized into five types — full version, lifecycle, and "where do I put X?" list in `docs/KNOWLEDGE-MAP.md`:
+
+- **Governance / conventions** → `CLAUDE.md` + `docs/KNOWLEDGE-MAP.md` (how to work in this repo).
+- **Durable reference** (the *why*) → `Guides/` (Typst theory + lessons-learned ledger).
+- **Executable skills** (the *what*) → `.github/skills/`.
+- **Active dev plans** → `devtracks/` (nothing completed stays here).
+- **External / generated data** → `research/` (+ `templates/` study corpus).
+
+Core rule: **devtracks are working memory, skills are long-term memory.** A track is "done" only once its learnings are *harvested* and it is archived.
 
 ## Development process (devtracks)
 
-Feature work is spec-driven and tracked under `devtracks/<name>/` with at least `spec.md` and `plan.md`; complex work splits into `phaseN.md` files linked from `plan.md`. Follow this structure when starting a non-trivial feature.
+Feature work is spec-driven and tracked under `devtracks/<name>/` with at least `spec.md` and `plan.md`; complex work splits into `phaseN.md` files linked from `plan.md`. Follow this structure when starting a non-trivial feature. **On completion, harvest** the track's learnings into the relevant skill(s) (via `skill-creator`) and guide(s), add a `## Harvested into` footer to its `plan.md`, then `git mv` it to `devtracks/_archive/`. Devtracks never hold completed work; `_archive/` is frozen provenance.
 
 ## Package-research pipeline
 
-Top-level Python scripts (`fetch_packages.py`, `process_index.py`, `process_templates.py`, `refine_json.py`, `check_versions.py`) build and refine the large ecosystem-survey JSON files (`all_packages.json`, `all_templates.json`, `index.json`, `latest_packages_meta.json`) plus `readmes/`. These are research/reference data, independent of the book build — touch only when updating the ecosystem survey.
+Python scripts under `research/pipeline/` (`fetch_packages.py`, `process_index.py`, `process_templates.py`, `refine_json.py`, `check_versions.py`) build and refine the large ecosystem-survey JSON files under `research/data/` (`all_packages.json`, `all_templates.json`, `index.json`, `latest_packages_meta.json`). These are research/reference data, independent of the book build — touch only when updating the ecosystem survey.

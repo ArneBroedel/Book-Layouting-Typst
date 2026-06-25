@@ -53,3 +53,15 @@ typst compile … --pdf-standard ua-1 src/main.typ dist/book-ua.pdf → EXIT 0, 
 
 Visuell ohne Regression (Stichproben: pinit-Formel & -Radial, diagraph, tidy,
 fontawesome-Icons, Physica-Boxen).
+
+
+---
+
+## Harvested into
+
+This completed track was harvested before archiving:
+- **Skill `typst-extension` §10** — PDF/UA-1: tidy custom style, diagraph DOT `fontname`, `ua-1` vs `a-2b`.
+- **Skill `typst-writer` §19** — emoji→fontawesome, global `set figure(alt:)` fallback, tidy docstring at column 0.
+- **Guide** → "Lessons harvested from devtracks (2026)" → "PDF/UA-1 accessibility".
+
+Archived as frozen provenance (see `docs/KNOWLEDGE-MAP.md`).

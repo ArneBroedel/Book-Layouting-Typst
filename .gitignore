@@ -20,3 +20,9 @@ Thumbs.db
 
 # Transient PDFs
 src/main.pdf
+
+# Root-level scratch experiment outputs (keep sources in test/)
+/test*.png
+/test*.pdf
+/test*_b64.txt
+/test*_preview.html

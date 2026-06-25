@@ -63,3 +63,14 @@ Deliverables:
   keine Textüberdeckung, Pfeilspitze trifft, Box innerhalb der Seite.
 - Phase 3: Playbook erzeugt reproduzierbar bessere Erstversuche und Korrekturen.
 - Phase 4: Koordinatenfluss funktioniert ohne manuelles Schätzen.
+
+
+---
+
+## Harvested into
+
+This track is complete (all deliverables produced; Phase 4 was optional). Its durable assets now live IN the `pinit-workflow` skill (self-contained):
+- **Skill `.github/skills/pinit-workflow/`** — moved here: `components/pinit-debug.typ`, `debug/pinit-regression.typ` (+pdf), `debug/pinit-issues.md`, `docs/pinit-{style-guide,ai-playbook,coordinate-roundtrip}.md`, `tools/pinit-clickmap.html`.
+- The skill→devtrack pointer was removed; the skill is now the canonical home.
+
+Archived as frozen provenance (see `docs/KNOWLEDGE-MAP.md`).

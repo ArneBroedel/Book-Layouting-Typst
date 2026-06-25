@@ -156,3 +156,15 @@ In Nutzwert-Reihenfolge:
 
 Es gibt **keine** sicherheitskritischen oder build-brechenden Notfälle — dies ist eine
 Aufräum- und Modernisierungs-Roadmap.
+
+
+---
+
+## Harvested into
+
+This completed track was harvested before archiving:
+- **Skill `typst-extension` §10** — version-bump gotchas: compiler-pin-first, phantom versions, ctxjs/fletcher/tablem/fontawesome breaking changes, compiled-vs-doc-only audit.
+- **Skill `typst-writer` §19** — `path(`→`curve(` migration, `par` rules on blocks only, hydra/`within` running headers.
+- **Guide** → "Lessons harvested from devtracks (2026)" → "Toolchain & package bumps".
+
+Archived as frozen provenance (see `docs/KNOWLEDGE-MAP.md`).

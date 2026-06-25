@@ -2,6 +2,9 @@
 
 > **Version policy**: This guide uses pinned dependencies to ensure stability. All versions have been verified against Typst Universe.
 > *Last verified: 2026-02-28, Typst compiler v0.12.0*
+>
+> **Encoded in skill:** `typst-extension` — this guide is the long-form rationale; the skill carries
+> the actionable package patterns and gotchas. See `docs/KNOWLEDGE-MAP.md`.
 
 The paradigm of document preparation has remained largely stagnant since the late 20th century, dominated by the tension between the visual immediacy of word processors and the structural precision of macro-based systems like LaTeX. However, the emergence of Typst represents a fundamental architectural shift toward document engineering—a discipline that treats document creation as a software development process characterized by incremental compilation, functional programming, and robust extensibility.1 Built in Rust and designed for the modern web and cloud environments, Typst moves away from the legacy macro-expansion models that have long frustrated developers and academics alike, offering instead a system where performance and composability are core design principles.1 This report provides an exhaustive analysis of the mechanisms available for extending Typst, improving layout outcomes, and optimizing the developer and writer experience within this new ecosystem.
 

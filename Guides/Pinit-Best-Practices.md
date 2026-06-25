@@ -2,6 +2,9 @@
 
 Dieser Guide fasst die Funktionsweise des `@preview/pinit` Pakets zusammen. Er kombiniert die offizielle Dokumentation mit harten Lektionen und „Trial-and-Error“-Erkenntnissen aus der Praxis. Ziel ist es, Pinit ziel- und rechtssicher einsetzen zu können, ohne stundenlang Parameter raten zu müssen.
 
+> **Encoded in skill:** `pinit-workflow` — das Skill ist der handlungsleitende, selbst-enthaltene Ort
+> (Debug-Modul, Rezepte A/B/C, Korrektur-Loop); dieser Guide bewahrt das *Warum*. Siehe `docs/KNOWLEDGE-MAP.md`.
+
 ## 1. Was ist Pinit und wann sollte man es nutzen?
 
 Pinit ist ein mächtiges Paket für **absolute und relative Annotationen**. Es erlaubt es, Pfeile, Highlights und Boxen völlig losgelöst vom normalen Textfluss (Document Flow) über die Seite zu zeichnen.
