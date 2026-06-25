@@ -653,6 +653,8 @@ Setup functions that apply `set` rules to the rest of the document **must** retu
 ...
 ```
 
+**`section-break()` convention:** it is an INTRA-chapter divider placed *between* major sections, NOT a mandatory chapter-end marker. Verified across the real book: chapters that use it (01, 05, 19, …) call it only mid-chapter and end *without* it; the whole 08–18 showcase band uses no internal dividers and that is correct, not a defect. Do not bulk-add a trailing `section-break()` to "finish" a chapter.
+
 ---
 
 ## 16 — Anti-Patterns to Avoid
@@ -760,3 +762,8 @@ Distilled from completed devtracks (image-flow, tool-updates, pdf-ua-compliance,
 - Multi-page tables: `table.header(repeat: true)` (native 0.15); wrap merged cells in `cspan`/`rspan` helpers over inline `table.cell(colspan:/rowspan:)`.
 - Spreads that must start on a verso page: use a `context` page-parity check and insert a LABELED divider ("DOPPELSEITE") on the alignment page — never an unexplained blank.
 - Data-driven tables from CSV: map raw underscore column names to display names at the call site and pass `1fr` proportional widths to avoid character-level breaks in narrow columns.
+
+### Document-engineering patterns (from studying Universe templates)
+- **Dynamic content extraction:** pull live document state into layout with `context { query(heading.where(level: 1).before(here())) }` — the basis for running headers, auto-summaries, and "current chapter" displays. Requires `context`.
+- **Margin architecture without a native primitive:** Typst still has no native margin-note element (mid-2026). Hand-build with `measure()` (size the content) + `place()` (position into the margin) + `state()` (track vertical offsets to avoid collisions); the productized version is `@preview/marginalia`.
+- **Thematic overrides:** retheme content by applying a template's entry function as a scoped show rule (`#show: letter.with(...)`) — but only when it does NOT seize global page geometry (full-page template packages: see typst-extension §10).
