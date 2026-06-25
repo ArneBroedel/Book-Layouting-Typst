@@ -9,6 +9,7 @@
 #import "../components/tables.typ": styled-table
 
 #import "@preview/pinit:0.2.2": *
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Pinit Showcase: Absolute Annotationen],
@@ -17,7 +18,7 @@
   ],
 )
 
-== Phase 1: Foundation and Basics
+== Phase 1: Foundation and Basics#index[Pinit]
 
 #card(title: [Einfache Highlights und Boxen])[
   #v(2em)
@@ -34,7 +35,7 @@
   #v(2em)
 ]
 
-== Phase 2: Complex Vector Pointers
+== Phase 2: Complex Vector Pointers#index[Annotation]
 
 #card(title: [Komplexe Vektoren und Arrays])[
   #v(2em)
@@ -75,14 +76,18 @@
   #v(6em)
 ]
 
-== Phase 3: Advanced Integrations
+== Phase 3: Advanced Integrations#index[Fletcher]
 
 #card(title: [Pinit in Code und Formeln])[
   #v(4em) // Mehr Platz für die Annotationen oberhalb
 
   Wir können Pinit auch in Formeln anwenden:
 
-  $ #pin(11) x^2 #pin(12) + #pin(13) y^2 #pin(14) = r^2 $
+  #figure(
+    $ #pin(11) x^2 #pin(12) + #pin(13) y^2 #pin(14) = r^2 $,
+    numbering: none,
+    alt: "Gleichung x-Quadrat plus y-Quadrat gleich r-Quadrat mit vier Pinit-Ankerpunkten an den Termen.",
+  )
 
   // Compact boxed labels are easier to align than bare text labels.
   #let p-label(body, clr) = block(
@@ -195,7 +200,7 @@
   #v(2em)
 ]
 
-== Phase 4: Radial Geometry Showcase
+== Phase 4: Radial Geometry Showcase#index[Radiales Layout]
 
 #pagebreak(weak: false)
 

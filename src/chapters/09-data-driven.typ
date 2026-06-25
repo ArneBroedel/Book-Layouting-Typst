@@ -8,6 +8,7 @@
 #import "../components/grids.typ": feature-grid, stats-grid
 #import "../components/tables.typ": styled-table
 #import "@preview/zero:0.6.1": ztable
+#import "@preview/in-dexter:0.7.2": index
 
 // ════════════════════════════════════════════════════════════════
 // DATA LOADING
@@ -16,6 +17,18 @@
 #let study-raw = csv("../data/sample-study.csv")
 #let study-headers = study-raw.first()
 #let study-rows = study-raw.slice(1)
+// Readable column labels — the raw CSV headers contain unbreakable
+// underscore tokens (e.g. Median_OS_Monate) that would overflow the page.
+#let study-display-headers = (
+  [Therapie],
+  [N],
+  [Ansprech-\ rate (%)],
+  [Median OS\ (Mon.)],
+  [NW Grad\ ≥3 (%)],
+  [p-Wert],
+)
+// Proportional columns guarantee the 6-column table always fits the page.
+#let study-cols = (2.2fr, 0.7fr, 1.3fr, 1.3fr, 1.4fr, 1fr)
 
 // ════════════════════════════════════════════════════════════════
 // CHAPTER OPENER
@@ -33,8 +46,8 @@
 // ════════════════════════════════════════════════════════════════
 == Die Philosophie datengetriebener Dokumente
 
-In der medizinischen Dokumentation stehen Genauigkeit und
-Reproduzierbarkeit an erster Stelle. Datengetriebene Dokumente
+In der medizinischen Dokumentation#index[medizinische Dokumentation] stehen Genauigkeit und
+Reproduzierbarkeit#index[Reproduzierbarkeit] an erster Stelle. Datengetriebene Dokumente
 trennen den _Inhalt_ von der _Darstellung_ und ermöglichen es,
 dieselben Daten in unterschiedlichen Formaten auszugeben — ohne
 erneute manuelle Erfassung.
@@ -68,7 +81,7 @@ erneute manuelle Erfassung.
 // ════════════════════════════════════════════════════════════════
 == JSON — Patientenberichte aus strukturierten Daten
 
-Das Herzstück dieses Kapitels: Aus einer einzigen JSON-Datei mit
+Das Herzstück dieses Kapitels: Aus einer einzigen JSON#index[JSON]-Datei mit
 Patientendaten erzeugen wir eine vollständige Stationsübersicht.
 Die Datei `sample-patients.json` enthält #str(patient-data.patienten.len())
 Patientenakten der Abteilung _#{ patient-data.abteilung }_.
@@ -151,42 +164,48 @@ strukturierte Karte mit Diagnose, Medikation und Vitalzeichen:
 // ════════════════════════════════════════════════════════════════
 == CSV — Studienergebnisse automatisch auswerten
 
-CSV-Dateien sind das Standardformat für tabellarische Forschungsdaten.
+CSV#index[CSV]-Dateien sind das Standardformat für tabellarische Forschungsdaten.
 Typst liest sie mit `csv()` als verschachteltes Array und erlaubt
 sowohl die direkte Darstellung als auch berechnete Analysen.
 
 === Ergebnistabelle
 
 #figure(
-  styled-table(
-    columns: (2fr, auto, auto, auto, auto, auto),
-    table.header(..study-headers.map(h => strong(h))),
-    ..study-rows.flatten(),
-  ),
+  {
+    set text(size: type-scale.small)
+    styled-table(
+      columns: study-cols,
+      table.header(..study-display-headers.map(strong)),
+      ..study-rows.flatten(),
+    )
+  },
   caption: [Klinische Studienergebnisse — automatisch aus CSV generiert.],
 )
 
 === Dezimal-Ausrichtung mit Zero
 
 Für numerische Tabellen ist die Ausrichtung am Dezimaltrennzeichen entscheidend
-für die Lesbarkeit. Das Paket *Zero* bietet mit `ztable` einen Drop-in-Ersatz für
+für die Lesbarkeit. Das Paket *Zero*#index[Zero] bietet mit `ztable` einen Drop-in-Ersatz für
 `table`, der über den `format`-Parameter pro Spalte die Zahlenausrichtung aktiviert
 (`auto` = ausrichten, `none` = unverändert):
 
 #figure(
-  ztable(
-    columns: (2fr, auto, auto, auto, auto, auto),
-    align: (left, right, right, right, right, right),
-    inset: (x: 8pt, y: 5pt),
-    fill: (x, y) => if y == 0 { palette.bg-subtle },
-    stroke: (x, y) => if y == 0 { (bottom: 0.8pt + palette.primary) } else {
-      (bottom: 0.4pt + palette.border-light)
-    },
-    // Spalte 0 (Therapie) und 5 (p-Wert mit "<0.001") als Text; 1–4 numerisch ausrichten.
-    format: (none, auto, auto, auto, auto, none),
-    table.header(..study-headers.map(h => strong(h))),
-    ..study-rows.flatten(),
-  ),
+  {
+    set text(size: type-scale.small)
+    ztable(
+      columns: study-cols,
+      align: (left, right, right, right, right, right),
+      inset: (x: 6pt, y: 5pt),
+      fill: (x, y) => if y == 0 { palette.bg-subtle },
+      stroke: (x, y) => if y == 0 { (bottom: 0.8pt + palette.primary) } else {
+        (bottom: 0.4pt + palette.border-light)
+      },
+      // Spalte 0 (Therapie) und 5 (p-Wert mit "<0.001") als Text; 1–4 numerisch ausrichten.
+      format: (none, auto, auto, auto, auto, none),
+      table.header(..study-display-headers.map(strong)),
+      ..study-rows.flatten(),
+    )
+  },
   caption: [Dieselben CSV-Daten mit Zero — die Zahlenspalten sind am Dezimalpunkt ausgerichtet.],
 )
 
@@ -218,7 +237,7 @@ die Therapie mit der höchsten Ansprechrate:
 == sys.inputs — Externe Parametrisierung
 
 Über das `sys.inputs`-Dictionary können Kommandozeilen-Parameter in
-das Dokument injiziert werden — ideal für Build-Varianten, Datumsangaben
+das Dokument injiziert werden — ideal für Build-Varianten#index[Build-Variante], Datumsangaben
 oder Umgebungskonfigurationen.
 
 #code-block(title: [Kommandozeile])[
@@ -245,7 +264,7 @@ oder Umgebungskonfigurationen.
 // ════════════════════════════════════════════════════════════════
 == Muster — Bedingte und berechnete Inhalte
 
-Datengetriebene Dokumente ermöglichen leistungsfähige dynamische
+Datengetriebene Dokumente#index[datengetriebene Dokumente] ermöglichen leistungsfähige dynamische
 Muster, die den Inhalt abhängig von den Daten variieren.
 
 === Abteilungsstatistik
@@ -307,5 +326,3 @@ Muster, die den Inhalt abhängig von den Daten variieren.
   Automatisierte Datenübernahme eliminiert Übertragungsfehler und
   sichert die Datenintegrität.
 ]
-
-#section-break()

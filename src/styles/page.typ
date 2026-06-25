@@ -29,6 +29,10 @@
       ))
       if starts-here { return } // Kapitel-Startseite — kein Header
 
+      // Teil-Trennseiten (part-page) tragen keinen Kolumnentitel
+      let on-part-page = query(<part-page>).any(m => m.location().page() == current-page)
+      if on-part-page { return }
+
       let chapter-title = hydra(1, display: (ctx, candidate) => candidate.body)
       if chapter-title == none { return } // Front-Matter
 

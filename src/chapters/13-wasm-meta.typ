@@ -7,6 +7,7 @@
 #import "../components/grids.typ": feature-grid, gallery-grid
 #import "../components/layouts.typ": comparison-layout
 #import "../components/tables.typ": styled-table
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [WASM-Plugins und Metaprogrammierung],
@@ -24,7 +25,7 @@
   raw-render(
     ```dot
     digraph G {
-      node [shape=box, style=filled, fillcolor="#e0f2fe", fontname="sans-serif"];
+      node [shape=box, style=filled, fillcolor="#e0f2fe", fontname="Libertinus Serif"];
       Symptom -> Differential;
       Differential -> Test;
       Test -> Diagnose [color="#0284c7", penwidth=2];
@@ -32,7 +33,8 @@
     }
     ```
   ),
-  caption: [Diagnostischer Entscheidungsbaum — direkt aus DOT-Syntax via WASM-Plugin gerendert.]
+  caption: [Diagnostischer Entscheidungsbaum — direkt aus DOT-Syntax via WASM-Plugin gerendert.],
+  alt: "Flussdiagramm: Symptom führt zu Differenzialdiagnose, dann zu Test, der zu Diagnose oder Ausschluss verzweigt.",
 )
 
 #key-concept(term: [WASM-Purity])[
@@ -48,12 +50,43 @@
 
 #import "@preview/tidy:0.4.3"
 
+// PDF/UA-konformer tidy-Style: Funktionen aus dem minimal-Style, aber die
+// Parameter-Signatur mit eingebettetem Mono-Font statt „Cascadia Mono". Der
+// minimal-Style rendert die „Parameters"-Zeile als fetten Text statt als
+// Überschrift mit context-Ausdruck — Letzteres bricht das PDF/UA-Tagging.
+#let _ua-param-list(fn, style-args) = {
+  block(fill: rgb("#d8dbed"), width: 100%, inset: (x: 0.5em, y: 0.7em), {
+    set text(font: fonts.mono, size: 0.85em)
+    text(fn.name, fill: rgb("#1f2a63"))
+    "("
+    let items = ()
+    for (name, info) in fn.args {
+      let types = ""
+      if "types" in info { types = ": " + info.types.map(x => (style-args.style.show-type)(x)).join(" ") }
+      items.push(box(name + types))
+    }
+    items.join(", ")
+    ")"
+    if fn.return-types != none {
+      box[~-> #fn.return-types.map(x => (style-args.style.show-type)(x)).join(" ")]
+    }
+  })
+}
+
+#let _ua-tidy-style = (
+  show-outline: tidy.styles.minimal.show-outline,
+  show-type: tidy.styles.minimal.show-type,
+  show-function: tidy.styles.minimal.show-function,
+  show-parameter-list: _ua-param-list,
+  show-parameter-block: tidy.styles.minimal.show-parameter-block,
+  show-variable: tidy.styles.minimal.show-variable,
+  show-reference: tidy.styles.minimal.show-reference,
+  show-example: tidy.styles.minimal.show-example,
+)
+
 #figure(
   card(
     tidy.show-module(
-      // Docstring-Zeilen MÜSSEN auf Spalte 0 stehen: Typst dedentet den Raw-Block
-      // nur um die gemeinsame Mindesteinrückung; verbliebene Leerzeichen vor `///`
-      // lassen tidy.parse-module 0 Funktionen finden (leere Abbildung).
       tidy.parse-module(```typ
 /// Formatiert den Namen eines Patienten gemäß den Datenschutzrichtlinien.
 ///
@@ -63,10 +96,13 @@
 #let format-patient(name, anonymize: false) = {
   // Implementation
 }
-```.text)
+```.text),
+      style: _ua-tidy-style,
+      show-module-name: false,
     )
   ),
-  caption: [Automatisch generierte API-Referenz — Tidy analysiert Docstrings direkt zur Kompilierzeit.]
+  caption: [Automatisch generierte API-Referenz — Tidy analysiert Docstrings direkt zur Kompilierzeit.],
+  alt: "Automatisch generierte API-Referenz der Funktion format-patient mit den Parametern name und anonymize und Rückgabetyp string.",
 )
 
 #side-note(title: [Introspection])[
@@ -78,7 +114,7 @@
 
 #import "@preview/ctxjs:0.5.0"
 
-Manchmal reicht die native Typst-Skriptsprache nicht aus oder es existieren bereits komplexe Berechnungen in JavaScript. CtxJS bettet eine vollständige QuickJS-Runtime über WASM ein.
+Manchmal reicht die native Typst-Skriptsprache nicht aus oder es existieren bereits komplexe Berechnungen in JavaScript. CtxJS#index[CtxJS] bettet eine vollständige QuickJS-Runtime über WASM#index[WebAssembly] ein.
 
 #let js-code = "Math.round(Math.pow(1.05, 10) * 100) / 100"
 #let js-ctx = ctxjs.new-context()
@@ -90,7 +126,8 @@ Manchmal reicht die native Typst-Skriptsprache nicht aus oder es existieren bere
     *JS-Ausdruck:* `Math.round(Math.pow(1.05, 10) * 100) / 100`
     *Ergebnis via CtxJS:* #js-result
   ],
-  caption: [Auswertung mathematischer Formeln über die eingebettete JS-Runtime.]
+  caption: [Auswertung mathematischer Formeln über die eingebettete JS-Runtime.],
+  alt: "Karte mit einem JavaScript-Ausdruck und seinem über die eingebettete CtxJS-Runtime berechneten Ergebnis.",
 )
 
 #callout(tone: "warning")[
@@ -101,5 +138,3 @@ Manchmal reicht die native Typst-Skriptsprache nicht aus oder es existieren bere
 #callout(tone: "info", title: [Das WASM-Plugin-Protokoll])[
   Das `wasm-minimal-protocol` definiert, wie Plugins Speicher allozieren, Byte-Buffer übergeben und Erfolg oder Fehler signalisieren. Ein fortschrittliches Beispiel ist `@preview/mephistypsteles`, welches Teile von Typsts eigenem Parser in WASM kompiliert, um ASTs zu erzeugen. Solche Pakete sind rechenintensiv und primär für Tooling-Entwickler interessant.
 ]
-
-#section-break()

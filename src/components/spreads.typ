@@ -150,15 +150,40 @@
 #let spread-start() = pagebreak(to: "even", weak: true)
 
 // ── Feature spread (two facing pages) ──────────────────────────
-// Designed left/right pages forming one visual unit. Starts on a verso
-// page; `left-page` fills the left, `right-page` the right. An optional
-// title band spans the top of the left page.
+// Designed left/right pages forming one visual unit. Guarantees a verso
+// (even) start so both pages truly face each other in the opened book.
+// If the flush lands on a recto, that page is filled with a deliberate
+// divider instead of being left blank.
 #let feature-spread(
   left-page,
   right-page,
   title: none,
 ) = {
-  spread-start()
+  pagebreak(weak: true)
+
+  context {
+    if calc.odd(here().page()) {
+      align(
+        center + horizon,
+        block(width: 55%, {
+          line(length: 100%, stroke: 0.5pt + palette.border)
+          v(space.sm)
+          text(size: type-scale.small, fill: palette.text-muted, font: fonts.sans, tracking: 2pt)[DOPPELSEITE]
+          if title != none {
+            v(space.xs)
+            text(size: type-scale.lead, fill: palette.primary, weight: "bold", font: fonts.sans, title)
+          }
+          v(space.sm)
+          text(size: type-scale.small, fill: palette.text-light, style: "italic")[
+            Bitte aufschlagen — linke und rechte Seite bilden eine Einheit.
+          ]
+          v(space.sm)
+          line(length: 100%, stroke: 0.5pt + palette.border)
+        }),
+      )
+      pagebreak()
+    }
+  }
 
   if title != none {
     block(
@@ -177,26 +202,34 @@
 }
 
 // ── Clinical-case spread ───────────────────────────────────────
-// Verso: structured clinical case. Recto: differential/discussion. The
-// `discussion` content is rendered on the facing right page.
+// Verso: structured clinical case plus optional `left-extra` (e.g. a
+// lab-value table). Recto: discussion plus optional `right-extra` (e.g.
+// take-home points). The content slots let the two facing pages carry
+// enough material to read as a coordinated unit.
 #let clinical-case-spread(
   title: none,
   anamnese: none,
   befund: none,
   diagnose: none,
   therapie: none,
+  left-extra: none,
   discussion: none,
+  right-extra: none,
 ) = feature-spread(
   title: title,
-  clinical-case(
-    anamnese: anamnese,
-    befund: befund,
-    diagnose: diagnose,
-    therapie: therapie,
-  ),
+  {
+    clinical-case(
+      anamnese: anamnese,
+      befund: befund,
+      diagnose: diagnose,
+      therapie: therapie,
+    )
+    if left-extra != none { left-extra }
+  },
   {
     block(below: space.md, text(size: type-scale.h3, weight: "bold", font: fonts.sans, fill: palette.primary)[Diskussion])
     discussion
+    if right-extra != none { right-extra }
   },
 )
 
@@ -207,6 +240,10 @@
   title: none,
 ) = {
   pagebreak(weak: true)
+
+  // Marker so the running header can suppress itself on this page
+  // (queried in styles/page.typ).
+  [#metadata(none)<part-page>]
 
   align(
     center + horizon,

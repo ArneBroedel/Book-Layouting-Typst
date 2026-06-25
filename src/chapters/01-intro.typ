@@ -4,6 +4,7 @@
 #import "../components/spreads.typ": chapter-opener, section-break
 #import "../components/blocks.typ": callout, card, key-concept, pull-quote, side-note
 #import "../components/inline.typ": badge, icon-text, kbd, tag
+#import "@preview/in-dexter:0.7.2": index
 
 // Chapter opener creates the heading — do NOT add = Title
 #chapter-opener(
@@ -18,23 +19,23 @@ Die medizinische Ausbildung befindet sich im Wandel. Während die Inhalte —
 Anatomie, Physiologie, Pathologie — seit Jahrzehnten konstant bleiben, hat
 sich die Art und Weise, wie wir diese Inhalte vermitteln, grundlegend
 verändert. Digitale Medien, interaktive Lernplattformen und
-evidenzbasierte Didaktik eröffnen Möglichkeiten, die vor einer Generation
+evidenzbasierte Didaktik#index[Didaktik] eröffnen Möglichkeiten, die vor einer Generation
 undenkbar waren.
 
 Doch mit neuen Möglichkeiten kommen neue Herausforderungen. Die bloße
 Verfügbarkeit von Technologie garantiert keine Verbesserung der Lehre.
 Entscheidend ist die gestalterische Qualität der Materialien: Wie werden
-Informationen strukturiert? Welche visuelle Hierarchie unterstützt den
-Lernprozess? Wie können komplexe Zusammenhänge so dargestellt werden,
-dass sie das Arbeitsgedächtnis nicht überlasten?
+Informationen strukturiert? Welche visuelle Hierarchie#index[Visuelle Hierarchie] unterstützt den
+Lernprozess#index[Lernprozess]? Wie können komplexe Zusammenhänge so dargestellt werden,
+dass sie das Arbeitsgedächtnis#index[Arbeitsgedächtnis] nicht überlasten?
 
 Dieses Buch verbindet die Prinzipien moderner medizinischer Didaktik mit
-den Werkzeugen des typografischen Satzsystems Typst, um Ihnen zu zeigen,
+den Werkzeugen des typografischen Satzsystems Typst#index[Typst], um Ihnen zu zeigen,
 wie hochwertige Lehrmaterialien entstehen.
 
 == Für wen ist dieses Buch?
 
-Dieses Werk richtet sich an alle, die medizinische Lehrmaterialien erstellen
+Dieses Werk richtet sich an alle, die medizinische Lehrmaterialien#index[Lehrmaterialien] erstellen
 oder verbessern möchten:
 
 #card(title: "Zielgruppen")[
@@ -78,7 +79,7 @@ Lösung vorgestellt und schließlich das Ergebnis demonstriert.
   und Effektstärken zitiert.
 ]
 
-Dieses Buch verwendet verschiedene visuelle Konventionen, um
+Dieses Buch verwendet verschiedene visuelle Konventionen#index[Konventionen], um
 unterschiedliche Informationstypen zu kennzeichnen:
 
 #card(title: "Visuelle Wegweiser")[
@@ -106,4 +107,4 @@ unterschiedliche Informationstypen zu kennzeichnen:
 ]
 
 Mit diesem didaktischen Grundverständnis beginnen wir im nächsten
-Kapitel mit den Fundamenten guter Gestaltung: der Typografie.
+Kapitel mit den Fundamenten guter Gestaltung: der Typografie#index[Typografie].

@@ -87,6 +87,7 @@
 #include "chapters/19-didaktik.typ"
 #include "chapters/20-datenvisualisierung.typ"
 #include "chapters/21-diagramme.typ"
+#include "chapters/22-bildintegration.typ"
 
 // ── Back Matter ────────────────────────────────────────────────
 #include "chapters/07-backmatter.typ"

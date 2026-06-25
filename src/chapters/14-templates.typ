@@ -7,6 +7,8 @@
 #import "../components/grids.typ": feature-grid, gallery-grid
 #import "../components/layouts.typ": comparison-layout
 #import "../components/tables.typ": styled-table
+#import "@preview/fontawesome:0.6.1": *
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Vorlagen, Präsentationen und Enterprise],
@@ -18,7 +20,7 @@
 // ════════════════════════════════════════════════════════════════
 == Touying — Präsentations-Framework
 
-Touying ist das mächtigste Präsentations-Framework in Typst und unterstützt komplexe Animationen, globale Themes und einen eigenen Compiler-State für Folienübergänge.
+Touying#index[Touying] ist das mächtigste Präsentations-Framework#index[Präsentation] in Typst und unterstützt komplexe Animationen, globale Themes und einen eigenen Compiler-State für Folienübergänge.
 
 ```typ
 #import "@preview/touying:0.7.4": *
@@ -53,7 +55,7 @@ Hier ist Inhalt, der nach dem ersten Klick erscheint.
 // ════════════════════════════════════════════════════════════════
 == Ilm — Organisatorische Design-Shell
 
-Ilm bietet eine "One-Liner"-API, um komplexe Dokumente sofort in einem sauberen, wissenschaftlichen Stil zu formatieren.
+Ilm#index[Ilm] bietet eine "One-Liner"-API, um komplexe Dokumente sofort in einem sauberen, wissenschaftlichen Stil zu formatieren.
 
 ```typ
 #import "@preview/ilm:2.1.1": *
@@ -69,12 +71,13 @@ Ilm bietet eine "One-Liner"-API, um komplexe Dokumente sofort in einem sauberen,
 Der Bericht beginnt hier...
 ```
 
+#fa-version("6")
 #feature-grid(
   (
-    (icon: [📐], title: [Seitenlayout], body: [Setzt Margen, Kopf- und Fußzeilen automatisch.]),
-    (icon: [📝], title: [Typografie], body: [Konfiguriert Fonts und Größen konsistent.]),
-    (icon: [📋], title: [Verzeichnisse], body: [Generiert Inhalts- und Abbildungsverzeichnisse.]),
-    (icon: [ℹ️], title: [Metadaten], body: [Befüllt die PDF-Metadaten passend zum Titel.]),
+    (icon: fa-table-cells(fill: palette.primary), title: [Seitenlayout], body: [Setzt Margen, Kopf- und Fußzeilen automatisch.]),
+    (icon: fa-font(fill: palette.accent-dark), title: [Typografie], body: [Konfiguriert Fonts und Größen konsistent.]),
+    (icon: fa-list(fill: palette.info), title: [Verzeichnisse], body: [Generiert Inhalts- und Abbildungsverzeichnisse.]),
+    (icon: fa-circle-info(fill: palette.success), title: [Metadaten], body: [Befüllt die PDF-Metadaten passend zum Titel.]),
   )
 )
 
@@ -89,7 +92,7 @@ Der Bericht beginnt hier...
 // ════════════════════════════════════════════════════════════════
 == Brilliant-CV — Datengetriebene Vorlagen
 
-Brilliant-CV zeigt einen völlig anderen Ansatz: Die Trennung von Daten (YAML/TOML) und Ansicht (Typst).
+Brilliant-CV#index[Brilliant-CV] zeigt einen völlig anderen Ansatz: Die Trennung von Daten (YAML/TOML) und Ansicht (Typst).
 
 #comparison-layout(
   [
@@ -121,5 +124,3 @@ Brilliant-CV zeigt einen völlig anderen Ansatz: Die Trennung von Daten (YAML/TO
 #callout(tone: "info", title: [Ressourcenlimitierung mit layout-ltd])[
   In Multi-Tenant- oder CI-Umgebungen besteht die Gefahr, dass fehlerhafte Vorlagen in Endlosschleifen geraten. Das Paket `@preview/layout-ltd:0.1.0` setzt harte Limits auf Layout-Iterationen, um übermäßige CPU-Nutzung zu verhindern. Der visuelle Output bleibt identisch — es ist eine reine Backend-Sicherheitsmaßnahme, die hervorragend zu den in Kapitel 10 besprochenen Enterprise-Mustern passt.
 ]
-
-#section-break()

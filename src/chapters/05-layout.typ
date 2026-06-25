@@ -6,6 +6,7 @@
 #import "../components/inline.typ": badge
 #import "../components/layouts.typ": breakout, comparison-layout, magazine-layout, scientific-paper, sidebar-layout
 #import "../components/grids.typ": stats-grid
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Die Architektur der Seite],
@@ -15,9 +16,9 @@
 
 == Sidebar-Layout
 
-Das Sidebar-Layout teilt die Seite in einen festen Navigationsbereich
+Das Sidebar-Layout#index[Sidebar-Layout] teilt die Seite in einen festen Navigationsbereich
 und einen flexiblen Inhaltsbereich. In medizinischen Nachschlagewerken
-kann die Seitenleiste eine Kapitelübersicht, Schlüsselbegriffe oder
+kann die Seitenleiste#index[Seitenleiste] eine Kapitelübersicht, Schlüsselbegriffe oder
 diagnostische Kriterien enthalten.
 
 #sidebar-layout(
@@ -53,8 +54,8 @@ diagnostische Kriterien enthalten.
 
 == Magazin-Layout
 
-Das Magazin-Layout kombiniert einen visuell auffälligen Hero-Bereich
-mit einem mehrspaltigen Textkörper. Es eignet sich besonders für
+Das Magazin-Layout#index[Magazinlayout] kombiniert einen visuell auffälligen Hero-Bereich#index[Hero-Bereich]
+mit einem mehrspaltigen Textkörper#index[Spaltensatz]. Es eignet sich besonders für
 Kapiteleinleitungen, Themenschwerpunkte und Sonderseiten.
 
 #magazine-layout(
@@ -90,8 +91,8 @@ Kapiteleinleitungen, Themenschwerpunkte und Sonderseiten.
 
 == Wissenschaftliches Paper-Layout
 
-Für akademische Inhalte bietet das Paper-Layout eine vertraute Struktur
-mit Volltitel, Autorenzeile, Abstract und zweispaltigem Haupttext.
+Für akademische Inhalte bietet das Paper-Layout#index[Paper-Layout] eine vertraute Struktur
+mit Volltitel, Autorenzeile, Abstract#index[Abstract] und zweispaltigem Haupttext.
 
 #scientific-paper(
   title: [Wirksamkeit visuell strukturierter Lernmaterialien in der
@@ -147,8 +148,8 @@ mit Volltitel, Autorenzeile, Abstract und zweispaltigem Haupttext.
 
 == Vergleichslayout
 
-Direkte Gegenüberstellungen erleichtern die Bewertung von Alternativen.
-In der medizinischen Didaktik sind Vorher-Nachher-Vergleiche,
+Direkte Gegenüberstellungen#index[Vergleichslayout] erleichtern die Bewertung von Alternativen.
+In der medizinischen Didaktik#index[Medizindidaktik] sind Vorher-Nachher-Vergleiche,
 Gegenüberstellungen von Therapieoptionen und Methodenvergleiche
 häufige Anwendungsfälle.
 

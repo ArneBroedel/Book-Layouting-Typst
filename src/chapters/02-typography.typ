@@ -5,6 +5,7 @@
 #import "../components/blocks.typ": blockquote, callout, key-concept, pull-quote
 #import "../components/inline.typ": highlight-text
 #import "../components/layouts.typ": comparison-layout
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Typografie und Lesbarkeit],
@@ -19,7 +20,7 @@
 
 == Die Bedeutung der Lesbarkeit
 
-Medizinische Texte stellen besondere Anforderungen an die Lesbarkeit.
+Medizinische Texte stellen besondere Anforderungen an die Lesbarkeit#index[Lesbarkeit].
 Fachbegriffe wie #highlight-text[Acetylsalicylsäure],
 #highlight-text[Glomerulonephritis] oder
 #highlight-text[Thrombozytenaggregationshemmer] können bis zu dreißig
@@ -28,15 +29,15 @@ bewahrt, muss sorgfältig gewählt werden.
 
 Die Forschung zur Leseergonomie zeigt drei entscheidende Faktoren:
 
-+ *Zeilenlänge*: Ideal sind 60–75 Zeichen pro Zeile. Zu kurze Zeilen
++ *Zeilenlänge*#index[Zeilenlänge]: Ideal sind 60–75 Zeichen pro Zeile. Zu kurze Zeilen
   erzeugen hektisches Springen; zu lange Zeilen führen dazu, dass das Auge
   den Zeilenanfang verliert.
 
-+ *Zeilenabstand (Leading)*: Ein Abstand von 120–145% der Schriftgröße
++ *Zeilenabstand (Leading)*#index[Zeilenabstand]: Ein Abstand von 120–145% der Schriftgröße
   erleichtert die Rückführung des Blicks an den Zeilenanfang. Bei dichtem
   Fachtext ist ein großzügigerer Abstand vorzuziehen.
 
-+ *Kontrast*: Schwarzer Text auf weißem Grund bietet den höchsten Kontrast,
++ *Kontrast*#index[Kontrast]: Schwarzer Text auf weißem Grund bietet den höchsten Kontrast,
   aber ein leicht abgedunkeltes Schwarz (#highlight-text[z. B. #333333])
   reduziert Ermüdung bei längerer Lektüre.
 
@@ -45,7 +46,7 @@ Die Forschung zur Leseergonomie zeigt drei entscheidende Faktoren:
 == Schriftwahl für klinische Materialien
 
 Die Entscheidung zwischen Serifen- und serifenloser Schrift ist keine
-rein ästhetische Frage. Serifenschriften wie die hier verwendete
+rein ästhetische Frage. Serifenschriften#index[Serifenschrift] wie die hier verwendete
 _Libertinus Serif_ eignen sich hervorragend für längere Fließtexte, weil
 die Serifen als subtile horizontale Führung für das Auge dienen.
 
@@ -76,7 +77,7 @@ Tabellenbeschriftungen, Beschriftungen medizinischer Abbildungen.
   Hauptaussage, Nebenaussage oder Erläuterung ist.
 ]
 
-Eine gut gestaltete Hierarchie nutzt mindestens drei und höchstens fünf
+Eine gut gestaltete Hierarchie#index[Typografische Hierarchie] nutzt mindestens drei und höchstens fünf
 Ebenen. Jede Ebene unterscheidet sich deutlich genug von der vorherigen,
 um sofort erkennbar zu sein, aber nicht so stark, dass der Gesamteindruck
 unruhig wird.
@@ -96,7 +97,7 @@ In diesem Buch verwenden wir fünf Ebenen:
 
 == Mikrotypografie
 
-Die feinen Details — Ligaturen, Kerning, optischer Randausgleich und
+Die feinen Details — Ligaturen#index[Ligaturen], Kerning#index[Kerning], optischer Randausgleich und
 korrekte Anführungszeichen — machen den Unterschied zwischen einem
 professionellen Druckerzeugnis und einem Entwurf. Typst beherrscht viele
 dieser Details automatisch, doch ein aufmerksamer Autor achtet auf:
@@ -112,7 +113,7 @@ dieser Details automatisch, doch ein aufmerksamer Autor achtet auf:
 
 In medizinischen Texten kommt den Zahlen besondere Bedeutung zu.
 Laborbefunde, Dosierungen und Messwerte müssen sofort korrekt
-erfasst werden können. Tabellenziffern — Ziffern mit einheitlicher
+erfasst werden können. Tabellenziffern#index[Tabellenziffern] — Ziffern mit einheitlicher
 Breite — sorgen dafür, dass Zahlenspalten sauber untereinander stehen.
 Typst verwendet standardmäßig Proportionalziffern für Fließtext und
 kann bei Bedarf auf Tabellenziffern umschalten.
@@ -129,7 +130,7 @@ kann bei Bedarf auf Tabellenziffern umschalten.
 == Barrierefreiheit und Lesbarkeit
 
 Gute Typografie ist inklusiv. Die Beachtung grundlegender
-Barrierefreiheitsstandards verbessert die Lesbarkeit nicht nur für
+Barrierefreiheitsstandards#index[Barrierefreiheit] verbessert die Lesbarkeit nicht nur für
 Menschen mit Einschränkungen, sondern für alle Leser:
 
 - *Kontrastverhältnis*: Mindestens 4.5:1 für Fließtext (WCAG AA)

@@ -8,6 +8,7 @@
 #import "../components/grids.typ": feature-grid
 #import "../components/tables.typ": styled-table
 #import "../components/layouts.typ": comparison-layout
+#import "@preview/in-dexter:0.7.2": index
 
 // ════════════════════════════════════════════════════════════════
 // CHAPTER OPENER
@@ -26,8 +27,8 @@
 // ════════════════════════════════════════════════════════════════
 == Toffee-Tufte — Die Randnotiz-Architektur #tag("Margin Architectures")
 
-Das Template _Toffee-Tufte_ (`\@preview/toffee-tufte:0.1.1`)
-implementiert den berühmten Tufte-Layoutstil: eine schmale
+Das Template _Toffee-Tufte_#index[Toffee-Tufte] (`\@preview/toffee-tufte:0.1.1`)
+implementiert den berühmten Tufte-Layoutstil#index[Tufte-Layout]: eine schmale
 Haupttextspalte und ein breiter Rand für Notizen, Zitate und
 kleine Abbildungen — benannt nach dem Informationsdesigner
 Edward Tufte.
@@ -63,7 +64,7 @@ zusammen eine leistungsfähige Randnotiz-Engine ergeben:
 
 === Der Mechanismus im Detail
 
-Die Kernherausforderung: Wenn mehrere Randnotizen auf derselben
+Die Kernherausforderung: Wenn mehrere Randnotizen#index[Randnotiz] auf derselben
 Seite erscheinen, dürfen sie sich nicht überlappen. Toffee-Tufte
 löst dies durch einen vertikalen Positionszähler:
 
@@ -109,7 +110,7 @@ löst dies durch einen vertikalen Positionszähler:
 === Scoped Demo: Randnotizen im Miniaturformat
 
 Die folgende Demonstration zeigt das Prinzip — innerhalb eines
-begrenzten Blocks, ohne die Seitenränder dieses Buchs zu
+begrenzten Blocks, ohne die Seitenränder#index[Seitenrand] dieses Buchs zu
 verändern:
 
 #{
@@ -194,16 +195,16 @@ verändern:
 // ════════════════════════════════════════════════════════════════
 == Mantys — Meta-Scaffolding für Dokumentation #tag("Thematic Overrides")
 
-_Mantys_ (`\@preview/mantys:1.0.2`) ist ein Template, das speziell
+_Mantys_#index[Mantys] (`\@preview/mantys:1.0.2`) ist ein Template, das speziell
 für die Dokumentation von Typst-Paketen entwickelt wurde. Es zeigt
-ein mächtiges Muster: _Documentation as Code_ — API-Referenzen
+ein mächtiges Muster: _Documentation as Code_#index[Documentation as Code] — API-Referenzen
 werden nicht manuell geschrieben, sondern aus strukturierten
 Beschreibungsfunktionen generiert.
 
 === Das Muster: Beschreibungsfunktionen
 
 Statt Funktions-APIs in Prosa zu beschreiben, definiert Mantys
-spezialisierte Typst-Funktionen, die technische Spezifikationen
+spezialisierte Typst-Funktionen, die technische Spezifikationen#index[API-Dokumentation]
 konsistent formatieren:
 
 #code-block(title: [Mantys-Stil: API-Dokumentation als Funktionsaufrufe])[
@@ -311,5 +312,3 @@ dokumentiert seine eigenen Komponenten:
   tut — sie demonstriert _wie_ sie implementiert ist und _warum_
   die Designentscheidungen so getroffen wurden.
 ]
-
-#section-break()

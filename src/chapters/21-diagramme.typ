@@ -25,6 +25,7 @@ die Phasen im Kreis an und schließt den Pfeilfluss:
 #figure(
   cycle-diagram(([Systole], [Aus-\ wurf], [Diastole], [Füllung])),
   caption: [Vereinfachter Herzzyklus als geschlossenes Zyklusdiagramm.],
+  alt: "Zyklusdiagramm mit vier im Kreis angeordneten Phasen — Systole, Auswurf, Diastole, Füllung — verbunden durch Pfeile im Uhrzeigersinn.",
 )
 
 Lineare Kaskaden — etwa das
@@ -38,6 +39,7 @@ dargestellt:
     inhibit: (2,),
   ),
   caption: [RAAS-Kaskade; der rote Riegel markiert die ACE-Hemmung (Angiotensin I → II).],
+  alt: "Pathway-Diagramm der RAAS-Kaskade von Angiotensinogen über Angiotensin I und II zu Aldosteron; der Schritt von Angiotensin I zu II ist als Hemmung markiert.",
 )
 
 #side-note(title: [Hemmung vs. Aktivierung])[
@@ -71,6 +73,7 @@ ausgefüllte Symbole sind betroffen:
     ),
   ),
   caption: [Autosomal-dominanter Erbgang über zwei Generationen.],
+  alt: "Stammbaum über zwei Generationen: betroffener Vater und gesunde Mutter mit drei Kindern, von denen zwei betroffen sind.",
 )
 
 #callout(title: [Erbgang erkennen], tone: "info")[
@@ -99,6 +102,7 @@ aufbauend). Bindungen und Fragmente werden deklarativ aneinandergereiht:
       molecule("OH")
     }),
     caption: [Ethanol als Skelettformel — erstellt mit Alchemist.],
+    alt: "Skelettformel von Ethanol: eine Kohlenstoffkette mit endständiger Hydroxygruppe.",
   )
 
   figure(
@@ -108,6 +112,7 @@ aufbauend). Bindungen und Fragmente werden deklarativ aneinandergereiht:
       molecule("CH_2")
     }),
     caption: [Ethen mit Doppelbindung.],
+    alt: "Skelettformel von Ethen: zwei Kohlenstoffatome, verbunden durch eine Doppelbindung.",
   )
 }
 
@@ -137,6 +142,7 @@ darstellen. Das Paket _Timeliney_ gruppiert Aufgaben über Phasenspalten:
       },
     ),
     caption: [Therapieverlauf als Zeitleiste — erstellt mit Timeliney.],
+    alt: "Gantt-artige Zeitleiste über vier Wochen mit den Phasen Akutbehandlung, Mobilisation und Rehabilitation.",
   )
 }
 

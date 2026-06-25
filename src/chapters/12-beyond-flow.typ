@@ -7,6 +7,7 @@
 #import "../components/grids.typ": feature-grid, gallery-grid
 #import "../components/layouts.typ": comparison-layout
 #import "../components/tables.typ": styled-table
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Jenseits des Standardflusses],
@@ -20,7 +21,7 @@
 
 #import "@preview/pinit:0.2.2": *
 
-Während Typst mit `place` Elemente relativ zum Layout platzieren kann, ermöglicht Pinit das "Anpinnen" von Positionen direkt im Textfluss, um später absolute Annotationen darauf zu referenzieren.
+Während Typst mit `place` Elemente relativ zum Layout platzieren kann, ermöglicht Pinit#index[Pinit] das "Anpinnen" von Positionen direkt im Textfluss#index[Textfluss], um später absolute Annotationen darauf zu referenzieren.
 
 #figure(
   card()[
@@ -69,7 +70,7 @@ Während Typst mit `place` Elemente relativ zum Layout platzieren kann, ermögli
 
 #import "@preview/biceps:0.0.1": *
 
-Typsts natives `grid` erfordert feste Spalten- oder Zeilendefinitionen. Wenn Sie Elemente unterschiedlicher Breite verteilen möchten, die sich wie in CSS Flexbox mit `flex-wrap: wrap` auf neue Zeilen umbrechen sollen, ist Biceps das richtige Werkzeug.
+Typsts natives `grid` erfordert feste Spalten- oder Zeilendefinitionen. Wenn Sie Elemente unterschiedlicher Breite verteilen möchten, die sich wie in CSS Flexbox#index[Flexbox] mit `flex-wrap: wrap` auf neue Zeilen umbrechen sollen, ist Biceps#index[Biceps] das richtige Werkzeug.
 
 #figure(
   card()[
@@ -88,6 +89,7 @@ Typsts natives `grid` erfordert feste Spalten- oder Zeilendefinitionen. Wenn Sie
     )
   ],
   caption: [Biceps verteilt die Badges automatisch auf mehrere Zeilen basierend auf ihrer individuellen Breite.],
+  alt: "Mehrere verschieden breite Fachgebiets-Badges, die wie bei CSS-Flexbox automatisch auf mehrere Zeilen umbrechen.",
 )
 
 #side-note(title: [Im Vergleich zum Grid])[
@@ -104,7 +106,7 @@ Typsts natives `grid` erfordert feste Spalten- oder Zeilendefinitionen. Wenn Sie
 // vermeidet die FA7-Font-Abhängigkeit im Build und hält den Build reproduzierbar.
 #fa-version("6")
 
-Für professionelle, ikonografische Layouts (z. B. in Lebensläufen oder Dashboards) bietet das Fontawesome-Paket eine direkte Integration der bekannten Icon-Bibliothek.
+Für professionelle, ikonografische Layouts (z. B. in Lebensläufen oder Dashboards) bietet das Fontawesome#index[Fontawesome]-Paket eine direkte Integration der bekannten Icon#index[Icon]-Bibliothek.
 
 #figure(
   card()[
@@ -134,5 +136,3 @@ Für professionelle, ikonografische Layouts (z. B. in Lebensläufen oder Dashboa
 #side-note(title: [Zusammenhang])[
   Kapitel 08 erwähnt Fontawesome bereits in der Schnellreferenz — hier zeigen wir die vollständige Integration im Layout.
 ]
-
-#section-break()

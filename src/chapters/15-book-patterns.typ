@@ -8,6 +8,7 @@
 #import "../components/grids.typ": feature-grid
 #import "../components/tables.typ": styled-table
 #import "../components/layouts.typ": comparison-layout
+#import "@preview/in-dexter:0.7.2": index
 
 // ════════════════════════════════════════════════════════════════
 // CHAPTER OPENER
@@ -27,7 +28,7 @@
 == Die vier Architekturmuster
 
 Aus der Analyse der besten Typst Universe Templates kristallisieren sich
-vier wiederverwendbare Muster heraus — das konzeptuelle Fundament
+vier wiederverwendbare Architekturmuster#index[Architekturmuster] heraus — das konzeptuelle Fundament
 dieses Buchteils. Jede Template-Sektion ist mit dem Muster markiert,
 das sie hauptsächlich demonstriert.
 
@@ -140,8 +141,8 @@ fasst die Empfehlungen aus dem Template-Report zusammen.
 // ════════════════════════════════════════════════════════════════
 == Wonderous-Book — Dynamische Kolumnentitel #tag("Dynamic Content Extraction")
 
-Das Template _Wonderous-Book_ (`\@preview/wonderous-book:0.1.2`) löst
-ein zentrales Problem professioneller Bücher: Kolumnentitel
+Das Template _Wonderous-Book_#index[Wonderous-Book] (`\@preview/wonderous-book:0.1.2`) löst
+ein zentrales Problem professioneller Bücher: Kolumnentitel#index[Kolumnentitel]
 (Running Headers), die automatisch den aktuellen Kapitel- oder
 Abschnittsnamen anzeigen — ohne manuelles Eingreifen.
 
@@ -240,8 +241,8 @@ exakt dieselbe Technik erzeugt. Hier der Vergleich:
 == TiefFiction — Traditioneller Buchsatz #tag("Thematic Overrides")
 
 Während Wonderous-Book auf dynamische Kopfzeilen fokussiert, widmet
-sich _TiefFiction_ (`\@preview/tieffiction:0.2.0`) dem klassischen
-Buchsatz: Schmuckinitialen (Drop Caps), erzwungene Recto-Seiten
+sich _TiefFiction_#index[TiefFiction] (`\@preview/tieffiction:0.2.0`) dem klassischen
+Buchsatz#index[Buchsatz]: Schmuckinitialen#index[Schmuckinitiale] (Drop Caps), erzwungene Recto-Seiten
 und traditionelle typografische Konventionen.
 
 === Initialen (Drop Caps)
@@ -309,7 +310,7 @@ TiefFiction implementiert sie als wiederverwendbare Funktion.
 === Kapitelumbrüche auf die rechte Seite
 
 In der Buchgestaltung beginnen Kapitel traditionell auf der rechten
-Seite (Recto). Typst unterstützt dies nativ:
+Seite (Recto#index[Recto-Seite]). Typst unterstützt dies nativ:
 
 #code-block(title: [Recto-Kapitelstart])[
   ```typst
@@ -336,5 +337,3 @@ Seite (Recto). Typst unterstützt dies nativ:
   Schmuckinitiale — dient einem Ziel: dem Leser die Orientierung
   im Text zu erleichtern, ohne ihn vom Inhalt abzulenken.
 ]
-
-#section-break()

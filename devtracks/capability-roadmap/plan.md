@@ -83,11 +83,19 @@ Alle Lücken aus `spec.md` sind umgesetzt **und** im Buch demonstriert. Der
 Standard-Build (102 S.) kompiliert ohne neue Warnungen (nur die vorbestehende
 `diagraph`-Schriftwarnung); Kapitel 00–18 unverändert.
 
-**PDF/UA-1:** scheitert bereits **vor** dieser Arbeit (vorbestehend) — Emoji-Glyph,
-fehlende Alt-Texte auf bestehenden CeTZ/Codly-Abbildungen und ein `tidy`-Heading in
-Kap. 13. Volle PDF/UA-Konformität ist eine buchweite Barrierefreiheits-Aufgabe
-(Alt-Texte für alle Abbildungen, Emoji-Ersatz, `tidy`-Fix) und gehört in einen
-eigenen Track (vgl. `tool-updates`), nicht in diese Capability-Roadmap.
+**PDF/UA-1:** Die zunächst (vorbestehend) scheiternde PDF/UA-Konformität wurde im
+Folge-Track [`pdf-ua-compliance`](../pdf-ua-compliance/) vollständig behoben — Standard-
+und PDF/UA-Build kompilieren nun beide ohne Errors **und** ohne Warnungen.
+
+### Layout-Politur (Review-Runde)
+- **Doppelseiten-Spread:** `feature-spread` erzwingt Verso-Start, füllt eine etwaige
+  Ausrichtungs-Leerseite nun mit einem bewussten „DOPPELSEITE"-Trenner statt sie leer
+  zu lassen (vorher: ganze Leerseite). `clinical-case-spread` hat `left-extra`/
+  `right-extra`-Slots; der Demo-Fall ist mit Laborbefund-Tabelle, Pathophysiologie und
+  Take-home-Points gefüllt (vorher: sehr leere Seiten).
+- **Randnotiz-Demo** (Kap. 19) um weitere Absätze/Notizen erweitert.
+- **Studientabellen** (Kap. 9): lesbare Spaltenköpfe statt CSV-Rohnamen mit
+  Unterstrich-Tokens + proportionale Spalten → kein Seitenüberlauf / Zeichen-Umbruch mehr.
 
 ### Hinzugefügte @preview-Pakete
 `marginalia` (Randnotizen), `in-dexter` (Index), `alchemist` (Strukturformeln),

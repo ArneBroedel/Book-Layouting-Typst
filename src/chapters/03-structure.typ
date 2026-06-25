@@ -4,6 +4,7 @@
 #import "../components/spreads.typ": chapter-opener, section-break
 #import "../components/blocks.typ": callout, code-block, key-concept, side-note
 #import "../components/tables.typ": comparison-table, styled-table
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Dokumentstruktur],
@@ -22,10 +23,10 @@
 
 Die Struktur eines medizinischen Lehrbuchs dient nicht nur der
 Orientierung, sondern ist selbst ein didaktisches Werkzeug. Wenn ein
-Studierender die Gliederung eines Kapitels überblicken kann, aktiviert
+Studierender die Gliederung#index[Gliederung] eines Kapitels überblicken kann, aktiviert
 er vorhandenes Vorwissen und schafft mentale Anknüpfungspunkte für
 neues Material — ein Prozess, den die kognitionspsychologische
-Forschung als _Advance Organizer_ bezeichnet.
+Forschung als _Advance Organizer_#index[Advance Organizer] bezeichnet.
 
 == Gliederungsebenen
 
@@ -46,8 +47,8 @@ Gliederungsebenen:
 
 == Tabellen in der Medizin
 
-Tabellen sind das bevorzugte Format für strukturierte klinische Daten.
-Vitalparameter, Laborwerte, Medikationspläne und Differenzialdiagnosen
+Tabellen#index[Tabellen] sind das bevorzugte Format für strukturierte klinische Daten.
+Vitalparameter, Laborwerte, Medikationspläne und Differenzialdiagnosen#index[Differenzialdiagnose]
 lassen sich tabellarisch schneller erfassen als im Fließtext.
 
 === Patientendaten
@@ -109,7 +110,7 @@ lassen sich tabellarisch schneller erfassen als im Fließtext.
 
 Ungeordnete Listen eignen sich für gleichwertige Punkte ohne implizite
 Reihenfolge. Geordnete Listen signalisieren Sequenzen — etwa
-diagnostische Algorithmen oder Behandlungsschritte.
+diagnostische Algorithmen#index[Algorithmus] oder Behandlungsschritte.
 
 === Diagnostischer Algorithmus bei Brustschmerz
 
@@ -131,7 +132,7 @@ diagnostische Algorithmen oder Behandlungsschritte.
 
 Medizinische Texte leben von präzisen Verweisen auf Quellen, Leitlinien
 und andere Kapitel. Typst unterstützt automatische Nummerierung für
-Fußnoten, Abbildungen und Tabellen, sodass bei Ergänzungen keine
+Fußnoten#index[Fußnoten], Abbildungen und Tabellen, sodass bei Ergänzungen keine
 manuelle Umnummerierung nötig wird.
 
 #code-block(title: "Querverweise in Typst")[
@@ -148,9 +149,9 @@ manuelle Umnummerierung nötig wird.
 == Dokumentennavigation
 
 Neben der Gliederung durch Überschriften bietet ein durchdachtes
-Lehrbuch weitere Navigationshilfen. Kopfzeilen mit Kapitelangabe,
+Lehrbuch weitere Navigationshilfen. Kopfzeilen#index[Kopfzeilen] mit Kapitelangabe,
 farbcodierte Abschnittskennzeichnungen und ein detailliertes
-Inhaltsverzeichnis helfen Studierenden, schnell zu relevanten
+Inhaltsverzeichnis#index[Inhaltsverzeichnis] helfen Studierenden, schnell zu relevanten
 Abschnitten zu springen.
 
 #key-concept(term: "Advance Organizer")[

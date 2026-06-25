@@ -7,6 +7,7 @@
 #import "../components/grids.typ": feature-grid, gallery-grid
 #import "../components/layouts.typ": comparison-layout
 #import "../components/tables.typ": styled-table
+#import "@preview/in-dexter:0.7.2": index
 
 // ── Package imports ────────────────────────────────────────────
 #import "@preview/cetz:0.5.2": canvas, draw
@@ -26,7 +27,7 @@
 // ════════════════════════════════════════════════════════════════
 == Das Typst Universe
 
-Das _Typst Universe_ ist die zentrale Paketregistrierung für Typst. Hier
+Das _Typst Universe_#index[Typst Universe] ist die zentrale Paketregistrierung für Typst. Hier
 veröffentlicht die Community wiederverwendbare Bibliotheken für Grafiken,
 Tabellenlayouts, Vorlagen und vieles mehr. Pakete werden beim ersten Import
 automatisch heruntergeladen — eine separate Installation ist nicht nötig.
@@ -56,10 +57,10 @@ Pakete decken ein breites Spektrum ab:
 // ════════════════════════════════════════════════════════════════
 == Grafiken & Diagramme mit CeTZ
 
-CeTZ (_Canvas for Typst_) ist die leistungsfähigste Grafikbibliothek im
+CeTZ#index[CeTZ] (_Canvas for Typst_) ist die leistungsfähigste Grafikbibliothek im
 Typst-Ökosystem. Sie bietet ein koordinatenbasiertes Zeichensystem mit
 Pfaden, Formen, Transformationen und benannten Ankerpunkten — vergleichbar
-mit TikZ in der LaTeX-Welt, aber mit modernerer Syntax.
+mit TikZ#index[TikZ] in der LaTeX-Welt, aber mit modernerer Syntax.
 
 === Vitalzeichenverlauf
 
@@ -110,6 +111,7 @@ Patientendaten über die Zeit.
     }
   }),
   caption: [Pulsverlauf eines Patienten über 7 Stunden — erstellt mit CeTZ.],
+  alt: "Liniendiagramm des Pulsverlaufs über sieben Stunden, durchgehend im Normalbereich von 60 bis 100 bpm.",
 )
 
 #side-note(title: [CeTZ-Tipp])[
@@ -173,12 +175,13 @@ Blockdiagramme darstellen:
     line("herz.east", "lunge.west", mark: (end: ">", start: ">", size: 0.25))
   }),
   caption: [Vereinfachtes Organsystem-Schema mit CeTZ — Blöcke und Verbindungen.],
+  alt: "Blockschema vernetzter Organsysteme — zentrales Nervensystem, Herz, Lunge und Niere — mit verbindenden Pfeilen.",
 )
 
 // ════════════════════════════════════════════════════════════════
 == Flussdiagramme mit Fletcher
 
-Für klinische Entscheidungsbäume und Prozessdiagramme ist _Fletcher_ das
+Für klinische Entscheidungsbäume#index[Entscheidungsbaum] und Prozessdiagramme ist _Fletcher_#index[Fletcher] das
 Werkzeug der Wahl. Es baut auf CeTZ auf und bietet eine deklarative
 Syntax für Knoten und Kanten.
 
@@ -220,7 +223,7 @@ Syntax für Knoten und Kanten.
 
 Wenn technische Dokumentation Code-Beispiele enthält — sei es für
 Datenprotokolle, Konfigurationsdateien oder Analyseskripte — bietet
-_Codly_ professionelle Syntax-Hervorhebung mit Zeilennummern und
+_Codly_#index[Codly] professionelle Syntax-Hervorhebung mit Zeilennummern und
 visueller Struktur.
 
 #{
@@ -263,7 +266,7 @@ visueller Struktur.
 == Erweiterte Container mit Showybox
 
 Während die eingebauten Callouts und Cards für die meisten Szenarien
-ausreichen, bietet _Showybox_ erweiterte Gestaltungsmöglichkeiten
+ausreichen, bietet _Showybox_#index[Showybox] erweiterte Gestaltungsmöglichkeiten
 für besonders auffällige Hinweisboxen.
 
 #{
@@ -321,7 +324,7 @@ für besonders auffällige Hinweisboxen.
 // ════════════════════════════════════════════════════════════════
 == Markdown-Tabellen mit Tablem
 
-Für schnelle Tabellen bietet _Tablem_ eine Markdown-kompatible Syntax
+Für schnelle Tabellen bietet _Tablem_#index[Tablem] eine Markdown-kompatible Syntax
 direkt in Typst:
 
 #{
@@ -343,7 +346,7 @@ direkt in Typst:
 // ════════════════════════════════════════════════════════════════
 == Schnellreferenz — Weitere Pakete
 
-Das Typst Universe wächst stetig. Hier eine Auswahl weiterer nützlicher
+Das Typst Universe#index[Paketregistrierung] wächst stetig. Hier eine Auswahl weiterer nützlicher
 Pakete, die den Arbeitsalltag erleichtern:
 
 #styled-table(
@@ -387,5 +390,3 @@ Pakete, die den Arbeitsalltag erleichtern:
   Open-Source-Zusammenarbeit in der wissenschaftlichen Publikation
   bedeutet, dass jede gelöste Herausforderung allen zugutekommt.
 ]
-
-#section-break()

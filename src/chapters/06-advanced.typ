@@ -6,6 +6,7 @@
 #import "../components/inline.typ": badge, highlight-text
 #import "../components/layouts.typ": adaptive-layout
 #import "../components/grids.typ": comparison-grid, feature-grid, gallery-grid, stats-grid
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Dynamische Dokumente],
@@ -15,7 +16,7 @@
 
 == Adaptive Layouts
 
-Modernes Dokumentendesign reagiert auf seinen Kontext. Ein Layout, das
+Modernes Dokumentendesign#index[Dokumentendesign] reagiert auf seinen Kontext. Ein Layout#index[Adaptives Layout], das
 sich der verfügbaren Breite anpasst, funktioniert gleichermaßen in einer
 schmalen Spalte wie auf einer breiten Einzelseite.
 
@@ -56,8 +57,8 @@ schmalen Spalte wie auf einer breiten Einzelseite.
 == Datengetriebene Visualisierungen
 
 Typst ermöglicht die Erzeugung visueller Elemente aus strukturierten
-Daten. Anstatt Tabellen und Diagramme manuell zu erstellen, können
-Funktionen Datenquellen auslesen und automatisch formatierte
+Daten. Anstatt Tabellen#index[Tabelle] und Diagramme#index[Diagramm] manuell zu erstellen, können
+Funktionen Datenquellen#index[Datenquelle] auslesen und automatisch formatierte
 Darstellungen erzeugen.
 
 === Klinische Ergebnisse
@@ -92,9 +93,9 @@ Darstellungen erzeugen.
 
 == Berechnete Grids
 
-Galerie-Grids generieren ihre Darstellung dynamisch aus einer
-Datenliste. Farben rotieren automatisch durch die Palette, und die
-Spaltenzahl ist frei konfigurierbar.
+Galerie-Grids#index[Galerie-Grid] generieren ihre Darstellung dynamisch aus einer
+Datenliste. Farben rotieren automatisch durch die Palette#index[Farbpalette], und die
+Spaltenzahl#index[Spaltenzahl] ist frei konfigurierbar.
 
 === Medizinische Kompetenzbereiche
 

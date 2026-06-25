@@ -8,6 +8,7 @@
 #import "../components/grids.typ": feature-grid, gallery-grid
 #import "../components/tables.typ": styled-table
 #import "../components/layouts.typ": comparison-layout
+#import "@preview/in-dexter:0.7.2": index
 
 // ════════════════════════════════════════════════════════════════
 // CHAPTER OPENER
@@ -26,7 +27,7 @@
 // ════════════════════════════════════════════════════════════════
 == Caidan — Die Seite als Leinwand
 
-Das Template _Caidan_ (`\@preview/caidan:0.1.0`) demonstriert
+Das Template _Caidan_#index[Caidan] (`\@preview/caidan:0.1.0`) demonstriert
 einen radikal anderen Ansatz als die bisherigen Kapitel:
 Statt langen Textfluss zu strukturieren, wird die Seite als
 *Leinwand* behandelt — mit frei positionierten Elementen,
@@ -35,7 +36,7 @@ kontextuellem Font-Wechsel und dekorativen Linien.
 === Poster-Stil statt Absatz-Stil
 
 Während Bücher und Berichte den Inhalt als sequenziellen Strom
-von Absätzen behandeln, baut Caidan ein visuelles Raster aus
+von Absätzen behandeln, baut Caidan ein visuelles Poster-Layout#index[Poster-Layout] aus
 absolut positionierten Blöcken:
 
 #code-block(title: [Poster-Design in Typst — Caidan-Muster])[
@@ -73,7 +74,7 @@ absolut positionierten Blöcken:
 
 === Kontextueller Schriftwechsel
 
-Ein Schlüsselmerkmal von Caidans Design ist der flüssige Wechsel
+Ein Schlüsselmerkmal von Caidans Design ist der flüssige Schriftwechsel#index[Schriftwechsel]
 zwischen verschiedenen Schriftfamilien — _ohne_ die globale
 Dokumentschrift zu ändern:
 
@@ -107,10 +108,10 @@ Dokumentschrift zu ändern:
 // ════════════════════════════════════════════════════════════════
 == Aspirationally — Formale Eleganz #tag("Thematic Overrides")
 
-_Aspirationally_ (`\@preview/aspirationally:0.1.1`) ist ein
+_Aspirationally_#index[Aspirationally] (`\@preview/aspirationally:0.1.1`) ist ein
 Fallbeispiel für minimalistisches, formales Layoutdesign. Das
 Template demonstriert, wie eine einzige `show`-Regel ein
-vollständiges Brieflayout erzeugt.
+vollständiges Brieflayout#index[Brieflayout] erzeugt.
 
 === Die `letter.with()`-API
 
@@ -233,7 +234,7 @@ strukturierte Metadaten auf konkrete Seitenpositionen abbildet:
 
 Zum Abschluss von Teil~V ein Blick über den Tellerrand: Was
 passiert, wenn man Typst nicht für Dokumente nutzt, sondern als
-reine Berechnungsmaschine? Zwei Templates aus dem Typst Universe
+reine Berechnungsmaschine? Zwei Templates aus dem Typst Universe#index[Typst Universe]
 treiben die Sprache an ihre Grenzen.
 
 #card(title: [Soviet-Matrix — Tetris im Compiler], accent: palette.danger)[
@@ -293,7 +294,7 @@ treiben die Sprache an ihre Grenzen.
 == Der Lernpfad zum Document Engineer
 
 Die Templates dieses Buchteils repräsentieren vier
-Kompetenzebenen. Folgen Sie diesem Pfad, um sich vom
+Kompetenzebenen auf dem Weg zur visuellen Hierarchie#index[Visuelle Hierarchie]. Folgen Sie diesem Pfad, um sich vom
 Typst-Einsteiger zum Document Engineer zu entwickeln:
 
 #feature-grid(
@@ -359,5 +360,3 @@ Typst-Einsteiger zum Document Engineer zu entwickeln:
   Wer die vier Grundmuster beherrscht, kann jedes Dokumentdesign
   selbst entwerfen, statt fremde Vorlagen anzupassen.
 ]
-
-#section-break()

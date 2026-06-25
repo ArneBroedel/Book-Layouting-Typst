@@ -30,6 +30,7 @@ für Ansprechraten verschiedener Therapieschemata:
     xlabel: [Therapieschema],
   ),
   caption: [Ansprechraten dreier Therapieschemata im Vergleich.],
+  alt: "Balkendiagramm der Ansprechraten von Schema A (42 %), B (61 %) und C (55 %).",
 )
 
 Wo die _Streuung_ der Daten interessiert, zeigt der Box-Plot Median,
@@ -44,6 +45,7 @@ Quartile und Spannweite auf einen Blick:
     ylabel: [Symptomscore],
   ),
   caption: [Verteilung des Symptomscores: Median, Interquartilbereich und Whisker.],
+  alt: "Box-Plot des Symptomscores für Plazebo und Verum mit Median, Quartilen und Whiskern.",
 )
 
 #side-note(title: [Box-Plot lesen])[
@@ -66,6 +68,7 @@ geschätzte Überlebensfunktion als rechtsstetige Treppenfunktion:
     ([Kontrolle], palette.danger, ((0, 100), (4, 100), (4, 70), (10, 70), (10, 45), (24, 45))),
   )),
   caption: [Kaplan-Meier-Überlebenskurven zweier Behandlungsarme über 24 Monate.],
+  alt: "Kaplan-Meier-Treppenkurven: der Therapiearm liegt durchgehend über dem Kontrollarm; Überleben nach 24 Monaten etwa 64 % gegenüber 45 %.",
 )
 
 #callout(title: [Interpretation], tone: "info")[
@@ -89,6 +92,7 @@ einer Zahl zusammen:
     auc: 0.88,
   ),
   caption: [ROC-Kurve eines Biomarkers; die Diagonale entspricht dem Zufall (AUC = 0,5).],
+  alt: "ROC-Kurve eines Biomarkers, deutlich oberhalb der Zufallsdiagonale, mit einer Fläche unter der Kurve von 0,88.",
 )
 
 #section-break()
@@ -110,6 +114,7 @@ geschlechtsspezifische Norm ein — unverzichtbar in der Pädiatrie:
     ylabel: [Körpergröße (cm)],
   ),
   caption: [Wachstums-Perzentilen (P3/P50/P97) der Körpergröße.],
+  alt: "Perzentilkurven der Körpergröße über das Alter von 0 bis 10 Jahren mit den Bändern P3, P50 und P97.",
 )
 
 Der Forest-Plot#index[Forest-Plot] fasst die Ergebnisse mehrerer Studien
@@ -124,6 +129,7 @@ markiert den Effekt-Nullwert:
     ([Gepoolt], 0.88, 0.78, 0.99),
   )),
   caption: [Forest-Plot einer Metaanalyse (Odds Ratios mit 95 %-Konfidenzintervall).],
+  alt: "Forest-Plot mit Odds Ratios und Konfidenzintervallen für drei Studien und den gepoolten Effekt von 0,88; gestrichelte Nulllinie bei 1.",
 )
 
 #callout(title: [Konsistenz durch Komponenten], tone: "success")[

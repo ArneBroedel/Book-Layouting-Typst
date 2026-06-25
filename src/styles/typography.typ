@@ -106,5 +106,13 @@
     it
   }
 
+  // ── PDF/UA fallback alt text ────────────────────────────────
+  // Guarantees that figures/equations carry alt text for accessible
+  // (PDF/UA-1) export — including those emitted internally by packages
+  // (codly, zero, glossarium …). Content figures pass their own
+  // specific `alt`, which overrides these generic defaults.
+  set figure(alt: "Abbildung.")
+  set math.equation(alt: "Mathematischer Ausdruck bzw. formatierter Zahlenwert.")
+
   body
 }

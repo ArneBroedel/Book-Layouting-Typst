@@ -5,6 +5,7 @@
 #import "../components/blocks.typ": blockquote, callout, card, code-block, key-concept, pull-quote, side-note
 #import "../components/inline.typ": badge, highlight-text, icon-text, kbd, tag
 #import "../components/grids.typ": feature-grid, gallery-grid
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Bausteine für Lehrmaterialien],
@@ -14,8 +15,8 @@
 
 == Semantische Hinweiskästen
 
-Hinweiskästen (Callouts) transportieren Informationen unterschiedlicher
-Dringlichkeit. Die farbliche Kodierung ermöglicht eine sofortige
+Hinweiskästen#index[Hinweiskasten] (Callouts#index[Callout]) transportieren Informationen unterschiedlicher
+Dringlichkeit. Die farbliche Kodierung#index[Farbliche Kodierung] ermöglicht eine sofortige
 Einordnung durch den Leser.
 
 #callout(title: "Wechselwirkung", tone: "info")[
@@ -42,8 +43,8 @@ Einordnung durch den Leser.
 
 == Karten und Zitate
 
-Karten eignen sich für abgeschlossene Informationseinheiten, die
-visuell vom Fließtext abgehoben werden sollen.
+Karten#index[Karte] eignen sich für abgeschlossene Informationseinheiten, die
+visuell vom Fließtext#index[Fließtext] abgehoben werden sollen.
 
 #card(title: "Fallbeispiel: Akuter Myokardinfarkt")[
   *Patient:* 58-jähriger Mann, Raucher, bekannte Hyperlipidämie. \
@@ -95,8 +96,8 @@ visuell vom Fließtext abgehoben werden sollen.
 
 == Inline-Komponenten
 
-Inline-Elemente fügen sich nahtlos in den Fließtext ein und reichern
-ihn mit semantischer Information an.
+Inline-Elemente#index[Inline-Element] fügen sich nahtlos in den Fließtext ein und reichern
+ihn mit semantischer Information#index[Semantische Information] an.
 
 Fachgebiete können als Badges markiert werden: #badge[Kardiologie]
 #badge(color: palette.accent)[Neurologie]
@@ -105,7 +106,7 @@ Fachgebiete können als Badges markiert werden: #badge[Kardiologie]
 erscheinen als Tags: #tag[Grundlagen] #tag(color: palette.warning)[Fortgeschritten]
 #tag(color: palette.danger)[Expertenwissen].
 
-Im Fließtext können Schlüsselbegriffe wie
+Im Fließtext können Schlüsselbegriffe#index[Schlüsselbegriff] wie
 #highlight-text[Differenzialdiagnose] oder
 #highlight-text[Randomisierte kontrollierte Studie] hervorgehoben
 werden, ohne den Lesefluss zu unterbrechen.
@@ -117,7 +118,7 @@ Statusanzeigen: #icon-text(sym.checkmark, [Befund validiert])
 #h(space.md)
 #icon-text(sym.excl, [Ausstehend])
 
-== Grid-Übersichten
+== Grid-Übersichten#index[Grid]
 
 === Medizinische Fachgebiete
 

@@ -8,6 +8,7 @@
 #import "../components/grids.typ": feature-grid, gallery-grid
 #import "../components/tables.typ": styled-table
 #import "../components/layouts.typ": comparison-layout
+#import "@preview/in-dexter:0.7.2": index
 
 // ════════════════════════════════════════════════════════════════
 // CHAPTER OPENER
@@ -25,7 +26,7 @@
 // ════════════════════════════════════════════════════════════════
 == IDE & Sprachserver — Tinymist
 
-Tinymist ist der Standard-Sprachserver für Typst und verwandelt jeden
+Tinymist#index[Tinymist] ist der Standard-Sprachserver für Typst und verwandelt jeden
 kompatiblen Editor in eine vollwertige Typst-Entwicklungsumgebung.
 
 #feature-grid(
@@ -78,7 +79,7 @@ kompatiblen Editor in eine vollwertige Typst-Entwicklungsumgebung.
 // ════════════════════════════════════════════════════════════════
 == Code-Formatierung — typstyle
 
-Konsistenter Code-Stil ist in Team-Projekten unverzichtbar. _typstyle_
+Konsistenter Code-Stil ist in Team-Projekten unverzichtbar. _typstyle_#index[typstyle]
 formatiert Typst-Quellcode automatisch nach einheitlichen Regeln.
 
 #comparison-layout(
@@ -113,7 +114,7 @@ formatiert Typst-Quellcode automatisch nach einheitlichen Regeln.
 == CI/CD-Pipelines — Automatisierte Builds
 
 In professionellen Umgebungen werden Dokumente nicht manuell kompiliert,
-sondern durch automatisierte Pipelines erzeugt. Typst eignet sich
+sondern durch automatisierte Pipelines#index[CI/CD] erzeugt. Typst eignet sich
 hierfür hervorragend: der gesamte Compiler ist unter 40#sym.space.thin MB groß
 und in Sekunden einsatzbereit.
 
@@ -157,8 +158,8 @@ und in Sekunden einsatzbereit.
 // ════════════════════════════════════════════════════════════════
 == Barrierefreie PDFs — PDF/UA-Konformität
 
-Barrierefreiheit ist keine optionale Eigenschaft, sondern eine
-gesetzliche Anforderung. Der European Accessibility Act (EAA)
+Barrierefreiheit#index[Barrierefreiheit] ist keine optionale Eigenschaft, sondern eine
+gesetzliche Anforderung. Der European Accessibility Act#index[European Accessibility Act] (EAA)
 verpflichtet öffentliche Einrichtungen zur Bereitstellung
 zugänglicher digitaler Dokumente.
 
@@ -168,7 +169,7 @@ zugänglicher digitaler Dokumente.
   assistive Technologien den Inhalt korrekt interpretieren können.
 ]
 
-Typst erzeugt beim Export semantisch korrekte PDF-Tags. Die folgende
+Typst erzeugt beim Export semantisch korrekte PDF-Tags#index[PDF/UA]. Die folgende
 Tabelle zeigt die Zuordnung:
 
 #styled-table(
@@ -207,7 +208,7 @@ Tabelle zeigt die Zuordnung:
 == Enterprise-Muster
 
 Für den Einsatz in Organisationen bietet Typst strukturierte
-Paket- und Template-Verwaltung.
+Paket- und Template-Verwaltung#index[Template-Verwaltung].
 
 #card(title: [Package-Manifest: typst.toml])[
   #code-block(title: none)[
@@ -249,7 +250,7 @@ Paket- und Template-Verwaltung.
 // ════════════════════════════════════════════════════════════════
 == Integration mit Quarto
 
-Für Teams aus den Datenwissenschaften bietet Quarto eine Brücke
+Für Teams aus den Datenwissenschaften bietet Quarto#index[Quarto] eine Brücke
 zwischen Code-basierter Analyse und Typst-basiertem Satz.
 
 #callout(title: [Quarto + Typst], tone: "info")[
@@ -273,5 +274,3 @@ zwischen Code-basierter Analyse und Typst-basiertem Satz.
   Barrierefreiheit ist kein Feature — sie ist eine Grundvoraussetzung.
   Jedes Dokument, das nicht zugänglich ist, schließt Menschen aus.
 ]
-
-#section-break()

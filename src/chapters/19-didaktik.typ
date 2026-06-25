@@ -178,27 +178,72 @@ obstruktiven Schock.#margin-note[Der _Wells-Score_ schätzt die
 Vortestwahrscheinlichkeit und steuert, ob ein D-Dimer oder direkt eine
 CT-Angiografie sinnvoll ist.]
 
-Auch längere Erläuterungen lassen sich auslagern, ohne den Lesefluss des
-Haupttextes zu stören — die Randspalte stapelt die Notizen automatisch in
-der Reihenfolge ihres Auftretens.
+Die Diagnostik folgt einem klaren Pfad: Bei niedriger oder mittlerer
+Vortestwahrscheinlichkeit wird zunächst das D-Dimer bestimmt; ein
+negativer Wert schließt eine Lungenembolie mit hoher Sicherheit
+aus.#margin-note(title: [Cave])[Ein erhöhtes D-Dimer ist unspezifisch — es
+steigt auch bei Infektion, Trauma, Schwangerschaft und im hohen Alter.] Bei
+hoher Wahrscheinlichkeit oder instabilen Patienten erfolgt direkt die
+CT-Pulmonalisangiografie als Goldstandard.#margin-note[Bei
+Kontrastmittel-Kontraindikation ist die Ventilations-Perfusions-Szintigrafie
+eine Alternative.]
+
+Therapeutisch steht die Antikoagulation im Vordergrund — bei
+hämodynamischer Instabilität die systemische Thrombolyse.#margin-note[Direkte
+orale Antikoagulanzien (DOAK) haben Vitamin-K-Antagonisten in vielen
+Situationen abgelöst.] Auch längere Erläuterungen lassen sich so in die
+Randspalte auslagern, ohne den Lesefluss des Haupttextes zu stören; die
+Notizen stapeln sich automatisch und kollisionsfrei in der Reihenfolge
+ihres Auftretens.
 
 // ── Klinischer-Fall-Spread ──
 #clinical-case-spread(
-  title: [Fallbeispiel: Akuter Thoraxschmerz],
-  anamnese: [58-jährige Frau, plötzlicher atemabhängiger Thoraxschmerz und
-    Dyspnoe seit zwei Stunden; Z. n. Kniegelenksoperation vor 10 Tagen.],
-  befund: [Tachykardie (112/min), Tachypnoe, $"SpO"_2$ 89 %, D-Dimer
-    deutlich erhöht.],
-  diagnose: [Akute Lungenembolie (CT-angiografisch gesichert).],
-  therapie: [Therapeutische Antikoagulation; bei hämodynamischer
-    Instabilität systemische Lyse.],
+  title: [Fallbeispiel: Akute Lungenembolie],
+  anamnese: [58-jährige Frau; seit zwei Stunden plötzlicher,
+    atemabhängiger Thoraxschmerz und zunehmende Dyspnoe. Zustand nach
+    Kniegelenksoperation vor 10 Tagen mit anschließender Immobilisation.
+    Keine kardiale Vorgeschichte, Nichtraucherin, orale Kontrazeption.],
+  befund: [Wache, deutlich dyspnoische Patientin. Tachykardie 112/min,
+    Tachypnoe 24/min, Blutdruck 105/70 mmHg, SpO#sub[2] 89 % unter
+    Raumluft. Gestaute Halsvenen, betonter zweiter Herzton; Beine ohne
+    eindeutige Schwellung.],
+  diagnose: [Akute Lungenembolie, CT-angiografisch gesichert (zentrale
+    Füllungsdefekte beidseits) mit Rechtsherzbelastung im Echo.],
+  therapie: [Sofortige therapeutische Antikoagulation; bei
+    hämodynamischer Verschlechterung systemische Thrombolyse.],
+  left-extra: [
+    #v(space.md)
+    #text(weight: "bold", font: fonts.sans, fill: palette.primary-dark)[Laborbefunde]
+    #reference-table((
+      (param: [D-Dimer], value: [4.8 mg/l], range: [< 0.5], flag: "crit"),
+      (param: [Troponin T], value: [42 ng/l], range: [< 14], flag: "high"),
+      (param: [SpO#sub[2]], value: [89 %], range: [≥ 95], flag: "low"),
+      (param: [Herzfrequenz], value: [112/min], range: [60–100], flag: "high"),
+    ))
+  ],
   discussion: [
     Die postoperative Immobilisation ist ein klassischer Risikofaktor der
     venösen Thromboembolie. Der atemabhängige Thoraxschmerz mit Dyspnoe und
-    Hypoxämie lenkt den Verdacht früh auf die Lungenembolie. Entscheidend
-    ist die strukturierte Risikostratifizierung: Wells-Score, D-Dimer und
-    bildgebende Bestätigung. Die hier gezeigte Doppelseite trennt bewusst
-    den _Fall_ (links) von der _Diskussion_ (rechts) — ein bewährtes
-    didaktisches Muster.
+    Hypoxämie lenkt den Verdacht früh auf die Lungenembolie.
+
+    Pathophysiologisch führt die Verlegung der Pulmonalarterien zu einer
+    akuten Druckbelastung des rechten Ventrikels. Echokardiografische
+    Zeichen der Rechtsherzbelastung und ein erhöhtes Troponin markieren die
+    intermediär- bis hochrisiko-Konstellation und beeinflussen die
+    Therapieentscheidung.
+
+    Entscheidend bleibt die strukturierte Risikostratifizierung:
+    Wells-Score zur Vortestwahrscheinlichkeit, D-Dimer als Ausschlusstest
+    bei niedriger Wahrscheinlichkeit und die CT-Angiografie als Goldstandard
+    der Bildgebung.
+  ],
+  right-extra: [
+    #memo[Bei postoperativer Dyspnoe mit Hypoxämie immer an eine
+    Lungenembolie denken — die unbehandelte Letalität ist hoch.]
+    #text(weight: "bold", font: fonts.sans, fill: palette.primary-dark)[Take-home-Points]
+    - Wells-Score steuert die Vortestwahrscheinlichkeit.
+    - D-Dimer nur bei niedriger/mittlerer Wahrscheinlichkeit sinnvoll.
+    - CT-Angiografie ist der bildgebende Goldstandard.
+    - Therapie: Antikoagulation; bei Instabilität Thrombolyse.
   ],
 )

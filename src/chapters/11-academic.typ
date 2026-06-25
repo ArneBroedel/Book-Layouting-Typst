@@ -7,6 +7,7 @@
 #import "../components/grids.typ": feature-grid, gallery-grid
 #import "../components/layouts.typ": comparison-layout
 #import "../components/tables.typ": styled-table
+#import "@preview/in-dexter:0.7.2": index
 
 #chapter-opener(
   title: [Akademisches Publizieren und Mathematik],
@@ -20,7 +21,7 @@
 
 #import "@preview/physica:0.9.8": *
 
-Die Eingabe komplexer mathematischer Formeln kann zeitaufwändig sein. Physica bietet hunderte von Kurzschreibweisen, um den Schreibfluss zu beschleunigen und den Quellcode lesbarer zu machen.
+Die Eingabe komplexer mathematischer Formeln kann zeitaufwändig sein. Physica#index[Physica] bietet hunderte von Kurzschreibweisen, um den Schreibfluss zu beschleunigen und den Quellcode lesbarer zu machen.
 
 #comparison-layout(
   [
@@ -30,11 +31,15 @@ Die Eingabe komplexer mathematischer Formeln kann zeitaufwändig sein. Physica b
     $ arrow(u) $
     $ grad f $
     ```
-    #box(stroke: 1pt + luma(200), inset: 8pt, radius: 4pt, width: 100%)[
-      $ frac(partial f, partial x) $
-      $ arrow(u) $
-      $ grad f $
-    ]
+    #figure(
+      box(stroke: 1pt + luma(200), inset: 8pt, radius: 4pt, width: 100%)[
+        $ frac(partial f, partial x) $
+        $ arrow(u) $
+        $ grad f $
+      ],
+      numbering: none,
+      alt: "Drei Formeln in nativer Typst-Notation: partielle Ableitung von f nach x, Vektor u und Gradient von f.",
+    )
   ],
   [
     *Mit Physica*
@@ -43,11 +48,15 @@ Die Eingabe komplexer mathematischer Formeln kann zeitaufwändig sein. Physica b
     $ vu(u) $
     $ grad f, quad div va(v), quad curl va(v) $
     ```
-    #box(stroke: 1pt + palette.primary, inset: 8pt, radius: 4pt, width: 100%)[
-      $ pdv(f, x) $
-      $ vu(u) $
-      $ grad f, quad div va(v), quad curl va(v) $
-    ]
+    #figure(
+      box(stroke: 1pt + palette.primary, inset: 8pt, radius: 4pt, width: 100%)[
+        $ pdv(f, x) $
+        $ vu(u) $
+        $ grad f, quad div va(v), quad curl va(v) $
+      ],
+      numbering: none,
+      alt: "Dieselben Formeln in Physica-Kurzschreibweise: partielle Ableitung, Einheitsvektor, Gradient, Divergenz und Rotation.",
+    )
   ]
 )
 
@@ -89,11 +98,11 @@ Ebenso erleichtert das Paket die Eingabe von Matrizen, Vektoren und anderen Oper
   register-glossary(dict)
 }
 
-Glossarium ermöglicht eine automatisierte Verwaltung von Abkürzungen. Beim ersten Aufruf im Text wird die vollständige Definition ausgegeben, bei jedem weiteren Aufruf lediglich die Kurzform.
+Glossarium#index[Glossarium] ermöglicht eine automatisierte Verwaltung von Abkürzungen. Beim ersten Aufruf im Text wird die vollständige Definition ausgegeben, bei jedem weiteren Aufruf lediglich die Kurzform.
 
-- *Erste Verwendung:* Der Patient erhielt ein #gls("EKG").
+- *Erste Verwendung:* Der Patient erhielt ein #gls("EKG")#index[Elektrokardiogramm].
 - *Zweite Verwendung:* Das #gls("EKG") war unauffällig.
-- *Weitere Begriffe:* Zur weiteren Diagnostik wurde ein #gls("MRT") angeordnet. Die #gls("SpO2") lag bei 98%.
+- *Weitere Begriffe:* Zur weiteren Diagnostik wurde ein #gls("MRT")#index[Magnetresonanztomographie] angeordnet. Die #gls("SpO2") lag bei 98%.
 
 #key-concept(term: [Introspection])[
   Glossarium nutzt Typsts `query()` und `state()` Mechanismen, um die erstmalige Verwendung von Begriffen über das gesamte Dokument hinweg zu verfolgen. Es speichert den Status jedes Begriffs und passt die Ausgabe bei späteren Aufrufen automatisch an.
@@ -126,7 +135,7 @@ Die kardiovaskuläre Anatomie @jones2023 steht für den Grundlagentyp.
 
 === Alternative vor 0.15: Präfixe mit Alexandria
 
-Vor Typst 0.15 löste das Paket *Alexandria* dieselbe Aufgabe über ein Präfix-System (Show-Rule-Interception): `@klinisch:smith2024` und `@grundlagen:jones2023` sortieren in getrennte Verzeichnisse. Für Projekte auf älteren Compilern bleibt dies eine valide Lösung.
+Vor Typst 0.15 löste das Paket *Alexandria*#index[Alexandria] dieselbe Aufgabe über ein Präfix-System (Show-Rule-Interception): `@klinisch:smith2024` und `@grundlagen:jones2023` sortieren in getrennte Verzeichnisse. Für Projekte auf älteren Compilern bleibt dies eine valide Lösung.
 
 ```typ
 #import "@preview/alexandria:0.2.2": bibliography
@@ -137,7 +146,7 @@ Vor Typst 0.15 löste das Paket *Alexandria* dieselbe Aufgabe über ein Präfix-
 // ════════════════════════════════════════════════════════════════
 == Bibliografie-Styling in Typst mit Pergamon
 
-Während Typst CSL (Citation Style Language) für das Styling von Bibliografien nutzt, gibt es Fälle, in denen man die Formatierung direkt mit Typst-Regeln kontrollieren möchte. Pergamon ermöglicht genau dies: Typst-natives Bibliografie-Styling.
+Während Typst CSL (Citation Style Language) für das Styling von Bibliografien nutzt, gibt es Fälle, in denen man die Formatierung direkt mit Typst-Regeln kontrollieren möchte. Pergamon#index[Pergamon] ermöglicht genau dies: Typst-natives Bibliografie#index[Bibliografie]-Styling.
 
 #comparison-layout(
   [
@@ -164,5 +173,3 @@ Während Typst CSL (Citation Style Language) für das Styling von Bibliografien 
 #side-note(title: [Refsections])[
   Neben dem Styling ermöglicht Pergamon auch sogenannte "Refsections" — kapitelweise Literaturverzeichnisse — und benutzerdefiniertes Filtern nach Schlüsselwörtern. Diese Funktionen sind mit reinem CSL nicht umsetzbar.
 ]
-
-#section-break()
