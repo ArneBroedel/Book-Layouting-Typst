@@ -767,3 +767,24 @@ Distilled from completed devtracks (image-flow, tool-updates, pdf-ua-compliance,
 - **Dynamic content extraction:** pull live document state into layout with `context { query(heading.where(level: 1).before(here())) }` — the basis for running headers, auto-summaries, and "current chapter" displays. Requires `context`.
 - **Margin architecture without a native primitive:** Typst still has no native margin-note element (mid-2026). Hand-build with `measure()` (size the content) + `place()` (position into the margin) + `state()` (track vertical offsets to avoid collisions); the productized version is `@preview/marginalia`.
 - **Thematic overrides:** retheme content by applying a template's entry function as a scoped show rule (`#show: letter.with(...)`) — but only when it does NOT seize global page geometry (full-page template packages: see typst-extension §10).
+
+## 20 — Harvested Gotchas: Page Design, Backgrounds & Generative Art
+
+Distilled from the `page-design` devtrack (page-background showcase + artistic interlude). Almost everything here is native to Typst 0.15 — no package needed. Long-form rationale in `Guides/Working_With_Typst-Theory_To_Practice.md`.
+
+### Page backgrounds & decoration (the `page-design.typ` family)
+- **`set page(…)` ALWAYS starts a new page** — even changing only `background`/`foreground`/`fill`. So a "page-level" helper (watermark, full-bleed, margin band, thumb index, frame, corner ornament) inherently occupies its own page. Put each helper's explanatory text INSIDE its body, or the preceding heading gets orphaned on the prior page.
+- **A scoped `set page` reverts after its content block.** A helper that does `{ set page(background: …); body }` applies the background only to the page(s) its `body` spans, then the outer geometry resumes — safe to use mid-chapter as long as each lands on its own page.
+- **`outside`/`inside` are page-margin keys, NOT alignment values.** `place(… + outside)` does not exist. For binding-aware outer-edge elements use `context { let outer = if calc.even(here().page()) { left } else { right }; place(top + outer, …) }` (verso/even = outer-left, recto/odd = outer-right — matches the footer parity).
+- **Section background that flows across page breaks:** `block(breakable: true, fill: …)` (breakable is the default) — the fill and stroke continue onto the next page. This is the native answer to "tinted region behind flowing text"; a placed rect cannot do it.
+- **Thumb index / Daumenregister has NO package** — hand-build: place one `rect` per chapter/part in the outer margin, stepped by `dy: top-offset + i * tab-height`. For a BOOK-WIDE register, derive the active rung from `counter(heading).at(loc)` — NOT a custom `counter(heading.where(…))`, which is a *separate* counter that never auto-steps.
+- **Full-bleed:** `set page(margin: 0pt, background: image(.., width: 100%, height: 100%, fit: "cover"))`; for print add `set page(bleed: 3mm)` and size art to 100% (relative lengths in background/foreground resolve against page size *including* bleed).
+- **Optional frame package** `@preview/s6t5-page-bordering` (compiler 0.12+, runs on 0.15); the one-line native equivalent is `set page(foreground: place(rect(width: 100%-2*inset, height: 100%-2*inset, stroke: …)))`.
+
+### Generative / experimental art (the `art.typ` family)
+- **Use `layout(size => …)` for absolute coordinates.** Wrap art in `box(width: 100%, height: 100%, layout(size => { … }))` and compute positions from `size.width`/`size.height`. Do NOT rely on CeTZ `canvas()` centering inside `place()` — it anchors by content bbox and drifts; own-coordinate `place` is predictable.
+- **Color-by-parameter:** build a `gradient.linear(many colors…)` once and call `grad.sample(t * 100%)` per element (t a 0..1 ratio). `gradient` has **no** `.transparentize()` — transparentize the *stop colors* instead (`gradient.linear(c1.transparentize(60%), …)`).
+- **Native `curve` for polylines/parametric shapes:** `curve(curve.move(p0), curve.line(p1), …)`. There is **no `closed:` argument** — append `curve.close()` to close a loop. Center math shapes yourself: `pts.push((cx + r*calc.cos(θ), cy + r*calc.sin(θ)))`. `calc.sin/cos` accept an `angle` (e.g. `137.5deg * i`).
+- **Mirror tiles by rotation, not `scale`-flip placement.** A `scale(x: -100%, …)` tile loses its placement anchor (quadrant tiles silently drop out). A reliable kaleidoscope is a radial ring: `place(dx: cx, dy: cy, rotate(ang, origin: top+left, move(dy: -reach, …)))`, mirroring alternate copies with `scale(x: ±100%, reflow: true, …)` INSIDE a fixed-size box.
+- **Decorative images still need `alt`** under `--pdf-standard ua-1` — even background/art images error with "missing alt text". Add `alt:` or rely on a global `set image(alt: …)` fallback.
+- **Inline `raw`/`` `code` `` on a dark background renders as a white redaction box** (the code-block fill). On dark full-bleed/art pages, drop backticks and use italic/plain prose instead.

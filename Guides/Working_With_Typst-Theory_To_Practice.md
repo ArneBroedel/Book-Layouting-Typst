@@ -767,3 +767,33 @@ reaching for a plot library only when a chart was genuinely hard in raw CeTZ. Tw
 spreads that must begin on a verso page should fill the alignment page with a *labeled* "DOPPELSEITE" divider
 rather than an unexplained blank; and CSV-driven tables need a display-name mapping plus `1fr` proportional
 widths, or raw `underscore_column` names overflow narrow cells.
+
+### Page design, backgrounds & generative art (devtrack: page-design)
+
+**The whole "page background" toolbox is native — the only thing without a package is the thumb index.**
+Coloured backgrounds, watermarks, full-bleed images, gradients/`tiling`, section fills that flow across
+page breaks, and binding-aware margin bands all come straight from `page(background:/foreground:)`,
+`gradient.*`, and `block(breakable: true, fill: …)`. The one genuinely hand-built piece is the
+Daumenregister/thumb index: one stepped `rect` per part in the outer margin, positioned by
+`dy: top-offset + i*tab-height`. The subtle trap is the counter — a book-wide register must read
+`counter(heading).at(loc)`, because a `counter(heading.where(level: 1))` is a *separate* counter that is
+never auto-stepped and silently stays at zero. Two structural facts shaped the component design: `set
+page(…)` *always* begins a new page (so every page-level helper inherently owns its page, and its caption
+must live inside the helper body or the heading orphans), and a scoped `set page` reverts cleanly when its
+content block ends (so the helpers are safe mid-chapter). Also note `outside`/`inside` are margin keys, not
+alignment values — outer-edge placement needs `calc.even(here().page())` parity (verso = outer-left).
+
+**Generative art proved Typst's drawing primitives reach far past book setting — once three traps are
+known.** Nine full-bleed artworks (aurora mesh, golden-angle phyllotaxis, op-art moiré, sine-interference
+wave field, radial mandala, Mondrian blocks, gradient typo-poster, parametric guilloché, mirrored
+kaleidoscope) are almost all pure `place` + shapes + `gradient.sample(t)` + `calc.sin/cos`. The reliable
+spine is `box(width: 100%, height: 100%, layout(size => …))` to get absolute page coordinates and compute
+positions yourself — CeTZ `canvas()` centred inside `place()` drifts by content-bbox and squashed a rosette
+into the page top until it was rebuilt with native `curve` and own coordinates. Native `curve` has no
+`closed:` argument (append `curve.close()`), and `gradient` has no `.transparentize()` (transparentize the
+*stop colours*). The costliest mistake was mirroring kaleidoscope tiles with `scale(x: -100%)` placement —
+the flipped quadrant tiles silently dropped out (a `scale`-transformed element loses its placement anchor),
+so the fix was a radial *rotation* of alternately-mirrored copies. Finally two accessibility/legibility
+rules carried over: even decorative art images need `alt:` under `--pdf-standard ua-1` (the build hard-errors
+otherwise), and inline `` `raw` `` code on a dark background renders as a white redaction box (the code-block
+fill), so dark art pages must use plain/italic prose instead of backticks.

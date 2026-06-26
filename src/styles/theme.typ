@@ -32,6 +32,24 @@
   chapter: gradient.linear(palette.primary, palette.primary-light, angle: 0deg),
   accent: gradient.linear(palette.accent-dark, palette.accent, angle: 90deg),
   subtle: gradient.linear(palette.bg-subtle, palette.bg, angle: 180deg),
+  // Demo presets for the page-design showcase (chapter 23)
+  wash: gradient.linear(palette.primary-dark, palette.primary, palette.primary-light, angle: 160deg),
+  radial: gradient.radial(palette.primary-light, palette.primary-dark),
+  conic: gradient.conic(palette.primary, palette.accent, palette.primary, angle: 0deg),
+)
+
+// ── Part colors ────────────────────────────────────────────────
+// One distinguishable hue per book part (Teil I–VI). Drives the
+// page-design showcase: thumb-index tabs, full-height margin bands and
+// any per-part color coding. Ordered list → index i == Teil (i+1), so a
+// thumb register can step by counter without a name lookup.
+#let part-colors = (
+  rgb("#0d7377"), // I   — Grundlagen (teal / primary)
+  rgb("#2563eb"), // II  — Komponenten & Layouts (blue)
+  rgb("#7c3aed"), // III — Erweiterbarkeit (violet)
+  rgb("#16a34a"), // IV  — Community-Pakete (green)
+  rgb("#d4a039"), // V   — Template-Muster (amber / accent)
+  rgb("#dc2626"), // VI  — Medizinische Fachbuch-Fähigkeiten (red)
 )
 
 // ── Type Scale ─────────────────────────────────────────────────

@@ -89,5 +89,14 @@
 #include "chapters/21-diagramme.typ"
 #include "chapters/22-bildintegration.typ"
 
+// ── Part VII: Seitengestaltung, Hintergrund & Kunststücke ─────
+#{
+  import "components/spreads.typ": part-page
+  part-page(number: "Teil VII", title: [Seitengestaltung, Hintergrund & Kunststücke])
+}
+
+#include "chapters/23-seitengestaltung.typ"
+#include "chapters/24-kunststuecke.typ"
+
 // ── Back Matter ────────────────────────────────────────────────
 #include "chapters/07-backmatter.typ"
