@@ -14,7 +14,7 @@ Skill-Änderungen tatsächlich ab (statt nur als Empfehlung im Plan zu stehen).
 ## Scope (in)
 
 - **Eval-Lauf** des `skill-creator`-Harness (`.github/skills/skill-creator/scripts/run_eval.py` u. a.)
-  über mindestens `typst-writer` und `typst-extension`; optional `pinit-workflow`, `git-steward`.
+  über mindestens `typst-writer` und `typst-extension`; optional `pinit-workflow`.
 - **Trigger-/Description-Analyse:** prüfen, ob die §19/§10-Erweiterungen die Auslöse-Genauigkeit
   (Description) verwässert haben; ggf. `improve_description.py` nutzen.
 - **Baseline ablegen:** Scores/Reports versioniert im Track (`reports/`), als Referenz für künftige

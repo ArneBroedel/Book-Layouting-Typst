@@ -67,7 +67,7 @@ experience
 1. **Extract every durable learning** from the track's `spec.md`/`plan.md`/`phaseN.md`.
 2. **Route each learning:**
    - Actionable "always/never" rule or gotcha → the matching **skill** (`typst-writer`,
-     `typst-extension`, `pinit-workflow`, `git-steward`).
+     `typst-extension`, `pinit-workflow`).
    - Narrative "we hit X, root cause Y, fix Z" → **`Guides/Working_With_Typst-Theory_To_Practice.md`**.
 3. **Use `skill-creator`** to draft and (for substantive changes) eval/grade the skill edits.
    - *Tiered rigor:* trivial gotcha additions = light skill edit + lint; substantive skill changes =

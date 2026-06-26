@@ -3,7 +3,7 @@
 ## Objective
 
 Den **zentralen Projektzweck beweisen**: dass die destillierten Skills (`typst-writer`,
-`typst-extension`, `pinit-workflow`, `git-steward`) und die Guides ein *neues* Projekt messbar
+`typst-extension`, `pinit-workflow`) und die Guides ein *neues* Projekt messbar
 beschleunigen. Dafür entsteht ein **kleines, eigenständiges Artefakt zu einem anderen Thema**,
 gebaut allein auf Basis der Skills/Guides/Komponenten — ohne das Buch zu erweitern.
 

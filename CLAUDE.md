@@ -45,7 +45,7 @@ When editing a component, change tokens in `theme.typ` rather than inlining colo
 - **typst-writer** — use for *any* `.typ` creation/edit, compile-error fix, or layout-defect debugging.
 - **typst-extension** — use when importing any `@preview` package, loading JSON/CSV data, or configuring `typst.toml`/CI.
 - **pinit-workflow** — use for any `#pin*` / pinit annotation work; self-contained (debug module, regression tests, style guide, and AI playbook ship inside the skill).
-- **git-steward** — strict Git/GitHub policy: never branch/switch without explicit request, never commit on `master`/`main`, prefer PR flow, never `reset --hard`/`clean -fd`/force-push without approval.
+- **skill-creator** — use to create, improve, evaluate, or benchmark a skill (e.g. when harvesting a completed devtrack into a skill).
 
 ## Knowledge architecture
 
