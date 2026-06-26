@@ -98,5 +98,13 @@
 #include "chapters/23-seitengestaltung.typ"
 #include "chapters/24-kunststuecke.typ"
 
+// ── Part VIII: Berufs- und Rechtskunde ────────────────────────
+#{
+  import "components/spreads.typ": part-page
+  part-page(number: "Teil VIII", title: [Berufs- und Rechtskunde])
+}
+
+#include "chapters/25-rechtskunde.typ"
+
 // ── Back Matter ────────────────────────────────────────────────
 #include "chapters/07-backmatter.typ"

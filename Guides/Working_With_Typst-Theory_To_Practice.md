@@ -797,3 +797,29 @@ so the fix was a radial *rotation* of alternately-mirrored copies. Finally two a
 rules carried over: even decorative art images need `alt:` under `--pdf-standard ua-1` (the build hard-errors
 otherwise), and inline `` `raw` `` code on a dark background renders as a white redaction box (the code-block
 fill), so dark art pages must use plain/italic prose instead of backticks.
+
+### Legal / professional-law content (devtrack: legal-rechtskunde)
+
+**Statute presentation is a structure problem, and the didactic-box spine already solves it.** A medical
+textbook's Berufs- und Rechtskunde needs verbatim norm boxes, precise citations, case-law boxes, legal
+definitions, Gutachten schemes, a Normenhierarchie and randnummer commentary — and every one of them is the
+same `_label-chip` + left-accent `block` pattern as the didactic boxes, just driven by a new `theme.legal`
+token dict. So `components/legal.typ` is one generic `_legal-box(kind, header, body)` plus thin wrappers
+(`gesetzeskasten`, `rechtsprechung`, `legaldefinition`, `pruefungsschema`/`gutachten`), exactly mirroring
+`didactics.typ`. Packages exist for parts of this (`rich-counters` for §→Absatz→Satz auto-numbering,
+`theorion`/`great-theorems` for numbered definition blocks, `glossarium`/`abbr` for the
+Abkürzungsverzeichnis, `citrus` + native `bibliography(style: "oscola.csl")` for legal CSL citation), but
+hand-building kept everything token-bound and conflict-free — the same call the rest of the repo makes.
+
+**The fiddly bits were citation grammar and faithful structure, not styling.** An inline norm citation must
+never break across a line, so the formatter joins its parts (`§ 203`, `Abs. 1`, `Satz 2`, `Nr. 3`, the
+gesetz-Kürzel LAST) with `sym.space.nobreak` and wraps the whole thing in a `box`. A subtle correctness trap:
+letter-suffixed sections like § 630e are a *single* identifier and must be passed as the string `"630e"` —
+routing the letter through a separate field yields "§ 630 e BGB". Verbatim Absatz/Nummer/Buchstabe structure
+is hanging-indent `grid(columns: (auto, 1fr))` with the numbers passed *literally* (faithful quotation beats
+an auto-counter that would renumber on every edit), and Randnummern need no margin package at all — a
+`counter("randnummer")` plus a narrow gutter column in a grid gives the commentary look without
+`marginalia`'s pagebreak fragility. The one layout snag was the Normenhierarchie pyramid splitting across a
+page break; a built-up multi-element figure (`stack` of widening blocks) must carry `breakable: false` or
+the shape severs. Net: presenting law well in Typst is almost entirely native, and reusing the established
+box spine made the whole module fall out in one pass.

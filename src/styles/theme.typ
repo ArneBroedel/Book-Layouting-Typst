@@ -120,3 +120,15 @@
   // LOE 1 (highest) → 5 (lowest), indexed by level-1
   loe: (palette.success, palette.info, palette.primary, palette.warning, palette.danger),
 )
+
+// ── Legal / Berufs- und Rechtskunde ────────────────────────────
+// Sober, document-like palette for legal content (components/legal.typ):
+// statute quotes, case law, legal definitions, exam schemes, professional
+// practice. Each entry: a chip label (German legal idiom) + a base color.
+#let legal = (
+  norm: (label: "Gesetzestext", color: rgb("#1f3a5f")), // navy — Wortlaut der Norm
+  case: (label: "Rechtsprechung", color: rgb("#7b1e3b")), // burgundy — court decisions
+  definition: (label: "Legaldefinition", color: palette.primary), // teal — legal definitions
+  scheme: (label: "Prüfungsschema", color: rgb("#5b3a8f")), // violet — Gutachten / schemes
+  practice: (label: "Berufspraxis", color: palette.accent-dark), // amber — professional duties
+)
