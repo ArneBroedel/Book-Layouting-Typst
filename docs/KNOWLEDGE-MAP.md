@@ -14,9 +14,9 @@ faster. This document is the single source of truth for **where knowledge lives 
 
 | Type | Lives in | Rule — "what goes here" |
 |---|---|---|
-| **Governance / conventions** | `CLAUDE.md` + this `docs/KNOWLEDGE-MAP.md` | How to *work in this repo* (build, architecture, this system itself). The "schema" layer. |
+| **Governance / conventions** | `CLAUDE.md` + `AGENTS.md` + this `docs/KNOWLEDGE-MAP.md` | How to *work in this repo* (build, architecture, this system itself). The "schema" layer. |
 | **Durable reference knowledge** (human, long-form) | `Guides/` | Stable Typst know-how + lessons-learned that a future project would want to read. The **why**. |
-| **Executable skills** (Claude-facing) | `.github/skills/` | Imperative procedures that change *what Claude does* in a domain. The **what**. |
+| **Executable skills** (agent-facing) | `.github/skills/` (Grok also via `.grok/skills/` symlinks) | Imperative procedures that change *what an agent does* in a domain. The **what**. |
 | **Forward-looking dev plans** (active only) | `devtracks/` | Spec/plan for work *not yet finished*. Nothing completed stays here — it is harvested and archived. |
 | **External / generated data** | `research/` (+ `templates/` as study corpus) | Script-generated ecosystem data and downloaded third-party material. Never hand-curated. |
 
@@ -83,7 +83,7 @@ experience
 
 ## "Where do I put X?" — decision list
 
-- **A rule that should change how Claude writes/fixes `.typ`** → a **skill** (`.github/skills/…`).
+- **A rule that should change how an agent writes/fixes `.typ`** → a **skill** (`.github/skills/…`; Grok discovers via `.grok/skills/` symlinks).
 - **A long explanation, theory, or a "mistake → fix" story** → a **guide** (`Guides/…`).
 - **A plan for work not yet built** → a **devtrack** (`devtracks/<name>/spec.md` + `plan.md`).
 - **A completed feature's learnings** → harvest into skill+guide, then `devtracks/_archive/`.

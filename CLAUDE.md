@@ -15,7 +15,7 @@ typst compile --root . --ignore-system-fonts --font-path fonts src/main.typ dist
 typst watch   --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf
 ```
 
-Build artifacts go to `dist/` (gitignored). The official wrapper is PowerShell (`scripts/build.ps1 -Mode <fast|watch|ua|test|test-watch>`), mirrored by VS Code tasks (`typst: build (fast)`, `typst: watch`, `typst: build (UA-1)`). The PowerShell scripts are Windows-targeted (the project's documented platform is Windows 11 without WSL/Docker); when working from Linux/WSL, invoke the `typst` command directly with the flags above rather than the `.ps1` scripts.
+Build artifacts go to `dist/` (gitignored). The official wrapper is PowerShell (`scripts/build.ps1 -Mode <fast|watch|ua|test|test-watch>`), mirrored by VS Code tasks (`typst: build (fast)`, `typst: watch`, `typst: build (UA-1)`). The PowerShell scripts are Windows-targeted (the project's documented platform is Windows 11 without WSL/Docker); when working from Linux/WSL, use `./scripts/build.sh <fast|watch|ua>` or invoke `typst` directly with the flags above rather than the `.ps1` scripts.
 
 - `-Mode ua` adds `--pdf-standard ua-1` for accessible PDF/UA output → `dist/book-ua.pdf`.
 - `-Mode test` compiles `test/main.typ` → `dist/test.pdf` (note: `test/main.typ` may not exist; `test/` currently holds standalone experiments like `pinit-radial.typ`). Compile a single `.typ` directly to test it in isolation.
@@ -40,18 +40,20 @@ When editing a component, change tokens in `theme.typ` rather than inlining colo
 
 ## Skills (read before acting)
 
-`.github/skills/` contains project-authored skills that encode hard-won conventions and supersede general advice in their domain:
+`.github/skills/` is the **canonical** location for project-authored skills (shared by Claude Code, Copilot, and Grok). They encode hard-won conventions and supersede general advice in their domain:
 
 - **typst-writer** — use for *any* `.typ` creation/edit, compile-error fix, or layout-defect debugging.
 - **typst-extension** — use when importing any `@preview` package, loading JSON/CSV data, or configuring `typst.toml`/CI.
 - **pinit-workflow** — use for any `#pin*` / pinit annotation work; self-contained (debug module, regression tests, style guide, and AI playbook ship inside the skill).
 - **skill-creator** — use to create, improve, evaluate, or benchmark a skill (e.g. when harvesting a completed devtrack into a skill).
 
+**Grok skill discovery:** Grok does not scan `.github/skills/` by default. Relative symlinks under `.grok/skills/` point at the same directories so Grok auto-loads them. Always edit skill content under `.github/skills/` only. Multi-agent entry notes: `AGENTS.md`.
+
 ## Knowledge architecture
 
 Knowledge is organized into five types — full version, lifecycle, and "where do I put X?" list in `docs/KNOWLEDGE-MAP.md`:
 
-- **Governance / conventions** → `CLAUDE.md` + `docs/KNOWLEDGE-MAP.md` (how to work in this repo).
+- **Governance / conventions** → `CLAUDE.md` + `AGENTS.md` + `docs/KNOWLEDGE-MAP.md` (how to work in this repo).
 - **Durable reference** (the *why*) → `Guides/` (Typst theory + lessons-learned ledger).
 - **Executable skills** (the *what*) → `.github/skills/`.
 - **Active dev plans** → `devtracks/` (nothing completed stays here).
