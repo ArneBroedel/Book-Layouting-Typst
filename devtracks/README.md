@@ -29,3 +29,12 @@ The full system is described in `docs/KNOWLEDGE-MAP.md`. A track moves through:
 
 `devtracks/_archive/` therefore contains finished tracks; the top level of `devtracks/` contains
 only tracks with open work.
+
+## Open tracks (snapshot)
+
+| Track | Role |
+|---|---|
+| [`typst-toolset/`](typst-toolset/) | **Primary:** generalizable Typst layout/design product (package + skills + starter + CLI) |
+| [`skill-eval-baseline/`](skill-eval-baseline/) | Skill measurement/baseline; enabler for toolset Phase 2 |
+| [`skill-reuse-pilot/`](skill-reuse-pilot/) | Small cross-domain pilot; **exit gate for toolset Phase 2** |
+| [`prepress-pdfx/`](prepress-pdfx/) | Showcase print/PDF-X pipeline; independent of toolset MVP |

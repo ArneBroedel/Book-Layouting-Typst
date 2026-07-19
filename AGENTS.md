@@ -79,11 +79,12 @@ See `docs/KNOWLEDGE-MAP.md`. Core rule:
 Non-trivial features: open `devtracks/<name>/` with `spec.md` + `plan.md`. On completion, harvest
 into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 
-### Active tracks (as of agent init)
+### Active tracks
 
-- `devtracks/prepress-pdfx/` — print/PDF-X pipeline
-- `devtracks/skill-eval-baseline/` — skill evaluation baseline
-- `devtracks/skill-reuse-pilot/` — skill reuse pilot
+- **`devtracks/typst-toolset/`** — productize layout/design for reuse (packages, skill-pack, starter, CLI; primary)
+- `devtracks/skill-eval-baseline/` — skill quality baseline (enabler for toolset Phase 2)
+- `devtracks/skill-reuse-pilot/` — reuse pilot; **exit criterion of toolset Phase 2**
+- `devtracks/prepress-pdfx/` — print/PDF-X for showcase book (independent of toolset MVP)
 
 ## Working conventions
 

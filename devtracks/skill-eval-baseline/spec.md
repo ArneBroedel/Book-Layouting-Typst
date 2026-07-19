@@ -24,10 +24,21 @@ Skill-Änderungen tatsächlich ab (statt nur als Empfehlung im Plan zu stehen).
 - **Setup-Doku:** was der Eval-Harness braucht (Abhängigkeiten, evtl. API-Keys/Kosten) ehrlich
   dokumentieren — inkl. „ohne Key nur statische Checks"-Fallback.
 
+## Alignment: track `typst-toolset`
+
+**Parallel / Enabler** für [`typst-toolset`](../typst-toolset/) Phase 2 (Skill-Pack härten).
+
+- Blockiert **nicht** Toolset Phase 0–1 (Package-Extraktion).
+- Ideal: Baseline + Description-Fixes **bevor oder während** package-spezifischer Skill und Starter
+  finalisiert werden, damit der Reuse-Pilot auf stabilen Triggern läuft.
+- Scope bleibt die **generischen** Skills; der neue package-skill entsteht in `typst-toolset` und
+  kann später dieselbe Mess-Methodik nutzen.
+
 ## Scope (out)
 
 - Keine Neuschreibung der Skills, nur gezielte Korrekturen aus Eval-Befunden.
 - Kein Dauer-CI-Gate in diesem Track (nur Baseline + Methodik; Automatisierung optional später).
+- Keine Package-Extraktion / kein Starter (das ist `typst-toolset`).
 
 ## Acceptance
 

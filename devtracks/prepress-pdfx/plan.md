@@ -1,6 +1,9 @@
 # Plan: Druckvorstufe & PDF/X (Prepress)
 
-Siehe [spec.md](spec.md). Status: **geplant / nicht begonnen.**
+Siehe [spec.md](spec.md). Status: **geplant / nicht begonnen.**  
+**Related:** unabhängig von [`typst-toolset`](../typst-toolset/); optionaler späterer CLI-Hook
+`print` im Toolset Phase 3+.
+
 Lifecycle: bei Fertigstellung harvesten (Prepress-Regeln → `typst-extension`; „warum" → Lessons-Ledger)
 und nach `_archive/` verschieben (siehe `docs/KNOWLEDGE-MAP.md`).
 

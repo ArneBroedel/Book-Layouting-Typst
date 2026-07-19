@@ -1,0 +1,4 @@
+# Provisioned skills for this project (edit freely, then re-run provision.sh)
+# Source of truth for opt-in hub skills (sh-*). Project Typst skills live under
+# .github/skills/ and are exposed to Grok via .grok/skills/ symlinks separately.
+sh-gemini-chat           all

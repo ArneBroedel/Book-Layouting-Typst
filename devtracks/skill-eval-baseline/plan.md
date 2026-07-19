@@ -1,6 +1,9 @@
 # Plan: Skill-Eval-Baseline
 
-Siehe [spec.md](spec.md). Status: **geplant / nicht begonnen.**
+Siehe [spec.md](spec.md). Status: **geplant / nicht begonnen.**  
+**Related:** Enabler für [`typst-toolset` Phase 2](../typst-toolset/phase2-skills-starter.md)
+(parallel zu Toolset Phase 0–1 ok).
+
 Lifecycle: Ergebnis ist selbst eine Methodik → bei Fertigstellung die „so misst du eine Skill"-Anleitung
 ins `skill-creator`-Skill bzw. `docs/KNOWLEDGE-MAP.md` harvesten, Track nach `_archive/`.
 

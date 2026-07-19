@@ -25,11 +25,22 @@ die Prepress-Eigenschaften. tool-updates hat `page(bleed:)`/Spot-Farben/Variable
 - **Build-Modus:** neuer Wrapper-/CI-Modus `print` → `dist/book-print.pdf` mit Bleed + PDF/X-Pipeline,
   reproduzierbar mit denselben `--ignore-system-fonts --font-path fonts`-Flags.
 
+## Alignment: track `typst-toolset`
+
+**Unabhängig** vom Produktisierungs-Track [`typst-toolset`](../typst-toolset/).
+
+- Prepress betrifft die **Showcase-Buch-Ausgabe** (Bleed, PDF/X, `print`-Build), nicht die
+  Generalisierung von Komponenten/Skills.
+- Toolset-MVP braucht Prepress **nicht**. Später kann die Toolset-CLI einen `print`-Modus anbieten,
+  der Entscheidungen/Skripte aus *diesem* Track konsumiert — Scope hier bleibt das Buch + Build-Modus.
+- Keine künstliche Blockade: Prepress und Toolset Phase 0–2 dürfen parallel laufen.
+
 ## Scope (out)
 
 - Keine Änderung am inhaltlichen Layout/Design des Buches (nur Ausgabe-Eigenschaften).
 - Keine Lizenzierung kommerzieller ICC-Profile; nur frei verfügbare/Standardprofile.
 - Keine echte Druckbestellung — Ziel ist ein abnahmefähiges PDF + Preflight-Nachweis.
+- Keine Package-Extraktion / kein Skill-Pack (das ist `typst-toolset`).
 
 ## Acceptance
 
