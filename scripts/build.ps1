@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("fast", "watch", "ua", "test", "test-watch")]
+    [ValidateSet("fast", "watch", "ua", "print", "print-rgb", "test", "test-watch")]
     [string]$Mode = "fast"
 )
 
@@ -56,6 +56,13 @@ switch ($Mode) {
     }
     "ua" {
         & $typstExe compile --root . --ignore-system-fonts --font-path fonts --pdf-standard ua-1 src/main.typ dist/book-ua.pdf
+    }
+    "print-rgb" {
+        & $typstExe compile --root . --ignore-system-fonts --font-path fonts --input print=true src/main.typ dist/book-print-rgb.pdf
+    }
+    "print" {
+        & $typstExe compile --root . --ignore-system-fonts --font-path fonts --input print=true src/main.typ dist/book-print-rgb.pdf
+        & (Join-Path $PSScriptRoot "print-pdfx.ps1") -InputPdf "dist/book-print-rgb.pdf" -OutputPdf "dist/book-print.pdf"
     }
     "test" {
         & $typstExe compile --root . --ignore-system-fonts --font-path fonts test/main.typ dist/test.pdf

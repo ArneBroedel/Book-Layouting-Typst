@@ -1,0 +1,12 @@
+title: "Starter Book"
+subtitle: "bookkit consumer template"
+genre: plain-book
+language: de
+author: "Your Name"
+features: []
+brand:
+  primary: "#0d7377"
+  accent: "#d4a039"
+constraints:
+  - "Always build with --ignore-system-fonts --font-path fonts"
+  - "Do not clone studio showcase chapters"

@@ -1,6 +1,6 @@
 # Phase 2 — Skill-Pack, Starter, Reuse-Pilot
 
-Status: **offen** · hängt ab von Phase 1  
+Status: **done** · hängt ab von Phase 1  
 **Exit-Pilot:** Track [`skill-reuse-pilot`](../skill-reuse-pilot/) (angepasster Scope)
 
 ## Ziel

@@ -1,6 +1,6 @@
 # Phase 3 — Facetten + thin CLI
 
-Status: **offen** · hängt ab von Phase 2
+Status: **done** · hängt ab von Phase 2
 
 ## Ziel
 

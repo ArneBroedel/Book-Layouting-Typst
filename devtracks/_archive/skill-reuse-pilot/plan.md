@@ -23,3 +23,7 @@ gemeinsam mit Abschluss von `typst-toolset` Phase 2.
 
 ## Abnahme
 - Pilot-Artefakt baut reproduzierbar; Reuse-Report + mindestens eine Skill-Verbesserung (oder begründetes „keine Lücken"); post-package-Pfad ohne Showcase-Clone.
+
+
+## Status 2026-07-19
+Pilot complete: `pilots/reuse-datasheet/` + `reports/reuse-report-2026-07-19.md`. Exit criterion for toolset Phase 2 met.

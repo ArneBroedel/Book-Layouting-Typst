@@ -23,6 +23,7 @@
 // Seite teilen.
 
 #import "../styles/theme.typ": fonts, gradients, palette, part-colors, space, type-scale
+#import "../styles/print.typ": page-bleed, print-foreground
 
 // ── Intern: Außenrand-Ausrichtung der aktuellen Seite ──────────
 // Im aufgeschlagenen Buch liegt der Außenschnitt bei geraden Seiten
@@ -57,8 +58,9 @@
 // ── Vollflächiger Seitenhintergrund (Full-Bleed) ───────────────
 // Randlose Seite mit Farbe, Verlauf oder Bild von Kante zu Kante.
 // `bg` ist beliebiger Content (z. B. image(.., fit: "cover")) ODER auto
-// (dann wird `fill` als Vollfläche genutzt). Für echten Druckanschnitt
-// zusätzlich `set page(bleed: 3mm)` setzen und Bilder auf 100% ziehen.
+// (dann wird `fill` als Vollfläche genutzt).
+// Print mode (`--input print=true`): page.bleed + Schnittmarken; background
+// percentages resolve against page+bleed so fills truly leave the press.
 #let full-bleed(
   body,
   fill: none,
@@ -69,7 +71,14 @@
   let background = if bg != auto { bg } else if fill != none {
     rect(width: 100%, height: 100%, fill: fill, stroke: none)
   } else { none }
-  set page(margin: 0pt, header: header, footer: footer, background: background)
+  set page(
+    margin: 0pt,
+    header: header,
+    footer: footer,
+    background: background,
+    bleed: page-bleed,
+    foreground: print-foreground,
+  )
   body
 }
 

@@ -1,0 +1,11 @@
+[package]
+name = "bookkit"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Book-Layouting-Typst"]
+license = "MIT"
+description = "Foundation book layout runtime: theme tokens, typography, page setup, generic components."
+repository = "https://github.com/local/bookkit"
+keywords = ["book", "layout", "theme", "typography"]
+categories = ["layout", "book"]
+compiler = "0.13.0"

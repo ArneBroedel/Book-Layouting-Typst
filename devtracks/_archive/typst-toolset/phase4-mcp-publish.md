@@ -1,6 +1,6 @@
 # Phase 4 — Optional MCP + Publish-Pfad
 
-Status: **offen / nur bei Bedarf** · hängt ab von Phase 3
+Status: **deferred** (MCP not needed for MVP; @local packages ship in-repo) · hängt ab von Phase 3
 
 ## Wann diese Phase starten?
 

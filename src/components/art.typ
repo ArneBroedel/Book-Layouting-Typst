@@ -9,6 +9,7 @@
 // eine eigene, knallige Künstler-Palette. Das ist der Spielplatz.
 
 #import "../styles/theme.typ": fonts, space, type-scale
+#import "../styles/print.typ": page-bleed, print-foreground
 #import "@preview/cetz:0.5.2": canvas, draw
 
 // ── Künstler-Palette (vivid) ───────────────────────────────────
@@ -41,8 +42,16 @@
 
 // ── Voll-Seiten-Rahmen ─────────────────────────────────────────
 // Randlose Kunstseite mit optionaler Mini-Signatur unten.
+// Print mode: bleed + crop marks so full-page art survives the trim.
 #let art-page(body, label: none, note: none, label-fill: white, fill: none) = {
-  set page(margin: 0pt, header: none, footer: none, fill: fill)
+  set page(
+    margin: 0pt,
+    header: none,
+    footer: none,
+    fill: fill,
+    bleed: page-bleed,
+    foreground: print-foreground,
+  )
   block(width: 100%, height: 100%, clip: true, {
     body
     if label != none or note != none {

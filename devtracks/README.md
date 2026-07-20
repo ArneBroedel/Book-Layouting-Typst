@@ -32,9 +32,23 @@ only tracks with open work.
 
 ## Open tracks (snapshot)
 
-| Track | Role |
+### Publishing roles + platform boundaries (CONSENSUS v0.2)
+
+| Doc / Track | Zweck |
 |---|---|
-| [`typst-toolset/`](typst-toolset/) | **Primary:** generalizable Typst layout/design product (package + skills + starter + CLI) |
-| [`skill-eval-baseline/`](skill-eval-baseline/) | Skill measurement/baseline; enabler for toolset Phase 2 |
-| [`skill-reuse-pilot/`](skill-reuse-pilot/) | Small cross-domain pilot; **exit gate for toolset Phase 2** |
-| [`prepress-pdfx/`](prepress-pdfx/) | Showcase print/PDF-X pipeline; independent of toolset MVP |
+| [`ORCHESTRATION.md`](ORCHESTRATION.md) | **Implementierungs-Orchestrierung** (Waves, Subagents, Reviews, Exit E1–E12) |
+| [`CONSENSUS-v0.md`](CONSENSUS-v0.md) | Rollen, Workflow, ADR |
+| [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) | Produkte A/B/C, Repo-Schnitt, Interfaces |
+| [`platform-boundaries/`](platform-boundaries/) | Vorbereitung, Split-Checklist, Governance |
+| [`form-catalog/`](form-catalog/) | Katalog **core** (`toolset/form-catalog/`) |
+| [`media-design/`](media-design/) | Media-Rolle → **`domains/medical/`** (B) |
+| [`compose-pipeline/`](compose-pipeline/) | Tech-Engine → **`toolset/compose/`** (A) |
+
+**Ablauf:** Content (C) → Media Brief (B) → Feasibility/Spike (A) → Accept (B) → Compose/Validate (A) → PDF.
+
+**Generalisierbarkeit:** A ohne Content-SoT; Medizin unter `domains/medical/` auslagerbar.  
+**Workspace UX:** `workspaces/kursbuch-layout.code-workspace`.
+
+**Superseded:** `presentation-pipeline/`, `didactic-media/`, `plan-driven-layout/`.
+
+Recently archived: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx` (see `_archive/`).

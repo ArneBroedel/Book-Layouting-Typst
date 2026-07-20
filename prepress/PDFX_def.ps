@@ -1,0 +1,69 @@
+%!
+% PDF/X prefix for the Book-Layouting-Typst print pipeline.
+% Based on Ghostscript's lib/PDFX_def.ps (Artifex).
+%
+% Customize: ICCProfile path is injected by scripts/print-pdfx.sh via
+% -sICCProfile=… OR leave the relative default (profiles/default_cmyk.icc
+% resolved from the working directory when the script cds to prepress/).
+%
+% PDFX version is set by Ghostscript -dPDFX=3 or -dPDFX=4.
+
+% PDF/X-3 only permits Gray or CMYK in the output (when PDFX < 4).
+systemdict /ColorConversionStrategy known {
+  systemdict /ColorConversionStrategy get cvn dup /Gray ne exch /CMYK ne and
+} {
+  (\nERROR: ColorConversionStrategy not set.)=
+  true
+} ifelse
+{
+  (ERROR: ColorConversionStrategy must be /DeviceGray or /DeviceCMYK.)=
+  /ColorConversionStrategy cvx /rangecheck signalerror
+} if
+
+% Document Info dictionary — GTS_PDFXVersion required by the standard.
+systemdict /PDFX known {systemdict /PDFX get}{3} ifelse
+
+dup 1 eq {
+  [ /GTS_PDFXVersion (PDF/X-1a:2001)
+    /Title (Typst Showcase — Print)
+    /Trapped /False
+  /DOCINFO pdfmark
+} if
+dup 3 eq {
+  [ /GTS_PDFXVersion (PDF/X-3:2003)
+    /Title (Typst Showcase — Print)
+    /Trapped /False
+  /DOCINFO pdfmark
+} if
+4 eq {
+  [ /GTS_PDFXVersion (PDF/X-4)
+    /Title (Typst Showcase — Print)
+    /Trapped /False
+  /DOCINFO pdfmark
+} if
+
+% Default ICC for OutputIntent — override by editing or by running
+% print-pdfx.sh which rewrites this path / passes an absolute profile.
+/ICCProfile (profiles/default_cmyk.icc) def
+
+currentdict /ICCProfile known {
+  [/_objdef {icc_PDFX} /type /stream /OBJ pdfmark
+  [{icc_PDFX} <<
+  /N 4
+  >> /PUT pdfmark
+  [{icc_PDFX} ICCProfile (r) file /PUT pdfmark
+} if
+
+% OutputIntent dictionary
+[/_objdef {OutputIntent_PDFX} /type /dict /OBJ pdfmark
+[{OutputIntent_PDFX} <<
+  /Type /OutputIntent
+  /S /GTS_PDFX
+  /OutputCondition (Commercial offset, CMYK SWOP/FOGRA-class)
+  /Info (Artifex default_cmyk.icc — replace with FOGRA39/ISOcoated_v2 for EU sheetfed)
+  /OutputConditionIdentifier (Custom)
+  /RegistryName (http://www.color.org)
+  /DestOutputProfile currentdict /ICCProfile known {{icc_PDFX}}{} ifelse
+>> /PUT pdfmark
+
+[{Catalog} << /OutputIntents [ {OutputIntent_PDFX} ] >> /PUT pdfmark

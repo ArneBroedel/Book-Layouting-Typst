@@ -1,6 +1,6 @@
 ---
 name: typst-extension
-description: "Extend Typst with third-party packages, external data (JSON/CSV), CI/CD pipelines, and enterprise tooling. ALWAYS use this skill when importing or integrating any @preview/ package (CeTZ, Fletcher, codly, showybox, tablem, fontawesome, glossarium, etc.), when building data-driven documents that load JSON or CSV files, when setting up GitHub Actions or CI/CD for Typst, when configuring typst.toml package manifests, when debugging package conflicts or namespace collisions, when working with sys.inputs, Quarto integration, PDF/UA accessibility, or enterprise document generation pipelines. Also use when the user asks 'which Typst package should I use for X', 'how do I load data into Typst', or 'how do I set up CI for Typst'. This skill supplements typst-writer (which covers core syntax, layout, and components) with the integration and ecosystem layer."
+description: "Extend Typst with third-party packages, external data (JSON/CSV), CI/CD pipelines, and enterprise tooling. ALWAYS use this skill when importing or integrating any @preview/ package (CeTZ, Fletcher, codly, showybox, tablem, fontawesome, glossarium, etc.), when building data-driven documents that load JSON or CSV files, when setting up GitHub Actions or CI/CD for Typst, when configuring typst.toml package manifests, when debugging package conflicts or namespace collisions, when working with sys.inputs, Quarto integration, PDF/UA accessibility, print prepress/PDF/X/bleed/CMYK pipelines, or enterprise document generation pipelines. Also use when the user asks 'which Typst package should I use for X', 'how do I load data into Typst', 'how do I set up CI for Typst', or 'how do I make a print-ready PDF'."
 ---
 
 # Typst Extension
@@ -17,6 +17,7 @@ Integrate third-party packages, external data sources, CI/CD tooling, and enterp
 - Working with `sys.inputs` for parameterised builds
 - Integrating Typst with Quarto for data-science workflows
 - Generating accessible PDFs (PDF/UA compliance)
+- Print prepress: bleed, crop marks, CMYK, PDF/X via Ghostscript
 - Choosing which package to use for a specific task
 
 **Boundary with typst-writer:** If the question is about core Typst syntax, layout primitives, grid/block/place, set/show rules, or component design, use typst-writer instead. If it involves a third-party package, external data, or build tooling, use this skill.
@@ -565,6 +566,59 @@ a single compile can target several compatible standards at once, e.g.
 - **Table headers:** Use `table.header(...)` as the first row — Typst maps this to `<TH>` tags
 - **Figure captions:** `figure(caption: [...])` — the caption becomes the figure's accessible name
 - **Language:** `set text(lang: "de")` — correct language tagging enables proper screen reader pronunciation
+
+---
+
+## 7b — Prepress / PDF/X (print pipeline)
+
+Harvested from `prepress-pdfx`. Long-form: `prepress/README.md`.
+
+### What Typst 0.15 does natively
+
+| Need | Native? | How |
+|---|---|---|
+| Bleed / Beschnitt | **Yes** | `set page(bleed: 3mm)` → PDF `TrimBox` |
+| Crop marks | **DIY** | Draw in `page(foreground:)` (bg/fg `%` resolves **with** bleed) |
+| CMYK process colour | **Yes** | `cmyk(c, m, y, k)` — not for PDF/A |
+| Spot / Pantone | **Yes** | `color.spot("PANTONE …", fallback).tint(100%)` |
+| PDF/X-3 / X-4 flag | **No** | `--pdf-standard` has `a-*`, `ua-1`, version pins only |
+
+### Recommended architecture
+
+1. **Screen/UA stay RGB** — keep design tokens as `rgb(...)`.
+2. **Print mode via `sys.inputs`:** `typst compile --input print=true …`  
+   Gate bleed + crop marks on `sys.inputs.at("print", default: "false") == "true"`.
+3. **Full-bleed fills must live in `page(background:)`** — body `width: 100%` is **trim only**; background/foreground percentages include bleed.
+4. **PDF/X post-step with Ghostscript** (PDF/X-3 default): convert RGB→CMYK, embed OutputIntent ICC, set `GTS_PDFXVersion`. Strip annotations (`-dPreserveAnnots=false`) — Typst TOC/link annotations otherwise force GS to *leave* PDF/X mode silently.
+5. **Image DPI preflight** for rasters ≥ 300 dpi at display size; SVG is always OK.
+
+```shell
+# Intermediate: RGB + bleed + marks + TrimBox
+typst compile --root . --ignore-system-fonts --font-path fonts \
+  --input print=true src/main.typ dist/book-print-rgb.pdf
+
+# PDF/X-3 CMYK (needs ghostscript)
+./scripts/print-pdfx.sh dist/book-print-rgb.pdf dist/book-print.pdf
+# or one-shot:
+./scripts/build.sh print
+```
+
+### Standards map (do not confuse)
+
+| Goal | Flag / tool |
+|---|---|
+| Accessibility | `--pdf-standard ua-1` |
+| Archival | `--pdf-standard a-2b` / `a-2a` / … |
+| Print/PDF/X | Ghostscript post-step (no Typst flag) |
+| Screen | default compile |
+
+PDF/UA and PDF/X are independent. Spot plates: use `color.spot` and coordinate with the printer — **never** push a spot through a blind RGB→CMYK convert.
+
+### Pitfalls
+
+- PNG export from Typst **does not show** the bleed strip; inspect MediaBox (Acrobat/GS) to verify crop marks.
+- Default free ICC may be SWOP-class; EU sheetfed wants FOGRA39/ISOcoated_v2 (swap profile path).
+- GS may log `error in pattern` on complex Typst tilings and still emit PDF/X markers — spot-check critical pages.
 
 ---
 

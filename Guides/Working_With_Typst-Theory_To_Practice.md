@@ -823,3 +823,21 @@ an auto-counter that would renumber on every edit), and Randnummern need no marg
 page break; a built-up multi-element figure (`stack` of widening blocks) must carry `breakable: false` or
 the shape severs. Net: presenting law well in Typst is almost entirely native, and reusing the established
 box spine made the whole module fall out in one pass.
+
+### Prepress / PDF/X (devtrack: prepress-pdfx)
+
+**Bleed is first-class in Typst 0.15; PDF/X is not.** `set page(bleed: 3mm)` writes a PDF `TrimBox` and
+makes background/foreground relative lengths resolve against page size *including* bleed — so full-bleed
+fills must live in `page(background: …)`, not a body `block(width: 100%)` (body 100% is trim-only). Crop
+marks are DIY: draw L-shapes in `page(foreground:)` just outside the trim; PNG export hides the bleed strip,
+so verify marks via MediaBox (Acrobat/GS), not Typst PNG. Gate the whole thing with
+`--input print=true` / `sys.inputs` so screen and PDF/UA builds stay zero-bleed.
+
+**PDF/X needs a Ghostscript post-step.** Typst's `--pdf-standard` covers PDF versions, PDF/A (`a-*`), and
+PDF/UA-1 (`ua-1`) — there is no `x-3`/`x-4`. The open-source sweet spot is PDF/X-3 via GS `PDFX_def.ps` +
+an ICC OutputIntent (bundled Artifex SWOP-class for smoke tests; FOGRA39/ISOcoated_v2 for EU sheetfed).
+Keep design tokens RGB; convert DeviceRGB→DeviceCMYK only in the post-step. **Strip annotations**
+(`-dPreserveAnnots=false`) or Typst's TOC/link annots force GS to silently leave PDF/X mode. Spot colours
+exist natively (`color.spot("PANTONE …", fallback).tint(…)`) but must not be pushed through a blind
+RGB→CMYK convert. Pipeline and preflight: `prepress/README.md`, `./scripts/build.sh print`,
+`scripts/check-image-dpi.py`.

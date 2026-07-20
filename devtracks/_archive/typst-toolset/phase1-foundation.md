@@ -1,6 +1,6 @@
 # Phase 1 — Foundation-Package + Showcase-Dogfood
 
-Status: **offen** · hängt ab von Phase 0
+Status: **done** · hängt ab von Phase 0
 
 ## Ziel
 

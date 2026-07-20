@@ -1,0 +1,10 @@
+[package]
+name = "bookkit-didactics"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Book-Layouting-Typst"]
+license = "MIT"
+description = "Optional medical-didactic facet for bookkit (boxes, exam, clinical-case-spread)."
+keywords = ["medical", "didactics", "textbook"]
+categories = ["components"]
+compiler = "0.13.0"

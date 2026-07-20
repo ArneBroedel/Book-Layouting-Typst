@@ -1,0 +1,77 @@
+# form-catalog core — stub (Track form-catalog fills this)
+# version mirrors ../VERSION
+version: "0.1.0-dev"
+description: >
+  Generic + shared bookkit forms. Medical genre recipes live under
+  domains/medical/recipes/. Status: stable | planned | deprecated.
+
+# Minimal seed so validators/docs have a shape; expand in form-catalog track.
+forms:
+  - id: chapter-opener
+    status: stable
+    purpose: "Level-1 chapter start; owns heading"
+    api: "bookkit.chapter-opener"
+    package: bookkit
+  - id: section-break
+    status: stable
+    purpose: "Intra-chapter visual divider"
+    api: "bookkit.section-break"
+    package: bookkit
+  - id: callout
+    status: stable
+    purpose: "Semantic admonition"
+    api: "bookkit.callout"
+    package: bookkit
+  - id: memo
+    status: stable
+    purpose: "Key takeaway box"
+    api: "bookkit-didactics.memo"
+    package: bookkit-didactics
+  - id: cave
+    status: stable
+    purpose: "Warning / contraindication box"
+    api: "bookkit-didactics.cave"
+    package: bookkit-didactics
+  - id: styled-table
+    status: stable
+    purpose: "Styled data table"
+    api: "bookkit.styled-table"
+    package: bookkit
+  - id: learning-objectives
+    status: stable
+    purpose: "Learning goals checklist"
+    api: "bookkit-didactics.learning-objectives"
+    package: bookkit-didactics
+  - id: definition
+    status: stable
+    purpose: "Term definition box"
+    api: "bookkit-didactics.definition"
+    package: bookkit-didactics
+  - id: ddx-box
+    status: stable
+    purpose: "Differential diagnosis box"
+    api: "bookkit-didactics.ddx-box"
+    package: bookkit-didactics
+  - id: clinical-pearl
+    status: stable
+    purpose: "Practice tip box"
+    api: "bookkit-didactics.clinical-pearl"
+    package: bookkit-didactics
+  - id: summary-box
+    status: stable
+    purpose: "Section summary"
+    api: "bookkit-didactics.summary-box"
+    package: bookkit-didactics
+  - id: clinical-case
+    status: stable
+    purpose: "Structured clinical case"
+    api: "bookkit-didactics.clinical-case"
+    package: bookkit-didactics
+  - id: protocol-steps
+    status: planned
+    purpose: "Numbered action protocol (not just bullets)"
+    api: "TBD — may be list pattern or new helper"
+    package: planned
+
+genre_recipes_note: >
+  Cross-domain recipes only here. Medical: domains/medical/recipes/

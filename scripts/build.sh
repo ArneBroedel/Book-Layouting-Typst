@@ -13,7 +13,7 @@ if ! command -v typst >/dev/null 2>&1; then
 fi
 
 case "$Mode" in
-  fast|watch|ua)
+  fast|watch|ua|print|print-rgb)
     if [[ ! -f src/main.typ ]]; then
       echo "error: missing src/main.typ" >&2
       exit 1
@@ -26,7 +26,7 @@ case "$Mode" in
     fi
     ;;
   *)
-    echo "usage: $0 <fast|watch|ua|test|test-watch>" >&2
+    echo "usage: $0 <fast|watch|ua|print|print-rgb|test|test-watch>" >&2
     exit 1
     ;;
 esac
@@ -48,6 +48,15 @@ case "$Mode" in
     ;;
   ua)
     typst compile "${flags[@]}" --pdf-standard ua-1 src/main.typ dist/book-ua.pdf
+    ;;
+  print-rgb)
+    # Bleed + crop marks only (RGB). Intermediate for Ghostscript PDF/X.
+    typst compile "${flags[@]}" --input print=true src/main.typ dist/book-print-rgb.pdf
+    ;;
+  print)
+    # Full print pipeline: Typst print-RGB → Ghostscript PDF/X CMYK.
+    typst compile "${flags[@]}" --input print=true src/main.typ dist/book-print-rgb.pdf
+    ./scripts/print-pdfx.sh dist/book-print-rgb.pdf dist/book-print.pdf
     ;;
   test)
     typst compile "${flags[@]}" test/main.typ dist/test.pdf

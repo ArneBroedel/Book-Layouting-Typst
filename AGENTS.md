@@ -8,9 +8,25 @@ platform notes, and the skill gate. Prefer not to restate long architecture pros
 
 ## What this is
 
-A reproducible **Typst book-production system** plus Typst reference/showcase. Flagship artifact:
-`src/main.typ` → multi-part medical-didactic book (chapters `00`–`25`, ~28 components, design-token
-theme). Package-research pipeline under `research/` is independent of the book build.
+A reproducible **Typst book-production system** plus Typst reference/showcase **and** a productized
+**toolset** for reuse outside this monorepo. Flagship showcase: `src/main.typ` → multi-part
+medical-didactic book. **Consumer runtime:** `packages/bookkit` (+ optional `bookkit-didactics`),
+skill-pack under `toolset/skill-pack/`, starter `toolset/starter/`, CLI `scripts/bookkit`.
+Package-research pipeline under `research/` is independent of the book build.
+
+### Consumer path (toolset)
+
+```bash
+# From studio or after bookkit init:
+./scripts/bookkit doctor --root .
+./scripts/bookkit build --root . --entry main.typ   # enforces --ignore-system-fonts --font-path fonts
+#import "/packages/bookkit/lib.typ": *               # foundation
+#import "/packages/bookkit-didactics/lib.typ": *    # optional medical facet
+```
+
+Layers: **Package = code**, **Skills = procedures**, **CLI = orchestration**, **MCP deferred**.
+Do **not** clone `src/chapters` or `research/` into consumers. Studio dogfoods packages via thin
+re-exports in `src/styles/*` and foundation `src/components/*`.
 
 ## Language
 
@@ -26,6 +42,7 @@ Project skills encode hard-won conventions and **supersede general Typst advice*
 |---|---|
 | `typst-writer` | Any `.typ` create/edit, compile-error fix, layout-defect debug |
 | `typst-extension` | Any `@preview` import, JSON/CSV data, `typst.toml`/CI, package choice |
+| `bookkit` | Importing bookkit packages, starter/CLI consumer work, design-brief/presets |
 | `pinit-workflow` | Any `#pin*` / pinit annotation work |
 | `skill-creator` | Create, improve, evaluate, or harvest skills |
 
@@ -44,16 +61,19 @@ typst watch   --root . --ignore-system-fonts --font-path fonts src/main.typ dist
 # PDF/UA-1
 typst compile --root . --ignore-system-fonts --font-path fonts --pdf-standard ua-1 \
   src/main.typ dist/book-ua.pdf
+# Print (3 mm bleed + crop marks + Ghostscript PDF/X-3 CMYK) — needs `gs`
+./scripts/build.sh print
 # Convenience wrapper (mirrors scripts/build.ps1)
-./scripts/build.sh fast|watch|ua
+./scripts/build.sh fast|watch|ua|print|print-rgb
 ```
 
 **Never omit** `--ignore-system-fonts --font-path fonts`. Output must match across machines.
 
-- Official Windows wrapper: `scripts/build.ps1 -Mode <fast|watch|ua|test|test-watch>`.
+- Official Windows wrapper: `scripts/build.ps1 -Mode <fast|watch|ua|print|print-rgb|test|test-watch>`.
 - Primary documented platform is Windows 11; this checkout also runs on Linux with the CLI above.
 - Fonts under `fonts/` + Typst-bundled (Libertinus Serif, DejaVu Sans Mono, FA6). Theme tokens already
   use that stack — do not reintroduce Calibri/Segoe/Inconsolata under `--ignore-system-fonts`.
+- Print pipeline docs: `prepress/README.md`. Image DPI preflight: `python3 scripts/check-image-dpi.py`.
 
 ## Architecture (one-liner)
 
@@ -79,12 +99,31 @@ See `docs/KNOWLEDGE-MAP.md`. Core rule:
 Non-trivial features: open `devtracks/<name>/` with `spec.md` + `plan.md`. On completion, harvest
 into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 
-### Active tracks
+### Active / recent tracks
 
-- **`devtracks/typst-toolset/`** — productize layout/design for reuse (packages, skill-pack, starter, CLI; primary)
-- `devtracks/skill-eval-baseline/` — skill quality baseline (enabler for toolset Phase 2)
-- `devtracks/skill-reuse-pilot/` — reuse pilot; **exit criterion of toolset Phase 2**
-- `devtracks/prepress-pdfx/` — print/PDF-X for showcase book (independent of toolset MVP)
+**v0.2** — see `devtracks/CONSENSUS-v0.md` + `devtracks/PRODUCT-BOUNDARIES.md`.  
+**Full implementation control plane:** `devtracks/ORCHESTRATION.md` (waves, subagents, reviews, E1–E12).
+
+| Track / area | Product | Path |
+|---|---|---|
+| Layout platform (this repo) | **A** | `packages/`, `toolset/` |
+| `form-catalog` | A core | `toolset/form-catalog/core/` |
+| `compose-pipeline` | A engine | `toolset/compose/` |
+| `media-design` / medical domain | **B** | `domains/medical/` (split candidate) |
+| Kursbuch / content works | **C** | **external** — never SoT in this repo |
+| `platform-boundaries` | meta | prep + split readiness |
+| Orchestration | meta | `devtracks/ORCHESTRATION.md` |
+
+**Flow:** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.
+
+**Skill gate:** `media-brief` (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo.
+
+**Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
+
+Superseded specs: `presentation-pipeline`, `didactic-media`, `plan-driven-layout`.
+
+**Archived:** toolset MVP etc. under `devtracks/_archive/`.
+
 
 ## Working conventions
 

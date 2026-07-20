@@ -1,0 +1,224 @@
+#!/usr/bin/env bash
+# bookkit — thin CLI for the Typst toolset (init / build / watch / ua / doctor / print)
+# Always enforces --ignore-system-fonts --font-path fonts for reproducible builds.
+set -euo pipefail
+
+Root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+VERSION="0.1.0"
+
+usage() {
+  cat <<EOF
+bookkit ${VERSION} — thin toolset CLI
+
+Usage:
+  bookkit doctor [--root DIR]
+  bookkit build  [--root DIR] [--entry PATH] [--out PATH]
+  bookkit watch  [--root DIR] [--entry PATH] [--out PATH]
+  bookkit ua     [--root DIR] [--entry PATH] [--out PATH]
+  bookkit init   TARGET_DIR
+  bookkit print  …  (stub: prepress-pdfx not wired)
+  bookkit brief-check [design-brief.yaml]
+
+Repro flags (always on for build/watch/ua):
+  --ignore-system-fonts --font-path fonts
+EOF
+}
+
+die() { echo "error: $*" >&2; exit 1; }
+
+# ── arg defaults ───────────────────────────────────────────────
+cmd="${1:-}"
+[[ -n "$cmd" ]] || { usage; exit 1; }
+shift || true
+
+PROJECT_ROOT="$Root"
+ENTRY=""
+OUT=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --root) PROJECT_ROOT="$(cd "$2" && pwd)"; shift 2 ;;
+    --entry) ENTRY="$2"; shift 2 ;;
+    --out) OUT="$2"; shift 2 ;;
+    -h|--help) usage; exit 0 ;;
+    *)
+      # positional for init / brief-check
+      POSITIONAL="${POSITIONAL:-}$1 "
+      shift
+      ;;
+  esac
+done
+
+repro_flags() {
+  echo --root "$PROJECT_ROOT" --ignore-system-fonts --font-path fonts
+}
+
+find_entry() {
+  if [[ -n "$ENTRY" ]]; then echo "$ENTRY"; return; fi
+  if [[ -f "$PROJECT_ROOT/main.typ" ]]; then echo "main.typ"; return; fi
+  if [[ -f "$PROJECT_ROOT/src/main.typ" ]]; then echo "src/main.typ"; return; fi
+  die "no entry .typ found (pass --entry)"
+}
+
+find_out() {
+  local entry="$1"
+  if [[ -n "$OUT" ]]; then echo "$OUT"; return; fi
+  mkdir -p "$PROJECT_ROOT/dist"
+  local base
+  base="$(basename "${entry%.typ}")"
+  echo "dist/${base}.pdf"
+}
+
+cmd_doctor() {
+  local ok=0
+  echo "bookkit doctor — project: $PROJECT_ROOT"
+  if command -v typst >/dev/null 2>&1; then
+    echo "  typst: $(typst --version)"
+  else
+    echo "  typst: MISSING"
+    ok=1
+  fi
+  if [[ -d "$PROJECT_ROOT/fonts" ]] && find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
+    echo "  fonts/: present ($(find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' | wc -l) files)"
+  elif [[ -d "$Root/fonts" ]] && find "$Root/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
+    echo "  fonts/: using studio fonts at $Root/fonts (link or copy into consumer)"
+  else
+    echo "  fonts/: MISSING or empty (repro build may fall back to Typst-bundled only)"
+    ok=1
+  fi
+  if [[ -f "$PROJECT_ROOT/packages/bookkit/lib.typ" ]]; then
+    echo "  packages/bookkit: OK"
+  elif [[ -f "$Root/packages/bookkit/lib.typ" ]]; then
+    echo "  packages/bookkit: available in studio ($Root/packages/bookkit)"
+  else
+    echo "  packages/bookkit: MISSING"
+    ok=1
+  fi
+  if [[ -f "$PROJECT_ROOT/packages/bookkit-didactics/lib.typ" ]] || [[ -f "$Root/packages/bookkit-didactics/lib.typ" ]]; then
+    echo "  packages/bookkit-didactics: OK (optional facet)"
+  else
+    echo "  packages/bookkit-didactics: not found (optional)"
+  fi
+  if [[ -f "$PROJECT_ROOT/design-brief.yaml" ]]; then
+    echo "  design-brief.yaml: present"
+    cmd_brief_check "$PROJECT_ROOT/design-brief.yaml" || true
+  else
+    echo "  design-brief.yaml: none (ok for smoke builds)"
+  fi
+  if [[ $ok -ne 0 ]]; then
+    echo "doctor: FAIL"
+    return 1
+  fi
+  echo "doctor: OK"
+}
+
+cmd_brief_check() {
+  local f="${1:-design-brief.yaml}"
+  [[ -f "$f" ]] || die "brief not found: $f"
+  local missing=0
+  for key in title genre language author; do
+    if ! grep -qE "^${key}:" "$f"; then
+      echo "  brief: missing required field '$key'"
+      missing=1
+    fi
+  done
+  if [[ $missing -eq 0 ]]; then
+    echo "  brief: required fields present"
+    return 0
+  fi
+  return 1
+}
+
+cmd_build() {
+  local entry out
+  entry="$(find_entry)"
+  out="$(find_out "$entry")"
+  mkdir -p "$(dirname "$PROJECT_ROOT/$out")" 2>/dev/null || mkdir -p "$(dirname "$out")"
+  # shellcheck disable=SC2046
+  local flags
+  flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path fonts)
+  # Prefer consumer fonts; if missing, allow studio fonts via absolute path
+  if [[ ! -d "$PROJECT_ROOT/fonts" ]] || ! find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
+    if [[ -d "$Root/fonts" ]]; then
+      flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$Root/fonts")
+    fi
+  fi
+  echo "bookkit build: typst compile ${flags[*]} $entry $out"
+  (
+    cd "$PROJECT_ROOT"
+    typst compile "${flags[@]}" "$entry" "$out"
+  )
+  echo "wrote $PROJECT_ROOT/$out"
+}
+
+cmd_watch() {
+  local entry out
+  entry="$(find_entry)"
+  out="$(find_out "$entry")"
+  local flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path fonts)
+  if [[ ! -d "$PROJECT_ROOT/fonts" ]] || ! find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
+    if [[ -d "$Root/fonts" ]]; then
+      flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$Root/fonts")
+    fi
+  fi
+  echo "bookkit watch: typst watch ${flags[*]} $entry $out"
+  cd "$PROJECT_ROOT"
+  typst watch "${flags[@]}" "$entry" "$out"
+}
+
+cmd_ua() {
+  local entry out
+  entry="$(find_entry)"
+  if [[ -n "$OUT" ]]; then out="$OUT"; else out="dist/$(basename "${entry%.typ}")-ua.pdf"; fi
+  local flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path fonts --pdf-standard ua-1)
+  if [[ ! -d "$PROJECT_ROOT/fonts" ]] || ! find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
+    if [[ -d "$Root/fonts" ]]; then
+      flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$Root/fonts" --pdf-standard ua-1)
+    fi
+  fi
+  echo "bookkit ua: typst compile ${flags[*]} $entry $out"
+  (
+    cd "$PROJECT_ROOT"
+    typst compile "${flags[@]}" "$entry" "$out"
+  )
+}
+
+cmd_init() {
+  local target
+  target="$(echo "${POSITIONAL:-}" | awk '{print $1}')"
+  [[ -n "$target" ]] || die "init requires TARGET_DIR"
+  mkdir -p "$target"
+  local starter="$Root/toolset/starter"
+  [[ -d "$starter" ]] || die "starter missing at $starter"
+  cp -a "$starter/." "$target/"
+  # Link packages + fonts into consumer when possible
+  if [[ ! -e "$target/packages" ]]; then
+    ln -s "$Root/packages" "$target/packages" 2>/dev/null || cp -a "$Root/packages" "$target/packages"
+  fi
+  if [[ ! -e "$target/fonts" ]]; then
+    ln -s "$Root/fonts" "$target/fonts" 2>/dev/null || cp -a "$Root/fonts" "$target/fonts"
+  fi
+  echo "Initialized consumer at $target"
+  echo "Next: cd $target && ../scripts/bookkit doctor --root . && ../scripts/bookkit build --root ."
+}
+
+cmd_print() {
+  echo "bookkit print: deferred — implement after devtracks/prepress-pdfx"
+  echo "Hook point reserved; no PDF-X/bleed in toolset MVP."
+  exit 0
+}
+
+case "$cmd" in
+  doctor) cmd_doctor ;;
+  build) cmd_build ;;
+  watch) cmd_watch ;;
+  ua) cmd_ua ;;
+  init) cmd_init ;;
+  print) cmd_print ;;
+  brief-check)
+    f="$(echo "${POSITIONAL:-}" | awk '{print $1}')"
+    cmd_brief_check "${f:-design-brief.yaml}"
+    ;;
+  -h|--help|help) usage ;;
+  *) die "unknown command: $cmd" ;;
+esac

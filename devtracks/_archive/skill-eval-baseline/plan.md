@@ -21,3 +21,7 @@ ins `skill-creator`-Skill bzw. `docs/KNOWLEDGE-MAP.md` harvesten, Track nach `_a
 
 ## Abnahme
 - Baseline-Report im Track; erkannte Schwächen behoben; wiederholbare Mess-Anleitung verlinkt.
+
+
+## Status 2026-07-19
+Static baseline report: `reports/static-baseline-2026-07-19.md`. Full harness deferred (no API keys).

@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "name": "A — Layout platform",
+      "path": ".."
+    },
+    {
+      "name": "C — Kursbuch content",
+      "path": "../../Kursbuch5"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.git/objects": true
+    }
+  },
+  "extensions": {}
+}
