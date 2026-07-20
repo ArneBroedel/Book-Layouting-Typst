@@ -19,7 +19,6 @@
 - YAML-Assembler as primary path
 - Content-MD copies into `src/` or `packages/`
 - Medical logic in `packages/bookkit` foundation
-- Superseded tracks: `presentation-pipeline/`, `didactic-media/`, `plan-driven-layout/`
 - Facets art/legal expansion, prepress extras, MCP
 
 ## Checklist E1–E12

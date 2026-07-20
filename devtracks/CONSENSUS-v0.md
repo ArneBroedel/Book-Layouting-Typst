@@ -184,17 +184,18 @@ Brief/Feasibility dürfen YAML/MD sein — sie steuern **Menschen/Agenten**, sie
 
 ---
 
-## Active tracks (v0.2)
+## Active tracks (v0.2 spine harvested; content loop open)
 
 | Track | Rolle |
 |---|---|
-| [`platform-boundaries/`](platform-boundaries/) | Produkt A/B/C, Ordner, Split-Vorbereitung |
-| [`form-catalog/`](form-catalog/) | Shared spine: core whitelist + (domain) recipes |
-| [`media-design/`](media-design/) | Media-Rolle; **Implementierungspfad:** `domains/medical/` (B) |
-| [`compose-pipeline/`](compose-pipeline/) | Tech-Rolle; **Engine:** `toolset/compose/` (A) |
+| [`content-maturity/`](content-maturity/) | **open** — Content-Reife-Schleife (C0–C5), Rolle Content-Review; transitional `domains/content-maturity/` → Split nach C; proposed CONSENSUS **v0.3** |
+| [`_archive/platform-boundaries/`](_archive/platform-boundaries/) | Produkt A/B/C, Ordner, Split-Vorbereitung |
+| [`_archive/form-catalog/`](_archive/form-catalog/) | Shared spine: core whitelist + (domain) recipes |
+| [`_archive/media-design/`](_archive/media-design/) | Media-Rolle; **Implementierungspfad:** `domains/medical/` (B) |
+| [`_archive/compose-pipeline/`](_archive/compose-pipeline/) | Tech-Rolle; **Engine:** `toolset/compose/` (A) |
 
-**Provenienz (nicht Ausführungsplan):**  
-`presentation-pipeline/`, `didactic-media/`, `plan-driven-layout/`.
+> **v0.3 (planned in content-maturity):** Content-Review, Freeze vor Production-Media/Compose, Proof, Human Imprimatur; Media Accept ≠ Imprimatur.
+
 
 ---
 

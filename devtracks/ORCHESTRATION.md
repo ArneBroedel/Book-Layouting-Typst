@@ -62,10 +62,8 @@ Governance-Quellen (immer gültig):
 | **media-design** | B | form-catalog recipe minima *hilfreich*, nicht hard-block für Draft-Brief | form-catalog Phase 1 |
 | **compose-pipeline** | A | form-catalog seed (exists); full E2E needs media gold-brief + accept | validator scaffold parallel |
 
-**Superseded — nicht implementieren:**  
-`presentation-pipeline/`, `didactic-media/`, `plan-driven-layout/` (nur Provenienz).
-
 ---
+
 
 ## 3. Optimale Implementierungsreihenfolge (Waves)
 
@@ -214,7 +212,6 @@ Orchestrator
 - Auto-heal: Compile-Fehler 10× an denselben Agent zurück.  
 - Content-MD nach `src/` oder `packages/` kopieren.  
 - Medical logic in `packages/bookkit` Foundation.  
-- Superseded tracks wiederbeleben.  
 - Split-Repo ohne Trigger (Wave 5: deferred ok).
 
 ---
@@ -350,7 +347,6 @@ Du bist Orchestrator für Book-Layouting-Typst.
 Lies und folge strikt: devtracks/ORCHESTRATION.md
 Governance: devtracks/CONSENSUS-v0.md, devtracks/PRODUCT-BOUNDARIES.md
 Offene Tracks: form-catalog, media-design, compose-pipeline, platform-boundaries.
-Superseded tracks nicht implementieren.
 
 Arbeite Wave 0 → 5. Nutze Subagents mit den Context Packs aus §5.
 Nach jeder Wave: Reviewer-Subagent. P0 blockiert Wave-Exit.

@@ -70,7 +70,7 @@ Autor (extern) ──► Media Brief (dieser Track) ──► Tech Feasibility /
 | [`compose-pipeline`](../compose-pipeline/) | Empfänger Brief; Feasibility/Spike; Compose nach Accept |
 | [`platform-boundaries`](../platform-boundaries/) | Split-readiness |
 | Content (Kursbuch) | Produkt C, read-only |
-| Legacy `didactic-media/` | SUPERSEDED |
+| (removed early draft track) | superseded by this track |
 
 ## Acceptance
 

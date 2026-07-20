@@ -42,7 +42,9 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 ## Open tracks
 
-*(none for v0.2 platform spine — harvested 2026-07-20)*
+| Track | Product | Path | Focus |
+|---|---|---|---|
+| **content-maturity** | **C** (process; transitional in monorepo) | [`content-maturity/`](content-maturity/) | Content-Reife-Schleife C0–C5: Review, Freeze, Proof, Imprimatur — split-ready to Content-Werk |
 
 Runtime products (not tracks):
 
@@ -50,14 +52,12 @@ Runtime products (not tracks):
 |---|---|
 | **A** form-catalog / compose / bookkit | `toolset/form-catalog/`, `toolset/compose/`, `packages/bookkit*` |
 | **B** medical media | `domains/medical/` |
-| **C** content | external (e.g. Kursbuch) |
+| **C** content + editorial process | external SoT (e.g. Kursbuch); process kit transitional: `domains/content-maturity/` |
 
-**Flow:** Content (C) → Media Brief (B) → Feasibility/Spike (A) → Accept (B) → Compose/Validate (A) → PDF.
+**Flow (target v0.3):** Content draft (C) → **Content-Review / Freeze (C)** → Media Brief (B) → Feasibility/Spike (A) → Accept (B) → Compose/Validate (A) → **Proof / Imprimatur (C)** → Print (A).
 
 **Consumer guide:** [`docs/CONSUMER.md`](../docs/CONSUMER.md).  
 **Pilot dogfood:** `pilots/kursbuch-welle-03-compose/`.
-
-**Superseded (provenance only, not implementation):** `presentation-pipeline/`, `didactic-media/`, `plan-driven-layout/`.
 
 **Recently archived (v0.2):** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` under `_archive/`.  
 Earlier: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx`, …
