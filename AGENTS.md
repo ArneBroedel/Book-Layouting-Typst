@@ -115,13 +115,14 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | compose engine | A | `toolset/compose/` |
 | medical domain media | **B** | `domains/medical/` (split candidate; Phase 3 deferred) |
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
-| **content-maturity** (open track) | **C** process | `devtracks/content-maturity/` · kit transitional `domains/content-maturity/` → split to C |
+| **content-maturity** (MVP done) | **C** process | `devtracks/content-maturity/` · kit transitional `domains/content-maturity/` → split to C |
+| **agentic-adaptations** (MVP done) | **C** (+ light A/B) | `devtracks/agentic-adaptations/` · kit extensions under `domains/content-maturity/` |
 | Consumer guide | A | `docs/CONSUMER.md` |
 
 **Flow (v0.2):** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.  
 **Flow (v0.3 target):** C draft → **content-review / freeze** → B brief → A compose path → **proof / imprimatur** → print. Spec: `devtracks/content-maturity/`.
 
-**Skill gate:** `media-brief` (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); `content-review` when present (Produkt C process under `domains/content-maturity/`). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo.
+**Skill gate:** `media-brief` (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`, discovery via `.github/skills/` / `.grok/skills/`). Human checkpoints: `domains/content-maturity/checkpoints.md`. Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 

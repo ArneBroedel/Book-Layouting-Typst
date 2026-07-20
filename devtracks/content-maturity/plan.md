@@ -3,7 +3,7 @@
 **Spec:** [spec.md](spec.md)  
 **Decisions:** [decisions.md](decisions.md)  
 **Gemini review:** [reviews/gemini-r1-r2-2026-07-20.md](reviews/gemini-r1-r2-2026-07-20.md)  
-**Status:** open · **optimized after Gemini R1+R2 (2026-07-20)**  
+**Status:** **MVP implemented** (2026-07-20) · optimized after Gemini R1+R2  
 **Product owner (process):** **C** — transitional scaffold in this monorepo  
 **Does not own:** bookkit foundation, form-catalog core, production compose engine  
 
@@ -58,9 +58,9 @@ Ship a **MVP v0.3** Content-Reife path that delivers real publishing value:
 ### Tasks
 
 - [x] Gemini R1+R2 + `decisions.md` (D1–D11)
-- [ ] Create `domains/content-maturity/` tree (spec §3.2, MVP-trimmed — no full medical profile dirs required yet; stub `profiles/medical/` OK as `DEFERRED.md`)
-- [ ] `OWNERSHIP.md` + `README.md` (MVP flow; not content SoT; link decisions)
-- [ ] Confirm open-track pointers in `devtracks/README.md` (done at track open)
+- [x] Create `domains/content-maturity/` tree (MVP-trimmed; medical `DEFERRED.md`)
+- [x] `OWNERSHIP.md` + `README.md`
+- [x] Confirm open-track pointers in `devtracks/README.md`
 
 ### Exit
 
@@ -74,21 +74,10 @@ Ship a **MVP v0.3** Content-Reife path that delivers real publishing value:
 
 ### Tasks
 
-- [ ] Document revision grammar in README: `git:<short>` | `sha256:<hex>`; reject dates
-- [ ] Templates:
-  - [ ] `review-report.template.md`
-  - [ ] `freeze-record.template.md` (**Human** signer fields mandatory; agent `ready_for_freeze` only)
-  - [ ] `proof-record.template.md` (**Human-only** fill; ≤5–8 checkboxes; link to validate report path)
-  - [ ] `scope-brief.template.md` (optional C0)
-  - [ ] Stub only / deferred marker: `content-patch.template.md`, `imprimatur.template.md` → v0.4
-- [ ] Checklists:
-  - [ ] `core/developmental-edit.md`
-  - [ ] `core/claims-audit.md` (Critical Claims completeness/testability — no clinical invent)
-  - [ ] `core/safety-flags.md` (flag absolute wording, missing red-flag *questions*; **never** invent doses/guidelines)
-  - [ ] `core/freeze-gate.md` (0 open `block`; human sign; revision set)
-  - [ ] `core/proof-gate.md` (human checklist)
-  - [ ] **Defer:** `language-proof.md`, full medical pedagogical/clinical-risk, `genre-hooks.md`
-- [ ] Severity vocabulary: `block` | `should` | `nit` + tags (spec)
+- [x] Document revision grammar in README: `git:<short>` | `sha256:<hex>`; reject dates
+- [x] Templates (review, freeze, proof, scope + v0.4 stubs)
+- [x] Core checklists (developmental-edit, claims-audit, safety-flags, freeze-gate, proof-gate)
+- [x] Severity vocabulary in README
 
 ### Exit
 
@@ -102,13 +91,9 @@ Ship a **MVP v0.3** Content-Reife path that delivers real publishing value:
 
 ### Tasks
 
-- [ ] `skill/content-review/SKILL.md`
-  - When / when not; boundary vs media-brief / compose-chapter
-  - Process: core edit → claims audit → safety-flags → report; max 2 rounds → Human
-  - ALWAYS/NEVER (no `.typ`, no claim silent-edit, no guideline invention)
-  - `ready_for_freeze` recommendation only
-- [ ] Symlinks `.github/skills/content-review`, `.grok/skills/content-review`
-- [ ] B note (can be short PR): exploration briefs allowed with `brief_class: exploration` (full template edit may land Phase 3)
+- [x] `skill/content-review/SKILL.md`
+- [x] Symlinks `.github/skills/content-review`, `.grok/skills/content-review`
+- [x] B: `brief_class` + freeze meta on media-brief (Phase 3 together)
 
 ### Exit
 
@@ -124,21 +109,19 @@ Ship a **MVP v0.3** Content-Reife path that delivers real publishing value:
 
 #### A
 
-- [ ] `run_validate.py` / compose docs: `--profile smoke|production` (or equivalent flags)
-  - smoke: current EXCEPTION paths OK; freeze **not** required
-  - production: hard fail without freeze record + `content_revision` pin match on chapter header/content
-- [ ] `compose-chapter` skill: production expects freeze pin; header `// content_revision: git:…|sha256:…`
-- [ ] **No** medical checklist logic in validate engine
+- [x] `validate --profile smoke|production` + `--freeze` + `freeze_gate.py`
+- [x] `compose-chapter` skill production pin docs
+- [x] **No** medical checklist logic in validate engine
 
 #### B
 
-- [ ] `media-brief` skill + templates: `brief_class: production|exploration`; production requires freeze meta
-- [ ] Accept: production compose not authorized from exploration brief
+- [x] `media-brief` skill + templates: `brief_class` + freeze meta
+- [x] Accept freeze pin checkboxes
 
 #### Governance
 
-- [ ] CONSENSUS v0.3 block (ADRs from decisions / Gemini R2 ADR-01…05 + role Content-Review)
-- [ ] PRODUCT-BOUNDARIES / ROLES / AGENTS already partially linked — align to MVP wording
+- [x] CONSENSUS v0.3 MVP ADRs 27–36
+- [x] PRODUCT-BOUNDARIES / ROLES / AGENTS linked
 
 ### Exit
 
@@ -152,22 +135,20 @@ Ship a **MVP v0.3** Content-Reife path that delivers real publishing value:
 
 ### Tasks
 
-- [ ] Synthetic fixture chapter (DE, fictional, safe) with intentional structure + soft-claim + absolute-wording issues
-- [ ] Gold: Review-Report + Freeze-Record (human-sign fields filled as example)
-- [ ] Optional: mock production pin note (how A would check hash)
-- [ ] Human spot-check: report must **not** invent clinical guidelines (fixture exit criterion from Gemini)
-- [ ] `MIGRATION-TO-C.md` short steps
-- [ ] `SPLIT-CHECKLIST.md` updated for MVP tree
-- [ ] Harvest list draft in plan footer
+- [x] Synthetic fixture + gold review R1/R2 + freeze + proof examples
+- [x] Compose fixtures `pass_freeze_production` / `fail_freeze_production` + unit tests
+- [x] `MIGRATION-TO-C.md`
+- [x] SPLIT-CHECKLIST (track) still valid for MVP tree
+- [x] Harvest list in plan footer
 
 ### MVP Definition of Done
 
-- [ ] Decisions D1–D11 reflected in kit + skills + gates
-- [ ] Gold review→freeze path reproducible
-- [ ] Production profile documents hard freeze (implemented or tracked deferred-only if Human blocks A CLI — prefer implement)
-- [ ] No content SoT pollution
-- [ ] Split story credible
-- [ ] Imprimatur/full medical/patches **explicitly** backlog, not silent missing
+- [x] Decisions D1–D11 reflected in kit + skills + gates
+- [x] Gold review→freeze path reproducible
+- [x] Production profile hard freeze implemented
+- [x] No content SoT pollution
+- [x] Split story credible
+- [x] Imprimatur/full medical/patches **explicitly** backlog
 
 ---
 
@@ -177,11 +158,12 @@ Ship a **MVP v0.3** Content-Reife path that delivers real publishing value:
 |---|---|
 | Full medical pedagogical + clinical-risk checklists | identify→verify only with Human/source policy |
 | `genre-hooks.md` | after B recipe IDs stable; content questions only |
-| Content-patch pipeline | still no silent SoT merge |
-| Language-proof checklist | cheap automation candidate |
+| Content-patch pipeline | **promoted partially** → track [`../agentic-adaptations/`](../agentic-adaptations/) (surgical patches) |
+| Language-proof checklist | overlaps optional clarity-scan in agentic-adaptations; keep or merge later |
 | Imprimatur hard state C5 | Human-only release |
 | Agent PDF vision proof | only after human triage rules solid |
 | Normalize content bytes before sha256 | mitigate export whitespace fragility |
+| Evaluator / orchestrator / personas / checkpoints | → **[`../agentic-adaptations/`](../agentic-adaptations/)** |
 
 ---
 
@@ -227,11 +209,17 @@ Independent review after W2 and W4 recommended.
 
 ## Harvested into
 
-*(fill at MVP completion)*
-
 | Learning | Destination |
 |---|---|
-| — | — |
+| Content-Review skill + process | `domains/content-maturity/skill/content-review/SKILL.md` |
+| Templates / core checklists / gold path | `domains/content-maturity/` |
+| Freeze gate CLI profiles | `toolset/compose/validate/freeze_gate.py`, `cli.py`, `runner.py` |
+| media-brief production vs exploration | `domains/medical/skill/media-brief/`, templates |
+| compose production pin | `toolset/skill-pack/compose-chapter/SKILL.md` |
+| CONSENSUS v0.3 ADRs 27–36 | `devtracks/CONSENSUS-v0.md` |
+| Migration / ownership | `domains/content-maturity/{OWNERSHIP,MIGRATION-TO-C,README}.md` |
+
+*Archive track after Human confirms; kit stays in `domains/content-maturity/` until C split.*
 
 ---
 
@@ -240,4 +228,5 @@ Independent review after W2 and W4 recommended.
 | Date | Note |
 |---|---|
 | 2026-07-20 | Track opened |
-| 2026-07-20 | **Optimized after Gemini R1+R2:** MVP slice, phased reorder, decisions.md, backlog v0.4 |
+| 2026-07-20 | Optimized after Gemini R1+R2 |
+| 2026-07-20 | **MVP implementation complete** (kit + gates + gold + tests) |

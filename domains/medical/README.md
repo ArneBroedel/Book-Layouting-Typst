@@ -24,9 +24,11 @@ domains/medical/
 | | |
 |---|---|
 | **Body** | [`skill/media-brief/SKILL.md`](skill/media-brief/SKILL.md) |
+| **B-core (lean)** | [`skill/media-brief/references/design-reasoning.md`](skill/media-brief/references/design-reasoning.md) — unit→hypothesis, scan rules, Accept rubric |
 | **Discovery** | `.github/skills/media-brief`, `.grok/skills/media-brief`, `toolset/skill-pack/media-brief` → this directory |
 | **Provision** | `toolset/skill-pack/provision.sh` (resolves domain SoT first) |
 | **Templates** | `templates/media-brief.template.md`, `templates/accept-record.template.md` |
+| **Library (archived)** | `devtracks/_archive/medical-knowledge-design-competencies/` (COMPENDIUM) |
 
 Edit the skill **only** under `domains/medical/skill/media-brief/`. Do not duplicate under `.grok/`.
 
@@ -51,8 +53,9 @@ Templates: [`templates/media-brief.template.md`](templates/media-brief.template.
 | Gold Brief III-2 (BLS/AED) | [`briefs/iii2-bls-aed.brief.md`](briefs/iii2-bls-aed.brief.md) | Shorter companion notfall-karte |
 | Accept example III-5 | [`briefs/iii5-cauda-notfallkarte.accept.md`](briefs/iii5-cauda-notfallkarte.accept.md) | Shape demo; fictive feasibility until Wave 3/4 |
 
-**Flow:** Media Brief → Tech Feasibility (+ optional Spike) → Media Accept → Compose (Produkt A).  
-Content MD stays **external** (Kursbuch); briefs reference paths only.
+**Flow:** Media Brief (ideal first) → Tech Feasibility (+ Spike for ambitious visuals) → Media Accept → Compose (Produkt A, **creative-first**).  
+Content MD stays **external** (Kursbuch); briefs reference paths only.  
+Policy: `toolset/compose/CREATIVE-COMPOSE.md` — full toolkit; catalog is preferred library, not a cage.
 
 ## Abhängigkeit
 

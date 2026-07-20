@@ -12,6 +12,9 @@ Preferred entry (from repo root):
       [--root .] \\
       [--font-path fonts] \\
       [--exception-no-brief] \\
+      [--profile smoke|production] \\
+      [--whitelist-mode creative|strict] \\
+      [--freeze path/to/freeze.md] \\
       [--skip-compile]
 
 Or:
@@ -43,8 +46,9 @@ def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="compose-validate",
         description=(
-            "Domain-agnostic compose validator: whitelist, minima, claims, "
-            "compile, post-hoc intent, accept-gate. Fail-fast; no auto-heal."
+            "Domain-agnostic compose validator: catalog inventory (creative default), "
+            "minima, claims, compile, post-hoc intent, accept-gate. Fail-fast; no auto-heal. "
+            "See toolset/compose/CREATIVE-COMPOSE.md."
         ),
     )
     p.add_argument("--typ", required=True, type=Path, help="Path to chapter .typ")
@@ -86,6 +90,21 @@ def build_parser() -> argparse.ArgumentParser:
         help="EXCEPTION_NO_BRIEF: skip accept authorization (smoke only)",
     )
     p.add_argument(
+        "--profile",
+        choices=("smoke", "production"),
+        default="smoke",
+        help=(
+            "smoke: freeze not required (default). "
+            "production: hard-require Human freeze record + content_revision pin match"
+        ),
+    )
+    p.add_argument(
+        "--freeze",
+        type=Path,
+        default=None,
+        help="Path to content freeze record MD (required for --profile production)",
+    )
+    p.add_argument(
         "--skip-compile",
         action="store_true",
         help="Skip typst compile (unit tests / no typst)",
@@ -111,6 +130,15 @@ def build_parser() -> argparse.ArgumentParser:
         "--body-hard-fail",
         action="store_true",
         help="Treat extreme body ratio as hard fail (default: warn only)",
+    )
+    p.add_argument(
+        "--whitelist-mode",
+        choices=("creative", "strict"),
+        default="creative",
+        help=(
+            "creative (default): catalog is advisory — planned/custom form-like "
+            "calls warn only. strict: hard-fail on planned/unknown (legacy audit)."
+        ),
     )
     return p
 
@@ -149,6 +177,13 @@ def main(argv: list[str] | None = None) -> int:
             if args.accept
             else None
         ),
+        freeze=(
+            args.freeze.resolve()
+            if args.freeze and args.freeze.is_absolute()
+            else (Path.cwd() / args.freeze).resolve()
+            if args.freeze
+            else None
+        ),
         genre_minima=(
             args.genre_minima.resolve()
             if args.genre_minima and args.genre_minima.is_absolute()
@@ -170,6 +205,8 @@ def main(argv: list[str] | None = None) -> int:
         out_pdf=args.out_pdf,
         posthoc_out=args.posthoc_out,
         body_hard_fail=args.body_hard_fail,
+        profile=args.profile,
+        whitelist_mode=args.whitelist_mode,
     )
 
     report = run_validation(cfg)

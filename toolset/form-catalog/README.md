@@ -1,7 +1,9 @@
 # form-catalog (Produkt A — platform core)
 
 Generisches Form-Vokabular und Schema für die Layout-Plattform.
-Catalog = **Kuration** existierender bookkit-APIs + `planned` gaps (CONSENSUS ADR 8).
+Catalog = **preferred library** of curated bookkit-APIs + `planned` gaps (CONSENSUS ADR 8, **27–30 creative-first**).
+
+Compose policy: `toolset/compose/CREATIVE-COMPOSE.md` — ideal first; stable forms preferred **only when best**; full toolkit allowed.
 
 ## Layout
 
@@ -10,10 +12,10 @@ toolset/form-catalog/
   README.md
   VERSION                 ← pin this (or the version: field in forms.yaml)
   core/
-    forms.yaml            ← stable / planned / deprecated forms
-    BASIS.md              ← allowed non-catalog Typst in production
+    forms.yaml            ← stable / planned / deprecated forms (preferred library)
+    BASIS.md              ← guidance for common Typst constructs (not exclusive cage)
     GAP-PROCESS.md        ← domain gap → planned → stable
-    ANTI-PATTERNS.md      ← generic compose anti-patterns
+    ANTI-PATTERNS.md      ← generic compose anti-patterns (incl. catalog-first squeeze)
     genre-recipes/        ← cross-domain only; medical → domains/medical/recipes/
   scripts/
     check_forms.py        ← structural sanity check (optional CI)
@@ -22,7 +24,7 @@ toolset/form-catalog/
 **Medical genre recipes** leben unter `domains/medical/recipes/` und **erweitern** core,
 ersetzen ihn nicht. Keine Kursbuch-Content-Pfade in core.
 
-Validator (compose) lädt: `core/forms.yaml` (+ optional domain overlay).
+Validator (compose) lädt: `core/forms.yaml` (+ optional domain overlay). Default inventory mode is **creative** (advisory).
 
 ## VERSION / pin policy
 

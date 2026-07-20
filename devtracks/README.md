@@ -44,7 +44,8 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 | Track | Product | Path | Focus |
 |---|---|---|---|
-| **content-maturity** | **C** (process; transitional in monorepo) | [`content-maturity/`](content-maturity/) | Content-Reife-Schleife C0–C5: Review, Freeze, Proof, Imprimatur — split-ready to Content-Werk |
+| **content-maturity** | **C** (process; transitional) | [`content-maturity/`](content-maturity/) · kit `domains/content-maturity/` | **MVP done:** Review, Human Freeze, production validate gate, human Proof; Imprimatur→v0.4; split-ready |
+| **agentic-adaptations** | **C** (+ light A/B UX) | [`agentic-adaptations/`](agentic-adaptations/) · kit `domains/content-maturity/` | **MVP done:** evaluate-only, floor, orchestrator, personas, checkpoints, patches, clarity-scan; validate H1 footer |
 
 Runtime products (not tracks):
 

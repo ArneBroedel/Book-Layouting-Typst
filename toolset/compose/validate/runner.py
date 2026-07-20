@@ -12,9 +12,10 @@ from .body import check_body
 from .catalog import Catalog, load_catalog, merge_overlay
 from .claims import check_claims, load_content
 from .compile_check import compile_typ
+from .freeze_gate import check_freeze
 from .minima import check_minima, load_minima
 from .posthoc import build_posthoc, write_posthoc
-from .whitelist import check_whitelist
+from .whitelist import WhitelistMode, check_whitelist
 
 
 @dataclass
@@ -75,6 +76,7 @@ class ValidateConfig:
     content: Path | None = None
     catalog: Path | None = None
     accept: Path | None = None
+    freeze: Path | None = None
     genre_minima: Path | None = None
     catalog_overlay: Path | None = None
     root: Path = field(default_factory=lambda: Path("."))
@@ -84,6 +86,10 @@ class ValidateConfig:
     out_pdf: Path | None = None
     posthoc_out: Path | None = None
     body_hard_fail: bool = False
+    # smoke: freeze not required; production: hard freeze + pin (content-maturity D3)
+    profile: str = "smoke"
+    # creative (default): catalog inventory advisory; strict: legacy hard whitelist
+    whitelist_mode: WhitelistMode = "creative"
 
 
 def run_validation(cfg: ValidateConfig) -> ValidationReport:
@@ -93,9 +99,12 @@ def run_validation(cfg: ValidateConfig) -> ValidationReport:
         "content": str(cfg.content) if cfg.content else None,
         "catalog": str(cfg.catalog) if cfg.catalog else None,
         "accept": str(cfg.accept) if cfg.accept else None,
+        "freeze": str(cfg.freeze) if cfg.freeze else None,
         "genre_minima": str(cfg.genre_minima) if cfg.genre_minima else None,
         "exception_no_brief": cfg.exception_no_brief,
         "skip_compile": cfg.skip_compile,
+        "profile": cfg.profile,
+        "whitelist_mode": cfg.whitelist_mode,
     }
 
     typ_path = Path(cfg.typ)
@@ -127,14 +136,17 @@ def run_validation(cfg: ValidateConfig) -> ValidationReport:
         report.add("catalog", "fail", f"catalog load error: {e}")
         return report
 
-    # ── 2. whitelist ────────────────────────────────────────────
-    wl = check_whitelist(typ_source, catalog)
+    # ── 2. catalog inventory (creative default / strict optional) ─
+    wl = check_whitelist(typ_source, catalog, mode=cfg.whitelist_mode)
     report.forms_ordered = list(wl.forms_ordered)
-    if wl.ok:
-        report.add("whitelist", "pass", wl.messages)
-    else:
+    if not wl.ok:
         report.ok = False
         report.add("whitelist", "fail", wl.messages)
+    elif wl.advisory:
+        # creative mode with planned/custom forms — do not fail
+        report.add("whitelist", "warn", wl.messages)
+    else:
+        report.add("whitelist", "pass", wl.messages)
 
     # ── 3. genre minima (optional) ──────────────────────────────
     minima_data = None
@@ -210,6 +222,21 @@ def run_validation(cfg: ValidateConfig) -> ValidationReport:
     else:
         report.ok = False
         report.add("accept", "fail", ar.messages)
+
+    # ── 9. freeze-gate (production profile) ─────────────────────
+    fr = check_freeze(
+        profile=cfg.profile,
+        freeze_path=cfg.freeze,
+        typ_source=typ_source,
+        content_path=cfg.content,
+    )
+    if fr.skipped:
+        report.add("freeze", "skip", fr.messages)
+    elif fr.ok:
+        report.add("freeze", "pass", fr.messages)
+    else:
+        report.ok = False
+        report.add("freeze", "fail", fr.messages)
 
     return report
 

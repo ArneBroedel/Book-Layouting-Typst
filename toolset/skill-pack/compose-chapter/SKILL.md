@@ -1,6 +1,6 @@
 ---
 name: compose-chapter
-description: "ALWAYS use for Tech compose: feasibility note, map Media Brief to form-catalog, spike after experiment status, write production chapter.typ from accepted brief, catalog-whitelist compose, validate chapter, run compose validator. Covers Produkt A compose-pipeline (toolset/compose). Do NOT use for free didactic ideal, gold brief authoring, Media Accept wording, or media-brief drafting — those stay media-brief (Produkt B)."
+description: "ALWAYS use for Tech compose: feasibility after Media Brief, spike when ideal needs new patterns, realize best didactic presentation with full Typst/bookkit/@preview (creative-first), fallback only if ideal fails, validate (claims/compile; catalog advisory). Covers Produkt A compose-pipeline. Do NOT use for free didactic ideal authorship, gold brief prose, Media Accept wording, or media-brief drafting — those stay media-brief (Produkt B)."
 ---
 
 # compose-chapter (Platform Tech — Produkt A)
@@ -8,15 +8,16 @@ description: "ALWAYS use for Tech compose: feasibility note, map Media Brief to 
 Executable procedure for the **Tech** role: Feasibility → optional Spike → Compose (post-Accept) → Validate.
 
 **SoT:** `toolset/skill-pack/compose-chapter/` (Produkt A). Not Media design; not a substitute for `media-brief`.  
-Governing: `devtracks/CONSENSUS-v0.md`, `devtracks/compose-pipeline/spec.md`, `devtracks/PRODUCT-BOUNDARIES.md`.
+**Policy:** [`toolset/compose/CREATIVE-COMPOSE.md`](../../compose/CREATIVE-COMPOSE.md) — **creative-first** is the default.  
+Governing: `devtracks/CONSENSUS-v0.md`, `devtracks/PRODUCT-BOUNDARIES.md`.
 
 ## When to use
 
-- **Feasibility note** from Media Brief + form-catalog
-- **Spike** for `experiment` / unclear `approx`
-- **Compose** production `chapter.typ` after Media Accept
-- **Validate** composed chapter (whitelist, claims, compile)
-- **Catalog-gap** filing from a named gap
+- **Feasibility note** from Media Brief (how to realize the ideal)
+- **Spike** for new visual patterns (flowcharts, urgency lanes, custom diagrams)
+- **Compose** `chapter.typ` after Media Accept — **full creative toolkit**
+- **Validate** (claims, compile, accept; catalog inventory advisory by default)
+- **Catalog-gap** filing when a custom pattern should become a reusable form
 - Smoke/platform tests under documented `EXCEPTION_NO_BRIEF` only
 
 ## When NOT to use
@@ -28,38 +29,65 @@ Governing: `devtracks/CONSENSUS-v0.md`, `devtracks/compose-pipeline/spec.md`, `d
 | General Typst syntax / layout debug | `typst-writer` |
 | `@preview` package choice / typst.toml | `typst-extension` |
 | Rewriting Critical Claims or clinical body | Author / Content (Produkt C) |
-| Inventing layout without Accept (real production) | Stop — need Brief + Feasibility + Accept |
+| Content-Review / freeze recommendation | `content-review` (Produkt C process) |
+| Inventing layout without Accept (real production) | Stop — need Brief + Feasibility + Accept (+ Freeze for production) |
 
-## Role: Tech (constrain after explore)
+## Role: Tech (realize ideal — do not shrink first)
 
 ```text
-Media Brief (B) ──► Feasibility (this) ──► Spike? ──► Media Accept
-                         │                              │ accept
-                  catalog-gap?                   Compose chapter.typ
-                                                        │
-                                                 Validate (fail-fast) → PDF
+Media Brief (ideal, free) ──► Feasibility (realization ladder) ──► Spike?
+         │                              │ accept
+         │                       Compose chapter.typ  (full toolkit)
+         │                              │
+         └──── Accept proximity ◄── Validate (claims + compile hard;
+                                      catalog inventory soft by default)
 ```
 
-Tech **maps** Brief → catalog. Media **accepts** proximity to the ideal.  
-Compose is **setter after redaction close**, not sole designer.
+Tech **realizes** the Media ideal with the best technical means available.  
+Media **accepts** proximity to that ideal — not “compile green + only stable forms”.
 
-**MUST:** honest gaps; bind compose to Accept + mapping; budget spikes; fail-fast on unknown forms.  
-**MUST NOT:** shrink Media wishes to “just a table” without gap; free production layout outside catalog; claim paraphrase; auto-heal compile loops.
+**MUST:** start from the Brief ideal; prefer known-good forms **only when they are the best presentation**; try diagrams/custom/spike before falling back; honest fallback notes; claims copy-through; fail-fast on compile (no auto-heal).  
+**MUST NOT:** default to “what fits `stable`?”; squeeze ideal into table/callout monotony; claim paraphrase; skip Accept for real production.
 
-## Normal path (production quality bar)
+## Creative-first (default)
+
+```text
+1. Ideal presentation (from Brief)     — what should the learner *see*?
+2. Best technical realization          — bookkit · didactics · CeTZ/Fletcher ·
+                                         custom #let · page helpers · @preview
+3. Prefer stable catalog forms         — ONLY if they match the ideal
+4. Fallback simpler pattern            — ONLY if ideal truly fails
+                                         (document why in feasibility)
+```
+
+See full policy: `toolset/compose/CREATIVE-COMPOSE.md`.
+
+### Realization ladder (per section)
+
+| Step | Status label | Meaning |
+|---|---|---|
+| Ideal = stable form | `mapped` | Record `form_id` |
+| Ideal via composed/custom layout | `custom` | Describe pattern (e.g. Fletcher flowchart, dual-column algorithm) |
+| Close but compromised | `approx` | form or pattern + what differs from ideal |
+| Needs new reusable API | `gap` | `gap_name` + implement custom now **and/or** file catalog gap |
+| Uncertain | `experiment` | Spike first |
+
+**Legacy labels `mapped|approx|gap|experiment` still valid;** add `custom` when using non-catalog realization of the ideal.
+
+## Normal path (quality bar)
 
 ```text
 Brief + Feasibility + Accept(yes) + Content (C, read-only)
-  → chapter.typ (stable catalog forms + BASIS only)
-  → validate → PDF
+  → chapter.typ (best presentation; full toolkit)
+  → validate (creative mode default) → PDF
 ```
 
 | Input | Owner | Notes |
 |---|---|---|
 | Content MD + Critical Claims | C | Read-only; copy-through claims |
-| Media Brief path | B | Section intent in prose |
-| Feasibility note | Tech | Status per section; pin `catalog_version` |
-| Accept record = accept | Media | Or documented pilot exception |
+| Media Brief path | B | Free ideal / section plan |
+| Feasibility note | Tech | Realization plan per section; pin tools used |
+| Accept record = accept | Media | Proximity to ideal — not whitelist green |
 
 Without Accept (or exception flag): **do not** emit production `.typ` as “done”.
 
@@ -71,72 +99,84 @@ Allowed **only** for smoke tests, platform fixtures, legacy comparison — **not
 // EXCEPTION_NO_BRIEF: <reason> — not a production quality claim
 ```
 
-A chapter that only had C1+E without Media path is **not** didactically accepted.
-
 ## Feasibility procedure
 
 **Template:** `toolset/compose/templates/feasibility-note.template.md`
 
-1. Read Media Brief + catalog; pin **`toolset/form-catalog/VERSION`** (mirrors `version:` in `core/forms.yaml`). Forms: `core/forms.yaml` (`stable` only for production map). Basis: `core/BASIS.md`.
-2. For **each** brief section, exactly one status:
+1. Read Media Brief **as design authority** — do not open forms.yaml first.
+2. For each section: state how the **ideal** will be realized (ladder above). Prefer `mapped` only when stable form = best shape.
+3. Pin optional `catalog_version` for preferred library awareness — **not** a cage.
+4. Spike recommended? yes/no + goal (especially for flowcharts, triage lanes, custom diagrams).
+5. Ready for Media Accept? yes / blockers.
+6. **Write the feasibility file.**
 
-| status | Meaning | Action |
-|---|---|---|
-| `mapped` | 1:1 stable catalog form | Record `form_id` |
-| `approx` | Close; compromise explicit | `form_id` + notes (what differs) |
-| `gap` | Missing | `gap_name` + file under Catalog gaps |
-| `experiment` | Uncertain / new | Recommend spike; do not silent-compose |
+Suggested path: `…/<slug>.feasibility.md`.
 
-3. Meta: `chapter_id`, `brief_path`, **`catalog_version`**, `bookkit_version`, author, date.
-4. Spike recommended? yes/no + one-sentence goal. Ready for Media Accept? yes / blockers.
-5. **Write the feasibility file** — chat without artifact is incomplete.
-
-Suggested path: `…/<slug>.feasibility.md`. Never turn feasibility into a second free Brief — status enum + short notes only.
-
-## Spike (optional, budgeted)
+## Spike (encouraged for ambitious ideals)
 
 See `toolset/compose/spikes/README.md`.
 
-- One goal (one form/pattern). Minimal bookkit `.typ` → PDF/PNG under `dist/spikes/` or pilot folder.
-- Default pilot budget: **≤1 spike per chapter** (or per wave if pilot says so).
-- Spike is **not** production SoT; Media Accept decides promote vs. discard.
+- One visual goal (e.g. branching decision flowchart, urgency-lane table).
+- Minimal `.typ` → PDF/PNG under `dist/spikes/` or pilot folder.
+- Full creative surface allowed (CeTZ, Fletcher, custom modules).
+- Spike is **not** production SoT until Media Accept + compose promote.
 - One build, evaluate — no auto-heal loop.
 
 ```bash
 ./scripts/bookkit build --root . --entry path/to/spike.typ
+# or:
+typst compile --root . --ignore-system-fonts --font-path fonts path/to/spike.typ dist/spikes/out.pdf
 ```
 
 ## Compose rules (C1)
 
 Only after **Accept = yes** (or documented exception).
 
-1. **Whitelist:** only `status: stable` form ids + constructs in `BASIS.md`.
-2. **NEVER free layout primitives** in production (no ad-hoc page chrome, decorative `#rect`/`#place`, uncatalogued full-bleed, unpinned `@preview` — see BASIS forbidden list).
-3. **Claims copy-through** verbatim (normalized whitespace ok). **NEVER** paraphrase claims.
-4. **Pin catalog version** in file header:
+1. **Realize the accepted ideal** — full toolkit:
+   - stable bookkit / bookkit-didactics forms when they *are* the best shape
+   - planned patterns implemented ad-hoc (flowchart, decision-table chrome, timeline)
+   - CeTZ / Fletcher / other `@preview` packages (pin versions; load `typst-extension`)
+   - local `#let` helpers, `#grid`/`#stack`/`#place` when the design needs them
+   - page-design / spread helpers from packages when appropriate
+2. **Prefer known-good** only as *quality preference*, never as *exclusive whitelist*.
+3. **Fallback** to simpler forms only after attempt; record in header/feasibility.
+4. **Claims copy-through** verbatim (normalized whitespace ok). **NEVER** paraphrase claims.
+5. **Pin paths** in file header:
 
 ```typst
 // compose-chapter
-// catalog_version: 0.1.0
+// creative-first: true
+// catalog_version: 0.1.0   // preferred library pin (advisory)
 // brief: <path>
 // feasibility: <path>
 // accept: <path>
 // content: <path>
+// content_revision: git:<short> | sha256:<hex>   // production: must match freeze
+// freeze: <path>                                 // production
+// tools: bookkit, bookkit-didactics, cetz?, fletcher?, custom-module?
 ```
 
-5. Map sections per accepted feasibility (`mapped`/`approx` only). Unresolved `gap`/`experiment` → do not pretend mapped; escalate or exception.
-6. Load **`bookkit`** for API, **`typst-writer`** for syntax:
+**Production quality:** content must be **Human-frozen** (`domains/content-maturity/`).  
+Validate with `--profile production --freeze path/to/freeze.md`.  
+Smoke/platform: `--profile smoke` (default) may omit freeze.
+
+**Checkpoints:** freeze fail → **H1**. Media Accept → **H2**.
+
+6. Load **`bookkit`**, **`typst-writer`**, and **`typst-extension`** when using packages:
 
 ```typst
 #import "/packages/bookkit/lib.typ": *
-#import "/packages/bookkit-didactics/lib.typ": *  // if mapping needs didactics
+#import "/packages/bookkit-didactics/lib.typ": *
+// optional for ideal flows:
+// #import "@preview/cetz:0.3.4"
+// #import "@preview/fletcher:0.5.7"
 ```
 
-7. **One-shot compose** toward validate — no self-healing re-prompt loop on compile/diff fail.
+7. **One-shot compose** toward validate — no self-healing re-prompt loop on compile fail.
 
 ## Validate (E)
 
-Engine: `toolset/compose/` (see `toolset/compose/README.md`). Preferred CLI:
+Engine: `toolset/compose/` · Policy: `CREATIVE-COMPOSE.md`.
 
 ```bash
 python3 toolset/compose/scripts/run_validate.py \
@@ -148,13 +188,18 @@ python3 toolset/compose/scripts/run_validate.py \
   --root . \
   --font-path fonts \
   --out-pdf dist/chapter.pdf
-# smoke only (no accept auth): add --exception-no-brief
-# unit path without typst: add --skip-compile
+# default whitelist-mode=creative (catalog advisory)
+# legacy hard catalog: --whitelist-mode strict
+# production freeze: --profile production --freeze path/to/freeze.md
+# smoke without accept: --exception-no-brief --profile smoke
 ```
 
-**Fail-fast checks:** forms ⊆ catalog (`stable`); genre minima/gatekeeper (if `--genre-minima`); critical-claims strict (normalized from content); soft body similarity (warn); `typst compile --ignore-system-fonts --font-path fonts`; post-hoc intent from `.typ`; Accept present and authorized **or** `--exception-no-brief`.
+**Hard checks:** compile; critical-claims strict; accept (or exception); freeze on production profile.  
+**Soft (default):** catalog inventory — planned/custom form-like calls **warn**, do not fail.  
+**Optional hard:** `--whitelist-mode strict` for legacy audits only.  
+Genre minima remain available when a path is passed (didactic floor, not form cage).
 
-On fail: **report and stop**. No auto-retry compose loops. New run only after conscious Human/Tech decision.
+On hard fail: **report and stop**. No auto-retry compose loops.
 
 ## Iteration caps
 
@@ -164,52 +209,49 @@ On fail: **report and stop**. No auto-retry compose loops. New run only after co
 | Compose → validate fail | **no** auto-heal | one shot; report fail |
 | Media ↔ Author | N/A here | Human / media-brief |
 
-Do not open a third Media↔Tech round without Human.
-
 ## Catalog gap filing
 
-When status is `gap` (or spike shows need):
+When ideal needs a **reusable** pattern:
 
-1. Record in feasibility “Catalog gaps to file”.
-2. Follow `toolset/form-catalog/core/GAP-PROCESS.md` — propose `id`, purpose, why not approx, owner.
-3. Land as `status: planned` in `core/forms.yaml` (or issue/PR) — **visible debt**, never silent table-only substitute.
-4. Production compose uses form only after promotion to **`stable`** (real bookkit export).
-
-Reusable form ids land in **core** (Produkt A); domain may file from Media.
+1. Implement for the chapter if needed (`custom` / spike).
+2. Record under feasibility “Catalog gaps to file”.
+3. Follow `toolset/form-catalog/core/GAP-PROCESS.md` so the preferred library grows.
+4. Do **not** wait for `stable` before shipping a good layout — file the gap so the next chapter reuses it cleanly.
 
 ## ALWAYS / NEVER
 
 | ALWAYS | NEVER |
 |---|---|
-| Pin `catalog_version` in feasibility + chapter header | Free layout primitives outside catalog+BASIS |
-| Map every brief section to mapped\|approx\|gap\|experiment | Claim paraphrase / content rewrite |
-| Compose only post-Accept (or documented exception) | Auto-heal compile/validate retry loops |
-| Fail-fast on unknown forms | Quietly degrade ideal to “just table” without gap |
-| Spike only for experiment/unclear; budgeted | Treat spike as production SoT |
-| Report validate fail and stop | Skip Accept for real production under time pressure |
-| Point Media at feasibility/spike paths | Author gold briefs or free ideal here |
+| Start from Media ideal, not from forms.yaml | Open catalog first and squeeze content into it |
+| Prefer stable forms only when they match the ideal | Treat stable∪BASIS as exclusive production surface |
+| Try diagram/custom/spike before silent table fallback | Quiet monotony (“just callout + styled-table”) |
+| Document fallbacks honestly | Claim paraphrase / content rewrite |
+| Compose post-Accept (or documented exception) | Auto-heal compile/validate retry loops |
+| Claims copy-through | Skip Accept under time pressure for real production |
+| Validate with creative mode (default) | Fail a good design solely for using Fletcher/custom |
 
 ## Boundary vs `media-brief`
 
 | Tech (`compose-chapter`) | Media (`media-brief`) |
 |---|---|
-| Feasibility, spikes, compose, validate | Free ideal, section prose, wishlist, Accept |
-| form-catalog core + BASIS whitelist | Genre recipes as function checklists (B) |
+| Realize ideal; spikes; compose; validate | Free ideal, section prose, wishlist, Accept |
+| Full toolkit + preferred catalog library | Genre recipes as function checklists (B) |
 | Platform A: `toolset/compose/`, skill-pack | Domain B: `domains/medical/` |
 | Does not invent didactic ideal when Brief exists | Does not write production `.typ` |
 
-If both roles appear in one session: finish Brief or Accept as a file first (`media-brief`); then switch **explicitly** to this skill for Tech work.
+If both roles appear in one session: finish Brief (or Accept) as a file first; switch skills explicitly for Tech work.
 
 ## Related paths
 
 | Artifact | Path |
 |---|---|
+| **Creative-first policy** | `toolset/compose/CREATIVE-COMPOSE.md` |
 | Feasibility template | `toolset/compose/templates/feasibility-note.template.md` |
 | Compose engine / validate | `toolset/compose/` · CLI `scripts/run_validate.py` |
 | Spikes | `toolset/compose/spikes/README.md` |
-| Catalog VERSION / forms / BASIS / gaps | `toolset/form-catalog/VERSION`, `core/forms.yaml`, `core/BASIS.md`, `core/GAP-PROCESS.md` |
+| Preferred library | `toolset/form-catalog/VERSION`, `core/forms.yaml`, `core/BASIS.md` |
 | bookkit API skill | `toolset/skill-pack/bookkit/SKILL.md` |
 | Media skill (B) | `domains/medical/skill/media-brief/` |
-| Governance | `devtracks/CONSENSUS-v0.md`, `compose-pipeline/spec.md`, `PRODUCT-BOUNDARIES.md` |
+| Governance | `devtracks/CONSENSUS-v0.md`, `PRODUCT-BOUNDARIES.md` |
 
-Produkt **A** engine is domain-agnostic. Content paths from **C** (never hardcode Kursbuch tree into validate core). Domain briefs/recipes from **B**. For bookkit signatures and assembly order, load **`bookkit`** — this skill owns process gates, not the full API surface.
+Produkt **A** engine is domain-agnostic. Content paths from **C**. Domain briefs/recipes from **B**.

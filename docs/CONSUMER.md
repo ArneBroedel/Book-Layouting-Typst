@@ -98,7 +98,7 @@ Never omit `--ignore-system-fonts --font-path fonts`.
 
 ## Compose validate (production chapters)
 
-When composing catalog-whitelist chapters (Produkt A engine):
+When composing chapters (Produkt A engine; **creative-first** by default — see `toolset/compose/CREATIVE-COMPOSE.md`):
 
 ```bash
 python3 toolset/compose/scripts/run_validate.py \
@@ -120,7 +120,7 @@ Fail-fast, no auto-heal. Full options: [`toolset/compose/README.md`](../toolset/
 | Skill | Produkt | When |
 |---|---|---|
 | `bookkit` | A | Importing packages, starter/CLI, design-brief, didactics facet |
-| `compose-chapter` | A | Feasibility note, catalog-whitelist `chapter.typ`, spike, validate |
+| `compose-chapter` | A | Feasibility, creative-first `chapter.typ` (full toolkit), spike, validate |
 | `typst-writer` | A | Any `.typ` create/edit or layout debug |
 | `media-brief` | B | Media Brief / gold brief / Accept — **domain optional**; SoT under `domains/medical/skill/media-brief/` |
 

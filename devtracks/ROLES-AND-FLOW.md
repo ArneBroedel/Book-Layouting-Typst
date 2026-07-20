@@ -16,7 +16,8 @@ Ausführlich: [`CONSENSUS-v0.md`](CONSENSUS-v0.md) · Grenzen: [`PRODUCT-BOUNDAR
 | Rolle | Track / Ort | Tut | Tut nicht |
 |---|---|---|---|
 | **Autor** | C extern | Fachtext, Claims; Review-Findings mergen | Layout |
-| **Content-Review** | C · Track [`content-maturity`](content-maturity/) | Q1/Q2-Lektorat & Fach-Risk-Scan; Report + Patch-Vorschläge; Freeze-Empfehlung | Production-`.typ`; still Claims mutieren; Media ersetzen |
+| **Content-Review** | C · Track [`content-maturity`](content-maturity/) · extensions [`agentic-adaptations`](agentic-adaptations/) | Q1/Q2-Lektorat; evaluate-only oder Patches; floor (`block`⇒no freeze); optional Personas/Clarity | Production-`.typ`; still Claims mutieren; Media ersetzen; Score-Loops |
+| **Content-Orchestrator** | C · `content-orchestrator` skill | Route card C1–C4 → richtiger Skill/Human-Checkpoint (H1–H5) | Brief/Compose selbst ausführen; Text umschreiben |
 | **Media** | B `domains/medical/` | Freier Brief, Accept (Q3) | Body/Claims ändern |
 | **Tech** | A `toolset/compose/` | Feasibility, Spike, Compose | Ideal kleinreden; Content „verbessern“ |
 | **Validator** | A Script | Whitelist, Claims, Compile | Auto-Heal; redaktionell heilen |

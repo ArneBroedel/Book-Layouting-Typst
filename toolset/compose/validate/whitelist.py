@@ -1,9 +1,17 @@
-"""Extract form-like invocations from .typ and check ⊆ stable ∪ basis."""
+"""Extract form-like invocations from .typ and check against catalog.
+
+Default mode is **creative** (advisory inventory): planned/unknown form-like
+calls warn but do not fail. Optional **strict** mode restores the old
+stable∪BASIS hard fail for legacy audits.
+
+See toolset/compose/CREATIVE-COMPOSE.md.
+"""
 
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
+from typing import Literal
 
 from .catalog import Catalog
 
@@ -14,8 +22,11 @@ _CALL_RE = re.compile(r"(?<![\w-])#([a-zA-Z_][\w-]*)\s*[(\[]")
 _LINE_COMMENT = re.compile(r"//[^\n]*")
 _BLOCK_COMMENT = re.compile(r"/\*.*?\*/", re.DOTALL)
 
-# Allowed non-catalog constructs (BASIS.md + common Typst + package setup).
-# Keep pragmatic: production may use these freely.
+WhitelistMode = Literal["creative", "strict"]
+
+# Common Typst / package constructs (not catalog form ids).
+# Under creative mode these are free. Under strict mode they are also free —
+# the old "BASIS" list was never a hard exclusive surface for bare identifiers.
 BASIS_NAMES: frozenset[str] = frozenset(
     {
         # imports / meta
@@ -58,7 +69,7 @@ BASIS_NAMES: frozenset[str] = frozenset(
         "pagebreak",
         "colbreak",
         "metadata",
-        # layout primitives (basis allows limited use; chrome forms preferred)
+        # layout primitives
         "page",
         "block",
         "box",
@@ -157,12 +168,14 @@ BASIS_NAMES: frozenset[str] = frozenset(
 @dataclass
 class WhitelistResult:
     ok: bool
+    mode: str = "creative"
     forms_found: list[str] = field(default_factory=list)  # catalog form ids, document order
     forms_ordered: list[str] = field(default_factory=list)  # same, first occurrence order
     unknown: list[str] = field(default_factory=list)
     planned_used: list[str] = field(default_factory=list)
     deprecated_used: list[str] = field(default_factory=list)
     messages: list[str] = field(default_factory=list)
+    advisory: bool = True  # True when non-stable use only warns
 
 
 def strip_comments(source: str) -> str:
@@ -177,20 +190,24 @@ def extract_calls(source: str) -> list[str]:
     return [m.group(1) for m in _CALL_RE.finditer(cleaned)]
 
 
-def check_whitelist(source: str, catalog: Catalog) -> WhitelistResult:
+def check_whitelist(
+    source: str,
+    catalog: Catalog,
+    *,
+    mode: WhitelistMode = "creative",
+) -> WhitelistResult:
     """
-    Forms ⊆ stable catalog; planned/deprecated/unknown form-like → fail.
+    Inventory catalog forms used in the chapter.
 
-    Pragmatic: catalog function names are the production surface. Hyphenated
-    names not in stable∪basis are treated as unknown bookkit-like calls.
+    - **creative** (default): planned / unknown / deprecated → messages + ok=True
+      (advisory). Creativity is the default; catalog is a preferred library.
+    - **strict**: planned / unknown / deprecated → ok=False (legacy audit).
     """
+    if mode not in ("creative", "strict"):
+        mode = "creative"
+
     calls = extract_calls(source)
     by_fn = catalog.by_function
-    stable_fns = catalog.stable_function_names | catalog.stable_ids
-    planned_fns = {f.function_name for f in catalog.forms if f.status == "planned"} | catalog.planned_ids
-    deprecated_fns = {
-        f.function_name for f in catalog.forms if f.status == "deprecated"
-    } | catalog.deprecated_ids
 
     forms_found: list[str] = []
     seen: set[str] = set()
@@ -212,17 +229,19 @@ def check_whitelist(source: str, catalog: Catalog) -> WhitelistResult:
             elif entry.status == "planned":
                 if fid not in planned_used:
                     planned_used.append(fid)
+                # also track for post-hoc / minima soft awareness
+                forms_found.append(fid)
+                seen.add(fid)
             elif entry.status == "deprecated":
                 if fid not in deprecated_used:
                     deprecated_used.append(fid)
             else:
-                # unknown status — treat as fail
                 if name not in unknown_seen:
                     unknown.append(name)
                     unknown_seen.add(name)
             continue
 
-        # Not in catalog: hyphenated names look like bookkit form APIs
+        # Not in catalog: hyphenated names look like form-like APIs
         if "-" in name:
             if name not in unknown_seen:
                 unknown.append(name)
@@ -234,28 +253,52 @@ def check_whitelist(source: str, catalog: Catalog) -> WhitelistResult:
 
     ordered = list(dict.fromkeys(forms_found))  # first-occurrence order
     messages: list[str] = []
-    if planned_used:
+
+    if mode == "creative":
         messages.append(
-            "planned (not production-legal) forms used: " + ", ".join(planned_used)
+            "mode=creative (default): catalog is advisory preferred library; "
+            "non-stable / custom form-like calls do not fail"
+        )
+    else:
+        messages.append("mode=strict: planned/unknown/deprecated form-like calls fail")
+
+    if planned_used:
+        tag = "advisory" if mode == "creative" else "not production-legal under strict"
+        messages.append(
+            f"planned forms used ({tag}): " + ", ".join(planned_used)
         )
     if deprecated_used:
         messages.append("deprecated forms used: " + ", ".join(deprecated_used))
     if unknown:
-        messages.append("unknown form-like calls: " + ", ".join(unknown))
+        tag = "advisory — custom/uncatalogued OK when ideal needs it" if mode == "creative" else "fail under strict"
+        messages.append(f"unknown form-like calls ({tag}): " + ", ".join(unknown))
 
-    ok = not planned_used and not deprecated_used and not unknown
-    if ok:
+    has_issues = bool(planned_used or deprecated_used or unknown)
+    if mode == "strict":
+        ok = not has_issues
+        advisory = False
+    else:
+        ok = True  # creative never fails on catalog inventory alone
+        advisory = has_issues
+
+    if ordered:
         messages.append(
-            f"whitelist ok — {len(ordered)} distinct stable form(s): "
-            + (", ".join(ordered) if ordered else "(none)")
+            f"catalog forms seen ({len(ordered)}): " + ", ".join(ordered)
         )
+    else:
+        messages.append("no catalog form ids detected (custom layout may still be valid)")
+
+    if mode == "creative" and not has_issues:
+        messages.append("all detected catalog forms are stable (preferred library match)")
 
     return WhitelistResult(
         ok=ok,
+        mode=mode,
         forms_found=forms_found,
         forms_ordered=ordered,
         unknown=unknown,
         planned_used=planned_used,
         deprecated_used=deprecated_used,
         messages=messages,
+        advisory=advisory,
     )

@@ -1,12 +1,16 @@
-# form-catalog core — curated public bookkit / bookkit-didactics surface
+# form-catalog core — preferred library (bookkit / bookkit-didactics surface)
 # version mirrors ../VERSION
-# ADR: only `stable` when a real public export exists in package lib.typ.
+# ADR: `stable` when a real public export exists in package lib.typ.
+# Creative-first compose (toolset/compose/CREATIVE-COMPOSE.md) may use full
+# toolkit; this file is preferred known-good vocabulary, not an exclusive cage.
 # Medical genre recipes: domains/medical/recipes/ (not here).
 version: "0.1.0"
 description: >
-  Generic + shared forms mapped to bookkit public APIs. Curation over
-  completeness: high-value production forms only. Medical genre recipes
-  live under domains/medical/recipes/. Status: stable | planned | deprecated.
+  Preferred library of high-value forms mapped to bookkit public APIs.
+  Compose default is creative-first: ideal presentation may use custom /
+  @preview / planned patterns; stable forms are preferred when they match
+  the ideal. Medical genre recipes live under domains/medical/recipes/.
+  Status: stable | planned | deprecated.
 
 forms:
   # ── Structure / spreads (bookkit) ─────────────────────────────

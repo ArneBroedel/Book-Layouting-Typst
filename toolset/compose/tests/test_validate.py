@@ -15,6 +15,7 @@ if str(_COMPOSE) not in sys.path:
 from validate.accept_gate import check_accept, is_authorized  # noqa: E402
 from validate.catalog import load_catalog  # noqa: E402
 from validate.claims import check_claims, extract_claims_from_content, normalize_text  # noqa: E402
+from validate.freeze_gate import check_freeze, is_valid_revision, parse_revision  # noqa: E402
 from validate.minima import check_minima, load_minima  # noqa: E402
 from validate.posthoc import build_posthoc  # noqa: E402
 from validate.runner import ValidateConfig, run_validation  # noqa: E402
@@ -32,8 +33,11 @@ def _cfg(
     skip_compile: bool = True,
     exception_no_brief: bool = False,
     accept: str | None = "accept.md",
+    freeze: str | None = None,
     genre_minima: Path | None = None,
     content: str | None = "content.md",
+    profile: str = "smoke",
+    whitelist_mode: str = "creative",
 ) -> ValidateConfig:
     base = FIXTURES / fixture
     return ValidateConfig(
@@ -41,11 +45,14 @@ def _cfg(
         content=(base / content) if content else None,
         catalog=CATALOG,
         accept=(base / accept) if accept else None,
+        freeze=(base / freeze) if freeze else None,
         genre_minima=genre_minima,
         root=REPO,
         font_path=REPO / "fonts",
         exception_no_brief=exception_no_brief,
         skip_compile=skip_compile,
+        profile=profile,
+        whitelist_mode=whitelist_mode,  # type: ignore[arg-type]
     )
 
 
@@ -63,15 +70,25 @@ class TestWhitelist(unittest.TestCase):
     def test_pass_minimal_forms(self):
         cat = load_catalog(CATALOG)
         src = (FIXTURES / "pass_minimal" / "chapter.typ").read_text(encoding="utf-8")
-        wl = check_whitelist(src, cat)
+        wl = check_whitelist(src, cat, mode="creative")
         self.assertTrue(wl.ok, wl.messages)
         for need in ("chapter-opener", "cave", "memo", "callout", "styled-table"):
             self.assertIn(need, wl.forms_ordered)
 
-    def test_unknown_and_planned_fail(self):
+    def test_unknown_and_planned_advisory_in_creative(self):
+        """Default creative mode: planned/custom warn but ok=True."""
         cat = load_catalog(CATALOG)
         src = (FIXTURES / "fail_unknown_form" / "chapter.typ").read_text(encoding="utf-8")
-        wl = check_whitelist(src, cat)
+        wl = check_whitelist(src, cat, mode="creative")
+        self.assertTrue(wl.ok)
+        self.assertTrue(wl.advisory)
+        self.assertIn("decision-table", wl.planned_used)
+        self.assertIn("mystery-widget", wl.unknown)
+
+    def test_unknown_and_planned_fail_in_strict(self):
+        cat = load_catalog(CATALOG)
+        src = (FIXTURES / "fail_unknown_form" / "chapter.typ").read_text(encoding="utf-8")
+        wl = check_whitelist(src, cat, mode="strict")
         self.assertFalse(wl.ok)
         self.assertIn("decision-table", wl.planned_used)
         self.assertIn("mystery-widget", wl.unknown)
@@ -177,6 +194,43 @@ class TestPosthoc(unittest.TestCase):
         self.assertIn("Post-hoc", ph.as_markdown())
 
 
+class TestFreezeGate(unittest.TestCase):
+    def test_valid_revision_forms(self):
+        self.assertTrue(is_valid_revision("git:a1b2c3d"))
+        self.assertTrue(
+            is_valid_revision(
+                "sha256:ad9ba29a2e3f99b1519a3ba859bb8ae634c9daeeda59c3493cedd49d72166b99"
+            )
+        )
+        self.assertFalse(is_valid_revision("2026-07-20"))
+        self.assertFalse(is_valid_revision("latest"))
+
+    def test_smoke_skips(self):
+        r = check_freeze(profile="smoke", freeze_path=None, typ_source="// no pin")
+        self.assertTrue(r.ok)
+        self.assertTrue(r.skipped)
+
+    def test_production_pass_fixture(self):
+        base = FIXTURES / "pass_freeze_production"
+        typ = (base / "chapter.typ").read_text(encoding="utf-8")
+        r = check_freeze(
+            profile="production",
+            freeze_path=base / "freeze.md",
+            typ_source=typ,
+            content_path=base / "content.md",
+        )
+        self.assertTrue(r.ok, r.messages)
+        self.assertEqual(
+            parse_revision(typ),
+            parse_revision((base / "freeze.md").read_text(encoding="utf-8")),
+        )
+
+    def test_production_requires_freeze(self):
+        r = check_freeze(profile="production", freeze_path=None, typ_source="// x")
+        self.assertFalse(r.ok)
+        self.assertTrue(any("next_checkpoint: H1" in m for m in r.messages))
+
+
 class TestRunnerFixtures(unittest.TestCase):
     def test_pass_minimal_green(self):
         report = run_validation(
@@ -193,9 +247,42 @@ class TestRunnerFixtures(unittest.TestCase):
         self.assertEqual(statuses["posthoc"], "pass")
         self.assertEqual(statuses["claims"], "pass")
         self.assertEqual(statuses["minima"], "pass")
+        self.assertEqual(statuses["freeze"], "skip")
 
-    def test_fail_unknown_form_red(self):
-        report = run_validation(_cfg("fail_unknown_form", skip_compile=True))
+    def test_pass_freeze_production_green(self):
+        report = run_validation(
+            _cfg(
+                "pass_freeze_production",
+                skip_compile=True,
+                freeze="freeze.md",
+                profile="production",
+            )
+        )
+        self.assertTrue(report.ok, report.render_text())
+        statuses = {c.name: c.status for c in report.checks}
+        self.assertEqual(statuses["freeze"], "pass")
+
+    def test_fail_freeze_production_red(self):
+        report = run_validation(
+            _cfg("fail_freeze_production", skip_compile=True, profile="production")
+        )
+        self.assertFalse(report.ok)
+        fr = next(c for c in report.checks if c.name == "freeze")
+        self.assertEqual(fr.status, "fail")
+
+    def test_unknown_form_advisory_green_creative(self):
+        """Default creative mode: planned/custom inventory is warn, not fail."""
+        report = run_validation(
+            _cfg("fail_unknown_form", skip_compile=True, whitelist_mode="creative")
+        )
+        self.assertTrue(report.ok, report.render_text())
+        wl = next(c for c in report.checks if c.name == "whitelist")
+        self.assertEqual(wl.status, "warn")
+
+    def test_unknown_form_red_strict(self):
+        report = run_validation(
+            _cfg("fail_unknown_form", skip_compile=True, whitelist_mode="strict")
+        )
         self.assertFalse(report.ok)
         wl = next(c for c in report.checks if c.name == "whitelist")
         self.assertEqual(wl.status, "fail")
