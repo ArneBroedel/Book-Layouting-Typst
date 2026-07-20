@@ -25,8 +25,8 @@ Media uses these as a **gatekeeper checklist** when writing the Media Brief. Tec
 |---|---|---|---|
 | F1 | **Gatekeeper / danger first** | Stop/act cue within the first screenful; cannot bury under prose or sources | `cave`, `memo` |
 | F2 | **Recognition triggers** | Scannable cues (signs, red flags), not a wall of prose | `callout`, `memo`, list/basis, short `styled-table` |
-| F3 | **Action / triage path** | Clear urgency → next action (branch or ordered path) | `styled-table`, `protocol-steps` *(planned)*, `callout` |
-| F4 | **Immediate measures** | Ordered steps preferred over dense narrative | `protocol-steps` *(planned)*, numbered list/basis, `callout` |
+| F3 | **Action / triage path** | Clear urgency → next action (branch or ordered path) | `styled-table`, `protocol-steps`, `callout` |
+| F4 | **Immediate measures** | Ordered steps preferred over dense narrative | `protocol-steps`, numbered list/basis, `callout` |
 | F5 | **Confusion / DDx (short)** | Brief “don’t confuse with …” — optional but preferred when clinically relevant | `ddx-box`, short comparison `styled-table` |
 | F6 | **Cross-links** | Compact, **de-emphasized** vs. action content; never before action path | basis list/links, `section-break` then compact list |
 | F7 | **Sources** | Compact; **de-emphasized** on early pages; never as opener | basis / trailing section |
@@ -79,7 +79,7 @@ Compose/validator (Produkt A) loads this YAML by genre id; this section document
 
 4. **Production whitelist** remains form-catalog core (`stable` + allowed basis).  
    Genre minima are **additional** constraints; they do not expand the whitelist.  
-   `planned` forms (e.g. `protocol-steps`) **cannot** pass production compose until promoted `stable` — Media may still list them as wishlist.
+   `planned` forms (e.g. `decision-table`) **cannot** pass production compose until promoted `stable` — Media may still list them as wishlist.
 
 ### Current values (must match YAML)
 
@@ -105,7 +105,7 @@ Media **must not** treat this as the only allowed ideation set. Tech uses it as 
 | Gatekeeper (F1) | `cave`, `memo` | Prefer single strong cue; avoid cave-spam |
 | Recognition (F2) | `callout`, `memo` | Short bullets ok via basis |
 | Action / triage (F3) | `styled-table` | Decision/urgency columns preferred over prose |
-| Measures (F4) | *(planned)* `protocol-steps`; interim: basis enum + `callout` | See wishlist |
+| Measures (F4) | `protocol-steps` | Numbered step weight; custom labels (e.g. 4a/4b) |
 | DDx (F5) | `ddx-box` | Keep short |
 | Structure | `section-break` | Separate action block from hintergrund/links |
 | Optional pearl | `clinical-pearl` | One max on a card; not instead of gatekeeper |
@@ -123,10 +123,10 @@ Media **must not** treat this as the only allowed ideation set. Tech uses it as 
 | `memo` | stable |
 | `cave` | stable |
 | `styled-table` | stable |
+| `protocol-steps` | **stable** (bookkit `0.1.0` form-catalog pin) |
 | `ddx-box` | stable |
 | `clinical-pearl` | stable |
 | `summary-box` | stable |
-| `protocol-steps` | **planned** (wishlist) |
 
 ---
 
@@ -134,10 +134,9 @@ Media **must not** treat this as the only allowed ideation set. Tech uses it as 
 
 | id | Why this genre wants it | Severity |
 |---|---|---|
-| `protocol-steps` | Numbered action protocol with visual step weight (not plain bullets) | high for F3/F4 |
-| *(future)* decision-table or triage-strip | Explicit urgency lanes if `styled-table` proves too generic | medium — only if pilots show gap |
+| `decision-table` / triage-strip | Explicit urgency lanes if `styled-table` proves too generic | medium — only if pilots show gap |
 
-Gaps become `catalog-gap` artifacts → core `planned` → `stable` after implementation. Until then: **approx** with Media Accept (e.g. enum + `callout`).
+Gaps become `catalog-gap` artifacts → core `planned` → `stable` after implementation. Until then: **approx** with Media Accept.
 
 ---
 
@@ -162,7 +161,7 @@ Fail review / Media Accept if these dominate — even when compile is green:
 | Role | Use |
 |---|---|
 | **Media** | Functional checklist for Brief sections; free ideal language first; may exceed recommended map |
-| **Tech** | Map Brief sections → form ids; mark `gap` for `protocol-steps` until stable |
+| **Tech** | Map Brief sections → form ids; prefer `protocol-steps` for ordered SOPs |
 | **Validator** | Load `*.minima.yaml`; enforce distinct/gatekeeper/sole-form rules; do **not** enforce recommended map as exclusive |
 | **Author** | Owns clinical content/claims — not form choice |
 

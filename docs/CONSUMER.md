@@ -22,7 +22,7 @@ Consumers pin **both**:
 |---|---|---|
 | **bookkit** (foundation) | `0.1.0` | `packages/bookkit/typst.toml` |
 | **bookkit-didactics** (optional facet) | `0.1.0` | `packages/bookkit-didactics/typst.toml` |
-| **form-catalog** | `0.1.0-dev` | `toolset/form-catalog/VERSION` (must match `core/forms.yaml` → `version:`) |
+| **form-catalog** | `0.1.0` | `toolset/form-catalog/VERSION` (must match `core/forms.yaml` → `version:`) |
 
 Pin policy details: [`toolset/form-catalog/README.md`](../toolset/form-catalog/README.md) § VERSION / pin policy.
 

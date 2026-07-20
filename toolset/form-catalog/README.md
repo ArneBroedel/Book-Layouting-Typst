@@ -31,14 +31,14 @@ Validator (compose) lädt: `core/forms.yaml` (+ optional domain overlay).
 | `toolset/form-catalog/VERSION` | Single-line catalog version string for consumers to pin |
 | `core/forms.yaml` → `version:` | **Must match** `VERSION` exactly |
 
-**Current:** `0.1.0-dev` — Wave-1 curation; not a release pin.
+**Current:** `0.1.0` — first pin-freeze after orchestration Waves 0–5 + `protocol-steps` stable.
 
 | When | Action |
 |---|---|
-| Draft / Wave work, recipes incomplete | keep `0.1.0-dev` |
-| First consumer-ready freeze (stable set + gap process + BASIS agreed) | bump to `0.1.0` in **both** files |
+| Draft / incomplete set | use `X.Y.Z-dev` |
+| Consumer-ready freeze (stable set + gap process + BASIS agreed) | release pin without `-dev` in **both** VERSION and forms.yaml |
 | Add/remove/rename form ids or change `stable` semantics | minor or major SemVer bump; document in commit |
-| Typos / purpose wording only | patch or stay on `-dev` while unreleased |
+| Typos / purpose wording only | patch bump |
 
 Consumers should pin catalog `VERSION` alongside bookkit package version
 (`packages/bookkit` → `typst.toml`, currently `0.1.0`).

@@ -28,27 +28,36 @@ The full system is described in `docs/KNOWLEDGE-MAP.md`. A track moves through:
    and almost never deleted.
 
 `devtracks/_archive/` therefore contains finished tracks; the top level of `devtracks/` contains
-only tracks with open work.
+only tracks with open work (plus durable governance docs that are not “feature tracks”).
 
-## Open tracks (snapshot)
+## Governance docs (stay at `devtracks/` root)
 
-### Publishing roles + platform boundaries (CONSENSUS v0.2)
-
-| Doc / Track | Zweck |
+| Doc | Zweck |
 |---|---|
-| [`ORCHESTRATION.md`](ORCHESTRATION.md) | **Implementierungs-Orchestrierung** (Waves, Subagents, Reviews, Exit E1–E12) |
+| [`ORCHESTRATION.md`](ORCHESTRATION.md) | Implementierungs-Orchestrierung (Waves, Reviews, E1–E12) — **complete 2026-07-20** |
 | [`CONSENSUS-v0.md`](CONSENSUS-v0.md) | Rollen, Workflow, ADR |
 | [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) | Produkte A/B/C, Repo-Schnitt, Interfaces |
-| [`platform-boundaries/`](platform-boundaries/) | Vorbereitung, Split-Checklist, Governance |
-| [`form-catalog/`](form-catalog/) | Katalog **core** (`toolset/form-catalog/`) |
-| [`media-design/`](media-design/) | Media-Rolle → **`domains/medical/`** (B) |
-| [`compose-pipeline/`](compose-pipeline/) | Tech-Engine → **`toolset/compose/`** (A) |
+| [`ROLES-AND-FLOW.md`](ROLES-AND-FLOW.md) | Rollen-Kurzform |
+| [`_orchestration/`](_orchestration/) | Board, audits (runtime notes) |
 
-**Ablauf:** Content (C) → Media Brief (B) → Feasibility/Spike (A) → Accept (B) → Compose/Validate (A) → PDF.
+## Open tracks
 
-**Generalisierbarkeit:** A ohne Content-SoT; Medizin unter `domains/medical/` auslagerbar.  
-**Workspace UX:** `workspaces/kursbuch-layout.code-workspace`.
+*(none for v0.2 platform spine — harvested 2026-07-20)*
 
-**Superseded:** `presentation-pipeline/`, `didactic-media/`, `plan-driven-layout/`.
+Runtime products (not tracks):
 
-Recently archived: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx` (see `_archive/`).
+| Product | Path |
+|---|---|
+| **A** form-catalog / compose / bookkit | `toolset/form-catalog/`, `toolset/compose/`, `packages/bookkit*` |
+| **B** medical media | `domains/medical/` |
+| **C** content | external (e.g. Kursbuch) |
+
+**Flow:** Content (C) → Media Brief (B) → Feasibility/Spike (A) → Accept (B) → Compose/Validate (A) → PDF.
+
+**Consumer guide:** [`docs/CONSUMER.md`](../docs/CONSUMER.md).  
+**Pilot dogfood:** `pilots/kursbuch-welle-03-compose/`.
+
+**Superseded (provenance only, not implementation):** `presentation-pipeline/`, `didactic-media/`, `plan-driven-layout/`.
+
+**Recently archived (v0.2):** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` under `_archive/`.  
+Earlier: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx`, …

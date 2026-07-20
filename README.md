@@ -69,7 +69,7 @@ Guides/                  ← Typst-Referenzmaterial
 This repo is a **layout platform** (bookkit + form-catalog + compose), not a content SoT.
 
 - **Consumer guide:** [`docs/CONSUMER.md`](docs/CONSUMER.md) — pins, imports, fonts, validate CLI, skills, external content.
-- **Pins (current):** bookkit `0.1.0` (`packages/bookkit/typst.toml`); form-catalog `0.1.0-dev` (`toolset/form-catalog/VERSION`).
+- **Pins (current):** bookkit `0.1.0` (`packages/bookkit/typst.toml`); form-catalog `0.1.0` (`toolset/form-catalog/VERSION`).
 - **Starter:** `toolset/starter/` · **CLI:** `./scripts/bookkit` · **Dogfood pilot:** `pilots/kursbuch-welle-03-compose/` (not content SoT).
 
 ## Wichtige Prinzipien

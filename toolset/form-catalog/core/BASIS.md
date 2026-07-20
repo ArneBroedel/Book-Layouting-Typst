@@ -12,7 +12,7 @@ Keep this list short. Prefer a catalog form over inventing layout chrome.
 | Headings via markup `=`, `==`, `===` or `#heading` | Structure only. **Do not** re-emit level-1 if `chapter-opener` already owns it. |
 | Paragraphs, soft line breaks | Body prose |
 | `#emph`, `#strong`, `#underline` (sparingly) | Inline emphasis |
-| Lists: `-`, `+`, `1.` / `#list` / `#enum` | Simple lists only — **not** a substitute for planned `protocol-steps` |
+| Lists: `-`, `+`, `1.` / `#list` / `#enum` | Simple lists only — prefer catalog `protocol-steps` for SOPs / algorithms |
 | `#link`, `#ref`, `#label`, `#cite`, `#bibliography` | Cross-refs / literature engines (presentation may later get `reference-list`) |
 | `#pagebreak` / `#colbreak` | Sparingly; prefer spread helpers for intentional double-pages |
 | `#import` of `bookkit` / `bookkit-didactics` | Package surface only — pin versions in consumer |

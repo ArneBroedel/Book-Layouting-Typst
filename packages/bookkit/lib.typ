@@ -30,6 +30,7 @@
   card,
   code-block,
   key-concept,
+  protocol-steps,
   pull-quote,
   side-note,
 )

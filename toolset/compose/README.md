@@ -85,7 +85,7 @@ Fixtures under `toolset/compose/fixtures/`:
 | Fixture | Expected |
 |---|---|
 | `pass_minimal` | green (whitelist + claims + accept + minima; compile if typst present) |
-| `fail_unknown_form` | red — planned `protocol-steps` + `mystery-widget` |
+| `fail_unknown_form` | red — planned `decision-table` + `mystery-widget` |
 | `fail_no_accept` | red — accept not authorized |
 | `fail_claims` | red — critical claims missing in `.typ` |
 

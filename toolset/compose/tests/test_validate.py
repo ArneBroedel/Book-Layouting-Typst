@@ -55,7 +55,7 @@ class TestCatalog(unittest.TestCase):
         self.assertTrue(cat.version)
         self.assertIn("chapter-opener", cat.stable_ids)
         self.assertIn("cave", cat.stable_ids)
-        self.assertIn("protocol-steps", cat.planned_ids)
+        self.assertIn("decision-table", cat.planned_ids)
         self.assertEqual(cat.by_function["chapter-opener"].status, "stable")
 
 
@@ -73,7 +73,7 @@ class TestWhitelist(unittest.TestCase):
         src = (FIXTURES / "fail_unknown_form" / "chapter.typ").read_text(encoding="utf-8")
         wl = check_whitelist(src, cat)
         self.assertFalse(wl.ok)
-        self.assertIn("protocol-steps", wl.planned_used)
+        self.assertIn("decision-table", wl.planned_used)
         self.assertIn("mystery-widget", wl.unknown)
 
     def test_extract_calls_ignores_comments(self):

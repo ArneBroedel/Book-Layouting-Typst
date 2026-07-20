@@ -14,7 +14,7 @@
 
 ## Out of scope (frozen)
 
-- Repo-Split Phase 3 (deferred — see `platform-boundaries/PHASE3-DEFERRED.md`)
+- Repo-Split Phase 3 (deferred — see `_archive/platform-boundaries/PHASE3-DEFERRED.md`)
 - Auto-heal / self-healing compile loops
 - YAML-Assembler as primary path
 - Content-MD copies into `src/` or `packages/`
@@ -116,3 +116,10 @@
 - boundaries audit: Phase 1+2 done; Phase 3 deferred
 - harvest footers on track plans
 - FINAL Review 5.3: APPROVE_WITH_NITS — **orchestration complete**
+
+### Follow-up (2026-07-20) — post-orchestration next steps
+
+1. **Archived tracks:** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` → `devtracks/_archive/`
+2. **`protocol-steps`:** implemented in `packages/bookkit`, promoted **stable**; catalog **0.1.0** pin-freeze
+3. **E2E III-2:** full path + report; III-5 upgraded to real `protocol-steps`
+4. Tests: 24/24 OK; forms check stable=32 planned=4

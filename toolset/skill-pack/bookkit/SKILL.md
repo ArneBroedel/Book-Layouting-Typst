@@ -51,7 +51,7 @@ bookkit build --root . --entry main.typ
 |---|---|
 | Tokens | `palette`, `gradients`, `type-scale`, `space`, `fonts`, `part-colors`, `didactics`, `evidence`, `legal` |
 | Setup | `setup-typography`, `setup-pages` |
-| Blocks | `callout`, `card`, `blockquote`, `pull-quote`, `side-note`, `code-block`, `key-concept` |
+| Blocks | `callout`, `card`, `blockquote`, `pull-quote`, `side-note`, `code-block`, `key-concept`, `protocol-steps` |
 | Inline | `badge`, `tag`, `kbd`, `evidence-badge`, `loe-badge`, `qty`, `qty-range` |
 | Tables/grids | `styled-table`, `comparison-table`, `long-table`, `score-table`, … |
 | Layouts | `sidebar-layout`, `magazine-layout`, `scientific-paper`, `margin-note`, … |
@@ -76,6 +76,24 @@ Foundation does **not** require this facet.
 
 Required YAML fields: `title`, `genre`, `language`, `author`. Validate with `bookkit brief-check` or `bookkit doctor`.
 
+## protocol-steps (catalog form)
+
+Numbered action protocol with visual step weight — prefer over plain `#enum` for SOPs / algorithms:
+
+```typst
+#protocol-steps(
+  title: [Sofortmaßnahmen],
+  tone: "danger", // info | success | warning | danger
+  (
+    [First step],
+    (label: "4a", body: [Branch A]),
+    (label: "4b", body: [Branch B]),
+  ),
+)
+```
+
+`steps` items are content or dictionaries `{label, body}`. Form id: `protocol-steps` (stable in form-catalog `0.1.0`).
+
 ## Anti-patterns
 
 - Cloning studio `src/chapters` or `research/` into a consumer
@@ -83,6 +101,7 @@ Required YAML fields: `title`, `genre`, `language`, `author`. Validate with `boo
 - Building without `--ignore-system-fonts --font-path fonts`
 - Putting didactic box implementations into foundation consumers when a facet import exists
 - Assuming MCP holds skill text — skills are file-first
+- Using plain bullets for multi-step clinical SOPs when `protocol-steps` is available
 
 ## CLI
 

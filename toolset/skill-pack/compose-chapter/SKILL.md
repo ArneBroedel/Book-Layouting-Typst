@@ -117,7 +117,7 @@ Only after **Accept = yes** (or documented exception).
 
 ```typst
 // compose-chapter
-// catalog_version: 0.1.0-dev
+// catalog_version: 0.1.0
 // brief: <path>
 // feasibility: <path>
 // accept: <path>

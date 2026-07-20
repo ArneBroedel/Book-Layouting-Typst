@@ -2,7 +2,7 @@
 # version mirrors ../VERSION
 # ADR: only `stable` when a real public export exists in package lib.typ.
 # Medical genre recipes: domains/medical/recipes/ (not here).
-version: "0.1.0-dev"
+version: "0.1.0"
 description: >
   Generic + shared forms mapped to bookkit public APIs. Curation over
   completeness: high-value production forms only. Medical genre recipes
@@ -262,15 +262,15 @@ forms:
     package: bookkit-didactics
     params: "title? (default Lösungsschlüssel)"
 
-  # ── Planned gaps (no dedicated public helper yet) ─────────────
   - id: protocol-steps
-    status: planned
+    status: stable
     purpose: "Numbered action protocol (ordered clinical/technical steps)"
     when: "SOP / algorithm as explicit steps, not a plain bullet list"
-    api: "TBD — list pattern alone is insufficient; dedicated helper desired"
-    package: planned
-    params: "steps[], title?, urgency?"
+    api: "bookkit.protocol-steps"
+    package: bookkit
+    params: "steps[] (content or {label, body}), title?, tone?"
 
+  # ── Planned gaps (no dedicated public helper yet) ─────────────
   - id: decision-table
     status: planned
     purpose: "If/then decision matrix (criteria → action)"

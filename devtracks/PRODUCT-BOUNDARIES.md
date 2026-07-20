@@ -2,7 +2,7 @@
 
 **Status:** accepted direction (2026-07-20)  
 **Ergänzt:** [`CONSENSUS-v0.md`](CONSENSUS-v0.md) (Rollen/Workflow)  
-**Track:** [`platform-boundaries/`](platform-boundaries/)
+**Track (archived):** [`_archive/platform-boundaries/`](_archive/platform-boundaries/) · Phase 3 deferred note there
 
 ---
 

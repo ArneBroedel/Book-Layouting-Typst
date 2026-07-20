@@ -1,5 +1,5 @@
 // compose-chapter
-// catalog_version: 0.1.0-dev
+// catalog_version: 0.1.0
 // brief: domains/medical/briefs/iii5-cauda-notfallkarte.brief.md
 // feasibility: domains/medical/briefs/iii5-cauda-notfallkarte.feasibility.md
 // accept: domains/medical/briefs/iii5-cauda-notfallkarte.accept.md
@@ -99,20 +99,24 @@
 // ── S4 Sofortmaßnahmen (F4, approx protocol-steps) ─────────────
 == Sofortmaßnahmen vor Ort (nur Organisation / Erste Hilfe)
 
-#callout(title: [Protokoll — Reihenfolge einhalten], tone: "danger")[
-  + Therapie *sofort abbrechen* — *keine* HVT/Manipulation, *keine* Traktion,
-    *keine* mobilisierende LWS-Technik
-  + Patient *nicht* aufstehen/gehen lassen, wenn Schwäche oder Blasennot;
-    ruhig lagern, überwachen
-  + *112* bzw. organisierten ED-Transport; Übergabe: Sattel/Blase/Darm/Beinkraft,
-    Zeitverlauf, Antikoagulation/OP/Trauma
-  + Orientierende *nicht-invasive* Prüfung nur soweit sie den Transport *nicht*
-    verzögert (Sensibilität inkl. S3–S5-Frage, grobe Kraft, MER) — *keine*
-    invasive Restharnmessung / Sphinkterprüfung als PT-Pflicht
-  + Bei Kollaps/Bewusstseinsstörung: BLS-Pfad `→ III-2`
-  + *Keine* Eigen-Medikation, *kein* „Schmerz wegmassieren“, *kein* Termin
-    „morgen früh, wenn es schlimmer wird“ bei Sattel-/Sphinkter-Flag
-]
+#protocol-steps(
+  title: [Protokoll — Reihenfolge einhalten],
+  tone: "danger",
+  (
+    [Therapie *sofort abbrechen* — *keine* HVT/Manipulation, *keine* Traktion,
+      *keine* mobilisierende LWS-Technik],
+    [Patient *nicht* aufstehen/gehen lassen, wenn Schwäche oder Blasennot;
+      ruhig lagern, überwachen],
+    [*112* bzw. organisierten ED-Transport; Übergabe: Sattel/Blase/Darm/Beinkraft,
+      Zeitverlauf, Antikoagulation/OP/Trauma],
+    [Orientierende *nicht-invasive* Prüfung nur soweit sie den Transport *nicht*
+      verzögert (Sensibilität inkl. S3–S5-Frage, grobe Kraft, MER) — *keine*
+      invasive Restharnmessung / Sphinkterprüfung als PT-Pflicht],
+    [Bei Kollaps/Bewusstseinsstörung: BLS-Pfad `→ III-2`],
+    [*Keine* Eigen-Medikation, *kein* „Schmerz wegmassieren“, *kein* Termin
+      „morgen früh, wenn es schlimmer wird“ bei Sattel-/Sphinkter-Flag],
+  ),
+)
 
 // ── S5 Verwechslungen (F5) ─────────────────────────────────────
 #ddx-box(title: [Häufige Verwechslungen (kurz)])[

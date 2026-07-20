@@ -2,7 +2,8 @@
 
 **Zweck:** Steuerungsgrundlage für einen **Orchestrator-Agenten** (oder Menschen in derselben Rolle), der die offenen Devtracks und den **Publishing-Roles-Workflow (CONSENSUS v0.2)** bis zur Abnahme umsetzt.
 
-**Status:** ready for orchestration (2026-07-20)  
+**Status:** **complete** (2026-07-20) — Waves 0–5 exited; E1–E12 met (Phase 3 split deferred).  
+Board: [`_orchestration/board.md`](_orchestration/board.md).  
 **Nicht:** selbst die Feature-Implementierung — nur Reihenfolge, Kontexte, Subagents, Reviews, Exit-Kriterien.
 
 ---

@@ -1,5 +1,5 @@
 // compose fixture: pass_minimal
-// catalog_version: 0.1.0-dev
+// catalog_version: 0.1.0
 // Synthetic didactic sample — not Kursbuch content SoT.
 
 #import "/packages/bookkit/lib.typ": *

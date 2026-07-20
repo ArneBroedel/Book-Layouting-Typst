@@ -106,17 +106,16 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 ### Active / recent tracks
 
 **v0.2** — see `devtracks/CONSENSUS-v0.md` + `devtracks/PRODUCT-BOUNDARIES.md`.  
-**Full implementation control plane:** `devtracks/ORCHESTRATION.md` (waves, subagents, reviews, E1–E12).
+**Orchestration complete** (Waves 0–5, E1–E12): `devtracks/ORCHESTRATION.md` + `_orchestration/board.md`.
 
-| Track / area | Product | Path |
+| Area | Product | Path |
 |---|---|---|
 | Layout platform (this repo) | **A** | `packages/`, `toolset/` |
-| `form-catalog` | A core | `toolset/form-catalog/core/` |
-| `compose-pipeline` | A engine | `toolset/compose/` |
-| `media-design` / medical domain | **B** | `domains/medical/` (split candidate) |
+| form-catalog core | A | `toolset/form-catalog/core/` (pin `VERSION` = `0.1.0`) |
+| compose engine | A | `toolset/compose/` |
+| medical domain media | **B** | `domains/medical/` (split candidate; Phase 3 deferred) |
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
-| `platform-boundaries` | meta | prep + split readiness |
-| Orchestration | meta | `devtracks/ORCHESTRATION.md` |
+| Consumer guide | A | `docs/CONSUMER.md` |
 
 **Flow:** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.
 
@@ -124,9 +123,9 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 
-Superseded specs: `presentation-pipeline`, `didactic-media`, `plan-driven-layout`.
+Superseded specs (not implementation plans): `presentation-pipeline`, `didactic-media`, `plan-driven-layout`.
 
-**Archived:** toolset MVP etc. under `devtracks/_archive/`.
+**Archived (harvested):** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries`, plus earlier tracks under `devtracks/_archive/`.
 
 
 ## Working conventions

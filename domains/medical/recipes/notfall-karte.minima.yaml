@@ -6,7 +6,7 @@
 
 genre: notfall-karte
 schema_version: "0.1"
-catalog_version_hint: "0.1.0-dev"
+catalog_version_hint: "0.1.0"
 
 # Minimum distinct catalog form ids in production .typ (basis does not count).
 distinct_forms_min: 4
@@ -36,6 +36,7 @@ recommended_forms:
   - memo
   - callout
   - styled-table
+  - protocol-steps
   - ddx-box
   - section-break
   - clinical-pearl
@@ -43,4 +44,4 @@ recommended_forms:
 
 # Catalog ids often wished for this genre; production only after status=stable.
 planned_wishlist:
-  - protocol-steps
+  - decision-table

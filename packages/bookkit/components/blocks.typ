@@ -216,3 +216,76 @@
     },
   )
 }
+
+// ── Protocol-steps ─────────────────────────────────────────────
+// Numbered action protocol with visual step weight (catalog form).
+// Prefer this over plain enum for SOPs / algorithms under stress scan.
+//
+// `steps` is an array of either:
+//   - content (auto-numbered 1…n), or
+//   - dictionary: (label: "4a", body: [...])  — branch / custom step ids
+//
+// tone: "info" | "success" | "warning" | "danger"
+#let protocol-steps(
+  steps,
+  title: none,
+  tone: "info",
+) = {
+  let tone-color = if tone == "info" { palette.info } else if tone == "success" { palette.success } else if (
+    tone == "warning"
+  ) { palette.warning } else { palette.danger }
+
+  let rows = ()
+  for (i, step) in steps.enumerate() {
+    let label = str(i + 1)
+    let body = step
+    if type(step) == dictionary {
+      if "label" in step {
+        label = str(step.label)
+      }
+      body = step.at("body", default: [])
+    }
+    rows.push((label, body))
+  }
+
+  block(
+    width: 100%,
+    inset: (left: space.lg + 4pt, rest: space.md),
+    fill: tone-color.lighten(92%),
+    stroke: (left: 3pt + tone-color),
+    radius: (right: 4pt),
+    breakable: true,
+    above: space.lg,
+    below: space.lg,
+    {
+      if title != none {
+        set text(weight: "bold", fill: tone-color.darken(20%), font: fonts.sans)
+        title
+        v(space.sm)
+      }
+      for (label, body) in rows {
+        grid(
+          columns: (auto, 1fr),
+          column-gutter: space.sm,
+          row-gutter: space.sm,
+          align: (center + top, top),
+          box(
+            width: 1.65em,
+            height: 1.65em,
+            fill: tone-color,
+            radius: 3pt,
+            align(center + horizon, text(
+              fill: white,
+              weight: "bold",
+              size: type-scale.small,
+              font: fonts.sans,
+              label,
+            )),
+          ),
+          body,
+        )
+        v(space.xs)
+      }
+    },
+  )
+}

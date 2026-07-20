@@ -1,7 +1,7 @@
 # Fixture-local minima (copy of shape from domains/medical; path is caller-supplied)
 genre: fixture-notfall
 schema_version: "0.1"
-catalog_version_hint: "0.1.0-dev"
+catalog_version_hint: "0.1.0"
 distinct_forms_min: 4
 early_gatekeeper_forms:
   - cave

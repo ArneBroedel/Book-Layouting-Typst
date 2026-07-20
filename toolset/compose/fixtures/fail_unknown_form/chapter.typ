@@ -10,9 +10,8 @@
 #chapter-opener(title: [Unbekannte Form])
 
 // Planned catalog id — not production-legal until stable
-#protocol-steps[
-  1. Schritt A
-  2. Schritt B
+#decision-table[
+  Wenn A → B
 ]
 
 // Purely invented form-like call
