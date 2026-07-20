@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Provision skill-pack into multi-agent discovery paths.
-# Source of truth: studio .github/skills (generic) + toolset/skill-pack/bookkit
+# SoT map:
+#   bookkit          → toolset/skill-pack/bookkit  (Produkt A)
+#   compose-chapter  → toolset/skill-pack/compose-chapter  (Produkt A)
+#   media-brief      → domains/medical/skill/media-brief  (Produkt B; skill-pack may symlink)
+#   generic          → studio .github/skills/*
 set -euo pipefail
 Root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 Target="${1:-.}"
@@ -15,19 +19,52 @@ link_or_copy() {
   ln -s "$src" "$dest" 2>/dev/null || cp -a "$src" "$dest"
 }
 
-# Package skill
-link_or_copy "$Root/toolset/skill-pack/bookkit" "$Target/.github/skills/bookkit"
-link_or_copy "$Target/.github/skills/bookkit" "$Target/.grok/skills/bookkit"
-link_or_copy "$Target/.github/skills/bookkit" "$Target/.agents/skills/bookkit"
-link_or_copy "$Target/.github/skills/bookkit" "$Target/.claude/skills/bookkit"
+# Resolve a skill directory preferring an explicit SoT, then skill-pack symlink/copy
+resolve_skill_src() {
+  local name="$1"
+  shift
+  local candidate
+  for candidate in "$@"; do
+    if [[ -d "$candidate" ]]; then
+      echo "$candidate"
+      return 0
+    fi
+  done
+  return 1
+}
+
+provision_skill() {
+  local name="$1"
+  local src="$2"
+  link_or_copy "$src" "$Target/.github/skills/$name"
+  link_or_copy "$Target/.github/skills/$name" "$Target/.grok/skills/$name"
+  link_or_copy "$Target/.github/skills/$name" "$Target/.agents/skills/$name"
+  link_or_copy "$Target/.github/skills/$name" "$Target/.claude/skills/$name"
+}
+
+# Package skill (A)
+if src="$(resolve_skill_src bookkit \
+    "$Root/toolset/skill-pack/bookkit")"; then
+  provision_skill bookkit "$src"
+fi
+
+# Tech compose skill (A) — SoT under skill-pack
+if src="$(resolve_skill_src compose-chapter \
+    "$Root/toolset/skill-pack/compose-chapter")"; then
+  provision_skill compose-chapter "$src"
+fi
+
+# Domain Media skill (B) — SoT under domains/medical; skill-pack may hold a symlink
+if src="$(resolve_skill_src media-brief \
+    "$Root/domains/medical/skill/media-brief" \
+    "$Root/toolset/skill-pack/media-brief")"; then
+  provision_skill media-brief "$src"
+fi
 
 # Generic skills from studio (if present)
 for s in typst-writer typst-extension pinit-workflow; do
   if [[ -d "$Root/.github/skills/$s" ]]; then
-    link_or_copy "$Root/.github/skills/$s" "$Target/.github/skills/$s"
-    link_or_copy "$Target/.github/skills/$s" "$Target/.grok/skills/$s"
-    link_or_copy "$Target/.github/skills/$s" "$Target/.agents/skills/$s"
-    link_or_copy "$Target/.github/skills/$s" "$Target/.claude/skills/$s"
+    provision_skill "$s" "$Root/.github/skills/$s"
   fi
 done
 

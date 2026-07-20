@@ -43,14 +43,18 @@ Project skills encode hard-won conventions and **supersede general Typst advice*
 | `typst-writer` | Any `.typ` create/edit, compile-error fix, layout-defect debug |
 | `typst-extension` | Any `@preview` import, JSON/CSV data, `typst.toml`/CI, package choice |
 | `bookkit` | Importing bookkit packages, starter/CLI consumer work, design-brief/presets |
+| `compose-chapter` | Tech compose: feasibility note, catalog-whitelist `chapter.typ`, spike, validate chapter (Produkt A) — **not** free didactic ideal / gold brief |
+| `media-brief` | Media Brief, free didactic media design, gold brief, Accept after feasibility/spike (Produkt B) — **not** production `.typ` |
 | `pinit-workflow` | Any `#pin*` / pinit annotation work |
 | `skill-creator` | Create, improve, evaluate, or harvest skills |
 
-**Canonical bodies:** `.github/skills/<name>/` (shared source of truth for all tools).
+**Canonical bodies:** platform skills under `.github/skills/<name>/` (or `toolset/skill-pack/` for bookkit / compose-chapter).  
+**Domain exception:** `media-brief` SoT is `domains/medical/skill/media-brief/`; discovery paths
+(`.github/skills/media-brief`, `.grok/skills/media-brief`, `toolset/skill-pack/media-brief`) are symlinks.
 
 **Grok discovery:** Grok does **not** scan `.github/skills/` by default. Project skills are exposed
-via relative symlinks under `.grok/skills/` → `../../.github/skills/…`. Edit the files under
-`.github/skills/` only; never fork a second copy under `.grok/`.
+via relative symlinks under `.grok/skills/`. Edit the SoT body only (platform: `.github/skills/` or
+skill-pack; media-brief: `domains/medical/skill/…`); never fork a second copy under `.grok/`.
 
 ## Build (always reproducible flags)
 

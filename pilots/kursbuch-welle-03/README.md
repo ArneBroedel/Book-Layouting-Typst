@@ -33,5 +33,5 @@ python3 pilots/kursbuch-welle-03/convert_md_to_typ.py
 ## Product boundary note
 
 This pilot is a **consumer/dogfood** of platform A + (future) domain B.  
-**Content SoT** remains the Kursbuch staging path (Produkt C), not files under `src/`.  
-See `devtracks/PRODUCT-BOUNDARIES.md`.
+**Content path external (Produkt C)** — SoT remains the Kursbuch staging path, not files under `src/`.  
+See `devtracks/PRODUCT-BOUNDARIES.md` and platform consumer guide `docs/CONSUMER.md`.

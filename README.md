@@ -64,11 +64,20 @@ Guides/                  ← Typst-Referenzmaterial
    - VS Code Task: `typst: build (fast)`
    - oder PowerShell: `./scripts/build.ps1`
 
+## Using this platform from another repo
+
+This repo is a **layout platform** (bookkit + form-catalog + compose), not a content SoT.
+
+- **Consumer guide:** [`docs/CONSUMER.md`](docs/CONSUMER.md) — pins, imports, fonts, validate CLI, skills, external content.
+- **Pins (current):** bookkit `0.1.0` (`packages/bookkit/typst.toml`); form-catalog `0.1.0-dev` (`toolset/form-catalog/VERSION`).
+- **Starter:** `toolset/starter/` · **CLI:** `./scripts/bookkit` · **Dogfood pilot:** `pilots/kursbuch-welle-03-compose/` (not content SoT).
+
 ## Wichtige Prinzipien
 
 - Reproduzierbar: `--ignore-system-fonts --font-path fonts`
 - Trennung der Zuständigkeiten:
   - `src/` = Buchlogik (Kapitel, Komponenten, Styles, Daten)
+  - `packages/` = consumable runtime (bookkit / bookkit-didactics)
   - `assets/` = Bilder/Tabellenquellen
   - `dist/` = Build-Artefakte (nicht versionieren)
 

@@ -1,0 +1,46 @@
+# Machine-readable genre minima — notfall-karte (Produkt B)
+# Loaded by compose validator (Produkt A) via genre id.
+# Human docs + field semantics: notfall-karte.md
+#
+# Schema is intentionally small (v0). Bump schema_version on breaking field changes.
+
+genre: notfall-karte
+schema_version: "0.1"
+catalog_version_hint: "0.1.0-dev"
+
+# Minimum distinct catalog form ids in production .typ (basis does not count).
+distinct_forms_min: 4
+
+# At least one of these must appear in the early window.
+early_gatekeeper_forms:
+  - cave
+  - memo
+
+# How "early" is measured for gatekeeper check.
+early_window:
+  mode: first_n_catalog_forms
+  n: 3
+
+# If the set of used catalog forms is a subset of this list only → fail.
+# Prevents "only styled-table (+ body)" monotony.
+forbidden_sole_forms:
+  - styled-table
+
+# Explicit alias for the table-only rule (validator may treat as soft doc flag).
+forbid_only_table_body: true
+
+# Soft recommendations for Media/Tech — NOT an exclusive production whitelist.
+recommended_forms:
+  - chapter-opener
+  - cave
+  - memo
+  - callout
+  - styled-table
+  - ddx-box
+  - section-break
+  - clinical-pearl
+  - summary-box
+
+# Catalog ids often wished for this genre; production only after status=stable.
+planned_wishlist:
+  - protocol-steps

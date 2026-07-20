@@ -1,77 +1,307 @@
-# form-catalog core — stub (Track form-catalog fills this)
+# form-catalog core — curated public bookkit / bookkit-didactics surface
 # version mirrors ../VERSION
+# ADR: only `stable` when a real public export exists in package lib.typ.
+# Medical genre recipes: domains/medical/recipes/ (not here).
 version: "0.1.0-dev"
 description: >
-  Generic + shared bookkit forms. Medical genre recipes live under
-  domains/medical/recipes/. Status: stable | planned | deprecated.
+  Generic + shared forms mapped to bookkit public APIs. Curation over
+  completeness: high-value production forms only. Medical genre recipes
+  live under domains/medical/recipes/. Status: stable | planned | deprecated.
 
-# Minimal seed so validators/docs have a shape; expand in form-catalog track.
 forms:
+  # ── Structure / spreads (bookkit) ─────────────────────────────
   - id: chapter-opener
     status: stable
-    purpose: "Level-1 chapter start; owns heading"
+    purpose: "Level-1 chapter start; owns the heading (do not re-emit = title)"
+    when: "First visual unit of a chapter; title + optional lead"
     api: "bookkit.chapter-opener"
     package: bookkit
+    params: "title, lead?, number? (auto from heading counter)"
+
+  - id: part-page
+    status: stable
+    purpose: "Full-page part divider between book parts"
+    when: "Start of a numbered Teil / Part"
+    api: "bookkit.part-page"
+    package: bookkit
+    params: "number?, title?"
+
   - id: section-break
     status: stable
-    purpose: "Intra-chapter visual divider"
+    purpose: "Intra-chapter visual divider (not a heading)"
+    when: "Major thematic break inside a chapter without a new H1"
     api: "bookkit.section-break"
     package: bookkit
+    params: "(none)"
+
+  - id: feature-spread
+    status: stable
+    purpose: "Two facing pages as one visual unit"
+    when: "Case double-page, overview left / detail right"
+    api: "bookkit.feature-spread"
+    package: bookkit
+    params: "left-page, right-page, title?"
+
+  # ── Blocks (bookkit) ──────────────────────────────────────────
   - id: callout
     status: stable
-    purpose: "Semantic admonition"
+    purpose: "Semantic admonition with tone accent (info/success/warning/danger)"
+    when: "Generic note/warn/tip that is not a didactic genre box"
     api: "bookkit.callout"
     package: bookkit
-  - id: memo
+    params: "body, title?, tone? (info|success|warning|danger), icon?"
+
+  - id: key-concept
     status: stable
-    purpose: "Key takeaway box"
-    api: "bookkit-didactics.memo"
-    package: bookkit-didactics
-  - id: cave
+    purpose: "Highlighted key term / concept box (foundation, non-medical)"
+    when: "Core idea the reader must retain; prefer over plain bold"
+    api: "bookkit.key-concept"
+    package: bookkit
+    params: "body, term?"
+
+  - id: pull-quote
     status: stable
-    purpose: "Warning / contraindication box"
-    api: "bookkit-didactics.cave"
-    package: bookkit-didactics
+    purpose: "Large editorial quote that breaks visual rhythm"
+    when: "Memorable line or chapter motto; use sparingly"
+    api: "bookkit.pull-quote"
+    package: bookkit
+    params: "body, attribution?"
+
+  - id: blockquote
+    status: stable
+    purpose: "Styled quotation with left border and optional attribution"
+    when: "Cited prose shorter/quieter than a pull-quote"
+    api: "bookkit.blockquote"
+    package: bookkit
+    params: "body, attribution?"
+
+  - id: card
+    status: stable
+    purpose: "Elevated content card with optional header accent"
+    when: "Self-contained fact block, profile, or mini-panel in a grid"
+    api: "bookkit.card"
+    package: bookkit
+    params: "body, title?, accent?, width?"
+
+  - id: side-note
+    status: stable
+    purpose: "Compact supplementary annotation in the main column"
+    when: "Aside that is not important enough for a callout"
+    api: "bookkit.side-note"
+    package: bookkit
+    params: "body, title?"
+
+  - id: code-block
+    status: stable
+    purpose: "Formatted code / monospace display with optional title bar"
+    when: "Algorithms, CLI, structured pseudocode"
+    api: "bookkit.code-block"
+    package: bookkit
+    params: "body, title?"
+
+  # ── Tables (bookkit) ──────────────────────────────────────────
   - id: styled-table
     status: stable
-    purpose: "Styled data table"
+    purpose: "Base data table with header styling and zebra rows"
+    when: "Default tabular data (not a decision/protocol matrix)"
     api: "bookkit.styled-table"
     package: bookkit
+    params: "..table args (columns, header cells, body cells)"
+
+  - id: comparison-table
+    status: stable
+    purpose: "Side-by-side feature / option comparison"
+    when: "Compare entities by fixed columns (A vs B vs C)"
+    api: "bookkit.comparison-table"
+    package: bookkit
+    params: "headers: (), rows: ()"
+
+  - id: reference-table
+    status: stable
+    purpose: "Reference / lab-value table with deviation highlighting"
+    when: "Norm ranges, measured values, flag columns"
+    api: "bookkit.reference-table"
+    package: bookkit
+    params: "see package docs (columns + flag meta)"
+
+  - id: score-table
+    status: stable
+    purpose: "Scoring / points table for clinical or exam scores"
+    when: "Score items with points and totals"
+    api: "bookkit.score-table"
+    package: bookkit
+    params: "see package (items / points layout)"
+
+  - id: long-table
+    status: stable
+    purpose: "Multi-page table with repeating header"
+    when: "Tables that must break across pages"
+    api: "bookkit.long-table"
+    package: bookkit
+    params: "..table args; wrap header in table.header(...)"
+
+  # ── Grids / layout helpers (bookkit) ──────────────────────────
+  - id: feature-grid
+    status: stable
+    purpose: "Icon + title + body cards in a responsive grid"
+    when: "3–6 equal feature tiles (overview of facets)"
+    api: "bookkit.feature-grid"
+    package: bookkit
+    params: "features (icon/title/body), column-count? (default 3)"
+
+  - id: stats-grid
+    status: stable
+    purpose: "KPI / key-number grid with large figures"
+    when: "Highlight 2–6 headline metrics"
+    api: "bookkit.stats-grid"
+    package: bookkit
+    params: "stats, column-count? (auto)"
+
+  - id: margin-note
+    status: stable
+    purpose: "True margin annotation (marginalia)"
+    when: "Peripheral remark; requires margin-setup on the page"
+    api: "bookkit.margin-note"
+    package: bookkit
+    params: "body, title?; pair with bookkit.margin-setup"
+
+  # ── Didactics facet (bookkit-didactics) ───────────────────────
   - id: learning-objectives
     status: stable
-    purpose: "Learning goals checklist"
+    purpose: "Learning goals checklist at chapter/section start"
+    when: "Chapter opener objectives; prefer items: () over free body alone"
     api: "bookkit-didactics.learning-objectives"
     package: bookkit-didactics
+    params: "items: (), body?, title?"
+
+  - id: summary-box
+    status: stable
+    purpose: "Section / chapter summary box"
+    when: "End-of-section recap (In Kürze)"
+    api: "bookkit-didactics.summary-box"
+    package: bookkit-didactics
+    params: "body, title?"
+
+  - id: memo
+    status: stable
+    purpose: "Key takeaway / Merksatz box"
+    when: "One durable rule the reader must remember"
+    api: "bookkit-didactics.memo"
+    package: bookkit-didactics
+    params: "body, title?"
+
   - id: definition
     status: stable
-    purpose: "Term definition box"
+    purpose: "Formal term definition box"
+    when: "Introduce or pin a defined technical term"
     api: "bookkit-didactics.definition"
     package: bookkit-didactics
+    params: "body, term?"
+
+  - id: clinical-pearl
+    status: stable
+    purpose: "Practice tip / clinical pearl"
+    when: "Actionable bedside or exam tip (not a hard warning)"
+    api: "bookkit-didactics.clinical-pearl"
+    package: bookkit-didactics
+    params: "body, title?"
+
+  - id: cave
+    status: stable
+    purpose: "Warning / contraindication / red-flag box"
+    when: "Safety-critical gatekeeper content; do not spam"
+    api: "bookkit-didactics.cave"
+    package: bookkit-didactics
+    params: "body, title?"
+
   - id: ddx-box
     status: stable
     purpose: "Differential diagnosis box"
+    when: "Structured DDx list or table-like differential"
     api: "bookkit-didactics.ddx-box"
     package: bookkit-didactics
-  - id: clinical-pearl
-    status: stable
-    purpose: "Practice tip box"
-    api: "bookkit-didactics.clinical-pearl"
-    package: bookkit-didactics
-  - id: summary-box
-    status: stable
-    purpose: "Section summary"
-    api: "bookkit-didactics.summary-box"
-    package: bookkit-didactics
+    params: "body, title?"
+
   - id: clinical-case
     status: stable
-    purpose: "Structured clinical case"
+    purpose: "Structured clinical case (anamnesis / findings / dx / therapy)"
+    when: "Teaching case with optional labeled fields"
     api: "bookkit-didactics.clinical-case"
     package: bookkit-didactics
+    params: "body?, title?, anamnese?, befund?, diagnose?, therapie?"
+
+  - id: excursus
+    status: stable
+    purpose: "Optional digression / Vertiefung box"
+    when: "Nice-to-know depth without breaking the main thread"
+    api: "bookkit-didactics.excursus"
+    package: bookkit-didactics
+    params: "body, title?"
+
+  - id: mnemonic
+    status: stable
+    purpose: "Mnemonic / Eselsbrücke with optional highlight phrase"
+    when: "Memory aid for lists or sequences"
+    api: "bookkit-didactics.mnemonic"
+    package: bookkit-didactics
+    params: "body, phrase?, title?"
+
+  - id: mc-question
+    status: stable
+    purpose: "Multiple-choice exam question with optional solution reveal"
+    when: "Self-check or exam-style practice item"
+    api: "bookkit-didactics.mc-question"
+    package: bookkit-didactics
+    params: "prompt, options, answer? (1-based), explanation?, show-solution?"
+
+  - id: solution-key
+    status: stable
+    purpose: "Collected answer key for preceding mc-question items"
+    when: "End of quiz section after one or more mc-question"
+    api: "bookkit-didactics.solution-key"
+    package: bookkit-didactics
+    params: "title? (default Lösungsschlüssel)"
+
+  # ── Planned gaps (no dedicated public helper yet) ─────────────
   - id: protocol-steps
     status: planned
-    purpose: "Numbered action protocol (not just bullets)"
-    api: "TBD — may be list pattern or new helper"
+    purpose: "Numbered action protocol (ordered clinical/technical steps)"
+    when: "SOP / algorithm as explicit steps, not a plain bullet list"
+    api: "TBD — list pattern alone is insufficient; dedicated helper desired"
+    package: planned
+    params: "steps[], title?, urgency?"
+
+  - id: decision-table
+    status: planned
+    purpose: "If/then decision matrix (criteria → action)"
+    when: "Branching choices; distinct from comparison-table"
+    api: "TBD — not comparison-table; needs decision-oriented layout"
+    package: planned
+    params: "criteria columns + action column"
+
+  - id: reference-list
+    status: planned
+    purpose: "Curated further-reading / key-literature block"
+    when: "Chapter end literature shortlist (not full bibliography engine)"
+    api: "TBD — native bibliography/cite may cover; form may wrap presentation"
+    package: planned
+    params: "entries[] or cite keys"
+
+  - id: timeline
+    status: planned
+    purpose: "Horizontal/vertical process or disease timeline"
+    when: "Sequence over time (pathogenesis, pathway, history)"
+    api: "TBD — showcase uses diagrams; no stable form wrapper yet"
+    package: planned
+
+  - id: flowchart
+    status: planned
+    purpose: "Decision / process flowchart as a catalog form"
+    when: "Branching algorithm that outgrows protocol-steps"
+    api: "TBD — Fletcher/CeTZ demos exist; no bookkit form id yet"
     package: planned
 
 genre_recipes_note: >
-  Cross-domain recipes only here. Medical: domains/medical/recipes/
+  Cross-domain recipes only under core/genre-recipes/ if any.
+  Medical recipes: domains/medical/recipes/ (Produkt B).
+  Gap process: core/GAP-PROCESS.md
