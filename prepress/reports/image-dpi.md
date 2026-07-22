@@ -1,9 +1,5 @@
 # Image DPI preflight
 
-- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/heart-schema.svg` — SVG (resolution-independent)
-- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/neuron.svg` — SVG (resolution-independent)
-- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/neuron-compact.svg` — SVG (resolution-independent)
-- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/cell.svg` — SVG (resolution-independent)
-- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/nephron.svg` — SVG (resolution-independent)
+- **FAIL** `/home/arneb/repos/company/Book-Layouting-Typst/domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-full.png` — 864×1152px @ 150.0 mm → 146 dpi  < 300 dpi target
 
-Summary: 5 ok, 0 fail, 0 info
+Summary: 0 ok, 1 fail, 0 info

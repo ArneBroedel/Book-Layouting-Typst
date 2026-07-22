@@ -34,7 +34,7 @@ Optional: Multi-root **Workspace-Datei** nur als UX (kein viertes Produkt).
 | `packages/bookkit*`, CLI, showcase | A | `packages/`, `scripts/`, `src/` |
 | form-catalog **core** (generische Forms, Schema) | A | `toolset/form-catalog/core/` |
 | compose validator engine, `compose-chapter` skill | A | `toolset/compose/`, `toolset/skill-pack/compose-chapter/` |
-| Genre-Rezepte Medizin, Gold-Briefs, `media-brief` skill | B | `domains/medical/` → später eigenes Repo |
+| Genre-Rezepte Medizin, Gold-Briefs, `media-brief` / `medical-graphics` skills, Domain-Assets | B | `domains/medical/` → später eigenes Repo |
 | Kapitel-MD, Claims, Content-SoT | C | **extern** (Kursbuch-Repo) — nie dauerhaft hier |
 | Content-Reife-Prozess (Review, Freeze, Proof, Imprimatur) | C | Track [`content-maturity/`](content-maturity/); Scaffold **`domains/content-maturity/`** (nur Prozess/Skills/Fixtures) → **Split nach C** |
 | pilots die **nur** Plattform dogfooden | A | `pilots/` (austauschbar, nicht Content-SoT) |

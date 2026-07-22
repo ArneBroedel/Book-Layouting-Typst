@@ -14,9 +14,9 @@
 
 ## Sections
 
-| brief_section_id | status (mapped\|custom\|approx\|gap\|experiment) | form_id / pattern / gap_name | notes (ideal → realization) |
-|---|---|---|---|
-| | | | |
+| brief_section_id | status (mapped\|custom\|approx\|gap\|experiment) | graphic_mode (code\|asset\|hybrid\|ab-test\|none) | form_id / pattern / asset / gap_name | notes (ideal → realization) |
+|---|---|---|---|---|
+| | | | | |
 
 **Status guide**
 
@@ -28,6 +28,25 @@
 | `gap` | Reusable form still missing; implement custom now and/or file catalog gap |
 | `experiment` | Spike first |
 
+**Graphic mode** (visual units only — load `medical-graphics` when not `none`):
+
+| graphic_mode | Meaning |
+|---|---|
+| `code` | Typst/bookkit/@preview only (default when it meets the ideal) |
+| `asset` | Image file is main carrier (SVG preferred) |
+| `hybrid` | Asset form + Typst labels/claims |
+| `ab-test` | Code + asset/hybrid spikes; Media Accept picks winner |
+| `none` | No graphic object (text/forms only) |
+
+## Graphics (optional)
+
+- **vision_path:** (Phase A free vision brief, e.g. `…/<slug>.vision.md`)
+- **graphics_decision_path:** (e.g. `domains/medical/briefs/<slug>.graphics.md`)
+- **realize_path:** recreate | refine | accept-asset | n/a
+- [ ] no visual units beyond catalog forms
+- [ ] free vision recommended / done for ambitious units (no structure-template attach)
+- [ ] Graphics role invoked — Decision Note linked above
+
 ## Catalog gaps to file
 
 - …
@@ -38,11 +57,13 @@
 - [ ] CeTZ / Fletcher / other `@preview` (pin versions)
 - [ ] Custom module / local `#let`
 - [ ] Page-design / spreads
+- [ ] Image assets / hybrid embed (`plate` / `wrap-figure` / figure + alt)
 
 ## Spike recommended?
 
 - [ ] no
 - [ ] yes — goal:
+- [ ] ab-pair (code vs asset/hybrid) — unit(s):
 
 ## Fallback log (only if ideal cannot be achieved)
 

@@ -3,12 +3,18 @@
 // brief: domains/medical/briefs/iv2-rueckenschmerz-neuro.brief.md
 // content: /home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-03-final-10/chapter-iv2-rueckenschmerz-neuro.md
 // tools: bookkit, bookkit-didactics, fletcher 0.5.8, cetz 0.5.2, pilot visual.typ
+// S4 graphic: entscheidungs-flow recreate module (medical-graphics B1)
 // wave: 2026-07-welle-03-final-10 · v2 creative redesign
 // Claims: copy-through · no invented thresholds
 
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
 #import "/pilots/kursbuch-welle-03-compose/lib/visual.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+#import "/toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/lib/entscheidungs-flow.typ": (
+  entscheidungs-flow-rueckenschmerz,
+)
 
 #chapter-opener(
   title: [Rückenschmerz mit neurologischen Zeichen],
@@ -82,38 +88,8 @@
 // ── Entscheidungsbaum ──────────────────────────────────────────
 == Entscheidungs-Flow
 
-#decision-diagram(spacing: (13mm, 11mm), {
-  n-start((0, 0), [*Kreuzschmerz*\ Erstkontakt])
-  e((0, 0), (0, 1))
-  n-decision((0, 1), [CES-Flags?\ Sattel / Blase / Darm /\ bilateral progredient])
-  e((0, 1), (-1.7, 2.2), lab: [Ja / unklar], side: left)
-  e((0, 1), (1.5, 2.2), lab: [Nein], side: right)
-  n-danger((-1.7, 2.2), [*112 / ED*\ Stop PT\ Absolute KI LWS])
-  n-decision((1.5, 2.2), [AAA / Schock /\ reißend?])
-  e((1.5, 2.2), (0.5, 3.4), lab: [Ja], side: left)
-  e((1.5, 2.2), (2.5, 3.4), lab: [Nein], side: right)
-  n-danger((0.5, 3.4), [*112*\ Absolute Ruhe])
-  n-decision((2.5, 3.4), [Infekt-Cluster /\ Fraktur / Tumor?])
-  e((2.5, 3.4), (1.5, 4.6), lab: [Ja], side: left)
-  e((2.5, 3.4), (3.5, 4.6), lab: [Nein], side: right)
-  n-warn((1.5, 4.6), [ED / gleichtags\ keine HVT])
-  n-decision((3.5, 4.6), [Unilateral\ progredient\ ohne CES?])
-  e((3.5, 4.6), (2.7, 5.8), lab: [Ja], side: left)
-  e((3.5, 4.6), (4.3, 5.8), lab: [Nein], side: right)
-  n-warn((2.7, 5.8), [Arzt gleichtags\ keine HVT])
-  n-ok((4.3, 5.8), [Treat +\ Safety-Net])
-})
-
-#vertical-flow(
-  title: [Flow-Schritte (R → I → S → C)],
-  tone: "danger",
-  (
-    [*First-Look / vital?* — Schock, Kollaps, reißender Schmerz (AAA-Muster), schwere bilaterale Parese mit Gehunfähigkeit → *112*, Patient *nicht* gehen lassen. CES: `→ III-5-Cauda` · BLS: `→ III-2` · Illness Script: `→ V-Cauda`.],
-    [*Red-Flag-Box positiv?* → Aktion 1:1 (*112* vs. *ED/Arzt gleichtags*). *Keine* HVT, Traktion, forcierte Mobilisation „zur Abklärung“.],
-    [*R-Check* (Matrix R4→R1) → *I-Check* (PT-Nutzen jetzt?) → *S-Check* (LWS-Maßnahme jetzt sicher?).],
-    [*Ergebnis C* — siehe R+I+S→C. Unklar + red-flag-nah (vage perineale Taubheit, unklare Blase) → *Default-to-Danger* (lieber 112/ED als „noch testen“).],
-  ),
-)
+// Free vision → Typst recreate (medical-graphics Phase B1).
+#entscheidungs-flow-rueckenschmerz()
 
 // ── Red-Flag-Box ───────────────────────────────────────────────
 == Red-Flag-Box (Rückenschmerz / Neuro)

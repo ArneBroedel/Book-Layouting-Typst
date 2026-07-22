@@ -3,9 +3,13 @@
 - **chapter_id:** II-1 / `drei-achsen-drisc`
 - **brief_path:** `domains/medical/briefs/ii1-drei-achsen-drisc.brief.md`
 - **feasibility_path:** `domains/medical/briefs/ii1-drei-achsen-drisc.feasibility.md`
-- **spike_paths:** none (Tech recommended no spike; Media concurs)
-- **date:** 2026-07-20
-- **media_reviewer:** media-designer (Wave E2E II-1)
+- **graphics_decision_path:** `domains/medical/briefs/ii1-drei-achsen-drisc.graphics.md`
+- **spike_paths:**
+  - `dist/spikes/graphics/ii1-drei-achsen-drisc/recreate-p1.png` (Typst vertical B1)
+  - `dist/spikes/graphics/ii1-drei-achsen-drisc/compare.pdf`
+  - `domains/medical/assets/ii1-drei-achsen-drisc/vision-free-01.png` (horizontal OS free — strongest ideal of batch)
+- **date:** 2026-07-20 (body); **graphics A/B accept:** 2026-07-22
+- **media_reviewer:** media-designer (Wave E2E II-1 + medical-graphics batch)
 
 ## Decision
 
@@ -20,13 +24,32 @@
 | S5 asymmetric thinking callout | accept | Default-to-Danger / Burden-of-Proof loud. |
 | S6 stage tables R/I/S | accept | Framework footnote only. |
 | S7 flags map + Farben-Falle | accept | Short; detail → II-2. |
-| S8 protocol-steps Pflichtsequenz | accept | Stable form — full map. |
+| S8 Pflichtsequenz R+I+S→C | **accept** | Graphic winner: recreate code — see graphic winners |
+| S8 graphic A/B | **accept** | Winner **recreate** `#pflichtsequenz-risc()`; free = horizontal OS ideal |
 | S9 C-Muster styled-table | accept | Danger-first rows; decision-table deferred. |
 | S10 checklist BASIS | accept (approx) | Enum checklist OK for pilot. |
 | S11 memo errors | accept | Before or with examples; before links. |
 | S12 clinical-case examples | accept | After rules. |
 | S13–S14 trailing quiet | accept | Claims audit appendix only. |
 | wishlist decision-table / dual-panel | accept (defer) | Not blocking pilot. |
+
+## Graphic winners (A/B 2026-07-22)
+
+| unit_id | accepted winner | note |
+|---|---|---|
+| S8 Pflichtsequenz | **recreate (code)** `#pflichtsequenz-risc()` | Framework OS (teal, not emergency red wall); binary rule loud; R-first danger accent; asymmetry dual-panel. Free horizontal 5-tile dashboard = strong ideal (claim-safe) for optional landscape/spread mode (B1+). Module: `toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/lib/pflichtsequenz.typ`. |
+
+## Pedagogy / scan checks (Media) — graphics add-on
+
+- [x] Graphic candidates reviewed (ideal proximity + learner job)
+- [x] Genre fit: method OS, not notfall-karte
+- [x] Binary „Kein C ohne R+I+S“ visible in winner
+
+### Media notes for Compose (S8 graphic)
+
+1. Prefer `#pflichtsequenz-risc()` over plain styled-table for S8 when page budget allows.
+2. Free vision may inform landscape/spread layout; production default remains vertical recreate.
+3. Do not restyle as solid-red emergency algorithm.
 
 ## If revise
 

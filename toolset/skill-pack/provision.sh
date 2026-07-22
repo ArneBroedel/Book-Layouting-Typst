@@ -61,6 +61,13 @@ if src="$(resolve_skill_src media-brief \
   provision_skill media-brief "$src"
 fi
 
+# Domain Graphics skill (B) — SoT under domains/medical
+if src="$(resolve_skill_src medical-graphics \
+    "$Root/domains/medical/skill/medical-graphics" \
+    "$Root/toolset/skill-pack/medical-graphics")"; then
+  provision_skill medical-graphics "$src"
+fi
+
 # Generic skills from studio (if present)
 for s in typst-writer typst-extension pinit-workflow; do
   if [[ -d "$Root/.github/skills/$s" ]]; then

@@ -12,9 +12,11 @@ domains/medical/
     notfall-karte.minima.yaml ← machine minima for compose validator
     lerntext.md             ← stub
     fallbasiert.md          ← stub
-  briefs/                   ← gold media briefs + accept examples
-  templates/                ← media-brief.template.md, accept-record.template.md
+  briefs/                   ← gold media briefs + accept + optional *.graphics.md
+  templates/                ← media-brief, accept-record, graphic-decision templates
+  assets/                   ← domain graphic files (SVG first; per-slug folders)
   skill/media-brief/        ← media-brief skill SoT (Produkt B; discovery via symlinks)
+  skill/medical-graphics/   ← Graphics role: code vs asset vs A/B
   catalog-overlay.yaml      ← optional extra forms/planned for this domain
   OWNERSHIP.md              ← when split: target remote notes
 ```
@@ -31,6 +33,19 @@ domains/medical/
 | **Library (archived)** | `devtracks/_archive/medical-knowledge-design-competencies/` (COMPENDIUM) |
 
 Edit the skill **only** under `domains/medical/skill/media-brief/`. Do not duplicate under `.grok/`.
+
+## Skill `medical-graphics` (SoT)
+
+| | |
+|---|---|
+| **Body** | [`skill/medical-graphics/SKILL.md`](skill/medical-graphics/SKILL.md) |
+| **Role** | Graphics — after Brief: code first, asset/hybrid considered, A/B when unsure |
+| **Template** | [`templates/graphic-decision.template.md`](templates/graphic-decision.template.md) |
+| **Assets** | [`assets/`](assets/) |
+| **Discovery** | `.github/skills/medical-graphics`, `.grok/skills/medical-graphics`, `toolset/skill-pack/medical-graphics` |
+| **Track** | `devtracks/medical-graphics/` |
+
+Edit only under `domains/medical/skill/medical-graphics/`.
 
 ## Genre recipes & validator minima
 
@@ -52,10 +67,12 @@ Templates: [`templates/media-brief.template.md`](templates/media-brief.template.
 | **Gold Brief III-5** (Cauda Notfallkarte) | [`briefs/iii5-cauda-notfallkarte.brief.md`](briefs/iii5-cauda-notfallkarte.brief.md) | Free ideal + wishlist; content path external (Produkt C) |
 | Gold Brief III-2 (BLS/AED) | [`briefs/iii2-bls-aed.brief.md`](briefs/iii2-bls-aed.brief.md) | Shorter companion notfall-karte |
 | Accept example III-5 | [`briefs/iii5-cauda-notfallkarte.accept.md`](briefs/iii5-cauda-notfallkarte.accept.md) | Shape demo; fictive feasibility until Wave 3/4 |
+| **Graphics free-first III-2** | [`briefs/iii2-bls-aed.vision.md`](briefs/iii2-bls-aed.vision.md) + [`…graphics.md`](briefs/iii2-bls-aed.graphics.md) | Free Nano Banana preferred vision; structure-ref = anti-pattern for creativity tests |
+| Vision template | [`templates/graphic-vision.template.md`](templates/graphic-vision.template.md) | Phase A free vision input |
 
-**Flow:** Media Brief (ideal first) → Tech Feasibility (+ Spike for ambitious visuals) → Media Accept → Compose (Produkt A, **creative-first**).  
+**Flow:** Media Brief (ideal first) → Tech Feasibility ◄──► Graphics (visual units) → Spike (code/asset/A/B) → Media Accept → Compose (Produkt A, **creative-first**).  
 Content MD stays **external** (Kursbuch); briefs reference paths only.  
-Policy: `toolset/compose/CREATIVE-COMPOSE.md` — full toolkit; catalog is preferred library, not a cage.
+Policy: `toolset/compose/CREATIVE-COMPOSE.md` — full toolkit + graphic modes; catalog is preferred library, not a cage.
 
 ## Abhängigkeit
 

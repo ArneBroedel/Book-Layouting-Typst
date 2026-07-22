@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Asset-full v4 — complete SVG with correct flow + all German labels.
+  1→2→3; ja→4a (loop + escalate); nein→4b→5→6. No spurious arrows.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 860" width="640" height="860" role="img">
+  <title>Primär-Algorithmus: Bewusstseinsstörung / Kollaps</title>
+  <desc>
+    1 Szene sichern. 2 Ansprechen und Schmerzreiz. 3 Atmung normal max 10 s.
+    Ja: 4a Seitenlage 112 überwachen, Schleife weiter überwachen, bei Verschlechterung zu 4b.
+    Nein/unsicher: 4b 112 CPR AED, dann 5 CPR, 6 Übergabe RD.
+  </desc>
+  <defs>
+    <linearGradient id="laneL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dcfce7"/><stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <linearGradient id="laneR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fef2f2"/>
+    </linearGradient>
+    <filter id="soft" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555555"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/>
+    </marker>
+    <style><![CDATA[
+      .title{font:700 17px DejaVu Sans,sans-serif;fill:#094f52}
+      .sub{font:400 11px DejaVu Sans,sans-serif;fill:#555}
+      .n{font:700 12px DejaVu Sans,sans-serif;fill:#fff}
+      .tb{font:700 12.5px DejaVu Sans,sans-serif;fill:#1a1a1a}
+      .t{font:400 12px DejaVu Sans,sans-serif;fill:#1a1a1a}
+      .ts{font:400 11px DejaVu Sans,sans-serif;fill:#1a1a1a}
+      .tsb{font:700 11px DejaVu Sans,sans-serif;fill:#1a1a1a}
+      .edge{font:700 11px DejaVu Sans,sans-serif}
+      .foot{font:400 10px DejaVu Sans,sans-serif;fill:#555}
+      .lane{font:700 10px DejaVu Sans,sans-serif}
+    ]]></style>
+  </defs>
+
+  <rect width="640" height="860" fill="#fff"/>
+  <text class="title" x="320" y="28" text-anchor="middle">Primär-Algorithmus: Bewusstseinsstörung / Kollaps</text>
+  <text class="sub" x="320" y="46" text-anchor="middle">v4 · 4a-Überwachungsschleife · Eskalation nur → 4b · 5/6 nur CPR-Pfad</text>
+
+  <rect x="24" y="380" width="268" height="280" rx="26" fill="url(#laneL)" stroke="#16a34a" stroke-width="1.3"/>
+  <rect x="348" y="380" width="268" height="400" rx="26" fill="url(#laneR)" stroke="#dc2626" stroke-width="1.5"/>
+  <text class="lane" x="158" y="398" text-anchor="middle" fill="#166534">Überwachen</text>
+  <text class="lane" x="482" y="398" text-anchor="middle" fill="#991b1b">CPR / AED</text>
+
+  <g filter="url(#soft)">
+    <rect x="180" y="64" width="280" height="66" rx="14" fill="#f5f5f0" stroke="#ccc"/>
+    <rect x="180" y="156" width="280" height="66" rx="14" fill="#f5f5f0" stroke="#ccc"/>
+    <polygon points="320,240 402,292 320,344 238,292" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+    <rect x="44" y="420" width="228" height="74" rx="28" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.3"/>
+    <rect x="44" y="540" width="228" height="66" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="5 3"/>
+    <rect x="368" y="420" width="228" height="74" rx="28" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+    <rect x="368" y="540" width="228" height="70" rx="12" fill="#fee2e2" stroke="#dc2626"/>
+    <rect x="368" y="660" width="228" height="54" rx="12" fill="#ccfbf1" stroke="#0d7377"/>
+  </g>
+
+  <!-- edges -->
+  <line x1="320" y1="130" x2="320" y2="156" stroke="#555" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="320" y1="222" x2="320" y2="240" stroke="#555" stroke-width="1.8" marker-end="url(#arr)"/>
+  <path d="M 265 310 Q 170 355 158 420" fill="none" stroke="#16a34a" stroke-width="2.1" marker-end="url(#arrG)"/>
+  <path d="M 375 310 Q 470 355 482 420" fill="none" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arrR)"/>
+  <line x1="158" y1="494" x2="158" y2="540" stroke="#16a34a" stroke-width="1.7" marker-end="url(#arrG)"/>
+  <path d="M 70 573 Q 18 500 70 457" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arrG)"/>
+  <path d="M 272 457 Q 320 500 368 457" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrR)"/>
+  <line x1="482" y1="494" x2="482" y2="540" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrR)"/>
+  <line x1="482" y1="610" x2="482" y2="660" stroke="#0d7377" stroke-width="1.7" marker-end="url(#arr)"/>
+
+  <!-- badges -->
+  <g text-anchor="middle">
+    <circle cx="200" cy="97" r="13" fill="#0d7377"/><text class="n" x="200" y="102">1</text>
+    <circle cx="200" cy="189" r="13" fill="#0d7377"/><text class="n" x="200" y="194">2</text>
+    <circle cx="226" cy="292" r="14" fill="#d97706"/><text class="n" x="226" y="297">3</text>
+    <circle cx="64" cy="457" r="13" fill="#16a34a"/><text class="n" x="64" y="462" font-size="11">4a</text>
+    <circle cx="64" cy="573" r="12" fill="#16a34a"/><text class="n" x="64" y="577" font-size="12">↻</text>
+    <circle cx="388" cy="457" r="13" fill="#dc2626"/><text class="n" x="388" y="462" font-size="11">4b</text>
+    <circle cx="388" cy="575" r="13" fill="#dc2626"/><text class="n" x="388" y="580">5</text>
+    <circle cx="388" cy="687" r="12" fill="#0d7377"/><text class="n" x="388" y="692">6</text>
+  </g>
+
+  <!-- texts -->
+  <text class="tb" x="332" y="90" text-anchor="middle">Szene sichern</text>
+  <text class="t" x="332" y="110" text-anchor="middle">Handschuhe wenn verfügbar</text>
+  <text class="tb" x="332" y="182" text-anchor="middle">Ansprechen + Schmerzreiz</text>
+  <text class="t" x="332" y="202" text-anchor="middle">Atemwege freimachen</text>
+  <text class="tb" x="336" y="286" text-anchor="middle">Atmung normal?</text>
+  <text class="t" x="336" y="306" text-anchor="middle">max. 10 s</text>
+
+  <text class="edge" x="195" y="350" fill="#166534">ja</text>
+  <text class="edge" x="470" y="350" text-anchor="middle" fill="#991b1b">nein / unsicher</text>
+
+  <text class="tb" x="175" y="450" text-anchor="middle">Seitenlage · 112</text>
+  <text class="t" x="175" y="470" text-anchor="middle">überwachen</text>
+
+  <text class="tsb" x="175" y="566" text-anchor="middle">↻ Weiter überwachen</text>
+  <text class="ts" x="175" y="584" text-anchor="middle">(Zustand stabil)</text>
+  <text class="edge" x="48" y="510" fill="#166534" font-size="10">stabil</text>
+
+  <text class="edge" x="320" y="492" text-anchor="middle" fill="#991b1b">Verschlechterung</text>
+
+  <text class="tb" x="500" y="450" text-anchor="middle">112 · CPR</text>
+  <text class="t" x="500" y="470" text-anchor="middle">AED holen lassen</text>
+
+  <text class="tsb" x="500" y="568" text-anchor="middle">CPR 30:2 (Kurs) bzw.</text>
+  <text class="ts" x="500" y="586" text-anchor="middle">nur Kompressionen · AED folgen</text>
+
+  <text class="tsb" x="500" y="692" text-anchor="middle">Bis Übergabe RD · min. Pausen</text>
+
+  <rect x="40" y="780" width="560" height="58" rx="8" fill="#f5f5f0" stroke="#e0e0e0"/>
+  <text class="foot" x="320" y="802" text-anchor="middle">Kompressions-Rahmen (Erwachsene, ERC/GRC): ausreichend tief/schnell,</text>
+  <text class="foot" x="320" y="818" text-anchor="middle">volle Entlastung, minimale Pausen. Exakte Zielzahlen im BLS/AED-Kurs.</text>
+</svg>

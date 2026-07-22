@@ -19,18 +19,21 @@ Ausführlich: [`CONSENSUS-v0.md`](CONSENSUS-v0.md) · Grenzen: [`PRODUCT-BOUNDAR
 | **Content-Review** | C · Track [`content-maturity`](content-maturity/) · extensions [`agentic-adaptations`](agentic-adaptations/) | Q1/Q2-Lektorat; evaluate-only oder Patches; floor (`block`⇒no freeze); optional Personas/Clarity | Production-`.typ`; still Claims mutieren; Media ersetzen; Score-Loops |
 | **Content-Orchestrator** | C · `content-orchestrator` skill | Route card C1–C4 → richtiger Skill/Human-Checkpoint (H1–H5) | Brief/Compose selbst ausführen; Text umschreiben |
 | **Media** | B `domains/medical/` | Freier Brief, Accept (Q3) | Body/Claims ändern |
-| **Tech** | A `toolset/compose/` | Feasibility, Spike, Compose | Ideal kleinreden; Content „verbessern“ |
+| **Graphics** | B `domains/medical/` · skill `medical-graphics` | **Phase A** free vision (Inhalt+Didaktik); **Phase B** recreate/refine/accept-asset; Decision Note; Assets | Ideal ersetzen; Claims erfinden; Accept allein; Free-Gen mit SVG-Klon-Zwang |
+| **Tech** | A `toolset/compose/` | Feasibility, Spike, Compose (inkl. Embed Winner) | Ideal kleinreden; Content „verbessern“; Graphic-Mode still weglassen |
 | **Validator** | A Script | Whitelist, Claims, Compile | Auto-Heal; redaktionell heilen |
 | **Imprimatur** | C Human-only | Druck-/Release-Freigabe | Agent-Autopilot |
 | **Katalog** | A core + B recipes | Forms / Rezepte | Media-Denkverbot |
 
 ## Ablauf
 
-**Heute (v0.2 implementiert):**
+**Heute (v0.2 implementiert + Graphics MVP):**
 
 ```text
-C Content → B Media Brief → A Feasibility ↔ Spike → B Accept
-         → A Compose → A Validate → PDF
+C Content → B Media Brief
+         → B Graphics Phase A free vision (ambitionierte Visual-Units)
+         → A Feasibility ◄──► B Graphics Phase B (recreate|refine|accept-asset)
+         → Spike → B Accept → A Compose → A Validate → PDF
 ```
 
 **Ziel MVP v0.3 (content-maturity, nach Gemini-Review):**
@@ -39,7 +42,7 @@ C Content → B Media Brief → A Feasibility ↔ Spike → B Accept
 C1 Draft → C2 Content-Review (core+claims+safety-flags, max 2 Runden)
     → C3 Freeze (Human-only, git:|sha256: pin)
     → B Media Brief (production; exploration nur mit Marker)
-    → A Feasibility ↔ Spike → B Accept
+    → A Feasibility ◄──► B Graphics → Spike → B Accept
     → A Compose → A Validate --profile production → PDF
     → C4 Proof (Human checklist)
 # C5 Imprimatur hard-gate → v0.4

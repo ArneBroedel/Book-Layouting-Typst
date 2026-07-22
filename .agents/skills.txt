@@ -2,3 +2,4 @@
 # Source of truth for opt-in hub skills (sh-*). Project Typst skills live under
 # .github/skills/ and are exposed to Grok via .grok/skills/ symlinks separately.
 sh-gemini-chat           all
+sh-antigravity-subagent  all

@@ -56,10 +56,11 @@ When editing a component, change tokens in `theme.typ` rather than inlining colo
 - **typst-writer** — use for *any* `.typ` creation/edit, compile-error fix, or layout-defect debugging.
 - **typst-extension** — use when importing any `@preview` package, loading JSON/CSV data, or configuring `typst.toml`/CI.
 - **bookkit** — use when building with `/packages/bookkit`, starter/CLI consumers, design-brief, or didactics facet.
+- **media-brief** / **medical-graphics** — domain B (SoT under `domains/medical/skill/`); ideal presentation vs. code/asset/A/B graphic realization.
 - **pinit-workflow** — use for any `#pin*` / pinit annotation work; self-contained (debug module, regression tests, style guide, and AI playbook ship inside the skill).
 - **skill-creator** — use to create, improve, evaluate, or benchmark a skill (e.g. when harvesting a completed devtrack into a skill).
 
-**Grok skill discovery:** Grok does not scan `.github/skills/` by default. Relative symlinks under `.grok/skills/` point at the same directories so Grok auto-loads them. Always edit skill content under `.github/skills/` only. Multi-agent entry notes: `AGENTS.md`.
+**Grok skill discovery:** Grok does not scan `.github/skills/` by default. Relative symlinks under `.grok/skills/` point at the same directories so Grok auto-loads them. Edit SoT only (platform: `.github/skills/` or skill-pack; domain: `domains/medical/skill/…`); never fork under `.grok/`. Multi-agent entry notes: `AGENTS.md`.
 
 ## Knowledge architecture
 

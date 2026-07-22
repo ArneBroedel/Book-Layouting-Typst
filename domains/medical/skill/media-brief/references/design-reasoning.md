@@ -73,11 +73,13 @@ Then write **Overall presentation goal** + **Section plan**. Skip empty theory p
 | **Not box monotony** — page rhythm varies; not the same callout+table stack for every section without design reason | `revise` |
 | Spike/approx does not equalize urgency levels that Brief weighted | `revise` |
 | Wishlist abandoned without documented attempt / spike | `revise` |
-| No claim rewrite / no new clinical thresholds in layout | `reject` or Author loop |
+| Graphic A/B or asset path skipped when ideal clearly needs non-code form (no Decision Note attempt) | `revise` |
+| A/B winner chosen without ideal/learner-job rationale | `revise` |
+| No claim rewrite / no new clinical thresholds in layout (incl. inside images) | `reject` or Author loop |
 
-Freeze pin rules unchanged (`brief_class`, H1/H2).
+Freeze pin rules unchanged (`brief_class`, H1/H2). Optional **H-Gfx** when production assets depict anatomy/procedure risk motifs.
 
-**Creative-first:** Accept is about proximity to the **ideal**, not about staying inside stable form-catalog. Tech may use full Typst/bookkit/@preview/custom; see `toolset/compose/CREATIVE-COMPOSE.md`.
+**Creative-first:** Accept is about proximity to the **ideal**, not about staying inside stable form-catalog. Tech may use full Typst/bookkit/@preview/custom **and** accepted image assets/hybrid; Graphics decides code vs asset vs A/B. See `toolset/compose/CREATIVE-COMPOSE.md` and `medical-graphics`.
 
 ---
 

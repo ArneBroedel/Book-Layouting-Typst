@@ -45,16 +45,17 @@ Project skills encode hard-won conventions and **supersede general Typst advice*
 | `bookkit` | Importing bookkit packages, starter/CLI consumer work, design-brief/presets |
 | `compose-chapter` | Tech compose: feasibility note, catalog-whitelist `chapter.typ`, spike, validate chapter (Produkt A) — **not** free didactic ideal / gold brief |
 | `media-brief` | Media Brief, free didactic media design, gold brief, Accept after feasibility/spike (Produkt B) — **not** production `.typ` |
+| `medical-graphics` | After Brief: **free vision first** (content+didactic, no layout clone), then recreate/refine/accept-asset; Nano Banana/`agy`; Decision Note; domain assets (Produkt B) — **not** ideal authorship or full compose |
 | `pinit-workflow` | Any `#pin*` / pinit annotation work |
 | `skill-creator` | Create, improve, evaluate, or harvest skills |
 
 **Canonical bodies:** platform skills under `.github/skills/<name>/` (or `toolset/skill-pack/` for bookkit / compose-chapter).  
-**Domain exception:** `media-brief` SoT is `domains/medical/skill/media-brief/`; discovery paths
-(`.github/skills/media-brief`, `.grok/skills/media-brief`, `toolset/skill-pack/media-brief`) are symlinks.
+**Domain exception:** `media-brief` and `medical-graphics` SoT under `domains/medical/skill/`; discovery paths
+(`.github/skills/…`, `.grok/skills/…`, `toolset/skill-pack/…`) are symlinks.
 
 **Grok discovery:** Grok does **not** scan `.github/skills/` by default. Project skills are exposed
 via relative symlinks under `.grok/skills/`. Edit the SoT body only (platform: `.github/skills/` or
-skill-pack; media-brief: `domains/medical/skill/…`); never fork a second copy under `.grok/`.
+skill-pack; media-brief / medical-graphics: `domains/medical/skill/…`); never fork a second copy under `.grok/`.
 
 ## Build (always reproducible flags)
 
@@ -122,7 +123,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 **Flow (v0.2):** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.  
 **Flow (v0.3 target):** C draft → **content-review / freeze** → B brief → A compose path → **proof / imprimatur** → print. Spec: `devtracks/content-maturity/`.
 
-**Skill gate:** `media-brief` (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`, discovery via `.github/skills/` / `.grok/skills/`). Human checkpoints: `domains/content-maturity/checkpoints.md`. Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content.
+**Skill gate:** `media-brief` + **`medical-graphics`** (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`, discovery via `.github/skills/` / `.grok/skills/`). Human checkpoints: `domains/content-maturity/checkpoints.md` (optional **H-Gfx** for risky production assets). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 

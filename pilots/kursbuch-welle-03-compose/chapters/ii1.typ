@@ -5,10 +5,16 @@
 // tools: bookkit, bookkit-didactics, fletcher 0.5.8, cetz 0.5.2, pilot visual.typ
 // wave: 2026-07-welle-03-final-10 · v2 creative redesign
 // Claims: copy-through from content SoT — framework claims, no clinical paraphrase.
+// S8 graphic: pflichtsequenz recreate (medical-graphics B1, Media Accept)
 
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
 #import "/pilots/kursbuch-welle-03-compose/lib/visual.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+#import "/toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/lib/pflichtsequenz.typ": (
+  pflichtsequenz-risc,
+)
 
 #chapter-opener(
   title: [Drei-Achsen-Modell & D-RISC],
@@ -118,7 +124,7 @@
   Im Text immer *ausschreiben* oder *D-RISC-C* sagen, wenn Verwechslung droht.
 ]
 
-// ── Pflichtsequenz as pathway ──────────────────────────────────
+// ── Pflichtsequenz — medical-graphics recreate winner ──────────
 == Pflichtsequenz: R + I + S → C
 
 #process-pathway(
@@ -133,17 +139,7 @@
   color: palette.primary,
 )
 
-#vertical-flow(
-  title: [Was bei jedem Schritt gilt],
-  tone: "info",
-  (
-    [*R zuerst* — bei Lebensgefahr-Cluster / schwerer RF: *C: Stop & 112 / ED* — I und „Nutzen“ nachrangig],
-    [*S klären* — geplante Maßnahme unsicher → Maßnahme stoppen/ändern (*S4/S3*); ggf. nur PT-Lite (*S2*)],
-    [*I begründen* — wenn R und S Handlungsspielraum erlauben: Nutzen *belegen* (Muster, Ziel, Evidenzrahmen) — nicht unterstellen],
-    [*C benennen* — R, I, S gesetzt → *einen* konkreten Plan in einem Satz],
-    [*Safety-Netting* bei Treat / Treat+Refer — Was bei Verschlechterung? Frist Re-Evaluation (`→ II-2`, `→ II-3 (geplant)`)],
-  ),
-)
+#pflichtsequenz-risc()
 
 #memo(title: [Binär])[
   Kein C ohne ausgesprochenes R+I+S. „RF positiv“ allein ist *kein* Plan.

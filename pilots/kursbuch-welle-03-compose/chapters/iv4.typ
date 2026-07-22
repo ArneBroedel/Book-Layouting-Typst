@@ -5,10 +5,16 @@
 // tools: bookkit, bookkit-didactics, fletcher 0.5.8, cetz 0.5.2, pilot visual.typ
 // wave: 2026-07-welle-03-final-10 · v2 creative redesign
 // Claims: copy-through · exact thresholds (Fieber ≥ 38,5 °C)
+// S6 graphic: entscheidungs-flow recreate (medical-graphics B1, Media Accept)
 
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
 #import "/pilots/kursbuch-welle-03-compose/lib/visual.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+#import "/toolset/compose/spikes/graphics/iv4-heisses-gelenk/lib/entscheidungs-flow.typ": (
+  entscheidungs-flow-heisses-gelenk,
+)
 
 #chapter-opener(
   title: [Heißes / entzündetes Gelenk],
@@ -49,43 +55,10 @@
   septische Arthritis und Sepsis *nicht* verpassen.
 ]
 
-// ── Entscheidungsbaum (Split + Kind + Hochrisiko) ──────────────
+// ── Entscheidungs-Flow — medical-graphics recreate winner ──────
 == Entscheidungs-Flow
 
-#decision-diagram(spacing: (12mm, 11mm), {
-  n-start((0, 0), [*Heißes Gelenk*\ Erstkontakt])
-  e((0, 0), (0, 1))
-  n-decision((0, 1), [Fieber *≥ 38,5 °C*\ + AZ-Abfall /\ Bewusstsein?])
-  e((0, 1), (-1.8, 2.2), lab: [Ja], side: left)
-  e((0, 1), (1.6, 2.2), lab: [Nein], side: right)
-  n-danger((-1.8, 2.2), [*112*\ Sepsis-Verdacht\ Stop PT · Vitalz.])
-  n-decision((1.6, 2.2), [NWB / stärkster\ Ruheschmerz\ ohne Sepsis?])
-  e((1.6, 2.2), (0.5, 3.5), lab: [Ja], side: left)
-  e((1.6, 2.2), (2.7, 3.5), lab: [Nein], side: right)
-  n-warn((0.5, 3.5), [*ED noch heute*\ Stop am Gelenk])
-  n-decision((2.7, 3.5), [Kind: Fieber +\ Schonhaltung?])
-  e((2.7, 3.5), (1.7, 4.8), lab: [+ Sepsis], side: left)
-  e((2.7, 3.5), (3.0, 4.8), lab: [ohne Sepsis], side: right)
-  e((2.7, 3.5), (4.4, 4.8), lab: [Nein], side: right)
-  n-danger((1.7, 4.8), [*112*\ päd. Notfall])
-  n-warn((3.0, 4.8), [*Päd. ED*\ noch heute])
-  n-decision((4.4, 4.8), [Hochrisiko?\ Dialyse /\ Rheuma-IS])
-  e((4.4, 4.8), (3.7, 6.0), lab: [Ja], side: left)
-  e((4.4, 4.8), (5.1, 6.0), lab: [Nein], side: right)
-  n-warn((3.7, 6.0), [ED / NA\ binnen Stunden])
-  n-info((5.1, 6.0), [R-Check\ weiter / Refer])
-})
-
-#vertical-flow(
-  title: [Flow-Schritte],
-  tone: "danger",
-  (
-    [*First-Look / vital?* — Bewusstseinsstörung, schwerer AZ-Abfall, Sepsis-Kreislauf → *112*. Kind mit Fieber + Gehverweigerung *und* Sepsis-Bild → *112* / pädiatrischer Notfall; Kind mit Fieber + Schonhaltung *ohne* Sepsis-Bild → *pädiatrische ED noch heute*. *Keine* Manipulation, *keine* Belastung. BLS: `→ III-2` · Sepsis: `→ V-Sepsis (geplant)` / `→ II-2`.],
-    [*Red-Flag-Box positiv?* → Aktion *1:1 splitten* (*112* vs. *ED noch heute* vs. *binnen Stunden* — keine Mischantwort). *Keine* Probebehandlung „ob es in 2–3 Tagen besser wird“.],
-    [*R-Check* (Matrix R4→R1) → *I-Check* (PT-Nutzen jetzt am Gelenk?) → *S-Check* (Maßnahme sicher? Manipulation? Traktion? Dry Needling? Belastung?).],
-    [*Ergebnis C* — siehe R+I+S→C. Unklar + red-flag-nah → *Default-to-Danger* (lieber ED/112 als „noch testen“).],
-  ),
-)
+#entscheidungs-flow-heisses-gelenk()
 
 // ── Ursachenmatrix ─────────────────────────────────────────────
 == Ursachenmatrix (R4 → R1)

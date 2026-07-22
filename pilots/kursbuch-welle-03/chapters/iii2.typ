@@ -2,6 +2,12 @@
 // Source: Kursbuch pilot 2026-07-welle-03-final-10
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+// Phase B1+ recreate of free vision (medical-graphics): Nano Banana free → Typst + icons
+#import "/toolset/compose/spikes/graphics/iii2-bls-aed/lib/primar-algorithmus.typ": (
+  primar-algorithmus-bewusstlosigkeit,
+)
 
 #chapter-opener(
   title: [BLS, AED, Seitenlage, Schock, Pulse — Handlungskarte Praxis],
@@ -72,29 +78,11 @@ Handlungsschwellen laut S1 `notfall-prozeduren-bls` (§2–§5).
 
 == Primär-Algorithmus: Bewusstseinsstörung / Kollaps
 
-#styled-table(
-  columns: (1fr, 1fr),
-  table.header(
-    text(fill: white, weight: "bold", size: 8.5pt)[Schritt],
-    text(fill: white, weight: "bold", size: 8.5pt)[Aktion],
-  ),
-  [*1*],
-  [Szene sichern; Handschuhe wenn verfügbar],
-  [*2*],
-  [*Ansprechen + Schmerzreiz*; Atemwege freimachen (Überstrecken / Head-tilt-chin-lift — *nicht* bei HWS-Trauma-Verdacht erzwingen)],
-  [*3*],
-  [*Atmung normal?* — max. *10 s* beurteilen],
-  [*4a*],
-  [Atmung *normal*, bewusstlos → *stabile Seitenlage*, *112*, überwachen],
-  [*4b*],
-  [*Keine* normale Atmung *oder unsicher* → *112*, *CPR beginnen*, *AED holen lassen*],
-  [*5*],
-  [CPR *30:2* (Erwachsene, Standardkurs) bzw. *nur Kompressionen*, wenn ungeschult/unwillig zu beatmen; *AED-Anweisungen folgen*],
-  [*6*],
-  [Bis *Übergabe Rettungsdienst* fortsetzen — minimale Pausen],
-)
+// Free vision → Typst recreate (medical-graphics Phase B1).
+// Vision: domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana-free.png
+#primar-algorithmus-bewusstlosigkeit()
 
-*Kompressions-Rahmen (Erwachsene, ERC/GRC-Kontext):* ausreichend tief, ausreichend schnell, vollständige Entlastung, minimale Pausen. Exakte Zielzahlen (z. B. 100–120/min, ~5–6 cm) im *aktuellen BLS/AED-Kurs* trainieren — hier *nicht* als starre Prüfungszahl ohne Kursnachweis festgeschrieben. [Erwachsene | ERC/GRC BLS | Leitlinienzyklus | ERC/S1 §3]
+*Hinweis (Content):* Exakte Kompressions-Zielzahlen (z. B. 100–120/min, ~5–6 cm) im *aktuellen BLS/AED-Kurs* trainieren — hier *nicht* als starre Prüfungszahl ohne Kursnachweis. [Erwachsene | ERC/GRC BLS | Leitlinienzyklus | ERC/S1 §3]
 
 #section-break()
 

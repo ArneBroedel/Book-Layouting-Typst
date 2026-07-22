@@ -9,6 +9,7 @@
 | **H3** | **C2 circuit breaker** after 2 review rounds | Human (C) | open a 3rd agent review loop |
 | **H4** | **Proof** after production PDF | Human (C) | claim “proofed” / (v0.4) release |
 | **H5** | **Imprimatur** | Human (C) | hard print release (**v0.4**; optional now) |
+| **H-Gfx** | **Risky production graphic** (anatomy / procedure / diagnostic motif in asset) | Human (C or Fach) | treat production Accept of that asset as final without review (optional; Graphics flags it) |
 
 ## Agent routing (see `content-orchestrator`)
 
@@ -27,4 +28,4 @@ release       → H5 (v0.4)
 | Freeze template | `templates/freeze-record.template.md` |
 | Proof template | `templates/proof-record.template.md` |
 | Freeze gate (A) | `toolset/compose/validate/freeze_gate.py` (`--profile production`) |
-| Skills | `content-review`, `content-orchestrator`, `media-brief`, `compose-chapter` |
+| Skills | `content-review`, `content-orchestrator`, `media-brief`, `medical-graphics`, `compose-chapter` |

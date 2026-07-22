@@ -4,10 +4,16 @@
 // content: /home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-03-final-10/chapter-iii5-cauda-notfallkarte.md
 // tools: bookkit, bookkit-didactics, fletcher 0.5.8, cetz 0.5.2, pilot visual.typ
 // wave: 2026-07-welle-03-final-10 · v2 creative redesign
+// S4 graphic: sofortmassnahmen recreate (medical-graphics B1, Media Accept)
 
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
 #import "/pilots/kursbuch-welle-03-compose/lib/visual.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+#import "/toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/lib/sofortmassnahmen.typ": (
+  sofortmassnahmen-ces,
+)
 
 #chapter-opener(
   title: [Cauda equina — Handlungskarte Erstkontakt (MSK-vital)],
@@ -107,21 +113,10 @@
   n-ok((2.15, 3.3), [Treat +\ Safety-Net])
 })
 
-// F4 Protocol
+// F4 Protocol — medical-graphics recreate winner
 == Sofortmaßnahmen vor Ort (Organisation / Erste Hilfe)
 
-#vertical-flow(
-  title: [Protokoll — Reihenfolge einhalten],
-  tone: "danger",
-  (
-    [Therapie *sofort abbrechen* — *keine* HVT/Manipulation, *keine* Traktion, *keine* mobilisierende LWS-Technik],
-    [Patient *nicht* aufstehen/gehen lassen bei Schwäche oder Blasennot; ruhig lagern, überwachen],
-    [*112* bzw. organisierten ED-Transport; Übergabe: Sattel/Blase/Darm/Beinkraft, Zeitverlauf, Antikoagulation/OP/Trauma],
-    [Orientierende *nicht-invasive* Prüfung nur soweit Transport *nicht* verzögert — *keine* invasive Restharnmessung / Sphinkterprüfung als PT-Pflicht],
-    [Bei Kollaps/Bewusstseinsstörung: BLS-Pfad `→ III-2`],
-    [*Keine* Eigen-Medikation, *kein* „Schmerz wegmassieren“, *kein* Termin „morgen früh“ bei Sattel-/Sphinkter-Flag],
-  ),
-)
+#sofortmassnahmen-ces()
 
 // F5 DDx
 == Häufige Verwechslungen (kurz)

@@ -1,7 +1,13 @@
 // Auto-generated from chapter-iv4-heisses-gelenk.md — layout only; clinical text not rewritten.
 // Source: Kursbuch pilot 2026-07-welle-03-final-10
+// S6 graphic: entscheidungs-flow recreate (medical-graphics B1, Media Accept 2026-07-22)
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+#import "/toolset/compose/spikes/graphics/iv4-heisses-gelenk/lib/entscheidungs-flow.typ": (
+  entscheidungs-flow-heisses-gelenk,
+)
 
 #chapter-opener(
   title: [IV-4 Heißes / entzündetes Gelenk],
@@ -74,15 +80,9 @@ Illness-Script septische Arthritis: `→ V-SeptArthritis`. Gicht / aktivierte Ar
 
 == Entscheidungs-Flow
 
-+ *First-Look / vital?*
-
-Bewusstseinsstörung, schwerer AZ-Abfall, Sepsis-Kreislauf → *112*. Kind mit Fieber + Gehverweigerung *und* Sepsis-Bild → *112* / pädiatrischer Notfall; Kind mit Fieber + Schonhaltung *ohne* Sepsis-Bild → *pädiatrische ED noch heute*. *Keine* Manipulation, *keine* Belastung. BLS/Vital: `→ III-2` · Sepsis-Flags allgemein: `→ V-Sepsis (geplant)` / `→ II-2`.
-
-+ *Red-Flag-Box (unten) positiv?* → Aktion *1:1 splitten* (*112* vs. *ED noch heute* vs. *binnen Stunden* — keine Mischantwort). *Keine* Probebehandlung „ob es in 2–3 Tagen besser wird“.
-
-+ *R-Check* (Matrix R4→R1) → *I-Check* (PT-Nutzen jetzt am Gelenk?) → *S-Check* (Maßnahme sicher? Manipulation? Traktion? Dry Needling? Belastung?).
-
-+ *Ergebnis C* — siehe R+I+S→C. Unklar + red-flag-nah → *Default-to-Danger* (lieber ED/112 als „noch testen“).
+// Free vision → Typst recreate (medical-graphics Phase B1; Media Accept recreate winner).
+// Vision free (claim drift) / refined: domains/medical/assets/iv4-heisses-gelenk/
+#entscheidungs-flow-heisses-gelenk()
 
 #section-break()
 

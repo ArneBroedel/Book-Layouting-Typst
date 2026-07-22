@@ -2,6 +2,12 @@
 // Source: Kursbuch pilot 2026-07-welle-03-final-10
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+// Phase B1 recreate of free vision (medical-graphics): Nano Banana free → Typst + icons
+#import "/toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/lib/entscheidungs-flow.typ": (
+  entscheidungs-flow-rueckenschmerz,
+)
 
 #chapter-opener(
   title: [IV-2 Rückenschmerz mit neurologischen Zeichen],
@@ -66,15 +72,9 @@ Navigator-Kontext: `→ IV-0 (geplant)` · Entscheidungsrahmen: `→ II-1`.
 
 == Entscheidungs-Flow
 
-+ *First-Look / vital?*
-
-Schock, Kollaps, reißender Schmerz (AAA-Muster), schwere bilaterale Parese mit Gehunfähigkeit → *112*, Patient *nicht* gehen lassen. CES-Detailkarte: `→ III-5-Cauda` · BLS: `→ III-2` · Illness Script: `→ V-Cauda`.
-
-+ *Red-Flag-Box (unten) positiv?* → Aktion 1:1 (*112* vs. *ED/Arzt gleichtags*). *Keine* HVT, Traktion, forcierte Mobilisation „zur Abklärung“.
-
-+ *R-Check* (Matrix R4→R1) → *I-Check* (PT-Nutzen jetzt?) → *S-Check* (LWS-Maßnahme jetzt sicher?).
-
-+ *Ergebnis C* — siehe R+I+S→C. Unklar + red-flag-nah (vage perineale Taubheit, unklare Blase) → *Default-to-Danger* (lieber 112/ED als „noch testen“).
+// Free vision → Typst recreate (medical-graphics Phase B1).
+// Vision: domains/medical/assets/iv2-rueckenschmerz-neuro/vision-free-01.png
+#entscheidungs-flow-rueckenschmerz()
 
 #section-break()
 

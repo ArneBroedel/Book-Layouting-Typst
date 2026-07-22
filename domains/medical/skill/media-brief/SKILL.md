@@ -24,24 +24,25 @@ Executable procedure for the **Media** role: free didactic–media ideal → Med
 | Situation | Use instead |
 |---|---|
 | Writing production `.typ` / bookkit calls | `compose-chapter` + `bookkit` + `typst-writer` (Wave 3 / Tech) |
+| Code vs asset vs hybrid / A/B graphic production | `medical-graphics` (after Brief; during Feasibility) |
 | Choosing form ids as the *first* design step | Stay here — free ideal first; Tech maps later |
 | Rewriting clinical claims or body content | Author / Content workspace (Produkt C) |
-| Feasibility matrix, spikes, catalog gaps as implementer | Tech / `compose-pipeline` |
+| Feasibility matrix, spikes, catalog gaps as implementer | Tech / `compose-pipeline` (+ Graphics for visual units) |
 | Monologue design talk with no Brief/Accept file | Stop — produce an artifact |
 
 ## Role: Media (ideal first — catalog is not a cage)
 
 ```text
-Autor (C) ──► Media Brief (this skill) ──► Tech Feasibility / Spike / full toolkit
-                     ▲                            │
-                     └──── Accept / Revise ◄──────┘
+Autor (C) ──► Media Brief (this skill) ──► Tech Feasibility ◄──► Graphics (visual units)
+                     ▲                            │                      │
+                     └──── Accept / Revise ◄──────┴── spikes (code/asset/A/B)
                                 │ accept
                                 ▼
                           Compose + Validate (Tech — creative-first)
 ```
 
 Media designs the **best medical-pedagogical presentation** (flows, lanes, spreads, hierarchy) **without** asking first what is catalog-stable.  
-Tech **realizes** that ideal with the full toolkit (prefer known-good only when it *is* best). Media **accepts** proximity to the ideal — not “only stable forms”.
+Tech **realizes** that ideal with the full toolkit (prefer known-good only when it *is* best). **Graphics** chooses code vs asset/hybrid (or A/B) for visual units. Media **accepts** proximity to the ideal — not “only stable forms”.
 
 **MUST:** unit→hypothesis; free ideal; surface ambitious presentation (flowcharts, triage lanes, custom diagrams); evaluate Tech proposals against the ideal; ask Author only targeted questions.  
 **MUST NOT:** change Critical Claims; build the Brief as a form-id shopping list; pre-shrink the ideal to “what we know compiles”; accept monotony just because validate is green.
@@ -105,16 +106,17 @@ Fill all sections:
 
 ## Accept-record procedure (after Feasibility / Spike)
 
-When Tech returns a feasibility note and optional spike PDF/PNG:
+When Tech returns a feasibility note and optional spike PDF/PNG (and optional Graphics Decision Note / A/B candidates):
 
-1. Read Brief + Feasibility (+ spike visuals if any).
+1. Read Brief + Feasibility (+ spike visuals if any; + `*.graphics.md` if present).
 2. Per overall + strittige Abschnitte: **`accept` | `revise` | `reject`** + 1–3 sentence note.
 3. Run the **Accept rubric** in [`references/design-reasoning.md`](references/design-reasoning.md) §5 (gatekeeper findable, action louder than sources, order visible, urgency not flattened, **flows look like flows**, **not box monotony**, no claim rewrite).
-4. If Tech fell back from wishlist/ideal without a documented attempt: **revise** — demand spike or better realization.
-5. If **revise**: state what Tech must change before compose (artifact, not chat-only).
-6. Check **Production compose authorized?** only on accept path.
-7. For **production** Accept: verify freeze pin (`content_status: frozen`, `content_revision` match). Exploration Accept must **not** check production compose yes.
-8. Write Accept record from **`domains/medical/templates/accept-record.template.md`**.
+4. If graphic candidates / A/B: pick **winner** by ideal proximity + learner job (not “prettiest PNG”); note in Accept.
+5. If Tech/Graphics fell back from wishlist/ideal without a documented attempt: **revise** — demand spike or better realization (incl. asset path when ideal needs it).
+6. If **revise**: state what Tech/Graphics must change before compose (artifact, not chat-only).
+7. Check **Production compose authorized?** only on accept path.
+8. For **production** Accept: verify freeze pin (`content_status: frozen`, `content_revision` match). Exploration Accept must **not** check production compose yes.
+9. Write Accept record from **`domains/medical/templates/accept-record.template.md`**.
 
 Suggested path: `domains/medical/briefs/<slug>.accept.md` (or next to feasibility).
 
@@ -151,16 +153,16 @@ Do not open a third Media↔Tech round without Human.
 | Stop at 2 Media↔Tech rounds → Human | Implement feasibility/spike yourself |
 | Point Tech at Brief path; stay out of compose | Load full med-ed library into every Brief |
 
-## Boundary vs Tech / `compose-chapter`
+## Boundary vs Tech / Graphics
 
-| Media (`media-brief`) | Tech (`compose-chapter` / feasibility) |
-|---|---|
-| Ideal presentation, section prose, wishlist, author Qs | Realize ideal → `mapped` / `custom` / `approx` / `gap` / `experiment` |
-| Accept / revise / reject (visual quality counts) | Full toolkit compose; spike when ambitious; fallback only if ideal fails |
-| Domain B (`domains/medical/`) | Platform A (`toolset/compose/`, preferred form library, bookkit) |
-| Does not write production `.typ` | Catalog inventory advisory by default (`creative` mode) |
+| Media (`media-brief`) | Tech (`compose-chapter`) | Graphics (`medical-graphics`) |
+|---|---|---|
+| Ideal presentation, section prose, wishlist, author Qs | Realize ideal; compose; validate | `graphic_mode`, A/B, assets, Decision Note |
+| Accept / revise / reject (visual quality counts) | Full toolkit; embed accepted winners | Does not invent ideal or own Accept |
+| Domain B | Platform A | Domain B |
+| Does not write production `.typ` | Does not invent didactic ideal | Does not rewrite claims |
 
-If both roles appear in one session: **finish Brief (or Accept) as a file first**; switch skills explicitly for Tech work.
+If multiple roles appear in one session: **finish Brief (or Accept) as a file first**; switch skills explicitly for Tech/Graphics work.
 
 ## Related paths
 
@@ -169,6 +171,8 @@ If both roles appear in one session: **finish Brief (or Accept) as a file first*
 | Design reasoning (B-core) | `domains/medical/skill/media-brief/references/design-reasoning.md` |
 | Brief template | `domains/medical/templates/media-brief.template.md` |
 | Accept template | `domains/medical/templates/accept-record.template.md` |
+| Graphics Decision template | `domains/medical/templates/graphic-decision.template.md` |
+| Graphics skill | `domains/medical/skill/medical-graphics/` |
 | Recipes | `domains/medical/recipes/` |
 | Briefs / gold | `domains/medical/briefs/` |
 | Ownership | `domains/medical/OWNERSHIP.md` |

@@ -1,7 +1,13 @@
 // Auto-generated from chapter-ii1-drei-achsen-drisc.md — layout only; clinical text not rewritten.
 // Source: Kursbuch pilot 2026-07-welle-03-final-10
+// S8 graphic: pflichtsequenz recreate (medical-graphics B1, Media Accept 2026-07-22)
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+#import "/toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/lib/pflichtsequenz.typ": (
+  pflichtsequenz-risc,
+)
 
 #chapter-opener(
   title: [II-1 Drei-Achsen-Modell & D-RISC],
@@ -246,29 +252,9 @@ Flags steuern *Dringlichkeit und Behandlungsrahmen*; sie *ersetzen* D-RISC nicht
 
 === Pflichtsequenz: R + I + S → C
 
-#styled-table(
-  columns: (1fr, 1fr, 1fr),
-  table.header(
-    text(fill: white, weight: "bold", size: 8.5pt)[Schritt],
-    text(fill: white, weight: "bold", size: 8.5pt)[Wenn …],
-    text(fill: white, weight: "bold", size: 8.5pt)[Dann …],
-  ),
-  [1. *R zuerst*],
-  [Lebensgefahr-Cluster / schwere RF],
-  [*C: Stop & 112 / ED* — I und „Nutzen“ nachrangig],
-  [2. *S klären*],
-  [geplante Maßnahme unsicher],
-  [Maßnahme stoppen/ändern (*S4/S3*); ggf. nur PT-Lite (*S2*)],
-  [3. *I begründen*],
-  [R und S erlauben Handlungsspielraum],
-  [Nutzen *belegen* (Muster, Ziel, Evidenzrahmen) — nicht unterstellen],
-  [4. *C benennen*],
-  [R, I, S gesetzt],
-  [*einen* konkreten Plan in einem Satz (siehe 4.2)],
-  [5. *Safety-Netting*],
-  [Treat / Treat+Refer],
-  [Was bei Verschlechterung? Frist Re-Evaluation (`→ II-2`, `→ II-3 (geplant)`)],
-)
+// Free vision → Typst recreate (medical-graphics Phase B1; Media Accept recreate winner).
+// Vision: domains/medical/assets/ii1-drei-achsen-drisc/vision-free-01.png
+#pflichtsequenz-risc()
 
 *Binär:* Kein C ohne ausgesprochenes R+I+S. „RF positiv“ allein ist *kein* Plan.
 

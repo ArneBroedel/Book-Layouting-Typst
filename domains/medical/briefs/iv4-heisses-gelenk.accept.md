@@ -3,9 +3,14 @@
 - **chapter_id:** IV-4 / `heisses-gelenk`
 - **brief_path:** `domains/medical/briefs/iv4-heisses-gelenk.brief.md`
 - **feasibility_path:** `domains/medical/briefs/iv4-heisses-gelenk.feasibility.md`
-- **spike_paths:** none (Tech recommended no spike; Media concurs)
-- **date:** 2026-07-20
-- **media_reviewer:** media-designer (Welle-03 pilot IV-4)
+- **graphics_decision_path:** `domains/medical/briefs/iv4-heisses-gelenk.graphics.md`
+- **spike_paths:**
+  - `dist/spikes/graphics/iv4-heisses-gelenk/recreate-p1.png` (Typst B1)
+  - `dist/spikes/graphics/iv4-heisses-gelenk/compare.pdf`
+  - `domains/medical/assets/iv4-heisses-gelenk/vision-free-01.png` (free — claim drift; provenance)
+  - `domains/medical/assets/iv4-heisses-gelenk/vision-refined-01.png` (B2 claim-cleaned)
+- **date:** 2026-07-20 (body); **graphics A/B accept:** 2026-07-22
+- **media_reviewer:** media-designer (Welle-03 pilot IV-4 + medical-graphics batch)
 - **brief_class:** exploration
 
 ## Decision
@@ -19,7 +24,8 @@
 | S3 Ursachenmatrix | accept | `styled-table` R4→R1. |
 | S4 Red-Flag-Box | accept | Urgency column loud; thresholds copy-through. |
 | S5 Multi-S1-Split | accept | Strict bacterial path wins in Direktzugang column. |
-| S6 Entscheidungs-Flow (`protocol-steps`) | accept | Ordered weight. |
+| S6 Entscheidungs-Flow | **accept** | Graphic winner: recreate code — see graphic winners |
+| S6 graphic A/B | **accept** | Winner **recreate** `#entscheidungs-flow-heisses-gelenk()` |
 | S7 R+I+S→C | accept | After path core. |
 | S8 Kontrastpaare (`ddx-box`) | accept | Short only. |
 | S9 Absolute KI (`cave`) | accept | After action path. |
@@ -28,11 +34,29 @@
 | S12–S13 trailing / claims | accept (approx) | Quiet; audit appendix copy-through. |
 | Genre / early gatekeeper | accept | Early gatekeeper required and bound. |
 
+## Graphic winners (A/B 2026-07-22)
+
+| unit_id | accepted winner | note |
+|---|---|---|
+| S6 Entscheidungs-Flow | **recreate (code)** `#entscheidungs-flow-heisses-gelenk()` | Exact 112/ED/Stunden split; Kind bifurcation; gatekeeper ≥ 38,5 °C; Default-to-Danger. Free had invented vitals → **not** production. B2 refined PNG = claim-cleaned look provenance (screen DPI). Module: `toolset/compose/spikes/graphics/iv4-heisses-gelenk/lib/entscheidungs-flow.typ`. |
+
+## Pedagogy / scan checks (Media) — graphics add-on
+
+- [x] Graphic candidates reviewed; free claim audit failed → recreate wins
+- [x] Split thresholds copy-through only (no invented vitals in winner)
+- [x] Default-to-Danger + no probe treatment visible
+
+### Media notes for Compose (S6 graphic)
+
+1. Prefer `#entscheidungs-flow-heisses-gelenk()` over plain bullets.
+2. Never ship free-01 without B2 claim audit pass.
+3. Keep 112 vs ED vs binnen Stunden as separate chips — no mixed answer.
+
 ## If revise
 
 *(not applicable — overall accept)*
 
-Would have blocked: mixed 112/ED; gatekeeper late; Gicht/OA softens 112; invented CRP cut-offs; sources before action; claim paraphrase.
+Would have blocked: mixed 112/ED; gatekeeper late; Gicht/OA softens 112; invented CRP cut-offs; sources before action; claim paraphrase; free-vision inventing clinical vitals.
 
 ## Pedagogy / scan checks (Media)
 

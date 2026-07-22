@@ -3,7 +3,8 @@
 - **chapter_id:**
 - **brief_path:**
 - **feasibility_path:**
-- **spike_paths:** (if any)
+- **graphics_decision_path:** (if any — `*.graphics.md`)
+- **spike_paths:** (if any; include A/B candidates)
 - **date:**
 - **media_reviewer:**
 
@@ -14,9 +15,15 @@
 | overall | | |
 | section … | | |
 
+## Graphic winners (if Decision Note / A/B)
+
+| unit_id | accepted winner (code\|asset\|hybrid) | note |
+|---|---|---|
+| | | |
+
 ## If revise
 
-What must Tech change before compose?
+What must Tech / Graphics change before compose?
 
 ## Pedagogy / scan checks (Media)
 
@@ -26,7 +33,9 @@ From `media-brief/references/design-reasoning.md` §5 — tick or note fail → 
 - [ ] Action/decision path louder than links/sources
 - [ ] Order-critical steps read as ordered
 - [ ] Urgency weights from Brief not flattened in spike/approx
-- [ ] No claim rewrite or new clinical thresholds in layout
+- [ ] Graphic / free-vision candidates reviewed when present (ideal proximity + learner job)
+- [ ] Production path after vision: recreate / refine / accept-asset noted if Graphics ran
+- [ ] No claim rewrite or new clinical thresholds in layout (incl. images)
 
 ## Content freeze pin (production)
 

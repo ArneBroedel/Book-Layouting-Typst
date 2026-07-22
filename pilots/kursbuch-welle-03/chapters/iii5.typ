@@ -1,7 +1,13 @@
 // Auto-generated from chapter-iii5-cauda-notfallkarte.md — layout only; clinical text not rewritten.
 // Source: Kursbuch pilot 2026-07-welle-03-final-10
+// S4 graphic: sofortmassnahmen recreate (medical-graphics B1, Media Accept 2026-07-22)
 #import "/packages/bookkit/lib.typ": *
 #import "/packages/bookkit-didactics/lib.typ": *
+#import "@preview/fontawesome:0.6.1": *
+#fa-version("6")
+#import "/toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/lib/sofortmassnahmen.typ": (
+  sofortmassnahmen-ces,
+)
 
 #chapter-opener(
   title: [Cauda equina — Handlungskarte Erstkontakt (MSK-vital)],
@@ -67,12 +73,9 @@ Handlungsschwellen laut S1 `cauda-equina-syndrom-facts.md` §7 / §9 (AWMF 187-0
 
 == Sofortmaßnahmen vor Ort (nur Organisation / Erste Hilfe)
 
-- Therapie *sofort abbrechen* — *keine* HVT/Manipulation, *keine* Traktion, *keine* mobilisierende LWS-Technik
-- Patient *nicht* aufstehen/gehen lassen, wenn Schwäche oder Blasennot; ruhig lagern, überwachen
-- *112* bzw. organisierten ED-Transport; Übergabe: Sattel/Blase/Darm/Beinkraft, Zeitverlauf, Antikoagulation/OP/Trauma
-- Orientierende *nicht-invasive* Prüfung nur soweit sie den Transport *nicht* verzögert (Sensibilität inkl. S3–S5-Frage, grobe Kraft, MER) — *keine* invasive Restharnmessung / Sphinkterprüfung als PT-Pflicht
-- Bei Kollaps/Bewusstseinsstörung: BLS-Pfad `→ III-2`
-- *Keine* Eigen-Medikation, *kein* „Schmerz wegmassieren“, *kein* Termin „morgen früh, wenn es schlimmer wird“ bei Sattel-/Sphinkter-Flag
+// Free vision → Typst recreate (medical-graphics Phase B1; Media Accept recreate winner).
+// Vision: domains/medical/assets/iii5-cauda-notfallkarte/vision-free-01.png
+#sofortmassnahmen-ces()
 
 #section-break()
 

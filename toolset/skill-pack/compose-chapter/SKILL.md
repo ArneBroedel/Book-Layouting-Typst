@@ -25,7 +25,8 @@ Governing: `devtracks/CONSENSUS-v0.md`, `devtracks/PRODUCT-BOUNDARIES.md`.
 | Situation | Use instead |
 |---|---|
 | Free didactic ideal, gold brief, Media Accept prose | `media-brief` (Produkt B) |
-| bookkit API / setup / design-brief details | `bookkit` |
+| Code vs asset vs hybrid / A/B graphic decision | `medical-graphics` (Produkt B) |
+| bookkit API / setup / design-brief details | `bookkit`
 | General Typst syntax / layout debug | `typst-writer` |
 | `@preview` package choice / typst.toml | `typst-extension` |
 | Rewriting Critical Claims or clinical body | Author / Content (Produkt C) |
@@ -105,10 +106,11 @@ Allowed **only** for smoke tests, platform fixtures, legacy comparison — **not
 
 1. Read Media Brief **as design authority** — do not open forms.yaml first.
 2. For each section: state how the **ideal** will be realized (ladder above). Prefer `mapped` only when stable form = best shape.
-3. Pin optional `catalog_version` for preferred library awareness — **not** a cage.
-4. Spike recommended? yes/no + goal (especially for flowcharts, triage lanes, custom diagrams).
-5. Ready for Media Accept? yes / blockers.
-6. **Write the feasibility file.**
+3. For **visual units** (diagrams, schemas, illustrations, flows, icon systems, wishlist graphics): set **`graphic_mode`** (`code` | `asset` | `hybrid` | `ab-test` | `none`). Prefer code when it meets the ideal; always consider asset/hybrid; A/B when unsure. Load **`medical-graphics`** for Decision Notes, asset production, and ab-pair spikes.
+4. Pin optional `catalog_version` for preferred library awareness — **not** a cage.
+5. Spike recommended? yes/no + goal (layout, code-graphic, asset-graphic, or ab-pair).
+6. Ready for Media Accept? yes / blockers.
+7. **Write the feasibility file** (link `graphics_decision_path` when Graphics was invoked).
 
 Suggested path: `…/<slug>.feasibility.md`.
 
@@ -116,11 +118,12 @@ Suggested path: `…/<slug>.feasibility.md`.
 
 See `toolset/compose/spikes/README.md`.
 
-- One visual goal (e.g. branching decision flowchart, urgency-lane table).
-- Minimal `.typ` → PDF/PNG under `dist/spikes/` or pilot folder.
-- Full creative surface allowed (CeTZ, Fletcher, custom modules).
+- One visual goal (e.g. branching decision flowchart, urgency-lane table) — or **`ab-pair`** (code vs asset/hybrid, same claims).
+- Minimal `.typ` → PDF/PNG under `dist/spikes/` or `dist/spikes/graphics/<slug>/`.
+- Full creative surface allowed (CeTZ, Fletcher, custom modules, **image assets**).
 - Spike is **not** production SoT until Media Accept + compose promote.
 - One build, evaluate — no auto-heal loop.
+- Graphics role owns asset / ab-pair spikes; Tech co-owns code-graphic.
 
 ```bash
 ./scripts/bookkit build --root . --entry path/to/spike.typ
@@ -138,6 +141,7 @@ Only after **Accept = yes** (or documented exception).
    - CeTZ / Fletcher / other `@preview` packages (pin versions; load `typst-extension`)
    - local `#let` helpers, `#grid`/`#stack`/`#place` when the design needs them
    - page-design / spread helpers from packages when appropriate
+   - **accepted graphic winners**: pure code diagrams **or** embedded assets / hybrid (`plate`, `wrap-figure`, `figure` + `alt`) per Decision Note
 2. **Prefer known-good** only as *quality preference*, never as *exclusive whitelist*.
 3. **Fallback** to simpler forms only after attempt; record in header/feasibility.
 4. **Claims copy-through** verbatim (normalized whitespace ok). **NEVER** paraphrase claims.
@@ -154,6 +158,8 @@ Only after **Accept = yes** (or documented exception).
 // content_revision: git:<short> | sha256:<hex>   // production: must match freeze
 // freeze: <path>                                 // production
 // tools: bookkit, bookkit-didactics, cetz?, fletcher?, custom-module?
+// graphic_decisions: <path-to-slug.graphics.md>  // when Graphics role used
+// graphics: domains/medical/assets/<slug>/...    // or consumer assets/
 ```
 
 **Production quality:** content must be **Human-frozen** (`domains/content-maturity/`).  
@@ -230,16 +236,16 @@ When ideal needs a **reusable** pattern:
 | Claims copy-through | Skip Accept under time pressure for real production |
 | Validate with creative mode (default) | Fail a good design solely for using Fletcher/custom |
 
-## Boundary vs `media-brief`
+## Boundary vs `media-brief` / `medical-graphics`
 
-| Tech (`compose-chapter`) | Media (`media-brief`) |
-|---|---|
-| Realize ideal; spikes; compose; validate | Free ideal, section prose, wishlist, Accept |
-| Full toolkit + preferred catalog library | Genre recipes as function checklists (B) |
-| Platform A: `toolset/compose/`, skill-pack | Domain B: `domains/medical/` |
-| Does not invent didactic ideal when Brief exists | Does not write production `.typ` |
+| Tech (`compose-chapter`) | Media (`media-brief`) | Graphics (`medical-graphics`) |
+|---|---|---|
+| Realize ideal; spikes; compose; validate | Free ideal, section prose, wishlist, Accept | `graphic_mode`, A/B, assets, Decision Note |
+| Full toolkit + preferred catalog library | Genre recipes as function checklists (B) | Domain B visual realization specialist |
+| Platform A: `toolset/compose/`, skill-pack | Domain B: `domains/medical/` | Domain B: `domains/medical/` |
+| Does not invent didactic ideal when Brief exists | Does not write production `.typ` | Does not replace Media Accept or full compose |
 
-If both roles appear in one session: finish Brief (or Accept) as a file first; switch skills explicitly for Tech work.
+If multiple roles in one session: Brief → Feasibility/Graphics Decision → Accept → Compose.
 
 ## Related paths
 
@@ -252,6 +258,7 @@ If both roles appear in one session: finish Brief (or Accept) as a file first; s
 | Preferred library | `toolset/form-catalog/VERSION`, `core/forms.yaml`, `core/BASIS.md` |
 | bookkit API skill | `toolset/skill-pack/bookkit/SKILL.md` |
 | Media skill (B) | `domains/medical/skill/media-brief/` |
+| Graphics skill (B) | `domains/medical/skill/medical-graphics/` |
 | Governance | `devtracks/CONSENSUS-v0.md`, `PRODUCT-BOUNDARIES.md` |
 
 Produkt **A** engine is domain-agnostic. Content paths from **C**. Domain briefs/recipes from **B**.
