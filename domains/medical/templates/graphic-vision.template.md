@@ -3,32 +3,45 @@
 - **chapter_id / slug:**
 - **unit_id:** (e.g. S4)
 - **brief_path:** (Media Brief)
+- **form_spec_path:** `domains/medical/briefs/<slug>.form-spec.md` (**required** if ambition free-vision required)
 - **content_source:** (C, read-only)
 - **genre:**
+- **recipe_id:** (optional — from playbook 09)
 - **author_role:** graphics
 - **date:**
 - **generator:** nanobanana-free (agy) | imagine-free | hand
 - **structure_reference:** **none** (required for free vision)
 
-> **Phase A only.** Content + didactic intent.  
+> **Phase A only.** Form Spec + claim pins.  
 > **Do not** attach SVG/PNG layout templates.  
-> Skill: `medical-graphics` · `references/free-vision.md`
+> Skill: `medical-graphics` · playbook `02-free-vision.md`
 
-## Learner / didactic intent (from Media — short)
+## Learner / didactic intent (from Form Spec — short)
 
-- **unit type:** danger | recognition | decision | procedure | comparison | mechanism | reference | …
+- **unit type:**
 - **learner job:**
 - **load risk:**
-- **presentation hypothesis** (prose pattern name):
+- **presentation hypothesis / recipe:**
+- **success criterion:**
 - **why this must look like a graphic** (1–2 sentences):
+
+## Must-see (from Form Spec)
+
+1.
+2.
 
 ## Content to show (claim-safe labels only)
 
-Pin wording from Content C / approved pilot — **no invention**:
+Pin wording from Form Spec / Content C — **no invention**:
 
 | step / zone | allowed text (German) |
 |---|---|
 | | |
+
+## Invariants / genre chrome
+
+- Branching / loop rules:
+- Must look like / must not look like:
 
 ## Explicit non-goals
 
@@ -39,7 +52,7 @@ Pin wording from Content C / approved pilot — **no invention**:
 ## Creative freedom note
 
 Composition, visual language, and hierarchy encoding are **open**.  
-Success = best didactic vision for the learner under the genre’s stress/scan conditions.
+Success = Form Spec success criterion under genre stress/scan conditions.
 
 ## Output paths (fill after generation)
 
@@ -51,5 +64,5 @@ Success = best didactic vision for the learner under the genre’s stress/scan c
 ## Self-check (after gen)
 
 - [ ] No structure file was used as layout template
-- [ ] Allowed labels only (or mark drift for Phase B)
+- [ ] Claim audit run (playbook 03) — PASS / DRIFT / FAIL: ____
 - [ ] Ready for Phase B: `recreate` | `refine` | `accept-asset`

@@ -30,17 +30,18 @@
 1. **Ideal match** — stable form already is the best shape → use it (`mapped`).
 2. **Extend / compose** — combine forms, local `#grid`/`#stack`, theme tokens, didactics facet.
 3. **Diagram / custom (code)** — CeTZ, Fletcher, custom `#let` in chapter or shared pilot module, page-design helpers from packages when needed for flowcharts, urgency lanes, dual-column algorithms.
-4. **Graphic mode (visual units)** — for ambitious units: **free vision first** (AI/hand from content + Media didactic intent; **no** layout-template clone). Then **realize**: recreate (Typst/SVG/hybrid) · prompt refine (book standards) · accept-asset. Prefer maintainable carrier when quality ≈ equal. Skill: `medical-graphics`. Record `graphic_mode`, `vision_path`, `realize_path`.
-5. **Spike** — prove vision and/or realization → PDF/PNG. Types: vision-free · recreate-code · recreate-hybrid · refine-ai · ab-pair · layout.
-6. **Fallback** — simpler form (`approx`) only after attempt + note *why* ideal failed. Never silent downgrade; never skip graphics work when the ideal needs it.
+4. **Form Spec (Media)** — ambitious visual units need `*.form-spec.md` (Must-see, claim pins, zones, genre chrome) before Graphics free vision. Template: `domains/medical/templates/form-spec.template.md`.
+5. **Graphic mode (visual units)** — **free vision first** (Form Spec + pins; **no** layout-template clone) → **claim audit** → multi-round **realize**: Typst recreate · true hybrid (labels **on** nodes) · AI refine · accept-asset. Prefer maintainable carrier when quality ≈ equal; **raster may be end product only with gates** (claim PASS, DPI/screen-only, MANIFEST, Accept). Skill playbook: `domains/medical/skill/medical-graphics/playbook/`. Record `graphic_mode`, `form_spec_path`, `vision_path`, `realize_path`.
+6. **Spike** — prove vision and/or realization → PDF/PNG. Types: vision-free · recreate-code · recreate-hybrid · refine-ai · ab-pair · layout. Scaffold: `./scripts/graphics-spike-init.sh <slug> [recipe]`.
+7. **Fallback** — simpler form (`approx`) only after attempt + note *why* ideal failed. Never silent downgrade; never skip graphics work when the ideal needs it.
 
 ### Graphic modes (summary)
 
 | `graphic_mode` | Meaning |
 |---|---|
 | `code` | Typst/bookkit/@preview only |
-| `asset` | Image file main carrier |
-| `hybrid` | Asset + Typst overlay (often best for claim-safe labels) |
+| `asset` | Image file main carrier (**gated** if AI raster) |
+| `hybrid` | Asset + Typst labels **on** nodes (not foot-legend-only) |
 | `ab-test` | Multiple candidates; Media Accept chooses winner |
 | `none` | No graphic object |
 
@@ -48,10 +49,10 @@
 |---|---|
 | `recreate` | Technical recreate of free vision |
 | `refine` | AI refine with book-visual-standards |
-| `accept-asset` | Promote vision/refined asset to production carrier |
+| `accept-asset` | Promote vision/refined asset to production carrier (gates) |
 | `n/a` | No free vision |
 
-Media still owns Accept (ideal proximity). Graphics owns free vision + Decision Note + assets. Tech embeds the winner.
+Media owns Form Spec + Accept (ideal / Form Spec proximity). Graphics owns free vision + claim audit + Decision Note + assets. Tech embeds the winner.
 
 ## Catalog role (not a cage)
 
@@ -81,7 +82,8 @@ Claims, accept, freeze (production profile), and compile stay hard in both modes
 
 ## Skills
 
-- Media: `domains/medical/skill/media-brief/`
-- Graphics: `domains/medical/skill/medical-graphics/` (free vision → recreate/refine/accept-asset)
+- Media: `domains/medical/skill/media-brief/` (+ Form Spec)
+- Graphics: `domains/medical/skill/medical-graphics/` (playbook 00–09; free → audit → recreate/hybrid/refine)
+- Guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`
 - Tech: `toolset/skill-pack/compose-chapter/`
 - Engine: this directory + `validate/`

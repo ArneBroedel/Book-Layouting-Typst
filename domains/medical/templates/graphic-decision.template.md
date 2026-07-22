@@ -2,6 +2,7 @@
 
 - **chapter_id:**
 - **brief_path:**
+- **form_spec_path:**
 - **vision_path:** (Phase A — `*.vision.md` if free vision ran)
 - **feasibility_path:** (if any)
 - **content_source:** (C, read-only, if claims/labels)
@@ -9,15 +10,23 @@
 - **author_role:** graphics
 - **date:**
 
-> Phase A: free vision (content + didactic intent).  
-> Phase B: realize (`recreate` | `refine` | `accept-asset`).  
-> Skill: `domains/medical/skill/medical-graphics/`
+> Form Spec → free vision → claim audit → multi-round realize.  
+> Skill: `domains/medical/skill/medical-graphics/` · playbook `00-overview.md`
 
 ## Phase A — Free vision
 
-| unit_id | free vision ran? | candidate paths | structure_ref used? | notes |
-|---|---|---|---|---|
-| | yes/no/skip | | **none** required if free | |
+| unit_id | free vision | candidate paths | structure_ref | claim_audit | notes |
+|---|---|---|---|---|---|
+| | yes/no/skip | | **none** if free | PASS/DRIFT/FAIL | |
+
+## Multi-round log (G3)
+
+| round | action | path / artifact | result |
+|---|---|---|---|
+| R1 recreate | | | |
+| R2 hybrid | n/a or path | | |
+| R3 refine | | | |
+| R4 A/B | | | |
 
 ## Visual-Units (realization)
 
@@ -31,8 +40,10 @@
 |---|---|
 | `recreate` | Technical recreate of free vision (Typst / SVG / hybrid) |
 | `refine` | AI prompt refine with book-visual-standards |
-| `accept-asset` | Promote free/refined asset as production carrier |
-| `n/a` | No free vision / direct code or catalog |
+| `accept-asset` | Promote free/refined asset as production carrier (**gates** in playbook 06) |
+| `n/a` | No free vision / direct code |
+
+**End product gates if `asset`:** claim audit PASS · Must-see met · DPI or screen-only · MANIFEST · Media Accept
 
 ## A/B or multi-candidate results
 
@@ -44,7 +55,7 @@
 
 | path | format | source | license | alt | role | print_ok |
 |---|---|---|---|---|---|---|
-| | svg/png | hand/inkscape/ai-gen:tool/… | | | vision/hybrid-base/main | yes/dpi/n/a |
+| | svg/png | hand/inkscape/ai-gen:tool/… | | | vision/hybrid-base/main | yes/dpi/screen-only/n/a |
 
 ## Risks / Human review
 
@@ -54,11 +65,13 @@
 
 ## Ready for Media Accept?
 
+- [ ] Form Spec present (or documented skip)
+- [ ] Claim audit recorded
 - [ ] yes
 - [ ] no — blockers:
 
 ## Compose handoff (post-Accept)
 
-| unit_id | winner | embed pattern | asset path |
+| unit_id | winner | embed pattern | asset / module path |
 |---|---|---|---|
 | | | | |

@@ -3,6 +3,7 @@
 - **chapter_id / slug:** III-5 / `cauda-notfallkarte`
 - **unit_id:** S4 Sofortmaßnahmen vor Ort
 - **brief_path:** `domains/medical/briefs/iii5-cauda-notfallkarte.brief.md`
+- **form_spec_path:** `domains/medical/briefs/iii5-cauda-notfallkarte.form-spec.md`
 - **content_source:** Kursbuch staging pilot + `pilots/kursbuch-welle-03/chapters/iii5.typ`
 - **genre:** notfall-karte
 - **author_role:** graphics

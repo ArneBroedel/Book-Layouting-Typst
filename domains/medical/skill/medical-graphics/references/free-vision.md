@@ -7,6 +7,7 @@
 
 | Input | Role |
 |---|---|
+| **Form Spec** (preferred) | Must-see, zones, claim pins, genre chrome, success criterion |
 | Media Brief section ideal / hypothesis | What the learner should *see* |
 | Content labels from C | Claim-safe wording only |
 | Genre recipe function | Stress/scan constraints (e.g. notfall-karte) |

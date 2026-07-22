@@ -1,11 +1,13 @@
 ---
 name: media-brief
-description: "ALWAYS use when drafting or revising a Media Brief, didactic media design intent, gold brief, accept record, freies Mediendesign, presentation intent for notfall-karte / lerntext / fallbasiert, or Media Accept after Tech feasibility/spike. Covers ideal-first Media role (Produkt B): highest creativity and medical-pedagogical best form first — catalog never cages ideation. Do NOT use for writing production .typ, compose-chapter as the only thinking step, claim rewrite, or form-id shopping."
+description: "ALWAYS use when drafting or revising a Media Brief, Form Spec for ambitious visual units, didactic media design intent, gold brief, accept record, freies Mediendesign, presentation intent for notfall-karte / lerntext / fallbasiert, or Media Accept after Tech feasibility/spike/graphics. Covers ideal-first Media role (Produkt B): highest creativity and medical-pedagogical best form first (detailed Form Spec) — catalog never cages ideation. Do NOT use for writing production .typ, free-vision PNG generation, compose-chapter, claim rewrite, or form-id shopping."
 ---
 
 # media-brief (Domain medical — Produkt B)
 
-Executable procedure for the **Media** role: free didactic–media ideal → Media Brief artifact → Accept after Tech feasibility/spike.
+Executable procedure for the **Media** role: free didactic–media ideal → **Form Spec** (ambitious units) → Media Brief → Accept after Tech/Graphics.
+
+**Why (presentation forms):** `Guides/Medical-Presentation-Forms.md`
 
 **SoT of this skill:** `domains/medical/skill/media-brief/` (Produkt B).  
 **Not** platform foundation; not a substitute for `compose-chapter` / Tech.  
@@ -41,11 +43,11 @@ Autor (C) ──► Media Brief (this skill) ──► Tech Feasibility ◄─�
                           Compose + Validate (Tech — creative-first)
 ```
 
-Media designs the **best medical-pedagogical presentation** (flows, lanes, spreads, hierarchy) **without** asking first what is catalog-stable.  
-Tech **realizes** that ideal with the full toolkit (prefer known-good only when it *is* best). **Graphics** chooses code vs asset/hybrid (or A/B) for visual units. Media **accepts** proximity to the ideal — not “only stable forms”.
+Media designs the **best medical-pedagogical presentation** (flows, lanes, spreads, hierarchy) **without** asking first what is catalog-stable. For **ambitious visual units**, Media writes a **Form Spec** (Must-see, zones, claim pins, genre chrome, success criterion) so Graphics can free-vision and recreate without inventing pedagogy.  
+Tech **realizes** accepted winners. **Graphics** runs free vision → claim audit → recreate/hybrid/refine. Media **accepts** proximity to Form Spec / ideal — not “only stable forms”.
 
-**MUST:** unit→hypothesis; free ideal; surface ambitious presentation (flowcharts, triage lanes, custom diagrams); evaluate Tech proposals against the ideal; ask Author only targeted questions.  
-**MUST NOT:** change Critical Claims; build the Brief as a form-id shopping list; pre-shrink the ideal to “what we know compiles”; accept monotony just because validate is green.
+**MUST:** unit→hypothesis; free ideal; **Form Spec for free-vision-required units**; surface ambitious presentation; evaluate proposals against Form Spec Must-see; ask Author only targeted questions.  
+**MUST NOT:** change Critical Claims; build the Brief as a form-id shopping list; pre-shrink the ideal to “what we know compiles”; accept monotony just because validate is green; leave Graphics to invent the pedagogical form.
 
 ## Inputs
 
@@ -68,18 +70,25 @@ The preferred form library is a **hint**, never a design ceiling.
 
 Exploration is allowed **in parallel** with content-review. It never replaces freeze.
 
-## Process (Brief)
+## Process (Brief + Form Spec)
 
 1. **Design reasoning (compact)** — load [`references/design-reasoning.md`](references/design-reasoning.md). For each content unit (heading/role only): **unit type → learner job → load risk → presentation hypothesis → recipe function** (if any). No claim paraphrase; **no form ids** (hypotheses are pattern names: urgency-lane, branching flowchart, protocol sequence, case frame, …).
 2. **ALWAYS free ideal next** — overall presentation goal for the learner/actor (not clinical restatement; not bookkit APIs). Ask: *what is the hypothetically best didactic presentation?* Including ambitious visuals (true flowcharts, triage lanes, dual-channel diagrams).
 3. **Section plan in prose** — for each section: content anchor, ideal presentation, priority / page intent. Optional **hypothesis** column. Genre recipe = **function checklist**, not form cage.
-4. **Wishlist / ambitious patterns** — explicit `wishlist_outside_catalog[]` (or “beyond preferred library”) with why + severity. Visible ambition is success. Tech is expected to **try** these, not silently drop them.
-5. **Author questions** — only targeted Human questions; do **not** rewrite claims or invent clinical content.
-6. **Explicit non-goals** — what this Brief is not trying to do (include “no clinical simplification in layout”).
-7. **NEVER production Typst** — no `.typ`, no bookkit call sketches as the Brief body.
-8. **Write the artifact** — Markdown using the template (below). Chat without a file update is incomplete.
+4. **Form Spec (ambitious visual units) — REQUIRED when free-vision ambition is high**  
+   - Template: `domains/medical/templates/form-spec.template.md`  
+   - Path: `domains/medical/briefs/<slug>.form-spec.md` (one file per unit or multi-unit sections clearly headed)  
+   - Fill: learner context, job, load risks, **zones**, **Must-see**, **claim pins** (copy-through C), genre chrome, invariants, success criterion, ambition flag  
+   - Guide: `Guides/Medical-Presentation-Forms.md`  
+   - Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spec.md`  
+   - Skip Form Spec only for trivial units (`ambition: skip`) documented in Brief.
+5. **Wishlist / ambitious patterns** — explicit wishlist with why + severity. Visible ambition is success.
+6. **Author questions** — targeted only; no claim rewrite.
+7. **Explicit non-goals** — include “no clinical simplification in layout”.
+8. **NEVER production Typst** — no `.typ` / bookkit sketches as Brief body.
+9. **Write artifacts** — Brief + Form Spec files. Chat without files is incomplete.
 
-Keep reasoning **short** (table or few lines). Do not paste the full reference into the Brief.
+Keep reasoning **short** in the Brief table; put detail in Form Spec.
 
 ## Output: Media Brief
 
@@ -108,15 +117,16 @@ Fill all sections:
 
 When Tech returns a feasibility note and optional spike PDF/PNG (and optional Graphics Decision Note / A/B candidates):
 
-1. Read Brief + Feasibility (+ spike visuals if any; + `*.graphics.md` if present).
+1. Read Brief + **Form Spec** + Feasibility (+ spikes; + `*.graphics.md` if present).
 2. Per overall + strittige Abschnitte: **`accept` | `revise` | `reject`** + 1–3 sentence note.
 3. Run the **Accept rubric** in [`references/design-reasoning.md`](references/design-reasoning.md) §5 (gatekeeper findable, action louder than sources, order visible, urgency not flattened, **flows look like flows**, **not box monotony**, no claim rewrite).
-4. If graphic candidates / A/B: pick **winner** by ideal proximity + learner job (not “prettiest PNG”); note in Accept.
-5. If Tech/Graphics fell back from wishlist/ideal without a documented attempt: **revise** — demand spike or better realization (incl. asset path when ideal needs it).
-6. If **revise**: state what Tech/Graphics must change before compose (artifact, not chat-only).
-7. Check **Production compose authorized?** only on accept path.
-8. For **production** Accept: verify freeze pin (`content_status: frozen`, `content_revision` match). Exploration Accept must **not** check production compose yes.
-9. Write Accept record from **`domains/medical/templates/accept-record.template.md`**.
+4. **Form Spec proximity:** Does the winner meet **Must-see** and genre chrome? If free-vision unit has no Form Spec → revise Media first or document exception.
+5. If graphic candidates / A/B: pick **winner** by ideal proximity + learner job + Form Spec success criterion (not “prettiest PNG”); note carrier (`code`|`hybrid`|`asset`). Raster winner only if claim audit PASS + gates (see medical-graphics playbook 06).
+6. If Tech/Graphics fell back from wishlist/ideal without documented attempt: **revise**.
+7. If **revise**: state required changes (artifact, not chat-only).
+8. Check **Production compose authorized?** only on accept path.
+9. For **production** Accept: verify freeze pin. Exploration must not authorize production compose.
+10. Write Accept record from **`domains/medical/templates/accept-record.template.md`** (include `form_spec_path`, graphic winners).
 
 Suggested path: `domains/medical/briefs/<slug>.accept.md` (or next to feasibility).
 
@@ -146,19 +156,21 @@ Do not open a third Media↔Tech round without Human.
 |---|---|
 | Unit→hypothesis **before** any form-id thought | Production `.typ` / bookkit layout in this skill |
 | Free ideal = hypothetically **best** presentation | Pre-shrink ideal to “what maps to stable” |
-| Visible wishlist / ambitious patterns | Critical Claim rewrite or new clinical thresholds |
-| Accept on proximity to **ideal** (incl. visual quality) | Accept monotony because catalog/minima green |
-| Emit Brief or Accept **file** from templates | Design monologue without artifact update |
+| **Form Spec** for free-vision-required units | Leave pedagogical form to Graphics alone |
+| Claim pins = copy-through from C | Invent thresholds in Form Spec |
+| Visible wishlist / ambitious patterns | Critical Claim rewrite |
+| Accept on proximity to **Form Spec / ideal** | Accept monotony because catalog green |
+| Emit Brief / Form Spec / Accept **files** | Design monologue without artifact |
 | Treat recipes as functional checklists | Brief = form-id shopping list only |
 | Stop at 2 Media↔Tech rounds → Human | Implement feasibility/spike yourself |
-| Point Tech at Brief path; stay out of compose | Load full med-ed library into every Brief |
+| Point Graphics at Form Spec path | Generate free-vision PNGs in this skill |
 
 ## Boundary vs Tech / Graphics
 
 | Media (`media-brief`) | Tech (`compose-chapter`) | Graphics (`medical-graphics`) |
 |---|---|---|
-| Ideal presentation, section prose, wishlist, author Qs | Realize ideal; compose; validate | `graphic_mode`, A/B, assets, Decision Note |
-| Accept / revise / reject (visual quality counts) | Full toolkit; embed accepted winners | Does not invent ideal or own Accept |
+| Ideal + **Form Spec** + wishlist + author Qs | Compose + validate; embed winners | Free vision → audit → recreate/hybrid/refine |
+| Accept / revise / reject (Form Spec proximity) | Full toolkit | Does not invent Form Spec or own Accept |
 | Domain B | Platform A | Domain B |
 | Does not write production `.typ` | Does not invent didactic ideal | Does not rewrite claims |
 
@@ -169,10 +181,12 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | Artifact | Path |
 |---|---|
 | Design reasoning (B-core) | `domains/medical/skill/media-brief/references/design-reasoning.md` |
+| Presentation forms guide | `Guides/Medical-Presentation-Forms.md` |
+| Form Spec template | `domains/medical/templates/form-spec.template.md` |
 | Brief template | `domains/medical/templates/media-brief.template.md` |
 | Accept template | `domains/medical/templates/accept-record.template.md` |
 | Graphics Decision template | `domains/medical/templates/graphic-decision.template.md` |
-| Graphics skill | `domains/medical/skill/medical-graphics/` |
+| Graphics skill / playbook | `domains/medical/skill/medical-graphics/` |
 | Recipes | `domains/medical/recipes/` |
 | Briefs / gold | `domains/medical/briefs/` |
 | Ownership | `domains/medical/OWNERSHIP.md` |

@@ -2,16 +2,20 @@
 
 **Load when:** choosing Phase A/B and `graphic_mode` / `realize_path`.
 
-## 0. Ladder (v0.2 free-first)
+## 0. Ladder (v0.3 free-first + Form Spec)
 
 ```text
+0. Form Spec (Media)     — Must-see + claim pins + genre
 1. Free vision first     — ambitious visual units (default)
-2. Best realization      — recreate | refine | accept-asset
-3. Prefer maintainable   — when quality ≈ equal (code/hybrid > opaque raster)
-4. Fallback simpler      — only if vision + realize fail
+2. Claim audit           — mandatory after free
+3. Best realization      — multi-round: recreate | hybrid | refine | accept-asset
+4. Prefer maintainable   — when quality ≈ equal (code/hybrid > low-DPI raster)
+5. Raster end allowed    — only if gates PASS (playbook 06)
+6. Fallback simpler      — only if vision + realize fail
 ```
 
-**Code first** = preferred *realization* when free vision skipped or qualities equal — **not** the first creative filter for ambitious graphics.
+**Code first** = preferred *realization* when free vision skipped or qualities equal — **not** the first creative filter for ambitious graphics.  
+**Playbook:** `playbook/00-overview.md`
 
 ## 1. When to run free vision
 
@@ -39,11 +43,14 @@
 | **refine** | Vision good; needs palette/flow/German polish only |
 | **accept-asset** | Recreate loses quality; DPI/alt/H-Gfx OK |
 
-Production preference after free vision:
+Production preference after free vision + claim audit:
 
-1. recreate (hybrid or code)  
-2. vector asset  
-3. high-res raster + gates  
+1. recreate (code) when quality ≈ free  
+2. true hybrid (labels on nodes) when form chrome needs asset  
+3. vector asset  
+4. high-res / refined raster **only with gates** (claim PASS, DPI or screen-only, MANIFEST, Accept)  
+
+Never: accept-asset on claim FAIL.
 
 ## 4. graphic_mode (carrier)
 

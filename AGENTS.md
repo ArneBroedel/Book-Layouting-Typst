@@ -44,8 +44,8 @@ Project skills encode hard-won conventions and **supersede general Typst advice*
 | `typst-extension` | Any `@preview` import, JSON/CSV data, `typst.toml`/CI, package choice |
 | `bookkit` | Importing bookkit packages, starter/CLI consumer work, design-brief/presets |
 | `compose-chapter` | Tech compose: feasibility note, catalog-whitelist `chapter.typ`, spike, validate chapter (Produkt A) — **not** free didactic ideal / gold brief |
-| `media-brief` | Media Brief, free didactic media design, gold brief, Accept after feasibility/spike (Produkt B) — **not** production `.typ` |
-| `medical-graphics` | After Brief: **free vision first** (content+didactic, no layout clone), then recreate/refine/accept-asset; Nano Banana/`agy`; Decision Note; domain assets (Produkt B) — **not** ideal authorship or full compose |
+| `media-brief` | Media Brief + **Form Spec** for ambitious visual units, free didactic ideal, Accept after feasibility/spike/graphics (Produkt B) — **not** production `.typ` or free-vision PNG gen |
+| `medical-graphics` | After Form Spec/Brief: free vision → **claim audit** → recreate/hybrid/refine (playbook); raster end only gated; Decision Note; domain assets (Produkt B) — **not** Form Spec authorship or full compose |
 | `pinit-workflow` | Any `#pin*` / pinit annotation work |
 | `skill-creator` | Create, improve, evaluate, or harvest skills |
 
@@ -123,7 +123,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 **Flow (v0.2):** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.  
 **Flow (v0.3 target):** C draft → **content-review / freeze** → B brief → A compose path → **proof / imprimatur** → print. Spec: `devtracks/content-maturity/`.
 
-**Skill gate:** `media-brief` + **`medical-graphics`** (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`, discovery via `.github/skills/` / `.grok/skills/`). Human checkpoints: `domains/content-maturity/checkpoints.md` (optional **H-Gfx** for risky production assets). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content.
+**Skill gate:** `media-brief` (Form Spec) + **`medical-graphics`** playbook (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`, discovery via `.github/skills/` / `.grok/skills/`). Graphics guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`. Human checkpoints: `domains/content-maturity/checkpoints.md` (optional **H-Gfx** for risky production assets). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 

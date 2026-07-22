@@ -18,8 +18,9 @@ Small experiments to prove an ambitious Media ideal (flowchart, urgency lanes, c
 | `asset-graphic` | SVG/PNG embed via figure helpers | Graphics |
 | `ab-pair` | Same unit: multiple carriers, comparable PNG crops | Graphics + Tech |
 
-**Free-first sequence (ambitious graphics):** `vision-free` → pick direction → `recreate-*` or `refine-ai` or promote asset → Media Accept.  
-Wrappers: `scripts/graphics-vision-agy.sh`, `scripts/graphics-refine-agy.sh`.
+**Free-first sequence (ambitious graphics):** Form Spec (Media) → `vision-free` → **claim audit** → `recreate-*` / hybrid / `refine-ai` / promote asset (gated) → Media Accept.  
+Playbook: `domains/medical/skill/medical-graphics/playbook/00-overview.md`.  
+Wrappers: `scripts/graphics-vision-agy.sh`, `scripts/graphics-refine-agy.sh`, `scripts/graphics-spike-init.sh`.
 
 ## Rules
 

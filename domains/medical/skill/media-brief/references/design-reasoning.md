@@ -22,6 +22,19 @@ For each content **unit** (heading/role — no claim paraphrase):
 
 Then write **Overall presentation goal** + **Section plan**. Skip empty theory prose in the Brief.
 
+### Form Spec (ambitious visual units)
+
+When the hypothesis needs a **true graphic** (flowchart, hard-stop protocol, OS sequence, triage path, …), also write:
+
+`domains/medical/briefs/<slug>.form-spec.md`  
+Template: `domains/medical/templates/form-spec.template.md`  
+Guide: `Guides/Medical-Presentation-Forms.md`
+
+Minimum fields: zones, **Must-see**, **claim pins**, genre chrome, success criterion, ambition flag.  
+This is the Graphics handoff contract — denser than the Brief table, still no form ids.
+
+Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spec.md`.
+
 ---
 
 ## 2. Unit type → presentation hypothesis
@@ -74,6 +87,8 @@ Then write **Overall presentation goal** + **Section plan**. Skip empty theory p
 | Spike/approx does not equalize urgency levels that Brief weighted | `revise` |
 | Wishlist abandoned without documented attempt / spike | `revise` |
 | Graphic A/B or asset path skipped when ideal clearly needs non-code form (no Decision Note attempt) | `revise` |
+| Ambitious unit missing Form Spec (no Must-see / claim pins) | `revise` (Media) or document exception |
+| Winner misses Form Spec **Must-see** or fails claim audit (if asset) | `revise` |
 | A/B winner chosen without ideal/learner-job rationale | `revise` |
 | No claim rewrite / no new clinical thresholds in layout (incl. inside images) | `reject` or Author loop |
 

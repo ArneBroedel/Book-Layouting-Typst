@@ -84,4 +84,17 @@ Report: `dist/spikes/graphics/_eval/eval-batch-2026-07-22.md`
 
 ## Harvested into
 
-*(empty until track completion — candidate: medical-graphics decision-heuristics “stress card contiguity”)*
+**Playbook system (2026-07-23) — partial track harvest; track may stay open for dogfood:**
+
+| Learning | Target |
+|---|---|
+| Form Spec as Media handoff | `media-brief` + `form-spec.template.md` + `Guides/Medical-Presentation-Forms.md` |
+| Free-first multi-round ladder | `medical-graphics` SKILL + `playbook/00–09` |
+| Claim audit mandatory | `playbook/03` + `graphic-claim-audit.template.md` + free-vision.md |
+| Contiguity / fair hybrid | `playbook/05` + decision-heuristics |
+| Raster end product gated | `playbook/06` |
+| Form recipes (4 skeletons) | `playbook/09` + examples/INDEX |
+| Narrative why | `Guides/Medical-Graphics-Playbook.md` |
+| System plan | `devtracks/medical-graphics/playbook-system-plan.md` |
+
+Full archive when dogfood (new chapter end-to-end on Form Spec) is done.

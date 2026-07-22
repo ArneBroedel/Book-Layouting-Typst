@@ -1,6 +1,6 @@
 # Plan: Praktisch anwendbares Playbook-System (Idee → Vision → Realize → Accept)
 
-**Status:** planning (nicht implementiert)  
+**Status:** **implemented** (2026-07-23) — P1–P6 delivered; dogfood optional  
 **Parent track:** `devtracks/medical-graphics/`  
 **Ziel:** Aus Content (C) zuerst die **medizinpädagogisch beste Darstellungsform** so detailliert wie möglich beschreiben; danach die **grafische Umsetzung** als visuelle Idee und Realisierungskette (Typst → Hybrid → Refine → optional Raster als Endprodukt) **agenten- und menschenfähig** machen.
 

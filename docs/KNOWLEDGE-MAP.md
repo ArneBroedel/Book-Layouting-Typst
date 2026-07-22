@@ -50,6 +50,8 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | `Working_With_Typst-Theory_To_Practice.md` (canonical lessons-learned ledger) | `typst-writer` |
 | `Typst Extensibility.md` | `typst-extension` |
 | `Pinit-Best-Practices.md` | `pinit-workflow` |
+| `Medical-Presentation-Forms.md` (Form Spec, zones, claim pins) | `media-brief` + `medical-graphics` |
+| `Medical-Graphics-Playbook.md` (free-first, claim audit, hybrid, raster gates) | `medical-graphics` |
 
 ---
 

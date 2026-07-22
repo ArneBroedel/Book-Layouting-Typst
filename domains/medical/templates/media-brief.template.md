@@ -38,6 +38,16 @@ What should the *layout/media* achieve for the learner/actor? (not restating cli
 |---|---|---|
 | | | |
 
+## Form Spec handoff (ambitious visual units)
+
+For each free-vision-required unit write  
+`domains/medical/briefs/<slug>.form-spec.md`  
+(template: `form-spec.template.md`). List paths:
+
+| unit_id | form_spec_path | ambition |
+|---|---|---|
+| | | required / optional / skip |
+
 ## Author questions (Human)
 
 1. …

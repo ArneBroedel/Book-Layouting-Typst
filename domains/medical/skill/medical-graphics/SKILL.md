@@ -1,148 +1,141 @@
 ---
 name: medical-graphics
-description: "ALWAYS use after a Media Brief for visual/graphic units: free AI vision first (content + didactic intent, no layout clone), then realize via Typst/SVG/hybrid recreate, prompt refine, or accept-asset; Decision Notes, Nano Banana/agy, Imagine, A/B compare. Covers didactic content graphics (flows, mechanisms, schemas — not only anatomy). Do NOT use for free Media ideal authorship, chapter compose/validate, or clinical claim rewrite."
+description: "ALWAYS use after Media Brief/Form Spec for visual units: free vision first, claim audit, then multi-round realize (Typst recreate, hybrid labels-on-nodes, AI refine); Decision Notes, A/B, raster end-product only with gates. Covers didactic content graphics (flows, protocols, schemas — not only anatomy). Do NOT use for Media Form Spec authorship, chapter compose/validate, or clinical claim rewrite."
 ---
 
 # medical-graphics (Domain medical — Produkt B)
 
-**Graphics** role: after Media’s free ideal, produce the best **visual realization** — **free vision first** for ambitious units, then constrain and realize.
+**Graphics** role: after Media’s **Form Spec** / Brief ideal, produce the best **visual realization**.
 
 **SoT:** `domains/medical/skill/medical-graphics/`  
-**Policy:** `toolset/compose/CREATIVE-COMPOSE.md`
+**Playbook (run this):** [`playbook/00-overview.md`](playbook/00-overview.md)  
+**Policy:** `toolset/compose/CREATIVE-COMPOSE.md`  
+**Why-guide:** `Guides/Medical-Graphics-Playbook.md`
 
 ## When to use
 
-- Media Brief implies diagrams, schemas, flows, illustrations, cue systems  
-- Free AI vision (Nano Banana / Imagine) from content + didactic intent  
-- Recreate in Typst/SVG/hybrid; prompt refine; accept asset  
-- Graphic Decision Note / vision brief / asset manifest  
-- Feasibility asks for Graphics on visual sections  
+- Form Spec / Brief implies diagrams, flows, protocols, schemas, cue systems  
+- Free vision, claim audit, Typst recreate, hybrid, AI refine  
+- Decision Note, asset manifest, A/B, Accept handoff  
 
 ## When NOT to use
 
 | Situation | Use instead |
 |---|---|
-| Free didactic ideal / Accept prose | `media-brief` |
+| Form Spec / free ideal authorship / Accept decision | `media-brief` |
 | Full chapter compose + validate | `compose-chapter` |
 | bookkit API only | `bookkit` |
-| Typst syntax debug | `typst-writer` |
-| `@preview` package details | `typst-extension` |
+| Typst syntax bugs | `typst-writer` |
 | Claim rewrite | Content (C) |
-| Pure text pages | Skip — `graphic_mode: none` |
+| Pure text / no graphic | `graphic_mode: none` — skip |
 
-## Role flow
+## Pipeline
 
 ```text
-Media Brief
+Form Spec (Media)
     │
     ▼
-Graphics Phase A — FREE VISION (ambitious units)
-  content (C) + didactic intent only
-  NO layout SVG/PNG template
-  → *.vision.md + vision PNG(s)
+G0  Visual-Units + recipe          playbook/01
+G1  Free vision (no structure)     playbook/02
+G2  Claim audit (mandatory)        playbook/03
+G3  Realize ladder:
+      R1 Typst recreate            playbook/04
+      R2 Hybrid (optional)         playbook/05
+      R3 Refine / raster gates     playbook/06
+      R4 Fair A/B                  playbook/07
+G4  Decision Note → Media Accept   playbook/08
     │
     ▼
-Graphics Phase B — REALIZE
-  recreate (code/SVG/hybrid) | refine (AI+standards) | accept-asset
-  → Decision Note + spikes
-    │
-    ▼
-Media Accept → Tech Compose
+Tech embed accepted winner
 ```
 
-**MUST:** free vision without structure clone for ambitious units; pin claim-safe labels from C; document `realize_path`; manifest assets; Media Accept owns ideal proximity.  
-**MUST NOT:** attach repo flowcharts as free-vision templates; invent clinical content; endless render loops; mark production done without Accept.
+**MUST:** read Form Spec; free vision without structure clone (ambitious units); **claim audit after free**; pin labels from C; document `realize_path`; Media Accept owns ideal proximity.  
+**MUST NOT:** invent clinical content; foot-legend-only hybrid as fair A/B; accept-asset on audit FAIL; endless AI loops; production “done” without Accept.
 
-## Process
+## End product policy
 
-### Phase A — Free vision (default for ambitious units)
+| `graphic_mode` | Prefer when |
+|---|---|
+| `code` | Default if quality ≈ free (maintainable) |
+| `hybrid` | Asset chrome + Typst labels **on** nodes |
+| `asset` | Refined/free raster or SVG **after** claim PASS + DPI/manifest + Accept |
+| `ab-test` | Multiple candidates until Accept |
+| `none` | No graphic object |
 
-1. Extract Visual-Units from Brief (graphic only).  
-2. Write **Vision Brief** from `domains/medical/templates/graphic-vision.template.md`.  
-3. Load [`references/free-vision.md`](references/free-vision.md).  
-4. Generate with **free** tool (preferred: `./scripts/graphics-vision-agy.sh`).  
-5. Cap **2** free gens per unit. Save paths.  
+Raster **may** be final — only with gates in [`playbook/06-refine-raster.md`](playbook/06-refine-raster.md).
 
-Skip Phase A only for trivial units or documented exception.
+## Caps
 
-### Phase B — Realize
+| Loop | Max | Then |
+|---|---|---|
+| Free gens / unit | **2** | Human/Media |
+| Refine gens | **2** | recreate or Human |
+| Solid recreate | **1** (+ polish) | Accept or fallback |
+| Fair hybrid | **1** | — |
+| Media↔Graphics | **2** | Human |
 
-1. Choose **`realize_path`:** `recreate` | `refine` | `accept-asset`  
-   — heuristics: [`references/decision-heuristics.md`](references/decision-heuristics.md).  
-2. **recreate:** Typst/Fletcher/CeTZ and/or SVG hybrid with labels **on** slots.  
-3. **refine:** AI again with [`references/book-visual-standards.md`](references/book-visual-standards.md) + surgical fixes (`./scripts/graphics-refine-agy.sh`).  
-4. **accept-asset:** promote PNG/SVG; DPI + alt + claim audit; H-Gfx if risk.  
-5. Prefer maintainable carrier when quality ≈ equal (code/hybrid > low-DPI raster).  
-6. Write **Decision Note** from template.  
-7. Handoff Media Accept + Tech Compose.
-
-### graphic_mode (carrier)
-
-`code` | `asset` | `hybrid` | `ab-test` | `none`  
-— see decision-heuristics.
-
-## Outputs
+## Artifacts
 
 | Artifact | Path |
 |---|---|
-| Vision Brief | `domains/medical/briefs/<slug>.vision.md` |
-| Decision Note | `domains/medical/briefs/<slug>.graphics.md` |
+| Form Spec (Media) | `domains/medical/briefs/<slug>.form-spec.md` |
+| Vision Brief | `…/<slug>.vision.md` |
+| Claim audit | template `graphic-claim-audit.template.md` |
+| Decision Note | `…/<slug>.graphics.md` |
 | Assets | `domains/medical/assets/<slug>/` |
-| Spikes | `dist/spikes/graphics/<slug>/` |
+| Modules | `toolset/compose/spikes/graphics/<slug>/lib/` |
+| Spikes out | `dist/spikes/graphics/<slug>/` |
 
-## Spikes
-
-Types: `vision-free` | `recreate-code` | `recreate-hybrid` | `refine-ai` | `ab-pair`  
-See `toolset/compose/spikes/README.md`.
+## Commands
 
 ```bash
 ./scripts/graphics-vision-agy.sh \
   --brief domains/medical/briefs/<slug>.vision.md \
   --out domains/medical/assets/<slug>/vision-free-01.png
 
+./scripts/graphics-refine-agy.sh \
+  --vision domains/medical/assets/<slug>/vision-free-01.png \
+  --brief domains/medical/briefs/<slug>.vision.md \
+  --notes "…" --out domains/medical/assets/<slug>/vision-refined-01.png
+
+./scripts/graphics-spike-init.sh <slug> <recipe-id>
+
 typst compile --root . --ignore-system-fonts --font-path fonts \
-  path/to/spike.typ dist/spikes/graphics/<slug>/out.pdf
+  toolset/compose/spikes/graphics/<slug>/spike-recreate.typ \
+  dist/spikes/graphics/<slug>/recreate.pdf
 ```
 
-## Iteration caps
+## Form recipes
 
-| Loop | Max | Then |
-|---|---|---|
-| Free gens / unit | **2** | Human/Media direction |
-| Prompt refine gens | **2** | Human or recreate |
-| Recreate solid spikes | **1** (+ polish) | Accept or fallback |
-| Media↔Tech | **2** | Human |
+See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):  
+`branching-emergency` · `leitsymptom-vertical-flow` · `hard-stop-protocol` · `framework-os-sequence`
 
-## ALWAYS / NEVER
+## Gold examples
 
-| ALWAYS | NEVER |
+[`examples/INDEX.md`](examples/INDEX.md) · Walkthrough [`playbook/walkthrough-iv2.md`](playbook/walkthrough-iv2.md)
+
+## References
+
+| | |
 |---|---|
-| Free vision without structure template (ambitious units) | Default free gen with SVG/PNG layout attach |
-| Claim-safe labels from C | Clinical invention in pictures |
-| Document realize_path + Decision Note | Endless AI loops without artifact |
-| Hybrid labels on nodes if hybrid | Foot-legend-only as equal to flowchart |
-| Media Accept on ideal proximity | Graphics alone = production done |
-| DPI/alt/manifest for assets | Silent monotony to avoid graphics work |
+| Free vision | [`references/free-vision.md`](references/free-vision.md) |
+| Decision heuristics | [`references/decision-heuristics.md`](references/decision-heuristics.md) |
+| Book visual standards | [`references/book-visual-standards.md`](references/book-visual-standards.md) |
+| Graphic types | [`references/graphic-types.md`](references/graphic-types.md) |
+| Tools | [`references/tools-and-generation.md`](references/tools-and-generation.md) |
+| Asset pipeline | [`references/asset-pipeline.md`](references/asset-pipeline.md) |
+| Presentation forms (why) | `Guides/Medical-Presentation-Forms.md` |
 
 ## Boundary
 
 | Graphics | Media | Tech |
 |---|---|---|
-| Vision + realize + assets | Ideal + Accept | Feasibility, compose, validate |
-| Domain B | Domain B | Platform A |
-
-## Related
-
-| | |
-|---|---|
-| Free vision | `references/free-vision.md` |
-| Standards (B2) | `references/book-visual-standards.md` |
-| Tools | `references/tools-and-generation.md` |
-| Vision template | `domains/medical/templates/graphic-vision.template.md` |
-| Decision template | `domains/medical/templates/graphic-decision.template.md` |
-| Track | `devtracks/medical-graphics/` |
-| Gold free vision | `domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana-free.png` |
+| Vision + realize + assets | Form Spec + ideal + Accept | Feasibility, compose, validate |
+| Does not invent Form Spec | Does not write production `.typ` | Does not invent ideal |
+| Does not own Accept | Does not free-gen production claims | Embeds Accept winners |
 
 ## Product note
 
 Produkt **B**. Do not fold medical free-vision logic into `packages/bookkit`.
+
+**Background:** `Guides/Medical-Graphics-Playbook.md` · Track `devtracks/medical-graphics/`

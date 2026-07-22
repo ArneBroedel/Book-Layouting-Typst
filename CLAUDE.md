@@ -56,7 +56,7 @@ When editing a component, change tokens in `theme.typ` rather than inlining colo
 - **typst-writer** — use for *any* `.typ` creation/edit, compile-error fix, or layout-defect debugging.
 - **typst-extension** — use when importing any `@preview` package, loading JSON/CSV data, or configuring `typst.toml`/CI.
 - **bookkit** — use when building with `/packages/bookkit`, starter/CLI consumers, design-brief, or didactics facet.
-- **media-brief** / **medical-graphics** — domain B (SoT under `domains/medical/skill/`); ideal presentation vs. code/asset/A/B graphic realization.
+- **media-brief** / **medical-graphics** — domain B (SoT under `domains/medical/skill/`); Form Spec + ideal vs free-vision → claim audit → recreate/hybrid/refine playbook (`playbook/00–09`). Guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`.
 - **pinit-workflow** — use for any `#pin*` / pinit annotation work; self-contained (debug module, regression tests, style guide, and AI playbook ship inside the skill).
 - **skill-creator** — use to create, improve, evaluate, or benchmark a skill (e.g. when harvesting a completed devtrack into a skill).
 

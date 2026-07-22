@@ -106,7 +106,7 @@ Allowed **only** for smoke tests, platform fixtures, legacy comparison — **not
 
 1. Read Media Brief **as design authority** — do not open forms.yaml first.
 2. For each section: state how the **ideal** will be realized (ladder above). Prefer `mapped` only when stable form = best shape.
-3. For **visual units** (diagrams, schemas, illustrations, flows, icon systems, wishlist graphics): set **`graphic_mode`** (`code` | `asset` | `hybrid` | `ab-test` | `none`). Prefer code when it meets the ideal; always consider asset/hybrid; A/B when unsure. Load **`medical-graphics`** for Decision Notes, asset production, and ab-pair spikes.
+3. For **visual units** (diagrams, schemas, illustrations, flows, icon systems, wishlist graphics): expect Media **Form Spec** (`*.form-spec.md`) for ambitious units; set **`graphic_mode`** (`code` | `asset` | `hybrid` | `ab-test` | `none`). Prefer code when it meets the ideal; always consider asset/hybrid; A/B when unsure. Load **`medical-graphics`** playbook for free vision → claim audit → recreate/hybrid/refine; embed **Media Accept winners** only.
 4. Pin optional `catalog_version` for preferred library awareness — **not** a cage.
 5. Spike recommended? yes/no + goal (layout, code-graphic, asset-graphic, or ab-pair).
 6. Ready for Media Accept? yes / blockers.
@@ -240,7 +240,7 @@ When ideal needs a **reusable** pattern:
 
 | Tech (`compose-chapter`) | Media (`media-brief`) | Graphics (`medical-graphics`) |
 |---|---|---|
-| Realize ideal; spikes; compose; validate | Free ideal, section prose, wishlist, Accept | `graphic_mode`, A/B, assets, Decision Note |
+| Realize Accept winners; compose; validate | Form Spec + free ideal + Accept | Free vision → claim audit → realize ladder |
 | Full toolkit + preferred catalog library | Genre recipes as function checklists (B) | Domain B visual realization specialist |
 | Platform A: `toolset/compose/`, skill-pack | Domain B: `domains/medical/` | Domain B: `domains/medical/` |
 | Does not invent didactic ideal when Brief exists | Does not write production `.typ` | Does not replace Media Accept or full compose |

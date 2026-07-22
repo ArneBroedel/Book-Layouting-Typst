@@ -3,6 +3,7 @@
 - **chapter_id / slug:** IV-2 / `rueckenschmerz-neuro`
 - **unit_id:** S4 Entscheidungs-Flow
 - **brief_path:** `domains/medical/briefs/iv2-rueckenschmerz-neuro.brief.md`
+- **form_spec_path:** `domains/medical/briefs/iv2-rueckenschmerz-neuro.form-spec.md`
 - **content_source:** Kursbuch staging pilot + `pilots/kursbuch-welle-03/chapters/iv2.typ`
 - **genre:** leitsymptom (decision path)
 - **author_role:** graphics
