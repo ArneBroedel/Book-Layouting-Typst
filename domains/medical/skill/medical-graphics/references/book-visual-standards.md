@@ -47,7 +47,20 @@ When free vision **depicts** a clinical criterion (not only labels it):
 - **Icon = meaning.** Unscharfe Begrenzung → soft/feathered, poorly defined edge — not a sharp zigzag star.  
 - **Scale = honest.** If pin says *typisch > 5 mm*, a “5 mm” reference must be shorter than the drawn lesion (or the object clearly larger than the bar). Never label 5 mm while drawing something that reads as ~2 mm.  
 - **No false continuum.** Unlabeled color bars / fake time spectra that do not name what the color means → remove or replace with explicit poles (e.g. Evolution Wochen–Monate vs Jahre unverändert).  
-- Label-only audit is **insufficient** for criteria-by-picture units (ABCDE, size cues, spatial anatomy).
+- Label-only audit is **insufficient** for criteria-by-picture units (ABCDE, size cues, spatial maps).
+
+## Body / patho principle: schematic, not fake anatomy (Human 2026-07)
+
+AI image models **cannot** be trusted for textbook-correct anatomy (cuts, bones, vessels, multi-structure views). In a Fachbuch that is a hard fail, not “good enough style”.
+
+| Prefer | Avoid |
+|--------|--------|
+| **Coarse, abstract, schematic** principle diagrams | Photoreal or “atlas-like” limb/organ cuts that imply completeness |
+| Pathological **principle** (pressure in a closed loge; saddle region as zone) | Exact osteology / muscle atlas pretending to be reference anatomy |
+| Flat shapes, labeled zones, arrows of mechanism | Extra limbs, “almost correct” bones that invite pedantic error reading |
+| Code/CeTZ when the form is a **mechanism schematic** | Accepting free vision solely because it “looks medical” |
+
+**Rule of thumb:** If a clinician could mark anatomical mistakes on the figure, the style was **too realistic** for free vision — redesign as principle schematic (or human-drawn gold anatomy under H-Gfx).
 
 ## What refine may fix
 

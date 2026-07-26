@@ -20,6 +20,17 @@
 | Fletcher/code screenshots as “copy this” | Same |
 | form ids / catalog shopping | Phase A is not Tech map |
 | “Match our dual-lane SVG” | Use structure-transfer mode only if intentional |
+| **Atlas-style / photo-real body anatomy as free default** | Models invent wrong anatomy; textbook cannot ship “almost correct” cuts (Human 2026-07) |
+
+## Body-related free vision: principle schematic
+
+For **any** graphic that shows limb, organ, cut, or “where on the body”:
+
+1. Ask for **pathological principle**, not anatomical completeness.  
+2. Style: flat, coarse, abstract zones — so the figure cannot be mistaken for an anatomy atlas.  
+3. Prefer **one idea** per figure (focus brief).  
+4. If realism creeps in → reject or re-prompt schematic; default to **Typst/CeTZ principle** when maintainability + honesty beat free chrome.  
+5. True high-fidelity anatomy = human / H-Gfx / approved asset — not unsupervised free gen.
 
 ## Prompt layers
 

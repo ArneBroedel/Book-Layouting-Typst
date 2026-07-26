@@ -180,6 +180,15 @@ Text pins can be perfect while the **drawing teaches the wrong criterion**:
 
 **Human review** is especially valuable on icon units; agents still run the icon checklist before Accept. Surgical refine beats full re-generation when layout is already good.
 
+### Body / patho: principle schematic, not fake atlas (Human 2026-07)
+
+Free image models **will invent wrong anatomy** on complex cuts. In a textbook that is unacceptable.
+
+- Show the **pathological principle** (e.g. pressure trapped in a closed loge) in **coarse, abstract** form.  
+- Do **not** aim for complete correct anatomy in unsupervised free vision.  
+- If the figure invites “spot the anatomical error”, restyle as schematic or move to code/CeTZ principle.  
+- High-fidelity anatomy → human / H-Gfx only.
+
 ### Transfer hygiene
 
 Copy **geometry logic**, not decorative leftovers. An Erysipel onset spectrum is not automatic Melanom tempo chrome. If a bar cannot be read without a secret legend, replace it with **explicit poles** or delete it.

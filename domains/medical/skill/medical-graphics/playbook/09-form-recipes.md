@@ -94,6 +94,36 @@ Copy skeleton + swap claim pins (IV-2 → IV-4). Re-audit free labels always.
 | **Gold** | `assets/kl-melanom-abcde/vision-refined-02.png` · `abcde-melanom()` fallback · form-spec `kl-melanom-abcde` |
 | **Anti** | Glossary table only; EN-only letters; inventing mm cut-offs; skipping free vision for this unit |
 
+### `kl-fast-look` (Schlaganfall)
+
+| | |
+|---|---|
+| **When** | FAST ≥1 with sudden onset → 112; TIA remittiert still emergency |
+| **Must-see** | F/A/S DE criteria dense; **T = Time/Notruf 112** (not a body part); optional BE-FAST secondary; no HWS delay |
+| **Default realize** | **code densified** (`fast-stroke-code`); free only if true image-gen **and** denser/clearer than code |
+| **Gold** | `kl-wave5/lib/stroke.typ` → `fast-stroke-code()` · form-spec `kl-stroke-fast` · spike `ambition-v2.pdf` |
+| **Anti** | Empty icon wells + tiny text; Typst-as-free after 429; T as tongue; ABCD² home algorithm |
+
+### `kl-spatial-compartment`
+
+| | |
+|---|---|
+| **When** | Acute compartment syndrome — hour-critical limb ischemia |
+| **Must-see** | **Principle:** pressure in a closed loge; disproportional + stretch + board-hard; **pulses do not exclude**; not elevate above heart |
+| **Default realize** | **Principle schematic** (`spatial-compartment-principle`) — coarse/abstract; **not** atlas anatomy free vision |
+| **Gold** | `spatial-compartment-principle()` · `dist/…/compartment-principle.pdf` · form-spec `kl-compartment-spatial` |
+| **Anti** | Fake-correct bone cuts; multi-vignette free posters; hexagon “anatomy”; invent 6P/mmHg; photoreal limb as unsupervised free gen |
+
+### `kl-safety-chrome` (Suizidalität)
+
+| | |
+|---|---|
+| **When** | Suicide risk / escalation in Direktzugang |
+| **Must-see** | Nested T1 multi-trigger; T2 same-day–48h psych as **one** tier; SCOPE no PsychKG; calm teal |
+| **Default realize** | **code only** — free vision skip (no method imagery) |
+| **Gold** | `kl-wave5/lib/suicid.typ` · form-specs `kl-suicid-*` |
+| **Anti** | Sensational free vision; nooses/weapons; Treat without net; invent T3 for 48h row |
+
 ### `kl-urgency-scope-dashboard`
 
 | | |

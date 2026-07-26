@@ -52,6 +52,39 @@ Brief: `briefs/kl-melanom.brief.md`
 
 ---
 
+## Wave-5 transfer chapters (2026-07-26)
+
+| Chapter | Grammar | Ambition winner | Module / asset |
+|---------|---------|-----------------|----------------|
+| Myokardinfarkt | nested multi-T1 + mimic | — (code sufficient) | `kl-wave5/lib/mi.typ` |
+| Schlaganfall | nested multi-T1 + mimic | **`kl-fast-look` densified code** (free PNG demoted) | `lib/stroke.typ` → `fast-stroke-code()` |
+| Anaphylaxie | nested 5×T1 + mimic | optional later | `lib/anaphylaxie.typ` |
+| Suizidalität | nested T1 + T2 psych path | **code-only safety chrome** (no free vision) | `lib/suicid.typ` · recipe `kl-safety-chrome` |
+| Kompartment | T1/T2/T4 + mimic | **principle schematic** (not atlas anatomy) | `spatial-compartment-principle()` · optional free `vision-free-gemini-principle-01.png` |
+
+Content maps: `domains/medical/briefs/_wave5/*.content-map.md`  
+Spikes: `toolset/compose/spikes/graphics/kl-wave5/` · PDFs `dist/spikes/graphics/kl-wave5/`  
+Accept: `domains/medical/briefs/kl-wave5.accept.md`
+
+### New recipes (Wave-5)
+
+| Recipe id | When | Default | Gold |
+|-----------|------|---------|------|
+| `kl-fast-look` | FAST ≥1 → 112; T = Notruf not body part | **code densified** default; free only if true image-gen + denser than code | `fast-stroke-code()` |
+| `kl-spatial-compartment` | ACS limb pressure; pulses NOT exclude; no elevation | **CeTZ anatomy** or true free image; never hexagon placeholder | `spatial-compartment-cetz()` |
+| `kl-safety-chrome` | Suizidalität / psych red flags | **code only**; calm teal; no method imagery | `us-suicid()` |
+
+### Wave-5 process lessons
+
+1. **Content map (R)** as first artifact reduces re-reading C mid-flight.  
+2. Multi-T1 chapters (MI, stroke, anaphylaxie) share one recipe; pin count differs.  
+3. **Suizidalität:** free vision default **skip** — safety chrome is a form constraint, not taste.  
+4. **Silent Typst-as-free-vision after 429 is forbidden** — name the carrier; do not Accept as free vision (post-mortem).  
+5. EN stage chrome / empty icon wells / fake anatomy → FAIL or demote to code; density matters as much as pin text.  
+6. CES-quality free vision requires **real image gen**; quota fallback is not free vision.
+
+---
+
 ## Spatial / asset-first
 
 | Unit | Recipe id | Asset | Form Spec | Audit |

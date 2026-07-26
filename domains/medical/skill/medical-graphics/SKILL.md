@@ -95,6 +95,11 @@ Raster **may** be final — only with gates in [`playbook/06-refine-raster.md`](
   --brief domains/medical/briefs/<slug>.vision.md \
   --out domains/medical/assets/<slug>/vision-free-01.png
 
+# If agy image quota (429): Gemini Web UI Nano Banana (logged-in gemini-chat)
+./scripts/graphics-vision-gemini.sh \
+  --brief domains/medical/briefs/<slug>.vision.md \
+  --out domains/medical/assets/<slug>/vision-free-gemini-01.png
+
 ./scripts/graphics-refine-agy.sh \
   --vision domains/medical/assets/<slug>/vision-free-01.png \
   --brief domains/medical/briefs/<slug>.vision.md \
@@ -126,7 +131,9 @@ See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):
 | **Ambition** | Spatial, peel chrome, novel dashboard, **criteria-by-picture** (ABCDE) | free vision → audit (**labels + icons**) → surgical refine if needed → asset **or** recreate DE |
 
 Free vision may invent EN/meta chrome (US-D lesson) → **refine** or **code SoT**.  
-Criteria icons may look right while teaching wrong (Melanom B/D) → **illustration-semantics** in audit + surgical refine. Never accept-asset on claim FAIL.
+Criteria icons may look right while teaching wrong (Melanom B/D) → **illustration-semantics** in audit + surgical refine. Never accept-asset on claim FAIL.  
+**Quota / 429 fallback to Typst must not be Accept-ed as free vision** (Wave-5: hexagon compartment, empty FAST dashboard). Name the carrier; prefer intentional code/CeTZ.  
+**Body/patho free vision:** **schematic principle only** — never unsupervised atlas-style anatomy (Human 2026-07).
 
 ## References
 

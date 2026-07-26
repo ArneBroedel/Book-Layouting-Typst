@@ -46,11 +46,23 @@ What failed until Human / second pass:
 | Blind transfer of Erysipel bar | transfer hygiene in form-space process + guide |
 | Full re-gen when only 1 tile wrong | surgical refine pattern in playbook 06 |
 
+## Wave-5 (5 monographs) — 2026-07-26
+
+Plan: `wave-5-chapters-plan.md` · Accept: `briefs/kl-wave5.accept.md` · Spikes: `kl-wave5/`
+
+| Chapter | Winner forms |
+|---------|----------------|
+| MI | nested multi-T1 code |
+| Stroke | nested T1 + **FAST free vision refined** |
+| Anaphylaxie | nested 5×T1 code |
+| Suizidalität | **safety chrome code** (no free vision) |
+| Kompartment | urgency code + **spatial free vision refined** |
+
 ## Next work (chapter expansion)
 
-1. ~~H4 guide~~ · ~~Melanom transfer + free vision/refine~~ · ~~process harvest~~  
-2. Queue: ACS full · Suizidalität chrome · Anaphylaxie · more spatial  
-3. Optional: harder skill evals (withhold gold Specs)  
+1. ~~H4 · Melanom · Wave-5 five chapters~~  
+2. Human visual review of FAST/compartment refined assets  
+3. Optional harder skill evals; more monographs as needed  
 
 ## How to start a new chapter (operator)
 

@@ -17,17 +17,35 @@ Form Spec (Must-see + pins + genre) + Vision template.
   --brief domains/medical/briefs/<slug>.vision.md \
   --out domains/medical/assets/<slug>/vision-free-01.png \
   --preview dist/spikes/graphics/<slug>/vision-free-01.png
+
+# On agy 429 / quota exhaustion — real free vision via Gemini Web UI:
+./scripts/graphics-vision-gemini.sh \
+  --brief domains/medical/briefs/<slug>.vision.md \
+  --out domains/medical/assets/<slug>/vision-free-gemini-01.png
 ```
 
-6. Cap **2** free gens.  
-7. Update MANIFEST.md.  
+6. Cap **2** free gens (count agy + gemini together).  
+7. Update MANIFEST.md (`ai-gen:nanobanana` or `ai-gen:gemini-web-nanobanana`).  
 8. **Immediately** run [03-claim-audit](03-claim-audit.md).
 
 ## Rules
 
 - **Do not** attach repo SVG/PNG flowcharts as layout templates.  
 - Composition free; **labels** constrained by pins.  
-- Detail: [`../references/free-vision.md`](../references/free-vision.md)
+- Detail: [`../references/free-vision.md`](../references/free-vision.md)  
+- **Body / cut / organ:** free vision must be **schematic principle**, not atlas anatomy (see book-visual-standards). Coarse abstraction is a feature.
+
+### Silent fallback forbidden (Wave-5 lesson)
+
+If `generate_image` / Nano Banana **fails** (e.g. HTTP 429 quota) and the agent falls back to **Typst/SVG export**:
+
+| Required | Forbidden |
+|----------|-----------|
+| Name carrier explicitly: `code-fallback` or `typst-render` — **not** free vision | Saving Typst output as `vision-free-01.png` and Accepting as free vision |
+| Prefer intentional Typst modules under `lib/` | Fake anatomy labeled as Querschnitt |
+| Spatial/patho units: **principle schematic** (code or free) | Photoreal limb cuts that invite anatomical error hunting |
+
+Claim audit: for body graphics, FAIL “looks like complete anatomy but is wrong”; PASS only if style is clearly **abstract principle** *or* H-Gfx gold anatomy.
 
 ## Output
 

@@ -13,12 +13,33 @@
 
 | Tool | Role |
 |---|---|
-| **Antigravity Nano Banana** via `agy` | Default free vision + refine |
+| **Antigravity Nano Banana** via `agy` | Default free vision + refine (when quota OK) |
+| **Gemini Web UI Nano Banana** via `sh-gemini-chat` | **Quota bypass** when `agy` 429; logged-in Google session |
 | **Grok Imagine** | Optional free / edit |
-| **Typst / Fletcher / CeTZ** | Recreate, code spikes |
+| **Typst / Fletcher / CeTZ** | Recreate, code spikes — **not** silent free-vision substitute |
 | **Hand SVG** (Inkscape…) | Gold vector / hybrid base |
-| **scripts/graphics-vision-agy.sh** | Free vision wrapper (no auto SVG attach) |
-| **scripts/graphics-refine-agy.sh** | Refine with standards appendix |
+| **scripts/graphics-vision-agy.sh** | Free vision wrapper (agy) |
+| **scripts/graphics-vision-gemini.sh** | Free vision via Gemini web UI |
+| **scripts/graphics-refine-agy.sh** | Refine with standards + notes |
+
+### Gemini Web UI path (Wave-5)
+
+```bash
+# Session once:
+python3 …/sh-gemini-chat/scripts/gemini_chat/cli.py doctor   # or login
+
+./scripts/graphics-vision-gemini.sh \
+  --brief domains/medical/briefs/<slug>.vision.md \
+  --out domains/medical/assets/<slug>/vision-free-gemini-01.png
+
+# Low-level:
+python3 …/cli.py image "…" --out /tmp/out.png --json
+```
+
+- Clicks **„Bild erstellen“**, dismisses discovery card, waits for `generated-image`, downloads original.  
+- Skill SoT: `shared-agent-config/.agents/skills/sh-gemini-chat/` (`cli.py image`, contract selectors).  
+- Manifest: `ai-gen:gemini-web-nanobanana` + date + optional conversation permalink.  
+- **Never** Accept Typst-after-agy-429 as free vision.
 
 ## AI rules
 
@@ -29,7 +50,7 @@
 - Prefer recreate hybrid/code when quality holds  
 - Asset-full AI: claim audit + manifest + DPI; H-Gfx if risk motif  
 - Never treat AI as Content SoT  
-- Manifest: `ai-gen:nanobanana` \| `ai-gen:imagine` + date  
+- Manifest: `ai-gen:nanobanana` \| `ai-gen:gemini-web-nanobanana` \| `ai-gen:imagine` + date  
 
 ## What stays out of free prompts
 

@@ -37,6 +37,19 @@ Free vision is **not** claim-safe by default (IV-4 invented vitals; III-5 EN chr
 Label-only PASS with icon FAIL → overall **DRIFT** (not full PASS for accept-asset).  
 **Human review** is high-value on icon units; agents should still run this check before Accept.
 
+### Body / spatial / patho graphics (Wave-5 + Human 2026-07)
+
+| Check | Fail if |
+|-------|---------|
+| Style | Figure looks like a **complete anatomy atlas cut** (implies correctness) but is AI-guess anatomy |
+| Principle | Pathological idea (pressure in closed loge, saddle zone) is unclear |
+| Clutter | Multi-vignette poster; extra limbs; wrong body part metaphors (e.g. headache face for loge pain) |
+| Density | Empty icon wells, tiny text |
+
+**Prefer:** coarse **principle schematic** (Typst/CeTZ or free with “flat abstract zones only”).  
+**Do not Prefer:** “better photoreal anatomy” free re-rolls — errors stay; abstraction is the fix.  
+True anatomy gold → H-Gfx / human asset, not unsupervised free gen.
+
 ## NEVER
 
 - `accept-asset` on FAIL  
