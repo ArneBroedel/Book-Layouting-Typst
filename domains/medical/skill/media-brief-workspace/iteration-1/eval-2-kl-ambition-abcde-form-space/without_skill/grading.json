@@ -1,0 +1,39 @@
+{
+  "eval_id": "eval-2-kl-ambition-abcde-form-space",
+  "arm": "without_skill",
+  "pass_rate": 1.0,
+  "passed": 6,
+  "total": 6,
+  "expectations": [
+    {
+      "text": "three-valuable-paths",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "two-rejected",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "abcde-pins",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "ugly-duckling",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "no-claim-invention",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "ambition-flag",
+      "passed": true,
+      "evidence": "ok"
+    }
+  ]
+}

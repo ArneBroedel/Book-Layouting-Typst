@@ -1,0 +1,231 @@
+{
+  "skill_name": "medical-graphics",
+  "iteration": 1,
+  "configurations": {
+    "with_skill": {
+      "mean_pass_rate": 1.0,
+      "evals": [
+        {
+          "eval_id": "eval-1-transfer-melanom-urgency-code",
+          "arm": "with_skill",
+          "pass_rate": 1.0,
+          "passed": 7,
+          "total": 7,
+          "expectations": [
+            {
+              "text": "has-typst",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "exceptional-t1",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "t2-t3-present",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "scope-present",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "pins-no-destruktiv",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-form-meta",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "german-only",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        },
+        {
+          "eval_id": "eval-2-abcde-realize-or-vision",
+          "arm": "with_skill",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "expectations": [
+            {
+              "text": "five-letters",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "diameter-pin",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "ugly-duckling",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-destructive",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "not-just-table-prose",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        },
+        {
+          "eval_id": "eval-3-claim-audit-fail-scenario",
+          "arm": "with_skill",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "expectations": [
+            {
+              "text": "overall-fail",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "flags-en-meta",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "flags-wrong-mm-or-t5",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "realize-path",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    "without_skill": {
+      "mean_pass_rate": 1.0,
+      "evals": [
+        {
+          "eval_id": "eval-1-transfer-melanom-urgency-code",
+          "arm": "without_skill",
+          "pass_rate": 1.0,
+          "passed": 7,
+          "total": 7,
+          "expectations": [
+            {
+              "text": "has-typst",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "exceptional-t1",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "t2-t3-present",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "scope-present",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "pins-no-destruktiv",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-form-meta",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "german-only",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        },
+        {
+          "eval_id": "eval-2-abcde-realize-or-vision",
+          "arm": "without_skill",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "expectations": [
+            {
+              "text": "five-letters",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "diameter-pin",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "ugly-duckling",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-destructive",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "not-just-table-prose",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        },
+        {
+          "eval_id": "eval-3-claim-audit-fail-scenario",
+          "arm": "without_skill",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "expectations": [
+            {
+              "text": "overall-fail",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "flags-en-meta",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "flags-wrong-mm-or-t5",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "realize-path",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "delta_pass_rate": 0.0
+}

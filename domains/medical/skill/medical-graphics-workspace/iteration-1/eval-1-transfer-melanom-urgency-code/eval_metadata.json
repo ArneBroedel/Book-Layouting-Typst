@@ -1,0 +1,35 @@
+{
+  "eval_id": 1,
+  "eval_name": "transfer-melanom-urgency-code",
+  "prompt": "Graphics role in Book-Layouting-Typst. Realize Melanom U-urgency+U-scope as Typst code by pattern transfer. Form Spec: domains/medical/briefs/kl-melanom-urgency.form-spec.md. Reuse geometry ideas from toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ but new pins only. Write lib module to outputs/melanom-urgency.typ exporting us-melanom() and a minimal spike-recreate.typ that imports it. German labels only. Exceptional T1 (not primary 112 wall). No form-meta in figures. Compile if typst available to outputs/melanom-urgency.pdf.",
+  "assertions": [
+    {
+      "id": "has-typst",
+      "text": "Produces .typ module exporting urgency/scope figure"
+    },
+    {
+      "id": "exceptional-t1",
+      "text": "T1 treated as exception / not primary pathway"
+    },
+    {
+      "id": "t2-t3-present",
+      "text": "T2 and T3 both present with distinct content"
+    },
+    {
+      "id": "scope-present",
+      "text": "SCOPE / Grenze der eigenen Zuständigkeit present as separate geometry"
+    },
+    {
+      "id": "pins-no-destruktiv",
+      "text": "Includes keine destruktiven Maßnahmen or equivalent pin from Spec"
+    },
+    {
+      "id": "no-form-meta",
+      "text": "No in-figure text like 'keine Dringlichkeitsstufe' or 'Trigger cluster'"
+    },
+    {
+      "id": "german-only",
+      "text": "Figure labels German (not English Action/Trigger stage titles)"
+    }
+  ]
+}

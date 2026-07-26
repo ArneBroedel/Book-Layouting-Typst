@@ -51,6 +51,14 @@ What must be *visible* (not only somewhere in prose):
 2.
 3.
 
+## Icon meaning (optional — free-vision criteria graphics)
+
+When the unit teaches by *drawing* (not only text), say what each icon must show:
+
+| pin / zone | drawing must show | must not show |
+|---|---|---|
+| | | |
+
 ## Urgency / weight encoding
 
 - Which steps solid danger vs neutral / framework teal?

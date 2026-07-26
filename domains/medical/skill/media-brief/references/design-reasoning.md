@@ -89,6 +89,7 @@ Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spe
 | Graphic A/B or asset path skipped when ideal clearly needs non-code form (no Decision Note attempt) | `revise` |
 | Ambitious unit missing Form Spec (no Must-see / claim pins) | `revise` (Media) or document exception |
 | Winner misses Form Spec **Must-see** or fails claim audit (if asset) | `revise` |
+| Criteria-by-picture: icons/scales contradict pin **meaning** (even if labels match) | `revise` (surgical refine or recreate) |
 | A/B winner chosen without ideal/learner-job rationale | `revise` |
 | No claim rewrite / no new clinical thresholds in layout (incl. inside images) | `reject` or Author loop |
 
@@ -98,7 +99,16 @@ Freeze pin rules unchanged (`brief_class`, H1/H2). Optional **H-Gfx** when produ
 
 ---
 
-## 6. Explicit non-scope (this reference)
+## 6. Krankheitslehre (Illness Script)
+
+When designing KL monographs, load:
+
+- [`kl-illness-script-ontology.md`](kl-illness-script-ontology.md) — TIME/SCOPE, units, invariants  
+- [`kl-form-space-process.md`](kl-form-space-process.md) — R→Accept + creativity slot  
+
+Do not invent form ids first; map to Graphics [`kl-form-library.md`](../../medical-graphics/references/kl-form-library.md) only after free ideal / Form Spec.
+
+## 7. Explicit non-scope (this reference)
 
 | Topic | Where |
 |-------|--------|

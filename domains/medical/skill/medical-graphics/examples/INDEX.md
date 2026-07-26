@@ -9,6 +9,10 @@ Pointer index only (no asset duplicates). Learn from paths + Accept winners.
 | **III-5 S4** Sofortmaßnahmen | hard-stop-protocol | free→recreate→accept | **code** | Form Spec `iii5-….form-spec.md` · `lib/sofortmassnahmen.typ` |
 | **II-1 S8** Pflichtsequenz | framework-os-sequence | free→recreate vertical+landscape→accept | **code** (+ landscape optional) | `lib/pflichtsequenz.typ` `layout:` |
 | **IV-4 S6** Heißes Gelenk | leitsymptom-vertical-flow | free FAIL→B2→recreate→accept | **code**; refined look | `vision-refined-01.png` · `lib/entscheidungs-flow.typ` |
+| **KL urgency/scope** | kl-urgency-scope-* | form-spec→code (+ free/refine US-D) | **code** | `spikes/…/kl-script-system/lib/us-*.typ` · `kl-u-urgency-scope.form-spec.md` |
+| **KL mimic peel** | kl-mimic-peel | free PASS + code peel | **code** (asset optional) | `m-b-peel.typ` · `assets/kl-m-b-mimic/` |
+| **KL CES saddle** | kl-spatial-saddle | free→audit PASS | **asset** | `assets/kl-ces-saddle/` |
+| **KL MSCC spine** | kl-spatial-mscc | free→audit PASS | **asset** | `assets/kl-mscc-spine/` |
 
 ## Lessons by example
 
@@ -19,6 +23,12 @@ Pointer index only (no asset duplicates). Learn from paths + Accept winners.
 | III-5 | EN chrome on free → production recreate |
 | II-1 | Genre OS ≠ emergency red; dual layout modes |
 | IV-4 | Claim audit mandatory; free invents vitals |
+| KL US-D free | EN Action/Trigger meta → refine or **code SoT** |
+| KL form-meta | Never explain TIME/SCOPE separation *inside* the figure |
+| KL Melanom ABCDE | free vision + illustration-semantics; surgical B/D refine → `vision-refined-02.png` |
+| KL Melanom enabling | no unlabeled tempo color bar; named Evolution vs Jahre poles |
+| KL Melanom urgency | exceptional-T1 strip when 112 not primary |
+| KL grammar vs ambition | Invariants first; then free vision/spatial for creativity |
 
 ## Walkthrough
 

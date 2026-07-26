@@ -10,6 +10,7 @@ RECIPE="${2:-}"
 if [[ -z "$SLUG" ]]; then
   echo "Usage: $0 <slug> [recipe-id]" >&2
   echo "  recipe-id: branching-emergency | leitsymptom-vertical-flow | hard-stop-protocol | framework-os-sequence" >&2
+  echo "  KL: kl-urgency-scope-stack | kl-urgency-exception-t1 | kl-mimic-map | kl-discrimination | kl-abcde-look | kl-spatial-saddle | …" >&2
   exit 2
 fi
 

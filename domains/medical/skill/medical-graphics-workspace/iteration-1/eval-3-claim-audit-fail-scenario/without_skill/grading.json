@@ -1,0 +1,29 @@
+{
+  "eval_id": "eval-3-claim-audit-fail-scenario",
+  "arm": "without_skill",
+  "pass_rate": 1.0,
+  "passed": 4,
+  "total": 4,
+  "expectations": [
+    {
+      "text": "overall-fail",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "flags-en-meta",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "flags-wrong-mm-or-t5",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "realize-path",
+      "passed": true,
+      "evidence": "ok"
+    }
+  ]
+}

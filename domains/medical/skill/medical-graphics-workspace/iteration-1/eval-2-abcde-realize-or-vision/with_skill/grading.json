@@ -1,0 +1,34 @@
+{
+  "eval_id": "eval-2-abcde-realize-or-vision",
+  "arm": "with_skill",
+  "pass_rate": 1.0,
+  "passed": 5,
+  "total": 5,
+  "expectations": [
+    {
+      "text": "five-letters",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "diameter-pin",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "ugly-duckling",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "no-destructive",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "not-just-table-prose",
+      "passed": true,
+      "evidence": "ok"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "eval_id": 3,
+  "eval_name": "claim-audit-fail-scenario",
+  "prompt": "Graphics claim audit: A free-vision PNG description claims labels: 'Action: assign derm', 'Trigger cluster T2', 'T5 Scope not urgency', 'diameter > 6mm', and German 'Ugly Duckling'. Form Spec pins are in domains/medical/briefs/kl-melanom-abcde.form-spec.md and kl-melanom-urgency.form-spec.md. Write claim-audit.md to outputs/ with PASS/FAIL per label and overall verdict. Recommend realize_path (recreate vs refine).",
+  "assertions": [
+    {
+      "id": "overall-fail",
+      "text": "Overall claim audit is FAIL (not PASS)"
+    },
+    {
+      "id": "flags-en-meta",
+      "text": "Flags English Action/Trigger cluster or form-meta"
+    },
+    {
+      "id": "flags-wrong-mm-or-t5",
+      "text": "Flags diameter > 6mm and/or T5 Scope invention"
+    },
+    {
+      "id": "realize-path",
+      "text": "Recommends recreate (or refine+recreate) rather than accept-asset"
+    }
+  ]
+}

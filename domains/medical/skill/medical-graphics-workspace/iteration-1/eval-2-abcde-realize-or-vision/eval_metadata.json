@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "abcde-realize-or-vision",
+  "prompt": "Graphics: From domains/medical/briefs/kl-melanom-abcde.form-spec.md, realize ABCDE+Ugly Duckling as code-first letter cascade in outputs/abcde.typ (function abcde-melanom). Optionally also write a short vision brief outputs/abcde.vision.md for free vision later. Must-see: A–E DE criteria, D typisch > 5 mm, Ugly Duckling, no destructive measures. Do not invent clinical text. No form-meta.",
+  "assertions": [
+    {
+      "id": "five-letters",
+      "text": "All five letters A–E present with clinical meanings"
+    },
+    {
+      "id": "diameter-pin",
+      "text": "Durchmesser typisch > 5 mm present"
+    },
+    {
+      "id": "ugly-duckling",
+      "text": "Ugly Duckling present"
+    },
+    {
+      "id": "no-destructive",
+      "text": "Mentions no biopsy/Kürettage/destruktive Maßnahmen or assignment on suspekt"
+    },
+    {
+      "id": "not-just-table-prose",
+      "text": "Uses a visual letter form (cascade/grid), not only a plain five-row markdown table in a .md file"
+    }
+  ]
+}

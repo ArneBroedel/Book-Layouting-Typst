@@ -1,0 +1,96 @@
+{
+  "skill_name": "medical-graphics",
+  "evals": [
+    {
+      "id": 1,
+      "eval_name": "transfer-melanom-urgency-code",
+      "prompt": "Graphics role in Book-Layouting-Typst. Realize Melanom U-urgency+U-scope as Typst code by pattern transfer. Form Spec: domains/medical/briefs/kl-melanom-urgency.form-spec.md. Reuse geometry ideas from toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ but new pins only. Write lib module to outputs/melanom-urgency.typ exporting us-melanom() and a minimal spike-recreate.typ that imports it. German labels only. Exceptional T1 (not primary 112 wall). No form-meta in figures. Compile if typst available to outputs/melanom-urgency.pdf.",
+      "expected_output": "Typst module + spike with Melanom pins, exceptional T1, T2/T3/T4, SCOPE frame; compiles.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "has-typst",
+          "text": "Produces .typ module exporting urgency/scope figure"
+        },
+        {
+          "id": "exceptional-t1",
+          "text": "T1 treated as exception / not primary pathway"
+        },
+        {
+          "id": "t2-t3-present",
+          "text": "T2 and T3 both present with distinct content"
+        },
+        {
+          "id": "scope-present",
+          "text": "SCOPE / Grenze der eigenen Zuständigkeit present as separate geometry"
+        },
+        {
+          "id": "pins-no-destruktiv",
+          "text": "Includes keine destruktiven Maßnahmen or equivalent pin from Spec"
+        },
+        {
+          "id": "no-form-meta",
+          "text": "No in-figure text like 'keine Dringlichkeitsstufe' or 'Trigger cluster'"
+        },
+        {
+          "id": "german-only",
+          "text": "Figure labels German (not English Action/Trigger stage titles)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "eval_name": "abcde-realize-or-vision",
+      "prompt": "Graphics: From domains/medical/briefs/kl-melanom-abcde.form-spec.md, realize ABCDE+Ugly Duckling as code-first letter cascade in outputs/abcde.typ (function abcde-melanom). Optionally also write a short vision brief outputs/abcde.vision.md for free vision later. Must-see: A–E DE criteria, D typisch > 5 mm, Ugly Duckling, no destructive measures. Do not invent clinical text. No form-meta.",
+      "expected_output": "Typst ABCDE form + optional vision brief; pins match Spec.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "five-letters",
+          "text": "All five letters A–E present with clinical meanings"
+        },
+        {
+          "id": "diameter-pin",
+          "text": "Durchmesser typisch > 5 mm present"
+        },
+        {
+          "id": "ugly-duckling",
+          "text": "Ugly Duckling present"
+        },
+        {
+          "id": "no-destructive",
+          "text": "Mentions no biopsy/Kürettage/destruktive Maßnahmen or assignment on suspekt"
+        },
+        {
+          "id": "not-just-table-prose",
+          "text": "Uses a visual letter form (cascade/grid), not only a plain five-row markdown table in a .md file"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "eval_name": "claim-audit-fail-scenario",
+      "prompt": "Graphics claim audit: A free-vision PNG description claims labels: 'Action: assign derm', 'Trigger cluster T2', 'T5 Scope not urgency', 'diameter > 6mm', and German 'Ugly Duckling'. Form Spec pins are in domains/medical/briefs/kl-melanom-abcde.form-spec.md and kl-melanom-urgency.form-spec.md. Write claim-audit.md to outputs/ with PASS/FAIL per label and overall verdict. Recommend realize_path (recreate vs refine).",
+      "expected_output": "Audit FAIL overall; flags EN meta, T5, wrong mm; Ugly Duckling may pass; recreate preferred.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "overall-fail",
+          "text": "Overall claim audit is FAIL (not PASS)"
+        },
+        {
+          "id": "flags-en-meta",
+          "text": "Flags English Action/Trigger cluster or form-meta"
+        },
+        {
+          "id": "flags-wrong-mm-or-t5",
+          "text": "Flags diameter > 6mm and/or T5 Scope invention"
+        },
+        {
+          "id": "realize-path",
+          "text": "Recommends recreate (or refine+recreate) rather than accept-asset"
+        }
+      ]
+    }
+  ]
+}

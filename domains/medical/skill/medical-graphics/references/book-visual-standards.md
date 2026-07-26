@@ -22,7 +22,8 @@
 - German only in production graphics (no English lane chrome).  
 - No invented doses, cut-offs, ALS, anatomy “facts”.  
 - Prefer claim-safe wording from Content C.  
-- Hybrid: labels in Typst when possible.
+- Hybrid: labels in Typst when possible.  
+- **No form-meta inside the figure** (no “Trigger cluster”, “Action:”, ontology IDs, “keine Dringlichkeitsstufe” as caption). Content titles only. Separation of concepts must be optical.
 
 ## Layout / cognition
 
@@ -39,6 +40,15 @@
 - Every figure: `alt` text.  
 - Manifest: path, source (`ai-gen` + tool), license, role.
 
+## Illustration honesty (icons & scales)
+
+When free vision **depicts** a clinical criterion (not only labels it):
+
+- **Icon = meaning.** Unscharfe Begrenzung → soft/feathered, poorly defined edge — not a sharp zigzag star.  
+- **Scale = honest.** If pin says *typisch > 5 mm*, a “5 mm” reference must be shorter than the drawn lesion (or the object clearly larger than the bar). Never label 5 mm while drawing something that reads as ~2 mm.  
+- **No false continuum.** Unlabeled color bars / fake time spectra that do not name what the color means → remove or replace with explicit poles (e.g. Evolution Wochen–Monate vs Jahre unverändert).  
+- Label-only audit is **insufficient** for criteria-by-picture units (ABCDE, size cues, spatial anatomy).
+
 ## What refine may fix
 
 - Palette drift toward tokens  
@@ -46,8 +56,22 @@
 - Loop/edge semantics (e.g. stabil stays on 4a)  
 - Hierarchy / contrast  
 - Footer claim accuracy  
+- **Surgical icon/scale honesty** (keep composition; rewrite only broken tiles — Melanom B/D pattern)  
 
 ## What refine must not do by default
 
 - Attach existing SVG as “copy layout” (that is structure-transfer)  
-- Rewrite Critical Claims
+- Rewrite Critical Claims  
+- “Improve” the whole page when notes say only tiles B and D  
+
+## Surgical refine notes (pattern)
+
+```text
+Change ONLY tiles X and Y.
+Keep A/C/E/header/footer composition and German labels.
+X CURRENT ERROR: …  REQUIRED: …
+Y CURRENT ERROR: …  REQUIRED: …
+Do not invent new thresholds.
+```
+
+Cap 2 refine gens; re-run claim audit **including illustration-semantics**.

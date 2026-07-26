@@ -1,13 +1,14 @@
 ---
 name: media-brief
-description: "ALWAYS use when drafting or revising a Media Brief, Form Spec for ambitious visual units, didactic media design intent, gold brief, accept record, freies Mediendesign, presentation intent for notfall-karte / lerntext / fallbasiert, or Media Accept after Tech feasibility/spike/graphics. Covers ideal-first Media role (Produkt B): highest creativity and medical-pedagogical best form first (detailed Form Spec) — catalog never cages ideation. Do NOT use for writing production .typ, free-vision PNG generation, compose-chapter, claim rewrite, or form-id shopping."
+description: "ALWAYS use when drafting or revising a Media Brief, Form Spec for ambitious visual units, didactic media design intent, gold brief, accept record, freies Mediendesign, presentation intent for notfall-karte / lerntext / fallbasiert / Krankheitslehre illness-script monographs (Teil V/VI), or Media Accept after Tech feasibility/spike/graphics. Use for KL form-space, TIME/SCOPE ontology, discrimination/mimic presentation intent. Covers ideal-first Media role (Produkt B): highest creativity and medical-pedagogical best form first (detailed Form Spec) — catalog never cages ideation. Do NOT use for writing production .typ, free-vision PNG generation, compose-chapter, claim rewrite, content template authorship, or form-id shopping."
 ---
 
 # media-brief (Domain medical — Produkt B)
 
 Executable procedure for the **Media** role: free didactic–media ideal → **Form Spec** (ambitious units) → Media Brief → Accept after Tech/Graphics.
 
-**Why (presentation forms):** `Guides/Medical-Presentation-Forms.md`
+**Why (presentation forms):** `Guides/Medical-Presentation-Forms.md`  
+**KL illness-script guide:** `Guides/KL-Form-Language.md`
 
 **SoT of this skill:** `domains/medical/skill/media-brief/` (Produkt B).  
 **Not** platform foundation; not a substitute for `compose-chapter` / Tech.  
@@ -20,6 +21,7 @@ Executable procedure for the **Media** role: free didactic–media ideal → **F
 - **Accept / revise / reject** after Tech feasibility note or spike
 - Genre presentation intent (`notfall-karte`, `lerntext`, `fallbasiert`, …)
 - Freies Mediendesign before any catalog mapping
+- **Krankheitslehre / Illness Script** monographs: form-space, Form Specs, Accept for urgency/discrimination/mimic/spatial units
 
 ## When NOT to use
 
@@ -70,21 +72,34 @@ The preferred form library is a **hint**, never a design ceiling.
 
 Exploration is allowed **in parallel** with content-review. It never replaces freeze.
 
+## Krankheitslehre / Illness Script (load before Brief)
+
+When the content is a **KL monograph** (Script 1–6, kl-kurz/kl-voll):
+
+1. Load [`references/kl-illness-script-ontology.md`](references/kl-illness-script-ontology.md) — TIME/SCOPE, units, invariants, **no form-meta in figures**.  
+2. Load [`references/kl-form-space-process.md`](references/kl-form-space-process.md) — grammar first, then ambition; R→C→M→G→Accept.  
+3. Map units via Graphics library (for transfer, not as cage): `medical-graphics/references/kl-form-library.md`.  
+4. Prefer pattern transfer of existing Form Specs (`kl-u-urgency-scope`, `kl-u-mimic`, `kl-u-discrimination`, spatial CES/MSCC) with **new claim pins** from C.  
+5. Content claims/templates stay in Content workspace — Media only pins + presentation.
+
+Exploration provenance: `domains/medical/briefs/_explorations/README.md` (not normative default).
+
 ## Process (Brief + Form Spec)
 
-1. **Design reasoning (compact)** — load [`references/design-reasoning.md`](references/design-reasoning.md). For each content unit (heading/role only): **unit type → learner job → load risk → presentation hypothesis → recipe function** (if any). No claim paraphrase; **no form ids** (hypotheses are pattern names: urgency-lane, branching flowchart, protocol sequence, case frame, …).
-2. **ALWAYS free ideal next** — overall presentation goal for the learner/actor (not clinical restatement; not bookkit APIs). Ask: *what is the hypothetically best didactic presentation?* Including ambitious visuals (true flowcharts, triage lanes, dual-channel diagrams).
+1. **Design reasoning (compact)** — load [`references/design-reasoning.md`](references/design-reasoning.md). For each content unit (heading/role only): **unit type → learner job → load risk → presentation hypothesis → recipe function** (if any). No claim paraphrase; **no form ids** (hypotheses are pattern names: urgency-lane, branching flowchart, protocol sequence, case frame, …). For KL: also check ontology unit ids (U-urgency, U-mimic, …).
+2. **ALWAYS free ideal next** — overall presentation goal for the learner/actor (not clinical restatement; not bookkit APIs). Ask: *what is the hypothetically best didactic presentation?* Including ambitious visuals (true flowcharts, triage lanes, dual-channel diagrams). **At least one ambition slot** per KL chapter exploration when pedagogically justified (spatial, peel, free vision) — do not stop at box monotony.
 3. **Section plan in prose** — for each section: content anchor, ideal presentation, priority / page intent. Optional **hypothesis** column. Genre recipe = **function checklist**, not form cage.
 4. **Form Spec (ambitious visual units) — REQUIRED when free-vision ambition is high**  
    - Template: `domains/medical/templates/form-spec.template.md`  
    - Path: `domains/medical/briefs/<slug>.form-spec.md` (one file per unit or multi-unit sections clearly headed)  
    - Fill: learner context, job, load risks, **zones**, **Must-see**, **claim pins** (copy-through C), genre chrome, invariants, success criterion, ambition flag  
-   - Guide: `Guides/Medical-Presentation-Forms.md`  
-   - Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spec.md`  
+   - When free vision will **draw** criteria (ABCDE, scales, spatial signs): fill optional **Icon meaning** table (what drawing must show / must not) — labels alone are not enough for Graphics audit  
+   - Guide: `Guides/Medical-Presentation-Forms.md` · KL: `Guides/KL-Form-Language.md`  
+   - Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spec.md`, KL: `kl-u-urgency-scope.form-spec.md`, `kl-melanom-abcde.form-spec.md`, `kl-ces-saddle.form-spec.md`  
    - Skip Form Spec only for trivial units (`ambition: skip`) documented in Brief.
 5. **Wishlist / ambitious patterns** — explicit wishlist with why + severity. Visible ambition is success.
 6. **Author questions** — targeted only; no claim rewrite.
-7. **Explicit non-goals** — include “no clinical simplification in layout”.
+7. **Explicit non-goals** — include “no clinical simplification in layout”; for KL: “no form-meta inside figures”.
 8. **NEVER production Typst** — no `.typ` / bookkit sketches as Brief body.
 9. **Write artifacts** — Brief + Form Spec files. Chat without files is incomplete.
 
@@ -164,6 +179,7 @@ Do not open a third Media↔Tech round without Human.
 | Treat recipes as functional checklists | Brief = form-id shopping list only |
 | Stop at 2 Media↔Tech rounds → Human | Implement feasibility/spike yourself |
 | Point Graphics at Form Spec path | Generate free-vision PNGs in this skill |
+| KL: load ontology; TIME≠SCOPE; no form-meta in figures | KL: invent T3/tiers; Scope as ladder step; 2×2 for §3/§4 |
 
 ## Boundary vs Tech / Graphics
 
@@ -181,6 +197,9 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | Artifact | Path |
 |---|---|
 | Design reasoning (B-core) | `domains/medical/skill/media-brief/references/design-reasoning.md` |
+| **KL ontology v1.1** | [`references/kl-illness-script-ontology.md`](references/kl-illness-script-ontology.md) |
+| **KL form-space process** | [`references/kl-form-space-process.md`](references/kl-form-space-process.md) |
+| KL form library (Graphics) | `domains/medical/skill/medical-graphics/references/kl-form-library.md` |
 | Presentation forms guide | `Guides/Medical-Presentation-Forms.md` |
 | Form Spec template | `domains/medical/templates/form-spec.template.md` |
 | Brief template | `domains/medical/templates/media-brief.template.md` |
@@ -189,6 +208,8 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | Graphics skill / playbook | `domains/medical/skill/medical-graphics/` |
 | Recipes | `domains/medical/recipes/` |
 | Briefs / gold | `domains/medical/briefs/` |
+| KL exploration index | `domains/medical/briefs/_explorations/README.md` |
+| Active KL track | `devtracks/kl-form-language/` |
 | Ownership | `domains/medical/OWNERSHIP.md` |
 | Knowledge library (archived, compressed) | `devtracks/_archive/medical-knowledge-design-competencies/` |
 | Governance | `devtracks/CONSENSUS-v0.md` (ADR 10–17), `devtracks/media-design/spec.md`, `devtracks/PRODUCT-BOUNDARIES.md` |
@@ -196,3 +217,5 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 ## Product note
 
 Produkt **B** transitional home: `domains/medical/`. Split-ready; do not fold medical genre logic into `packages/bookkit` foundation.
+
+**Background:** `Guides/Medical-Presentation-Forms.md` · KL harvest `briefs/_explorations/kl-harvest-and-reuse-plan.md`

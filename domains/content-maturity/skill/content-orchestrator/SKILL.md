@@ -1,11 +1,12 @@
 ---
 name: content-orchestrator
-description: "ALWAYS use to route Content-Reife phases C1–C4: draft/review/freeze/proof handoff, emit route card, pick next skill (content-review, human freeze, media-brief, medical-graphics when visual units, compose-chapter, human proof), enforce max 2 review rounds and checkpoints H1–H5 (optional H-Gfx). Produkt C process. Do NOT write production .typ, rewrite claims, author full Media Brief body, or replace content-review findings."
+description: "ALWAYS use to route Content-Reife phases C1–C4: draft/review/freeze/proof handoff, emit route card, pick next skill (content-review, human freeze, media-brief, medical-graphics when visual units, compose-chapter, book-production-orchestrator for full-book layout/print drive, human proof), enforce max 2 review rounds and checkpoints H1–H5 (optional H-Gfx). Produkt C process. Do NOT write production .typ, rewrite claims, author full Media Brief body, or replace content-review findings."
 ---
 
 # content-orchestrator (Produkt C — thin router)
 
-**Route only.** Emits a **route card**; does not replace specialist skills.
+**Route only.** Emits a **route card**; does not replace specialist skills.  
+For **full-book production** (Form Spec → graphics → compose → print), prefer **`book-production-orchestrator`** after freeze.
 
 **SoT:** `domains/content-maturity/skill/content-orchestrator/`  
 **Checkpoints:** `domains/content-maturity/checkpoints.md`  
@@ -35,10 +36,11 @@ description: "ALWAYS use to route Content-Reife phases C1–C4: draft/review/fre
 | review with `floor_status: blocked`, round \< 2 | author fixes → `content-review` | — | prior report |
 | review blocked, round ≥ 2 | `human-triage` | **H3** | stop_reason: circuit breaker |
 | `ready_for_freeze` yes/nits, no freeze file | `human-freeze` | **H1** | freeze-record template |
-| frozen, no production brief | handoff `media-brief` | H1 done | brief template (`brief_class: production`) |
-| brief with visual ambition, no graphics decision | handoff `compose-chapter` + `medical-graphics` | — | feasibility + optional `*.graphics.md` |
+| frozen, no production brief | handoff `media-brief` **or** `book-production-orchestrator` | H1 done | brief / form-spec; full-book board if multi-chapter |
+| brief with visual ambition, no form-spec / graphics | handoff `book-production-orchestrator` (P3–P4) or `media-brief` + `medical-graphics` | — | form-spec + graphics playbook |
 | brief+feasibility, no accept | `media-brief` (accept) | **H2** | accept template (+ graphic winners if any) |
 | accept yes, no production typ/pdf | `compose-chapter` | H2 | compose + `--profile production` |
+| multi-chapter layout/print drive | **`book-production-orchestrator`** | H1–H5 as board says | `toolset/orchestration/book-production/<book-id>/` |
 | PDF exists, no proof | `human-proof` | **H4** | proof-record template |
 | proofed; release | `human-triage` / stop | **H5** v0.4 | imprimatur stub |
 
@@ -69,4 +71,5 @@ description: "ALWAYS use to route Content-Reife phases C1–C4: draft/review/fre
 | media-brief | `domains/medical/skill/media-brief/` |
 | medical-graphics | `domains/medical/skill/medical-graphics/` |
 | compose-chapter | `toolset/skill-pack/compose-chapter/` |
+| **book-production-orchestrator** (full book → print) | `toolset/skill-pack/book-production-orchestrator/` |
 | Track | `devtracks/agentic-adaptations/` |

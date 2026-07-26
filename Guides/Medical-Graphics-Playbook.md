@@ -48,16 +48,35 @@ Free models invent:
 
 - Clinical gibberish / fake vitals (IV-4)  
 - English stage titles / typos (III-5)  
+- **Plausible icons that teach the wrong criterion** (Melanom ABCDE: sharp border for *unscharf*; dishonest mm scale)
 
-**Rule:** audit every on-image label against pins before `accept-asset`.  
-FAIL → recreate owns claims; free is composition provenance only.
+**Rule:** audit every on-image **label** *and* **illustration-semantics** against pins before `accept-asset`.  
+FAIL → recreate owns claims; free is composition provenance only.  
+Icon/scale DRIFT with good layout → **surgical refine** (tile-scoped notes), not always full re-free.
 
 ---
 
 ## 5. Genre chrome matters
 
 II-1 framework OS must not look like a CES/BLS red wall.  
-Emergency protocols need solid danger where stops are.  
+Emergency protocols need solid danger where stops are.
+
+---
+
+## 5b. Krankheitslehre graphics
+
+Illness-script monographs: load **form library** + **ontology**, then transfer or free-vision ambition units.
+
+| | |
+|--|--|
+| Operating model | `Guides/KL-Form-Language.md` |
+| Library | `domains/medical/skill/medical-graphics/references/kl-form-library.md` |
+| Recipes | `playbook/09-form-recipes.md` (KL section) |
+| Transfer demo | Melanom spike `spike-melanom.typ` → `melanom.pdf` |
+
+**Grammar units** → code recreate with new pins.  
+**Ambition units** → free vision → claim audit → code/hybrid/asset.  
+Never put form-meta (ontology captions, EN stage chrome) inside the figure.  
 Form Spec states genre chrome explicitly.
 
 ---

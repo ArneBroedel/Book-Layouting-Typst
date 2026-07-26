@@ -1,0 +1,35 @@
+{
+  "eval_id": 1,
+  "eval_name": "kl-transfer-urgency-form-spec",
+  "prompt": "You are Media in the Book-Layouting-Typst repo. Create an exploration Form Spec for the U-urgency + U-scope unit of the Melanom ABCDE monograph (Krankheitslehre / illness-script). Content is read-only at: /home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md — use only claim pins copy-through from §5. Write the Form Spec file to the outputs directory as kl-melanom-urgency.form-spec.md. Follow media-brief + KL ontology (TIME≠SCOPE, no form-meta in figures, exceptional T1 if content de-emphasizes 112). Do not write production Typst. brief_class: exploration.",
+  "assertions": [
+    {
+      "id": "has-zones",
+      "text": "Form Spec includes an information architecture / zones table"
+    },
+    {
+      "id": "has-must-see",
+      "text": "Form Spec lists Must-see elements including T1≠T2 or exceptional T1 and SCOPE separation"
+    },
+    {
+      "id": "pins-german-copythrough",
+      "text": "Claim pins include German text matching monograph §5 (e.g. keine destruktiven Maßnahmen, ABCDE-suspekt, Hutchinson or Ugly Duckling)"
+    },
+    {
+      "id": "no-form-meta-instruction",
+      "text": "Spec forbids form-meta inside the figure or states geometry must carry TIME vs SCOPE"
+    },
+    {
+      "id": "no-production-typst",
+      "text": "Output is Form Spec markdown only — no production .typ chapter compose"
+    },
+    {
+      "id": "exceptional-t1",
+      "text": "Acknowledges 112 is not primary for Melanom screening / exceptional vital-only T1"
+    },
+    {
+      "id": "success-criterion",
+      "text": "Ends with a learner success criterion (recognize/do under scan stress)"
+    }
+  ]
+}

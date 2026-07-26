@@ -1,0 +1,100 @@
+{
+  "skill_name": "media-brief",
+  "evals": [
+    {
+      "id": 1,
+      "eval_name": "kl-transfer-urgency-form-spec",
+      "prompt": "You are Media in the Book-Layouting-Typst repo. Create an exploration Form Spec for the U-urgency + U-scope unit of the Melanom ABCDE monograph (Krankheitslehre / illness-script). Content is read-only at: /home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md — use only claim pins copy-through from §5. Write the Form Spec file to the outputs directory as kl-melanom-urgency.form-spec.md. Follow media-brief + KL ontology (TIME≠SCOPE, no form-meta in figures, exceptional T1 if content de-emphasizes 112). Do not write production Typst. brief_class: exploration.",
+      "expected_output": "Form Spec markdown with zones, Must-see, German claim pins from §5, exceptional T1 handling, SCOPE separate, success criterion; no form ids as design start; no invented clinical thresholds.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "has-zones",
+          "text": "Form Spec includes an information architecture / zones table"
+        },
+        {
+          "id": "has-must-see",
+          "text": "Form Spec lists Must-see elements including T1≠T2 or exceptional T1 and SCOPE separation"
+        },
+        {
+          "id": "pins-german-copythrough",
+          "text": "Claim pins include German text matching monograph §5 (e.g. keine destruktiven Maßnahmen, ABCDE-suspekt, Hutchinson or Ugly Duckling)"
+        },
+        {
+          "id": "no-form-meta-instruction",
+          "text": "Spec forbids form-meta inside the figure or states geometry must carry TIME vs SCOPE"
+        },
+        {
+          "id": "no-production-typst",
+          "text": "Output is Form Spec markdown only — no production .typ chapter compose"
+        },
+        {
+          "id": "exceptional-t1",
+          "text": "Acknowledges 112 is not primary for Melanom screening / exceptional vital-only T1"
+        },
+        {
+          "id": "success-criterion",
+          "text": "Ends with a learner success criterion (recognize/do under scan stress)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "eval_name": "kl-ambition-abcde-form-space",
+      "prompt": "Media role: for Melanom (same Kursbuch5 Welle-06 monograph path as above), produce a short Form-Space C section for the ABCDE structured-look unit only: ≥3 valuable paths, ≥2 rejected paths, shortlist, then a Form Spec file abcde.form-spec.md in outputs/. Emphasize creativity for the ambition slot but pins only from content (Asymmetrie, Begrenzung, Color/Farbvielfalt, Durchmesser typisch > 5 mm, Evolution, Ugly Duckling). No clinical invention. Load KL process: grammar first then ambition.",
+      "expected_output": "Form-Space markdown with valuable/rejected paths + Form Spec with ABCDE pins and ambition free-vision optional/required flag.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "three-valuable-paths",
+          "text": "At least three valuable presentation paths named for ABCDE unit"
+        },
+        {
+          "id": "two-rejected",
+          "text": "At least two rejected paths with reasons"
+        },
+        {
+          "id": "abcde-pins",
+          "text": "All five ABCDE criteria present in pins or Must-see with DE meanings from content"
+        },
+        {
+          "id": "ugly-duckling",
+          "text": "Ugly Duckling included"
+        },
+        {
+          "id": "no-claim-invention",
+          "text": "Does not invent mm cut-offs other than typisch > 5 mm from content"
+        },
+        {
+          "id": "ambition-flag",
+          "text": "Marks free-vision ambition optional or required (not skip without reason)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "eval_name": "accept-rubric-no-monotony",
+      "prompt": "Media Accept: You are given that a Tech spike for KL urgency compiled green but is only stacked generic boxes with equal weight for T1 and T4, SCOPE as a fifth grey ladder step labeled 'keine Dringlichkeitsstufe', and English chrome 'Action payload'. Write an Accept record (accept|revise|reject) to outputs/accept.md using the media-brief Accept rubric and KL rules. Recommend revise or reject with concrete fixes. brief_class exploration.",
+      "expected_output": "Accept record revise or reject; cites form-meta, SCOPE-as-tier, equal weight, EN chrome; required changes listed.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "not-accept",
+          "text": "Decision is revise or reject, not bare accept"
+        },
+        {
+          "id": "flags-scope-ladder",
+          "text": "Flags SCOPE as ladder step / form-meta caption problem"
+        },
+        {
+          "id": "flags-en-or-weight",
+          "text": "Flags English chrome and/or T1=T4 weight flattening"
+        },
+        {
+          "id": "concrete-fixes",
+          "text": "Lists concrete required changes for next spike"
+        }
+      ]
+    }
+  ]
+}

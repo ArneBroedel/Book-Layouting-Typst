@@ -1,0 +1,31 @@
+{
+  "eval_id": 2,
+  "eval_name": "kl-ambition-abcde-form-space",
+  "prompt": "Media role: for Melanom (same Kursbuch5 Welle-06 monograph path as above), produce a short Form-Space C section for the ABCDE structured-look unit only: ≥3 valuable paths, ≥2 rejected paths, shortlist, then a Form Spec file abcde.form-spec.md in outputs/. Emphasize creativity for the ambition slot but pins only from content (Asymmetrie, Begrenzung, Color/Farbvielfalt, Durchmesser typisch > 5 mm, Evolution, Ugly Duckling). No clinical invention. Load KL process: grammar first then ambition.",
+  "assertions": [
+    {
+      "id": "three-valuable-paths",
+      "text": "At least three valuable presentation paths named for ABCDE unit"
+    },
+    {
+      "id": "two-rejected",
+      "text": "At least two rejected paths with reasons"
+    },
+    {
+      "id": "abcde-pins",
+      "text": "All five ABCDE criteria present in pins or Must-see with DE meanings from content"
+    },
+    {
+      "id": "ugly-duckling",
+      "text": "Ugly Duckling included"
+    },
+    {
+      "id": "no-claim-invention",
+      "text": "Does not invent mm cut-offs other than typisch > 5 mm from content"
+    },
+    {
+      "id": "ambition-flag",
+      "text": "Marks free-vision ambition optional or required (not skip without reason)"
+    }
+  ]
+}

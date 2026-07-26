@@ -52,6 +52,22 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | `Pinit-Best-Practices.md` | `pinit-workflow` |
 | `Medical-Presentation-Forms.md` (Form Spec, zones, claim pins) | `media-brief` + `medical-graphics` |
 | `Medical-Graphics-Playbook.md` (free-first, claim audit, hybrid, raster gates) | `medical-graphics` |
+| `KL-Form-Language.md` (illness-script grammar + ambition + transfer) | `media-brief` + `medical-graphics` |
+| `docs/BOOK-PRODUCTION-RUNBOOK.md` (full book → print, board/resume) | `book-production-orchestrator` |
+
+### Domain B — Krankheitslehre form language (harvested 2026-07)
+
+| Agent entry | Path |
+|---|---|
+| **Guide (why + ops)** | `Guides/KL-Form-Language.md` |
+| Ontology v1.1 | `domains/medical/skill/media-brief/references/kl-illness-script-ontology.md` |
+| Form-space process | `domains/medical/skill/media-brief/references/kl-form-space-process.md` |
+| Form library (unit→module/asset) | `domains/medical/skill/medical-graphics/references/kl-form-library.md` |
+| Exploration index (provenance) | `domains/medical/briefs/_explorations/README.md` |
+| Active expansion track | `devtracks/kl-form-language/` |
+| Spike modules | `toolset/compose/spikes/graphics/kl-script-system/README.md` |
+| Transfer eval (Melanom) | `spike-melanom.typ` · briefs `kl-melanom*.md` · PDF `melanom.pdf` |
+| Skill evals | `domains/medical/skill/*-workspace/` + `*/evals/evals.json` |
 
 ---
 

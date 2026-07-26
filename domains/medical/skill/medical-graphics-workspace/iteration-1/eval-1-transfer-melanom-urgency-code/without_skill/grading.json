@@ -1,0 +1,44 @@
+{
+  "eval_id": "eval-1-transfer-melanom-urgency-code",
+  "arm": "without_skill",
+  "pass_rate": 1.0,
+  "passed": 7,
+  "total": 7,
+  "expectations": [
+    {
+      "text": "has-typst",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "exceptional-t1",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "t2-t3-present",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "scope-present",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "pins-no-destruktiv",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "no-form-meta",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "german-only",
+      "passed": true,
+      "evidence": "ok"
+    }
+  ]
+}

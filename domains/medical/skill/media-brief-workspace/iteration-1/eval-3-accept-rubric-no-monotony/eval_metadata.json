@@ -1,0 +1,23 @@
+{
+  "eval_id": 3,
+  "eval_name": "accept-rubric-no-monotony",
+  "prompt": "Media Accept: You are given that a Tech spike for KL urgency compiled green but is only stacked generic boxes with equal weight for T1 and T4, SCOPE as a fifth grey ladder step labeled 'keine Dringlichkeitsstufe', and English chrome 'Action payload'. Write an Accept record (accept|revise|reject) to outputs/accept.md using the media-brief Accept rubric and KL rules. Recommend revise or reject with concrete fixes. brief_class exploration.",
+  "assertions": [
+    {
+      "id": "not-accept",
+      "text": "Decision is revise or reject, not bare accept"
+    },
+    {
+      "id": "flags-scope-ladder",
+      "text": "Flags SCOPE as ladder step / form-meta caption problem"
+    },
+    {
+      "id": "flags-en-or-weight",
+      "text": "Flags English chrome and/or T1=T4 weight flattening"
+    },
+    {
+      "id": "concrete-fixes",
+      "text": "Lists concrete required changes for next spike"
+    }
+  ]
+}

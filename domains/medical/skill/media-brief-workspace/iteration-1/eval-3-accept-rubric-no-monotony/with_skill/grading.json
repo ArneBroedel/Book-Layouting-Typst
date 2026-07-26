@@ -1,0 +1,29 @@
+{
+  "eval_id": "eval-3-accept-rubric-no-monotony",
+  "arm": "with_skill",
+  "pass_rate": 1.0,
+  "passed": 4,
+  "total": 4,
+  "expectations": [
+    {
+      "text": "not-accept",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "flags-scope-ladder",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "flags-en-or-weight",
+      "passed": true,
+      "evidence": "ok"
+    },
+    {
+      "text": "concrete-fixes",
+      "passed": true,
+      "evidence": "ok"
+    }
+  ]
+}

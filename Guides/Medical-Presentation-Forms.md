@@ -119,6 +119,18 @@ Accept and A/B score against that criterion, not “prettiest PNG”.
 
 - `domains/medical/briefs/iv2-rueckenschmerz-neuro.form-spec.md`  
 - `domains/medical/briefs/iii5-cauda-notfallkarte.form-spec.md`  
+- KL: `kl-u-urgency-scope.form-spec.md`, `kl-u-mimic.form-spec.md`, `kl-ces-saddle.form-spec.md`  
+- KL transfer: `kl-melanom-urgency.form-spec.md`, `kl-melanom-abcde.form-spec.md`  
+
+---
+
+## 11. Krankheitslehre (Illness Script)
+
+For Teil V/VI monographs, use the dedicated form language:
+
+**Guide (why + operating model):** [`Guides/KL-Form-Language.md`](KL-Form-Language.md)
+
+Hold **grammar** (TIME≠SCOPE, pins, no form-meta) so chapters transfer; open **ambition** (spatial, ABCDE, peel) so chapters live. Creativity invents *form*, not clinical text.
 
 ---
 
@@ -126,4 +138,5 @@ Accept and A/B score against that criterion, not “prettiest PNG”.
 
 - Media skill: `domains/medical/skill/media-brief/`  
 - Graphics playbook: `domains/medical/skill/medical-graphics/playbook/`  
-- Graphics why: `Guides/Medical-Graphics-Playbook.md`
+- Graphics why: `Guides/Medical-Graphics-Playbook.md`  
+- KL form language: `Guides/KL-Form-Language.md`

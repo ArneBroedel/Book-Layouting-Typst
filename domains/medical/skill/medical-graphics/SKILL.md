@@ -1,6 +1,6 @@
 ---
 name: medical-graphics
-description: "ALWAYS use after Media Brief/Form Spec for visual units: free vision first, claim audit, then multi-round realize (Typst recreate, hybrid labels-on-nodes, AI refine); Decision Notes, A/B, raster end-product only with gates. Covers didactic content graphics (flows, protocols, schemas — not only anatomy). Do NOT use for Media Form Spec authorship, chapter compose/validate, or clinical claim rewrite."
+description: "ALWAYS use after Media Brief/Form Spec for visual units: free vision first, claim audit, then multi-round realize (Typst recreate, hybrid labels-on-nodes, AI refine); Decision Notes, A/B, raster end-product only with gates. Use for Krankheitslehre forms (urgency/scope, mimic peel, discrimination, CES/MSCC spatial), pattern transfer from kl-form-library. Covers didactic content graphics (flows, protocols, schemas — not only anatomy). Do NOT use for Media Form Spec authorship, chapter compose/validate, clinical claim rewrite, or inventing German clinical text."
 ---
 
 # medical-graphics (Domain medical — Produkt B)
@@ -10,13 +10,15 @@ description: "ALWAYS use after Media Brief/Form Spec for visual units: free visi
 **SoT:** `domains/medical/skill/medical-graphics/`  
 **Playbook (run this):** [`playbook/00-overview.md`](playbook/00-overview.md)  
 **Policy:** `toolset/compose/CREATIVE-COMPOSE.md`  
-**Why-guide:** `Guides/Medical-Graphics-Playbook.md`
+**Why-guide:** `Guides/Medical-Graphics-Playbook.md`  
+**KL form language:** `Guides/KL-Form-Language.md` · library [`references/kl-form-library.md`](references/kl-form-library.md)
 
 ## When to use
 
 - Form Spec / Brief implies diagrams, flows, protocols, schemas, cue systems  
 - Free vision, claim audit, Typst recreate, hybrid, AI refine  
 - Decision Note, asset manifest, A/B, Accept handoff  
+- **KL / Illness Script** units: urgency-scope, mimic, discrimination, mechanism chain, spatial saddle/MSCC — see [`references/kl-form-library.md`](references/kl-form-library.md)  
 
 ## When NOT to use
 
@@ -49,8 +51,8 @@ G4  Decision Note → Media Accept   playbook/08
 Tech embed accepted winner
 ```
 
-**MUST:** read Form Spec; free vision without structure clone (ambitious units); **claim audit after free**; pin labels from C; document `realize_path`; Media Accept owns ideal proximity.  
-**MUST NOT:** invent clinical content; foot-legend-only hybrid as fair A/B; accept-asset on audit FAIL; endless AI loops; production “done” without Accept.
+**MUST:** read Form Spec; free vision without structure clone (ambitious units); **claim audit after free** (labels **and** illustration-semantics: icons/scales must match pin *meaning*); pin labels from C; document `realize_path`; Media Accept owns ideal proximity; **German labels only** in production graphics; **no form-meta** inside figures (ontology IDs, “keine Dringlichkeitsstufe”, EN “Action/Trigger cluster”); surgical refine for icon/scale mismatches when composition is otherwise good.  
+**MUST NOT:** invent clinical content; foot-legend-only hybrid as fair A/B; accept-asset on audit FAIL or on icon-DRIFT left unfixed; endless AI loops; production “done” without Accept; put designer legends that *explain the form language* inside the graphic; transfer decorative bars/spectra that do not name their meaning.
 
 ## End product policy
 
@@ -108,16 +110,29 @@ typst compile --root . --ignore-system-fonts --font-path fonts \
 ## Form recipes
 
 See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):  
-`branching-emergency` · `leitsymptom-vertical-flow` · `hard-stop-protocol` · `framework-os-sequence`
+`branching-emergency` · `leitsymptom-vertical-flow` · `hard-stop-protocol` · `framework-os-sequence`  
+**+ KL:** `kl-urgency-scope-stack` · `kl-urgency-nested-t1` · `kl-urgency-exception-t1` · `kl-urgency-scope-dashboard` · `kl-mimic-map` · `kl-mimic-peel` · `kl-discrimination` · `kl-mechanism-chain` · `kl-abcde-look` · `kl-spatial-saddle` · `kl-spatial-mscc`
 
 ## Gold examples
 
-[`examples/INDEX.md`](examples/INDEX.md) · Walkthrough [`playbook/walkthrough-iv2.md`](playbook/walkthrough-iv2.md)
+[`examples/INDEX.md`](examples/INDEX.md) · Walkthrough [`playbook/walkthrough-iv2.md`](playbook/walkthrough-iv2.md)  
+**KL spikes:** `toolset/compose/spikes/graphics/kl-script-system/README.md` · PDFs under `dist/spikes/graphics/kl-script-system/`
+
+## Grammar vs ambition (KL lesson)
+
+| Track | When | Default |
+|-------|------|---------|
+| **Grammar** | Band units §3–§5, discrimination, mimic map | **code** recreate from library modules |
+| **Ambition** | Spatial, peel chrome, novel dashboard, **criteria-by-picture** (ABCDE) | free vision → audit (**labels + icons**) → surgical refine if needed → asset **or** recreate DE |
+
+Free vision may invent EN/meta chrome (US-D lesson) → **refine** or **code SoT**.  
+Criteria icons may look right while teaching wrong (Melanom B/D) → **illustration-semantics** in audit + surgical refine. Never accept-asset on claim FAIL.
 
 ## References
 
 | | |
 |---|---|
+| **KL form library** | [`references/kl-form-library.md`](references/kl-form-library.md) |
 | Free vision | [`references/free-vision.md`](references/free-vision.md) |
 | Decision heuristics | [`references/decision-heuristics.md`](references/decision-heuristics.md) |
 | Book visual standards | [`references/book-visual-standards.md`](references/book-visual-standards.md) |
@@ -125,6 +140,7 @@ See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):
 | Tools | [`references/tools-and-generation.md`](references/tools-and-generation.md) |
 | Asset pipeline | [`references/asset-pipeline.md`](references/asset-pipeline.md) |
 | Presentation forms (why) | `Guides/Medical-Presentation-Forms.md` |
+| KL ontology (Media) | `domains/medical/skill/media-brief/references/kl-illness-script-ontology.md` |
 
 ## Boundary
 

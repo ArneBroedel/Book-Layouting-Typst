@@ -14,8 +14,8 @@
 
 | result | meaning |
 |---|---|
-| **PASS** | All labels match claim pins / C |
-| **DRIFT** | Fixable (EN chrome, minor wording) → B2 refine or recreate |
+| **PASS** | All labels match pins/C **and** illustration-semantics OK (icons/scales match meaning) |
+| **DRIFT** | Fixable (EN chrome, minor wording, icon/scale mismatch) → B2 refine or recreate |
 | **FAIL** | Invented clinical content / thresholds → never accept-asset until fixed |
 
 **This audit:** PASS | DRIFT | FAIL
@@ -26,6 +26,14 @@
 |---|---|---|
 | | yes/no | |
 
+## Illustration-semantics checklist (when icons / sizes / criteria graphics present)
+
+| element (describe) | claimed meaning (pin) | visual matches meaning? | issue |
+|---|---|---|---|
+| | | yes/no | |
+
+Examples to force: border quality (scharf vs unscharf), size vs threshold, direction of maps, anatomy locus.
+
 ## Structural checks
 
 - [ ] No invented numbers / vitals / doses / cut-offs
@@ -33,6 +41,8 @@
 - [ ] Branch/loop invariants from Form Spec still true
 - [ ] Genre chrome correct (not wrong emergency wall)
 - [ ] Escape paths short (if specified)
+- [ ] Scales / size cues honest vs pin thresholds
+- [ ] Icons teach the same criterion as their label
 
 ## Action
 

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "media-brief", "runs": [{"id": "eval-1-kl-transfer-urgency-form-spec-with_skill", "prompt": "You are Media in the Book-Layouting-Typst repo. Create an exploration Form Spec for the U-urgency + U-scope unit of the Melanom ABCDE monograph (Krankheitslehre / illness-script). Content is read-only at: /home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md \u2014 use only claim pins copy-through from \u00a75. Write the Form Spec file to the outputs directory as kl-melanom-urgency.form-spec.md. Follow media-brief + KL ontology (TIME\u2260SCOPE, no form-meta in figures, exceptional T1 if content de-emphasizes 112). Do not write production Typst. brief_class: exploration.", "eval_id": 1, "outputs": [{"name": "NOTES.md", "type": "text", "content": "# NOTES \u2014 eval-1 kl-transfer-urgency-form-spec (with_skill)\n\n## Role / skill\n\nMedia (`media-brief`) \u00b7 exploration Form Spec only.  \nLoaded: KL ontology v1.1, form-space process, `Guides/KL-Form-Language.md`, form-spec template.  \nTransfer pattern: `kl-urgency-scope-stack` with **exceptional T1** (Melanom screening).\n\n## What was written\n\n| File | Purpose |\n|------|---------|\n| `kl-melanom-urgency.form-spec.md` | Stage-M Form Spec for **U-urgency + U-scope** of V-10 Melanom ABCDE |\n| `NOTES.md` | this summary |\n\n## Content handling\n\n- Read-only C: Kursbuch5 Welle-06 pilot `chapter-v-10-melanom-abcde-hautscreening.md`\n- Claim pins: **\u00a75 table only**, German copy-through (112 exception, T2 ABCDE/Blutung/B-Symptome, T3 Hutchinson/Ugly Duckling, T4 net + Screening-Hinweis, SCOPE no Dx/exzision/destruktiv)\n- No claim invention; no production Typst; `brief_class: exploration`\n\n## Design decisions (ontology)\n\n1. **TIME \u2260 SCOPE** \u2014 SCOPE as orthogonal frame, not ladder step  \n2. **Exceptional T1** \u2014 content: 112 typischerweise nicht prim\u00e4r; only vital Begleitlage \u2192 compact exception, not ACS-style 112 wall  \n3. **T2 primary weight**, **T3 kept** (content fills zeitnah)  \n4. **No form-meta in figure** \u2014 geometry must carry separation; content title for SCOPE allowed  \n5. Genre: illness-script/teal; solid red only on real T1 exception  \n\n## Explicit non-outputs\n\n- No Media Brief full chapter, no Accept, no Graphics free-vision PNG, no `.typ` compose\n- Did not edit files outside this `outputs/` directory\n"}, {"name": "kl-melanom-urgency.form-spec.md", "type": "text", "content": "# Form Spec (Media \u2014 Stage M)\n\n- **chapter_id / slug:** V-10 Melanom ABCDE-Hautscreening / `kl-melanom-urgency`\n- **unit_id:** U-urgency + U-scope (joint; ontology v1.1)\n- **brief_path:** (exploration eval \u2014 no production brief; sibling intent `domains/medical/briefs/kl-melanom.brief.md` if present)\n- **content_source:** `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md` \u00a75 *Handeln und Dringlichkeit*\n- **content_status:** format-ok / human_review required (Welle-06 pilot)\n- **content_revision:** not frozen (exploration)\n- **brief_class:** exploration\n- **genre:** illness-script / lerntext (Master) \u2014 teal framework; solid red only on real T1 exception\n- **recipe_fn:** (hint only) `kl-urgency-scope-stack` transfer \u00b7 **exceptional-T1** variant\n- **author_role:** media\n- **date:** 2026-07-26\n- **ambition:** optional (code-first stack; free-vision dashboard later if desired)\n- **ontology:** v1.1 \u2014 TIME \u2260 SCOPE; ACTION inside TIME; no form-meta in figure\n\n> Joint TIME + SCOPE unit for Melanom screening Direktzugang.  \n> **Specialty:** content de-emphasizes 112 as primary pathway \u2192 **exceptional T1** (vital Begleitlage only), not a loud empty 112 wall.  \n> Claim pins = **copy-through from C \u00a75 only**. No production Typst. Exploration does **not** authorize production compose.\n\n---\n\n## Design reasoning (compact)\n\n| unit | learner job | load risk | presentation hypothesis |\n|------|-------------|-----------|-------------------------|\n| U-urgency (\u00a75 TIME rows) | **choose** gleichtags vs zeitnah vs treat+net | fake 112-first wall; T2/T3 collapse | TIME stack with **exceptional compact T1** |\n| U-scope (\u00a75 Grenze) | **constrain** (no Dx / no excision) | SCOPE as grey \u201cT5\u201d under Treat | orthogonal SCOPE frame outside TIME stack |\n\n---\n\n## Learner context\n\n- **Actor:** HP Physio / PT im Direktzugang (Hautscreening-Blick bei Entkleidung / Behandlungsgebiet)\n- **Time pressure / scan budget:** ~10\u201320 s for tier choice + action payload\n- **Setting:** Praxis / Hausbesuch / mobilisierende Therapie (nicht Notaufnahme als Default)\n\n## Learner job (one primary)\n\n**choose** (+ secondary **constrain** via SCOPE)\n\n**Primary job in one sentence:**  \nAssign the correct medical pathway for a suspicious pigmented lesion (gleichtags / zeitnah / treat+net), keep 112 only for vital exceptions, and never own melanoma diagnosis or destructive local treatment.\n\n---\n\n## Load risks (if form is wrong)\n\n- Loud empty **solid-red T1** dominating a screening chapter (content says 112 typically **not** primary)\n- **T2 and T3 collapsed** into one \u201cArzt bald\u201d blob (Hutchinson / Ugly Duckling without bleeding needs zeitnah, not same-day wall by default)\n- **SCOPE as ladder step** / grey \u201cT5\u201d under Behandeln\n- Softening or omitting **keine destruktiven Ma\u00dfnahmen**\n- Form-meta captions inside the figure (\u201ckeine Dringlichkeitsstufe\u201d, ontology IDs, EN chrome)\n- Inventing primary melanoma-112 triggers beyond vital Begleitlage in C\n\n---\n\n## Cognitive / layout levers (layout can fix)\n\n- **Segmenting:** one block per TIME tier present in \u00a75 (T1 exception, T2, T3, T4)\n- **Signaling:** weight **T2 \u2265 T3 > T4**; T1 is compact exception, not the loudest full-width wall\n- **Contiguity:** situation/triggers adjacent to Handlung **inside** the same tier\n- **Figure\u2013ground:** SCOPE optically **outside** the TIME stack (different geometry: square frame, hairline break, content title only)\n- **De-emphasize T1:** quiet-strong strip / compact card when content says \u201ctypischerweise nicht prim\u00e4r 112\u201d\n- **Collapse rule:** do **not** invent empty loud T1; do **not** omit T3 (content has zeitnah row)\n\n---\n\n## Information architecture (zones)\n\n| zone | loudness | content role | must feel like |\n|---|---|---|---|\n| **T1 exception** | quiet-strong (compact danger) | vital Begleitlage only (Blutung/Schock) \u2014 not primary melanoma pathway | exception note, **not** main 112 wall |\n| **T2** | **loud** (primary clinical weight) | blutend/ulzeriert; ABCDE-suspekt/rasch wachsend; B-Symptome + multiple Hautknoten \u2192 gleichtags\u2013zeitnah Arzt | primary same-day medical path |\n| **T3** | medium-loud | Hutchinson/subungual + Nagelwall; Ugly Duckling ohne akute Blutung \u2192 zeitnah | distinct from T2 (zeitnah, not gleichtags default) |\n| **T4** | medium | ohne suspekte Kriterien: MSK fortsetzen + Sicherheitsnetz + Screening-Hinweis | permission **with** return stop |\n| **SCOPE** | quiet-strong border | Grenze: keine Dx / keine Exzision / keine destruktiven Ma\u00dfnahmen; DDx \u00e4rztlich | **optically not a TIME tier** (geometry, no T-chip) |\n| Quiet trailing | quiet | sources / chapter chrome | after action, never before |\n\nGeometry must make TIME stack vs SCOPE frame **self-evident**. No in-figure explanation of the ontology.\n\n---\n\n## Must-see elements\n\n1. **Exceptional T1** \u2014 112 only as vital exception; **not** a primary melanoma urgency wall  \n2. **T2 \u2260 T3** \u2014 separate labels and visual weight (gleichtags / eher gleichtags vs zeitnah)  \n3. **ACTION inside each TIME tier** \u2014 triggers + Handlung contiguously; ACTION is not a third axis  \n4. **SCOPE separate geometry** \u2014 competence boundary outside TIME; **no** form-meta caption (\u201ckeine Dringlichkeitsstufe\u201d, \u201cTrigger cluster\u201d, ontology IDs, EN stage chrome)  \n5. Explicit **keine destruktiven Ma\u00dfnahmen** visible in T2 and/or SCOPE (copy-through)  \n6. **No Treat-without-net** \u2014 T4 always pairs MSK permission with stop-and-refer on new suspicious lesion  \n7. Genre chrome: illness-script / teal framework; solid red only if T1 exception is shown  \n\n---\n\n## Urgency / weight encoding\n\n| tier | weight | visual intent |\n|------|--------|----------------|\n| T1 exception | compact danger | small solid-danger note or side strip; **not** full-page solid wall |\n| T2 | loud amber / warning | full tier card \u2014 primary clinical pathway |\n| T3 | cool / info, full tier | clearly quieter or differently keyed than T2, still distinct from T4 |\n| T4 | primary/teal | permission + net |\n| SCOPE | orthogonal frame | square corners / hairline break / content title only (`Grenze der eigenen Zust\u00e4ndigkeit`) |\n\n**Default-to-Danger:** no \u2014 content does **not** default melanoma screening to 112.\n\n---\n\n## Branching / loop invariants\n\n- Do **not** invent primary 112 melanoma triggers beyond vital exception stated in C  \n- Do **not** omit T3 (content fills zeitnah: Hutchinson / Ugly Duckling without acute bleeding)  \n- Do **not** put SCOPE as a fifth TIME rung  \n- Screening reminder (gesetzliches Hautkrebs-Screening) lives in **T4/net** \u2014 not a urgency tier  \n- Multi-trigger rule: T2 has several situations \u2192 **one** T2 card with internal trigger list, not fake ladder rungs  \n\n---\n\n## Genre chrome\n\n- **Must look like:** illness-script decision instrument for skin red flags in Direktzugang (weighted TIME + orthogonal SCOPE)\n- **Must not look like:** ACS/BLS-style 112-first Notfallkarte; operative Notfallwand; ampellike SCOPE-as-grey-step; Leitsymptom flowchart alone\n\n---\n\n## Claim pins (German, copy-through from C \u00a75)\n\n| step / zone | allowed text (German) |\n|---|---|\n| T1 situation | Im Melanom-Screening typischerweise **nicht** prim\u00e4r 112; Ausnahme nur bei vital bedrohlicher Begleitlage (z.\u202fB. akute schwere Blutung, Schock) |\n| T1 action | Dann Notruf und Standard-Notfallmanagement; Melanom selbst ist prim\u00e4r onkologisch-dermatologisch zeitkritisch, nicht reanimationspflichtig |\n| T2 triggers | blutende oder ulzerierte unklare Hautl\u00e4sion; ABCDE-suspekte oder rasch wachsende pigmentierte L\u00e4sion; B-Symptomatik plus multiple Hautknoten |\n| T2 timing | gleichtags bis zeitnah (bei Blutung/Ulzeration und systemischen Zeichen eher gleichtags) |\n| T2 action | Therapie an der L\u00e4sion stoppen; **keine** destruktiven Ma\u00dfnahmen; gleichtags Hausarzt/Dermatologie bzw. onkologisch-dermatologische Abkl\u00e4rung; schriftlich \u201eMelanom-DDx / ABCDE-suspekt?\u201c und Befundbeschreibung mitgeben |\n| T3 triggers | neu aufgetretene subunguale Pigmentierung kombiniert mit Nagelwall-Pigmentierung (Verdacht auf Hutchinson-Zeichen); Ugly Duckling ohne akute Blutung |\n| T3 timing | zeitnah |\n| T3 action | Schriftliche Zuweisung Dermatologie/Hausarzt zur Exzisionsabkl\u00e4rung; Patient \u00fcber Dringlichkeit und R\u00fcckkehrgr\u00fcnde informieren |\n| T4 situation | ohne suspekte Kriterien |\n| T4 action | MSK-Therapie fortsetzen; bei neu auff\u00e4lliger L\u00e4sion im Verlauf sofort stoppen und zuweisen; auf gesetzliches Hautkrebs-Screening (in DE ab 35 Jahren alle 2 Jahre) hinweisen, ohne Screening zu ersetzen |\n| SCOPE title (content) | Grenze der eigenen Zust\u00e4ndigkeit |\n| SCOPE body | Keine Melanom-Diagnose, keine Exzision, keine destruktiven Ma\u00dfnahmen an suspekten L\u00e4sionen; endg\u00fcltige DDx (seborrhoische Keratose vs. Melanom) ist \u00e4rztlich |\n\n*Pin source: monograph \u00a75 table rows only. Do not import Erysipel/ACS clinical text. Do not invent thresholds.*\n\n---\n\n## Explicit non-goals / must-not\n\n- **No form-meta inside the figure** \u2014 geometry carries TIME vs SCOPE; designer notes only outside (spike footer / Decision Note)\n- No English stage titles (\u201cAction\u201d, \u201cTrigger cluster\u201d, \u201cT5\u201d)\n- No invented primary 112 melanoma pathway\n- No invented T3 thresholds beyond C (T3 is present and must stay)\n- No clinical claim rewrite / no Critical Claim paraphrase as new medicine\n- No production `.typ` / bookkit APIs in this Spec\n- Exploration: **does not** authorize production compose or freeze bypass\n\n---\n\n## Presentation hypothesis (pattern name)\n\n**`kl-urgency-scope-stack` \u00b7 exceptional-T1 (Melanom / screening-style)**\n\nTIME vertical (or priority landscape) stack: compact T1 exception \u2192 loud T2 \u2192 distinct T3 \u2192 T4 with net; SCOPE as orthogonal frame with content title only.  \nOptional later ambition (not required for this unit): US-D-style meter/dashboard free vision \u2014 still same pins and invariants.\n\n---\n\n## Success criterion\n\nUnder scan stress the learner **recognizes** that melanoma screening is **not** a 112-first pathway, **picks** gleichtags vs zeitnah vs treat+net for the lesion pattern, **reads** the matching Handlung, and **does not** start destructive local treatment or claim melanoma diagnosis \u2014 while **seeing** SCOPE as a permanent non-tier constraint.\n\n---\n\n## Handoff to Graphics\n\n- [x] Form Spec complete for this unit (exploration)\n- [x] Ambition flag set (`optional` \u2014 code-first stack)\n- [x] Claim pins reviewed against C \u00a75 (copy-through)\n- [ ] Free vision only if ambition raised later; claim audit every on-image label vs pins\n- Visual-Unit \u2192 `medical-graphics` playbook from Stage G0; prefer **code** carrier for grammar transfer (`kl-urgency-scope-stack`)\n- Transfer rule: **same geometry logic** as US stack gold; **new pins** from Melanom only; re-audit free labels (DE only)\n\n**Not in scope here:** production Typst, catalog form-id shopping, content template rewrite, Accept record.\n"}], "grading": {"eval_id": "eval-1-kl-transfer-urgency-form-spec", "arm": "with_skill", "pass_rate": 1.0, "passed": 7, "total": 7, "expectations": [{"text": "has-zones", "passed": true, "evidence": "ok"}, {"text": "has-must-see", "passed": true, "evidence": "ok"}, {"text": "pins-german-copythrough", "passed": true, "evidence": "ok"}, {"text": "no-form-meta-instruction", "passed": true, "evidence": "ok"}, {"text": "no-production-typst", "passed": true, "evidence": "ok"}, {"text": "exceptional-t1", "passed": true, "evidence": "ok"}, {"text": "success-criterion", "passed": true, "evidence": "ok"}]}}, {"id": "eval-1-kl-transfer-urgency-form-spec-without_skill", "prompt": "You are Media in the Book-Layouting-Typst repo. Create an exploration Form Spec for the U-urgency + U-scope unit of the Melanom ABCDE monograph (Krankheitslehre / illness-script). Content is read-only at: /home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md \u2014 use only claim pins copy-through from \u00a75. Write the Form Spec file to the outputs directory as kl-melanom-urgency.form-spec.md. Follow media-brief + KL ontology (TIME\u2260SCOPE, no form-meta in figures, exceptional T1 if content de-emphasizes 112). Do not write production Typst. brief_class: exploration.", "eval_id": 1, "outputs": [{"name": "NOTES.md", "type": "text", "content": "# NOTES \u2014 kl-melanom-urgency Form Spec (without_skill)\n\n## Source\n\n- Monograph: `Kursbuch5/.../chapter-v-10-melanom-abcde-hautscreening.md`\n- Pins: **\u00a75 Handeln und Dringlichkeit only** (table rows 112 \u2192 Zust\u00e4ndigkeitsgrenze)\n- Deliverable path: `.../without_skill/outputs/`\n- Skills: **not used** (exploration eval arm)\n\n## Design choices\n\n1. **Exceptional T1:** \u00a75 states 112 is typically *not* primary in Melanom screening; only vital Bedrohungs-Begleitlage. Spec de-emphasizes T1 visually so learners do not EMS-default.\n2. **TIME \u2260 SCOPE:** Five table rows map to four TIME rungs + one always-on SCOPE rail (Zust\u00e4ndigkeitsgrenze is not a clock speed).\n3. **T2 vs T3:** Kept distinct (gleichtags\u2013zeitnah + bleeding/ABCDE/B-symptoms vs zeitnah Hutchinson/Ugly Duckling without acute bleeding).\n4. **German copy-through:** Anchors include `keine destruktiven Ma\u00dfnahmen`, `ABCDE-suspekt`, `Hutchinson-Zeichen`, `Ugly Duckling`, written \u201eMelanom-DDx / ABCDE-suspekt?\u201c.\n5. **No form-meta in figure:** Ontology labels (U-urgency, zone IDs, pin IDs) are authoring-only; geometry carries TIME vs SCOPE.\n6. **brief_class: exploration** \u2014 form family recommendation + anti-patterns; no production `.typ`.\n\n## Assertion self-check (eval_metadata)\n\n| ID | Status |\n|----|--------|\n| has-zones | \u00a72 zones table Z0\u2013Z4 |\n| has-must-see | \u00a73 M1\u2013M8 (exceptional T1, T2\u2260T3, SCOPE separation) |\n| pins-german-copythrough | \u00a74 pin tables |\n| no-form-meta-instruction | \u00a76 + M8 + anti-pattern 4 |\n| no-production-typst | Form Spec markdown only |\n| exceptional-t1 | \u00a75 TIME model + M1 + P-T1 |\n| success-criterion | \u00a710 learner success criterion |\n\n## Out of scope intentionally\n\n- \u00a7\u00a71\u20134 clinical detail, \u00a76 self-check case, DDx-Minimal table\n- Free-vision PNG / Typst spike / compose chapter\n"}, {"name": "kl-melanom-urgency.form-spec.md", "type": "text", "content": "# Form Spec \u2014 Melanom ABCDE: U-urgency + U-scope\n\n| Feld | Wert |\n|------|------|\n| **Unit** | U-urgency + U-scope (Handeln und Dringlichkeit) |\n| **Source** | `chapter-v-10-melanom-abcde-hautscreening.md` \u00a75 only |\n| **brief_class** | exploration |\n| **Audience** | Direktzugang Physiotherapie (Krankheitslehre / illness-script) |\n| **Goal** | Learner can triage pigmented-lesion situations by **TIME** and **SCOPE** under scan stress \u2014 without diagnosing Melanom or treating the lesion |\n\n---\n\n## 1. Intent\n\nRender the \u00a75 action ladder as a single scannable unit that answers two orthogonal questions:\n\n1. **TIME (Dringlichkeit):** How fast must medical care happen?\n2. **SCOPE (Zust\u00e4ndigkeit):** What is / is not the PT\u2019s job at that step?\n\nThese axes must remain visually and semantically **separate** (TIME \u2260 SCOPE). Geometry and zone placement carry the distinction \u2014 **not** form-meta labels drawn inside the figure.\n\n---\n\n## 2. Information architecture / zones\n\n| Zone ID | Role | Content (from \u00a75) | Layout intent |\n|---------|------|-------------------|---------------|\n| **Z0** | Title strip | Unit title only: Handeln & Dringlichkeit \u2014 Melanom / ABCDE-Hautscreening | Thin header; no clinical claims |\n| **Z1** | **TIME ladder** (vertical stack, top \u2192 bottom = faster \u2192 safer) | Urgency rungs with situation + action pins | Dominant left/center column; visual weight encodes urgency |\n| **Z1-T1** | Exceptional T1 | **112** only for vital Bedrohungs-Begleitlage | Visually *de-emphasized* vs T2 (dashed/thin/\u201cAusnahme\u201d-treatment) \u2014 not the primary path |\n| **Z1-T2** | Primary acute medical | **Notaufnahme / gleichtags Arzt** | Strongest rung (filled/high-contrast) \u2014 default \u201cstop & send today\u201d |\n| **Z1-T3** | Subacute medical | **Zeitnah Dermatologie** | Medium weight; still referral, not PT treat-lesion |\n| **Z1-T4** | Continue care | **Behandeln mit Sicherheitsnetz** | Softest rung; MSK continues only *without* suspekte Kriterien |\n| **Z2** | **SCOPE bar / rail** | **Grenze der eigenen Zust\u00e4ndigkeit** \u2014 always-on constraints | Separate band (right rail or bottom full-width) \u2014 never mixed into TIME cells as a \u201clevel\u201d |\n| **Z3** | Safety-net callout (optional micro-zone) | R\u00fcckkehrgr\u00fcnde / neu auff\u00e4llige L\u00e4sion \u2192 stop + zuweisen | Attached to T4 or SCOPE, not a new TIME level |\n| **Z4** | Legend / scan key (outside figure body if needed) | TIME vs SCOPE reading instruction for production only | **Not** part of learner-facing figure content |\n\n### Zone rules\n\n- **TIME rungs (Z1-\\*)** hold only: Situation \u00b7 Dringlichkeit \u00b7 Handlung (copy-through pins).\n- **SCOPE (Z2)** holds only: professional boundary claims (no diagnosis, no excision, no destructive acts; endg\u00fcltige DDx is \u00e4rztlich).\n- Do **not** invent intermediate rungs (e.g. \u201cwithin 48 h\u201d) not present in \u00a75.\n- Do **not** place SCOPE items as a TIME rung between T3 and T4.\n\n---\n\n## 3. Must-see elements\n\n| # | Must-see | Why |\n|---|----------|-----|\n| M1 | **Exceptional T1 \u2260 primary path** | \u00a75: Im Melanom-Screening typischerweise **nicht** prim\u00e4r 112; Ausnahme nur bei vital bedrohlicher Begleitlage |\n| M2 | **T2 as default acute action** | blutende/ulzerierte unklare L\u00e4sion; ABCDE-suspekt / rasch wachsend; B-Symptomatik + multiple Hautknoten \u2192 gleichtags\u2013zeitnah Arzt |\n| M3 | **T3 distinct from T2** | Hutchinson-Zeichen-Verdacht / Ugly Duckling ohne akute Blutung \u2192 **zeitnah** Dermatologie (not same visual weight as gleichtags) |\n| M4 | **T4 = treat MSK only without suspekte Kriterien** + Sicherheitsnetz | Continue is conditional; neu auff\u00e4llige L\u00e4sion \u2192 sofort stoppen und zuweisen |\n| M5 | **SCOPE separated from TIME** | \u201eGrenze der eigenen Zust\u00e4ndigkeit\u201c is always-on, not a clock level |\n| M6 | **Explicit bans on figure** (SCOPE or T2 action cells) | **keine** destruktiven Ma\u00dfnahmen; keine Melanom-Diagnose; keine Exzision |\n| M7 | **Written handoff cue on T2/T3** | schriftlich \u201eMelanom-DDx / ABCDE-suspekt?\u201c + Befundbeschreibung (T2); schriftliche Zuweisung (T3) |\n| M8 | Geometry (not labels like \u201cTIME axis\u201d) carries **TIME\u2260SCOPE** | No form-meta chrome inside the figure |\n\n---\n\n## 4. Claim pins (German copy-through \u2014 \u00a75 only)\n\nPins are **verbatim or near-verbatim** from the monograph table in \u00a75. Production must not paraphrase clinical meaning away.\n\n### P-T1 \u2014 112 (exceptional)\n\n| Pin ID | Claim text (DE) | Role |\n|--------|-----------------|------|\n| P-T1-sit | Im Melanom-Screening typischerweise **nicht** prim\u00e4r 112; Ausnahme nur bei vital bedrohlicher Begleitlage (z. B. akute schwere Blutung, Schock) | Situation |\n| P-T1-time | (nur bei vitaler Ausnahme) Notruf | Dringlichkeit |\n| P-T1-act | Dann Notruf und Standard-Notfallmanagement; Melanom selbst ist prim\u00e4r onkologisch-dermatologisch zeitkritisch, nicht reanimationspflichtig | Handlung |\n\n### P-T2 \u2014 Notaufnahme / gleichtags Arzt\n\n| Pin ID | Claim text (DE) | Role |\n|--------|-----------------|------|\n| P-T2-sit | blutende oder ulzerierte unklare Hautl\u00e4sion; **ABCDE-suspekte** oder rasch wachsende pigmentierte L\u00e4sion; B-Symptomatik plus multiple Hautknoten | Situation |\n| P-T2-time | gleichtags bis zeitnah (bei Blutung/Ulzeration und systemischen Zeichen eher gleichtags) | Dringlichkeit |\n| P-T2-act-stop | Therapie an der L\u00e4sion stoppen; **keine** destruktiven Ma\u00dfnahmen | Handlung |\n| P-T2-act-ref | gleichtags Hausarzt/Dermatologie bzw. onkologisch-dermatologische Abkl\u00e4rung | Handlung |\n| P-T2-act-doc | schriftlich \u201eMelanom-DDx / ABCDE-suspekt?\u201c und Befundbeschreibung mitgeben | Handlung |\n\n### P-T3 \u2014 Zeitnah Dermatologie\n\n| Pin ID | Claim text (DE) | Role |\n|--------|-----------------|------|\n| P-T3-sit | neu aufgetretene subunguale Pigmentierung kombiniert mit Nagelwall-Pigmentierung (Verdacht auf **Hutchinson-Zeichen**); **Ugly Duckling** ohne akute Blutung | Situation |\n| P-T3-time | zeitnah | Dringlichkeit |\n| P-T3-act | Schriftliche Zuweisung Dermatologie/Hausarzt zur Exzisionsabkl\u00e4rung; Patient \u00fcber Dringlichkeit und R\u00fcckkehrgr\u00fcnde informieren | Handlung |\n\n### P-T4 \u2014 Behandeln mit Sicherheitsnetz\n\n| Pin ID | Claim text (DE) | Role |\n|--------|-----------------|------|\n| P-T4-sit | ohne suspekte Kriterien | Situation |\n| P-T4-act | MSK-Therapie fortsetzen; bei neu auff\u00e4lliger L\u00e4sion im Verlauf sofort stoppen und zuweisen | Handlung |\n| P-T4-screen | auf gesetzliches Hautkrebs-Screening (in DE ab 35 Jahren alle 2 Jahre) hinweisen, ohne Screening zu ersetzen | Handlung / Hinweis |\n\n### P-SCOPE \u2014 Grenze der eigenen Zust\u00e4ndigkeit\n\n| Pin ID | Claim text (DE) | Role |\n|--------|-----------------|------|\n| P-SC-when | immer bei Verdacht | Trigger |\n| P-SC-ban | Keine Melanom-Diagnose, keine Exzision, **keine** destruktiven Ma\u00dfnahmen an suspekten L\u00e4sionen | Verbot |\n| P-SC-ddx | endg\u00fcltige DDx (seborrhoische Keratose vs. Melanom) ist \u00e4rztlich | Zust\u00e4ndigkeitsgrenze |\n\n**Out of scope for this unit:** ABCDE teaching detail, mechanism, DDx table rows, Fall zur Selbstpr\u00fcfung (\u00a76) \u2014 those belong to other KL units; may be cross-referenced in brief notes only, not as figure pins.\n\n---\n\n## 5. TIME model (exceptional T1)\n\n```\nT1  112                    [EXCEPTIONAL \u2014 de-emphasized]\n    \u2514\u2500 only vital Bedrohungs-Begleitlage (schwere Blutung, Schock)\n    \u2514\u2500 Melanom itself is NOT the 112 indication\n\nT2  Notaufnahme / gleichtags Arzt   [PRIMARY ACUTE]\n    \u2514\u2500 Blutung/Ulzeration \u00b7 ABCDE-suspekt/rasch wachsend \u00b7 B-Symptome + multiple Hautknoten\n\nT3  Zeitnah Dermatologie   [SUBACUTE REFERRAL]\n    \u2514\u2500 Hutchinson-Zeichen-Verdacht \u00b7 Ugly Duckling ohne akute Blutung\n\nT4  Behandeln + Sicherheitsnetz\n    \u2514\u2500 only ohne suspekte Kriterien\n```\n\n**Design implication:** Do not draw a full-width red emergency banner for 112. Prefer a narrow \u201cAusnahme\u201d-chip above or beside T2 so scan path lands on **gleichtags Arzt**, not EMS.\n\n---\n\n## 6. SCOPE model (orthogonal to TIME)\n\nSCOPE is a **constant constraint rail**, not a fifth clock speed:\n\n- Always: no Melanom diagnosis, no excision, no destructive measures on suspekte L\u00e4sionen.\n- Always: final DDx is medical.\n- Couples to every TIME rung: even at T4, new suspekte L\u00e4sion \u2192 leave treat mode \u2192 assign (TIME jumps up; SCOPE still holds).\n\n**Geometry must carry TIME vs SCOPE** (e.g. vertical urgency stack vs. horizontal/side ban-rail).  \n**Forbidden in figure body:** form-meta captions such as \u201cU-urgency\u201d, \u201cTIME axis\u201d, \u201cSCOPE facet\u201d, \u201cillness-script unit\u201d, zone IDs, or pin IDs.\n\n---\n\n## 7. Recommended form family (exploration)\n\n| Preference | Form | Rationale |\n|------------|------|-----------|\n| **Primary** | Urgency ladder + scope rail (stacked decision strip) | Matches \u00a75 table: Situation \u00d7 Dringlichkeit \u00d7 Handlung + separate Zust\u00e4ndigkeitsgrenze |\n| **Alt** | Two-panel: left TIME cards, right SCOPE \u201cnever/always\u201d panel | Maximizes TIME\u2260SCOPE separation under tight page width |\n| **Avoid** | Single traffic-light with 112 as top default | Mis-teaches Melanom screening as EMS-primary |\n| **Avoid** | Algorithm flowchart with free-text boxes | Encourages paraphrasing pins; weak scan hierarchy |\n\nExploration brief: prefer **Primary**; spike may test Alt if ladder overcrowds at book column width.\n\n---\n\n## 8. Anti-patterns\n\n1. Making **112** the visually dominant top rung without \u201cAusnahme / nicht prim\u00e4r\u201d.\n2. Merging T2 and T3 into one \u201czum Arzt\u201d blob (loses gleichtags vs zeitnah).\n3. Putting SCOPE bans only as fine print under T4 (implies they apply only when treating).\n4. Form-meta or ontology labels inside the graphic.\n5. Inventing pins from \u00a7\u00a71\u20134 or \u00a76 (e.g. full ABCDE mnemonic as urgency content).\n6. Suggesting PT lesion treatment, monitoring-as-diagnosis, or \u201cAbwarten und Beobachten\u201d for ABCDE-suspekt (contradicts \u00a75 T2).\n7. Production `.typ` compose in this deliverable (Form Spec only).\n\n---\n\n## 9. Production constraints (for later compose \u2014 not this deliverable)\n\n- Claim pins: German copy-through; keep **keine destruktiven Ma\u00dfnahmen**, **ABCDE-suspekt**, **Hutchinson-Zeichen**, **Ugly Duckling**.\n- No production Typst in this exploration package.\n- Accessibility: contrast for T2 vs T3; do not rely on color alone for exceptional T1.\n- Page role: decision aid near \u00a75 / Handeln; not cover art.\n\n---\n\n## 10. Learner success criterion\n\n**Under scan stress (\u2264 10 s on the unit), the learner can:**\n\n1. **Recognize** that Melanom/ABCDE-Screening is **not** primarily a **112** pathway \u2014 112 only for vital Begleitlage (schwere Blutung, Schock).  \n2. **Do** the default acute move: for blutende/ulzerierte unklare L\u00e4sion or **ABCDE-suspekt**/rasch wachsend (or B-Symptome + multiple Hautknoten) \u2192 **Therapie an der L\u00e4sion stoppen**, **keine destruktiven Ma\u00dfnahmen**, **gleichtags** Hausarzt/Dermatologie, schriftlich \u201eMelanom-DDx / ABCDE-suspekt?\u201c.  \n3. **Separate** subacute path: **Hutchinson-Zeichen**-Verdacht or **Ugly Duckling** without acute bleeding \u2192 **zeitnah** Dermatologie with written Zuweisung \u2014 not \u201ctreat and wait\u201d.  \n4. **Hold SCOPE:** never Melanom-Diagnose / Exzision / destruktive Ma\u00dfnahmen; endg\u00fcltige DDx is \u00e4rztlich \u2014 while MSK-Therapie only continues **ohne suspekte Kriterien**, with Sicherheitsnetz on new lesions.\n\nIf any of (1)\u2013(4) requires reading body prose outside the figure, the form has failed the exploration brief.\n"}], "grading": {"eval_id": "eval-1-kl-transfer-urgency-form-spec", "arm": "without_skill", "pass_rate": 1.0, "passed": 7, "total": 7, "expectations": [{"text": "has-zones", "passed": true, "evidence": "ok"}, {"text": "has-must-see", "passed": true, "evidence": "ok"}, {"text": "pins-german-copythrough", "passed": true, "evidence": "ok"}, {"text": "no-form-meta-instruction", "passed": true, "evidence": "ok"}, {"text": "no-production-typst", "passed": true, "evidence": "ok"}, {"text": "exceptional-t1", "passed": true, "evidence": "ok"}, {"text": "success-criterion", "passed": true, "evidence": "ok"}]}}, {"id": "eval-2-kl-ambition-abcde-form-space-with_skill", "prompt": "Media role: for Melanom (same Kursbuch5 Welle-06 monograph path as above), produce a short Form-Space C section for the ABCDE structured-look unit only: \u22653 valuable paths, \u22652 rejected paths, shortlist, then a Form Spec file abcde.form-spec.md in outputs/. Emphasize creativity for the ambition slot but pins only from content (Asymmetrie, Begrenzung, Color/Farbvielfalt, Durchmesser typisch > 5 mm, Evolution, Ugly Duckling). No clinical invention. Load KL process: grammar first then ambition.", "eval_id": 2, "outputs": [{"name": "NOTES.md", "type": "text", "content": "# NOTES \u2014 eval-2 with_skill (ABCDE Form-Space + Spec)\n\n## Skill path\n\nLoaded and followed:\n\n- `domains/medical/skill/media-brief/SKILL.md`\n- `references/kl-illness-script-ontology.md` (TIME\u2260SCOPE; pins; no form-meta)\n- `references/kl-form-space-process.md` (R\u2192**C**\u2192**M**; \u22653 valuable + \u22652 rejected; grammar then ambition)\n- `Guides/KL-Form-Language.md` (ambition slot for structured-look mnemonic; creativity free on form, not on clinical text)\n\n## What was produced\n\n| File | Stage | Content |\n|------|-------|---------|\n| `form-space.md` | **C** | ABCDE unit only: relation/job, **5** valuable paths, **5** rejected (eval needs \u22652), shortlist |\n| `abcde.form-spec.md` | **M** | Full Form Spec: zones, Must-see, pins, genre, success, ambition **required** |\n| `NOTES.md` | meta | this file |\n\nWrite root (eval only):  \n`domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/`\n\n## Content pins (C only \u2014 no invention)\n\nFrom monograph \u00a73 Beobachtung / Abk\u00fcrzungen:\n\n| Pin | Source sense |\n|-----|----------------|\n| Asymmetrie | A |\n| unscharfe/unregelm\u00e4\u00dfige Begrenzung | B |\n| Farbvielfalt (Color) | C |\n| Durchmesser **typisch > 5 mm** | D \u2014 **only** mm wording from C |\n| Evolution | E |\n| Ugly Duckling | eine L\u00e4sion unterscheidet sich klar von den \u00fcbrigen N\u00e4vi |\n| Forbidden measures | keine Biopsie, K\u00fcrettage, destruktiven Ma\u00dfnahmen |\n| Job | strukturierter Blick; Fr\u00fcherkennung; \u00e4rztliche Zuweisung |\n\nNo Breslow, no alternate mm, no EN-only sole labels, no fake 112 primary for this unit.\n\n## Design choices (skill-faithful)\n\n1. **Grammar first:** stated that band units (urgency/mimic/cues table) are transfer; this artifact is the **ambition slot** only.  \n2. **Creativity:** shortlist prioritizes **AD-D dual-field** (criteria + schematic outlier field) with free-vision **required**; **AD-A cascade** kept as pin-safe code harvest path.  \n3. **Ugly Duckling \u2260 letter F:** optical second sign, equal job.  \n4. **Not TIME:** action micro only; full triage stays out of Spec.  \n5. **No production Typst** in outputs.\n\n## Assertion checklist (eval_metadata)\n\n| id | Status |\n|----|--------|\n| three-valuable-paths | PASS \u2014 AD-A\u2026AD-E (\u22653) |\n| two-rejected | PASS \u2014 AD-X1\u2026AD-X5 (\u22652) |\n| abcde-pins | PASS \u2014 A\u2013E DE meanings in Spec pins + Must-see |\n| ugly-duckling | PASS \u2014 path, zones, pins, Must-see |\n| no-claim-invention | PASS \u2014 only **typisch > 5 mm**; X5 rejects other mm ladders |\n| ambition-flag | PASS \u2014 free-vision **required** (AD-D); not skip |\n\n## Explicit non-done (out of scope)\n\n- Full Media Brief for whole chapter  \n- Free-vision PNG / claim audit / compose  \n- Production Accept / freeze  \n- Edits under `domains/medical/briefs/` (eval sandbox only)\n"}, {"name": "abcde.form-spec.md", "type": "text", "content": "# Form Spec (Media \u2014 Stage M)\n\n- **chapter_id / slug:** V-10-melanom-abcde-hautscreening / `abcde-structured-look`\n- **unit_id:** U-abcde-look (chapter-specific structured look; CHANNEL support, not TIME/SCOPE)\n- **brief_path:** exploration eval \u00b7 Form-Space `form-space.md` (same outputs dir)\n- **content_source:**  \n  `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md`  \n  (\u00a73 Beobachtung; Abk\u00fcrzungen ABCDE; Big Picture / Direktzugang framing)\n- **genre:** illness-script / lerntext (kl-kurz)\n- **recipe_fn:** candidate `kl-abcde-look` (harvest only after Accept)\n- **author_role:** media\n- **date:** 2026-07-26\n- **ambition:** free-vision **required** (primary path AD-D dual-field); code fallback AD-A letter cascade if audit fails\n- **form_language_rule:** no form-meta inside the figure (no ontology IDs, no \u201cmnemonic map\u201d, no EN stage titles)\n\n> Medizinp\u00e4dagogisch **beste** Darstellungsform for the ambition slot: ABCDE + Ugly Duckling as a **structured look form**, not a glossary dump.  \n> **Keine** form ids / bookkit-APIs as design vocabulary. **Keine** Claim-Erfindung (Pins = copy-through aus C).  \n> Skill: `media-brief` \u00b7 Guide: `Guides/KL-Form-Language.md` \u00b7 Process: grammar first \u2192 ambition\n\n## Learner context\n\n- **Actor:** PT Direktzugang during undressing / inspection in the treatment field  \n- **Time pressure / scan budget:** 15\u201330 s structured look  \n- **Setting:** Praxis (MSK session; R\u00fccken/Nacken mitinspizieren is content context, not a separate pin invent)\n\n## Learner job (one primary)\n\n**recognize** (criteria cluster)\n\n**Primary job in one sentence:** Run a structured visual check (ABCDE + Ugly Duckling) and treat positive/suspekt as **\u00e4rztliche Zuweisung**, not as PT fine diagnosis, local destruction, or \u201calter Fleck \u2014 abwarten\u201d.\n\n## Load risks (if form is wrong)\n\n- Five equal table rows with no visual hierarchy (ambition slot lost)\n- Invented cut-offs or diameter ladders other than C\u2019s **typisch > 5 mm**\n- Decorative / photoreal mole art that invents morphology not in pins\n- EN-only letter expansions without German clinical criteria\n- Solid-red emergency wall or fake TIME stack for a recognition unit\n- Form-meta captions explaining the diagram type inside the art\n\n## Cognitive / layout levers (only what layout can fix)\n\n- **Segmenting:** A\u2013E as ordered steps of one look  \n- **Contiguity:** each letter glued to its DE criterion (no orphan letters)  \n- **Signaling:** Ugly Duckling optically *distinct* from letters (second sign, not letter F)  \n- **Dual coding (ambition):** schematic multi-lesion field with one outlier supports the Ugly Duckling job without replacing text pins  \n- **Figure\u2013ground:** criteria lane readable under scan; skin-field supports, does not drown, labels\n\n## Information architecture (zones)\n\n| zone | loudness | content role | must feel like |\n|---|---|---|---|\n| 1 Letter spine / field A\u2013E | **loud** | five criteria of structured look | ordered checklist-as-form |\n| 2 Ugly Duckling | **medium-loud** | second recognition sign | distinct geometry from A\u2013E, equal *job* weight |\n| 3 Action micro | medium | if suspekt \u2192 \u00e4rztliche Zuweisung; no destruction | pointer, **not** full \u00a75 TIME stack |\n| 4 Job frame (optional header) | medium | strukturierter Blick framing | Direktzugang task, not dermatology atlas |\n| Quiet trailing | quiet | no sources / no form-meta first | \u2014 |\n\n**Ambition composition (AD-D):** Zone 1 + 2 may split spatially into **criteria lane** (left/top) + **schematic skin-field outlier** (right/bottom). Pins stay identical.\n\n## Must-see elements\n\nWhat must be *visible* (not only somewhere in prose):\n\n1. **All five letters A\u2013E** with **German clinical meanings from C** (not EN-only)  \n2. **A** Asymmetrie  \n3. **B** unscharfe/unregelm\u00e4\u00dfige Begrenzung  \n4. **C** Farbvielfalt (Color)  \n5. **D** Durchmesser **typisch > 5 mm** (exact sense from C \u2014 no other mm cut-offs)  \n6. **E** Evolution  \n7. **Ugly Duckling:** eine L\u00e4sion unterscheidet sich klar von den \u00fcbrigen N\u00e4vi  \n8. Micro-consequence: suspekt \u2192 **\u00e4rztliche Zuweisung** / no PT diagnosis frame  \n9. Forbidden-action cue present or adjacent: **keine** Biopsie, K\u00fcrettage, destruktiven Ma\u00dfnahmen an suspekten L\u00e4sionen (from C)  \n10. **No form-meta** inside the figure  \n\n## Urgency / weight encoding\n\n- Recognition chrome: **teal / primary framework** (illness-script), **not** solid-red 112 wall  \n- Optional small \u201c\u2192 zuweisen bei Suspekt\u201d pointer only \u2014 **not** full T1\u2013T4 stack (owned by urgency Spec)  \n- Ugly Duckling may use a distinct accent (e.g. amber outlier) **without** inventing emergency tier meaning  \n- Default-to-Danger does **not** apply as a full emergency wall on this unit\n\n## Branching / loop invariants (if any)\n\n- Exactly **five** letter criteria A\u2013E \u2014 Ugly Duckling is **parallel sign**, not letter F  \n- No invented sixth clinical criterion  \n- No diameter ladder beyond the single pin **typisch > 5 mm**  \n- No merge of this unit with mimic frames (\u201calter Fleck\u201d) \u2014 those stay U-mimic  \n- Sequential order A\u2192E preferred (cascade / dial); radial layout may show equal spokes but must still label A\u2013E clearly  \n\n## Genre chrome\n\n- **Must look like:** KL / lerntext structured-look teaching form; scannable mnemonic + second sign  \n- **Must not look like:** operative Notfallkarte; dermatology photo atlas; full TIME triage ladder; English decorative stage poster  \n\n## Claim pins (German, copy-through from C)\n\n| step / zone | allowed text (German) |\n|---|---|\n| A | Asymmetrie |\n| B | unscharfe/unregelm\u00e4\u00dfige Begrenzung |\n| C | Farbvielfalt (Color) |\n| D | Durchmesser typisch > 5 mm |\n| E | Evolution |\n| Letter expansion (abbrev table, optional quiet) | Asymmetrie, Begrenzung, Color (Farbe), Durchmesser, Evolution |\n| Ugly Duckling | eine L\u00e4sion unterscheidet sich klar von den \u00fcbrigen N\u00e4vi |\n| Job frame | strukturierter Blick (ABCDE, Ugly Duckling) |\n| Job frame (Big Picture) | Fr\u00fcherkennung suspekter Ver\u00e4nderungen; rechtzeitige \u00e4rztliche Zuweisung |\n| Action micro | bei ABCDE-Suspekt die Zuweisung (nicht Eigenetikettierung) |\n| Forbidden | keine Biopsie, keine K\u00fcrettage, keine destruktiven Ma\u00dfnahmen an suspekten L\u00e4sionen |\n| Context (only if space; from C Beobachtung) | \u201eUgly Duckling\u201c; ABCDE-Regel |\n\n**Not allowed as pins (not invent):** any mm other than **typisch > 5 mm**; Breslow; staging; EN-only criterion lines as sole labels; fake T1 primary pathway; PT diagnosis / Exzision as learner action.\n\n## Explicit non-goals / must-not\n\n- No invented thresholds / doses / English decorative stage titles  \n- Not a full TIME stack (urgency Spec)  \n- Not dermatology fine-diagnosis atlas  \n- Not mimic-map replacement for \u201calter Fleck\u201d (separate unit)  \n- No production Typst / bookkit APIs in this Spec  \n- No form-meta inside the graphic  \n\n## Presentation hypothesis (pattern name)\n\n**Primary (ambition):** dual-field structured look \u2014 **criteria letter spine + schematic skin-field outlier** (Ugly Duckling dual coding); free vision **required**, then claim audit.  \n**Fallback (grammar-safe harvest):** **letter cascade / vertical mnemonic** A\u2192E with Ugly Duckling side badge or final beat (`kl-abcde-look` code candidate).  \n**Alt gestalt:** radial pentagon A\u2013E + Ugly Duckling satellite (same pins).\n\n## Success criterion\n\nUnder undressing / scan stress the learner **recalls ABCDE + Ugly Duckling as one checklist form**, sees all five DE criteria (including **Durchmesser typisch > 5 mm** and **Evolution**), and treats a positive look as **medical assignment** \u2014 not \u201cwatch and wait in PT\u201d, not local destruction, not fine diagnosis.\n\n## Handoff to Graphics\n\n- [x] Form Spec complete for this unit  \n- [x] Ambition flag set (**free-vision required** on AD-D; code fallback AD-A)  \n- [x] Claim pins reviewed against C (\u00a73 Beobachtung + Abk\u00fcrzungen + Big Picture / Untersuchung forbidden measures)  \n- Visual-Unit \u2192 `medical-graphics` playbook from Stage G0: free vision \u2192 **claim audit** (every on-image label vs pins) \u2192 recreate / hybrid / refine  \n- Prefer **hybrid** (schematic field asset + Typst-pinned labels) or **code** letter cascade if free vision fails audit  \n- Raster-only winner only if claim audit PASS + gates  \n"}, {"name": "form-space.md", "type": "text", "content": "# Form-Space C \u2014 ABCDE structured-look unit only\n\n**Stage:** C (Media) \u00b7 **brief_class:** exploration  \n**chapter_id:** V-10-melanom-abcde-hautscreening  \n**content_source (C, read-only):**  \n`/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md`  \n**Ontology:** KL illness-script v1.1 \u00b7 process: grammar first, then ambition  \n**Scope of this artifact:** **only** the chapter-specific **ABCDE + Ugly Duckling structured-look** recognition unit (not full \u00a75 TIME stack, not mimic map, not four-channel cues table).  \n**Date:** 2026-07-26 \u00b7 **role:** media  \n**Non-goals:** production Typst \u00b7 clinical invention \u00b7 form-meta inside figures \u00b7 catalog form-id shopping\n\n---\n\n## Grammar-first note (before ambition)\n\nBand grammar for Melanom (U-urgency+scope, U-mimic, U-for-against, U-cues table, \u2026) is **transfer** territory \u2014 already covered by other Specs / library recipes. This Form-Space opens the **ambition slot** the chapter earns: structured skin look is a **recognition-by-form** job (letter mnemonic + outlier sign), not a glossary dump. Invariants still bind:\n\n| Invariant | Application here |\n|-----------|------------------|\n| Claim pins = copy-through C | A\u2013E meanings + Ugly Duckling wording only from \u00a73 Beobachtung / Abk\u00fcrzungen / Big Picture |\n| No form-meta in figure | No ontology IDs, no \u201cmnemonic map\u201d, no EN stage chrome |\n| Genre chrome | illness-script / lerntext-teal \u2014 **not** solid-red 112 wall for a look unit |\n| Not full TIME | Suspekt \u2192 Zuweisung micro-cue only; \u00a75 owns T1\u2013T4 |\n| No clinical invention | Diameter pin stays **typisch > 5 mm** as in C; no extra mm / stages / scores |\n\n---\n\n## U-abcde-look (chapter-specific structured look)\n\n### Relation / job / success criterion\n\n| Field | Content |\n|-------|---------|\n| **Content anchors** | \u00a73 Beobachtung (ABCDE + Ugly Duckling); Abk\u00fcrzungen ABCDE; Big Picture \u201estrukturierter Blick\u201c; Direktzugang framing (Zuweisung, keine Exzision) |\n| **Epistemic role** | CHANNEL support / **recognition criteria cluster** \u2014 not TIME, not SCOPE, not FRAME-ERROR (mimic is separate) |\n| **Learner job** | **recognize** (criteria) \u2192 feed later **choose** (urgency unit) |\n| **Load risk if wrong** | Five equal glossary rows; EN-only letters; invented cut-offs; decorative mole art without readable DE criteria; look unit swallowed into emergency wall |\n| **Success criterion** | Under undressing / scan stress the learner **runs A\u2192E + Ugly Duckling as one structured look**, reads positive/suspekt as **\u00e4rztliche Zuweisung**, and does **not** treat the unit as PT fine diagnosis or \u201cwatch and wait\u201d. |\n\n### Wertvolle Pfade (\u22653)\n\n| id | name | why (med-p\u00e4d.) | graphic type / lever | carrier tendency | free-vision? |\n|----|------|----------------|----------------------|------------------|--------------|\n| **AD-A** | **Letter cascade spine A\u2192E** | Ordered structured look: each letter loud, DE criterion contiguous; scan path = clinical look order | vertical mnemonic \u00b7 segmenting \u00b7 contiguity letter\u2194criterion | **code first** (pin-safe, harvestable) | optional (polish only) |\n| **AD-B** | **Radial pentagon / star A\u2013E + Ugly Duckling satellite** | Five criteria as equal spokes of *one* look; Ugly Duckling as distinct second sign (not a sixth letter) | radial cue-cluster \u00b7 dual coding | hybrid: code geometry + optional free chrome | **optional \u2192 required** if Human prioritizes gestalt |\n| **AD-C** | **Inspection dial / sequential walk** | Pre-attentive \u201ccomplete the look\u201d: A\u2192B\u2192C\u2192D\u2192E then final Ugly Duckling beat; micro \u201cbei Suspekt \u2192 zuweisen\u201d exit | sequence / decision-flow light \u00b7 signaling | code / hybrid icons | optional |\n| **AD-D** | **Dual-field: criteria lane + skin-field outlier** | Left: letter criteria; right: schematic multi-n\u00e4vus field with **one** differing lesion (Ugly Duckling dual coding) \u2014 recognition-by-form without photo atlas claims | dual-channel \u00b7 figure\u2013ground | free vision \u2192 claim audit \u2192 hybrid preferred | **required** (ambition flagship) |\n| **AD-E** | **Chip row + expandable criteria** | Compact mobile/narrow: A\u2013E chips with short DE pins; Ugly Duckling as equal-weight chip | cue-cluster | code | skip (density only) |\n\n### Verworfen (\u22652)\n\n| id | name | why rejected |\n|----|------|--------------|\n| **AD-X1** | **Five-row glossary table forever** | Relation true but **kills ambition slot**; equal weight; no structured-look *form*; reverts to prose dump (Human: grammar-only = uninspired) |\n| **AD-X2** | **Photorealistic mole atlas with invented morphology** | Clinical invention risk (features not pinned in C); claim-audit fail; H-Gfx noise; Media must not invent lesion appearance beyond pin text |\n| **AD-X3** | **EN-only letter expansions** (\u201cAsymmetry / Border / Color\u2026\u201d) without DE clinical pins | Violates DE production labels; weakens Direktzugang language; letters alone \u2260 criteria |\n| **AD-X4** | **ABCDE as sixth TIME rung / solid-red emergency wall** | Dimensions collapse: look \u2260 urgency; wrong genre chrome for KL master recognition unit |\n| **AD-X5** | **Invented diameter tiers** (e.g. 2 mm / 6 mm / Breslow as layout steps) | Claim invention \u2014 C only allows **Durchmesser typisch > 5 mm** |\n\n### Shortlist \u2192 Form Spec\n\n| Priority | Path | Role |\n|----------|------|------|\n| **1 \u2014 Ambition** | **AD-D** Dual-field criteria + skin-field outlier | Chapter ambition slot: free-vision **required**; Form Spec must pin A\u2013E + Ugly Duckling; Graphics free vision \u2192 claim audit |\n| **2 \u2014 Band / harvest** | **AD-A** Letter cascade spine | Code-first durable recipe candidate `kl-abcde-look`; pin-safe default if free vision fails audit |\n| **3 \u2014 Gestalt alt** | **AD-B** Radial pentagon + Ugly Duckling satellite | A/B if dual-field overloads print; same pins |\n| Implement detail | **AD-C** sequential walk | Optional motion of AD-A (A\u2192E order explicit) |\n\n**Form Spec (this eval):** `abcde.form-spec.md` (shortlist primary **AD-D**, with **AD-A** as code fallback noted in hypothesis).\n\n**Explicit non-handoff here:** no production `.typ`, no free-vision PNG generation in Media stage.\n"}], "grading": {"eval_id": "eval-2-kl-ambition-abcde-form-space", "arm": "with_skill", "pass_rate": 1.0, "passed": 6, "total": 6, "expectations": [{"text": "three-valuable-paths", "passed": true, "evidence": "ok"}, {"text": "two-rejected", "passed": true, "evidence": "ok"}, {"text": "abcde-pins", "passed": true, "evidence": "ok"}, {"text": "ugly-duckling", "passed": true, "evidence": "ok"}, {"text": "no-claim-invention", "passed": true, "evidence": "ok"}, {"text": "ambition-flag", "passed": true, "evidence": "ok"}]}}, {"id": "eval-2-kl-ambition-abcde-form-space-without_skill", "prompt": "Media role: for Melanom (same Kursbuch5 Welle-06 monograph path as above), produce a short Form-Space C section for the ABCDE structured-look unit only: \u22653 valuable paths, \u22652 rejected paths, shortlist, then a Form Spec file abcde.form-spec.md in outputs/. Emphasize creativity for the ambition slot but pins only from content (Asymmetrie, Begrenzung, Color/Farbvielfalt, Durchmesser typisch > 5 mm, Evolution, Ugly Duckling). No clinical invention. Load KL process: grammar first then ambition.", "eval_id": 2, "outputs": [{"name": "NOTES.md", "type": "text", "content": "# NOTES \u2014 eval-2 without_skill (ABCDE form-space)\n\n**eval_id:** 2 \u00b7 `kl-ambition-abcde-form-space`  \n**condition:** without_skill  \n**date:** 2026-07-26  \n\n## What was produced\n\n| File | Role |\n|------|------|\n| `form-space.md` | Form-Space C for ABCDE unit only: relation, \u22653 valuable paths, \u22652 rejected, shortlist, ambition |\n| `abcde.form-spec.md` | Wave M Form Spec: zones, Must-see, pins, genre, success criterion |\n\n## Content source (read-only)\n\n`/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md`\n\nPins taken from:\n\n- Abk\u00fcrzungen / \u00a73 Beobachtung: ABCDE definitions  \n- Ugly Duckling wording in Beobachtung  \n- Big Picture + Direktzugang: strukturierter Blick, Zuweisung, no destructive measures  \n- Diameter only as in C: **typisch > 5 mm**\n\n## Process applied (no skill load)\n\n1. **Grammar first:** treat urgency/scope, discrimination, four-channel cues as out of scope for this unit.  \n2. **Ambition second:** ABCDE is the chapter recognition-by-form slot (letter mnemonic \u00b1 spatial).  \n3. **Pins only from C:** no invented mm, no EN-primary labels, no TIME ladder inside ABCDE.  \n4. **Ambition flag:** free-vision **required** (not skip) \u2014 spatial/radial/skin-field are optional geometries under audit; baseline shortlist remains letter cascade + UD beat.\n\n## Assertion self-check\n\n| id | Status |\n|----|--------|\n| three-valuable-paths | Yes \u2014 AB-A\u2026AB-F (\u22653) |\n| two-rejected | Yes \u2014 AB-X1\u2026AB-X7 (\u22652) with reasons |\n| abcde-pins | A\u2013E DE meanings + typisch > 5 mm in form-space pins and Form Spec Must-see/pins |\n| ugly-duckling | Included as distinct second sign |\n| no-claim-invention | Only content diameter; no Breslow/other cut-offs |\n| ambition-flag | free-vision **required** (with code-first recreate after audit) |\n\n## Deliberate non-writes\n\n- Did not edit monograph, production briefs under `domains/medical/briefs/`, or skill bodies.  \n- Did not invent clinical thresholds or expand into full \u00a75 urgency Spec.  \n"}, {"name": "abcde.form-spec.md", "type": "text", "content": "# Form Spec (Media \u2014 Stage M)\n\n- **chapter_id / slug:** V-10 Melanom \u2013 ABCDE-Hautscreening / `melanom-abcde-hautscreening`\n- **unit_id:** ABCDE structured look (+ Ugly Duckling)\n- **brief_path:** (eval workspace outputs; production brief deferred)\n- **content_source:** Kursbuch5 Welle-06 monograph `chapter-v-10-melanom-abcde-hautscreening.md` \u2014 \u00a73 Beobachtung, Big Picture, Direktzugang frame (read-only)\n- **genre:** illness-script / lerntext\n- **recipe_fn:** chapter-specific mnemonic (candidate `kl-abcde-look` after Accept) \u2014 **not** a generic four-channel cues table\n- **author_role:** media (eval without_skill)\n- **date:** 2026-07-26\n- **ambition:** free-vision **required** (ambition slot); **code-first recreate** after claim audit for pin safety\n\n> Make ABCDE + Ugly Duckling a **visible structured-look form**, not a five-row glossary dump.  \n> Pins = copy-through from C only. No form ids / bookkit APIs. No clinical invention.\n\n## Learner context\n\n- **Actor:** PT im Direktzugang (MSK-Behandlung; Mitinspektion bei Entkleidung)\n- **Time pressure / scan budget:** ~15\u201330 s structured look during undressing / local inspection\n- **Setting:** Praxis (R\u00fccken, Nacken und Behandlungsgebiet mitsehen \u2014 content context; not a full body map invent)\n\n## Learner job (one primary)\n\n**recognize**\n\n**Primary job in one sentence:** Run a structured visual check (ABCDE + Ugly Duckling) and treat a suspekte / Ugly-Duckling-positive L\u00e4sion as reason for **\u00e4rztliche Zuweisung**, not as PT-Hautdiagnose or local destruction.\n\n## Load risks (if form is wrong)\n\n- Five equal table rows with no hierarchy \u2192 mnemonic fails under scan stress  \n- Invented mm cut-offs or staging depths not in C  \n- Decorative mole art without readable DE criteria  \n- English-only letter expansions as primary labels  \n- Absorbing full TIME ladder into this unit (urgency belongs to \u00a75 Spec)  \n- Form-meta captions inside the figure  \n- Solid-red emergency chrome for a recognition checklist  \n\n## Cognitive / layout levers (only what layout can fix)\n\n- **Segmenting:** one letter zone per criterion, ordered A\u2192E  \n- **Contiguity:** letter glyph immediately next to DE meaning (no foot-only legend)  \n- **Signaling:** letter spine heavier than trailing notes; Ugly Duckling visually distinct from letters  \n- **Dual coding (ambition):** optional spatial lesion/field + short text pins \u2014 labels remain claim-true  \n- **Genre weight:** teal/primary recognition chrome, not T1 red wall  \n\n## Information architecture (zones)\n\n| zone | loudness | content role | must feel like |\n|---|---|---|---|\n| 1 Letter spine A\u2013E | **loud** | five criteria in order | ordered structured look / checklist |\n| 2 Ugly Duckling | **medium-loud** | second sign (not a sixth letter) | distinct panel/badge; equal job to the look |\n| 3 Action micro | **medium** | if suspekt \u2192 \u00e4rztliche Zuweisung | pointer only \u2014 not full \u00a75 TIME stack |\n| 4 Forbidden micro (optional) | medium-quiet | no destructive measures on suspekte L\u00e4sionen | constraint, not urgency rung |\n| Quiet trailing | quiet | sources / cross-links | never before criteria |\n\n## Must-see elements\n\nWhat must be *visible* (not only somewhere in prose):\n\n1. **All five letters** with **German clinical meanings from C** (see pins)  \n2. **A** Asymmetrie  \n3. **B** unscharfe/unregelm\u00e4\u00dfige Begrenzung  \n4. **C** Farbvielfalt (Color)  \n5. **D** Durchmesser **typisch > 5 mm** (only mm claim allowed from C)  \n6. **E** Evolution  \n7. **Ugly Duckling:** eine L\u00e4sion unterscheidet sich klar von den \u00fcbrigen N\u00e4vi  \n8. Job sense: strukturierter Blick \u2192 bei Suspekt **rechtzeitige \u00e4rztliche Zuweisung** (not Exzision by PT)  \n9. No PT Melanom-Diagnose / no Biopsie-K\u00fcrettage call as learner action in this unit  \n10. No form-meta / ontology IDs in the figure  \n\n## Urgency / weight encoding\n\n- Recognition chrome (framework teal / primary) \u2014 **not** solid-red emergency wall  \n- Optional small pointer: bei ABCDE-suspekt / Ugly Duckling \u2192 **zuweisen** (gleichtags\u2013zeitnah lives in \u00a75 Spec, not re-laddered here)  \n- Letter order is sequence weight, not TIME tiers  \n- Ugly Duckling is **not** quieter than letters; it is a parallel second sign  \n\n## Branching / loop invariants (if any)\n\n- Exactly **five** letter criteria A\u2013E; Ugly Duckling is **outside** the letter set  \n- No sixth letter \u201cU\u201d; no invented F/G criteria  \n- No diameter threshold other than **typisch > 5 mm**  \n- Ambition free vision may rearrange geometry; it may **not** drop Must-see pins  \n\n## Genre chrome\n\n- **Must look like:** illness-script / lerntext structured checklist or mnemonic map (teal framework)  \n- **Must not look like:** III-style Notfallkarte; full TIME traffic-light ladder; dermatology photo atlas; English stage titles  \n\n## Claim pins (German, copy-through from C)\n\n| step / zone | allowed text (German) |\n|---|---|\n| A | Asymmetrie |\n| B | unscharfe/unregelm\u00e4\u00dfige Begrenzung |\n| C | Farbvielfalt (Color) |\n| D | Durchmesser typisch > 5 mm |\n| E | Evolution |\n| Ugly Duckling | eine L\u00e4sion unterscheidet sich klar von den \u00fcbrigen N\u00e4vi |\n| Job frame | strukturierter Blick (ABCDE, Ugly Duckling); Fr\u00fcherkennung suspekter Ver\u00e4nderungen; rechtzeitige \u00e4rztliche Zuweisung |\n| Action micro | bei ABCDE-suspekt / Ugly Duckling \u2192 \u00e4rztliche Zuweisung (kein Abwarten-Bagatellisieren in der PT) |\n| Forbidden micro | keine Biopsie, keine K\u00fcrettage, keine destruktiven Ma\u00dfnahmen an suspekten L\u00e4sionen |\n| Direktzugang frame (optional header) | Aufgabe ist der strukturierte Blick und die Zuweisung, nicht die Exzision |\n\n## Explicit non-goals / must-not\n\n- No invented thresholds / doses / Breslow / TNM staging  \n- No mm cut-offs other than **typisch > 5 mm** from C  \n- No English decorative stage titles as primary labels  \n- Not a full TIME stack (that is the urgency Form Spec)  \n- Not dermatology fine diagnosis / Exzisionsatlas  \n- Not four-channel \u00a73 domain table substitute (Anamnese/Untersuchung/Verlauf stay elsewhere)  \n- No form-meta in print (\u201cletter cascade\u201d, \u201cambition unit\u201d, ontology tags)  \n\n## Presentation hypothesis (pattern name)\n\n**Letter cascade / vertical mnemonic spine** with contiguous DE criteria; **Ugly Duckling** as side badge or final beat (not letter F). Optional ambition: **radial letter map** or **skin-field outlier** only if every on-image label stays pin-true after claim audit.\n\n## Success criterion\n\nUnder undressing stress the learner **recalls ABCDE + Ugly Duckling as a checklist form** and treats a positive structured look as **\u00e4rztliche Zuweisung**, not as \u201calter Fleck / watch and wait in PT\u201d.\n\n## Handoff to Graphics\n\n- [x] Form Spec complete for this unit  \n- [x] Ambition flag set (**free-vision required**)  \n- [x] Claim pins reviewed against C (Welle-06 monograph only)  \n- Visual-Unit \u2192 free vision (if run) \u2192 **claim audit** \u2192 code | hybrid | asset  \n- Prefer maintainable **code recreate** when quality \u2248 free vision  \n"}, {"name": "form-space.md", "type": "text", "content": "# Form-Space C \u2014 Melanom \u00b7 ABCDE structured-look unit only\n\n**chapter:** V-10 Melanom \u2013 ABCDE-Hautscreening im Direktzugang  \n**content_source:** Kursbuch5 Welle-06 monograph `chapter-v-10-melanom-abcde-hautscreening.md` (read-only)  \n**unit:** ABCDE + Ugly Duckling (structured look / Fr\u00fcherkennungs-Check)  \n**author_role:** media (eval without_skill)  \n**date:** 2026-07-26  \n\n**Process:** grammar first, then ambition.  \n- **Grammar (not this unit):** U-urgency+scope (\u00a75), discrimination/mimic (\u00a74), four-channel cues (\u00a73 table) stay transferable band recipes.  \n- **This unit = ambition slot:** chapter-specific recognition form \u2014 ABCDE is a *mnemonic checklist*, not a generic domain-table row dump and not a TIME ladder.\n\n**Non-goals:** claim invention; form-meta inside the figure; full \u00a75 urgency stack; dermatology atlas / Exzisionslehre.\n\n---\n\n## Relation\n\n| Field | Value |\n|-------|--------|\n| **Content locus** | \u00a73 Beobachtung (ABCDE + Ugly Duckling); Big Picture (strukturierter Blick, Zuweisung); Direktzugang frame |\n| **Learner job** | **recognize** (criteria cluster) \u2192 gate to medical assignment, not PT diagnosis |\n| **Epistemic role** | Structured visual check: five letter criteria + second sign (Ugly Duckling) |\n| **Genre chrome** | illness-script / lerntext-teal \u2014 **not** solid-red Notfallkarte |\n| **Pins allowed** | Only DE criteria as in C (below); no invented mm cut-offs beyond **typisch > 5 mm** |\n\n### Claim pins (copy-through from C)\n\n| Pin | German from content |\n|-----|---------------------|\n| A | Asymmetrie |\n| B | unscharfe/unregelm\u00e4\u00dfige Begrenzung |\n| C | Farbvielfalt (Color) |\n| D | Durchmesser typisch > 5 mm |\n| E | Evolution |\n| Ugly Duckling | eine L\u00e4sion unterscheidet sich klar von den \u00fcbrigen N\u00e4vi |\n| Job frame | strukturierter Blick (ABCDE, Ugly Duckling); Fr\u00fcherkennung; rechtzeitige \u00e4rztliche Zuweisung |\n| Forbidden (micro) | keine Biopsie, keine K\u00fcrettage, keine destruktiven Ma\u00dfnahmen an suspekten L\u00e4sionen |\n\n---\n\n## Success criterion\n\nUnder undressing / inspection stress the learner **runs ABCDE + Ugly Duckling as a visible checklist form** and treats suspekt / Ugly-Duckling-positiv as **\u00e4rztliche Zuweisung**, not as \u201ealter Fleck / abwarten in der PT\u201c.\n\n---\n\n## Wertvolle Pfade (\u22653)\n\n| id | Name | med-p\u00e4d. warum | Gestalt / load lever | graphic type | carrier tend. | free-vision |\n|----|------|----------------|----------------------|--------------|---------------|-------------|\n| **AB-A** | **Letter cascade A\u2192E (vertical mnemonic spine)** | Ordered structured look matches clinical sequence of the rule; each letter gets contiguous short DE criterion \u2014 not a glossary wall | Segmenting + contiguity (letter next to meaning); signaling via letter weight | cue-cluster / mnemonic sequence | **code** first | optional |\n| **AB-B** | **Cascade + Ugly Duckling final beat / side badge** | Ugly Duckling is a *second* sign (one lesion differs from the rest), not a sixth letter \u2014 equal job, distinct geometry | Figure\u2013ground: UD panel separated from A\u2013E spine; dual coding | cue-cluster + secondary sign | code | optional |\n| **AB-C** | **Pentagon / radial letter map around a schematic lesion** | Spatial \u201clook around the mole\u201d metaphor; letters as ordered callouts keep mnemonic order while inviting free composition | Dual coding (shape + labels); contiguity labels-on-spokes | mnemonic map / spatial | hybrid | **required** (ambition) |\n| **AB-D** | **Skin-field comparison: many similar N\u00e4vi + one Ugly Duckling outlier** | Makes Ugly Duckling *visible as relation* (differs from remaining N\u00e4vi) rather than a prose footnote | Pre-attentive outlier; comparison | relation-map light / field | free / hybrid | **required** |\n| **AB-E** | **Two-zone card: criteria spine \\| action micro (\u201cbei Suspekt \u2192 zuweisen\u201d)** | Recognition unit stays teal; still encodes the Direktzugang job without absorbing full TIME stack | Zone loudness: letters loud, action medium, quiet trailing | composite card | code | skip / optional |\n| **AB-F** | **Horizontal letter strip with expand-on-scan chips** | Fast scan of five letters; DE meanings on chip body for short page budgets | Pre-attentive letter row; segmenting | cue-cluster compact | code | skip |\n\n---\n\n## Verworfen (\u22652)\n\n| id | Name | warum verworfen |\n|----|------|-----------------|\n| **AB-X1** | Flat five-row equal-weight glossary table | Turns ABCDE into reference dump; no structured-look *form*; high extraneous load under undressing stress |\n| **AB-X2** | Photorealistic multi-lesion atlas without pin-true DE criteria | Clinical invention risk + claim-audit fail; PT is not trained as dermatoscope atlas reader in this unit |\n| **AB-X3** | Full \u00a75 TIME ladder embedded as \u201cnext steps of ABCDE\u201d | Dimensionskollaps: recognition unit \u2260 urgency stack; TIME lives in U-urgency Spec |\n| **AB-X4** | English-only expansions (Asymmetry / Border / \u2026) as primary labels | Content and book language are German; EN decorative chrome fails claim/genre |\n| **AB-X5** | Invented diameter cut-offs (e.g. \u22656 mm, 10 mm) or Breslow depths | Not in C for this unit; only **typisch > 5 mm** is pinned |\n| **AB-X6** | Solid-red full-bleed emergency wall for the mnemonic | Wrong genre chrome (illness-script recognition, not 112 card) |\n| **AB-X7** | Form-meta captions (\u201cletter cascade\u201d, \u201contology: U-cues\u201d) inside the figure | Geometry must carry the form; meta forbidden in print |\n\n---\n\n## Shortlist \u2192 Form Spec\n\n| Priorit\u00e4t | Pfad | Wann |\n|-----------|------|------|\n| **1** | **AB-A + AB-B** Letter cascade with Ugly Duckling as distinct final/side beat | Band default: claim-safe, transferable, code-first |\n| **2** | **AB-E** micro action pointer \u201cbei Suspekt \u2192 zuweisen\u201d (not full TIME) | Always as quiet-medium zone on shortlist-1 |\n| **3 (ambition)** | **AB-C** and/or **AB-D** radial map / skin-field outlier | Free-vision **required** for ambition A/B when Human prioritizes form inventiveness; claim audit on every label |\n\n**Chosen for Wave M Form Spec:** shortlist-1 geometry (**AB-A/B/E**) as Must-see baseline; ambition flag **free-vision required** for optional spatial variants (**AB-C/D**) that must still pin A\u2013E + Ugly Duckling + typisch > 5 mm only.\n\n---\n\n## Ambition flag\n\n| Flag | Setting | Reason |\n|------|---------|--------|\n| **free-vision** | **required** (for ambition slot) | ABCDE earns the chapter ambition unit: recognition-by-form (letter mnemonic \u00b1 spatial field). Skipping free vision without reason would leave only a table dump (AB-X1). Code-first recreate remains allowed after claim audit. |\n| Grammar units elsewhere | code / transfer | Not re-specified here |\n\n---\n\n## Handoff\n\n- Form Spec: `abcde.form-spec.md` (same outputs folder)  \n- Pins locked to monograph Beobachtung / Big Picture / Direktzugang only  \n- Graphics: free vision \u2192 claim audit \u2192 code | hybrid; no clinical invention  \n"}], "grading": {"eval_id": "eval-2-kl-ambition-abcde-form-space", "arm": "without_skill", "pass_rate": 1.0, "passed": 6, "total": 6, "expectations": [{"text": "three-valuable-paths", "passed": true, "evidence": "ok"}, {"text": "two-rejected", "passed": true, "evidence": "ok"}, {"text": "abcde-pins", "passed": true, "evidence": "ok"}, {"text": "ugly-duckling", "passed": true, "evidence": "ok"}, {"text": "no-claim-invention", "passed": true, "evidence": "ok"}, {"text": "ambition-flag", "passed": true, "evidence": "ok"}]}}, {"id": "eval-3-accept-rubric-no-monotony-with_skill", "prompt": "Media Accept: You are given that a Tech spike for KL urgency compiled green but is only stacked generic boxes with equal weight for T1 and T4, SCOPE as a fifth grey ladder step labeled 'keine Dringlichkeitsstufe', and English chrome 'Action payload'. Write an Accept record (accept|revise|reject) to outputs/accept.md using the media-brief Accept rubric and KL rules. Recommend revise or reject with concrete fixes. brief_class exploration.", "eval_id": 3, "outputs": [{"name": "NOTES.md", "type": "text", "content": "# NOTES \u2014 eval-3 accept-rubric-no-monotony (with_skill)\n\n## Outcome\n\n- **Decision: revise** (not accept; not full reject of the unit intent).\n- Artifact: `outputs/accept.md`\n- `brief_class: exploration` \u2192 production compose **no**\n\n## Why revise (not accept / not pure reject)\n\n| Failure | Rubric / KL rule | Severity |\n|---|---|---|\n| T1 and T4 equal weight in stacked boxes | Accept \u00a75: urgency not flattened; Form Spec weight encoding | revise |\n| SCOPE as fifth grey ladder step | Ontology: SCOPE \u2260 TIME tier; no grey \u201cT5\u201d | revise (layout choice disallowed) |\n| Label \u201ekeine Dringlichkeitsstufe\u201c | **No form-meta inside the graphic** (Human 2026-07-26); Must-see forbids this caption | revise |\n| English \u201eAction payload\u201c | Forbidden EN stage chrome; ACTION is inside-tier payload | revise |\n| Generic box monotony + green compile | Accept \u00a75: not box monotony; accept on ideal proximity, not compile green | revise |\n\nReject reserved for claim rewrite / invented thresholds (not alleged here). The *layout strategy* for SCOPE-as-step + form-meta is non-acceptable; overall unit stays on revise-with-concrete-fixes.\n\n## Assertions map\n\n| id | Covered? |\n|---|---|\n| not-accept | overall = **revise** |\n| flags-scope-ladder | SCOPE fifth grey step + form-meta caption called out |\n| flags-en-or-weight | EN chrome + T1=T4 flattening called out |\n| concrete-fixes | 7 numbered required changes in Accept |\n\n## References used\n\n- `media-brief/SKILL.md` \u2014 Accept-record procedure\n- `media-brief/references/design-reasoning.md` \u00a75\n- `media-brief/references/kl-illness-script-ontology.md` (TIME/SCOPE, form-meta rule)\n- `domains/medical/templates/accept-record.template.md`\n- Gold Form Spec: `domains/medical/briefs/kl-u-urgency-scope.form-spec.md`\n"}, {"name": "accept.md", "type": "text", "content": "# Accept record (Media) \u2014 exploration\n\n- **chapter_id / slug:** KL U-urgency (+ U-scope) \u2014 tech spike review\n- **brief_path:** (eval scenario; reference ideal) `domains/medical/briefs/kl-u-urgency-scope.form-spec.md` / KL form-space shortlist US-A\n- **form_spec_path:** `domains/medical/briefs/kl-u-urgency-scope.form-spec.md`\n- **feasibility_path:** (described Tech spike \u2014 compile green)\n- **graphics_decision_path:** n/a (code spike only)\n- **spike_paths:** Tech spike (compiled green; stacked generic boxes)\n- **date:** 2026-07-26\n- **media_reviewer:** media-brief (Accept rubric \u00a75 + KL ontology v1.1)\n- **brief_class:** exploration\n\n## Decision\n\n| item | accept \\| revise \\| reject | note |\n|---|---|---|\n| **overall** | **revise** | Compile-green is **not** Accept. Spike fails Form Spec Must-see, Accept rubric (urgency flatten, box monotony), and KL form-language invariants. Exploration \u2014 no production compose. |\n| U-urgency TIME stack (T1\u2013T4) | **revise** | T1 and T4 have **equal visual weight** in generic stacked boxes. Loudness must encode urgency: T1 \u226b T2 \u226b T3 \u226b T4 (size/fill/left bar + label; solid danger **only** on T1). Flat stack reads as equal options, not a priority landscape. |\n| U-scope | **revise** / near-**reject** of this layout choice | SCOPE rendered as a **fifth grey ladder step** under TIME with in-figure caption **\u201ekeine Dringlichkeitsstufe\u201c**. That is (1) SCOPE-as-tier / grey \u201cT5\u201d, (2) **form-meta inside the graphic** (forbidden). Separation must be **self-evident from geometry**, not explained in print. |\n| Chrome / labels | **revise** | English stage chrome **\u201eAction payload\u201c** is forbidden (ontology form-language rule; Form Spec non-goals: no EN stage titles). Use German content/action chrome only; ACTION is payload *inside* each TIME tier, not a labeled third axis. |\n| Page rhythm / monotony | **revise** | Entire unit is **box monotony** (same generic callout stack). Flows must look like a weighted TIME landscape + orthogonal SCOPE frame, not tinted equal boxes. |\n\n**Not bare accept.** Do not open compose on this spike. Round counts as Media\u2194Tech iteration 1 of max 2 before Human.\n\n## Graphic winners (if Decision Note / A/B)\n\n| unit_id | accepted winner (code\\|asset\\|hybrid) | form_spec Must-see met? | note |\n|---|---|---|---|\n| U-urgency + U-scope | **none** | **no** | Spike not accepted. Prefer **code** carrier next (US-A dual-axis); free-vision optional only if code fails Must-see after real attempt. |\n\n## If revise\n\nWhat must Tech change before any re-Accept / compose:\n\n1. **Restore urgency weights** \u2014 T1 visually and by label \u2260 T4 (and \u2260 T2). Encode T1 \u226b T2 \u226b (T3 if present) \u226b T4 via size, fill, left-bar, typography; solid red / danger chrome **only** on T1 (112). Equal stacked boxes = fail.\n2. **Pull SCOPE off the TIME ladder** \u2014 separate frame/geometry (e.g. orthogonal border, hairline break, non-T-chip row). **Never** a fifth grey rung under Treat.\n3. **Remove form-meta from the figure** \u2014 delete in-figure text like **\u201ekeine Dringlichkeitsstufe\u201c**, ontology IDs, EN stage labels. Allowed: content titles only (e.g. competence-boundary wording from C). Designer notes only in spike footer / Decision Note, not print body.\n4. **German chrome only** \u2014 replace **\u201eAction payload\u201c** with DE content/action labels; keep ACTION *inside* each TIME tier (triggers + Handlung), not a third axis title.\n5. **Break box monotony** \u2014 priority landscape (weighted tiers + internal trigger/action contiguity), not identical generic boxes for every tier.\n6. **Re-check Must-see** from `kl-u-urgency-scope.form-spec.md`: T1\u2260T2; ACTION inside tier; multi-trigger inside one T1 when content requires; SCOPE optically not a TIME tier; no Treat-without-net; teal/script framework.\n7. Document any remaining approx vs ideal in feasibility/spike notes \u2014 do not treat \u201ccompiles\u201d as proximity to ideal.\n\n## Pedagogy / scan checks (Media)\n\nFrom `media-brief/references/design-reasoning.md` \u00a75 \u2014 fail \u2192 **revise**:\n\n- [ ] Main job / gatekeeper findable in first screenful \u2014 **fail-risk:** equal boxes bury T1 stop\n- [ ] Action/decision path louder than links/sources \u2014 **partial/unknown**; EN \u201cAction payload\u201d chrome is wrong register\n- [x] Order-critical steps read as ordered \u2014 **weak:** stack order alone without weight \u2260 urgency landscape\n- [ ] **Urgency weights from Brief not flattened** \u2014 **FAIL:** T1 \u2261 T4\n- [ ] **Flows look like flows** \u2014 **FAIL:** generic boxes, not dual-axis TIME+SCOPE instrument\n- [ ] **Not box monotony** \u2014 **FAIL**\n- [ ] **Form Spec Must-see met** \u2014 **FAIL** (weight, SCOPE geometry, form-meta, chrome)\n- [x] Graphic / free-vision candidates reviewed when present \u2014 n/a (code spike)\n- [ ] Production path after vision noted \u2014 n/a\n- [ ] Asset winner gates \u2014 n/a\n- [x] No claim rewrite / no new clinical thresholds in layout \u2014 **pass** on given description (layout/form-language failures only)\n\n**KL ontology checklist (extra):**\n\n- [ ] T1 \u2260 T2 visually and by label \u2014 not demonstrated under equal-weight stack\n- [ ] ACTION stays inside TIME tiers \u2014 undermined by EN \u201cAction payload\u201d as chrome/axis-ish label\n- [ ] SCOPE optically outside TIME \u2014 **FAIL** (fifth grey ladder step)\n- [ ] **No form-meta inside graphic** \u2014 **FAIL** (\u201ekeine Dringlichkeitsstufe\u201c)\n- [ ] No EN stage chrome \u2014 **FAIL** (\u201eAction payload\u201c)\n\n## Content freeze pin (production)\n\n- [ ] Freeze record verified \u2014 n/a\n- [ ] `content_revision` matches freeze \u2014 n/a\n- [ ] `brief_class` is **production** \u2014 **no**; this Accept is **`brief_class: exploration`**\n\n## Production compose authorized?\n\n- [ ] **yes**\n- [x] **no** \u2014 exploration only; spike **not** accepted; no freeze pin; monotony + form-meta + weight fail block any production path\n\n### Media notes for Compose (after future Accept only)\n\n1. Implement US-A dual-axis (TIME stack + SCOPE frame); weight T1 loudest; SCOPE geometry-only separation.\n2. Strip all form-meta and EN stage chrome from print surface.\n3. Exploration Accept never authorizes production compose even if re-spike passes \u2014 still needs freeze + production brief path.\n"}], "grading": {"eval_id": "eval-3-accept-rubric-no-monotony", "arm": "with_skill", "pass_rate": 1.0, "passed": 4, "total": 4, "expectations": [{"text": "not-accept", "passed": true, "evidence": "ok"}, {"text": "flags-scope-ladder", "passed": true, "evidence": "ok"}, {"text": "flags-en-or-weight", "passed": true, "evidence": "ok"}, {"text": "concrete-fixes", "passed": true, "evidence": "ok"}]}}, {"id": "eval-3-accept-rubric-no-monotony-without_skill", "prompt": "Media Accept: You are given that a Tech spike for KL urgency compiled green but is only stacked generic boxes with equal weight for T1 and T4, SCOPE as a fifth grey ladder step labeled 'keine Dringlichkeitsstufe', and English chrome 'Action payload'. Write an Accept record (accept|revise|reject) to outputs/accept.md using the media-brief Accept rubric and KL rules. Recommend revise or reject with concrete fixes. brief_class exploration.", "eval_id": 3, "outputs": [{"name": "NOTES.md", "type": "text", "content": "# NOTES \u2014 eval-3 accept-rubric-no-monotony (without_skill)\n\n## Outcome\n\n**Decision: revise** (not accept). Spike compile-green does not pass Media Accept when form/pedagogy fails.\n\n## Failures flagged\n\n| Issue | Why it fails Accept |\n|---|---|\n| Equal T1 / T4 visual weight | Urgency hierarchy flattened; monotony / stacked generic boxes |\n| SCOPE as fifth grey ladder step labeled \u201ekeine Dringlichkeitsstufe\u201c | TIME\u2260SCOPE violation + form-meta inside figure |\n| English chrome \u201eAction payload\u201c | Genre/language chrome; EN stage titles forbidden in production graphics |\n\n## Concrete next-spike fixes\n\n1. Re-weight T1 loudest \u2192 T4 quietest  \n2. Pull SCOPE out of the TIME ladder into separate geometry  \n3. Strip form-meta captions (no \u201ekeine Dringlichkeitsstufe\u201c)  \n4. German (or no) chrome \u2014 drop \u201eAction payload\u201c  \n\n## brief_class\n\nexploration \u2014 production compose **not** authorized.\n"}, {"name": "accept.md", "type": "text", "content": "# Accept record (Media) \u2014 exploration\n\n- **chapter_id:** KL urgency (spike under review)\n- **brief_path:** (exploration; Form Spec / brief as given to Tech spike)\n- **form_spec_path:** KL U-urgency + U-scope (exploration)\n- **feasibility_path:** n/a (spike compile green; Accept is form/pedagogy)\n- **graphics_decision_path:** n/a\n- **spike_paths:** Tech spike KL urgency (compiled green; stacked generic boxes)\n- **date:** 2026-07-26\n- **media_reviewer:** media (eval / exploration)\n- **brief_class:** exploration\n\n## Decision\n\n| item | accept \\| revise \\| reject | note |\n|---|---|---|\n| overall | **revise** | Compile-green is not Accept. Stacked monotony fails TIME hierarchy, TIME\u2260SCOPE, and no-form-meta. |\n| TIME ladder (T1\u2013T4) | **revise** | T1 and T4 rendered at equal weight \u2014 urgency flattening. |\n| SCOPE | **revise** | Treated as fifth grey ladder step with form-meta label \u201ekeine Dringlichkeitsstufe\u201c. |\n| chrome / language | **revise** | English stage chrome \u201eAction payload\u201c inside figure. |\n\n**Not accept.** Proximity to ideal / Form Spec fails despite green compile. Prefer **revise** over **reject**: geometry recipe can recover without new clinical claims.\n\n## Graphic winners\n\n| unit_id | accepted winner | form_spec Must-see met? | note |\n|---|---|---|---|\n| U-urgency+scope | \u2014 | **no** | No winner until weight, SCOPE separation, and DE chrome fixed |\n\n## If revise\n\nWhat must Tech change before re-Accept (next spike):\n\n1. **Urgency weights (T1 \u2260 T4):** Restore hierarchy from Form Spec / KL rules \u2014 T1 (112 / vital) optically loudest (weight, chroma, size, edge); T4 quietest permission tier. No equal stacked \u201cgeneric boxes.\u201d Order must scan as T1 \u2192 T2 \u2192 (T3 if present) \u2192 T4.\n2. **SCOPE off the TIME ladder:** Remove SCOPE as a fifth grey rung. SCOPE is a separate competence-boundary job (TIME \u2260 SCOPE). Carry distinction by **geometry** (band, rail, callout zone, side panel) \u2014 not another ladder step.\n3. **No form-meta in figure:** Delete in-art caption/label **\u201ekeine Dringlichkeitsstufe\u201c** (and any ontology IDs / EN stage titles). Content titles only (e.g. *Grenze der eigenen Zust\u00e4ndigkeit*) if content supplies them.\n4. **German production chrome:** Replace English chrome **\u201eAction payload\u201c** with German content language (or drop decorative EN stage titles entirely). ACTION lives *inside* TIME tiers, not as English meta chrome.\n5. **No claim rewrite:** Keep claim pins copy-through; only layout weight, separation, and chrome language change.\n\n## Pedagogy / scan checks (Media)\n\n- [ ] Main job findable\n- [ ] Action path louder than notes\n- [ ] Order T1\u2192T2\u2192T4 readable\n- [ ] **Urgency weights not flattened** \u2014 FAIL: T1 = T4 equal weight\n- [ ] Form Spec Must-see met\n- [ ] No claim rewrite\n- [ ] **No form-meta inside figure** \u2014 FAIL: \u201ekeine Dringlichkeitsstufe\u201c as ladder meta; EN \u201eAction payload\u201c\n- [ ] **TIME \u2260 SCOPE** \u2014 FAIL: SCOPE as fifth grey ladder step\n\n## Production compose authorized?\n\n- [ ] **yes**\n- [x] **no** \u2014 exploration only; revise required; no freeze pin / no compose\n\n### Media notes for Compose (later)\n\n1. Do not treat whitelist/compile green as Accept for KL urgency.\n2. Accept only when T1>T4 hierarchy, optical SCOPE separation, and DE content chrome hold without in-figure form-language.\n"}], "grading": {"eval_id": "eval-3-accept-rubric-no-monotony", "arm": "without_skill", "pass_rate": 1.0, "passed": 4, "total": 4, "expectations": [{"text": "not-accept", "passed": true, "evidence": "ok"}, {"text": "flags-scope-ladder", "passed": true, "evidence": "ok"}, {"text": "flags-en-or-weight", "passed": true, "evidence": "ok"}, {"text": "concrete-fixes", "passed": true, "evidence": "ok"}]}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"skill_name": "media-brief", "iteration": 1, "configurations": {"with_skill": {"mean_pass_rate": 1.0, "evals": [{"eval_id": "eval-1-kl-transfer-urgency-form-spec", "arm": "with_skill", "pass_rate": 1.0, "passed": 7, "total": 7, "expectations": [{"text": "has-zones", "passed": true, "evidence": "ok"}, {"text": "has-must-see", "passed": true, "evidence": "ok"}, {"text": "pins-german-copythrough", "passed": true, "evidence": "ok"}, {"text": "no-form-meta-instruction", "passed": true, "evidence": "ok"}, {"text": "no-production-typst", "passed": true, "evidence": "ok"}, {"text": "exceptional-t1", "passed": true, "evidence": "ok"}, {"text": "success-criterion", "passed": true, "evidence": "ok"}]}, {"eval_id": "eval-2-kl-ambition-abcde-form-space", "arm": "with_skill", "pass_rate": 1.0, "passed": 6, "total": 6, "expectations": [{"text": "three-valuable-paths", "passed": true, "evidence": "ok"}, {"text": "two-rejected", "passed": true, "evidence": "ok"}, {"text": "abcde-pins", "passed": true, "evidence": "ok"}, {"text": "ugly-duckling", "passed": true, "evidence": "ok"}, {"text": "no-claim-invention", "passed": true, "evidence": "ok"}, {"text": "ambition-flag", "passed": true, "evidence": "ok"}]}, {"eval_id": "eval-3-accept-rubric-no-monotony", "arm": "with_skill", "pass_rate": 1.0, "passed": 4, "total": 4, "expectations": [{"text": "not-accept", "passed": true, "evidence": "ok"}, {"text": "flags-scope-ladder", "passed": true, "evidence": "ok"}, {"text": "flags-en-or-weight", "passed": true, "evidence": "ok"}, {"text": "concrete-fixes", "passed": true, "evidence": "ok"}]}]}, "without_skill": {"mean_pass_rate": 1.0, "evals": [{"eval_id": "eval-1-kl-transfer-urgency-form-spec", "arm": "without_skill", "pass_rate": 1.0, "passed": 7, "total": 7, "expectations": [{"text": "has-zones", "passed": true, "evidence": "ok"}, {"text": "has-must-see", "passed": true, "evidence": "ok"}, {"text": "pins-german-copythrough", "passed": true, "evidence": "ok"}, {"text": "no-form-meta-instruction", "passed": true, "evidence": "ok"}, {"text": "no-production-typst", "passed": true, "evidence": "ok"}, {"text": "exceptional-t1", "passed": true, "evidence": "ok"}, {"text": "success-criterion", "passed": true, "evidence": "ok"}]}, {"eval_id": "eval-2-kl-ambition-abcde-form-space", "arm": "without_skill", "pass_rate": 1.0, "passed": 6, "total": 6, "expectations": [{"text": "three-valuable-paths", "passed": true, "evidence": "ok"}, {"text": "two-rejected", "passed": true, "evidence": "ok"}, {"text": "abcde-pins", "passed": true, "evidence": "ok"}, {"text": "ugly-duckling", "passed": true, "evidence": "ok"}, {"text": "no-claim-invention", "passed": true, "evidence": "ok"}, {"text": "ambition-flag", "passed": true, "evidence": "ok"}]}, {"eval_id": "eval-3-accept-rubric-no-monotony", "arm": "without_skill", "pass_rate": 1.0, "passed": 4, "total": 4, "expectations": [{"text": "not-accept", "passed": true, "evidence": "ok"}, {"text": "flags-scope-ladder", "passed": true, "evidence": "ok"}, {"text": "flags-en-or-weight", "passed": true, "evidence": "ok"}, {"text": "concrete-fixes", "passed": true, "evidence": "ok"}]}]}}, "delta_pass_rate": 0.0}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

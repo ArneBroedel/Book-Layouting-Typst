@@ -1,0 +1,241 @@
+{
+  "skill_name": "media-brief",
+  "iteration": 1,
+  "configurations": {
+    "with_skill": {
+      "mean_pass_rate": 1.0,
+      "evals": [
+        {
+          "eval_id": "eval-1-kl-transfer-urgency-form-spec",
+          "arm": "with_skill",
+          "pass_rate": 1.0,
+          "passed": 7,
+          "total": 7,
+          "expectations": [
+            {
+              "text": "has-zones",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "has-must-see",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "pins-german-copythrough",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-form-meta-instruction",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-production-typst",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "exceptional-t1",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "success-criterion",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        },
+        {
+          "eval_id": "eval-2-kl-ambition-abcde-form-space",
+          "arm": "with_skill",
+          "pass_rate": 1.0,
+          "passed": 6,
+          "total": 6,
+          "expectations": [
+            {
+              "text": "three-valuable-paths",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "two-rejected",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "abcde-pins",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "ugly-duckling",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-claim-invention",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "ambition-flag",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        },
+        {
+          "eval_id": "eval-3-accept-rubric-no-monotony",
+          "arm": "with_skill",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "expectations": [
+            {
+              "text": "not-accept",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "flags-scope-ladder",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "flags-en-or-weight",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "concrete-fixes",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    "without_skill": {
+      "mean_pass_rate": 1.0,
+      "evals": [
+        {
+          "eval_id": "eval-1-kl-transfer-urgency-form-spec",
+          "arm": "without_skill",
+          "pass_rate": 1.0,
+          "passed": 7,
+          "total": 7,
+          "expectations": [
+            {
+              "text": "has-zones",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "has-must-see",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "pins-german-copythrough",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-form-meta-instruction",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-production-typst",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "exceptional-t1",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "success-criterion",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        },
+        {
+          "eval_id": "eval-2-kl-ambition-abcde-form-space",
+          "arm": "without_skill",
+          "pass_rate": 1.0,
+          "passed": 6,
+          "total": 6,
+          "expectations": [
+            {
+              "text": "three-valuable-paths",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "two-rejected",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "abcde-pins",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "ugly-duckling",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "no-claim-invention",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "ambition-flag",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        },
+        {
+          "eval_id": "eval-3-accept-rubric-no-monotony",
+          "arm": "without_skill",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "expectations": [
+            {
+              "text": "not-accept",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "flags-scope-ladder",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "flags-en-or-weight",
+              "passed": true,
+              "evidence": "ok"
+            },
+            {
+              "text": "concrete-fixes",
+              "passed": true,
+              "evidence": "ok"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "delta_pass_rate": 0.0
+}
