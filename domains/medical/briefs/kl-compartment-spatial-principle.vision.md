@@ -11,17 +11,18 @@ Show the **pathological principle**: pressure rising **inside a closed, unyieldi
 
 ## Style (mandatory)
 
-- **Coarse, flat, abstract** medical schematic  
+- **Low detail** — flat, schematic, or **comic-like** medical illustration  
 - Simple shapes: ring = boundary, core = pressure, arrows = rising pressure  
+  (optional coarse limb outline OK if clearly stylized)  
 - Light background, few colors  
-- **Must look schematic** — nobody should treat it as reference anatomy  
+- Must **not** look like a complete correct anatomy atlas  
 
 ## Forbidden
 
-- Photoreal skin, realistic bones with cortex/trabeculae  
-- Multi-panel posters, faces, extra feet, ambulances  
+- Photoreal / high-detail atlas anatomy  
+- Multi-panel posters, faces-as-headache, extra feet, ambulances  
 - mmHg numbers, English chrome  
-- Any cut that pretends to be a complete cross-section of all correct structures  
+- Detail so high that the figure pretends to be a full correct cross-section  
 
 ## Allowed German labels (≤5)
 

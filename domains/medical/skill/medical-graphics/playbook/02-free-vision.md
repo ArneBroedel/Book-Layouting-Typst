@@ -33,7 +33,7 @@ Form Spec (Must-see + pins + genre) + Vision template.
 - **Do not** attach repo SVG/PNG flowcharts as layout templates.  
 - Composition free; **labels** constrained by pins.  
 - Detail: [`../references/free-vision.md`](../references/free-vision.md)  
-- **Body / cut / organ:** free vision must be **schematic principle**, not atlas anatomy (see book-visual-standards). Coarse abstraction is a feature.
+- **Body / cut / organ:** principle first; anatomy OK if **stylized / low detail** (schematic or comic-like) so it does **not** look complete/correct. High-detail atlas look → simplify (see book-visual-standards).
 
 ### Silent fallback forbidden (Wave-5 lesson)
 
@@ -43,9 +43,9 @@ If `generate_image` / Nano Banana **fails** (e.g. HTTP 429 quota) and the agent 
 |----------|-----------|
 | Name carrier explicitly: `code-fallback` or `typst-render` — **not** free vision | Saving Typst output as `vision-free-01.png` and Accepting as free vision |
 | Prefer intentional Typst modules under `lib/` | Fake anatomy labeled as Querschnitt |
-| Spatial/patho units: **principle schematic** (code or free) | Photoreal limb cuts that invite anatomical error hunting |
+| Spatial/patho units: principle + **low-detail** body (schematic/comic OK) | Photoreal / high-detail atlas cuts that invite error-hunting |
 
-Claim audit: for body graphics, FAIL “looks like complete anatomy but is wrong”; PASS only if style is clearly **abstract principle** *or* H-Gfx gold anatomy.
+Claim audit: FAIL if style implies **complete correct anatomy** but is free-gen guesswork. PASS if principle is clear and body is **obviously stylized** (or H-Gfx gold anatomy).
 
 ## Output
 

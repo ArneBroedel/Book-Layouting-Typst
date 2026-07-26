@@ -180,14 +180,14 @@ Text pins can be perfect while the **drawing teaches the wrong criterion**:
 
 **Human review** is especially valuable on icon units; agents still run the icon checklist before Accept. Surgical refine beats full re-generation when layout is already good.
 
-### Body / patho: principle schematic, not fake atlas (Human 2026-07)
+### Body / patho: principle first; anatomy stylized (Human 2026-07)
 
-Free image models **will invent wrong anatomy** on complex cuts. In a textbook that is unacceptable.
+Anatomy in figures is **fine**. What fails is **detail so high** that the image pretends to be complete and correct — free models will still err, and readers read those errors as facts.
 
-- Show the **pathological principle** (e.g. pressure trapped in a closed loge) in **coarse, abstract** form.  
-- Do **not** aim for complete correct anatomy in unsupervised free vision.  
-- If the figure invites “spot the anatomical error”, restyle as schematic or move to code/CeTZ principle.  
-- High-fidelity anatomy → human / H-Gfx only.
+- Lead with the **pathological principle**; body can illustrate it.  
+- Prefer **low detail**: flat, schematic, or **comic-like** so completeness is not implied.  
+- If clinicians start error-hunting anatomy → reduce fidelity or use code principle schematic.  
+- High-fidelity reference anatomy → human / H-Gfx only.
 
 ### Transfer hygiene
 

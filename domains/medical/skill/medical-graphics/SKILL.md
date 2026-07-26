@@ -133,7 +133,7 @@ See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):
 Free vision may invent EN/meta chrome (US-D lesson) → **refine** or **code SoT**.  
 Criteria icons may look right while teaching wrong (Melanom B/D) → **illustration-semantics** in audit + surgical refine. Never accept-asset on claim FAIL.  
 **Quota / 429 fallback to Typst must not be Accept-ed as free vision** (Wave-5: hexagon compartment, empty FAST dashboard). Name the carrier; prefer intentional code/CeTZ.  
-**Body/patho free vision:** **schematic principle only** — never unsupervised atlas-style anatomy (Human 2026-07).
+**Body/patho free vision:** principle first; anatomy OK if **stylized / low detail** (schematic or comic-like) — not high-detail atlas look that fakes completeness (Human 2026-07).
 
 ## References
 

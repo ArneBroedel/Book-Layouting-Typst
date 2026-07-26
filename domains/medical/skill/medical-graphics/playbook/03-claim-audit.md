@@ -41,14 +41,15 @@ Label-only PASS with icon FAIL → overall **DRIFT** (not full PASS for accept-a
 
 | Check | Fail if |
 |-------|---------|
-| Style | Figure looks like a **complete anatomy atlas cut** (implies correctness) but is AI-guess anatomy |
-| Principle | Pathological idea (pressure in closed loge, saddle zone) is unclear |
-| Clutter | Multi-vignette poster; extra limbs; wrong body part metaphors (e.g. headache face for loge pain) |
+| Completeness cue | High detail / atlas look that **implies full correct anatomy** (free-gen will still be wrong) |
+| Principle | Pathological idea is unclear |
+| Clutter | Multi-vignette poster; extra limbs; wrong metaphors (e.g. headache face for loge pain) |
 | Density | Empty icon wells, tiny text |
 
-**Prefer:** coarse **principle schematic** (Typst/CeTZ or free with “flat abstract zones only”).  
-**Do not Prefer:** “better photoreal anatomy” free re-rolls — errors stay; abstraction is the fix.  
-True anatomy gold → H-Gfx / human asset, not unsupervised free gen.
+**OK:** body shapes, simple limb/loge cues, **comic / flat / schematic** style.  
+**Not the bar:** ban all anatomy.  
+**Prefer when free fails:** lower detail / more comic, or Typst principle — not “more realistic anatomy”.  
+True high-fidelity anatomy → H-Gfx / human asset.
 
 ## NEVER
 

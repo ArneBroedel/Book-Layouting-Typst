@@ -110,9 +110,9 @@ Copy skeleton + swap claim pins (IV-2 → IV-4). Re-audit free labels always.
 |---|---|
 | **When** | Acute compartment syndrome — hour-critical limb ischemia |
 | **Must-see** | **Principle:** pressure in a closed loge; disproportional + stretch + board-hard; **pulses do not exclude**; not elevate above heart |
-| **Default realize** | **Principle schematic** (`spatial-compartment-principle`) — coarse/abstract; **not** atlas anatomy free vision |
-| **Gold** | `spatial-compartment-principle()` · `dist/…/compartment-principle.pdf` · form-spec `kl-compartment-spatial` |
-| **Anti** | Fake-correct bone cuts; multi-vignette free posters; hexagon “anatomy”; invent 6P/mmHg; photoreal limb as unsupervised free gen |
+| **Default realize** | Principle schematic (`spatial-compartment-principle`) and/or **low-detail / comic** free vision of limb/loge — not high-detail atlas |
+| **Gold** | `spatial-compartment-principle()` · optional stylized free · form-spec `kl-compartment-spatial` |
+| **Anti** | High-detail free “correct” cuts; multi-vignette clutter; invent 6P/mmHg; ban of *all* body shapes (too hard) |
 
 ### `kl-safety-chrome` (Suizidalität)
 

@@ -264,125 +264,106 @@
   ]
 }
 
-// ── Spatial: controlled CeTZ lower-leg cross-section (Accept candidate) ──
-// Replaces failed Typst-hexagon "free vision" (Wave-5 post-mortem).
-// Right mid-leg, proximal view (looking toward knee): Tibia large medial-anterior,
-// Fibula small lateral; four osteofascial compartments labeled.
-// Anterior compartment = high-pressure highlight (not a hexagon placeholder).
+// ── Spatial: comic-schematic lower-leg cut (topology correct, not atlas) ──
+// First glance = didactic schematic. Second glance = bones/compartments in right places.
+// Convention: TOP=anterior, RIGHT=medial (tibia large), LEFT=lateral (fibula small).
 
 #let spatial-compartment-cetz() = {
   set text(size: 8pt)
 
-  text(size: 10pt, weight: "bold", fill: palette.primary-dark)[
-    Akutes Kompartmentsyndrom · Querschnitt Unterschenkel
+  text(size: 10.5pt, weight: "bold", fill: palette.primary-dark)[
+    Kompartimente Unterschenkel · Prinzip + grobe Topologie
   ]
   v(2pt)
   text(size: 7.5pt, fill: palette.text-muted)[
-    Osteofasziales Fach · Druckanstieg → Ischämie in Stunden · *schematisch anatomisch* (CeTZ), kein Hexagon-Placeholder
+    Comic-schematisch (dicke Linien, flache Flächen) — *kein* Atlas. Vorderes Fach = Druckkammer.
   ]
-  v(4pt)
+  v(5pt)
 
   align(center)[
     #canvas(length: 1cm, {
       import draw: *
 
-      // Soft tissue outline
-      circle((0, 0.1), radius: (2.6, 3.1), fill: rgb("#f7f6f2"), stroke: 1.2pt + palette.text-muted)
+      // Soft-tissue oval — thick comic outline
+      circle((0, 0), radius: (2.7, 3.15),
+        fill: rgb("#faf8f4"), stroke: 2.2pt + palette.text-muted)
 
-      // --- Compartments (schematic, standard mid-leg topology) ---
-      // Lateral (fibula side, left of viewer if medial is right — use classic: medial RIGHT for right leg looking up? 
-      // Textbook often: anterior top, medial left (patient right leg, looking distal). We'll use:
-      // TOP = anterior, RIGHT = medial (tibia), LEFT = lateral (fibula)
+      // Superficial posterior (bottom, large quiet zone)
+      circle((0, -1.5), radius: (2.2, 1.35),
+        fill: rgb("#e2e8f0"), stroke: 1.3pt + palette.border)
 
-      // Superficial posterior (bottom)
-      circle((0, -1.55), radius: (2.15, 1.25), fill: rgb("#e8eef0"), stroke: 0.5pt + palette.border)
+      // Deep posterior (central-low, quiet)
+      circle((0.4, -0.25), radius: (1.05, 0.9),
+        fill: rgb("#cbd5e1"), stroke: 1.2pt + palette.border)
 
-      // Deep posterior (center-low)
-      circle((0.35, -0.35), radius: (1.15, 0.95), fill: rgb("#dce6ea"), stroke: 0.5pt + palette.border)
+      // Lateral (left of fibula)
+      circle((-1.65, 0.25), radius: (0.7, 1.05),
+        fill: rgb("#e2e8f0"), stroke: 1.2pt + palette.border)
 
-      // Lateral compartment (left / fibular)
-      circle((-1.55, 0.35), radius: (0.72, 1.15), fill: rgb("#e8eef0"), stroke: 0.5pt + palette.border)
+      // Anterior (top) — PRESSURE highlight, thicker stroke
+      circle((0.1, 1.55), radius: (1.5, 1.0),
+        fill: rgb("#fecaca"), stroke: 2.4pt + palette.danger)
 
-      // Anterior compartment (top — HIGHLIGHT pressure)
-      circle((0.15, 1.55), radius: (1.55, 1.05),
-        fill: rgb("#fecaca"),
-        stroke: 1.6pt + palette.danger,
-      )
+      // Interosseous membrane (simple line tibia–fibula)
+      line((0.55, 0.35), (-1.15, 0.2),
+        stroke: (paint: palette.primary.lighten(20%), thickness: 1.1pt, dash: "dashed"))
 
-      // Bones
-      // Tibia — large, anteromedial (top-right)
-      circle((1.05, 0.55), radius: (0.72, 0.85), fill: rgb("#f5f0e6"), stroke: 1.1pt + palette.text-muted)
-      // Fibula — small, lateral (left)
-      circle((-1.55, 0.15), radius: (0.32, 0.38), fill: rgb("#f5f0e6"), stroke: 1.0pt + palette.text-muted)
+      // Bones: flat bone-beige, thick outline — no micro-detail
+      circle((1.1, 0.5), radius: (0.78, 0.9),
+        fill: rgb("#f5f0e0"), stroke: 2pt + rgb("#8b7355"))
+      circle((-1.55, 0.1), radius: (0.34, 0.4),
+        fill: rgb("#f5f0e0"), stroke: 1.8pt + rgb("#8b7355"))
 
-      // Labels inside / near
-      content((0.15, 1.85), text(size: 7pt, weight: "bold", fill: palette.danger)[Anteriores\nKompartiment])
-      content((0.15, 1.15), text(size: 6.2pt, fill: palette.danger)[↑ Druck / Ischämie])
-      content((1.05, 0.55), text(size: 6.5pt, weight: "bold", fill: palette.text-muted)[Tibia])
-      content((-1.55, 0.15), text(size: 5.8pt, weight: "bold", fill: palette.text-muted)[Fibula])
-      content((-1.55, 1.05), text(size: 6pt, fill: palette.text-body)[Lateral])
-      content((0.35, -0.35), text(size: 6pt, fill: palette.text-body)[Tief\nposterior])
-      content((0, -1.85), text(size: 6.2pt, fill: palette.text-body)[Oberflächlich posterior])
+      // Pressure arrows only inside anterior
+      line((0.1, 2.0), (0.1, 1.45),
+        stroke: (paint: palette.danger, thickness: 1.6pt), mark: (end: "stealth"))
+      line((-0.45, 1.85), (-0.15, 1.4),
+        stroke: (paint: palette.danger, thickness: 1.3pt), mark: (end: "stealth"))
+      line((0.65, 1.85), (0.35, 1.4),
+        stroke: (paint: palette.danger, thickness: 1.3pt), mark: (end: "stealth"))
 
-      // Pressure arrows into anterior
-      line((0.15, 2.85), (0.15, 2.35), stroke: (paint: palette.danger, thickness: 1.3pt), mark: (end: "stealth"))
-      line((-0.55, 2.55), (-0.25, 2.15), stroke: (paint: palette.danger, thickness: 1pt), mark: (end: "stealth"))
-      line((0.85, 2.55), (0.55, 2.15), stroke: (paint: palette.danger, thickness: 1pt), mark: (end: "stealth"))
+      // Labels — few, large
+      content((0.1, 1.65), text(size: 7.5pt, weight: "bold", fill: palette.danger)[Vorderes\nKompartiment])
+      content((0.1, 1.15), text(size: 6.5pt, weight: "bold", fill: palette.danger)[Druck ↑])
+      content((1.1, 0.5), text(size: 7pt, weight: "bold", fill: rgb("#5c4a32"))[Tibia])
+      content((-1.55, 0.1), text(size: 6pt, weight: "bold", fill: rgb("#5c4a32"))[Fibula])
+      content((-1.65, 1.15), text(size: 6pt, fill: palette.text-muted)[lateral])
+      content((0.4, -0.25), text(size: 5.8pt, fill: palette.text-muted)[tief\npost.])
+      content((0, -1.85), text(size: 6.2pt, fill: palette.text-muted)[oberfl. posterior])
 
-      // Legend corner
-      content((-2.2, 2.9), anchor: "west",
-        text(size: 5.8pt, fill: palette.text-muted)[Blick: proximal (zur Kniekehle)\nRechts = medial])
+      content((2.55, 2.7), anchor: "west",
+        text(size: 5.5pt, fill: palette.text-muted)[oben = vorne\nrechts = medial])
     })
   ]
 
   v(5pt)
-  // Clinical cluster beside figure (dense)
   grid(
     columns: (1fr, 1fr),
     column-gutter: 5pt,
-    stack(
-      spacing: 3pt,
-      block(width: 100%, inset: 6pt, radius: 2pt, fill: rgb("#fff7ed"),
-        stroke: (left: 3pt + palette.warning, rest: 0.4pt + palette.border))[
-        #text(size: 7.5pt, weight: "bold", fill: palette.warning)[Kernzeichen]
-        #v(2pt)
-        #set text(size: 7.2pt)
-        #list(tight: true,
-          [Disproportionaler Schmerz],
-          [Passiver Dehnungsschmerz],
-          [Brettharte Loge],
-        )
-      ],
-      block(width: 100%, inset: 6pt, radius: 2pt, fill: rgb("#fef2f2"),
-        stroke: (left: 3pt + palette.danger, rest: 0.4pt + palette.border))[
-        #text(size: 7.5pt, weight: "bold", fill: palette.danger)[Pulse schließen ACS *nicht* aus]
-        #v(2pt)
-        #set text(size: 7.2pt)
-        Erhaltene Pulse entwarnen *nicht*.
-      ],
-    ),
-    stack(
-      spacing: 3pt,
-      block(width: 100%, inset: 6pt, radius: 2pt, fill: rgb("#fef2f2"),
-        stroke: (left: 3pt + palette.danger, rest: 0.4pt + palette.border))[
-        #text(size: 7.5pt, weight: "bold", fill: palette.danger)[Verbot]
-        #v(2pt)
-        #set text(size: 7.2pt)
-        *Nicht* über Herzhöhe lagern · keine forcierte Dehnung / Deep Release
-      ],
-      block(width: 100%, inset: 6pt, radius: 2pt, fill: rgb("#f0fdfa"),
-        stroke: (left: 3pt + palette.primary, rest: 0.4pt + palette.border))[
-        #text(size: 7.5pt, weight: "bold", fill: palette.primary)[Handlung]
-        #v(2pt)
-        #set text(size: 7.2pt)
-        PT abbrechen · Verband lockern · Notaufnahme / Unfallchirurgie (bei rascher Verschlechterung 112)
-      ],
-    ),
+    block(width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#fff7ed"),
+      stroke: (left: 3.5pt + palette.warning, rest: 0.4pt + palette.border))[
+      #text(size: 8pt, weight: "bold", fill: palette.warning)[Kernzeichen]
+      #v(3pt)
+      #set text(size: 7.5pt)
+      #list(tight: true,
+        [Disproportionaler Schmerz],
+        [Passiver Dehnungsschmerz],
+        [Brettharte Loge],
+      )
+    ],
+    block(width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#fef2f2"),
+      stroke: (left: 3.5pt + palette.danger, rest: 0.4pt + palette.border))[
+      #text(size: 8pt, weight: "bold", fill: palette.danger)[Pulse schließen ACS *nicht* aus]
+      #v(3pt)
+      #set text(size: 7.5pt)
+      Erhaltene Pulse entwarnen *nicht*.\
+      *Nicht* über Herzhöhe lagern · PT abbrechen · Verband lockern · NA/Unfallchirurgie
+    ],
   )
 
   v(3pt)
   text(size: 6.5pt, fill: palette.text-muted)[
-    Schematische Lage der vier Fächer am Unterschenkel (vorderes Fach hervorgehoben). Keine mmHg-Werte · keine Fasziotomie-Technik · Pins copy-through C.
+    Nur die fürs Prinzip nötigen Strukturen — topologisch grob korrekt, bewusst unvollständig.
   ]
 }
 
@@ -391,9 +372,10 @@
   spatial-compartment-principle()
 }
 
-// ── Spatial PRINCIPLE schematic (preferred textbook form) ─────
-// Human 2026-07: do NOT imply atlas-correct anatomy. Show the *principle*:
-// closed loge + rising pressure + ischemia risk. Flat abstract shapes only.
+// ── Spatial PRINCIPLE (textbook default) ──────────────────────
+// Human: no CT/MRI-slice look, no bone inventory labels.
+// Essential only: closed shell + pressure + optional 3 clinical chips.
+// Not attackable as wrong osteology.
 
 #let spatial-compartment-principle() = {
   set text(size: 8.5pt)
@@ -403,124 +385,139 @@
   ]
   v(2pt)
   text(size: 7.5pt, fill: palette.text-muted)[
-    Schematisch — *keine* anatomische Atlas-Abbildung. Lernjob: warum „Muskelkater“ irreführt.
+    Nur das Wesentliche — bewusst *kein* Schnittbild, *keine* Knochen-Benennungen.
   ]
-  v(6pt)
+  v(8pt)
 
-  // Abstract: rigid ring (Faszie) + rising pressure core + labels
-  align(center)[
-    #block(width: 100%, inset: (y: 4pt))[
-      #align(center)[
-        // Outer rigid shell
-        #box(
-          width: 78mm,
-          height: 78mm,
-          radius: 39mm,
-          stroke: 2.2pt + palette.text-muted,
-          fill: rgb("#f7f6f2"),
-          inset: 8mm,
+  // Two-column: abstract shell | minimal comic shin (outer silhouette only)
+  grid(
+    columns: (1fr, 1fr),
+    column-gutter: 10pt,
+    // A: pure principle ring
+    align(center)[
+      #stack(
+        spacing: 4pt,
+        text(size: 7.5pt, weight: "bold", fill: palette.text-muted)[A · reine Prinzipform],
+        v(2pt),
+        box(
+          width: 58mm,
+          height: 58mm,
+          radius: 29mm,
+          stroke: 2.8pt + palette.text-muted,
+          fill: rgb("#f4f3ef"),
+          inset: 7mm,
         )[
           #align(center + horizon)[
-            // Inner pressure mass
             #box(
               width: 100%,
               height: 100%,
               radius: 50%,
-              fill: gradient.radial(
-                rgb("#fecaca"),
-                rgb("#fca5a5"),
-                rgb("#ef4444").lighten(35%),
-              ),
-              stroke: 1.4pt + palette.danger,
-              inset: 6mm,
+              fill: gradient.radial(rgb("#fecaca"), rgb("#f87171").lighten(20%)),
+              stroke: 1.6pt + palette.danger,
             )[
               #align(center + horizon)[
                 #stack(
-                  spacing: 3pt,
-                  text(size: 9pt, weight: "bold", fill: palette.danger)[↑ Druck],
-                  text(size: 8pt, weight: "bold", fill: white)[geschlossene Loge],
-                  text(size: 7pt, fill: white)[Ischämie-Risiko],
+                  spacing: 2pt,
+                  text(size: 11pt, weight: "bold", fill: palette.danger)[Druck ↑],
+                  text(size: 7.5pt, fill: white)[geschlossene Loge],
                 )
               ]
             ]
           ]
-        ]
-      ]
-    ]
-  ]
+        ],
+      )
+    ],
+    // B: outer silhouette only — NOT a cut; red zone = tense front (no bone names)
+    align(center)[
+      #stack(
+        spacing: 4pt,
+        text(size: 7.5pt, weight: "bold", fill: palette.text-muted)[B · grobe Lage am Bein (kein Schnitt)],
+        v(2pt),
+        // Simplified comic lower leg: capsule + red anterior band
+        box(width: 42mm, height: 70mm)[
+          #place(top + center)[
+            // leg outline (rounded stadium)
+            #box(
+              width: 28mm,
+              height: 62mm,
+              radius: 10mm,
+              stroke: 2.2pt + palette.text-muted,
+              fill: rgb("#faf8f4"),
+            )
+          ]
+          // tense zone on "front" (left of silhouette as anterior in 2D cartoon)
+          #place(top + center, dy: 14mm)[
+            #box(
+              width: 22mm,
+              height: 28mm,
+              radius: 6mm,
+              fill: rgb("#fecaca"),
+              stroke: 1.5pt + palette.danger,
+            )[
+              #align(center + horizon)[
+                #text(size: 7pt, weight: "bold", fill: palette.danger)[prall / hart]
+              ]
+            ]
+          ]
+          #place(bottom + center, dy: -2mm)[
+            #text(size: 6.5pt, fill: palette.text-muted)[Unterschenkel · Schema]
+          ]
+        ],
+      )
+    ],
+  )
 
-  v(2pt)
-  align(center)[
-    #text(size: 7.5pt, fill: palette.text-muted)[
-      äußerer Ring = unnachgiebige Begrenzung (Prinzip) · Kern = steigender Druck
-    ]
-  ]
-
-  v(6pt)
+  v(8pt)
+  // Three clinical chips — short, no anatomy
   grid(
     columns: (1fr, 1fr, 1fr),
     column-gutter: 4pt,
     block(
-      width: 100%,
-      inset: 7pt,
-      radius: 2pt,
-      fill: rgb("#fff7ed"),
+      width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#fff7ed"),
       stroke: (top: 3pt + palette.warning, rest: 0.4pt + palette.border),
     )[
       #text(size: 7.5pt, weight: "bold", fill: palette.warning)[Disproportional]
-      #v(3pt)
+      #v(2pt)
       #set text(size: 7.2pt)
-      Schmerz ≫ Verletzungsbild
+      Schmerz ≫ Verletzung
     ],
     block(
-      width: 100%,
-      inset: 7pt,
-      radius: 2pt,
-      fill: rgb("#fff7ed"),
+      width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#fff7ed"),
       stroke: (top: 3pt + palette.warning, rest: 0.4pt + palette.border),
     )[
-      #text(size: 7.5pt, weight: "bold", fill: palette.warning)[Dehnung]
-      #v(3pt)
+      #text(size: 7.5pt, weight: "bold", fill: palette.warning)[Dehnungsschmerz]
+      #v(2pt)
       #set text(size: 7.2pt)
-      Passiv massiv schmerzhaft
+      Passiv massiv
     ],
     block(
-      width: 100%,
-      inset: 7pt,
-      radius: 2pt,
-      fill: rgb("#fff7ed"),
+      width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#fff7ed"),
       stroke: (top: 3pt + palette.warning, rest: 0.4pt + palette.border),
     )[
       #text(size: 7.5pt, weight: "bold", fill: palette.warning)[Bretthart]
-      #v(3pt)
+      #v(2pt)
       #set text(size: 7.2pt)
-      Loge prall-hart (Prinzip)
+      Loge prall-hart
     ],
   )
 
-  v(4pt)
+  v(5pt)
   block(
-    width: 100%,
-    inset: 7pt,
-    radius: 2pt,
-    fill: rgb("#fef2f2"),
+    width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#fef2f2"),
     stroke: (left: 3.5pt + palette.danger, rest: 0.45pt + palette.danger.lighten(40%)),
   )[
     #set text(size: 8pt)
-    #text(weight: "bold", fill: palette.danger)[Pulse schließen ACS *nicht* aus]
-    #text(fill: palette.text-body)[ — erhaltene Pulse entwarnen nicht.]
+    #text(weight: "bold", fill: palette.danger)[Pulse schließen ACS *nicht* aus.]
+    #text[ Erhaltene Pulse entwarnen nicht.]
   ]
 
   v(3pt)
   block(
-    width: 100%,
-    inset: 6pt,
-    radius: 2pt,
-    fill: palette.bg-subtle,
+    width: 100%, inset: 6pt, radius: 2pt, fill: palette.bg-subtle,
     stroke: 0.4pt + palette.border,
   )[
     #set text(size: 7.5pt)
-    #text(weight: "bold")[Handlung (kurz):]
+    #text(weight: "bold")[Handlung:]
     PT abbrechen · Verband lockern · *nicht* über Herzhöhe lagern · Notaufnahme/Unfallchirurgie
   ]
 }
