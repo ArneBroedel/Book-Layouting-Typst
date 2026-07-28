@@ -60,7 +60,7 @@ Brief: `briefs/kl-melanom.brief.md`
 | Schlaganfall | nested multi-T1 + mimic | **`kl-fast-look` densified code** (free PNG demoted) | `lib/stroke.typ` → `fast-stroke-code()` |
 | Anaphylaxie | nested 5×T1 + mimic | optional later | `lib/anaphylaxie.typ` |
 | Suizidalität | nested T1 + T2 psych path | **code-only safety chrome** (no free vision) | `lib/suicid.typ` · recipe `kl-safety-chrome` |
-| Kompartment | T1/T2/T4 + mimic | **principle schematic** (not atlas anatomy) | `spatial-compartment-principle()` · optional free `vision-free-gemini-principle-01.png` |
+| Kompartment | T1/T2/T4 + mimic + criteria chips | **no anatomy** (paused) | `us-compartment()` · `criteria-compartment-code()` · `mimic-compartment()` · anatomy free demoted |
 
 Content maps: `domains/medical/briefs/_wave5/*.content-map.md`  
 Spikes: `toolset/compose/spikes/graphics/kl-wave5/` · PDFs `dist/spikes/graphics/kl-wave5/`  

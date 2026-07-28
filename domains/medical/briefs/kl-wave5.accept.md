@@ -17,7 +17,7 @@ Internal Accept for exploration; Human may override any unit.
 | **kl-stroke** | **accept** | nested T1 + mimic code; FAST **code densified** winner (free PNG demoted — empty space) |
 | **kl-anaphylaxie** | **accept** | nested 5×T1 + mimic; Autoinjektor only patienteneigen in pins |
 | **kl-suicid** | **accept** | quiet chrome code only; no free vision; T2 = 24–48h psych one tier |
-| **kl-compartment** | **accept** (revised) | urgency+mimic code; spatial **CeTZ anatomy** winner; hexagon free PNGs **FAIL** (post-mortem) |
+| **kl-compartment** | **accept (non-body)** | urgency+mimic+criteria chips only; **all anatomy free vision demoted** (Human 2026-07-29 pause) |
 
 ## Per unit winners
 

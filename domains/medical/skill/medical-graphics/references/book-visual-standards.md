@@ -49,24 +49,21 @@ When free vision **depicts** a clinical criterion (not only labels it):
 - **No false continuum.** Unlabeled color bars / fake time spectra that do not name what the color means → remove or replace with explicit poles (e.g. Evolution Wochen–Monate vs Jahre unverändert).  
 - Label-only audit is **insufficient** for criteria-by-picture units (ABCDE, size cues, spatial maps).
 
-## Body / patho: principle first, not “complete correct anatomy” (Human 2026-07)
+## Body / anatomy: **pause** unsupervised depictions (Human 2026-07-29)
 
-Anatomy **may** appear in didactic figures. The constraint is **not** “no body shapes ever” — it is:
+After iterative free-vision and code attempts (Kompartment and related), **Human verdict:** unsupervised anatomical / body-structure figures are frequently **absurd or embarrassing** to medical professionals and not Accept-ready for a Fachbuch.
 
-> The **style and detail level** must not create the impression of **completeness and textbook correctness**.
+### Current default (hard until lifted)
 
-AI free vision is especially risky when it looks atlas-like: wrong details then read as “fact”. Lower fidelity (schematic, **comic-ish**, flat) is often better because the figure is clearly a **principle sketch**, not a reference plate.
+| Do | Do not |
+|----|--------|
+| Teach with **non-body** forms: TIME/SCOPE, discrimination, mimic maps, criteria chips, pure mechanism **without** limb/organ drawing | Free vision or agent-coded “anatomy” of limbs, cuts, bones, loges, NV bundles |
+| Patho as **text + abstract process** (if needed) without body silhouette | CT/MRI-style cuts, comic legs, “almost right” fascial shells that still fail professional scrutiny |
+| Optional later: **H-Gfx** / human gold anatomy only after explicit reopen | Treating AI anatomy as “good enough if stylized” |
 
-| Prefer | Avoid |
-|--------|--------|
-| Principle + optional **coarse** body cue (loge, limb outline, saddle zone) | Photoreal / high-detail atlas cuts that invite “is every structure correct?” |
-| Comic / flat / simplified look when body is shown | Micro-accurate cortex, vessels, multi-muscle inventories |
-| Labeled zones, mechanism arrows, few structures | Dense anatomy that pretends to be complete |
-| Code/CeTZ when control matters | Accepting free vision only because it “looks medical” |
+**Rationale:** The sweet spot (schematic but correct relations, not atlas) was **not** reliably hit. Until a human/H-Gfx path exists, **distance from anatomical depiction** is safer than more free-vision retries.
 
-**Rule of thumb:** If a clinician would start **error-hunting anatomy** rather than reading the didactic job, detail is too high — simplify style (more schematic/comic) or pure principle. True high-fidelity reference anatomy → H-Gfx / human gold, not unsupervised free gen.
-
-**Avoid CT/MRI-slice aesthetics** for free didactic figures: axial cuts read as “precision imaging” and make missing/wrong structures especially attackable. Prefer outer silhouettes, zone highlights, or abstract closed-shell metaphors; drop bone-name inventories unless the job truly needs them and style stays obviously incomplete.
+**Not a forever ban of all body cues** — a **pause** on unsupervised production of anatomy. Reopen only with Human + H-Gfx (or proven human-drawn assets).
 
 ## What refine may fix
 

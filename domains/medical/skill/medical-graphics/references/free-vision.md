@@ -20,17 +20,16 @@
 | Fletcher/code screenshots as “copy this” | Same |
 | form ids / catalog shopping | Phase A is not Tech map |
 | “Match our dual-lane SVG” | Use structure-transfer mode only if intentional |
-| **High-detail atlas / photoreal body as free default** | Wrong details read as “complete anatomy” (Human 2026-07) |
+| **Any unsupervised body/anatomy free vision (default)** | Human 2026-07-29: results often absurd / professionally embarrassing; pause |
 
-## Body-related free vision: principle + controlled stylization
+## Body-related free vision: **paused** (default)
 
-Anatomy **is allowed**. Goal is didactic **principle**, not a reference atlas.
+Until explicitly reopened (Human + **H-Gfx** or human-drawn gold):
 
-1. Lead with the **pathological / clinical idea** (pressure in a loge, saddle zone, FAST body parts as symbols).  
-2. If the body appears: keep **detail low** — flat, schematic, or **comic-like** so no one expects completeness/correctness.  
-3. Prefer **one idea** per figure (focus brief).  
-4. If the image invites anatomy error-hunting → re-prompt *lower fidelity* / more comic, or use Typst/CeTZ principle.  
-5. True high-fidelity anatomy for print = H-Gfx / human gold — not unsupervised free gen.
+1. **Do not** free-gen limbs, organ cuts, fascial loges, NV anatomy, “comic legs”, or atlas-lite cuts.  
+2. Prefer **non-body** units: urgency, discrimination, mimic, cue tables, abstract process without body drawing.  
+3. CES/MSCC/saddle-style spatial free vision = **only** if Human reopens H-Gfx path — not agent default.  
+4. Record failed exploration under assets as **provenance demoted**, not winners.
 
 ## Prompt layers
 

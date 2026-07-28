@@ -104,15 +104,16 @@ Copy skeleton + swap claim pins (IV-2 → IV-4). Re-audit free labels always.
 | **Gold** | `kl-wave5/lib/stroke.typ` → `fast-stroke-code()` · form-spec `kl-stroke-fast` · spike `ambition-v2.pdf` |
 | **Anti** | Empty icon wells + tiny text; Typst-as-free after 429; T as tongue; ABCD² home algorithm |
 
-### `kl-spatial-compartment`
+### `kl-spatial-compartment` — **anatomy free paused** (2026-07-29)
 
 | | |
 |---|---|
 | **When** | Acute compartment syndrome — hour-critical limb ischemia |
-| **Must-see** | **Principle:** pressure in a closed loge; disproportional + stretch + board-hard; **pulses do not exclude**; not elevate above heart |
-| **Default realize** | Principle schematic (`spatial-compartment-principle`) and/or **low-detail / comic** free vision of limb/loge — not high-detail atlas |
-| **Gold** | `spatial-compartment-principle()` · optional stylized free · form-spec `kl-compartment-spatial` |
-| **Anti** | High-detail free “correct” cuts; multi-vignette clutter; invent 6P/mmHg; ban of *all* body shapes (too hard) |
+| **Must-see (non-body)** | Urgency T1/T2/T4 + SCOPE; Kernzeichen as **text chips**; Pulse-Fallstrick; no elevation; mimic |
+| **Default realize** | **No anatomy free vision / no body schematic.** `us-compartment()` + `criteria-compartment-code()` + `mimic-compartment()` |
+| **Gold** | non-body spike `compartment-nonbody.pdf` · form-specs urgency/mimic |
+| **Anti** | Shipping demoted anatomy PNG series; free expansion calves; CT cuts; toy rings as “anatomy” |
+| **Reopen** | Human + **H-Gfx** only |
 
 ### `kl-safety-chrome` (Suizidalität)
 

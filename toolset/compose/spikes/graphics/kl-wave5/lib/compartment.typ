@@ -367,15 +367,188 @@
   ]
 }
 
-/// Default spatial unit for textbook: principle schematic (not atlas anatomy)
-#let spatial-compartment() = {
-  spatial-compartment-principle()
+// ── PATHOPHYSIOLOGY sweet spot (textbook level) ───────────────
+// Human critique: not toy-simple; not atlas-cut; not free expansion of calf.
+// Core: unyielding fascia encloses muscle + NV; volume cannot escape → P↑ inside.
+// Style: medical schematic (thick lines, flat fills) — correct *relations*, incomplete anatomy.
+
+#let spatial-compartment-patho() = {
+  set text(size: 8.5pt)
+
+  text(size: 11pt, weight: "bold", fill: palette.primary-dark)[
+    Akutes Kompartmentsyndrom · pathophysiologisches Prinzip
+  ]
+  v(2pt)
+  text(size: 7.5pt, fill: palette.text-muted)[
+    Unnachgiebige Faszienloge · Inhalt (Muskel, Gefäß, Nerv) · Volumen kann nicht ausweichen → Druck steigen.
+    Schematisch — *kein* Atlas, *kein* MRT-Schnitt.
+  ]
+  v(6pt)
+
+  // Main diagram: rigid shell + content + NV + pressure against wall
+  align(center)[
+    #block(
+      width: 100%,
+      inset: 10pt,
+      radius: 3pt,
+      fill: rgb("#faf9f6"),
+      stroke: 0.5pt + palette.border,
+    )[
+      #align(center)[
+        // Outer fascia ring (rigid) — thick cool stroke
+        #box(
+          width: 92mm,
+          height: 72mm,
+          radius: 8pt,
+          stroke: 3.2pt + rgb("#475569"),
+          fill: white,
+          inset: 5mm,
+        )[
+          // Muscle mass fills most of interior
+          #box(
+            width: 100%,
+            height: 100%,
+            radius: 5pt,
+            fill: gradient.linear(rgb("#fecaca"), rgb("#fca5a5"), angle: 90deg),
+            stroke: 0.6pt + palette.danger.lighten(30%),
+            inset: (x: 8pt, y: 6pt),
+          )[
+            #grid(
+              columns: (1fr, auto),
+              column-gutter: 6pt,
+              align(horizon)[
+                #stack(
+                  spacing: 3pt,
+                  text(size: 9pt, weight: "bold", fill: palette.danger.darken(10%))[Muskulatur],
+                  text(size: 7pt, fill: palette.text-body)[(Inhalt der Loge)],
+                  v(4pt),
+                  // pressure against wall: arrows toward perimeter (not free expansion)
+                  text(size: 8pt, weight: "bold", fill: palette.danger)[Druck ↑ *innen*],
+                  text(size: 6.5pt, fill: palette.text-muted)[gegen die unnachgiebige Wand],
+                )
+              ],
+              align(horizon)[
+                // NV bundle schematic — threatened
+                #box(
+                  inset: 6pt,
+                  radius: 3pt,
+                  fill: white,
+                  stroke: 1pt + palette.warning,
+                )[
+                  #stack(
+                    spacing: 3pt,
+                    text(size: 7pt, weight: "bold", fill: palette.warning)[bedroht:],
+                    // vessel
+                    box(
+                      width: 18mm, height: 3.5mm, radius: 1.5mm,
+                      fill: rgb("#dc2626").lighten(40%),
+                      stroke: 0.6pt + palette.danger,
+                    ),
+                    text(size: 6.5pt)[Gefäß],
+                    v(1pt),
+                    // nerve
+                    box(
+                      width: 18mm, height: 3.5mm, radius: 1.5mm,
+                      fill: rgb("#fbbf24").lighten(30%),
+                      stroke: 0.6pt + palette.warning,
+                    ),
+                    text(size: 6.5pt)[Nerv],
+                  )
+                ]
+              ],
+            )
+          ]
+        ]
+      ]
+      #v(3pt)
+      #align(center)[
+        #text(size: 7.5pt, weight: "bold", fill: rgb("#334155"))[
+          äußerer Rahmen = Faszie (unnachgiebig) · nicht dehnbare Hülle
+        ]
+      ]
+    ]
+  ]
+
+  v(5pt)
+  // Mechanism strip: the key contrast
+  grid(
+    columns: (1fr, auto, 1fr),
+    column-gutter: 4pt,
+    block(
+      width: 100%, inset: 7pt, radius: 2pt,
+      fill: palette.bg-subtle, stroke: 0.45pt + palette.border,
+    )[
+      #text(size: 7.5pt, weight: "bold", fill: palette.text-muted)[Wenn die Hülle *nachgiebig* wäre…]
+      #v(3pt)
+      #set text(size: 7.2pt)
+      Volumen↑ → Bein *würde* dicker · Druck bliebe eher niedrig
+    ],
+    align(center + horizon)[
+      #text(size: 14pt, fill: palette.danger, weight: "bold")[→]
+    ],
+    block(
+      width: 100%, inset: 7pt, radius: 2pt,
+      fill: rgb("#fef2f2"), stroke: (left: 3.5pt + palette.danger, rest: 0.45pt + palette.danger.lighten(40%)),
+    )[
+      #text(size: 7.5pt, weight: "bold", fill: palette.danger)[Faszie hält starr]
+      #v(3pt)
+      #set text(size: 7.2pt)
+      Volumen↑ *ohne* Ausweichraum → *Druck steigt* → Ischämie / Nervenschaden
+    ],
+  )
+
+  v(5pt)
+  // Clinical triad + pulse — compact
+  grid(
+    columns: (1.2fr, 1fr),
+    column-gutter: 5pt,
+    block(
+      width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#fff7ed"),
+      stroke: (top: 3pt + palette.warning, rest: 0.4pt + palette.border),
+    )[
+      #text(size: 8pt, weight: "bold", fill: palette.warning)[Klinische Hinweise]
+      #v(3pt)
+      #set text(size: 7.3pt)
+      #list(tight: true,
+        [Disproportionaler Schmerz],
+        [Passiver Dehnungsschmerz],
+        [Brettharte Loge],
+      )
+    ],
+    block(
+      width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#fef2f2"),
+      stroke: (top: 3pt + palette.danger, rest: 0.4pt + palette.border),
+    )[
+      #text(size: 8pt, weight: "bold", fill: palette.danger)[Fallstrick]
+      #v(3pt)
+      #set text(size: 7.3pt)
+      Erhaltene Pulse schließen ACS *nicht* aus — Kapillarperfusion im Fach kann schon kritisch sein.
+    ],
+  )
+
+  v(4pt)
+  block(
+    width: 100%, inset: 7pt, radius: 2pt, fill: rgb("#f0fdfa"),
+    stroke: (left: 3pt + palette.primary, rest: 0.4pt + palette.border),
+  )[
+    #set text(size: 7.5pt)
+    #text(weight: "bold", fill: palette.primary)[Handlung:]
+    PT abbrechen · Verband lockern/öffnen · *nicht* über Herzhöhe lagern · Notaufnahme/Unfallchirurgie (bei rascher Verschlechterung 112)
+  ]
+
+  v(3pt)
+  text(size: 6.5pt, fill: palette.text-muted)[
+    Didaktische Prinzipfigur — unvollständig absichtlich; Topologie der *Beziehungen* (Hülle–Inhalt–NV–Druck) steht im Vordergrund.
+  ]
 }
 
-// ── Spatial PRINCIPLE (textbook default) ──────────────────────
+/// Default "spatial" unit: non-body clinical criteria (anatomy free paused 2026-07-29)
+#let spatial-compartment() = {
+  criteria-compartment-code()
+}
+
+// ── Spatial PRINCIPLE (minimal; demoted if too toy-like) ─────
 // Human: no CT/MRI-slice look, no bone inventory labels.
-// Essential only: closed shell + pressure + optional 3 clinical chips.
-// Not attackable as wrong osteology.
 
 #let spatial-compartment-principle() = {
   set text(size: 8.5pt)

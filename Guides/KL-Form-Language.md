@@ -180,14 +180,13 @@ Text pins can be perfect while the **drawing teaches the wrong criterion**:
 
 **Human review** is especially valuable on icon units; agents still run the icon checklist before Accept. Surgical refine beats full re-generation when layout is already good.
 
-### Body / patho: principle first; anatomy stylized (Human 2026-07)
+### Body / anatomy: pause unsupervised depiction (Human 2026-07-29)
 
-Anatomy in figures is **fine**. What fails is **detail so high** that the image pretends to be complete and correct — free models will still err, and readers read those errors as facts.
+After many free-vision and code attempts (esp. Kompartment), **anatomical body figures were not Accept-ready** — often absurd or professionally embarrassing.
 
-- Lead with the **pathological principle**; body can illustrate it.  
-- Prefer **low detail**: flat, schematic, or **comic-like** so completeness is not implied.  
-- If clinicians start error-hunting anatomy → reduce fidelity or use code principle schematic.  
-- High-fidelity reference anatomy → human / H-Gfx only.
+- **Default:** no unsupervised free vision (or agent “anatomy code”) of limbs, cuts, bones, loges, NV.  
+- **Do instead:** non-body forms (TIME/SCOPE, discrimination, mimic, clinical criteria as text/chips).  
+- **Reopen anatomy only** with Human + **H-Gfx** (or human-drawn gold assets).
 
 ### Transfer hygiene
 
