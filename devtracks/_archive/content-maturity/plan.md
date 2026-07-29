@@ -3,9 +3,11 @@
 **Spec:** [spec.md](spec.md)  
 **Decisions:** [decisions.md](decisions.md)  
 **Gemini review:** [reviews/gemini-r1-r2-2026-07-20.md](reviews/gemini-r1-r2-2026-07-20.md)  
-**Status:** **MVP implemented** (2026-07-20) · optimized after Gemini R1+R2  
+**Status:** **archived** (MVP complete + harvested · 2026-07-29) · optimized after Gemini R1+R2  
 **Product owner (process):** **C** — transitional scaffold in this monorepo  
 **Does not own:** bookkit foundation, form-catalog core, production compose engine  
+**Kit remains:** `domains/content-maturity/` until C split (`SPLIT-CHECKLIST.md`)  
+**v0.4 backlog:** stays in this plan § Backlog B4 (not a reason to keep track active)
 
 ---
 
@@ -219,7 +221,7 @@ Independent review after W2 and W4 recommended.
 | CONSENSUS v0.3 ADRs 27–36 | `devtracks/CONSENSUS-v0.md` |
 | Migration / ownership | `domains/content-maturity/{OWNERSHIP,MIGRATION-TO-C,README}.md` |
 
-*Archive track after Human confirms; kit stays in `domains/content-maturity/` until C split.*
+*Archived 2026-07-29 — kit stays in `domains/content-maturity/` until C split. Sibling `agentic-adaptations` also archived (parallel audit) under `_archive/agentic-adaptations/`; same live kit.*
 
 ---
 
@@ -230,3 +232,4 @@ Independent review after W2 and W4 recommended.
 | 2026-07-20 | Track opened |
 | 2026-07-20 | Optimized after Gemini R1+R2 |
 | 2026-07-20 | **MVP implementation complete** (kit + gates + gold + tests) |
+| 2026-07-29 | **Archived** — MVP DoD met + harvest footer present; `git mv` → `devtracks/_archive/content-maturity/` |

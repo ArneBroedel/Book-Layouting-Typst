@@ -5,8 +5,8 @@
 | **Produkt** | **C** — Content-Werk (process kit, not chapter SoT) |
 | **Heute (transitional)** | `domains/content-maturity/` in Layout monorepo (A) |
 | **Ziel-Repo** | `CONTENT_WORK_REPO` (TBD) — e.g. Kursbuch / editorial kit |
-| **Track** | `devtracks/content-maturity/` |
-| **Decisions** | `devtracks/content-maturity/decisions.md` (D1–D11) |
+| **Track** | `devtracks/_archive/content-maturity/` (MVP archived) |
+| **Decisions** | `devtracks/_archive/content-maturity/decisions.md` (D1–D11) |
 
 ## May change (here / after split in C)
 
@@ -35,4 +35,4 @@
 
 ## Split
 
-See `devtracks/content-maturity/SPLIT-CHECKLIST.md` and `MIGRATION-TO-C.md`.
+See `devtracks/_archive/content-maturity/SPLIT-CHECKLIST.md` and `MIGRATION-TO-C.md` (kit copy).

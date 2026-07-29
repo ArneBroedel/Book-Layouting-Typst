@@ -45,9 +45,6 @@ only tracks with open work (plus durable governance docs that are not “feature
 | Track | Product | Path | Focus |
 |---|---|---|---|
 | **workspace-split** | **A/B/C** (structure) | [`workspace-split/`](workspace-split/) · inventory [`workspace-inventory/`](workspace-inventory/) | **Active:** consolidate monorepo focus; Phase 0–1 done; **next Phase 1b CLI**. Start: `workspace-split/README.md` + `HANDOFF.md` |
-| **content-maturity** | **C** (process; transitional) | [`content-maturity/`](content-maturity/) · kit `domains/content-maturity/` | **MVP done:** Review, Human Freeze, production validate gate, human Proof; Imprimatur→v0.4; split-ready |
-| **agentic-adaptations** | **C** (+ light A/B UX) | [`agentic-adaptations/`](agentic-adaptations/) · kit `domains/content-maturity/` | **MVP done:** evaluate-only, floor, orchestrator, personas, checkpoints, patches, clarity-scan; validate H1 footer |
-| **medical-graphics** | **B** (+ A hooks) | [`medical-graphics/`](medical-graphics/) · skill `domains/medical/skill/medical-graphics/` | Graphics role: code vs asset vs hybrid vs A/B; Decision Note; domain assets; pipeline hooks MVP |
 | **kl-form-language** | **B** | [`kl-form-language/`](kl-form-language/) | Illness-script form language expansion (may harvest into B skills/guides) |
 
 Runtime products (not tracks):
@@ -63,5 +60,6 @@ Runtime products (not tracks):
 **Consumer guide:** [`docs/CONSUMER.md`](../docs/CONSUMER.md).  
 **Pilot dogfood:** `pilots/kursbuch-welle-03-compose/`.
 
-**Recently archived (v0.2):** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` under `_archive/`.  
+**Recently archived:** `medical-graphics` (2026-07-29; skill SoT `domains/medical/skill/medical-graphics/`), `content-maturity` (C process MVP; kit stays `domains/content-maturity/`; v0.4 backlog in archived plan), `agentic-adaptations` (layered on same kit; parallel audit) under `_archive/`.  
+**v0.2 archived:** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` under `_archive/`.  
 Earlier: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx`, …

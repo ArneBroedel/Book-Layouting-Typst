@@ -58,7 +58,7 @@ Lücken werden **gebaut oder bewusst verworfen**, nicht still zu „nur Tabelle�
 - **Compose** nur nach Media-Accept (oder dokumentierter Pilot-Ausnahme): full toolkit inkl. akzeptierter Assets.  
 - **Nicht:** Didaktik-Ideal neu erfinden, wenn ein Brief existiert; Graphic-Modes auf visuellen Units still weglassen.
 
-### Graphics (Mediengrafik) — Track [`medical-graphics`](medical-graphics/)
+### Graphics (Mediengrafik) — Track [`medical-graphics`](_archive/medical-graphics/) (archived; skill SoT live)
 
 - Nach Media Brief, eng mit Tech Feasibility: pro **Visual-Unit** `code` (Default) | `asset` | `hybrid` | `ab-test`.  
 - Produziert **Graphic Decision Note** (`*.graphics.md`), Assets unter `domains/medical/assets/`, A/B-Vergleiche.  
@@ -200,12 +200,12 @@ Brief/Feasibility dürfen YAML/MD sein — sie steuern **Menschen/Agenten**, sie
 
 ---
 
-## Active tracks (v0.2 spine harvested; content loop open)
+## Active tracks (v0.2 spine harvested; content-maturity MVP archived)
 
 | Track | Rolle |
 |---|---|
-| [`content-maturity/`](content-maturity/) | **MVP implemented** — kit `domains/content-maturity/`; freeze gate in compose validate; harvest/archive when Human confirms |
-| [`agentic-adaptations/`](agentic-adaptations/) | **MVP implemented** — evaluate-only, floor, orchestrator, personas, checkpoints, patches, clarity-scan; ADRs 37–42 |
+| [`_archive/content-maturity/`](_archive/content-maturity/) | **MVP archived** — kit `domains/content-maturity/`; freeze gate in compose validate; v0.4 backlog in archived plan |
+| [`_archive/agentic-adaptations/`](_archive/agentic-adaptations/) | **MVP archived** — evaluate-only, floor, orchestrator, personas, checkpoints, patches, clarity-scan; ADRs 37–42 |
 | [`_archive/platform-boundaries/`](_archive/platform-boundaries/) | Produkt A/B/C, Ordner, Split-Vorbereitung |
 | [`_archive/form-catalog/`](_archive/form-catalog/) | Shared spine: core whitelist + (domain) recipes |
 | [`_archive/media-design/`](_archive/media-design/) | Media-Rolle; **Implementierungspfad:** `domains/medical/` (B) |

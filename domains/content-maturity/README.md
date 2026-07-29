@@ -2,7 +2,8 @@
 
 **Transitional home** for the Content-Reife-Schleife. **Not** a content Source of Truth.
 
-Governing: `devtracks/content-maturity/` · Decisions: `decisions.md` · Spec: `spec.md`
+Governing (archived track): `devtracks/_archive/content-maturity/` · Decisions / Spec live with that track.  
+**Live kit** is this directory. **v0.4 backlog** (imprimatur hard-gate, full medical profile, …): see archived plan § Backlog B4.
 
 ## MVP flow (v0.3) + agentic adaptations
 

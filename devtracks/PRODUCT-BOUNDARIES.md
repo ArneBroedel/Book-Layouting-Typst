@@ -36,7 +36,7 @@ Optional: Multi-root **Workspace-Datei** nur als UX (kein viertes Produkt).
 | compose validator engine, `compose-chapter` skill | A | `toolset/compose/`, `toolset/skill-pack/compose-chapter/` |
 | Genre-Rezepte Medizin, Gold-Briefs, `media-brief` / `medical-graphics` skills, Domain-Assets | B | `domains/medical/` → später eigenes Repo |
 | Kapitel-MD, Claims, Content-SoT | C | **extern** (Kursbuch-Repo) — nie dauerhaft hier |
-| Content-Reife-Prozess (Review, Freeze, Proof, Imprimatur) | C | Track [`content-maturity/`](content-maturity/); Scaffold **`domains/content-maturity/`** (nur Prozess/Skills/Fixtures) → **Split nach C** |
+| Content-Reife-Prozess (Review, Freeze, Proof, Imprimatur) | C | Track [`_archive/content-maturity/`](_archive/content-maturity/); Scaffold **`domains/content-maturity/`** (nur Prozess/Skills/Fixtures) → **Split nach C** |
 | pilots die **nur** Plattform dogfooden | A | `pilots/` (austauschbar, nicht Content-SoT) |
 | Kursbuch-Layout-Outputs | A oder B | `pilots/kursbuch-*` = **consumer dogfood**, Content bleibt C |
 
@@ -65,7 +65,7 @@ Analog Domain-Media (B): Prozess-Kit darf hier **vorbereitet** werden, muss aber
 
 1. unter `domains/content-maturity/` bleiben (nicht `packages/`, nicht `toolset/compose` als Engine-Heimat),  
 2. **keine** Kapitel-SoT enthalten (nur synthetische Fixtures),  
-3. bei Split-Trigger nach **C** wandern (`content-maturity/SPLIT-CHECKLIST.md`).  
+3. bei Split-Trigger nach **C** wandern (`_archive/content-maturity/SPLIT-CHECKLIST.md`).  
 
 A behält höchstens **Gates** (z. B. Freeze/Revision-Pins in compose docs/CLI). B behält Freeze als Voraussetzung für Production-Briefs.
 
