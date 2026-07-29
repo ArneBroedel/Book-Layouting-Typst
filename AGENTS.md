@@ -43,13 +43,15 @@ Project skills encode hard-won conventions and **supersede general Typst advice*
 
 | Skill | When |
 |---|---|
+| **`studio`** | **Default front door** (`/studio`): guided intake, situation menu, route to the right skill/CLI — use when unsure how to start |
 | `typst-writer` | Any `.typ` create/edit, compile-error fix, layout-defect debug |
 | `typst-extension` | Any `@preview` import, JSON/CSV data, `typst.toml`/CI, package choice |
 | `bookkit` | Importing bookkit packages, starter/CLI consumer work, design-brief/presets |
 | `compose-chapter` | Tech compose: feasibility note, catalog-whitelist `chapter.typ`, spike, validate chapter (Produkt A) — **not** free didactic ideal / gold brief |
-| `book-production-orchestrator` | **Top-level** full-book drive: board + run-log, where/next/rollback, kickoff→print, autonomous L0–L3 between Human gates — **not** claim rewrite or specialist work without routing |
+| `book-production-orchestrator` | **Full-book** durable drive: board + run-log, kickoff→print, L0–L3 between Human gates — after `/studio` chooses full book, or direct kickoff |
 | `media-brief` | Media Brief + **Form Spec** for ambitious visual units, free didactic ideal, Accept after feasibility/spike/graphics; **KL Illness Script** ontology + form-space process (Produkt B) — **not** production `.typ` or free-vision PNG gen |
 | `medical-graphics` | After Form Spec/Brief: free vision → **claim audit** → recreate/hybrid/refine (playbook); **KL form library** (urgency/mimic/spatial); raster end only gated; Decision Note; domain assets (Produkt B) — **not** Form Spec authorship or full compose |
+| `content-orchestrator` / `content-review` | Content maturity C1–C4 (Produkt C process) |
 | `pinit-workflow` | Any `#pin*` / pinit annotation work |
 | `skill-creator` | Create, improve, evaluate, or harvest skills |
 
@@ -127,7 +129,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 **Flow (v0.2):** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.  
 **Flow (v0.3 target):** C draft → **content-review / freeze** → B brief → A compose path → **proof / imprimatur** → print. Spec: `devtracks/_archive/content-maturity/`.
 
-**Skill gate:** **`book-production-orchestrator`** (full book board → print; runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`); `media-brief` (Form Spec) + **`medical-graphics`** playbook (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`). Graphics guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`. Human checkpoints: `domains/content-maturity/checkpoints.md` (optional **H-Gfx**). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content.
+**Skill gate:** **`studio`** (`/studio`) for guided intake when the path is unclear; **`book-production-orchestrator`** for full-book board → print (runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`); `media-brief` (Form Spec) + **`medical-graphics`** playbook (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`). Graphics guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`. Human checkpoints: `domains/content-maturity/checkpoints.md` (optional **H-Gfx**). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 

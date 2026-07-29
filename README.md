@@ -95,11 +95,13 @@ Prefer **project skills** over generic Typst advice. Discovery: `.github/skills/
 
 | Skill | When |
 |---|---|
+| **`studio`** (`/studio`) | **Start here** — guided intake, situation menu, routes the right workflow |
+| `book-production-orchestrator` | full-book board → print (after studio or direct kickoff) |
 | `bookkit` | packages, starter, full CLI |
 | `compose-chapter` | feasibility → compose → `bookkit validate` |
 | `typst-writer` | any `.typ` edit / layout debug |
 | `media-brief` / `medical-graphics` | domain B (SoT under `domains/medical/skill/`) |
-| `book-production-orchestrator` | full-book board → print |
+| `content-orchestrator` / `content-review` | content maturity (C) |
 
 Prefer **`./scripts/bookkit …`** over hunting ad-hoc scripts.
 

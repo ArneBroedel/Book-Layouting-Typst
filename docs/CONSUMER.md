@@ -134,6 +134,8 @@ Fail-fast, no auto-heal. Full options: [`toolset/compose/README.md`](../toolset/
 
 | Skill | Produkt | When |
 |---|---|---|
+| **`studio`** (`/studio`) | A meta | **Default intake** when the path is unclear; routes full-book / chapter / content / graphics |
+| `book-production-orchestrator` | A meta | Multi-chapter board → print |
 | `bookkit` | A | Importing packages, starter/CLI, design-brief, didactics facet |
 | `compose-chapter` | A | Feasibility, creative-first `chapter.typ` (full toolkit), spike, validate |
 | `typst-writer` | A | Any `.typ` create/edit or layout debug |

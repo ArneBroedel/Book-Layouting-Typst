@@ -6,7 +6,8 @@ description: "ALWAYS use to route Content-Reife phases C1–C4: draft/review/fre
 # content-orchestrator (Produkt C — thin router)
 
 **Route only.** Emits a **route card**; does not replace specialist skills.  
-For **full-book production** (Form Spec → graphics → compose → print), prefer **`book-production-orchestrator`** after freeze.
+For **full-book production** (Form Spec → graphics → compose → print), prefer **`book-production-orchestrator`** after freeze.  
+If the user is **unsure of the overall path**, start with **`studio`** (`/studio`) — it routes here for C-only work.
 
 **SoT:** `domains/content-maturity/skill/content-orchestrator/`  
 **Checkpoints:** `domains/content-maturity/checkpoints.md`  
@@ -71,5 +72,6 @@ For **full-book production** (Form Spec → graphics → compose → print), pre
 | media-brief | `domains/medical/skill/media-brief/` |
 | medical-graphics | `domains/medical/skill/medical-graphics/` |
 | compose-chapter | `toolset/skill-pack/compose-chapter/` |
+| **studio** (guided intake / slash front door) | `toolset/skill-pack/studio/` |
 | **book-production-orchestrator** (full book → print) | `toolset/skill-pack/book-production-orchestrator/` |
 | Track (archived) | `devtracks/_archive/agentic-adaptations/` |

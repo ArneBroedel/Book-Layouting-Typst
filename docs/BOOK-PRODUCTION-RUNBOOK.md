@@ -16,14 +16,23 @@
 
 | Question | Answer |
 |---|---|
-| Who keeps the overview? | **Orchestrator** via `board.md` + `run-log.md` |
+| **Where do I start if unsure?** | Slash **`/studio`** (skill `studio`) — intake menu, then routes here or to specialists |
+| Who keeps the full-book overview? | **`book-production-orchestrator`** via `board.md` + `run-log.md` |
 | Step-by-step inside graphics? | **medical-graphics** playbook 00–08 |
-| Do I remember the whole flow? | **No** — ask *“status board &lt;book-id&gt;”* or *“what next?”* |
+| Do I remember the whole flow? | **No** — ask *“status board &lt;book-id&gt;”* or *“what next?”* / `/studio status` |
 | Fully autonomous? | **Yes at L2/L3**, stopping at Human gates |
 
 ---
 
 ## Start (paste to agent)
+
+**Easiest (recommended):**
+
+```text
+/studio
+```
+
+Then answer the menu (full book / one chapter / content only / …). For a known full-book drive you can skip intake:
 
 ```text
 Skill: book-production-orchestrator

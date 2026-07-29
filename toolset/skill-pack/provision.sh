@@ -54,6 +54,18 @@ if src="$(resolve_skill_src compose-chapter \
   provision_skill compose-chapter "$src"
 fi
 
+# Guided front door (A meta) — intake / slash /studio
+if src="$(resolve_skill_src studio \
+    "$Root/toolset/skill-pack/studio")"; then
+  provision_skill studio "$src"
+fi
+
+# Full-book board orchestrator (A meta)
+if src="$(resolve_skill_src book-production-orchestrator \
+    "$Root/toolset/skill-pack/book-production-orchestrator")"; then
+  provision_skill book-production-orchestrator "$src"
+fi
+
 # Domain Media skill (B) — SoT under domains/medical; skill-pack may hold a symlink
 if src="$(resolve_skill_src media-brief \
     "$Root/domains/medical/skill/media-brief" \

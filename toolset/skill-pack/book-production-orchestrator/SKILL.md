@@ -26,10 +26,13 @@ Keeps **overview**, **documents every step**, answers **where are we / what's ne
 
 | Situation | Use instead |
 |---|---|
+| User unsure which path / wants guided intake / `/studio` | **`studio`** (front door) — then hand off here for full-book |
 | Only C1–C2 review rounds on one draft | `content-orchestrator` / `content-review` |
 | Only write Form Spec / free vision / compose | specialist skill directly |
 | Rewrite clinical text | Content (C) / author |
 | Sign freeze/proof/imprimatur | **Human** |
+
+**Relationship to `studio`:** `studio` is the **intake / situation menu** for any goal. This skill owns the **durable multi-chapter board (P0–P11)** after full-book production is chosen (or resumed).
 
 ## Relationship to `content-orchestrator`
 
@@ -257,12 +260,15 @@ print_target: screen | print-pdfx | both
 Use skill book-production-orchestrator: create board, plan with me, then drive.
 ```
 
+Prefer **`/studio`** if the user has not yet chosen full-book vs single-chapter vs content-only.
+
 ---
 
 ## Related
 
 | | |
 |---|---|
+| **Front door / intake** | `toolset/skill-pack/studio/` · slash `/studio` |
 | Runbook | `docs/BOOK-PRODUCTION-RUNBOOK.md` |
 | Graphics playbook | `domains/medical/skill/medical-graphics/playbook/` |
 | Media | `domains/medical/skill/media-brief/` |
