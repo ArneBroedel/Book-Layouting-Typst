@@ -1,9 +1,10 @@
 # Spec: Mediengrafik / Didaktische Inhaltsgrafiken
 
-**Status:** active (MVP)  
+**Status:** complete — archived 2026-07-29  
 **Produkt:** B (Domain Medical) + Hooks in A (compose ladder)  
-**Skill:** `medical-graphics`  
-**Rolle:** **Graphics** (Mediengrafik)
+**Skill:** `medical-graphics` (SoT: `domains/medical/skill/medical-graphics/`)  
+**Rolle:** **Graphics** (Mediengrafik)  
+**Provenance:** `devtracks/_archive/medical-graphics/`
 
 ## Objective
 
@@ -67,11 +68,13 @@ Nicht primär Anatomie-Atlas: **allgemeine grafische Inhaltsvermittlung** (Flows
 4. Asset folder convention + license/DPI notes.  
 5. Governance (ROLES, PRODUCT-BOUNDARIES, AGENTS) names the role.  
 
-Gold A/B pilot against a real brief may follow in a later phase (not blocking skill ship).
+Gold A/B pilot against a real brief may follow in a later phase (not blocking skill ship).  
+**Post-MVP (done before archive):** free-first ladder, claim audit, playbook 00–09, Form Spec handoff, multi-unit gold corpus, skill-creator evals.
 
 ## Related
 
 - `media-brief`, `compose-chapter`, `CREATIVE-COMPOSE.md`  
 - `devtracks/PRODUCT-BOUNDARIES.md`, `ROLES-AND-FLOW.md`, `CONSENSUS-v0.md`  
 - Image embed helpers (image-flow archive / figures components)  
-- `scripts/check-image-dpi.py`
+- `scripts/check-image-dpi.py`  
+- Continued KL expansion: `devtracks/kl-form-language/`  

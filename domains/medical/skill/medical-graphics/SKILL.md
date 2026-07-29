@@ -161,4 +161,4 @@ Criteria icons may look right while teaching wrong (Melanom B/D) → **illustrat
 
 Produkt **B**. Do not fold medical free-vision logic into `packages/bookkit`.
 
-**Background:** `Guides/Medical-Graphics-Playbook.md` · Track `devtracks/medical-graphics/`
+**Background:** `Guides/Medical-Graphics-Playbook.md` · Track `devtracks/_archive/medical-graphics/`

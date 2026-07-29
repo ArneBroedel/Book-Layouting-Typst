@@ -183,14 +183,18 @@ dist/spikes/graphics/kl-wave5/
 
 ---
 
-## Status
+## Status (updated 2026-07-29)
+
+Wave-5 campaign **complete** for exploration scope. Do not re-run as open phases unless Human reopens a unit.
 
 | Phase | Status |
 |-------|--------|
 | 0 Plan | **done** (this file) |
-| 1 Content maps | next |
-| 2 Specs | pending |
-| 3 Grammar | pending |
-| 4 Ambition | pending |
-| 5 Eval | pending |
-| 6 Harvest | pending |
+| 1 Content maps | **done** — `domains/medical/briefs/_wave5/*.content-map.md` (5 monographs) |
+| 2 Specs | **done** — briefs/form-specs (gold kept top-level for stroke/compartment; MI/anaphylaxie/suicid → `briefs/_archive/`) |
+| 3 Grammar | **done** — `toolset/compose/spikes/graphics/kl-wave5/lib/{mi,stroke,anaphylaxie,suicid,compartment}.typ` + spike-grammar*.typ |
+| 4 Ambition | **done** — FAST + compartment free vision attempted; winners demoted to **code** (see accept + postmortem) |
+| 5 Eval | **done** — Accept pack `briefs/_archive/kl-wave5.accept.md` (compartment non-body after anatomy pause) |
+| 6 Harvest | **done** — library recipes `kl-fast-look`, `kl-safety-chrome`, nested multi-T1; anatomy pause into skills/standards |
+
+**Residual (not incomplete Wave-5):** further non-body monograph transfers live on parent track `plan.md` Next work; anatomy only via H-Gfx if reopened.

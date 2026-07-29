@@ -43,7 +43,7 @@ Edit the skill **only** under `domains/medical/skill/media-brief/`. Do not dupli
 | **Template** | [`templates/graphic-decision.template.md`](templates/graphic-decision.template.md) |
 | **Assets** | [`assets/`](assets/) |
 | **Discovery** | `.github/skills/medical-graphics`, `.grok/skills/medical-graphics`, `toolset/skill-pack/medical-graphics` |
-| **Track** | `devtracks/medical-graphics/` |
+| **Track (archived)** | `devtracks/_archive/medical-graphics/` · active expansion: `devtracks/kl-form-language/` |
 
 Edit only under `domains/medical/skill/medical-graphics/`.
 

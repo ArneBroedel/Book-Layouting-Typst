@@ -274,7 +274,7 @@
 | `templates/*` | review, freeze, proof, patch, route-card, scope, imprimatur |
 | `examples/*`, `fixtures/*` | Synthetische Demos (anaphylaxis-lite, agentic) |
 | `checkpoints.md`, `OWNERSHIP.md`, `MIGRATION-TO-C.md` | Prozess + Split |
-| `devtracks/content-maturity/*`, `agentic-adaptations/*` | Spec/Plan/Split-Checklist |
+| `devtracks/_archive/content-maturity/*`, `_archive/agentic-adaptations/*` | Spec/Plan/Split-Checklist (MVP archived 2026-07-29) |
 
 **Konsolidierung:** Split nach C laut vorhandener Checklist; in A nur **Freeze-Gate-Hooks** im Compose-Validator behalten.
 
@@ -616,7 +616,7 @@ Pins: `bookkit` SemVer, `form-catalog` VERSION, `content_revision`, asset paths 
 | Noise-Kandidaten | `devtracks/workspace-inventory/noise-candidates.tsv` |
 | Bestehende Grenzen | `devtracks/PRODUCT-BOUNDARIES.md` |
 | Rollen/Flow | `devtracks/CONSENSUS-v0.md` |
-| C-Split | `devtracks/content-maturity/SPLIT-CHECKLIST.md` |
+| C-Split | `devtracks/_archive/content-maturity/SPLIT-CHECKLIST.md` |
 
 Zum Regenerieren des Indexes:
 

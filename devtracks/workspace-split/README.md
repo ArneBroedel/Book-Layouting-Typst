@@ -39,7 +39,7 @@
 |---|---|
 | Product A/B/C | `devtracks/PRODUCT-BOUNDARIES.md` |
 | Roles / Accept / no auto-heal | `devtracks/CONSENSUS-v0.md` |
-| C extract checklist | `devtracks/content-maturity/SPLIT-CHECKLIST.md` |
+| C extract checklist | `devtracks/_archive/content-maturity/SPLIT-CHECKLIST.md` |
 | Gold briefs | `domains/medical/briefs/INDEX.md` |
 | Asset policy | `domains/medical/assets/CANONICAL.md` |
 | Compose policy | `toolset/compose/CREATIVE-COMPOSE.md` |
@@ -49,8 +49,8 @@
 | Phase | Status |
 |---|---|
 | 0 Inventar + Plan | **done** |
-| 1 Hygiene (purge, archive, gitignore, tag) | **done** (commit `2c97faf` area; tag `archive/assets-pre-purge-2026-07-29`) |
-| 1b Unified CLI | **open — start here** |
+| 1 Hygiene (purge, archive, gitignore, tag) | **done** (`b437aad` purge/archive, `2c97faf` policy/inventory; tag `archive/assets-pre-purge-2026-07-29` → `093442c`) |
+| 1b Unified CLI | **open — start here** (not implemented; `ec97338` only added phase docs) |
 | 2 Boundaries + harvest | open |
 | 3 Physical split | **blocked** until trigger (D2) |
 | 4 Skills + docs polish | open (can parallel 1b/2) |

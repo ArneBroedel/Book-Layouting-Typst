@@ -1,6 +1,6 @@
 # Migration: content-maturity process → Content-Werk (C)
 
-When split triggers fire (`devtracks/content-maturity/SPLIT-CHECKLIST.md`):
+When split triggers fire (`devtracks/_archive/content-maturity/SPLIT-CHECKLIST.md`):
 
 ## Move
 

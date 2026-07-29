@@ -1,7 +1,7 @@
 # Plan: Agentic Adaptations
 
 **Spec:** [spec.md](spec.md) · **Matrix:** [adoption-matrix.md](adoption-matrix.md)  
-**Status:** **MVP implemented** (2026-07-20)  
+**Status:** **Archived** (MVP implemented 2026-07-20 · audit-confirmed 2026-07-29)  
 **Depends on:** content-maturity MVP kit (`domains/content-maturity/`)  
 **Product:** primarily **C** process; light A/B documentation + validate H1 footer  
 
@@ -68,7 +68,7 @@ Land Genesis-inspired patterns **A1–A7** under `domains/content-maturity/`, wi
 | ADRs 37–42 | `devtracks/CONSENSUS-v0.md` |
 | Gold path | `domains/content-maturity/examples/agentic-adaptations/` |
 
-*Archive track after Human confirms; kit remains under `domains/content-maturity/` until C split.*
+*Kit remains under `domains/content-maturity/` until C split. Track archived to `devtracks/_archive/agentic-adaptations/` (audit 2026-07-29).*
 
 ---
 
@@ -78,3 +78,4 @@ Land Genesis-inspired patterns **A1–A7** under `domains/content-maturity/`, wi
 |---|---|
 | 2026-07-20 | Track opened |
 | 2026-07-20 | **MVP implementation complete** |
+| 2026-07-29 | Audit: all DoD paths verified on disk; harvest destinations consistent; **archived** → `devtracks/_archive/agentic-adaptations/` |

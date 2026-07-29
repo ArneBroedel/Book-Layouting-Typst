@@ -8,7 +8,7 @@ description: "ALWAYS use for Content-Reife / Lektorat on manuscript: draft revie
 Executable procedure for **Content-Review** (Q1/Q2 lite) before production Media/Compose.
 
 **SoT:** `domains/content-maturity/skill/content-review/`  
-**Decisions:** `devtracks/content-maturity/decisions.md`, `devtracks/agentic-adaptations/decisions.md`  
+**Decisions:** `devtracks/_archive/content-maturity/decisions.md`, `devtracks/_archive/agentic-adaptations/decisions.md`  
 **Checkpoints:** `domains/content-maturity/checkpoints.md`  
 **Not** Media (B). **Not** Tech compose (A). **Not** pure routing (`content-orchestrator`).
 
@@ -110,4 +110,4 @@ Same session: if you wrote patches last turn, prefer a **new** evaluate-only rep
 | Templates | `templates/review-report`, `content-patch`, `freeze-record` |
 | Checklists | `checklists/core/*` |
 | Gold | `examples/demo-anaphylaxis-lite/`, `examples/agentic-adaptations/` |
-| Tracks | `devtracks/content-maturity/`, `devtracks/agentic-adaptations/` |
+| Tracks (archived) | `devtracks/_archive/content-maturity/`, `devtracks/_archive/agentic-adaptations/` |

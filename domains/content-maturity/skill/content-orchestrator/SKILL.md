@@ -72,4 +72,4 @@ For **full-book production** (Form Spec → graphics → compose → print), pre
 | medical-graphics | `domains/medical/skill/medical-graphics/` |
 | compose-chapter | `toolset/skill-pack/compose-chapter/` |
 | **book-production-orchestrator** (full book → print) | `toolset/skill-pack/book-production-orchestrator/` |
-| Track | `devtracks/agentic-adaptations/` |
+| Track (archived) | `devtracks/_archive/agentic-adaptations/` |

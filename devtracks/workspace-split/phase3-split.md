@@ -21,7 +21,7 @@ From `PRODUCT-BOUNDARIES.md` + joint recommendation:
 
 | Step | Product | Source tree | Method |
 |---|---|---|---|
-| 3a | C editorial kit | `domains/content-maturity/**` | Follow `devtracks/content-maturity/SPLIT-CHECKLIST.md` first (smallest) |
+| 3a | C editorial kit | `domains/content-maturity/**` | Follow `devtracks/_archive/content-maturity/SPLIT-CHECKLIST.md` first (smallest) |
 | 3b | B medical-media | `domains/medical/**` + `Guides/Medical-*` + `Guides/KL-Form-Language.md` + graphics scripts + harvested typst lib | `git subtree split` |
 | 3c | R research | `research/**`, optionally `templates/**` | subtree or new repo copy |
 | 3d | A cleanup | remainder = layout platform; optional rename | stub READMEs for moved trees |

@@ -117,8 +117,8 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | compose engine | A | `toolset/compose/` |
 | medical domain media | **B** | `domains/medical/` (split candidate; Phase 3 deferred) |
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
-| **content-maturity** (MVP **archived**) | **C** process | `devtracks/_archive/content-maturity/` · kit transitional `domains/content-maturity/` → split to C |
-| **agentic-adaptations** (MVP **archived**) | **C** (+ light A/B) | `devtracks/_archive/agentic-adaptations/` · kit extensions under `domains/content-maturity/` |
+| **workspace-split** (active) | **A/B/C** structure | `devtracks/workspace-split/` · inventory `workspace-inventory/` · Phase 0–1 done; **next 1b CLI** |
+| **kl-form-language** (active) | **B** | `devtracks/kl-form-language/` · foundation harvested; chapter expansion open |
 | Consumer guide | A | `docs/CONSUMER.md` |
 
 **Flow (v0.2):** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.  
@@ -128,7 +128,8 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 
-**Archived (harvested):** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries`, plus earlier tracks under `devtracks/_archive/`.
+**Archived (harvested, 2026-07-29 audit):** `medical-graphics`, `content-maturity`, `agentic-adaptations` (kits/skills stay live under `domains/`).  
+Earlier: `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries`, plus more under `devtracks/_archive/`.
 
 
 ## Working conventions

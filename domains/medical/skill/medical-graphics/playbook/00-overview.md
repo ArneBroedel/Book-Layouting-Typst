@@ -1,7 +1,7 @@
 # Playbook 00 — Overview (Graphics pipeline)
 
 **Skill:** `medical-graphics`  
-**Full plan:** `devtracks/medical-graphics/playbook-system-plan.md`
+**Full plan (archived):** `devtracks/_archive/medical-graphics/playbook-system-plan.md`
 
 ## End-to-end
 

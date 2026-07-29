@@ -14,13 +14,21 @@
 | Briefs archive | 41 files → `domains/medical/briefs/_archive/` |
 | Policy docs | `assets/CANONICAL.md`, `briefs/INDEX.md`, `decisions.md` |
 
+## Git evidence (committed)
+
+| SHA | Role |
+|---|---|
+| `093442c` | Tag target `archive/assets-pre-purge-2026-07-29` (pre-purge) |
+| `b437aad` | Asset purge + brief → `_archive/` moves |
+| `2c97faf` | Spec, inventory snapshot, CANONICAL/INDEX, root litter, gitignore |
+| `ec97338` | Phase files + HANDOFF/README (**docs only** — not CLI implementation) |
+
 ## Not done (next)
 
-- Wire `bookkit graphics vision|refine|spike-init` (wrap existing scripts)
-- Wire `bookkit validate` / `prepress` under same CLI
-- Spike lib harvest → package
+- Wire `bookkit graphics vision|refine|spike-init` (wrap existing scripts) → **phase1b**
+- Wire `bookkit validate` / `prepress` under same CLI → **phase1b**
+- Spike lib harvest → package → **phase2**
 - Showcase move (D3: later)
-- Commit (await human if desired)
 
 ## Restore assets
 

@@ -45,14 +45,15 @@ Detail: [`joint-recommendation.md`](joint-recommendation.md).
 
 | Item | Evidence |
 |---|---|
-| Full file inventory | `devtracks/workspace-inventory/` + `scripts/workspace-inventory.py` |
+| Full file inventory | `devtracks/workspace-inventory/` + `scripts/workspace-inventory.py` (TSV snapshot **pre-purge** — re-run to refresh) |
 | Architecture plan + peer review | `plan.md`, `antigravity-peer-review.md`, `joint-recommendation.md` |
 | Root litter removed | no `scratch_test.*` / `v-*-compile.typ` |
-| Asset purge + tag | tag `archive/assets-pre-purge-2026-07-29`; assets ~25 MB |
-| Brief archive | `domains/medical/briefs/_archive/` (~41 files) + `INDEX.md` |
+| Asset purge + tag | tag `archive/assets-pre-purge-2026-07-29` @ `093442c`; purge commit `b437aad`; assets ~25 MB |
+| Brief archive | `domains/medical/briefs/_archive/` (42 files) + `INDEX.md` |
 | Canonical asset policy | `domains/medical/assets/CANONICAL.md` |
 | Stronger `.gitignore` | PDFs next to sources, eval outputs, scratch |
 | Untracked compile PDFs | src/test/spike/eval PDFs |
+| Phase plan docs (not CLI) | `ec97338` added phase1b–4 files; **CLI still stub** |
 
 Log: [`phase1-hygiene.md`](phase1-hygiene.md) · [`phase1-hygiene-log.md`](phase1-hygiene-log.md).
 

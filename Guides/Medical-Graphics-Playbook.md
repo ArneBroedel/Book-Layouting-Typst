@@ -127,4 +127,4 @@ Walkthrough: `…/playbook/walkthrough-iv2.md`
 
 ## Harvest source
 
-`devtracks/medical-graphics/` · eval `dist/spikes/graphics/_eval/eval-batch-2026-07-22.md` · plan `playbook-system-plan.md`
+`devtracks/_archive/medical-graphics/` · eval `dist/spikes/graphics/_eval/eval-batch-2026-07-22.md` · plan `playbook-system-plan.md`

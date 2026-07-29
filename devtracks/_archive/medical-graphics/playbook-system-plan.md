@@ -1,7 +1,7 @@
 # Plan: Praktisch anwendbares Playbook-System (Idee → Vision → Realize → Accept)
 
-**Status:** **implemented** (2026-07-23) — P1–P6 delivered; dogfood optional  
-**Parent track:** `devtracks/medical-graphics/`  
+**Status:** **implemented** (2026-07-23) · **track archived 2026-07-29** — P1–P6 delivered; dogfood satisfied (IV-2/III-5 Form Spec gold + KL corpus)  
+**Parent track:** `devtracks/_archive/medical-graphics/`  
 **Ziel:** Aus Content (C) zuerst die **medizinpädagogisch beste Darstellungsform** so detailliert wie möglich beschreiben; danach die **grafische Umsetzung** als visuelle Idee und Realisierungskette (Typst → Hybrid → Refine → optional Raster als Endprodukt) **agenten- und menschenfähig** machen.
 
 **Leitprinzip (Wissensarchitektur):**
@@ -344,43 +344,43 @@ Kein MCP in v1 des Playbook-Systems.
 
 ### Phase P1 — Spec lock & skeleton (1–2 Tage)
 
-- [ ] Diesen Plan reviewen / mit Stakeholder bestätigen (Raster-Endprodukt-Policy, Form-Spec als eigenes File)  
-- [ ] `form-spec.template.md`  
-- [ ] `playbook/00-overview.md` Skeleton  
-- [ ] Decision/vision templates: Form Spec link + multi-round log fields  
-- [ ] `examples/INDEX.md` mit 5 Gold-Units (nur Pointer)
+- [x] Diesen Plan reviewen / mit Stakeholder bestätigen (Raster-Endprodukt-Policy, Form-Spec als eigenes File)  
+- [x] `form-spec.template.md`  
+- [x] `playbook/00-overview.md` Skeleton  
+- [x] Decision/vision templates: Form Spec link + multi-round log fields  
+- [x] `examples/INDEX.md` mit 5 Gold-Units (nur Pointer)
 
 ### Phase P2 — Media Form Spec (pädagogische Detailtiefe)
 
-- [ ] Guide `Medical-Presentation-Forms.md` (Theorie verdichtet + Form-Spec-Felder)  
-- [ ] `media-brief` SKILL + design-reasoning: Form Spec step  
-- [ ] Ein **Gold-Form-Spec** rückwirkend für IV-2 oder III-5 (Vorbild)  
-- [ ] Accept template: Form Spec proximity check  
+- [x] Guide `Medical-Presentation-Forms.md` (Theorie verdichtet + Form-Spec-Felder)  
+- [x] `media-brief` SKILL + design-reasoning: Form Spec step  
+- [x] Ein **Gold-Form-Spec** rückwirkend für IV-2 oder III-5 (Vorbild)  
+- [x] Accept template: Form Spec proximity check  
 
 ### Phase P3 — Graphics Playbook voll
 
-- [ ] playbook 01–08 aus Learnings (Claim audit, hybrid fairness, refine, A/B)  
-- [ ] `09-form-recipes.md` (4 Skeletons)  
-- [ ] `medical-graphics` SKILL.md rewrite um Playbook zentriert  
-- [ ] free-vision.md / decision-heuristics: Raster-end + multi-round + claim audit merge  
+- [x] playbook 01–08 aus Learnings (Claim audit, hybrid fairness, refine, A/B)  
+- [x] `09-form-recipes.md` (4 Skeletons)  
+- [x] `medical-graphics` SKILL.md rewrite um Playbook zentriert  
+- [x] free-vision.md / decision-heuristics: Raster-end + multi-round + claim audit merge  
 
 ### Phase P4 — Guide harvest + Typst guide slice
 
-- [ ] `Guides/Medical-Graphics-Playbook.md` (Why + narrative eval harvest)  
-- [ ] Cross-links skill ↔ guide  
-- [ ] Optional: Typst recreate conventions (FA6, tokens, module layout param) in Guide oder playbook/04  
+- [x] `Guides/Medical-Graphics-Playbook.md` (Why + narrative eval harvest)  
+- [x] Cross-links skill ↔ guide  
+- [x] Optional: Typst recreate conventions (FA6, tokens, module layout param) in Guide oder playbook/04  
 
 ### Phase P5 — Scaffolding & worked walkthrough
 
-- [ ] `_templates/` Typst stubs + `graphics-spike-init.sh`  
-- [ ] Full walkthrough doc (eine Unit)  
-- [ ] Optional: second Form Spec + re-run pipeline on I-4 or V-Cauda as dogfood  
+- [x] `_templates/` Typst stubs + `graphics-spike-init.sh`  
+- [x] Full walkthrough doc (eine Unit)  
+- [x] Optional dogfood: Form Spec e2e via IV-2/III-5 gold + KL form-spec corpus (I-4/V-Cauda not required)
 
 ### Phase P6 — Harvest & close
 
-- [ ] skill-creator validate  
-- [ ] plan.md Harvested-into footer  
-- [ ] Track archive when P1–P5 done und Skills grün  
+- [x] skill-creator validate (workspace iteration-1 green)  
+- [x] plan.md Harvested-into footer  
+- [x] Track archive 2026-07-29 when P1–P5 done und Skills grün  
 
 **Reihenfolge strikt:** P1 → P2 → P3 (P4 kann parallel zu P3 Guide schreiben) → P5 dogfood → P6.
 
@@ -433,5 +433,5 @@ Kein MCP in v1 des Playbook-Systems.
 
 - Eval: `dist/spikes/graphics/_eval/eval-batch-2026-07-22.md`  
 - Skill SoT: `domains/medical/skill/medical-graphics/`, `media-brief/`  
-- Spec: `devtracks/medical-graphics/spec.md`  
+- Spec: `devtracks/_archive/medical-graphics/spec.md`  
 - Knowledge: `docs/KNOWLEDGE-MAP.md`
