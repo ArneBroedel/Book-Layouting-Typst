@@ -44,7 +44,7 @@ Fail-fast on **hard** checks; no auto-heal. Content path and genre minima are **
 | body soft | warn | extreme typ/content length ratio — no hard-fail by default |
 | compile | hard if run | `typst compile --root … --ignore-system-fonts --font-path …` |
 | post-hoc intent | info | ordered list of catalog forms found |
-| accept-gate | hard | accept authorized **or** `--exception-no-brief` (smoke only) |
+| accept-gate | hard | accept authorizes **exploration** and/or **production** compose **or** `--exception-no-brief` (smoke only). Messages distinguish levels — overall accept / exploration checkbox never reports as production. |
 | freeze-gate | hard on `--profile production` | Human freeze record + `content_revision` pin; **skipped** on default `--profile smoke` |
 
 ### Run validate

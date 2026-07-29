@@ -1,7 +1,7 @@
 # domains/ — companion products (not foundation)
 
 Specializations **above** the layout platform (Produkt **A**).  
-Candidates for physical extract (workspace-split Phase 3, trigger-only).
+Candidates for physical extract (deferred; checklist `devtracks/_archive/workspace-split/phase3-split.md`, trigger-only D2).
 
 | Ordner | Produkt | Inhalt |
 |---|---|---|
@@ -23,4 +23,4 @@ Candidates for physical extract (workspace-split Phase 3, trigger-only).
 ## Related
 
 - `devtracks/PRODUCT-BOUNDARIES.md`
-- `devtracks/workspace-split/` (modular monorepo; split deferred)
+- `devtracks/_archive/workspace-split/` (modular monorepo delivered; physical split deferred)

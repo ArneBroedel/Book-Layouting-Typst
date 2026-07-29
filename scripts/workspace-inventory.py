@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Regenerate devtracks/workspace-inventory/* from the live workspace tree.
+"""Regenerate devtracks/_archive/workspace-inventory/* from the live workspace tree.
+
+The workspace-inventory companion track is archived; the script remains the
+live tool and writes into the archived snapshot folder.
 
 Excludes: .git, __pycache__, *.pyc, .playwright-mcp
 """
@@ -11,7 +14,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "devtracks" / "workspace-inventory"
+OUT = ROOT / "devtracks" / "_archive" / "workspace-inventory"
 SKIP_DIR_NAMES = {".git", "__pycache__", ".playwright-mcp"}
 
 

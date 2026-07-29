@@ -46,12 +46,21 @@ From `media-brief/references/design-reasoning.md` §5 — tick or note fail → 
 - [ ] `content_revision` on brief matches freeze (`git:…` or `sha256:…`)
 - [ ] `brief_class` is **production** (not exploration)
 
+## Exploration compose authorized?
+
+- [ ] **yes** — pilot / exploration layout under smoke/creative validate (not production)
+- [ ] **no**
+
+Exploration briefs: set exploration **yes** when Media accepts the pilot for compose.  
+Validate will report *exploration compose authorized* — never production.
+
 ## Production compose authorized?
 
 - [ ] **yes** — compose may run with this brief + feasibility **and** freeze pin
 - [ ] **no**
 
-Exploration briefs: leave production compose **no**.
+Exploration briefs: leave production compose **no**.  
+Only production **yes** authorizes freeze-gated production quality.
 
 ### Media notes for Compose
 

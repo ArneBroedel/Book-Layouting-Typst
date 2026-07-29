@@ -122,7 +122,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | compose engine | A | `toolset/compose/` |
 | medical domain media | **B** | `domains/medical/` (split candidate; Phase 3 deferred) |
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
-| **workspace-split** (active→closing) | **A/B/C** structure | `devtracks/workspace-split/` · Phase 0–1 + **1b CLI** + **2 boundaries** + **4 skills/docs** done; Phase 3 physical split **trigger-only** (D2) |
+| **workspace-split** (archived) | **A/B/C** structure | `devtracks/_archive/workspace-split/` · modular monorepo done; inventory `devtracks/_archive/workspace-inventory/`; Phase 3 split deferred (D2) |
 | **kl-form-language** (archived) | **B** | `devtracks/_archive/kl-form-language/` · system complete; ops: `playbook/10-kl-chapter-pipeline.md` |
 | Consumer guide | A | `docs/CONSUMER.md` |
 
@@ -133,7 +133,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 
-**Archived (harvested, 2026-07-29 audit):** `medical-graphics`, `content-maturity`, `agentic-adaptations` (kits/skills stay live under `domains/`).  
+**Archived (harvested):** `workspace-split`, `workspace-inventory`, `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` (runtime stays under `packages/`, `toolset/`, `domains/`).  
 Earlier: `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries`, plus more under `devtracks/_archive/`.
 
 

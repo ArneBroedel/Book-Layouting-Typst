@@ -42,9 +42,7 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 ## Open tracks
 
-| Track | Product | Path | Focus |
-|---|---|---|---|
-| **workspace-split** | **A/B/C** (structure) | [`workspace-split/`](workspace-split/) · inventory [`workspace-inventory/`](workspace-inventory/) | **Active:** consolidate monorepo focus; Phase 0–1 done; inventur refreshed 2026-07-29; **next Phase 1b CLI**. Start: `workspace-split/README.md` + `HANDOFF.md` |
+*None.* Modular monorepo work from **workspace-split** is delivered (CLI, boundaries, harvest, skills/docs). Physical multi-repo split remains **deferred** (D2) — checklist frozen at [`_archive/workspace-split/phase3-split.md`](_archive/workspace-split/phase3-split.md).
 
 Runtime products (not tracks):
 
@@ -59,6 +57,6 @@ Runtime products (not tracks):
 **Consumer guide:** [`docs/CONSUMER.md`](../docs/CONSUMER.md).  
 **Pilot dogfood:** `pilots/kursbuch-welle-03-compose/`.
 
-**Recently archived:** `kl-form-language` (2026-07-29; ops `playbook/10-kl-chapter-pipeline.md` + form library), `medical-graphics` (skill SoT `domains/medical/skill/medical-graphics/`), `content-maturity` (C process MVP; kit stays `domains/content-maturity/`; v0.4 backlog in archived plan), `agentic-adaptations` (layered on same kit) under `_archive/`.  
+**Recently archived (2026-07-29):** `workspace-split` + companion `workspace-inventory` (modular monorepo delivered; Phase 3 split deferred), `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` under `_archive/`.  
 **v0.2 archived:** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` under `_archive/`.  
 Earlier: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx`, …

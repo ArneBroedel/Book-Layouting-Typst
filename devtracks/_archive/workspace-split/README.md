@@ -1,7 +1,7 @@
 # Devtrack: workspace-split
 
-**Status:** **implemented** (Phase 0–1, 1b, 2, 4) — Phase 3 physical split remains **trigger-only (D2)**  
-**Currency:** 2026-07-29 full implementation  
+**Status:** **Archived** (2026-07-29) — Phase 0–1, 1b, 2, 4 delivered; Phase 3 physical split **deferred** (D2, not started)  
+**Currency:** 2026-07-29 full implementation + archive  
 **Product impact:** A (layout platform focus) + B/C boundaries + unified CLI delivery model  
 **Do not confuse with:** content-maturity split checklist (C only, archived track), medical-graphics skill (B runtime under `domains/medical/skill/`)
 
@@ -66,6 +66,6 @@
 - **Do not invent second CLIs** — extend `scripts/bookkit` only (D4).  
 - After substantive phase: update this README progress table + HANDOFF “done” section.
 
-### Harvest note (when archiving this track)
+### Harvest note
 
-Phase 3 remains intentionally open forever until a D2 trigger. This track can stay **active** as the home for Phase 3 checklists, or be archived with a pointer that Phase 3 lives under PRODUCT-BOUNDARIES / a new track when triggered. Prefer keeping it active as long as Phase 3 is the documented next *possible* structural step.
+**Archived 2026-07-29** (Human: no physical split for now). Phase 3 checklist remains in this folder as frozen provenance (`phase3-split.md`). If a D2 trigger fires later, open a new track or revive from archive + follow `PRODUCT-BOUNDARIES.md`.

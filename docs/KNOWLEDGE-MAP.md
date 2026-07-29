@@ -21,7 +21,7 @@ faster. This document is the single source of truth for **where knowledge lives 
 | **Forward-looking dev plans** (active only) | `devtracks/` | Spec/plan for work *not yet finished*. Nothing completed stays here — it is harvested and archived. |
 | **Publishing-roles + boundaries (active)** | `CONSENSUS-v0`, `PRODUCT-BOUNDARIES`, `platform-boundaries`, `form-catalog`, `media-design`, `compose-pipeline` | A platform / B `domains/medical` / C external content; media brief → feasibility → accept → compose → validate. |
 | **External / generated data** | `research/` (+ `templates/` as study corpus) | Script-generated ecosystem data and downloaded third-party material. Never hand-curated. **Not** default agent context for book production. |
-| **Structure track** | `devtracks/workspace-split/` | Modular monorepo hygiene + unified `bookkit` CLI; physical multi-repo split remains **trigger-only** (D2). Inventory companion: `devtracks/workspace-inventory/`. |
+| **Structure track (archived)** | `devtracks/_archive/workspace-split/` | Modular monorepo hygiene + unified `bookkit` CLI delivered; physical multi-repo split **deferred** (D2). Inventory snapshot: `devtracks/_archive/workspace-inventory/`. |
 
 Each type has a distinct **audience** (human vs Claude), **lifespan** (transient vs durable), and
 **authorship** (curated vs generated). Mixing them is what caused the original confusion.

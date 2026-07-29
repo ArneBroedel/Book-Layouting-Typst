@@ -1,14 +1,14 @@
 # Plan — Aufräumen, Konsolidieren, Aufteilen
 
-**Status:** **implemented** (0–1, 1b, 2, 4) — Phase 3 trigger-only  
-**Currency audit:** 2026-07-29 — full phase delivery  
+**Status:** **Archived** (2026-07-29) — Phase 0–1, 1b, 2, 4 delivered; Phase 3 physical split **deferred** (D2 trigger-only; not started)  
+**Currency audit:** 2026-07-29 — full phase delivery + archive  
 **Implementer entry:** [`README.md`](README.md) · [`HANDOFF.md`](HANDOFF.md)  
 **Spec:** [`spec.md`](spec.md)  
 **Phase files:** [`phase1-hygiene.md`](phase1-hygiene.md) ✅ · [`phase1b-cli.md`](phase1b-cli.md) ✅ · [`phase2-boundaries.md`](phase2-boundaries.md) ✅ · [`phase3-split.md`](phase3-split.md) ⏸ · [`phase4-skills-docs.md`](phase4-skills-docs.md) ✅  
 **Antigravity Review:** [`antigravity-peer-review.md`](antigravity-peer-review.md)  
 **Joint Recommendation (verbindlich):** [`joint-recommendation.md`](joint-recommendation.md)  
 **Decisions D1–D5 (locked):** [`decisions.md`](decisions.md)  
-**Vollindex:** [`../workspace-inventory/`](../workspace-inventory/) — live via `python3 scripts/workspace-inventory.py` (rewrites TSV + `CATALOG.md`)
+**Vollindex:** [`../workspace-inventory/`](../workspace-inventory/) (archived sibling) — regenerate via `python3 scripts/workspace-inventory.py`
 
 > **Binding after peer-review + Human D1–D5:** Hybrid delivery (one `bookkit` CLI + Typst packages + skills). Repo-Split **trigger-only**. Phase 1 hygiene + **1b CLI** (`validate` / `print` / `prepress` / `graphics`) + **2 harvest** (`domains/medical/lib/typst/`) + **4 skills/docs** delivered 2026-07-29.
 
@@ -54,12 +54,12 @@
 
 1. **`domains/medical/assets/` (~26 MB)** — still largest product bucket; CANONICAL policy must hold (no new intermediate PNG dumps).  
 2. **`domains/medical/briefs/` (~141 files incl. archive/waves)** — gold + form-library top-level; `_archive/`, `_wave5/`, `_wave6/`, `_explorations/` for process noise.  
-3. **`toolset/compose/spikes/graphics/` (~75 Dateien)** — Hybrid A/B incl. **kl-wave6** libs; harvest still Phase 2.  
+3. **`toolset/compose/spikes/graphics/`** — drivers remain; **stable libs harvested** to `domains/medical/lib/typst/` (Phase 2 done).  
 4. **`dist/`** — local ok, never project content; nearly empty after wipe.  
 5. **Skill-Workspaces** (`*-workspace/**`) — Eval-Outputs, not Runtime (gitignore residual HTML).  
-6. **Doppel-Showcase:** `src/` + `packages/` + `pilots/` — still poorly communicated in root `README.md` (Phase 4).  
-7. **Research/Templates** — still ~5 MB ecosystem lab, not product runtime.  
-8. **CLI surface** — agents still discover ad-hoc `scripts/graphics-*.sh` / `run_validate.py` because Phase 1b incomplete.
+6. **Doppel-Showcase:** `src/` + `packages/` + `pilots/` — consumer-first docs (Phase 4); physical `src/`→`examples/` is **D3 deferred**.  
+7. **Research/Templates** — ecosystem lab with agent-context banners (not product runtime).  
+8. **CLI surface** — **done** (`bookkit` v0.1.1); thin engines under `scripts/graphics-*.sh` / `run_validate.py` remain valid.
 
 ---
 
@@ -74,7 +74,7 @@
 |---|---|
 | `CLAUDE.md` | Kanonische Architektur, Build, Komponenten-Inventar, Skill-Gate (sehr lang, monorepo-zentriert) |
 | `AGENTS.md` | Multi-Agent Discovery, Product A/B/C, Skill-Tabelle, Linux-Build (points at this track) |
-| `README.md` | Einstieg; **still outdated** (11 chapters, pre-toolset story) vs. real package/CLI consumer path → Phase 4 |
+| `README.md` | Einstieg; **consumer-first** (Phase 4) — Mission A + `docs/CONSUMER.md` |
 | `LICENSE` | Lizenz |
 | `.gitignore` | Strengthened in Phase 1 (PDFs next to sources, eval outputs, scratch, tmp) |
 | `.editorconfig` | Editor-Defaults |
@@ -461,12 +461,10 @@ Items 1–4, 7–8 executed. Item 5 (README/AGENTS mission) deferred to **phase4
 2. **Assets:**  
    - ~~Drop intermediate gemini bulk~~ **done** (tag + purge).  
    - Ongoing: accepted SVG/PDF vector + at most 1 refined raster if hybrid; no new intermediate commits.  
-3. **Spikes → Library (Phase 2 remaining):**  
-   - `lib/*.typ` aus kl-script-system + kl-wave5 + **kl-wave6** → `domains/medical/lib/typst/` (preferred) oder package.  
-   - Spike-Treiber und compare-PDF-Workflow nur in `experiments/`.  
+3. ~~**Spikes → Library**~~ **done** — `domains/medical/lib/typst/{kl-core,kl-wave5,kl-wave6}/`; spikes re-export.  
 4. **Skill-Workspaces:** nur `evals/evals.json` + README; Iteration-Outputs gitignore (residual HTML still noise-candidate).  
 5. **Playbook:** 00–10 behalten (Kern + KL chapter pipeline); walkthroughs optional.  
-6. **Ein Vision-CLI (Phase 1b):** `scripts/graphics-*` hinter `bookkit graphics` Subcommands vereinheitlichen (gemini|agy backend).  
+6. ~~**Ein Vision-CLI (Phase 1b)**~~ **done** — `bookkit graphics|validate|catalog|prepress|print` (v0.1.1).  
 
 **Zielgröße B ohne Archive:** Skills+recipes+templates+gold ≪ 200 Dateien; Assets already ~26 MB (goal was <15 MB or LFS — optional further thin).
 
@@ -484,7 +482,7 @@ Items 1–4, 7–8 executed. Item 5 (README/AGENTS mission) deferred to **phase4
 ### 4.6 Devtracks
 
 1. ~~Active tracks zu Ende harvesten (`kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations`)~~ — **done** (2026-07-29); kits/skills live under `domains/`; ops doc `playbook/10-kl-chapter-pipeline.md`.  
-2. `workspace-split` (dieser Track) steuert verbleibende Strukturarbeit (1b → 2 → 4; 3 trigger-only).  
+2. `workspace-split`: **1b/2/4 delivered**; only Phase **3** remains (D2 trigger). Optional D3 showcase move.  
 3. `_archive` optional auf Branch `archive/devtracks-2026` auslagern (nice-to-have).
 
 ---
@@ -542,14 +540,14 @@ Pins: `bookkit` SemVer, `form-catalog` VERSION, `content_revision`, asset paths 
 
 > **Executable checklists live in phase files.** This section is the map only.
 
-| Phase | File | Status (2026-07-29) |
+| Phase | File | Status (re-verified 2026-07-29) |
 |---|---|---|
-| 0 Inventar + Plan | this file + inventory | ✅ done (inventory re-run post-hygiene) |
+| 0 Inventar + Plan | this file + inventory | ✅ done |
 | 1 Hygiene | [`phase1-hygiene.md`](phase1-hygiene.md) | ✅ done |
-| **1b CLI** | [`phase1b-cli.md`](phase1b-cli.md) | ⬜ **next** — `bookkit` still doctor/build/watch/ua/init/brief-check; print stub |
-| 2 Boundaries + spike harvest | [`phase2-boundaries.md`](phase2-boundaries.md) | ⬜ open (include **kl-wave6** libs) |
-| 3 Physical split | [`phase3-split.md`](phase3-split.md) | ⏸️ trigger-only (D2) |
-| 4 Skills + docs | [`phase4-skills-docs.md`](phase4-skills-docs.md) | ⬜ open (parallel after 1b; root README still pre-toolset) |
+| **1b CLI** | [`phase1b-cli.md`](phase1b-cli.md) | ✅ done — `scripts/bookkit` v0.1.1; smoke `toolset/tests/test_bookkit_cli.sh` PASS |
+| 2 Boundaries + spike harvest | [`phase2-boundaries.md`](phase2-boundaries.md) | ✅ done — `domains/medical/lib/typst/{kl-core,kl-wave5,kl-wave6}/` |
+| 3 Physical split | [`phase3-split.md`](phase3-split.md) | ⏸️ trigger-only (D2) — **only remaining structural work** |
+| 4 Skills + docs | [`phase4-skills-docs.md`](phase4-skills-docs.md) | ✅ done (showcase `src/` move D3 deferred) |
 | 5 Nice-to-have | below | backlog |
 
 ### Phase 5 — Langfristig / Nice-to-have
@@ -603,11 +601,10 @@ Pins: `bookkit` SemVer, `form-catalog` VERSION, `content_revision`, asset paths 
 
 ## 10. Konkrete nächste Schritte (für implementierenden Chat)
 
-1. Open [`HANDOFF.md`](HANDOFF.md) + [`phase1b-cli.md`](phase1b-cli.md).  
-2. Implement unified `bookkit` CLI; verify § HANDOFF verification suite.  
-3. Then [`phase2-boundaries.md`](phase2-boundaries.md) (spike harvest + pilots).  
-4. Then [`phase4-skills-docs.md`](phase4-skills-docs.md).  
-5. Phase 3 only if Human states a split trigger + target repos.
+1. **Do not re-implement 1b/2/4** — verify with HANDOFF suite if unsure.  
+2. **Phase 3 only** after Human confirms a D2 trigger and names target repos — [`phase3-split.md`](phase3-split.md).  
+3. Optional: D3 showcase move; inventory refresh; install real Ghostscript for `bookkit print` (this shell aliases `gs` → `git status`).  
+4. Track may stay **active** solely as Phase-3 home, or archive with pointer when preferred.
 
 ---
 
@@ -628,10 +625,10 @@ Pins: `bookkit` SemVer, `form-catalog` VERSION, `content_revision`, asset paths 
 
 | Artefakt | Pfad |
 |---|---|
-| Maschinen-Index (jede Datei) | `devtracks/workspace-inventory/file-index.tsv` |
-| Gruppierter Katalog | `devtracks/workspace-inventory/CATALOG.md` |
-| Bucket-Summary | `devtracks/workspace-inventory/bucket-summary.tsv` |
-| Noise-Kandidaten | `devtracks/workspace-inventory/noise-candidates.tsv` |
+| Maschinen-Index (jede Datei) | `devtracks/_archive/workspace-inventory/file-index.tsv` |
+| Gruppierter Katalog | `devtracks/_archive/workspace-inventory/CATALOG.md` |
+| Bucket-Summary | `devtracks/_archive/workspace-inventory/bucket-summary.tsv` |
+| Noise-Kandidaten | `devtracks/_archive/workspace-inventory/noise-candidates.tsv` |
 | Bestehende Grenzen | `devtracks/PRODUCT-BOUNDARIES.md` |
 | Rollen/Flow | `devtracks/CONSENSUS-v0.md` |
 | C-Split | `devtracks/_archive/content-maturity/SPLIT-CHECKLIST.md` |
@@ -648,4 +645,17 @@ Inventory script is already in-tree.
 
 ## Harvested into
 
-_(noch nicht — Track aktiv)_
+| Learning / deliverable | Destination |
+|---|---|
+| Unified `bookkit` CLI (validate, catalog, print, prepress, graphics) | `scripts/bookkit` v0.1.1 · `toolset/tests/test_bookkit_cli.sh` |
+| CLI preferred surface for agents | `toolset/skill-pack/bookkit/`, compose-chapter, medical-graphics, media-brief; `docs/CONSUMER.md` |
+| Asset hygiene + gold briefs | `domains/medical/assets/CANONICAL.md`, `domains/medical/briefs/INDEX.md`, tag `archive/assets-pre-purge-2026-07-29` |
+| Typst graphic module harvest | `domains/medical/lib/typst/{kl-core,kl-wave5,kl-wave6}/` (spikes re-export) |
+| Folder ownership / extract readiness | `toolset/OWNERSHIP.md`, `packages/OWNERSHIP.md`, `domains/README.md`, research/templates banners |
+| Pilot thinning | `pilots/kursbuch-welle-03-compose/` + `pilots/_archive/kursbuch-welle-03/` |
+| Consumer-first monorepo story | root `README.md`, `AGENTS.md`, `docs/KNOWLEDGE-MAP.md` |
+| Locked decisions D1–D5 + hybrid delivery model | this track (provenance) · live policy in `PRODUCT-BOUNDARIES.md` / `CONSENSUS-v0.md` |
+| Phase 3 physical split checklist (deferred) | [`phase3-split.md`](phase3-split.md) under this archive; re-open only on Human D2 trigger |
+| Inventory tooling | `scripts/workspace-inventory.py` · companion snapshot archived as `devtracks/_archive/workspace-inventory/` |
+
+*Human decision 2026-07-29: no physical multi-repo split for now → archive track; modular monorepo is the lasting outcome.*

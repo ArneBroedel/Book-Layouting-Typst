@@ -11,7 +11,7 @@ Companion layers live in the same modular monorepo until a split trigger fires:
 | **C** | Content works + editorial kit | **external** content + transitional `domains/content-maturity/` |
 | **R** | Ecosystem survey | `research/` — **not** default agent context |
 
-Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) · modular monorepo track: [`devtracks/workspace-split/`](devtracks/workspace-split/).
+Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) · modular monorepo (workspace-split archived): [`devtracks/_archive/workspace-split/`](devtracks/_archive/workspace-split/).
 
 ---
 

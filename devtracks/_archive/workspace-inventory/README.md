@@ -1,9 +1,10 @@
-# Workspace Inventory
+# Workspace Inventory (archived)
 
-**Last regenerated:** 2026-07-29 (post Phase‑1 hygiene + after `kl-form-language` harvest/archive)  
-**Companion track:** [`../workspace-split/`](../workspace-split/)
+**Last regenerated:** 2026-07-29 (post Phase‑1 hygiene + after related track harvests)  
+**Status:** **Archived** 2026-07-29 with companion [`../workspace-split/`](../workspace-split/)  
+**Regenerate anytime (live tool):** `python3 scripts/workspace-inventory.py` (script still at repo root; may rewrite this archive folder if cwd/output path points here — prefer re-pointing output or a new snapshot path if re-running)
 
-Machine snapshot of the monorepo for **workspace-split / consolidation**. Prefer this folder’s TSV over ad-hoc `find` counts when planning moves.
+Machine snapshot of the monorepo for **workspace-split / consolidation** provenance. Prefer live re-run of the script for current counts; this folder is a frozen companion snapshot.
 
 | File | Description |
 |---|---|

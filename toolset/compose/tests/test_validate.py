@@ -12,7 +12,12 @@ _COMPOSE = Path(__file__).resolve().parents[1]
 if str(_COMPOSE) not in sys.path:
     sys.path.insert(0, str(_COMPOSE))
 
-from validate.accept_gate import check_accept, is_authorized  # noqa: E402
+from validate.accept_gate import (  # noqa: E402
+    check_accept,
+    classify_authorization,
+    is_authorized,
+    is_production_authorized,
+)
 from validate.catalog import load_catalog  # noqa: E402
 from validate.claims import check_claims, extract_claims_from_content, normalize_text  # noqa: E402
 from validate.freeze_gate import check_freeze, is_valid_revision, parse_revision  # noqa: E402
@@ -166,12 +171,17 @@ class TestAccept(unittest.TestCase):
     def test_authorized_yes(self):
         text = (FIXTURES / "pass_minimal" / "accept.md").read_text(encoding="utf-8")
         self.assertTrue(is_authorized(text))
+        self.assertTrue(is_production_authorized(text))
         r = check_accept(FIXTURES / "pass_minimal" / "accept.md")
         self.assertTrue(r.ok)
+        self.assertTrue(r.production_authorized)
+        self.assertIn("production compose authorized", r.messages[0])
 
     def test_not_authorized(self):
         r = check_accept(FIXTURES / "fail_no_accept" / "accept.md")
         self.assertFalse(r.ok)
+        self.assertFalse(r.production_authorized)
+        self.assertFalse(r.exploration_authorized)
 
     def test_exception_no_brief(self):
         r = check_accept(None, exception_no_brief=True)
@@ -181,6 +191,70 @@ class TestAccept(unittest.TestCase):
     def test_missing_accept_fails(self):
         r = check_accept(None, exception_no_brief=False)
         self.assertFalse(r.ok)
+
+    def test_exploration_not_labeled_production(self):
+        text = """
+- **brief_class:** exploration
+
+## Decision
+
+| item | accept | note |
+|---|---|---|
+| overall | accept | pilot |
+
+## Exploration compose authorized?
+
+- [x] yes
+
+Exploration compose authorized: yes
+
+## Production compose authorized?
+
+- [x] no
+
+Production compose authorized: no
+"""
+        prod, expl = classify_authorization(text)
+        self.assertFalse(prod)
+        self.assertTrue(expl)
+        self.assertTrue(is_authorized(text))
+        self.assertFalse(is_production_authorized(text))
+
+        import tempfile
+
+        with tempfile.NamedTemporaryFile(
+            "w", suffix=".md", delete=False, encoding="utf-8"
+        ) as f:
+            f.write(text)
+            path = f.name
+        try:
+            r = check_accept(path)
+            self.assertTrue(r.ok)
+            self.assertTrue(r.exploration_authorized)
+            self.assertFalse(r.production_authorized)
+            self.assertIn("exploration compose authorized", r.messages[0])
+            self.assertNotIn("production compose authorized (", r.messages[0])
+        finally:
+            Path(path).unlink(missing_ok=True)
+
+    def test_overall_accept_without_production_is_exploration(self):
+        text = """
+## Decision
+| item | accept |
+| overall | accept |
+"""
+        prod, expl = classify_authorization(text)
+        self.assertFalse(prod)
+        self.assertTrue(expl)
+
+    def test_production_no_blocks_production_only(self):
+        text = """
+| overall | accept |
+Production compose authorized: no
+"""
+        prod, expl = classify_authorization(text)
+        self.assertFalse(prod)
+        self.assertTrue(expl)
 
 
 class TestPosthoc(unittest.TestCase):

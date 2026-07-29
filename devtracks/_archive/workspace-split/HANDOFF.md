@@ -1,7 +1,7 @@
 # HANDOFF — workspace-split status
 
 **Audience:** any coding agent continuing this track without prior session context.  
-**Date:** 2026-07-29  
+**Date:** 2026-07-29 · **Track status:** **archived** (no Phase 3 for now)  
 **Branch expectation:** `master` (or current mainline)
 
 ---
@@ -40,7 +40,7 @@ Detail: [`joint-recommendation.md`](joint-recommendation.md).
 
 | Item | Evidence |
 |---|---|
-| Full file inventory | `devtracks/workspace-inventory/` + `scripts/workspace-inventory.py` |
+| Full file inventory | `devtracks/_archive/workspace-inventory/` + `scripts/workspace-inventory.py` |
 | Architecture plan + peer review | `plan.md`, `antigravity-peer-review.md`, `joint-recommendation.md` |
 | Phase 1 hygiene | purge, gold briefs, tag `archive/assets-pre-purge-2026-07-29` |
 | **Phase 1b CLI** | `scripts/bookkit` v0.1.1: `validate`, `catalog check`, `print`, `prepress dpi|pdfx`, `graphics *`; smoke `toolset/tests/test_bookkit_cli.sh` |
