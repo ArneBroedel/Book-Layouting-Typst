@@ -1,56 +1,95 @@
 #!/usr/bin/env bash
-# bookkit — thin CLI for the Typst toolset (init / build / watch / ua / doctor / print)
+# bookkit — unified CLI for the Typst layout toolset (Produkt A)
 # Always enforces --ignore-system-fonts --font-path fonts for reproducible builds.
+#
+# Surface (v0.1.1): doctor | init | build | watch | ua | print | brief-check
+#                   validate | catalog check | prepress dpi|pdfx | graphics …
 set -euo pipefail
 
 Root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VERSION="0.1.0"
+VERSION="0.1.1"
 
 usage() {
   cat <<EOF
-bookkit ${VERSION} — thin toolset CLI
+bookkit ${VERSION} — unified toolset CLI
 
 Usage:
   bookkit doctor [--root DIR]
   bookkit build  [--root DIR] [--entry PATH] [--out PATH]
   bookkit watch  [--root DIR] [--entry PATH] [--out PATH]
   bookkit ua     [--root DIR] [--entry PATH] [--out PATH]
+  bookkit print  [--root DIR] [--entry PATH] [--out PATH]
+                 # Typst --input print=true → print-pdfx (needs gs)
   bookkit init   TARGET_DIR
-  bookkit print  …  (stub: prepress-pdfx not wired)
   bookkit brief-check [design-brief.yaml]
 
-Repro flags (always on for build/watch/ua):
+  bookkit validate
+      --typ PATH [--catalog PATH] [--content PATH] [--accept PATH]
+      [--freeze PATH] [--genre-minima PATH] [--root DIR] [--font-path PATH]
+      [--profile smoke|production] [--whitelist-mode creative|strict]
+      [--exception-no-brief] [--skip-compile] [--out-pdf PATH] …
+      # Default catalog: toolset/form-catalog/core/forms.yaml (studio)
+      # Preferred over: python3 toolset/compose/scripts/run_validate.py
+
+  bookkit catalog check
+      # form-catalog schema / VERSION pin check
+
+  bookkit prepress dpi [--paths PATH…] [check-image-dpi.py flags…]
+  bookkit prepress pdfx [input.pdf] [output.pdf] [--profile ICC] [--pdfx 3|4]
+
+  bookkit graphics vision
+      --backend gemini|agy
+      --brief PATH | --prompt TEXT
+      --out PATH
+      [--preview PATH] [--model …] [--max-polls N]
+  bookkit graphics refine
+      --vision PATH --brief PATH --out PATH [--notes TEXT] [--model …]
+  bookkit graphics spike-init <slug> [recipe-id]
+  bookkit graphics manifest --unit SLUG
+
+Repro flags (always on for build/watch/ua/print):
   --ignore-system-fonts --font-path fonts
+
+Notes:
+  - validate / graphics may need studio monorepo root for default catalog & domain paths.
+  - graphics vision/refine are gated one-shots (no multi-round loops in CLI).
+  - Direct scripts under scripts/graphics-*.sh and run_validate.py remain valid thin engines.
 EOF
 }
 
 die() { echo "error: $*" >&2; exit 1; }
 
-# ── arg defaults ───────────────────────────────────────────────
-cmd="${1:-}"
-[[ -n "$cmd" ]] || { usage; exit 1; }
-shift || true
+require_cmd() {
+  command -v "$1" >/dev/null 2>&1 || die "$1 not found on PATH"
+}
 
+# ── defaults ──────────────────────────────────────────────────
 PROJECT_ROOT="$Root"
 ENTRY=""
 OUT=""
 
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    --root) PROJECT_ROOT="$(cd "$2" && pwd)"; shift 2 ;;
-    --entry) ENTRY="$2"; shift 2 ;;
-    --out) OUT="$2"; shift 2 ;;
-    -h|--help) usage; exit 0 ;;
-    *)
-      # positional for init / brief-check
-      POSITIONAL="${POSITIONAL:-}$1 "
-      shift
-      ;;
-  esac
-done
+# Global flags parsed before subcommand dispatch (for build-like cmds)
+parse_common_flags() {
+  POSITIONAL=()
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --root) PROJECT_ROOT="$(cd "$2" && pwd)"; shift 2 ;;
+      --entry) ENTRY="$2"; shift 2 ;;
+      --out) OUT="$2"; shift 2 ;;
+      -h|--help) usage; exit 0 ;;
+      *) POSITIONAL+=("$1"); shift ;;
+    esac
+  done
+}
 
-repro_flags() {
-  echo --root "$PROJECT_ROOT" --ignore-system-fonts --font-path fonts
+repro_font_path() {
+  if [[ -d "$PROJECT_ROOT/fonts" ]] && find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
+    echo "fonts"
+  elif [[ -d "$Root/fonts" ]]; then
+    echo "$Root/fonts"
+  else
+    echo "fonts"
+  fi
 }
 
 find_entry() {
@@ -68,6 +107,8 @@ find_out() {
   base="$(basename "${entry%.typ}")"
   echo "dist/${base}.pdf"
 }
+
+# ── doctor / brief-check / build family ───────────────────────
 
 cmd_doctor() {
   local ok=0
@@ -98,6 +139,11 @@ cmd_doctor() {
     echo "  packages/bookkit-didactics: OK (optional facet)"
   else
     echo "  packages/bookkit-didactics: not found (optional)"
+  fi
+  if command -v gs >/dev/null 2>&1; then
+    echo "  ghostscript (print/pdfx): $(gs --version 2>/dev/null | head -n1)"
+  else
+    echo "  ghostscript (print/pdfx): not found (optional until print)"
   fi
   if [[ -f "$PROJECT_ROOT/design-brief.yaml" ]]; then
     echo "  design-brief.yaml: present"
@@ -130,19 +176,12 @@ cmd_brief_check() {
 }
 
 cmd_build() {
-  local entry out
+  local entry out fontp
   entry="$(find_entry)"
   out="$(find_out "$entry")"
+  fontp="$(repro_font_path)"
   mkdir -p "$(dirname "$PROJECT_ROOT/$out")" 2>/dev/null || mkdir -p "$(dirname "$out")"
-  # shellcheck disable=SC2046
-  local flags
-  flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path fonts)
-  # Prefer consumer fonts; if missing, allow studio fonts via absolute path
-  if [[ ! -d "$PROJECT_ROOT/fonts" ]] || ! find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
-    if [[ -d "$Root/fonts" ]]; then
-      flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$Root/fonts")
-    fi
-  fi
+  local flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$fontp")
   echo "bookkit build: typst compile ${flags[*]} $entry $out"
   (
     cd "$PROJECT_ROOT"
@@ -152,30 +191,22 @@ cmd_build() {
 }
 
 cmd_watch() {
-  local entry out
+  local entry out fontp
   entry="$(find_entry)"
   out="$(find_out "$entry")"
-  local flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path fonts)
-  if [[ ! -d "$PROJECT_ROOT/fonts" ]] || ! find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
-    if [[ -d "$Root/fonts" ]]; then
-      flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$Root/fonts")
-    fi
-  fi
+  fontp="$(repro_font_path)"
+  local flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$fontp")
   echo "bookkit watch: typst watch ${flags[*]} $entry $out"
   cd "$PROJECT_ROOT"
   typst watch "${flags[@]}" "$entry" "$out"
 }
 
 cmd_ua() {
-  local entry out
+  local entry out fontp
   entry="$(find_entry)"
   if [[ -n "$OUT" ]]; then out="$OUT"; else out="dist/$(basename "${entry%.typ}")-ua.pdf"; fi
-  local flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path fonts --pdf-standard ua-1)
-  if [[ ! -d "$PROJECT_ROOT/fonts" ]] || ! find "$PROJECT_ROOT/fonts" -maxdepth 1 -type f ! -name '.gitkeep' 2>/dev/null | grep -q .; then
-    if [[ -d "$Root/fonts" ]]; then
-      flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$Root/fonts" --pdf-standard ua-1)
-    fi
-  fi
+  fontp="$(repro_font_path)"
+  local flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$fontp" --pdf-standard ua-1)
   echo "bookkit ua: typst compile ${flags[*]} $entry $out"
   (
     cd "$PROJECT_ROOT"
@@ -184,14 +215,12 @@ cmd_ua() {
 }
 
 cmd_init() {
-  local target
-  target="$(echo "${POSITIONAL:-}" | awk '{print $1}')"
+  local target="${1:-}"
   [[ -n "$target" ]] || die "init requires TARGET_DIR"
   mkdir -p "$target"
   local starter="$Root/toolset/starter"
   [[ -d "$starter" ]] || die "starter missing at $starter"
   cp -a "$starter/." "$target/"
-  # Link packages + fonts into consumer when possible
   if [[ ! -e "$target/packages" ]]; then
     ln -s "$Root/packages" "$target/packages" 2>/dev/null || cp -a "$Root/packages" "$target/packages"
   fi
@@ -199,26 +228,413 @@ cmd_init() {
     ln -s "$Root/fonts" "$target/fonts" 2>/dev/null || cp -a "$Root/fonts" "$target/fonts"
   fi
   echo "Initialized consumer at $target"
-  echo "Next: cd $target && ../scripts/bookkit doctor --root . && ../scripts/bookkit build --root ."
+  echo "Next: cd $target && bookkit doctor --root . && bookkit build --root ."
 }
 
 cmd_print() {
-  echo "bookkit print: deferred — implement after devtracks/prepress-pdfx"
-  echo "Hook point reserved; no PDF-X/bleed in toolset MVP."
-  exit 0
+  # Full print: Typst print RGB with bleed → Ghostscript PDF/X-3 CMYK
+  require_cmd typst
+  local entry out_rgb out_x fontp
+  entry="$(find_entry)"
+  if [[ -n "$OUT" ]]; then
+    out_x="$OUT"
+    out_rgb="${OUT%.pdf}-rgb.pdf"
+    if [[ "$out_rgb" == "$OUT" ]]; then out_rgb="${OUT}.rgb.pdf"; fi
+  else
+    out_rgb="dist/$(basename "${entry%.typ}")-print-rgb.pdf"
+    out_x="dist/$(basename "${entry%.typ}")-print.pdf"
+  fi
+  fontp="$(repro_font_path)"
+  local flags=(--root "$PROJECT_ROOT" --ignore-system-fonts --font-path "$fontp" --input print=true)
+  mkdir -p "$(dirname "$PROJECT_ROOT/$out_rgb")" 2>/dev/null || true
+  echo "bookkit print: typst compile ${flags[*]} $entry $out_rgb"
+  (
+    cd "$PROJECT_ROOT"
+    typst compile "${flags[@]}" "$entry" "$out_rgb"
+  )
+  local rgb_abs x_abs
+  if [[ "$out_rgb" = /* ]]; then rgb_abs="$out_rgb"; else rgb_abs="$PROJECT_ROOT/$out_rgb"; fi
+  if [[ "$out_x" = /* ]]; then x_abs="$out_x"; else x_abs="$PROJECT_ROOT/$out_x"; fi
+  echo "bookkit print: pdfx $rgb_abs → $x_abs"
+  # print-pdfx.sh cds to studio Root; pass absolute paths
+  "$Root/scripts/print-pdfx.sh" "$rgb_abs" "$x_abs"
+  echo "wrote $x_abs"
 }
 
+# ── validate ──────────────────────────────────────────────────
+
+cmd_validate() {
+  local typ="" content="" catalog="" accept="" freeze="" genre=""
+  local root_arg="" font_path="" profile="" whitelist="" out_pdf=""
+  local posthoc="" catalog_overlay=""
+  local skip_compile=0 exception=0 json=0 body_hard=0
+  local extra=()
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --typ) typ="$2"; shift 2 ;;
+      --content) content="$2"; shift 2 ;;
+      --catalog) catalog="$2"; shift 2 ;;
+      --catalog-overlay) catalog_overlay="$2"; shift 2 ;;
+      --accept) accept="$2"; shift 2 ;;
+      --freeze) freeze="$2"; shift 2 ;;
+      --genre-minima) genre="$2"; shift 2 ;;
+      --root) root_arg="$2"; shift 2 ;;
+      --font-path) font_path="$2"; shift 2 ;;
+      --profile) profile="$2"; shift 2 ;;
+      --whitelist-mode) whitelist="$2"; shift 2 ;;
+      --out-pdf) out_pdf="$2"; shift 2 ;;
+      --posthoc-out) posthoc="$2"; shift 2 ;;
+      --exception-no-brief) exception=1; shift ;;
+      --skip-compile) skip_compile=1; shift ;;
+      --json) json=1; shift ;;
+      --body-hard-fail) body_hard=1; shift ;;
+      -h|--help)
+        echo "bookkit validate — see bookkit --help; forwards to toolset/compose/scripts/run_validate.py"
+        exit 0
+        ;;
+      *) extra+=("$1"); shift ;;
+    esac
+  done
+
+  [[ -n "$typ" ]] || die "validate requires --typ PATH"
+
+  if [[ -z "$catalog" ]]; then
+    if [[ -f "$Root/toolset/form-catalog/core/forms.yaml" ]]; then
+      catalog="$Root/toolset/form-catalog/core/forms.yaml"
+    elif [[ -n "$root_arg" && -f "$root_arg/toolset/form-catalog/core/forms.yaml" ]]; then
+      catalog="$root_arg/toolset/form-catalog/core/forms.yaml"
+    elif [[ -f "$PROJECT_ROOT/toolset/form-catalog/core/forms.yaml" ]]; then
+      catalog="$PROJECT_ROOT/toolset/form-catalog/core/forms.yaml"
+    else
+      die "validate: no --catalog and default forms.yaml not found (need studio toolset/form-catalog)"
+    fi
+  fi
+
+  if [[ -z "$root_arg" ]]; then
+    root_arg="$PROJECT_ROOT"
+  fi
+  if [[ -z "$font_path" ]]; then
+    font_path="fonts"
+  fi
+
+  local args=(--typ "$typ" --catalog "$catalog" --root "$root_arg" --font-path "$font_path")
+  [[ -n "$content" ]] && args+=(--content "$content")
+  [[ -n "$accept" ]] && args+=(--accept "$accept")
+  [[ -n "$freeze" ]] && args+=(--freeze "$freeze")
+  [[ -n "$genre" ]] && args+=(--genre-minima "$genre")
+  [[ -n "$profile" ]] && args+=(--profile "$profile")
+  [[ -n "$whitelist" ]] && args+=(--whitelist-mode "$whitelist")
+  [[ -n "$out_pdf" ]] && args+=(--out-pdf "$out_pdf")
+  [[ -n "$posthoc" ]] && args+=(--posthoc-out "$posthoc")
+  [[ -n "$catalog_overlay" ]] && args+=(--catalog-overlay "$catalog_overlay")
+  [[ $skip_compile -eq 1 ]] && args+=(--skip-compile)
+  [[ $exception -eq 1 ]] && args+=(--exception-no-brief)
+  [[ $json -eq 1 ]] && args+=(--json)
+  [[ $body_hard -eq 1 ]] && args+=(--body-hard-fail)
+  if [[ ${#extra[@]} -gt 0 ]]; then
+    args+=("${extra[@]}")
+  fi
+
+  local engine="$Root/toolset/compose/scripts/run_validate.py"
+  [[ -f "$engine" ]] || die "validate engine missing: $engine"
+  echo "bookkit validate: python3 $engine ${args[*]}"
+  exec python3 "$engine" "${args[@]}"
+}
+
+# ── catalog ───────────────────────────────────────────────────
+
+cmd_catalog() {
+  local sub="${1:-}"
+  shift || true
+  case "$sub" in
+    check|"")
+      local checker="$Root/toolset/form-catalog/scripts/check_forms.py"
+      [[ -f "$checker" ]] || die "catalog checker missing: $checker"
+      echo "bookkit catalog check: $checker"
+      exec python3 "$checker" "$@"
+      ;;
+    -h|--help|help)
+      echo "Usage: bookkit catalog check"
+      exit 0
+      ;;
+    *)
+      die "unknown catalog subcommand: $sub (try: check)"
+      ;;
+  esac
+}
+
+# ── prepress ──────────────────────────────────────────────────
+
+cmd_prepress() {
+  local sub="${1:-}"
+  shift || true
+  case "$sub" in
+    dpi)
+      local dpi_py="$Root/scripts/check-image-dpi.py"
+      [[ -f "$dpi_py" ]] || die "missing $dpi_py"
+      # Accept both: bookkit prepress dpi --paths a b  and  bare paths after dpi
+      if [[ $# -gt 0 && "$1" != --* ]]; then
+        # bare paths → map to --paths
+        exec python3 "$dpi_py" --root "${PROJECT_ROOT}" --paths "$@"
+      else
+        # if no --root in args, inject studio/project root
+        local has_root=0
+        for a in "$@"; do [[ "$a" == "--root" ]] && has_root=1; done
+        if [[ $has_root -eq 0 ]]; then
+          exec python3 "$dpi_py" --root "$PROJECT_ROOT" "$@"
+        else
+          exec python3 "$dpi_py" "$@"
+        fi
+      fi
+      ;;
+    pdfx)
+      local pdfx="$Root/scripts/print-pdfx.sh"
+      [[ -x "$pdfx" || -f "$pdfx" ]] || die "missing $pdfx"
+      exec bash "$pdfx" "$@"
+      ;;
+    -h|--help|help|"")
+      cat <<EOF
+Usage:
+  bookkit prepress dpi [--paths PATH…] [check-image-dpi flags]
+  bookkit prepress pdfx [input.pdf] [output.pdf] [--profile ICC] [--pdfx 3|4]
+EOF
+      [[ -z "$sub" || "$sub" == help || "$sub" == -h || "$sub" == --help ]] && exit 0
+      die "unknown prepress subcommand: $sub"
+      ;;
+    *)
+      die "unknown prepress subcommand: $sub (try: dpi | pdfx)"
+      ;;
+  esac
+}
+
+# ── graphics ──────────────────────────────────────────────────
+
+graphics_usage() {
+  cat <<EOF
+bookkit graphics — gated vision / refine / spike helpers (Produkt B engines)
+
+  bookkit graphics vision --backend gemini|agy (--brief PATH | --prompt TEXT) --out PATH
+      [--preview PATH] [--model …] [--max-polls N]
+  bookkit graphics refine --vision PATH --brief PATH --out PATH [--notes TEXT]
+  bookkit graphics spike-init <slug> [recipe-id]
+  bookkit graphics manifest --unit SLUG
+
+Backends:
+  gemini  → scripts/graphics-vision-gemini.sh (Gemini web UI / gemini-chat)
+  agy     → scripts/graphics-vision-agy.sh (Antigravity CLI)
+
+Policy: one-shot CLI only — no multi-round refine loops here.
+Claim audit + caps live in skill medical-graphics / playbook.
+Intermediate PNGs: do not commit without MANIFEST accepted (CANONICAL.md).
+EOF
+}
+
+cmd_graphics() {
+  local sub="${1:-}"
+  shift || true
+  case "$sub" in
+    -h|--help|help|"")
+      graphics_usage
+      exit 0
+      ;;
+    vision)
+      cmd_graphics_vision "$@"
+      ;;
+    refine)
+      cmd_graphics_refine "$@"
+      ;;
+    spike-init)
+      local spike="$Root/scripts/graphics-spike-init.sh"
+      [[ -f "$spike" ]] || die "missing $spike"
+      exec bash "$spike" "$@"
+      ;;
+    manifest)
+      cmd_graphics_manifest "$@"
+      ;;
+    *)
+      die "unknown graphics subcommand: $sub (try: vision|refine|spike-init|manifest)"
+      ;;
+  esac
+}
+
+cmd_graphics_vision() {
+  local backend="" brief="" prompt="" out="" preview="" model="" max_polls=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --backend) backend="$2"; shift 2 ;;
+      --brief) brief="$2"; shift 2 ;;
+      --prompt) prompt="$2"; shift 2 ;;
+      --out) out="$2"; shift 2 ;;
+      --preview) preview="$2"; shift 2 ;;
+      --model) model="$2"; shift 2 ;;
+      --max-polls) max_polls="$2"; shift 2 ;;
+      -h|--help) graphics_usage; exit 0 ;;
+      *) die "graphics vision: unknown arg: $1" ;;
+    esac
+  done
+  [[ -n "$backend" ]] || die "graphics vision requires --backend gemini|agy"
+  [[ -n "$out" ]] || die "graphics vision requires --out PATH"
+  [[ -n "$brief" || -n "$prompt" ]] || die "graphics vision requires --brief or --prompt"
+
+  case "$backend" in
+    gemini)
+      local s="$Root/scripts/graphics-vision-gemini.sh"
+      [[ -f "$s" ]] || die "missing $s"
+      local args=(--out "$out")
+      [[ -n "$brief" ]] && args+=(--brief "$brief")
+      [[ -n "$prompt" ]] && args+=(--prompt "$prompt")
+      [[ -n "$model" ]] && args+=(--model "$model")
+      [[ -n "$max_polls" ]] && args+=(--max-polls "$max_polls")
+      exec bash "$s" "${args[@]}"
+      ;;
+    agy)
+      local s="$Root/scripts/graphics-vision-agy.sh"
+      [[ -f "$s" ]] || die "missing $s"
+      [[ -n "$brief" ]] || die "graphics vision --backend agy requires --brief (no --prompt passthrough)"
+      local args=(--brief "$brief" --out "$out")
+      [[ -n "$preview" ]] && args+=(--preview "$preview")
+      [[ -n "$model" ]] && args+=(--model "$model")
+      exec bash "$s" "${args[@]}"
+      ;;
+    *)
+      die "unknown --backend: $backend (gemini|agy)"
+      ;;
+  esac
+}
+
+cmd_graphics_refine() {
+  local vision="" brief="" out="" notes="" model=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --vision) vision="$2"; shift 2 ;;
+      --brief) brief="$2"; shift 2 ;;
+      --out) out="$2"; shift 2 ;;
+      --notes) notes="$2"; shift 2 ;;
+      --model) model="$2"; shift 2 ;;
+      -h|--help) graphics_usage; exit 0 ;;
+      *) die "graphics refine: unknown arg: $1" ;;
+    esac
+  done
+  [[ -n "$vision" && -n "$brief" && -n "$out" ]] || die "graphics refine requires --vision --brief --out"
+  local s="$Root/scripts/graphics-refine-agy.sh"
+  [[ -f "$s" ]] || die "missing $s"
+  local args=(--vision "$vision" --brief "$brief" --out "$out")
+  [[ -n "$notes" ]] && args+=(--notes "$notes")
+  [[ -n "$model" ]] && args+=(--model "$model")
+  exec bash "$s" "${args[@]}"
+}
+
+cmd_graphics_manifest() {
+  local unit=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --unit) unit="$2"; shift 2 ;;
+      -h|--help)
+        echo "Usage: bookkit graphics manifest --unit SLUG"
+        exit 0
+        ;;
+      *) die "graphics manifest: unknown arg: $1" ;;
+    esac
+  done
+  [[ -n "$unit" ]] || die "graphics manifest requires --unit SLUG"
+  local dir="$Root/domains/medical/assets/$unit"
+  local man="$dir/MANIFEST.md"
+  echo "bookkit graphics manifest — unit: $unit"
+  if [[ ! -d "$dir" ]]; then
+    echo "  FAIL: missing asset dir: $dir"
+    return 1
+  fi
+  if [[ ! -f "$man" ]]; then
+    echo "  FAIL: missing MANIFEST.md (required by CANONICAL policy)"
+    echo "  path: $man"
+    return 1
+  fi
+  echo "  MANIFEST: $man"
+  echo "  files:"
+  local n=0
+  local -a files=()
+  while IFS= read -r -d '' f; do
+    files+=("$f")
+  done < <(find "$dir" -maxdepth 1 -type f ! -name 'MANIFEST.md' -print0 | sort -z)
+  for f in "${files[@]:-}"; do
+    [[ -z "${f:-}" ]] && continue
+    local base sz
+    base="$(basename "$f")"
+    sz="$(stat -c%s "$f" 2>/dev/null || echo 0)"
+    echo "    - $base ($sz bytes)"
+    n=$((n + 1))
+  done
+  if [[ $n -eq 0 ]]; then
+    echo "    (no asset files yet)"
+  fi
+  # Lightweight policy hints
+  if grep -qiE 'vision-free|intermediate|draft' "$man" 2>/dev/null; then
+    echo "  note: MANIFEST mentions intermediate/draft — confirm accepted before commit (CANONICAL.md)"
+  fi
+  echo "  OK: MANIFEST present ($n asset file(s))"
+  return 0
+}
+
+# ── dispatch ──────────────────────────────────────────────────
+
+cmd="${1:-}"
+[[ -n "$cmd" ]] || { usage; exit 1; }
+shift || true
+
 case "$cmd" in
-  doctor) cmd_doctor ;;
-  build) cmd_build ;;
-  watch) cmd_watch ;;
-  ua) cmd_ua ;;
-  init) cmd_init ;;
-  print) cmd_print ;;
-  brief-check)
-    f="$(echo "${POSITIONAL:-}" | awk '{print $1}')"
-    cmd_brief_check "${f:-design-brief.yaml}"
+  -h|--help|help)
+    usage
     ;;
-  -h|--help|help) usage ;;
-  *) die "unknown command: $cmd" ;;
+  doctor)
+    parse_common_flags "$@"
+    cmd_doctor
+    ;;
+  build)
+    parse_common_flags "$@"
+    cmd_build
+    ;;
+  watch)
+    parse_common_flags "$@"
+    cmd_watch
+    ;;
+  ua)
+    parse_common_flags "$@"
+    cmd_ua
+    ;;
+  print)
+    parse_common_flags "$@"
+    cmd_print
+    ;;
+  init)
+    parse_common_flags "$@"
+    cmd_init "${POSITIONAL[0]:-}"
+    ;;
+  brief-check)
+    parse_common_flags "$@"
+    cmd_brief_check "${POSITIONAL[0]:-design-brief.yaml}"
+    ;;
+  validate)
+    # --root may appear in validate args; also honor leading common parse lightly
+    while [[ $# -gt 0 && "$1" == --root ]]; do
+      PROJECT_ROOT="$(cd "$2" && pwd)"; shift 2
+    done
+    cmd_validate "$@"
+    ;;
+  catalog)
+    cmd_catalog "$@"
+    ;;
+  prepress)
+    # allow --root before subcommand
+    while [[ $# -gt 0 && "$1" == --root ]]; do
+      PROJECT_ROOT="$(cd "$2" && pwd)"; shift 2
+    done
+    cmd_prepress "$@"
+    ;;
+  graphics)
+    cmd_graphics "$@"
+    ;;
+  *)
+    die "unknown command: $cmd"
+    ;;
 esac

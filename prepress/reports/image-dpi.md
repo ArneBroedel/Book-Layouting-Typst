@@ -1,5 +1,9 @@
 # Image DPI preflight
 
-- **INFO** `/home/arneb/repos/company/Book-Layouting-Typst/domains/medical/assets/kl-compartment-spatial/vision-refined-01.png` — 2835×2067px (no display size; pass --assume-width-mm)
+- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/heart-schema.svg` — SVG (resolution-independent)
+- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/neuron.svg` — SVG (resolution-independent)
+- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/neuron-compact.svg` — SVG (resolution-independent)
+- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/cell.svg` — SVG (resolution-independent)
+- **OK** `/home/arneb/repos/company/Book-Layouting-Typst/src/assets/anatomy/nephron.svg` — SVG (resolution-independent)
 
-Summary: 0 ok, 0 fail, 1 info
+Summary: 5 ok, 0 fail, 0 info

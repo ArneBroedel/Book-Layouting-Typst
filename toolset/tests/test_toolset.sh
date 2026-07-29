@@ -50,11 +50,11 @@ log "=== 5. reuse pilot ==="
 ./scripts/bookkit build --root "$Root" --entry pilots/reuse-datasheet/main.typ --out dist/toolset/reuse-datasheet.pdf || Fail=1
 assert_pdf dist/toolset/reuse-datasheet.pdf
 
-log "=== 6. kursbuch combined ==="
-if [[ ! -f pilots/kursbuch-welle-03/chapters/iii5.typ ]]; then
-  python3 pilots/kursbuch-welle-03/convert_md_to_typ.py
+log "=== 6. kursbuch combined (legacy archive pilot) ==="
+if [[ ! -f pilots/_archive/kursbuch-welle-03/chapters/iii5.typ ]]; then
+  python3 pilots/_archive/kursbuch-welle-03/convert_md_to_typ.py
 fi
-./scripts/bookkit build --root "$Root" --entry pilots/kursbuch-welle-03/main.typ --out dist/kursbuch-pilot/kursbuch-welle-03.pdf || Fail=1
+./scripts/bookkit build --root "$Root" --entry pilots/_archive/kursbuch-welle-03/main.typ --out dist/kursbuch-pilot/kursbuch-welle-03.pdf || Fail=1
 assert_pdf dist/kursbuch-pilot/kursbuch-welle-03.pdf
 
 log "=== 7. all 10 chapter PDFs ==="

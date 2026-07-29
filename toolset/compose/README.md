@@ -49,7 +49,18 @@ Fail-fast on **hard** checks; no auto-heal. Content path and genre minima are **
 
 ### Run validate
 
-From **repo root**:
+From **repo root** — **preferred** via unified CLI:
+
+```bash
+./scripts/bookkit validate \
+  --typ toolset/compose/fixtures/pass_minimal/chapter.typ \
+  --content toolset/compose/fixtures/pass_minimal/content.md \
+  --accept toolset/compose/fixtures/pass_minimal/accept.md \
+  --genre-minima toolset/compose/fixtures/pass_minimal/genre-minima.yaml \
+  --root . --skip-compile
+```
+
+Equivalent engine entry:
 
 ```bash
 python3 toolset/compose/scripts/run_validate.py \
