@@ -1,3 +1,5 @@
+> **Agent context:** Product **R** (ecosystem lab). **Do not load** this tree into default book-production context. Layout / compose / media skills do not need `research/` unless the task is the package survey itself.
+
 # research/ — ecosystem survey (external / generated data)
 
 This is **external / generated data**, not curated knowledge (see `docs/KNOWLEDGE-MAP.md`). It is the

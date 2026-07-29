@@ -1,3 +1,5 @@
+> **LEGACY ARCHIVE** (workspace-split Phase 2). Prefer `pilots/kursbuch-welle-03-compose/` for current dogfood. Content SoT remains external Kursbuch.
+
 # Kursbuch pilot layout — Welle 2026-07-welle-03-final-10
 
 Layout-only consumer of the **bookkit** toolset. Clinical Markdown sources remain
@@ -8,13 +10,13 @@ read-only under the Kursbuch repo:
 ## Build
 
 ```bash
-# From studio root
-python3 pilots/kursbuch-welle-03/convert_md_to_typ.py
-./scripts/bookkit build --entry pilots/kursbuch-welle-03/main.typ \
+# From studio root (legacy path under pilots/_archive/)
+python3 pilots/_archive/kursbuch-welle-03/convert_md_to_typ.py
+./scripts/bookkit build --entry pilots/_archive/kursbuch-welle-03/main.typ \
   --out dist/kursbuch-pilot/kursbuch-welle-03.pdf
 
 # All chapter PDFs + combined
-./pilots/kursbuch-welle-03/build-all.sh
+./pilots/_archive/kursbuch-welle-03/build-all.sh
 ```
 
 ## Outputs

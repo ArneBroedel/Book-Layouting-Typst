@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Build combined + per-chapter PDFs for Kursbuch pilot.
 set -euo pipefail
-Root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+# Pilot lives under pilots/_archive/ — three levels up to repo root
+Root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 Pilot="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 Out="$Root/dist/kursbuch-pilot"
 mkdir -p "$Out"

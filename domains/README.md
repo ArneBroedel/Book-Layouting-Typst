@@ -1,10 +1,26 @@
-# Domain layers (Produkt B — Übergang)
+# domains/ — companion products (not foundation)
 
-Spezialisierungen **über** der Layout-Plattform (Produkt A).  
-Nicht Teil der Foundation; **Kandidat für eigenes Repo** (siehe `devtracks/PRODUCT-BOUNDARIES.md`).
+Specializations **above** the layout platform (Produkt **A**).  
+Candidates for physical extract (workspace-split Phase 3, trigger-only).
 
-| Ordner | Domäne | Inhalt |
+| Ordner | Produkt | Inhalt |
 |---|---|---|
-| `medical/` | Medizin / Kursbuch-Media | Genre-Rezepte, Media-Brief-Templates, Gold-Briefs, domain skill |
+| `medical/` | **B** — Domain media | recipes, gold briefs, assets, media-brief + medical-graphics skills, harvested Typst libs (`lib/typst/`) |
+| `content-maturity/` | **C** — editorial process kit | content-review / content-orchestrator skills, freeze/proof templates (no chapter SoT) |
 
-**Regel:** Neue medizin-spezifische Logik → hier. Generische bookkit/compose/catalog-core → `packages/` / `toolset/`.
+## Rules
+
+1. **New medical-specific logic** → `domains/medical/` (not `packages/bookkit`).  
+2. **Generic layout / validate / catalog** → `packages/` / `toolset/`.  
+3. **Real Kursbuch content** stays **external** (Produkt C works); never SoT under `domains/`.  
+4. Skills SoT live under each domain; discovery symlinks under `.github/skills/`, `.grok/skills/` only.
+
+## Ownership
+
+- `medical/OWNERSHIP.md`
+- `content-maturity/OWNERSHIP.md`
+
+## Related
+
+- `devtracks/PRODUCT-BOUNDARIES.md`
+- `devtracks/workspace-split/` (modular monorepo; split deferred)

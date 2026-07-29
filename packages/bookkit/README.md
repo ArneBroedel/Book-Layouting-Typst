@@ -45,3 +45,8 @@ palette in your entry file for covers/headings. Deep theme injection is a later 
 - Facet: `packages/bookkit-didactics/`
 - Studio dogfood: `src/styles/*` and foundation `src/components/*` re-export this package
 - CLI: `scripts/bookkit`
+
+## Product boundary
+
+Foundation only — no medical domain imports. Ownership: [`../OWNERSHIP.md`](../OWNERSHIP.md).
+Optional didactic boxes: sibling package `bookkit-didactics`.
