@@ -116,12 +116,13 @@ typst compile --root . --ignore-system-fonts --font-path fonts \
 
 See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):  
 `branching-emergency` · `leitsymptom-vertical-flow` · `hard-stop-protocol` · `framework-os-sequence`  
-**+ KL:** `kl-urgency-scope-stack` · `kl-urgency-nested-t1` · `kl-urgency-exception-t1` · `kl-urgency-scope-dashboard` · `kl-mimic-map` · `kl-mimic-peel` · `kl-discrimination` · `kl-mechanism-chain` · `kl-abcde-look` · `kl-spatial-saddle` · `kl-spatial-mscc`
+**+ KL:** `kl-urgency-scope-stack` · `kl-urgency-nested-t1` · `kl-urgency-exception-t1` · `kl-urgency-scope-dashboard` · `kl-mimic-map` · `kl-mimic-peel` · `kl-discrimination` · `kl-mechanism-chain` · `kl-abcde-look` · `kl-fast-look` · `kl-flag-cluster` · `kl-safety-chrome` · `kl-spatial-saddle` · `kl-spatial-mscc`  
+**E2E one monograph:** [`playbook/10-kl-chapter-pipeline.md`](playbook/10-kl-chapter-pipeline.md)
 
 ## Gold examples
 
 [`examples/INDEX.md`](examples/INDEX.md) · Walkthrough [`playbook/walkthrough-iv2.md`](playbook/walkthrough-iv2.md)  
-**KL spikes:** `toolset/compose/spikes/graphics/kl-script-system/README.md` · PDFs under `dist/spikes/graphics/kl-script-system/`
+**KL spikes:** `kl-script-system/` · `kl-wave5/` · `kl-wave6/` under `toolset/compose/spikes/graphics/`
 
 ## Grammar vs ambition (KL lesson)
 
@@ -140,6 +141,7 @@ Criteria icons may look right while teaching wrong (Melanom B/D) → **illustrat
 | | |
 |---|---|
 | **KL form library** | [`references/kl-form-library.md`](references/kl-form-library.md) |
+| **KL chapter pipeline** | [`playbook/10-kl-chapter-pipeline.md`](playbook/10-kl-chapter-pipeline.md) |
 | Free vision | [`references/free-vision.md`](references/free-vision.md) |
 | Decision heuristics | [`references/decision-heuristics.md`](references/decision-heuristics.md) |
 | Book visual standards | [`references/book-visual-standards.md`](references/book-visual-standards.md) |

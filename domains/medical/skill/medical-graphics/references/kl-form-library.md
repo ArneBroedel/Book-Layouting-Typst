@@ -85,6 +85,36 @@ Accept: `domains/medical/briefs/kl-wave5.accept.md`
 
 ---
 
+## Wave-6 closing transfers (2026-07-29)
+
+Completes form-type matrix for track close (not all 88 monographs).
+
+| Chapter | Grammar | Ambition winner | Module |
+|---------|---------|-----------------|--------|
+| Sepsis-Flags | nested multi-T1 (6×112) + mimic 5 | **`kl-flag-cluster` code** | `kl-wave6/lib/sepsis.typ` |
+| Gicht | stack T1–T4 + mimic 3 | — (pin-swap proof) | `lib/gicht.typ` |
+| Lungenembolie | nested multi-T1 + mimic 4 | Wells = SCOPE only | `lib/le.typ` |
+
+Content maps: `domains/medical/briefs/_wave6/*.content-map.md`  
+Spike: `toolset/compose/spikes/graphics/kl-wave6/` · PDF `dist/spikes/graphics/kl-wave6/grammar.pdf`  
+Accept: `domains/medical/briefs/kl-wave6.accept.md`
+
+### New recipe (Wave-6)
+
+| Recipe id | When | Default | Gold |
+|-----------|------|---------|------|
+| `kl-flag-cluster` | Gatekeeper single-criterion scan (Sepsis-type D); multi-flag masters | **code** equal chips + “bereits EINS → 112”; score secondary non-clearance | `flag-cluster-sepsis()` · form-spec `kl-sepsis-flag-cluster` |
+
+### Wave-6 process lessons
+
+1. **Flag-master ≠ nested-T1 alone** — single-criterion chips teach the *stricter-than-score* rule that a long trigger list buries.  
+2. **T3 only when C has it** (Gicht yes; Sepsis/LE no) — same collapse rule as Wave-5.  
+3. **Score hygiene family:** MHS (ACS), qSOFA (Sepsis), Wells (LE) → always SCOPE brake / sensibilisieren, never TIME ladder or green clearance.  
+4. Closing wave can be **code-only** when ambition = new grammar recipe (not free vision).  
+5. Further monographs after track archive = **routine ops** (operator checklist), not open track work.
+
+---
+
 ## Spatial / asset-first
 
 | Unit | Recipe id | Asset | Form Spec | Audit |
@@ -117,6 +147,8 @@ Always run claim audit after free gen. Never accept-asset on FAIL.
 | `…/wave-o.pdf` | Full Erysipel stack |
 | `…/ambition.pdf` | Free vision + recreates + spatial |
 | `…/melanom.pdf` | Melanom transfer (grammar + ABCDE) |
+| `dist/spikes/graphics/kl-wave5/` | Wave-5 grammar/ambition spikes |
+| `dist/spikes/graphics/kl-wave6/grammar.pdf` | Wave-6 Sepsis · Gicht · LE |
 
 ---
 

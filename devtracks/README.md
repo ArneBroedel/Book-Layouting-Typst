@@ -44,8 +44,7 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 | Track | Product | Path | Focus |
 |---|---|---|---|
-| **workspace-split** | **A/B/C** (structure) | [`workspace-split/`](workspace-split/) · inventory [`workspace-inventory/`](workspace-inventory/) | **Active:** consolidate monorepo focus; Phase 0–1 done; **next Phase 1b CLI**. Start: `workspace-split/README.md` + `HANDOFF.md` |
-| **kl-form-language** | **B** | [`kl-form-language/`](kl-form-language/) | Illness-script form language expansion (may harvest into B skills/guides) |
+| **workspace-split** | **A/B/C** (structure) | [`workspace-split/`](workspace-split/) · inventory [`workspace-inventory/`](workspace-inventory/) | **Active:** consolidate monorepo focus; Phase 0–1 done; inventur refreshed 2026-07-29; **next Phase 1b CLI**. Start: `workspace-split/README.md` + `HANDOFF.md` |
 
 Runtime products (not tracks):
 
@@ -60,6 +59,6 @@ Runtime products (not tracks):
 **Consumer guide:** [`docs/CONSUMER.md`](../docs/CONSUMER.md).  
 **Pilot dogfood:** `pilots/kursbuch-welle-03-compose/`.
 
-**Recently archived:** `medical-graphics` (2026-07-29; skill SoT `domains/medical/skill/medical-graphics/`), `content-maturity` (C process MVP; kit stays `domains/content-maturity/`; v0.4 backlog in archived plan), `agentic-adaptations` (layered on same kit; parallel audit) under `_archive/`.  
+**Recently archived:** `kl-form-language` (2026-07-29; ops `playbook/10-kl-chapter-pipeline.md` + form library), `medical-graphics` (skill SoT `domains/medical/skill/medical-graphics/`), `content-maturity` (C process MVP; kit stays `domains/content-maturity/`; v0.4 backlog in archived plan), `agentic-adaptations` (layered on same kit) under `_archive/`.  
 **v0.2 archived:** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` under `_archive/`.  
 Earlier: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx`, …

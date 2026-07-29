@@ -62,6 +62,14 @@ Dependency rules to enforce (document + spot-check):
 | `stroke.typ` | yes |
 | `anaphylaxie.typ`, `mi.typ`, `suicid.typ` | archive-adjacent content — harvest only if generic |
 
+**Wave6** (`kl-wave6/lib/` — post form-language campaign):
+
+| Module | Notes |
+|---|---|
+| `sepsis.typ` | flag-master + nested multi-T1 patterns |
+| `gicht.typ` | standard kl-kurz pin-swap |
+| `le.typ` | nested-T1 + Wells SCOPE |
+
 **Chapter unit libs:**
 
 | Path | Notes |

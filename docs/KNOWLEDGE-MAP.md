@@ -64,7 +64,7 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | Form-space process | `domains/medical/skill/media-brief/references/kl-form-space-process.md` |
 | Form library (unit→module/asset) | `domains/medical/skill/medical-graphics/references/kl-form-library.md` |
 | Exploration index (provenance) | `domains/medical/briefs/_explorations/README.md` |
-| Active expansion track | `devtracks/kl-form-language/` |
+| KL form language (archived) | `devtracks/_archive/kl-form-language/` · ops `playbook/10-kl-chapter-pipeline.md` |
 | Spike modules | `toolset/compose/spikes/graphics/kl-script-system/README.md` |
 | Transfer eval (Melanom) | `spike-melanom.typ` · briefs `kl-melanom*.md` · PDF `melanom.pdf` |
 | Skill evals | `domains/medical/skill/*-workspace/` + `*/evals/evals.json` |

@@ -23,11 +23,12 @@
 | `2c97faf` | Spec, inventory snapshot, CANONICAL/INDEX, root litter, gitignore |
 | `ec97338` | Phase files + HANDOFF/README (**docs only** — not CLI implementation) |
 
-## Not done (next)
+## Follow-ups after hygiene (still open as of currency pass 2026-07-29)
 
 - Wire `bookkit graphics vision|refine|spike-init` (wrap existing scripts) → **phase1b**
-- Wire `bookkit validate` / `prepress` under same CLI → **phase1b**
-- Spike lib harvest → package → **phase2**
+- Wire `bookkit validate` / `prepress` under same CLI; **print** no longer stub → **phase1b**
+- Spike lib harvest (incl. `kl-wave6/lib`) → domain lib / package → **phase2**
+- Inventory snapshot: re-run `python3 scripts/workspace-inventory.py` after large moves (done once post-hygiene)
 - Showcase move (D3: later)
 
 ## Restore assets

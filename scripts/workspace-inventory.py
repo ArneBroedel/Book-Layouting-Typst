@@ -210,9 +210,52 @@ def main() -> None:
                 f"{b}\t{len(files)}\t{bts}\t{bts / 1e6:.2f}\t{PURPOSE.get(b, '')}\n"
             )
 
+    sorted_rows = sorted(rows, key=lambda x: x["path"])
     (OUT / "all-files.txt").write_text(
-        "\n".join(sorted(r["path"] for r in rows)) + "\n", encoding="utf-8"
+        "\n".join(r["path"] for r in sorted_rows) + "\n", encoding="utf-8"
     )
+
+    with (OUT / "all-files-with-size.tsv").open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter="\t")
+        w.writerow(["path", "bytes"])
+        for r in sorted_rows:
+            w.writerow([r["path"], r["bytes"]])
+
+    # Grouped human catalog (directory / single-file groups)
+    groups: dict[str, list] = defaultdict(list)
+    for r in rows:
+        parts = r["path"].split("/")
+        if len(parts) == 1:
+            key = "(root)"
+        elif len(parts) == 2:
+            key = r["path"]  # single file under one parent → own section
+        else:
+            key = "/".join(parts[:-1]) + "/"
+        groups[key].append(r)
+
+    catalog_lines = [
+        "# Workspace File Catalog (grouped)",
+        f"Generated inventory: `{len(rows)}` files (excl. `.git`, `__pycache__`, `.playwright-mcp`).",
+        "Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, role, purpose).",
+        "",
+    ]
+    for key in sorted(groups.keys(), key=lambda k: (k != "(root)", k.lower())):
+        members = sorted(groups[key], key=lambda x: x["path"])
+        bts = sum(m["bytes"] for m in members)
+        buckets = sorted({m["bucket"] for m in members})
+        purpose = PURPOSE.get(buckets[0], "") if len(buckets) == 1 else "mixed"
+        kib = max(1, round(bts / 1024)) if bts else 0
+        catalog_lines.append(f"## `{key}`")
+        catalog_lines.append(
+            f"- **n:** {len(members)} · **size:** {kib} KiB · **buckets:** {', '.join(buckets)}"
+        )
+        catalog_lines.append(f"- **purpose:** {purpose}")
+        for m in members:
+            catalog_lines.append(
+                f"  - `{m['path']}` ({m['ext']}, {m['bytes']} B) — {m['role']}"
+            )
+        catalog_lines.append("")
+    (OUT / "CATALOG.md").write_text("\n".join(catalog_lines), encoding="utf-8")
 
     # noise candidates
     noise_path = OUT / "noise-candidates.tsv"

@@ -118,7 +118,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | medical domain media | **B** | `domains/medical/` (split candidate; Phase 3 deferred) |
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
 | **workspace-split** (active) | **A/B/C** structure | `devtracks/workspace-split/` · inventory `workspace-inventory/` · Phase 0–1 done; **next 1b CLI** |
-| **kl-form-language** (active) | **B** | `devtracks/kl-form-language/` · foundation harvested; chapter expansion open |
+| **kl-form-language** (archived) | **B** | `devtracks/_archive/kl-form-language/` · system complete; ops: `playbook/10-kl-chapter-pipeline.md` |
 | Consumer guide | A | `docs/CONSUMER.md` |
 
 **Flow (v0.2):** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.  

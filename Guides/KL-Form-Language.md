@@ -112,8 +112,11 @@ Exploration (`brief_class: exploration`) may run before content freeze. It never
 - English stage chrome or decorative fake vitals  
 - Flattening T1 and T2 into one “Notfall” blob  
 - Putting SCOPE as a fifth traffic-light rung  
+- Using clinical scores (qSOFA, Wells, MHS, …) as **green clearance** or TIME rungs — they belong in **SCOPE** as sensibilisieren-only  
 
 Creativity serves the **learner job**. Drama that invents content fails Accept.
+
+**Transfer coverage (system demos):** Erysipel (standard) · Melanom (exception-T1 + ABCDE) · MI/Stroke/Anaphylaxie (nested multi-T1) · Suizidalität (safety chrome) · Kompartment non-body · CES/MSCC spatial · Sepsis flag-cluster · Gicht pin-swap · LE + Wells SCOPE. Further monographs use the operator checklist — the form language is complete as a system.
 
 ---
 
@@ -137,6 +140,7 @@ If content says “112 typically not primary” (e.g. Melanom screening), do **n
 |--------------|---------------|------------------|----------------|
 | Handeln & Dringlichkeit | U-urgency + U-scope | choose + constrain | `kl-urgency-scope-stack` / dashboard |
 | Multi-112 list | multi-trigger ∈ T1 | one stop card | `kl-urgency-nested-t1` |
+| Gatekeeper / flag-master | single-criterion flags | stop on **any one** | `kl-flag-cluster` (+ nested-T1 list) |
 | Erhärtet / passt nicht | U-for-against | distinguish | `kl-discrimination` (FA) |
 | Nicht übersehen | U-must-not-miss | stop-awareness | `kl-discrimination` (NM) |
 | Trügerische Erklärungen | U-mimic | distinguish error | `kl-mimic-map` / peel |
@@ -222,7 +226,7 @@ Copy **geometry logic**, not decorative leftovers. An Erysipel onset spectrum is
 | Form Spec / Brief / Accept templates | `domains/medical/templates/` |
 | Spike demo | `toolset/compose/spikes/graphics/kl-script-system/` |
 | Exploration provenance | `domains/medical/briefs/_explorations/` |
-| Active track | `devtracks/kl-form-language/` |
+| Track (archived) | `devtracks/_archive/kl-form-language/` · ops `playbook/10-kl-chapter-pipeline.md` |
 | Presentation forms (general) | `Guides/Medical-Presentation-Forms.md` |
 | Graphics why (general) | `Guides/Medical-Graphics-Playbook.md` |
 

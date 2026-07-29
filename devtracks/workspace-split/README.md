@@ -1,8 +1,9 @@
 # Devtrack: workspace-split
 
 **Status:** active — Phase 0–1 **done**; implement from Phase 1b onward  
+**Currency:** 2026-07-29 plan/inventory refresh; only open *structure* track left (B feature tracks archived)  
 **Product impact:** A (layout platform focus) + B/C boundaries + delivery model  
-**Do not confuse with:** content-maturity split checklist (C only), medical-graphics feature track (B graphics quality)
+**Do not confuse with:** content-maturity split checklist (C only, archived track), medical-graphics skill (B runtime under `domains/medical/skill/`)
 
 ---
 
@@ -48,12 +49,12 @@
 
 | Phase | Status |
 |---|---|
-| 0 Inventar + Plan | **done** |
+| 0 Inventar + Plan | **done** (inventory re-run 2026-07-29; ~851 files) |
 | 1 Hygiene (purge, archive, gitignore, tag) | **done** (`b437aad` purge/archive, `2c97faf` policy/inventory; tag `archive/assets-pre-purge-2026-07-29` → `093442c`) |
-| 1b Unified CLI | **open — start here** (not implemented; `ec97338` only added phase docs) |
-| 2 Boundaries + harvest | open |
+| 1b Unified CLI | **open — start here** (`bookkit` still doctor/build/watch/ua/init/brief-check; print stub; no graphics/validate) |
+| 2 Boundaries + harvest | open (incl. `kl-wave6/lib`) |
 | 3 Physical split | **blocked** until trigger (D2) |
-| 4 Skills + docs polish | open (can parallel 1b/2) |
+| 4 Skills + docs polish | open (can parallel 1b/2; root README still pre-toolset) |
 | 5 Nice-to-have | backlog |
 
 ### Governance rule for implementers

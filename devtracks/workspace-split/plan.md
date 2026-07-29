@@ -1,51 +1,65 @@
 # Plan — Aufräumen, Konsolidieren, Aufteilen
 
 **Status:** active — Phase 0–1 **done**; implement via phase files  
+**Currency audit:** 2026-07-29 — inventur refreshed; narrative aligned to HEAD  
 **Implementer entry:** [`README.md`](README.md) · [`HANDOFF.md`](HANDOFF.md)  
 **Spec:** [`spec.md`](spec.md)  
 **Phase files:** [`phase1-hygiene.md`](phase1-hygiene.md) ✅ · [`phase1b-cli.md`](phase1b-cli.md) ⬅ next · [`phase2-boundaries.md`](phase2-boundaries.md) · [`phase3-split.md`](phase3-split.md) · [`phase4-skills-docs.md`](phase4-skills-docs.md)  
 **Antigravity Review:** [`antigravity-peer-review.md`](antigravity-peer-review.md)  
 **Joint Recommendation (verbindlich):** [`joint-recommendation.md`](joint-recommendation.md)  
 **Decisions D1–D5 (locked):** [`decisions.md`](decisions.md)  
-**Vollindex:** [`../workspace-inventory/`](../workspace-inventory/) (re-run `scripts/workspace-inventory.py` after large moves; snapshot may predate purge)
+**Vollindex:** [`../workspace-inventory/`](../workspace-inventory/) — live via `python3 scripts/workspace-inventory.py` (rewrites TSV + `CATALOG.md`)
 
-> **Binding after peer-review + Human D1–D5:** Hybrid delivery (one `bookkit` CLI + Typst packages + skills). Repo-Split **trigger-only**. Phase 1 hygiene already applied (assets ~25 MB, briefs archived, tag `archive/assets-pre-purge-2026-07-29`).
+> **Binding after peer-review + Human D1–D5:** Hybrid delivery (one `bookkit` CLI + Typst packages + skills). Repo-Split **trigger-only**. Phase 1 hygiene applied (assets ~26 MB, gold briefs + `_archive/`, tag `archive/assets-pre-purge-2026-07-29`). **CLI Phase 1b still open** (`scripts/bookkit` print remains stub; no `validate` / `graphics` verbs yet).
+
+### Currency (what changed since the original inventur write-up)
+
+| Item | Status |
+|---|---|
+| Phase 0 inventur + plan | done |
+| Phase 1 hygiene (purge, archive, gitignore, tag) | **done** |
+| Inventory TSVs / CATALOG | **regenerated** (post-hygiene; ~851 files) |
+| `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` | **harvested →** `devtracks/_archive/` (skills/kits live under `domains/`) |
+| Wave‑6 KL chapters + `playbook/10-kl-chapter-pipeline.md` | landed in B (ops; not open work for this track) |
+| Phase **1b** unified CLI | **open — next** |
+| Phase 2 / 4 | open · Phase 3 trigger-only (D2) |
 
 ---
 
 ## 0. Inventur — Faktenlage
 
-### 0.1 Volumen
+### 0.1 Volumen — baseline (pre Phase‑1) vs. current
 
-| Bereich | Dateien | Größe (ca.) | Bemerkung |
+| Bereich | Baseline (pre-hygiene) | **Current (inventory re-run)** | Bemerkung |
 |---|---:|---:|---|
-| Gesamter Workspace (ohne `.git`) | **~1013** | **~185 MB** | Index exkl. `__pycache__`, `.playwright-mcp` |
-| davon `dist/` | 214 | **109 MB** | gitignored, Build-Schutt |
-| `domains/` | 311 | **66 MB** | davon Assets ~65 MB |
-| Rest (A+C+Meta+Research) | ~490 | ~10 MB | Code/Docs/Skills |
-| Git-tracked | ~859 | — | inkl. ~40 PNG + große Vision-Assets |
+| Workspace (ohne `.git`) | ~1013 files / ~185 MB | **~851 files / ~36 MB** | Index excl. `__pycache__`, `.playwright-mcp` |
+| `dist/` | 214 / ~109 MB | ~2 / ~0.1 MB | still gitignored; wipe when large |
+| `domains/` | ~311 / ~66 MB | ~317 / ~26–28 MB | assets ~26 MB (was ~65 MB) |
+| Rest (A+C+Meta+R) | ~490 / ~10 MB | rest of tree | code/docs/skills/research |
+| Git-tracked | ~859 | ~864 | no intermediate vision bulk |
 
-### 0.2 Extension-Mix (gesamt)
+### 0.2 Extension-Mix (current index)
 
-| Ext | n | Rolle |
+| Ext | n (ca.) | Rolle |
 |---|---:|---|
-| `.md` | ~413 | Skills, Briefs, Guides, Devtracks, Templates |
-| `.typ` | ~231 | Packages, Showcase, Spikes, Pilots, Templates-Korpus |
-| `.png` | ~152 | Vision/Refine-Assets, Spike-Exports, dist |
-| `.pdf` | ~106 | Build/Spike/Showcase-Nebenprodukte |
-| `.json` | ~36 | Research-Daten, Skill-Evals, Benchmarks |
-| `.py` | ~33 | Compose-Validate, Research-Pipeline, DPI |
-| Rest | — | sh/ps1, yaml, fonts, ICC, svg, …
+| `.md` | ~448 | Skills, Briefs, Guides, Devtracks, Templates |
+| `.typ` | ~228 | Packages, Showcase, Spikes, Pilots, Templates-Korpus |
+| `.png` | ~30 | Canonical vision/refined assets (post-purge) |
+| `.pdf` | few | residual local/spike; policy gitignores most |
+| `.json` | ~33 | Research-Daten, Skill-Evals, Benchmarks |
+| `.py` | ~34 | Compose-Validate, Research-Pipeline, DPI, inventory |
+| Rest | — | sh/ps1, yaml, fonts, ICC, svg, … |
 
-### 0.3 Wo der Fokus „verloren“ geht (Signal)
+### 0.3 Wo der Fokus noch „verloren“ geht (Signal — post Phase‑1)
 
-1. **`domains/medical/assets/` (~65 MB)** — Raster-Vision/Refine dominiert Disk & kognitive Last.  
-2. **`domains/medical/briefs/` (~124 Dateien)** — Gold + Explorations + Wave5; Prozess-Artefakte, kein Layout-Core.  
-3. **`toolset/compose/spikes/graphics/` (~72 Dateien)** — Hybrid A/B: Layout-Spike *und* Grafik-R&D.  
-4. **`dist/` (109 MB)** — lokal ok, darf nie „Projektinhalt“ sein.  
-5. **Skill-Workspaces** (`*-workspace/**`, ~60 Dateien) — Eval-Outputs, nicht Runtime.  
-6. **Doppel-Showcase:** `src/` (Buch) + `packages/` (Runtime) + `pilots/` (Dogfood) — sinnvoll, aber unklar kommuniziert.  
-7. **Research/Templates** — Ecosystem-Labor, nicht Produkt-Runtime.
+1. **`domains/medical/assets/` (~26 MB)** — still largest product bucket; CANONICAL policy must hold (no new intermediate PNG dumps).  
+2. **`domains/medical/briefs/` (~141 files incl. archive/waves)** — gold + form-library top-level; `_archive/`, `_wave5/`, `_wave6/`, `_explorations/` for process noise.  
+3. **`toolset/compose/spikes/graphics/` (~75 Dateien)** — Hybrid A/B incl. **kl-wave6** libs; harvest still Phase 2.  
+4. **`dist/`** — local ok, never project content; nearly empty after wipe.  
+5. **Skill-Workspaces** (`*-workspace/**`) — Eval-Outputs, not Runtime (gitignore residual HTML).  
+6. **Doppel-Showcase:** `src/` + `packages/` + `pilots/` — still poorly communicated in root `README.md` (Phase 4).  
+7. **Research/Templates** — still ~5 MB ecosystem lab, not product runtime.  
+8. **CLI surface** — agents still discover ad-hoc `scripts/graphics-*.sh` / `run_validate.py` because Phase 1b incomplete.
 
 ---
 
@@ -59,17 +73,16 @@
 | Pfad | Zweck / Inhalt |
 |---|---|
 | `CLAUDE.md` | Kanonische Architektur, Build, Komponenten-Inventar, Skill-Gate (sehr lang, monorepo-zentriert) |
-| `AGENTS.md` | Multi-Agent Discovery, Product A/B/C, Skill-Tabelle, Linux-Build |
-| `README.md` | Einstieg; **veraltet** (11 Kapitel, alte Font-Story) vs. realem Toolset |
+| `AGENTS.md` | Multi-Agent Discovery, Product A/B/C, Skill-Tabelle, Linux-Build (points at this track) |
+| `README.md` | Einstieg; **still outdated** (11 chapters, pre-toolset story) vs. real package/CLI consumer path → Phase 4 |
 | `LICENSE` | Lizenz |
-| `.gitignore` | u. a. `dist/`; Scratch-PNG unvollständig abgedeckt |
+| `.gitignore` | Strengthened in Phase 1 (PDFs next to sources, eval outputs, scratch, tmp) |
 | `.editorconfig` | Editor-Defaults |
 | `project-tech-stack.md` | Historischer Tech-Stack-Report |
 | `SETUP-WINDOWS.md` | Windows-Setup |
-| `scratch_test.{typ,svg,png}` | Root-Litter Experiment |
-| `v-cauda-compile.typ`, `v-sept-compile.typ` | Ad-hoc Compile-Wrapper Root |
+| ~~`scratch_test.*` / `v-*-compile.typ`~~ | **Removed** Phase 1 |
 
-**Konsolidierung:** Governance auf **Produkt-A-Kern** schrumpfen; A/B/C-Grenzen kurz + Link. Scratch löschen. README auf Consumer-first.
+**Konsolidierung:** Governance auf **Produkt-A-Kern** schrumpfen; A/B/C-Grenzen kurz + Link. README auf Consumer-first (Phase 4).
 
 ### 1.2 Produkt A — Layout-Plattform (Kern des ursprünglichen Ziels)
 
@@ -138,7 +151,7 @@
 
 | Pfad | Zweck |
 |---|---|
-| `scripts/bookkit` | CLI doctor/build/watch/ua/init (print stub) |
+| `scripts/bookkit` | CLI doctor/build/watch/ua/init/brief-check; **print still stub**; no validate/prepress/graphics yet → **Phase 1b** |
 | `scripts/build.sh`, `build.ps1` | Showcase-Build |
 | `scripts/setup.ps1`, `preflight.ps1` | Windows toolchain |
 | `scripts/print-pdfx.sh/.ps1`, `preflight-print.sh`, `check-image-dpi.py` | Prepress |
@@ -199,7 +212,7 @@
 | Pfad | Zweck |
 |---|---|
 | `domains/medical/skill/media-brief/SKILL.md` + `references/*` + `evals/` | Media-Rolle: Ideal → Form Spec → Brief → Accept; KL-Ontologie |
-| `domains/medical/skill/medical-graphics/SKILL.md` + `playbook/00–09` + `references/*` + `evals/` + `examples/` | Graphics-Rolle: free vision → claim audit → recreate/hybrid/refine |
+| `domains/medical/skill/medical-graphics/SKILL.md` + `playbook/00–10` + `references/*` + `evals/` + `examples/` | Graphics-Rolle: free vision → claim audit → recreate/hybrid/refine; **10** = KL chapter pipeline (ops after form-language harvest) |
 | `*-workspace/**` | Skill-Eval Iterationen (Outputs, grading, HTML) — **nicht Runtime** |
 
 #### Recipes & Templates
@@ -209,32 +222,36 @@
 | `domains/medical/recipes/{notfall-karte,lerntext,fallbasiert}.*` | Genre-Minima / Intent |
 | `domains/medical/templates/*.template.md` | brief, form-spec, vision, claim-audit, decision, accept |
 
-#### Briefs (Prozess-Artefakte / Gold)
+#### Briefs (Prozess-Artefakte / Gold) — post D5 / Phase‑1 archive
+
+Policy: [`domains/medical/briefs/INDEX.md`](../../domains/medical/briefs/INDEX.md). Approximate **top-level** counts (not `_archive/`):
 
 | Muster | n (ca.) | Zweck |
 |---|---:|---|
-| `*.brief.md` | 17 | Media Brief Gold/Work |
-| `*.form-spec.md` | 26 | Ambitionierte Visual-Units |
-| `*.feasibility.md` | 10 | Tech-Antwort (eigentlich A-Artefakt, liegt in B) |
-| `*.accept.md` | 15 | Media Accept |
-| `*.vision.md` | 17 | Free-Vision Protokolle |
-| `*.graphics.md` | 6 | Decision Notes |
-| `*.claim-audit.md` | 5 | Claim-Audit |
-| `_explorations/`, `_wave5/` | ~26 | Forschung/Waves |
-| Boards | 1+ | kl-wave5.board |
+| `*.brief.md` | ~11 | Gold / active work briefs |
+| `*.form-spec.md` | ~25 | Ambitionierte Visual-Units + form-library |
+| `*.feasibility.md` | ~5 | Tech-Antwort (A-Artefakt, liegt in B) |
+| `*.accept.md` | ~7 | Media Accept (incl. `kl-wave6.accept`) |
+| `*.vision.md` | ~11 | Free-Vision Protokolle (gold units) |
+| `*.graphics.md` | ~5 | Decision Notes |
+| `*.claim-audit.md` | ~3 | Claim-Audit |
+| `_archive/` | 42 | Non-gold / intermediate (Phase 1) |
+| `_explorations/`, `_wave5/`, `_wave6/` | ~30 | Research/wave notes (content maps, crosscuts) |
 
-**Konsolidierung:** Gold-Set (≤10 Kapitel-Einheiten) behalten; Explorations + Iteration-Visions archivieren (git-tag / `archive/` / Git-LFS-Policy).
+**Gold chapter prefixes (D5):** iii2, iii5, iv2, iv4, ii1 (opt), kl-melanom*, kl-us-d, kl-stroke-fast, kl-compartment-spatial, kl-ces-saddle (opt), **kl-sepsis / kl-gicht / kl-le** (Wave‑6).
+
+**Konsolidierung (remaining):** keep INDEX discipline; do not re-inflate top-level with intermediates; feasibility notes could later live under A compose artifacts (Phase 2 hygiene optional).
 
 #### Assets (Raster/SVG)
 
 | Pfad | Zweck |
 |---|---|
 | `domains/medical/assets/<slug>/MANIFEST.md` | Asset-Inventar pro Unit |
-| `vision-free-*.png`, `vision-refined-*.png` | AI-Vision / Refine |
+| `vision-free-*.png`, `vision-refined-*.png` | AI-Vision / Refine (**canonical only** after purge) |
 | `iii2-bls-aed/*.{svg,png,jpg}` | Algorithmus-Vektor + Raster-Varianten |
-| `kl-compartment-spatial/*` | Viele Gemini-Varianten (Sweetspot/Principle/…) — **Haupt-Bulk** |
+| `kl-compartment-spatial/*` | Spatial unit — intermediates purged Phase 1 |
 
-**Konsolidierung:** Pro Unit max. **1 accepted + optional 1 vision reference**; Rest in Release-Assets oder LFS-Archiv. SVG-first Policy durchsetzen.
+**Policy live:** [`domains/medical/assets/CANONICAL.md`](../../domains/medical/assets/CANONICAL.md). Restore purged PNGs only from tag `archive/assets-pre-purge-2026-07-29`.
 
 #### Graphics Scripts (CLI-Keim B/G)
 
@@ -257,11 +274,12 @@
 | Pfad | Zweck |
 |---|---|
 | `toolset/compose/spikes/graphics/<unit>/lib/*.typ` | Wiederverwendbare CeTZ/Fletcher-Module (urgency, mimic, compartment, …) |
+| `kl-script-system/lib/`, `kl-wave5/lib/`, **`kl-wave6/lib/`** (`sepsis`, `gicht`, `le`) | Harvest candidates Phase 2 |
 | `spike-*.typ`, compare/recreate/refined | Experimente |
 | `_templates/` | Spike-Scaffold |
 | READMEs | Navigation |
 
-**Konsolidierung:** Stabile Module → **`packages/bookkit-graphics` oder B-`lib/typst/`**; flüchtige Spikes archivieren. Keine PDFs im Spike-Tree.
+**Konsolidierung:** Stabile Module → **`domains/medical/lib/typst/`** (preferred) or `packages/bookkit-graphics`; flüchtige Spikes archivieren. Keine PDFs im Spike-Tree (one residual `iii2` spike PDF still noise-candidate).
 
 ---
 
@@ -297,8 +315,8 @@
 
 | Pfad | Zweck |
 |---|---|
-| `devtracks/*` active | kl-form-language, medical-graphics, content-maturity, agentic-adaptations, CONSENSUS, PRODUCT-BOUNDARIES, orchestration |
-| `devtracks/_archive/*` | Harvested Provenance (~20 Tracks) |
+| `devtracks/*` **active feature tracks** | **only** `workspace-split` + `workspace-inventory` (+ governance: CONSENSUS, PRODUCT-BOUNDARIES, ROLES, ORCHESTRATION, `_orchestration/`) |
+| `devtracks/_archive/*` | Harvested provenance incl. **kl-form-language**, **medical-graphics**, **content-maturity**, **agentic-adaptations**, form-catalog, compose-pipeline, … |
 | `.github/skills/*` SoT + Symlinks | Agent entry |
 | `.grok/skills/*`, `.claude/skills/*`, `.agents/skills/*` | Discovery-Symlinks |
 | `.github/workflows/build.yml` | CI build |
@@ -423,7 +441,7 @@ Bleibt dünn: Board/Run-log Templates + Skill, der **nur** Routing kennt und Sub
 
 ### 4.1 Quick Wins (Phase 1) — **DONE** (see `phase1-hygiene.md`)
 
-Items 1–4, 7–8 executed. Item 5 (README/AGENTS mission) deferred to **phase4**. Item 6 residual optional in phase2.
+Items 1–4, 7–8 executed. Item 5 (README/AGENTS mission) deferred to **phase4** (root `README.md` still pre-toolset). Item 6 residual optional in phase2 (e.g. residual spike PDF, skill-workspace HTML).
 
 ### 4.2 A — Layout minimieren
 
@@ -439,18 +457,18 @@ Items 1–4, 7–8 executed. Item 5 (README/AGENTS mission) deferred to **phase4
 
 ### 4.3 B — Media + Graphics minimieren
 
-1. **Gold-Briefs only:** z. B. iii2, iii5, iv2, iv4, kl-melanom, kl-us-d, 1 spatial — rest `briefs/_archive/` (im Repo oder Tag).  
+1. **Gold-Briefs only:** ~~archive non-gold~~ **done** (Phase 1 + D5 INDEX). Live gold includes Wave‑6 `kl-sepsis` / `kl-gicht` / `kl-le`. Keep INDEX discipline.  
 2. **Assets:**  
-   - Keep: accepted SVG/PDF vector, 1 refined raster if hybrid.  
-   - Drop/LFS: intermediate gemini-* variants (compartment bulk).  
-3. **Spikes → Library:**  
-   - `lib/*.typ` aus kl-script-system + kl-wave5 → `domains/medical/lib/typst/` oder package.  
+   - ~~Drop intermediate gemini bulk~~ **done** (tag + purge).  
+   - Ongoing: accepted SVG/PDF vector + at most 1 refined raster if hybrid; no new intermediate commits.  
+3. **Spikes → Library (Phase 2 remaining):**  
+   - `lib/*.typ` aus kl-script-system + kl-wave5 + **kl-wave6** → `domains/medical/lib/typst/` (preferred) oder package.  
    - Spike-Treiber und compare-PDF-Workflow nur in `experiments/`.  
-4. **Skill-Workspaces:** nur `evals/evals.json` + README; Iteration-Outputs gitignore.  
-5. **Playbook:** 00–09 behalten (Kern); walkthroughs optional.  
-6. **Ein Vision-CLI:** `scripts/graphics-*` hinter `graphics` Subcommands vereinheitlichen (gemini|agy backend).  
+4. **Skill-Workspaces:** nur `evals/evals.json` + README; Iteration-Outputs gitignore (residual HTML still noise-candidate).  
+5. **Playbook:** 00–10 behalten (Kern + KL chapter pipeline); walkthroughs optional.  
+6. **Ein Vision-CLI (Phase 1b):** `scripts/graphics-*` hinter `bookkit graphics` Subcommands vereinheitlichen (gemini|agy backend).  
 
-**Zielgröße B ohne Archive:** Skills+recipes+templates+gold ≪ 200 Dateien; Assets <15 MB oder LFS.
+**Zielgröße B ohne Archive:** Skills+recipes+templates+gold ≪ 200 Dateien; Assets already ~26 MB (goal was <15 MB or LFS — optional further thin).
 
 ### 4.4 C — Content-Reife
 
@@ -465,9 +483,9 @@ Items 1–4, 7–8 executed. Item 5 (README/AGENTS mission) deferred to **phase4
 
 ### 4.6 Devtracks
 
-1. Active tracks zu Ende harvesten (`kl-form-language`, `medical-graphics`) → Skills/Guides → archive.  
-2. `workspace-split` (dieser Track) steuert die Aktion.  
-3. `_archive` optional auf Branch `archive/devtracks-2026` auslagern.
+1. ~~Active tracks zu Ende harvesten (`kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations`)~~ — **done** (2026-07-29); kits/skills live under `domains/`; ops doc `playbook/10-kl-chapter-pipeline.md`.  
+2. `workspace-split` (dieser Track) steuert verbleibende Strukturarbeit (1b → 2 → 4; 3 trigger-only).  
+3. `_archive` optional auf Branch `archive/devtracks-2026` auslagern (nice-to-have).
 
 ---
 
@@ -524,14 +542,14 @@ Pins: `bookkit` SemVer, `form-catalog` VERSION, `content_revision`, asset paths 
 
 > **Executable checklists live in phase files.** This section is the map only.
 
-| Phase | File | Status |
+| Phase | File | Status (2026-07-29) |
 |---|---|---|
-| 0 Inventar + Plan | this file + inventory | ✅ done |
+| 0 Inventar + Plan | this file + inventory | ✅ done (inventory re-run post-hygiene) |
 | 1 Hygiene | [`phase1-hygiene.md`](phase1-hygiene.md) | ✅ done |
-| **1b CLI** | [`phase1b-cli.md`](phase1b-cli.md) | ⬜ **next** |
-| 2 Boundaries + spike harvest | [`phase2-boundaries.md`](phase2-boundaries.md) | ⬜ open |
+| **1b CLI** | [`phase1b-cli.md`](phase1b-cli.md) | ⬜ **next** — `bookkit` still doctor/build/watch/ua/init/brief-check; print stub |
+| 2 Boundaries + spike harvest | [`phase2-boundaries.md`](phase2-boundaries.md) | ⬜ open (include **kl-wave6** libs) |
 | 3 Physical split | [`phase3-split.md`](phase3-split.md) | ⏸️ trigger-only (D2) |
-| 4 Skills + docs | [`phase4-skills-docs.md`](phase4-skills-docs.md) | ⬜ open (parallel after 1b) |
+| 4 Skills + docs | [`phase4-skills-docs.md`](phase4-skills-docs.md) | ⬜ open (parallel after 1b; root README still pre-toolset) |
 | 5 Nice-to-have | below | backlog |
 
 ### Phase 5 — Langfristig / Nice-to-have

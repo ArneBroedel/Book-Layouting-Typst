@@ -2,6 +2,7 @@
 
 **Audience:** any coding agent continuing this track without prior session context.  
 **Date of handoff package:** 2026-07-29  
+**Last currency pass:** 2026-07-29 (inventory re-run; plan/README aligned; Phase 1b still open)  
 **Branch expectation:** `master` (or current mainline); Phase 1 already merged/committed.
 
 ---
@@ -45,15 +46,16 @@ Detail: [`joint-recommendation.md`](joint-recommendation.md).
 
 | Item | Evidence |
 |---|---|
-| Full file inventory | `devtracks/workspace-inventory/` + `scripts/workspace-inventory.py` (TSV snapshot **pre-purge** — re-run to refresh) |
-| Architecture plan + peer review | `plan.md`, `antigravity-peer-review.md`, `joint-recommendation.md` |
+| Full file inventory | `devtracks/workspace-inventory/` + `scripts/workspace-inventory.py` (**regenerated** ~851 files / ~36 MB post-hygiene; includes `CATALOG.md`) |
+| Architecture plan + peer review | `plan.md` (currency audit 2026-07-29), `antigravity-peer-review.md`, `joint-recommendation.md` |
 | Root litter removed | no `scratch_test.*` / `v-*-compile.typ` |
-| Asset purge + tag | tag `archive/assets-pre-purge-2026-07-29` @ `093442c`; purge commit `b437aad`; assets ~25 MB |
-| Brief archive | `domains/medical/briefs/_archive/` (42 files) + `INDEX.md` |
+| Asset purge + tag | tag `archive/assets-pre-purge-2026-07-29` @ `093442c`; purge commit `b437aad`; assets ~26 MB |
+| Brief archive + gold INDEX | `domains/medical/briefs/_archive/` (42 files) + `INDEX.md` (incl. Wave‑6 gold: sepsis/gicht/le) |
 | Canonical asset policy | `domains/medical/assets/CANONICAL.md` |
 | Stronger `.gitignore` | PDFs next to sources, eval outputs, scratch |
 | Untracked compile PDFs | src/test/spike/eval PDFs |
-| Phase plan docs (not CLI) | `ec97338` added phase1b–4 files; **CLI still stub** |
+| B feature tracks harvested | `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` → `_archive/`; ops: `playbook/10-kl-chapter-pipeline.md` |
+| Phase plan docs (not CLI) | `ec97338` added phase1b–4 files; **`scripts/bookkit` still without validate/prepress/graphics; print stub** |
 
 Log: [`phase1-hygiene.md`](phase1-hygiene.md) · [`phase1-hygiene-log.md`](phase1-hygiene-log.md).
 

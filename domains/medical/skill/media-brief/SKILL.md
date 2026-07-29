@@ -209,7 +209,7 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | Recipes | `domains/medical/recipes/` |
 | Briefs / gold | `domains/medical/briefs/` |
 | KL exploration index | `domains/medical/briefs/_explorations/README.md` |
-| Active KL track | `devtracks/kl-form-language/` |
+| KL form language (archived) | `devtracks/_archive/kl-form-language/` · ops pipeline `medical-graphics/playbook/10-kl-chapter-pipeline.md` |
 | Ownership | `domains/medical/OWNERSHIP.md` |
 | Knowledge library (archived, compressed) | `devtracks/_archive/medical-knowledge-design-competencies/` |
 | Governance | `devtracks/CONSENSUS-v0.md` (ADR 10–17), `devtracks/media-design/spec.md`, `devtracks/PRODUCT-BOUNDARIES.md` |

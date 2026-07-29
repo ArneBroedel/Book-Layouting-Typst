@@ -43,6 +43,8 @@ This folder is **provenance / deep evidence** — not the default entry point.
 | `toolset/compose/spikes/graphics/kl-script-system/` | Typst lib + PDFs — see README there |
 | `domains/medical/assets/kl-*/` | Free vision / refined assets + MANIFEST |
 
-## Active work
+## Track status
 
-Devtrack: `devtracks/kl-form-language/`
+**KL form language track complete** (2026-07-29): foundation harvested; Melanom + Wave-5 + Wave-6 closing transfers done.  
+Further monographs: operator checklist in `medical-graphics/playbook/10-kl-chapter-pipeline.md` (not open track work).  
+Archived plan: `devtracks/_archive/kl-form-language/`.

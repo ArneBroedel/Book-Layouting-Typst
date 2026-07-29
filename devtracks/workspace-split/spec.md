@@ -1,9 +1,10 @@
 # Spec — Workspace-Aufteilung & Konsolidierung
 
 **Status:** active implementation track (2026-07-29) — Phase 0–1 done; next = Phase 1b  
+**Currency:** inventur + plan re-aligned 2026-07-29 (post-hygiene ~851 files / ~36 MB; B feature tracks archived)  
 **Entry for implementers:** [`README.md`](README.md) · [`HANDOFF.md`](HANDOFF.md)  
 **Trigger:** organisch gewachsener Monolith; Fokus „Typst Layout-Experte → druckreif“ verdünnt durch Graphics/Raster/Domain-Prozesse  
-**Inventar:** [`../workspace-inventory/`](../workspace-inventory/) (`file-index.tsv`, `CATALOG.md`, `bucket-summary.tsv`)  
+**Inventar:** [`../workspace-inventory/`](../workspace-inventory/) (`file-index.tsv`, `CATALOG.md`, `bucket-summary.tsv`) — regenerate with `python3 scripts/workspace-inventory.py`  
 **Locked decisions:** [`decisions.md`](decisions.md) (D1–D5)  
 **Binding architecture:** [`joint-recommendation.md`](joint-recommendation.md)
 
@@ -21,7 +22,7 @@ Dieses Repo war gedacht als **KI-gestütztes Typst-Layout-Tool** (Layout-Experte
 6. Ecosystem-Research + Template-Korpus  
 7. Orchestrierung End-to-End Buchproduktion  
 
-Alles ist nützlich — aber **ein** Workspace + **ein** kognitiver Kontext für Agenten vermischt Rollen, CLIs und Artefakte. Fokus und Wartbarkeit leiden; Binaries (~65 MB Assets, ~109 MB `dist/`) und Brief-Explosion (~120 Dateien) dominieren den Baum.
+Alles ist nützlich — aber **ein** Workspace + **ein** kognitiver Kontext für Agenten vermischt Rollen, CLIs und Artefakte. Fokus und Wartbarkeit leiden. **Pre-hygiene baseline:** ~65 MB assets, ~109 MB `dist/`, ~120 brief files. **After Phase 1:** assets ~26 MB, `dist/` wiped, gold briefs + `_archive/`; remaining focus diluters are research corpus, spikes, multi-role skills, and still-fragmented CLI surface (Phase 1b).
 
 ## Zielbild
 

@@ -1,1043 +1,852 @@
-9155	f	AGENTS.md
-297	f	.agents/skills.txt
-0	f	assets/figures/.gitkeep
-0	f	assets/photos/.gitkeep
-0	f	assets/tables/.gitkeep
-12056	f	CLAUDE.md
-2243	f	devtracks/agentic-adaptations/adoption-matrix.md
-1015	f	devtracks/agentic-adaptations/decisions.md
-2849	f	devtracks/agentic-adaptations/plan.md
-14173	f	devtracks/agentic-adaptations/spec.md
-3257	f	devtracks/_archive/additional-packages/phase1.md
-3126	f	devtracks/_archive/additional-packages/phase2.md
-3904	f	devtracks/_archive/additional-packages/phase3.md
-4386	f	devtracks/_archive/additional-packages/phase4.md
-2231	f	devtracks/_archive/additional-packages/plan.md
-3976	f	devtracks/_archive/additional-packages/spec.md
-7842	f	devtracks/_archive/capability-roadmap/plan.md
-4195	f	devtracks/_archive/capability-roadmap/spec.md
-2524	f	devtracks/_archive/compose-pipeline/plan.md
-4567	f	devtracks/_archive/compose-pipeline/spec.md
-2269	f	devtracks/_archive/form-catalog/plan.md
-3141	f	devtracks/_archive/form-catalog/spec.md
-4307	f	devtracks/_archive/image-flow/plan.md
-3366	f	devtracks/_archive/image-flow/spec.md
-2442	f	devtracks/_archive/legal-rechtskunde/plan.md
-2166	f	devtracks/_archive/legal-rechtskunde/spec.md
-1924	f	devtracks/_archive/media-design/plan.md
-4131	f	devtracks/_archive/media-design/spec.md
-11442	f	devtracks/_archive/medical-knowledge-design-competencies/COMPENDIUM.md
-1585	f	devtracks/_archive/medical-knowledge-design-competencies/README.md
-3421	f	devtracks/_archive/page-design/plan.md
-2741	f	devtracks/_archive/page-design/spec.md
-2877	f	devtracks/_archive/pdf-ua-compliance/plan.md
-2337	f	devtracks/_archive/pdf-ua-compliance/spec.md
-699	f	devtracks/_archive/pinit-showcase/phase1.md
-683	f	devtracks/_archive/pinit-showcase/phase2.md
-759	f	devtracks/_archive/pinit-showcase/phase3.md
-1777	f	devtracks/_archive/pinit-showcase/plan.md
-1849	f	devtracks/_archive/pinit-showcase/spec.md
-1285	f	devtracks/_archive/pinit-workflow/phase0.md
-1657	f	devtracks/_archive/pinit-workflow/phase1.md
-1631	f	devtracks/_archive/pinit-workflow/phase2.md
-1440	f	devtracks/_archive/pinit-workflow/phase3.md
-806	f	devtracks/_archive/pinit-workflow/phase4.md
-2920	f	devtracks/_archive/pinit-workflow/plan.md
-4168	f	devtracks/_archive/pinit-workflow/spec.md
-1528	f	devtracks/_archive/platform-boundaries/PHASE3-DEFERRED.md
-4506	f	devtracks/_archive/platform-boundaries/plan.md
-1804	f	devtracks/_archive/platform-boundaries/spec.md
-2370	f	devtracks/_archive/prepress-pdfx/decisions.md
-1781	f	devtracks/_archive/prepress-pdfx/plan.md
-672	f	devtracks/_archive/prepress-pdfx/reports/image-dpi.md
-1373	f	devtracks/_archive/prepress-pdfx/reports/preflight-print.md
-3361	f	devtracks/_archive/prepress-pdfx/spec.md
-1479	f	devtracks/_archive/skill-eval-baseline/plan.md
-1730	f	devtracks/_archive/skill-eval-baseline/reports/static-baseline-2026-07-19.md
-2876	f	devtracks/_archive/skill-eval-baseline/spec.md
-1794	f	devtracks/_archive/skill-reuse-pilot/plan.md
-1843	f	devtracks/_archive/skill-reuse-pilot/reports/reuse-report-2026-07-19.md
-3633	f	devtracks/_archive/skill-reuse-pilot/spec.md
-4351	f	devtracks/_archive/template-patterns/phase1.md
-3479	f	devtracks/_archive/template-patterns/phase2.md
-4960	f	devtracks/_archive/template-patterns/phase3.md
-611	f	devtracks/_archive/template-patterns/phase4.md
-3365	f	devtracks/_archive/template-patterns/plan.md
-5090	f	devtracks/_archive/template-patterns/spec.md
-9510	f	devtracks/_archive/tool-updates/plan.md
-11541	f	devtracks/_archive/tool-updates/spec.md
-6230	f	devtracks/_archive/typst-toolset/phase0-decisions.md
-1547	f	devtracks/_archive/typst-toolset/phase1-foundation.md
-2218	f	devtracks/_archive/typst-toolset/phase2-skills-starter.md
-1408	f	devtracks/_archive/typst-toolset/phase3-facets-cli.md
-1658	f	devtracks/_archive/typst-toolset/phase4-mcp-publish.md
-3580	f	devtracks/_archive/typst-toolset/plan.md
-8288	f	devtracks/_archive/typst-toolset/spec.md
-14375	f	devtracks/CONSENSUS-v0.md
-2225	f	devtracks/content-maturity/decisions.md
-255	f	devtracks/content-maturity/MIGRATION-TO-C.md
-7942	f	devtracks/content-maturity/plan.md
-3888	f	devtracks/content-maturity/reviews/gemini-r1-r2-2026-07-20.md
-29464	f	devtracks/content-maturity/spec.md
-2074	f	devtracks/content-maturity/SPLIT-CHECKLIST.md
-4615	f	devtracks/kl-form-language/plan.md
-1332	f	devtracks/kl-form-language/spec.md
-6564	f	devtracks/kl-form-language/wave-5-chapters-plan.md
-5424	f	devtracks/medical-graphics/plan.md
-21636	f	devtracks/medical-graphics/playbook-system-plan.md
-2930	f	devtracks/medical-graphics/spec.md
-4731	f	devtracks/_orchestration/board.md
-3689	f	devtracks/_orchestration/boundaries-audit-w5.md
-4008	f	devtracks/PRODUCT-BOUNDARIES.md
-4984	f	devtracks/README.md
-2906	f	devtracks/ROLES-AND-FLOW.md
-54157	f	devtracks/workspace-inventory/all-files.txt
-0	f	devtracks/workspace-inventory/all-files-with-size.tsv
-1733653	f	dist/book.pdf
-24002797	f	dist/book-print.pdf
-1767467	f	dist/book-print-rgb.pdf
-1733654	f	dist/book-skeptic.pdf
-1737436	f	dist/book-ua.pdf
-185483	f	dist/kursbuch-pilot/chapters/i4.pdf
-245752	f	dist/kursbuch-pilot/chapters/ii1.pdf
-155991	f	dist/kursbuch-pilot/chapters/iii2.pdf
-108592	f	dist/kursbuch-pilot/chapters/iii5.pdf
-172182	f	dist/kursbuch-pilot/chapters/iv2.pdf
-210947	f	dist/kursbuch-pilot/chapters/iv4.pdf
-197712	f	dist/kursbuch-pilot/chapters/v-cauda.pdf
-171756	f	dist/kursbuch-pilot/chapters/vi1.pdf
-195029	f	dist/kursbuch-pilot/chapters/vii1.pdf
-144344	f	dist/kursbuch-pilot/chapters/v-sept.pdf
-1611252	f	dist/kursbuch-pilot/kursbuch-welle-03.pdf
-210620	f	dist/pilots/compose-iii5-iii2.pdf
-160921	f	dist/pilots/i4-draft.pdf
-195330	f	dist/pilots/ii1-draft.pdf
-133688	f	dist/pilots/iii2-compose-validated.pdf
-395	f	dist/pilots/iii2-posthoc.json
-101394	f	dist/pilots/iii5-compose.pdf
-87578	f	dist/pilots/iii5-compose-validated.pdf
-87578	f	dist/pilots/iii5-compose-validated-review.pdf
-297	f	dist/pilots/iii5-posthoc.json
-297	f	dist/pilots/iii5-posthoc-review.json
-91461	f	dist/pilots/iii5-wave03-validated.pdf
-155530	f	dist/pilots/iv2.pdf
-183634	f	dist/pilots/iv4.pdf
-163050	f	dist/pilots/v-cauda-draft.pdf
-152774	f	dist/pilots/vi1-draft.pdf
-162444	f	dist/pilots/vii1-draft.pdf
-118936	f	dist/pilots/v-sept-draft.pdf
-196694	f	dist/pilots/wave03-preview/fix03.png
-131247	f	dist/pilots/wave03-preview/fix12.png
-203044	f	dist/pilots/wave03-preview/ok03.png
-130721	f	dist/pilots/wave03-preview/ok12.png
-230426	f	dist/pilots/wave03-preview/ok35.png
-116096	f	dist/pilots/wave03-preview/p01.png
-196784	f	dist/pilots/wave03-preview/p03.png
-186446	f	dist/pilots/wave03-preview/p08.png
-131163	f	dist/pilots/wave03-preview/p12.png
-244614	f	dist/pilots/wave03-preview/p18.png
-220569	f	dist/pilots/wave03-preview/p25.png
-231749	f	dist/pilots/wave03-preview/p35.png
-162570	f	dist/pilots/wave03-v2/i4.pdf
-205811	f	dist/pilots/wave03-v2/ii1.pdf
-135169	f	dist/pilots/wave03-v2/iii2.pdf
-93590	f	dist/pilots/wave03-v2/iii5.pdf
-140620	f	dist/pilots/wave03-v2/iv2.pdf
-165035	f	dist/pilots/wave03-v2/iv4.pdf
-199259	f	dist/pilots/wave03-v2/preview/fix-iii5-1.png
-233475	f	dist/pilots/wave03-v2/preview/fix-iii5-2.png
-188381	f	dist/pilots/wave03-v2/preview/iii2-1.png
-217484	f	dist/pilots/wave03-v2/preview/iii2-2.png
-120599	f	dist/pilots/wave03-v2/preview/iii2-3.png
-199259	f	dist/pilots/wave03-v2/preview/iii5-1.png
-228772	f	dist/pilots/wave03-v2/preview/iii5-2.png
-195636	f	dist/pilots/wave03-v2/preview/iii5-3.png
-191590	f	dist/pilots/wave03-v2/preview/iii5-4.png
-134711	f	dist/pilots/wave03-v2/preview/p01.png
-224585	f	dist/pilots/wave03-v2/preview/p04.png
-212452	f	dist/pilots/wave03-v2/preview/p18.png
-172473	f	dist/pilots/wave03-v2/preview/p22.png
-87888	f	dist/pilots/wave03-v2/preview/p28.png
-237429	f	dist/pilots/wave03-v2/preview/p35.png
-237260	f	dist/pilots/wave03-v2/preview/p50.png
-282501	f	dist/pilots/wave03-v2/preview/p70.png
-152797	f	dist/pilots/wave03-v2/v-cauda.pdf
-145732	f	dist/pilots/wave03-v2/vi1.pdf
-149788	f	dist/pilots/wave03-v2/vii1.pdf
-117081	f	dist/pilots/wave03-v2/v-sept.pdf
-1216818	f	dist/pilots/welle-03-compose-full.pdf
-1227632	f	dist/pilots/welle-03-compose-v2-creative.pdf
-26727	f	dist/prepress-check/cover-media.png
-82480	f	dist/prepress-check/page-1.png
-20860	f	dist/prepress-check/page5-media.png
-14185	f	dist/prepress-check/page5-print.png
-22412	f	dist/smoke/t.pdf
-501	f	dist/smoke/t.typ
-6433	f	dist/spikes/graphics/_eval/eval-batch-2026-07-22.md
-1120309	f	dist/spikes/graphics/ii1-drei-achsen-drisc/compare-layout.pdf
-1107455	f	dist/spikes/graphics/ii1-drei-achsen-drisc/compare.pdf
-222702	f	dist/spikes/graphics/ii1-drei-achsen-drisc/ii1-compose-pilot.pdf
-240845	f	dist/spikes/graphics/ii1-drei-achsen-drisc/ii1-pilot.pdf
-218721	f	dist/spikes/graphics/ii1-drei-achsen-drisc/landscape-p1.png
-47521	f	dist/spikes/graphics/ii1-drei-achsen-drisc/landscape.pdf
-255809	f	dist/spikes/graphics/ii1-drei-achsen-drisc/recreate-p1.png
-52850	f	dist/spikes/graphics/ii1-drei-achsen-drisc/recreate.pdf
-994766	f	dist/spikes/graphics/ii1-drei-achsen-drisc/vision-free-01.png
-163019	f	dist/spikes/graphics/iii2-bls-aed/asset-p1.png
-98132	f	dist/spikes/graphics/iii2-bls-aed/asset.pdf
-143958	f	dist/spikes/graphics/iii2-bls-aed/code-p1.png
-29100	f	dist/spikes/graphics/iii2-bls-aed/code.pdf
-612525	f	dist/spikes/graphics/iii2-bls-aed/compare-b2-p1.png
-652805	f	dist/spikes/graphics/iii2-bls-aed/compare-p1.png
-178166	f	dist/spikes/graphics/iii2-bls-aed/hybrid-p1.png
-91581	f	dist/spikes/graphics/iii2-bls-aed/hybrid.pdf
-172417	f	dist/spikes/graphics/iii2-bls-aed/iii2-pilot.pdf
-141	f	dist/spikes/graphics/iii2-bls-aed/iii2-wrap.typ
-847153	f	dist/spikes/graphics/iii2-bls-aed/nanobanana-free-p1.png
-923193	f	dist/spikes/graphics/iii2-bls-aed/nanobanana-free-spike.pdf
-777187	f	dist/spikes/graphics/iii2-bls-aed/nanobanana-p1.png
-746085	f	dist/spikes/graphics/iii2-bls-aed/nanobanana-refined-p1.png
-1404416	f	dist/spikes/graphics/iii2-bls-aed/nanobanana-spike-p1.png
-834016	f	dist/spikes/graphics/iii2-bls-aed/nanobanana-spike.pdf
-1447438	f	dist/spikes/graphics/iii2-bls-aed/raster-full-p1.png
-980814	f	dist/spikes/graphics/iii2-bls-aed/raster-full.pdf
-986438	f	dist/spikes/graphics/iii2-bls-aed/raster-hybrid-p1.png
-690026	f	dist/spikes/graphics/iii2-bls-aed/raster-hybrid.pdf
-257280	f	dist/spikes/graphics/iii2-bls-aed/recreate-p1.png
-54669	f	dist/spikes/graphics/iii2-bls-aed/recreate.pdf
-1376053	f	dist/spikes/graphics/iii2-bls-aed/refined-p1.png
-859932	f	dist/spikes/graphics/iii2-bls-aed/refined.pdf
-1165491	f	dist/spikes/graphics/iii5-cauda-notfallkarte/compare.pdf
-103536	f	dist/spikes/graphics/iii5-cauda-notfallkarte/iii5-compose-pilot.pdf
-112894	f	dist/spikes/graphics/iii5-cauda-notfallkarte/iii5-pilot.pdf
-245252	f	dist/spikes/graphics/iii5-cauda-notfallkarte/recreate-p1.png
-46927	f	dist/spikes/graphics/iii5-cauda-notfallkarte/recreate.pdf
-1062928	f	dist/spikes/graphics/iii5-cauda-notfallkarte/vision-free-01.png
-1140906	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/compare-b2.pdf
-964532	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/compare.pdf
-149783	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/iv2-compose-pilot.pdf
-169355	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/iv2-pilot.pdf
-231765	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/recreate-p1.png
-49867	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/recreate.pdf
-197592	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/refined.pdf
-883715	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/vision-free-01.png
-286482	f	dist/spikes/graphics/iv2-rueckenschmerz-neuro/vision-refined-01.png
-1220129	f	dist/spikes/graphics/iv4-heisses-gelenk/compare.pdf
-176038	f	dist/spikes/graphics/iv4-heisses-gelenk/iv4-compose-pilot.pdf
-207115	f	dist/spikes/graphics/iv4-heisses-gelenk/iv4-pilot.pdf
-274978	f	dist/spikes/graphics/iv4-heisses-gelenk/recreate-p1.png
-55237	f	dist/spikes/graphics/iv4-heisses-gelenk/recreate.pdf
-1247568	f	dist/spikes/graphics/iv4-heisses-gelenk/refined.pdf
-1076221	f	dist/spikes/graphics/iv4-heisses-gelenk/vision-free-01.png
-1100708	f	dist/spikes/graphics/iv4-heisses-gelenk/vision-refined-01.png
-4231132	f	dist/spikes/graphics/kl-script-system/ambition.pdf
-926604	f	dist/spikes/graphics/kl-script-system/kl-melanom-abcde-vision-free-01.png
-1009814	f	dist/spikes/graphics/kl-script-system/kl-melanom-abcde-vision-refined-02.png
-16603	f	dist/spikes/graphics/kl-script-system/m-b-test.pdf
-58398	f	dist/spikes/graphics/kl-script-system/m-b-test.png
-1089624	f	dist/spikes/graphics/kl-script-system/melanom.pdf
-65215	f	dist/spikes/graphics/kl-script-system/phase1-01.png
-176614	f	dist/spikes/graphics/kl-script-system/phase1-02.png
-119041	f	dist/spikes/graphics/kl-script-system/phase1-03.png
-133012	f	dist/spikes/graphics/kl-script-system/phase1-04.png
-78234	f	dist/spikes/graphics/kl-script-system/phase1-05.png
-109104	f	dist/spikes/graphics/kl-script-system/phase1-06.png
-77420	f	dist/spikes/graphics/kl-script-system/phase1-07.png
-98523	f	dist/spikes/graphics/kl-script-system/phase1-08.png
-145368	f	dist/spikes/graphics/kl-script-system/phase1-09.png
-90647	f	dist/spikes/graphics/kl-script-system/phase1-10.png
-101403	f	dist/spikes/graphics/kl-script-system/phase1.pdf
-54067	f	dist/spikes/graphics/kl-script-system/phase1v2-1.png
-102204	f	dist/spikes/graphics/kl-script-system/phase1v2-2.png
-157545	f	dist/spikes/graphics/kl-script-system/phase1v2-3.png
-108677	f	dist/spikes/graphics/kl-script-system/phase1v2-4.png
-143091	f	dist/spikes/graphics/kl-script-system/phase1v2-5.png
-93221	f	dist/spikes/graphics/kl-script-system/phase1v2-6.png
-155529	f	dist/spikes/graphics/kl-script-system/phase1v2-7.png
-73456	f	dist/spikes/graphics/kl-script-system/phase1v2-8.png
-85150	f	dist/spikes/graphics/kl-script-system/phase1v2.pdf
-34483	f	dist/spikes/graphics/kl-script-system/recreate-1.png
-61933	f	dist/spikes/graphics/kl-script-system/recreate-2.png
-136354	f	dist/spikes/graphics/kl-script-system/recreate-3.png
-116498	f	dist/spikes/graphics/kl-script-system/recreate-4.png
-65454	f	dist/spikes/graphics/kl-script-system/recreate-5.png
-89958	f	dist/spikes/graphics/kl-script-system/recreate-6.png
-134589	f	dist/spikes/graphics/kl-script-system/recreate-7.png
-217145	f	dist/spikes/graphics/kl-script-system/recreate-8.png
-147911	f	dist/spikes/graphics/kl-script-system/recreate-p3.png
-126645	f	dist/spikes/graphics/kl-script-system/recreate-p4.png
-70076	f	dist/spikes/graphics/kl-script-system/recreate-p5.png
-87657	f	dist/spikes/graphics/kl-script-system/recreate.pdf
-23234	f	dist/spikes/graphics/kl-script-system/us-d-test.pdf
-189432	f	dist/spikes/graphics/kl-script-system/us-d-test.png
-709945	f	dist/spikes/graphics/kl-script-system/vision-ces-saddle-01.png
-658583	f	dist/spikes/graphics/kl-script-system/vision-m-b-01.png
-710194	f	dist/spikes/graphics/kl-script-system/vision-mscc-01.png
-816907	f	dist/spikes/graphics/kl-script-system/vision-us-d-01.png
-1068973	f	dist/spikes/graphics/kl-script-system/vision-us-d-refined-01.png
-42130	f	dist/spikes/graphics/kl-script-system/wave-o-01.png
-79043	f	dist/spikes/graphics/kl-script-system/wave-o-02.png
-45098	f	dist/spikes/graphics/kl-script-system/wave-o-03.png
-48003	f	dist/spikes/graphics/kl-script-system/wave-o-04.png
-67698	f	dist/spikes/graphics/kl-script-system/wave-o-05.png
-113682	f	dist/spikes/graphics/kl-script-system/wave-o-06.png
-112714	f	dist/spikes/graphics/kl-script-system/wave-o-07.png
-51251	f	dist/spikes/graphics/kl-script-system/wave-o-08.png
-227639	f	dist/spikes/graphics/kl-script-system/wave-o-09.png
-259706	f	dist/spikes/graphics/kl-script-system/wave-o-10.png
-96983	f	dist/spikes/graphics/kl-script-system/wave-o.pdf
-1087542	f	dist/spikes/graphics/kl-wave5/ambition.pdf
-62593	f	dist/spikes/graphics/kl-wave5/ambition-v2.pdf
-23500	f	dist/spikes/graphics/kl-wave5/compartment-essential.pdf
-45584	f	dist/spikes/graphics/kl-wave5/compartment-nonbody.pdf
-38716	f	dist/spikes/graphics/kl-wave5/compartment-principle.pdf
-31007	f	dist/spikes/graphics/kl-wave5/compartment-schematic.pdf
-29473	f	dist/spikes/graphics/kl-wave5/compartment-sweetspot.pdf
-2279980	f	dist/spikes/graphics/kl-wave5/gemini-smoke-red-circle.png
-99091	f	dist/spikes/graphics/kl-wave5/grammar-b.pdf
-109122	f	dist/spikes/graphics/kl-wave5/grammar.pdf
-5067855	f	dist/spikes/graphics/kl-wave5/kl-compartment-spatial-gemini-focus-01.png
-514883	f	dist/spikes/graphics/kl-wave5/kl-compartment-spatial-vision-free-01.png
-644512	f	dist/spikes/graphics/kl-wave5/kl-compartment-spatial-vision-free-02.png
-414451	f	dist/spikes/graphics/kl-wave5/kl-stroke-fast-vision-free-01.png
-5267289	f	dist/spikes/graphics/kl-wave5/vision-free-gemini-schematic-correct-01.png
-29054	f	dist/spikes/visual-lib-spike.pdf
-1330	f	dist/spikes/visual-lib-spike.typ
-25083	f	dist/toolset/facet-smoke.pdf
-43320	f	dist/toolset/minimal.pdf
-64800	f	dist/toolset/reuse-datasheet.pdf
-43057	f	dist/toolset/starter.pdf
-3175	f	docs/BOOK-PRODUCTION-RUNBOOK.md
-5325	f	docs/CONSUMER.md
-8377	f	docs/KNOWLEDGE-MAP.md
-984	f	domains/content-maturity/checklists/core/claims-audit.md
-1133	f	domains/content-maturity/checklists/core/clarity-scan-de.md
-1820	f	domains/content-maturity/checklists/core/developmental-edit.md
-803	f	domains/content-maturity/checklists/core/freeze-gate.md
-143	f	domains/content-maturity/checklists/core/language-proof.md
-1410	f	domains/content-maturity/checklists/core/learner-persona.md
-356	f	domains/content-maturity/checklists/core/proof-gate.md
-1516	f	domains/content-maturity/checklists/core/safety-flags.md
-633	f	domains/content-maturity/checklists/profiles/medical/DEFERRED.md
-2060	f	domains/content-maturity/checkpoints.md
-461	f	domains/content-maturity/examples/agentic-adaptations/clarity-flags-example.md
-1266	f	domains/content-maturity/examples/agentic-adaptations/patch-F1.md
-575	f	domains/content-maturity/examples/agentic-adaptations/README.md
-1504	f	domains/content-maturity/examples/agentic-adaptations/review-after-patch-evaluate.md
-2072	f	domains/content-maturity/examples/agentic-adaptations/review-evaluate-only.md
-942	f	domains/content-maturity/examples/agentic-adaptations/route-card-blocked.md
-1020	f	domains/content-maturity/examples/agentic-adaptations/route-card-freeze-ready.md
-1119	f	domains/content-maturity/examples/demo-anaphylaxis-lite/content-frozen.md
-1080	f	domains/content-maturity/examples/demo-anaphylaxis-lite/freeze.md
-1109	f	domains/content-maturity/examples/demo-anaphylaxis-lite/proof.md
-646	f	domains/content-maturity/examples/demo-anaphylaxis-lite/README.md
-2623	f	domains/content-maturity/examples/demo-anaphylaxis-lite/review-round1.md
-1383	f	domains/content-maturity/examples/demo-anaphylaxis-lite/review-round2.md
-1118	f	domains/content-maturity/fixtures/demo-anaphylaxis-lite/content.md
-1186	f	domains/content-maturity/MIGRATION-TO-C.md
-1404	f	domains/content-maturity/OWNERSHIP.md
-2769	f	domains/content-maturity/README.md
-4085	f	domains/content-maturity/skill/content-orchestrator/SKILL.md
-5002	f	domains/content-maturity/skill/content-review/SKILL.md
-937	f	domains/content-maturity/templates/content-patch.template.md
-945	f	domains/content-maturity/templates/freeze-record.template.md
-611	f	domains/content-maturity/templates/imprimatur.template.md
-1043	f	domains/content-maturity/templates/proof-record.template.md
-2300	f	domains/content-maturity/templates/review-report.template.md
-991	f	domains/content-maturity/templates/route-card.template.md
-286	f	domains/content-maturity/templates/scope-brief.template.md
-426	f	domains/medical/assets/ii1-drei-achsen-drisc/MANIFEST.md
-994766	f	domains/medical/assets/ii1-drei-achsen-drisc/vision-free-01.png
-2124	f	domains/medical/assets/iii2-bls-aed/MANIFEST.md
-5329	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-base.svg
-7720	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-full.svg
-101308	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-base.jpg
-446103	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-base.png
-174890	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-full.jpg
-702109	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-full.png
-847153	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana-free.png
-777187	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana.png
-746085	f	domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana-refined.png
-458	f	domains/medical/assets/iii5-cauda-notfallkarte/MANIFEST.md
-1062928	f	domains/medical/assets/iii5-cauda-notfallkarte/vision-free-01.png
-891	f	domains/medical/assets/iv2-rueckenschmerz-neuro/MANIFEST.md
-883715	f	domains/medical/assets/iv2-rueckenschmerz-neuro/vision-free-01.png
-286482	f	domains/medical/assets/iv2-rueckenschmerz-neuro/vision-refined-01.png
-519	f	domains/medical/assets/iv4-heisses-gelenk/MANIFEST.md
-1076221	f	domains/medical/assets/iv4-heisses-gelenk/vision-free-01.png
-1100708	f	domains/medical/assets/iv4-heisses-gelenk/vision-refined-01.png
-264	f	domains/medical/assets/kl-ces-saddle/MANIFEST.md
-709945	f	domains/medical/assets/kl-ces-saddle/vision-free-01.png
-12684	f	domains/medical/assets/kl-compartment-spatial/generate_refined.typ
-602	f	domains/medical/assets/kl-compartment-spatial/MANIFEST.md
-514883	f	domains/medical/assets/kl-compartment-spatial/vision-free-01.png
-644512	f	domains/medical/assets/kl-compartment-spatial/vision-free-02.png
-5899219	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-01.png
-5565208	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-essential-01.png
-4104782	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-essential-02.png
-5067855	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-focus-01.png
-5628439	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-principle-01.png
-5267289	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-schematic-correct-01.png
-4707057	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-schematic-correct-02-de.png
-4916952	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-sweetspot-01.png
-4982671	f	domains/medical/assets/kl-compartment-spatial/vision-free-gemini-sweetspot-02-de.png
-534583	f	domains/medical/assets/kl-compartment-spatial/vision-refined-01.png
-351	f	domains/medical/assets/kl-m-b-mimic/MANIFEST.md
-658583	f	domains/medical/assets/kl-m-b-mimic/vision-free-01.png
-809	f	domains/medical/assets/kl-melanom-abcde/MANIFEST.md
-926604	f	domains/medical/assets/kl-melanom-abcde/vision-free-01.png
-949325	f	domains/medical/assets/kl-melanom-abcde/vision-refined-01.png
-1009814	f	domains/medical/assets/kl-melanom-abcde/vision-refined-02.png
-723	f	domains/medical/assets/kl-mscc-spine/MANIFEST.md
-710194	f	domains/medical/assets/kl-mscc-spine/vision-free-01.png
-358	f	domains/medical/assets/kl-stroke-fast/MANIFEST.md
-414451	f	domains/medical/assets/kl-stroke-fast/vision-free-01.png
-563418	f	domains/medical/assets/kl-stroke-fast/vision-refined-01.png
-402	f	domains/medical/assets/kl-us-d-urgency/MANIFEST.md
-816907	f	domains/medical/assets/kl-us-d-urgency/vision-free-01.png
-1068973	f	domains/medical/assets/kl-us-d-urgency/vision-refined-01.png
-928	f	domains/medical/assets/README.md
-34118	f	domains/medical/briefs/_explorations/gemini-ontology-eval/0ac6af2392b773ed.json
-12378	f	domains/medical/briefs/_explorations/gemini-ontology-eval/0ac6af2392b773ed.md
-90359	f	domains/medical/briefs/_explorations/gemini-ontology-eval/83c5b1a68259facf.json
-10919	f	domains/medical/briefs/_explorations/gemini-ontology-eval/83c5b1a68259facf.md
-34301	f	domains/medical/briefs/_explorations/gemini-ontology-eval/dab02a87d49cf3ba.json
-17896	f	domains/medical/briefs/_explorations/gemini-ontology-eval/dab02a87d49cf3ba.md
-6501	f	domains/medical/briefs/_explorations/gemini-ontology-eval/round1-eval.md
-9959	f	domains/medical/briefs/_explorations/gemini-ontology-eval/round2-dialectic.md
-5751	f	domains/medical/briefs/_explorations/gemini-ontology-eval/round3-freeze.md
-9005	f	domains/medical/briefs/_explorations/gemini-ontology-eval/SYNTHESIS-v1.1-frozen.md
-1702	f	domains/medical/briefs/_explorations/kl-deep-execution-plan.md
-18336	f	domains/medical/briefs/_explorations/kl-form-space.md
-13800	f	domains/medical/briefs/_explorations/kl-harvest-and-reuse-plan.md
-25345	f	domains/medical/briefs/_explorations/kl-ontology-and-relations.md
-9359	f	domains/medical/briefs/_explorations/kl-phase1-critique-redesign.md
-1885	f	domains/medical/briefs/_explorations/README.md
-23052	f	domains/medical/briefs/_explorations/welle-06-kl-content-forms-analysis.md
-6095	f	domains/medical/briefs/_explorations/welle-06-kl-implementation-roadmap.md
-0	f	domains/medical/briefs/.gitkeep
-2950	f	domains/medical/briefs/i4-ifsg.accept.md
-7187	f	domains/medical/briefs/i4-ifsg.brief.md
-3768	f	domains/medical/briefs/i4-ifsg.feasibility.md
-4843	f	domains/medical/briefs/ii1-drei-achsen-drisc.accept.md
-8478	f	domains/medical/briefs/ii1-drei-achsen-drisc.brief.md
-4243	f	domains/medical/briefs/ii1-drei-achsen-drisc.feasibility.md
-1724	f	domains/medical/briefs/ii1-drei-achsen-drisc.graphics.md
-2847	f	domains/medical/briefs/ii1-drei-achsen-drisc.vision.md
-2716	f	domains/medical/briefs/iii2-bls-aed.accept.md
-6489	f	domains/medical/briefs/iii2-bls-aed.brief.md
-2610	f	domains/medical/briefs/iii2-bls-aed.feasibility.md
-6292	f	domains/medical/briefs/iii2-bls-aed.graphics.md
-2535	f	domains/medical/briefs/iii2-bls-aed.vision.md
-4693	f	domains/medical/briefs/iii5-cauda-notfallkarte.accept.md
-9934	f	domains/medical/briefs/iii5-cauda-notfallkarte.brief.md
-7069	f	domains/medical/briefs/iii5-cauda-notfallkarte.feasibility.md
-2708	f	domains/medical/briefs/iii5-cauda-notfallkarte.form-spec.md
-1563	f	domains/medical/briefs/iii5-cauda-notfallkarte.graphics.md
-2627	f	domains/medical/briefs/iii5-cauda-notfallkarte.vision.md
-5759	f	domains/medical/briefs/iv2-rueckenschmerz-neuro.accept.md
-7466	f	domains/medical/briefs/iv2-rueckenschmerz-neuro.brief.md
-4389	f	domains/medical/briefs/iv2-rueckenschmerz-neuro.feasibility.md
-4849	f	domains/medical/briefs/iv2-rueckenschmerz-neuro.form-spec.md
-3322	f	domains/medical/briefs/iv2-rueckenschmerz-neuro.graphics.md
-3013	f	domains/medical/briefs/iv2-rueckenschmerz-neuro.vision.md
-5006	f	domains/medical/briefs/iv4-heisses-gelenk.accept.md
-7399	f	domains/medical/briefs/iv4-heisses-gelenk.brief.md
-4055	f	domains/medical/briefs/iv4-heisses-gelenk.feasibility.md
-1518	f	domains/medical/briefs/iv4-heisses-gelenk.graphics.md
-2892	f	domains/medical/briefs/iv4-heisses-gelenk.vision.md
-1830	f	domains/medical/briefs/kl-ambition.accept.md
-2751	f	domains/medical/briefs/kl-ambition.claim-audit.md
-6744	f	domains/medical/briefs/kl-anaphylaxie.brief.md
-7726	f	domains/medical/briefs/kl-anaphylaxie-mimic.form-spec.md
-14629	f	domains/medical/briefs/kl-anaphylaxie-urgency.form-spec.md
-2658	f	domains/medical/briefs/kl-ces-saddle.form-spec.md
-1903	f	domains/medical/briefs/kl-ces-saddle.vision.md
-7483	f	domains/medical/briefs/kl-compartment.brief.md
-4600	f	domains/medical/briefs/kl-compartment-mimic.form-spec.md
-1236	f	domains/medical/briefs/kl-compartment-spatial.claim-audit.md
-1656	f	domains/medical/briefs/kl-compartment-spatial-essential.vision.md
-2221	f	domains/medical/briefs/kl-compartment-spatial-focus.vision.md
-11342	f	domains/medical/briefs/kl-compartment-spatial.form-spec.md
-1281	f	domains/medical/briefs/kl-compartment-spatial-principle.vision.md
-3095	f	domains/medical/briefs/kl-compartment-spatial-schematic-correct.vision.md
-2653	f	domains/medical/briefs/kl-compartment-spatial-sweetspot.vision.md
-1737	f	domains/medical/briefs/kl-compartment-spatial.vision.md
-8052	f	domains/medical/briefs/kl-compartment-urgency.form-spec.md
-5341	f	domains/medical/briefs/kl-f2-urgency-ladder.form-spec.md
-2797	f	domains/medical/briefs/kl-f3-cue-matrix.form-spec.md
-3344	f	domains/medical/briefs/kl-f4-four-pole.form-spec.md
-2653	f	domains/medical/briefs/kl-m-b-mimic.vision.md
-1836	f	domains/medical/briefs/kl-melanom-abcde.claim-audit.md
-3116	f	domains/medical/briefs/kl-melanom-abcde.form-spec.md
-4313	f	domains/medical/briefs/kl-melanom-abcde.vision.md
-2032	f	domains/medical/briefs/kl-melanom.accept.md
-3720	f	domains/medical/briefs/kl-melanom.brief.md
-2691	f	domains/medical/briefs/kl-melanom-mimic.form-spec.md
-5205	f	domains/medical/briefs/kl-melanom-urgency.form-spec.md
-6931	f	domains/medical/briefs/kl-mi.brief.md
-8563	f	domains/medical/briefs/kl-mi-mimic.form-spec.md
-12662	f	domains/medical/briefs/kl-mi-urgency.form-spec.md
-3748	f	domains/medical/briefs/kl-mscc-spine.claim-audit.md
-4782	f	domains/medical/briefs/kl-mscc-spine.form-spec.md
-2886	f	domains/medical/briefs/kl-mscc-spine.vision.md
-5314	f	domains/medical/briefs/kl-script-system.brief.md
-3568	f	domains/medical/briefs/kl-script-system.graphics.md
-2008	f	domains/medical/briefs/kl-script-system-p0.accept.md
-1131	f	domains/medical/briefs/kl-script-system-p1.accept.md
-7732	f	domains/medical/briefs/kl-stroke.brief.md
-1132	f	domains/medical/briefs/kl-stroke-fast.claim-audit.md
-10840	f	domains/medical/briefs/kl-stroke-fast.form-spec.md
-2129	f	domains/medical/briefs/kl-stroke-fast.vision.md
-5489	f	domains/medical/briefs/kl-stroke-mimic.form-spec.md
-9982	f	domains/medical/briefs/kl-stroke-urgency.form-spec.md
-10508	f	domains/medical/briefs/kl-suicid.brief.md
-10679	f	domains/medical/briefs/kl-suicid-chrome.form-spec.md
-7647	f	domains/medical/briefs/kl-suicid-mimic.form-spec.md
-12376	f	domains/medical/briefs/kl-suicid-urgency.form-spec.md
-3731	f	domains/medical/briefs/kl-u-discrimination.form-spec.md
-3602	f	domains/medical/briefs/kl-u-mimic.form-spec.md
-2251	f	domains/medical/briefs/kl-us-d-urgency.vision.md
-6535	f	domains/medical/briefs/kl-u-urgency-scope.form-spec.md
-2881	f	domains/medical/briefs/kl-wave5.accept.md
-1507	f	domains/medical/briefs/kl-wave5.board.md
-3412	f	domains/medical/briefs/v-cauda-equina.accept.md
-8875	f	domains/medical/briefs/v-cauda-equina.brief.md
-5571	f	domains/medical/briefs/v-cauda-equina.feasibility.md
-2901	f	domains/medical/briefs/vi1-geriatrie.accept.md
-7460	f	domains/medical/briefs/vi1-geriatrie.brief.md
-4868	f	domains/medical/briefs/vi1-geriatrie.feasibility.md
-2345	f	domains/medical/briefs/vii1-exam-cluster.accept.md
-6268	f	domains/medical/briefs/vii1-exam-cluster.brief.md
-4423	f	domains/medical/briefs/vii1-exam-cluster.feasibility.md
-2793	f	domains/medical/briefs/v-sept-arthritis.accept.md
-6607	f	domains/medical/briefs/v-sept-arthritis.brief.md
-3993	f	domains/medical/briefs/v-sept-arthritis.feasibility.md
-1695	f	domains/medical/briefs/_wave5/00-form-space-crosscut.md
-5162	f	domains/medical/briefs/_wave5/ambition-raster-postmortem.md
-1302	f	domains/medical/briefs/_wave5/anatomy-depiction-pause.md
-36029	f	domains/medical/briefs/_wave5/kl-anaphylaxie.content-map.md
-26213	f	domains/medical/briefs/_wave5/kl-compartment.content-map.md
-24724	f	domains/medical/briefs/_wave5/kl-mi.content-map.md
-35274	f	domains/medical/briefs/_wave5/kl-stroke.content-map.md
-31177	f	domains/medical/briefs/_wave5/kl-suicid.content-map.md
-739	f	domains/medical/OWNERSHIP.md
-4827	f	domains/medical/README.md
-1213	f	domains/medical/recipes/fallbasiert.md
-1215	f	domains/medical/recipes/lerntext.md
-9227	f	domains/medical/recipes/notfall-karte.md
-1275	f	domains/medical/recipes/notfall-karte.minima.yaml
-5054	f	domains/medical/skill/media-brief/evals/evals.json
-6315	f	domains/medical/skill/media-brief/references/design-reasoning.md
-4164	f	domains/medical/skill/media-brief/references/kl-form-space-process.md
-3405	f	domains/medical/skill/media-brief/references/kl-illness-script-ontology.md
-15439	f	domains/medical/skill/media-brief/SKILL.md
-678	f	domains/medical/skill/media-brief-workspace/iteration-1/ANALYST.md
-6087	f	domains/medical/skill/media-brief-workspace/iteration-1/benchmark.json
-1415	f	domains/medical/skill/media-brief-workspace/iteration-1/benchmark.md
-1796	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/eval_metadata.json
-804	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/grading.json
-11386	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/outputs/kl-melanom-urgency.form-spec.md
-1812	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/outputs/NOTES.md
-801	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/grading.json
-10982	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/outputs/kl-melanom-urgency.form-spec.md
-1533	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/outputs/NOTES.md
-1308	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/eval_metadata.json
-695	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/grading.json
-6960	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/abcde.form-spec.md
-6931	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/form-space.md
-2061	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/NOTES.md
-692	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/grading.json
-8360	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/abcde.form-spec.md
-6235	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/form-space.md
-2787	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/NOTES.md
-980	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/eval_metadata.json
-514	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/grading.json
-3324	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/outputs/accept.md
-914	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/outputs/NOTES.md
-511	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/grading.json
-6186	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/outputs/accept.md
-1771	f	domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/outputs/NOTES.md
-130780	f	domains/medical/skill/media-brief-workspace/iteration-1/review.html
-527	f	domains/medical/skill/media-brief-workspace/README.md
-4276	f	domains/medical/skill/medical-graphics/evals/evals.json
-2651	f	domains/medical/skill/medical-graphics/examples/INDEX.md
-2429	f	domains/medical/skill/medical-graphics/playbook/00-overview.md
-1066	f	domains/medical/skill/medical-graphics/playbook/01-from-form-spec.md
-2148	f	domains/medical/skill/medical-graphics/playbook/02-free-vision.md
-3078	f	domains/medical/skill/medical-graphics/playbook/03-claim-audit.md
-1459	f	domains/medical/skill/medical-graphics/playbook/04-recreate-typst.md
-759	f	domains/medical/skill/medical-graphics/playbook/05-hybrid.md
-1862	f	domains/medical/skill/medical-graphics/playbook/06-refine-raster.md
-705	f	domains/medical/skill/medical-graphics/playbook/07-ab-compare.md
-829	f	domains/medical/skill/medical-graphics/playbook/08-accept-handoff.md
-6737	f	domains/medical/skill/medical-graphics/playbook/09-form-recipes.md
-2127	f	domains/medical/skill/medical-graphics/playbook/walkthrough-iv2.md
-2029	f	domains/medical/skill/medical-graphics/references/asset-pipeline.md
-4256	f	domains/medical/skill/medical-graphics/references/book-visual-standards.md
-2602	f	domains/medical/skill/medical-graphics/references/decision-heuristics.md
-3336	f	domains/medical/skill/medical-graphics/references/free-vision.md
-1776	f	domains/medical/skill/medical-graphics/references/graphic-types.md
-7795	f	domains/medical/skill/medical-graphics/references/kl-form-library.md
-2208	f	domains/medical/skill/medical-graphics/references/tools-and-generation.md
-8242	f	domains/medical/skill/medical-graphics/SKILL.md
-578	f	domains/medical/skill/medical-graphics-workspace/iteration-1/ANALYST.md
-5758	f	domains/medical/skill/medical-graphics-workspace/iteration-1/benchmark.json
-1296	f	domains/medical/skill/medical-graphics-workspace/iteration-1/benchmark.md
-1479	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/eval_metadata.json
-776	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/grading.json
-29106	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/melanom-urgency.pdf
-5322	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/melanom-urgency.typ
-2283	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/NOTES.md
-873	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/spike-recreate.typ
-773	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/grading.json
-38514	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/melanom-urgency.pdf
-5856	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/melanom-urgency.typ
-3248	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/NOTES.md
-1617	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/spike-recreate.typ
-1072	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/eval_metadata.json
-599	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/grading.json
-3731	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/abcde.typ
-1318	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/abcde.vision.md
-1521	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/NOTES.md
-596	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/grading.json
-22010	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/abcde.pdf
-3475	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/abcde.typ
-1215	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/abcde.vision.md
-2854	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/NOTES.md
-956	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/eval_metadata.json
-511	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/grading.json
-4312	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/claim-audit.md
-1010	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/NOTES.md
-508	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/grading.json
-6157	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/outputs/claim-audit.md
-1473	f	domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/outputs/NOTES.md
-229696	f	domains/medical/skill/medical-graphics-workspace/iteration-1/review.html
-531	f	domains/medical/skill/medical-graphics-workspace/README.md
-1854	f	domains/medical/templates/accept-record.template.md
-2637	f	domains/medical/templates/form-spec.template.md
-1776	f	domains/medical/templates/graphic-claim-audit.template.md
-2236	f	domains/medical/templates/graphic-decision.template.md
-1881	f	domains/medical/templates/graphic-vision.template.md
-1801	f	domains/medical/templates/media-brief.template.md
-484	f	domains/README.md
-263	f	.editorconfig
-554744	f	fonts/Font Awesome 6 Brands-Regular-400.otf
-189956	f	fonts/Font Awesome 6 Free-Regular-400.otf
-1023996	f	fonts/Font Awesome 6 Free-Solid-900.otf
-0	f	fonts/.gitkeep
-6445	f	.github/skills/pinit-workflow/components/pinit-debug.typ
-6578	f	.github/skills/pinit-workflow/debug/pinit-issues.md
-55865	f	.github/skills/pinit-workflow/debug/pinit-regression.pdf
-8769	f	.github/skills/pinit-workflow/debug/pinit-regression.typ
-3747	f	.github/skills/pinit-workflow/docs/pinit-ai-playbook.md
-802	f	.github/skills/pinit-workflow/docs/pinit-coordinate-roundtrip.md
-2226	f	.github/skills/pinit-workflow/docs/pinit-style-guide.md
-23758	f	.github/skills/pinit-workflow/SKILL.md
-2801	f	.github/skills/pinit-workflow/tools/pinit-clickmap.html
-10376	f	.github/skills/skill-creator/agents/analyzer.md
-7287	f	.github/skills/skill-creator/agents/comparator.md
-9049	f	.github/skills/skill-creator/agents/grader.md
-7058	f	.github/skills/skill-creator/assets/eval_review.html
-16365	f	.github/skills/skill-creator/eval-viewer/generate_review.py
-44998	f	.github/skills/skill-creator/eval-viewer/viewer.html
-11357	f	.github/skills/skill-creator/LICENSE.txt
-12061	f	.github/skills/skill-creator/references/schemas.md
-14386	f	.github/skills/skill-creator/scripts/aggregate_benchmark.py
-12847	f	.github/skills/skill-creator/scripts/generate_report.py
-10723	f	.github/skills/skill-creator/scripts/improve_description.py
-0	f	.github/skills/skill-creator/scripts/__init__.py
-4234	f	.github/skills/skill-creator/scripts/package_skill.py
-3972	f	.github/skills/skill-creator/scripts/quick_validate.py
-11464	f	.github/skills/skill-creator/scripts/run_eval.py
-13685	f	.github/skills/skill-creator/scripts/run_loop.py
-1661	f	.github/skills/skill-creator/scripts/utils.py
-32370	f	.github/skills/skill-creator/SKILL.md
-30271	f	.github/skills/typst-extension/SKILL.md
-42060	f	.github/skills/typst-writer/SKILL.md
-999	f	.github/workflows/build.yml
-365	f	.gitignore
-13086	f	Guides/KL-Form-Language.md
-4240	f	Guides/Medical-Graphics-Playbook.md
-4502	f	Guides/Medical-Presentation-Forms.md
-13890	f	Guides/Pinit-Best-Practices.md
-5520	f	Guides/Template-Ranking.md
-44132	f	Guides/Typst Complete Guide.md
-51146	f	Guides/Typst Extensibility.md
-44132	f	Guides/Typst Reference Guide.md
-9176	f	Guides/Typst_Template_Report.md
-25813	f	Guides/update2026/ROLLE &amp; ZIEL_Du bist Recherche-Assistent für e.md
-10390	f	Guides/update2026/Welche Änderungen und Erweiterungen gab es in den.md
-35204	f	Guides/Working_With_Typst-Theory_To_Practice.md
-155	f	LICENSE
-8168	f	packages/bookkit/components/blocks.typ
-3310	f	packages/bookkit/components/grids.typ
-3811	f	packages/bookkit/components/inline.typ
-5554	f	packages/bookkit/components/layouts.typ
-7346	f	packages/bookkit/components/spreads.typ
-5881	f	packages/bookkit/components/tables.typ
-6071	f	packages/bookkit-didactics/didactics.typ
-3726	f	packages/bookkit-didactics/exam.typ
-414	f	packages/bookkit-didactics/lib.typ
-429	f	packages/bookkit-didactics/README.md
-849	f	packages/bookkit-didactics/spreads-extra.typ
-322	f	packages/bookkit-didactics/typst.toml
-1686	f	packages/bookkit/lib.typ
-2838	f	packages/bookkit/page.typ
-4795	f	packages/bookkit/print.typ
-1474	f	packages/bookkit/README.md
-6077	f	packages/bookkit/theme.typ
-5114	f	packages/bookkit/typography.typ
-378	f	packages/bookkit/typst.toml
-1112	f	pilots/kursbuch-welle-03/build-all.sh
-1133	f	pilots/kursbuch-welle-03/CHAPTER-MAP.md
-17920	f	pilots/kursbuch-welle-03/chapters/i4.typ
-21176	f	pilots/kursbuch-welle-03/chapters/ii1.typ
-12402	f	pilots/kursbuch-welle-03/chapters/iii2.typ
-8004	f	pilots/kursbuch-welle-03/chapters/iii5.typ
-14054	f	pilots/kursbuch-welle-03/chapters/iv2.typ
-18506	f	pilots/kursbuch-welle-03/chapters/iv4.typ
-20992	f	pilots/kursbuch-welle-03/chapters/v-cauda.typ
-16270	f	pilots/kursbuch-welle-03/chapters/vi1.typ
-15050	f	pilots/kursbuch-welle-03/chapters/vii1.typ
-12429	f	pilots/kursbuch-welle-03/chapters/v-sept.typ
-20299	f	pilots/kursbuch-welle-03-compose/chapters/i4.typ
-21092	f	pilots/kursbuch-welle-03-compose/chapters/ii1.typ
-14790	f	pilots/kursbuch-welle-03-compose/chapters/iii2.typ
-7741	f	pilots/kursbuch-welle-03-compose/chapters/iii5.typ
-14228	f	pilots/kursbuch-welle-03-compose/chapters/iv2.typ
-17584	f	pilots/kursbuch-welle-03-compose/chapters/iv4.typ
-19853	f	pilots/kursbuch-welle-03-compose/chapters/v-cauda.typ
-17194	f	pilots/kursbuch-welle-03-compose/chapters/vi1.typ
-14710	f	pilots/kursbuch-welle-03-compose/chapters/vii1.typ
-13365	f	pilots/kursbuch-welle-03-compose/chapters/v-sept.typ
-12618	f	pilots/kursbuch-welle-03-compose/lib/visual.typ
-2391	f	pilots/kursbuch-welle-03-compose/main.typ
-4122	f	pilots/kursbuch-welle-03-compose/README.md
-2302	f	pilots/kursbuch-welle-03-compose/reports/e2e-iii2-2026-07-20.md
-11336	f	pilots/kursbuch-welle-03-compose/reports/e2e-iii5-2026-07-20.md
-2023	f	pilots/kursbuch-welle-03-compose/reports/wave03-full-compose-2026-07-20.md
-1554	f	pilots/kursbuch-welle-03-compose/reports/wave03-v2-creative-2026-07-20.md
-222	f	pilots/kursbuch-welle-03-compose/_single/iv2.typ
-222	f	pilots/kursbuch-welle-03-compose/_single/iv4.typ
-9492	f	pilots/kursbuch-welle-03/convert_md_to_typ.py
-1572	f	pilots/kursbuch-welle-03/main.typ
-1245	f	pilots/kursbuch-welle-03/README.md
-211	f	pilots/kursbuch-welle-03/_single/i4.typ
-213	f	pilots/kursbuch-welle-03/_single/ii1.typ
-215	f	pilots/kursbuch-welle-03/_single/iii2.typ
-215	f	pilots/kursbuch-welle-03/_single/iii5.typ
-213	f	pilots/kursbuch-welle-03/_single/iv2.typ
-213	f	pilots/kursbuch-welle-03/_single/iv4.typ
-221	f	pilots/kursbuch-welle-03/_single/v-cauda.typ
-213	f	pilots/kursbuch-welle-03/_single/vi1.typ
-215	f	pilots/kursbuch-welle-03/_single/vii1.typ
-219	f	pilots/kursbuch-welle-03/_single/v-sept.typ
-168	f	pilots/reuse-datasheet/design-brief.yaml
-3477	f	pilots/reuse-datasheet/main.typ
-2189	f	prepress/PDFX_def.ps
-187484	f	prepress/profiles/default_cmyk.icc
-935	f	prepress/profiles/README.md
-2576	f	prepress/profiles/srgb.icc
-4375	f	prepress/README.md
-241	f	prepress/reports/image-dpi.md
-1373	f	prepress/reports/preflight-print.md
-16243	f	project-tech-stack.md
-3541	f	README.md
-547630	f	research/data/all_packages.json
-605141	f	research/data/all_templates.json
-1535056	f	research/data/index.json
-736116	f	research/data/latest_packages_meta.json
-72402	f	research/data/readme_urls.txt
-422	f	research/data/versions.txt
-613	f	research/pipeline/check_versions.py
-3906	f	research/pipeline/fetch_packages.py
-1109	f	research/pipeline/process_index.py
-4070	f	research/pipeline/process_templates.py
-1255	f	research/pipeline/refine_json.py
-1524	f	research/README.md
-10730	f	scratch_test.png
-158	f	scratch_test.svg
-102	f	scratch_test.typ
-7318	f	scripts/bookkit
-1993	f	scripts/book-production-status.sh
-2611	f	scripts/build.ps1
-1879	f	scripts/build.sh
-7684	f	scripts/check-image-dpi.py
-2548	f	scripts/graphics-refine-agy.sh
-1957	f	scripts/graphics-spike-init.sh
-3332	f	scripts/graphics-vision-agy.sh
-3584	f	scripts/graphics-vision-gemini.sh
-3201	f	scripts/preflight-print.sh
-4207	f	scripts/preflight.ps1
-3179	f	scripts/print-pdfx.ps1
-3488	f	scripts/print-pdfx.sh
-1906	f	scripts/setup.ps1
-1150	f	SETUP-WINDOWS.md
-1773	f	src/assets/anatomy/cell.svg
-1522	f	src/assets/anatomy/heart-schema.svg
-1669	f	src/assets/anatomy/nephron.svg
-1879	f	src/assets/anatomy/neuron-compact.svg
-1585	f	src/assets/anatomy/neuron.svg
-271	f	src/chapters/00-cover.typ
-4886	f	src/chapters/01-intro.typ
-6356	f	src/chapters/02-typography.typ
-6287	f	src/chapters/03-structure.typ
-5656	f	src/chapters/04-components.typ
-6859	f	src/chapters/05-layout.typ
-4852	f	src/chapters/06-advanced.typ
-7170	f	src/chapters/07-backmatter.typ
-13994	f	src/chapters/08-packages.typ
-11842	f	src/chapters/09-data-driven.typ
-93328	f	src/chapters/10-tooling.pdf
-9305	f	src/chapters/10-tooling.typ
-7901	f	src/chapters/11-academic.typ
-5953	f	src/chapters/12-beyond-flow.typ
-6639	f	src/chapters/13-wasm-meta.typ
-6196	f	src/chapters/14-templates.typ
-11757	f	src/chapters/15-book-patterns.typ
-10886	f	src/chapters/16-margin-patterns.typ
-12139	f	src/chapters/17-visual-hierarchy.typ
-78929	f	src/chapters/18-pinit-showcase.pdf
-13217	f	src/chapters/18-pinit-showcase.typ
-11113	f	src/chapters/19-didaktik.typ
-5573	f	src/chapters/20-datenvisualisierung.typ
-6144	f	src/chapters/21-diagramme.typ
-10153	f	src/chapters/22-bildintegration.typ
-8830	f	src/chapters/23-seitengestaltung.typ
-3327	f	src/chapters/24-kunststuecke.typ
-12665	f	src/chapters/25-rechtskunde.typ
-12315	f	src/components/art.typ
-119	f	src/components/blocks.typ
-11411	f	src/components/charts.typ
-2958	f	src/components/diagrams.typ
-131	f	src/components/didactics.typ
-126	f	src/components/exam.typ
-11446	f	src/components/figures.typ
-118	f	src/components/grids.typ
-119	f	src/components/inline.typ
-120	f	src/components/layouts.typ
-10440	f	src/components/legal.typ
-9978	f	src/components/page-design.typ
-2552	f	src/components/pedigree.typ
-220	f	src/components/spreads.typ
-119	f	src/components/tables.typ
-1053	f	src/data/glossary.yml
-154	f	src/data/grundlagen.bib
-160	f	src/data/klinisch.bib
-138	f	src/data/pergamon.bib
-1082	f	src/data/references.bib
-2070	f	src/data/sample-patients.json
-255	f	src/data/sample-study.csv
-3983	f	src/main.typ
-3477	f	src/SHOWCASE-README.md
-106	f	src/styles/page.typ
-107	f	src/styles/print.typ
-107	f	src/styles/theme.typ
-2306	f	src/styles/typography.pdf
-112	f	src/styles/typography.typ
-8034	f	templates/aspirationally/main.typ
-111	f	templates/badformer/main.typ
-693969	f	templates/brilliant-cv/assets/avatar.png
-6252	f	templates/brilliant-cv/assets/logos/abc_company.png
-16012	f	templates/brilliant-cv/assets/logos/pqr_corp.png
-398200	f	templates/brilliant-cv/assets/logos/ucla.png
-36509	f	templates/brilliant-cv/assets/logos/xyz_corp.png
-778	f	templates/brilliant-cv/assets/publications.bib
-145868	f	templates/brilliant-cv/assets/signature.png
-605	f	templates/brilliant-cv/cv.typ
-2915	f	templates/brilliant-cv/letter.typ
-4560	f	templates/brilliant-cv/metadata.toml
-539	f	templates/brilliant-cv/modules_de/certificates.typ
-1273	f	templates/brilliant-cv/modules_de/education.typ
-2023	f	templates/brilliant-cv/modules_de/professional.typ
-756	f	templates/brilliant-cv/modules_de/projects.typ
-371	f	templates/brilliant-cv/modules_de/publications.typ
-916	f	templates/brilliant-cv/modules_de/skills.typ
-932	f	templates/brilliant-cv/modules_en/certificates.typ
-1558	f	templates/brilliant-cv/modules_en/education.typ
-1894	f	templates/brilliant-cv/modules_en/professional.typ
-1561	f	templates/brilliant-cv/modules_en/projects.typ
-550	f	templates/brilliant-cv/modules_en/publications.typ
-980	f	templates/brilliant-cv/modules_en/skills.typ
-403	f	templates/brilliant-cv/modules_fr/certificates.typ
-1222	f	templates/brilliant-cv/modules_fr/education.typ
-1862	f	templates/brilliant-cv/modules_fr/professional.typ
-559	f	templates/brilliant-cv/modules_fr/projects.typ
-269	f	templates/brilliant-cv/modules_fr/publications.typ
-401	f	templates/brilliant-cv/modules_fr/skills.typ
-382	f	templates/brilliant-cv/modules_it/certificates.typ
-1113	f	templates/brilliant-cv/modules_it/education.typ
-1684	f	templates/brilliant-cv/modules_it/professional.typ
-581	f	templates/brilliant-cv/modules_it/projects.typ
-270	f	templates/brilliant-cv/modules_it/publications.typ
-392	f	templates/brilliant-cv/modules_it/skills.typ
-365	f	templates/brilliant-cv/modules_zh/certificates.typ
-926	f	templates/brilliant-cv/modules_zh/education.typ
-1418	f	templates/brilliant-cv/modules_zh/professional.typ
-402	f	templates/brilliant-cv/modules_zh/projects.typ
-269	f	templates/brilliant-cv/modules_zh/publications.typ
-385	f	templates/brilliant-cv/modules_zh/skills.typ
-354194	f	templates/caidan/cover.png
-6738	f	templates/caidan/main.typ
-4019	f	templates/calmly-touying/main.typ
-13166	f	templates/ilm/main.typ
-331	f	templates/ilm/refs.bib
-964	f	templates/mantys/manual.typ
-237	f	templates/soviet-matrix/main.typ
-775	f	templates/tieffiction/main.typ
-832	f	templates/toffee-tufte/main.bib
-9711	f	templates/toffee-tufte/main.typ
-363	f	templates/touying-aqua/main.typ
-2455	f	templates/wonderous-book/main.typ
-19755	f	test/pinit-radial.pdf
-9593	f	test/pinit-radial.typ
-340	f	test/scratch-pinit.typ
-5160	f	toolset/compose/CREATIVE-COMPOSE.md
-82	f	toolset/compose/fixtures/fail_claims/accept.md
-529	f	toolset/compose/fixtures/fail_claims/chapter.typ
-201	f	toolset/compose/fixtures/fail_claims/content.md
-456	f	toolset/compose/fixtures/fail_freeze_production/accept.md
-1207	f	toolset/compose/fixtures/fail_freeze_production/chapter.typ
-759	f	toolset/compose/fixtures/fail_freeze_production/content.md
-307	f	toolset/compose/fixtures/fail_no_accept/accept.md
-387	f	toolset/compose/fixtures/fail_no_accept/chapter.typ
-74	f	toolset/compose/fixtures/fail_no_accept/content.md
-88	f	toolset/compose/fixtures/fail_unknown_form/accept.md
-494	f	toolset/compose/fixtures/fail_unknown_form/chapter.typ
-98	f	toolset/compose/fixtures/fail_unknown_form/content.md
-456	f	toolset/compose/fixtures/pass_freeze_production/accept.md
-1297	f	toolset/compose/fixtures/pass_freeze_production/chapter.typ
-759	f	toolset/compose/fixtures/pass_freeze_production/content.md
-518	f	toolset/compose/fixtures/pass_freeze_production/freeze.md
-343	f	toolset/compose/fixtures/pass_freeze_production/genre-minima.yaml
-456	f	toolset/compose/fixtures/pass_minimal/accept.md
-1207	f	toolset/compose/fixtures/pass_minimal/chapter.typ
-759	f	toolset/compose/fixtures/pass_minimal/content.md
-343	f	toolset/compose/fixtures/pass_minimal/genre-minima.yaml
-4852	f	toolset/compose/README.md
-545	f	toolset/compose/scripts/run_validate.py
-9477	f	toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/lib/pflichtsequenz.typ
-1111	f	toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-compare-layout.typ
-738	f	toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-compare.typ
-1072	f	toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-landscape.typ
-1147	f	toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-recreate.typ
-4407	f	toolset/compose/spikes/graphics/iii2-bls-aed/antigravity-nanobanana-brief.md
-3859	f	toolset/compose/spikes/graphics/iii2-bls-aed/antigravity-nanobanana-free-brief.md
-8978	f	toolset/compose/spikes/graphics/iii2-bls-aed/lib/primar-algorithmus.typ
-649	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-asset.typ
-29090	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-code.pdf
-3888	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-code.typ
-1021	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-compare-b2.typ
-1372	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-compare.typ
-99800	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-hybrid.pdf
-3630	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-hybrid.typ
-1028	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-nanobanana-free.typ
-1125	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-nanobanana.typ
-1185	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-raster-full.typ
-2849	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-raster-hybrid.typ
-1215	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-recreate.typ
-1120	f	toolset/compose/spikes/graphics/iii2-bls-aed/spike-refined.typ
-6124	f	toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/lib/sofortmassnahmen.typ
-984	f	toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/spike-compare.typ
-1135	f	toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/spike-recreate.typ
-7804	f	toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/lib/entscheidungs-flow.typ
-1090	f	toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-compare-b2.typ
-1363	f	toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-compare.typ
-1204	f	toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-recreate.typ
-1130	f	toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-refined.typ
-9795	f	toolset/compose/spikes/graphics/iv4-heisses-gelenk/lib/entscheidungs-flow.typ
-1116	f	toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-compare.typ
-1195	f	toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-recreate.typ
-851	f	toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-refined.typ
-2659	f	toolset/compose/spikes/graphics/kl-script-system/lib/cue-matrix.typ
-2345	f	toolset/compose/spikes/graphics/kl-script-system/lib/discrimination.typ
-2797	f	toolset/compose/spikes/graphics/kl-script-system/lib/four-pole.typ
-1727	f	toolset/compose/spikes/graphics/kl-script-system/lib/m-a-mimic.typ
-3906	f	toolset/compose/spikes/graphics/kl-script-system/lib/m-b-peel.typ
-18026	f	toolset/compose/spikes/graphics/kl-script-system/lib/melanom.typ
-10401	f	toolset/compose/spikes/graphics/kl-script-system/lib/script-core.typ
-7483	f	toolset/compose/spikes/graphics/kl-script-system/lib/urgency-ladder.typ
-6119	f	toolset/compose/spikes/graphics/kl-script-system/lib/us-d-dashboard.typ
-6602	f	toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ
-5381	f	toolset/compose/spikes/graphics/kl-script-system/lib/v2-cues-suspicion.typ
-6646	f	toolset/compose/spikes/graphics/kl-script-system/lib/v2-urgency.typ
-2424	f	toolset/compose/spikes/graphics/kl-script-system/README.md
-2563	f	toolset/compose/spikes/graphics/kl-script-system/spike-ambition.typ
-4545	f	toolset/compose/spikes/graphics/kl-script-system/spike-melanom.typ
-7605	f	toolset/compose/spikes/graphics/kl-script-system/spike-phase1.typ
-6923	f	toolset/compose/spikes/graphics/kl-script-system/spike-phase1v2.typ
-4168	f	toolset/compose/spikes/graphics/kl-script-system/spike-recreate.typ
-3346	f	toolset/compose/spikes/graphics/kl-script-system/spike-wave-o.typ
-312	f	toolset/compose/spikes/graphics/kl-script-system/_test-us-d.typ
-159	f	toolset/compose/spikes/graphics/kl-script-system/_tmp/m-b-test.typ
-6045	f	toolset/compose/spikes/graphics/kl-wave5/lib/anaphylaxie.typ
-23723	f	toolset/compose/spikes/graphics/kl-wave5/lib/compartment.typ
-6918	f	toolset/compose/spikes/graphics/kl-wave5/lib/mi.typ
-10801	f	toolset/compose/spikes/graphics/kl-wave5/lib/stroke.typ
-5377	f	toolset/compose/spikes/graphics/kl-wave5/lib/suicid.typ
-1887	f	toolset/compose/spikes/graphics/kl-wave5/README.md
-1746	f	toolset/compose/spikes/graphics/kl-wave5/spike-ambition.typ
-1693	f	toolset/compose/spikes/graphics/kl-wave5/spike-ambition-v2.typ
-422	f	toolset/compose/spikes/graphics/kl-wave5/spike-compartment-essential.typ
-803	f	toolset/compose/spikes/graphics/kl-wave5/spike-compartment-nonbody.typ
-769	f	toolset/compose/spikes/graphics/kl-wave5/spike-compartment-principle.typ
-670	f	toolset/compose/spikes/graphics/kl-wave5/spike-compartment-schematic.typ
-437	f	toolset/compose/spikes/graphics/kl-wave5/spike-compartment-sweetspot.typ
-6802	f	toolset/compose/spikes/graphics/kl-wave5/spike-grammar-b.typ
-5177	f	toolset/compose/spikes/graphics/kl-wave5/spike-grammar.typ
-1579	f	toolset/compose/spikes/graphics/_templates/lib/module.typ
-845	f	toolset/compose/spikes/graphics/_templates/spike-recreate.typ
-2925	f	toolset/compose/spikes/README.md
-2574	f	toolset/compose/templates/feasibility-note.template.md
-13541	f	toolset/compose/tests/test_validate.py
-3014	f	toolset/compose/validate/accept_gate.py
-2149	f	toolset/compose/validate/body.py
-5494	f	toolset/compose/validate/catalog.py
-5303	f	toolset/compose/validate/claims.py
-6877	f	toolset/compose/validate/cli.py
-3096	f	toolset/compose/validate/compile_check.py
-6158	f	toolset/compose/validate/freeze_gate.py
-208	f	toolset/compose/validate/__init__.py
-110	f	toolset/compose/validate/__main__.py
-7012	f	toolset/compose/validate/minima.py
-2438	f	toolset/compose/validate/posthoc.py
-9505	f	toolset/compose/validate/runner.py
-8209	f	toolset/compose/validate/whitelist.py
-860	f	toolset/docs/api-foundation.md
-832	f	toolset/examples/facet-smoke/main.typ
-1166	f	toolset/examples/minimal/main.typ
-2045	f	toolset/form-catalog/core/ANTI-PATTERNS.md
-3706	f	toolset/form-catalog/core/BASIS.md
-11268	f	toolset/form-catalog/core/forms.yaml
-1875	f	toolset/form-catalog/core/GAP-PROCESS.md
-2740	f	toolset/form-catalog/README.md
-4408	f	toolset/form-catalog/scripts/check_forms.py
-6	f	toolset/form-catalog/VERSION
-2600	f	toolset/orchestration/book-production/demo-welle03/board.md
-952	f	toolset/orchestration/book-production/demo-welle03/kickoff.md
-1041	f	toolset/orchestration/book-production/demo-welle03/route.md
-730	f	toolset/orchestration/book-production/demo-welle03/run-log.md
-521	f	toolset/orchestration/book-production/README.md
-4071	f	toolset/skill-pack/bookkit/SKILL.md
-1249	f	toolset/skill-pack/book-production-orchestrator/references/autonomy.md
-1251	f	toolset/skill-pack/book-production-orchestrator/references/phase-machine.md
-10646	f	toolset/skill-pack/book-production-orchestrator/SKILL.md
-1568	f	toolset/skill-pack/book-production-orchestrator/templates/board.template.md
-1247	f	toolset/skill-pack/book-production-orchestrator/templates/kickoff.template.md
-1104	f	toolset/skill-pack/book-production-orchestrator/templates/route.template.md
-436	f	toolset/skill-pack/book-production-orchestrator/templates/run-log.template.md
-13179	f	toolset/skill-pack/compose-chapter/SKILL.md
-2571	f	toolset/skill-pack/provision.sh
-520	f	toolset/starter/AGENTS.md
-293	f	toolset/starter/design-brief.yaml
-1041	f	toolset/starter/main.typ
-820	f	toolset/starter/README.md
-2615	f	toolset/tests/test_toolset.sh
-251	f	v-cauda-compile.typ
-376	f	.vscode/extensions.json
-518	f	.vscode/settings.json
-1020	f	.vscode/tasks.json
-249	f	v-sept-compile.typ
-309	f	workspaces/kursbuch-layout.code-workspace
-462	f	workspaces/README.md
+path	bytes
+AGENTS.md	9298
+CLAUDE.md	12056
+Guides/KL-Form-Language.md	13767
+Guides/Medical-Graphics-Playbook.md	4249
+Guides/Medical-Presentation-Forms.md	4502
+Guides/Pinit-Best-Practices.md	13890
+Guides/Template-Ranking.md	5520
+Guides/Typst Complete Guide.md	44132
+Guides/Typst Extensibility.md	51146
+Guides/Typst Reference Guide.md	44132
+Guides/Typst_Template_Report.md	9176
+Guides/Working_With_Typst-Theory_To_Practice.md	35204
+Guides/update2026/ROLLE &amp; ZIEL_Du bist Recherche-Assistent für e.md	25813
+Guides/update2026/Welche Änderungen und Erweiterungen gab es in den.md	10390
+LICENSE	155
+README.md	3541
+SETUP-WINDOWS.md	1150
+agents/skills.txt	297
+assets/figures/.gitkeep	0
+assets/photos/.gitkeep	0
+assets/tables/.gitkeep	0
+devtracks/CONSENSUS-v0.md	14447
+devtracks/PRODUCT-BOUNDARIES.md	4035
+devtracks/README.md	4969
+devtracks/ROLES-AND-FLOW.md	2998
+devtracks/_archive/additional-packages/phase1.md	3257
+devtracks/_archive/additional-packages/phase2.md	3126
+devtracks/_archive/additional-packages/phase3.md	3904
+devtracks/_archive/additional-packages/phase4.md	4386
+devtracks/_archive/additional-packages/plan.md	2231
+devtracks/_archive/additional-packages/spec.md	3976
+devtracks/_archive/agentic-adaptations/adoption-matrix.md	2243
+devtracks/_archive/agentic-adaptations/decisions.md	1015
+devtracks/_archive/agentic-adaptations/plan.md	3080
+devtracks/_archive/agentic-adaptations/spec.md	14173
+devtracks/_archive/capability-roadmap/plan.md	7842
+devtracks/_archive/capability-roadmap/spec.md	4195
+devtracks/_archive/compose-pipeline/plan.md	2524
+devtracks/_archive/compose-pipeline/spec.md	4567
+devtracks/_archive/content-maturity/MIGRATION-TO-C.md	255
+devtracks/_archive/content-maturity/SPLIT-CHECKLIST.md	2074
+devtracks/_archive/content-maturity/decisions.md	2225
+devtracks/_archive/content-maturity/plan.md	8361
+devtracks/_archive/content-maturity/reviews/gemini-r1-r2-2026-07-20.md	3888
+devtracks/_archive/content-maturity/spec.md	29464
+devtracks/_archive/form-catalog/plan.md	2269
+devtracks/_archive/form-catalog/spec.md	3141
+devtracks/_archive/image-flow/plan.md	4307
+devtracks/_archive/image-flow/spec.md	3366
+devtracks/_archive/kl-form-language/plan.md	4789
+devtracks/_archive/kl-form-language/spec.md	1332
+devtracks/_archive/kl-form-language/wave-5-chapters-plan.md	7464
+devtracks/_archive/kl-form-language/wave-6-chapters-plan.md	3216
+devtracks/_archive/legal-rechtskunde/plan.md	2442
+devtracks/_archive/legal-rechtskunde/spec.md	2166
+devtracks/_archive/media-design/plan.md	1924
+devtracks/_archive/media-design/spec.md	4131
+devtracks/_archive/medical-graphics/plan.md	7167
+devtracks/_archive/medical-graphics/playbook-system-plan.md	21794
+devtracks/_archive/medical-graphics/spec.md	3268
+devtracks/_archive/medical-knowledge-design-competencies/COMPENDIUM.md	11442
+devtracks/_archive/medical-knowledge-design-competencies/README.md	1585
+devtracks/_archive/page-design/plan.md	3421
+devtracks/_archive/page-design/spec.md	2741
+devtracks/_archive/pdf-ua-compliance/plan.md	2877
+devtracks/_archive/pdf-ua-compliance/spec.md	2337
+devtracks/_archive/pinit-showcase/phase1.md	699
+devtracks/_archive/pinit-showcase/phase2.md	683
+devtracks/_archive/pinit-showcase/phase3.md	759
+devtracks/_archive/pinit-showcase/plan.md	1777
+devtracks/_archive/pinit-showcase/spec.md	1849
+devtracks/_archive/pinit-workflow/phase0.md	1285
+devtracks/_archive/pinit-workflow/phase1.md	1657
+devtracks/_archive/pinit-workflow/phase2.md	1631
+devtracks/_archive/pinit-workflow/phase3.md	1440
+devtracks/_archive/pinit-workflow/phase4.md	806
+devtracks/_archive/pinit-workflow/plan.md	2920
+devtracks/_archive/pinit-workflow/spec.md	4168
+devtracks/_archive/platform-boundaries/PHASE3-DEFERRED.md	1528
+devtracks/_archive/platform-boundaries/plan.md	4506
+devtracks/_archive/platform-boundaries/spec.md	1804
+devtracks/_archive/prepress-pdfx/decisions.md	2370
+devtracks/_archive/prepress-pdfx/plan.md	1781
+devtracks/_archive/prepress-pdfx/reports/image-dpi.md	672
+devtracks/_archive/prepress-pdfx/reports/preflight-print.md	1373
+devtracks/_archive/prepress-pdfx/spec.md	3361
+devtracks/_archive/skill-eval-baseline/plan.md	1479
+devtracks/_archive/skill-eval-baseline/reports/static-baseline-2026-07-19.md	1730
+devtracks/_archive/skill-eval-baseline/spec.md	2876
+devtracks/_archive/skill-reuse-pilot/plan.md	1794
+devtracks/_archive/skill-reuse-pilot/reports/reuse-report-2026-07-19.md	1843
+devtracks/_archive/skill-reuse-pilot/spec.md	3633
+devtracks/_archive/template-patterns/phase1.md	4351
+devtracks/_archive/template-patterns/phase2.md	3479
+devtracks/_archive/template-patterns/phase3.md	4960
+devtracks/_archive/template-patterns/phase4.md	611
+devtracks/_archive/template-patterns/plan.md	3365
+devtracks/_archive/template-patterns/spec.md	5090
+devtracks/_archive/tool-updates/plan.md	9510
+devtracks/_archive/tool-updates/spec.md	11541
+devtracks/_archive/typst-toolset/phase0-decisions.md	6230
+devtracks/_archive/typst-toolset/phase1-foundation.md	1547
+devtracks/_archive/typst-toolset/phase2-skills-starter.md	2218
+devtracks/_archive/typst-toolset/phase3-facets-cli.md	1408
+devtracks/_archive/typst-toolset/phase4-mcp-publish.md	1658
+devtracks/_archive/typst-toolset/plan.md	3580
+devtracks/_archive/typst-toolset/spec.md	8288
+devtracks/_orchestration/board.md	4731
+devtracks/_orchestration/boundaries-audit-w5.md	3689
+devtracks/workspace-inventory/CATALOG.md	82729
+devtracks/workspace-inventory/README.md	1443
+devtracks/workspace-inventory/all-files-with-size.tsv	61909
+devtracks/workspace-inventory/all-files.txt	45346
+devtracks/workspace-inventory/bucket-summary.tsv	1952
+devtracks/workspace-inventory/file-index.tsv	115172
+devtracks/workspace-inventory/noise-candidates.tsv	480
+devtracks/workspace-split/HANDOFF.md	6281
+devtracks/workspace-split/README.md	3390
+devtracks/workspace-split/antigravity-peer-review.md	13928
+devtracks/workspace-split/decisions.md	1860
+devtracks/workspace-split/joint-recommendation.md	6711
+devtracks/workspace-split/phase1-hygiene-log.md	1464
+devtracks/workspace-split/phase1-hygiene.md	1632
+devtracks/workspace-split/phase1b-cli.md	6445
+devtracks/workspace-split/phase2-boundaries.md	4826
+devtracks/workspace-split/phase3-split.md	2582
+devtracks/workspace-split/phase4-skills-docs.md	2998
+devtracks/workspace-split/plan.md	28261
+devtracks/workspace-split/spec.md	2887
+dist/.gitkeep	0
+dist/spikes/graphics/kl-wave6/grammar.pdf	91206
+docs/BOOK-PRODUCTION-RUNBOOK.md	3175
+docs/CONSUMER.md	5325
+docs/KNOWLEDGE-MAP.md	8435
+domains/README.md	484
+domains/content-maturity/MIGRATION-TO-C.md	1195
+domains/content-maturity/OWNERSHIP.md	1457
+domains/content-maturity/README.md	2924
+domains/content-maturity/checklists/core/claims-audit.md	984
+domains/content-maturity/checklists/core/clarity-scan-de.md	1133
+domains/content-maturity/checklists/core/developmental-edit.md	1820
+domains/content-maturity/checklists/core/freeze-gate.md	803
+domains/content-maturity/checklists/core/language-proof.md	143
+domains/content-maturity/checklists/core/learner-persona.md	1410
+domains/content-maturity/checklists/core/proof-gate.md	356
+domains/content-maturity/checklists/core/safety-flags.md	1516
+domains/content-maturity/checklists/profiles/medical/DEFERRED.md	633
+domains/content-maturity/checkpoints.md	2060
+domains/content-maturity/examples/agentic-adaptations/README.md	575
+domains/content-maturity/examples/agentic-adaptations/clarity-flags-example.md	461
+domains/content-maturity/examples/agentic-adaptations/patch-F1.md	1266
+domains/content-maturity/examples/agentic-adaptations/review-after-patch-evaluate.md	1504
+domains/content-maturity/examples/agentic-adaptations/review-evaluate-only.md	2072
+domains/content-maturity/examples/agentic-adaptations/route-card-blocked.md	942
+domains/content-maturity/examples/agentic-adaptations/route-card-freeze-ready.md	1020
+domains/content-maturity/examples/demo-anaphylaxis-lite/README.md	646
+domains/content-maturity/examples/demo-anaphylaxis-lite/content-frozen.md	1119
+domains/content-maturity/examples/demo-anaphylaxis-lite/freeze.md	1080
+domains/content-maturity/examples/demo-anaphylaxis-lite/proof.md	1109
+domains/content-maturity/examples/demo-anaphylaxis-lite/review-round1.md	2623
+domains/content-maturity/examples/demo-anaphylaxis-lite/review-round2.md	1383
+domains/content-maturity/fixtures/demo-anaphylaxis-lite/content.md	1118
+domains/content-maturity/skill/content-orchestrator/SKILL.md	4105
+domains/content-maturity/skill/content-review/SKILL.md	5049
+domains/content-maturity/templates/content-patch.template.md	937
+domains/content-maturity/templates/freeze-record.template.md	945
+domains/content-maturity/templates/imprimatur.template.md	611
+domains/content-maturity/templates/proof-record.template.md	1043
+domains/content-maturity/templates/review-report.template.md	2300
+domains/content-maturity/templates/route-card.template.md	991
+domains/content-maturity/templates/scope-brief.template.md	286
+domains/medical/OWNERSHIP.md	739
+domains/medical/README.md	4898
+domains/medical/assets/CANONICAL.md	1268
+domains/medical/assets/README.md	1106
+domains/medical/assets/ii1-drei-achsen-drisc/MANIFEST.md	426
+domains/medical/assets/ii1-drei-achsen-drisc/vision-free-01.png	994766
+domains/medical/assets/iii2-bls-aed/MANIFEST.md	2124
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-base.svg	5329
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-full.svg	7720
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-base.jpg	101308
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-base.png	446103
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-full.jpg	174890
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-full.png	702109
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana-refined.png	746085
+domains/medical/assets/iii5-cauda-notfallkarte/MANIFEST.md	458
+domains/medical/assets/iii5-cauda-notfallkarte/vision-free-01.png	1062928
+domains/medical/assets/iv2-rueckenschmerz-neuro/MANIFEST.md	891
+domains/medical/assets/iv2-rueckenschmerz-neuro/vision-free-01.png	883715
+domains/medical/assets/iv2-rueckenschmerz-neuro/vision-refined-01.png	286482
+domains/medical/assets/iv4-heisses-gelenk/MANIFEST.md	519
+domains/medical/assets/iv4-heisses-gelenk/vision-free-01.png	1076221
+domains/medical/assets/iv4-heisses-gelenk/vision-refined-01.png	1100708
+domains/medical/assets/kl-ces-saddle/MANIFEST.md	264
+domains/medical/assets/kl-ces-saddle/vision-free-01.png	709945
+domains/medical/assets/kl-compartment-spatial/MANIFEST.md	986
+domains/medical/assets/kl-compartment-spatial/generate_refined.typ	12684
+domains/medical/assets/kl-compartment-spatial/vision-free-01.png	514883
+domains/medical/assets/kl-compartment-spatial/vision-free-02.png	644512
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-sweetspot-01.png	4916952
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-sweetspot-02-de.png	4982671
+domains/medical/assets/kl-compartment-spatial/vision-refined-01.png	534583
+domains/medical/assets/kl-m-b-mimic/MANIFEST.md	351
+domains/medical/assets/kl-m-b-mimic/vision-free-01.png	658583
+domains/medical/assets/kl-melanom-abcde/MANIFEST.md	809
+domains/medical/assets/kl-melanom-abcde/vision-free-01.png	926604
+domains/medical/assets/kl-melanom-abcde/vision-refined-01.png	949325
+domains/medical/assets/kl-mscc-spine/MANIFEST.md	723
+domains/medical/assets/kl-mscc-spine/vision-free-01.png	710194
+domains/medical/assets/kl-stroke-fast/MANIFEST.md	358
+domains/medical/assets/kl-stroke-fast/vision-free-01.png	414451
+domains/medical/assets/kl-stroke-fast/vision-refined-01.png	563418
+domains/medical/assets/kl-us-d-urgency/MANIFEST.md	402
+domains/medical/assets/kl-us-d-urgency/vision-free-01.png	816907
+domains/medical/assets/kl-us-d-urgency/vision-refined-01.png	1068973
+domains/medical/briefs/.gitkeep	0
+domains/medical/briefs/INDEX.md	1883
+domains/medical/briefs/_archive/README.md	306
+domains/medical/briefs/_archive/i4-ifsg.accept.md	2950
+domains/medical/briefs/_archive/i4-ifsg.brief.md	7187
+domains/medical/briefs/_archive/i4-ifsg.feasibility.md	3768
+domains/medical/briefs/_archive/kl-ambition.accept.md	1830
+domains/medical/briefs/_archive/kl-ambition.claim-audit.md	2751
+domains/medical/briefs/_archive/kl-anaphylaxie-mimic.form-spec.md	7726
+domains/medical/briefs/_archive/kl-anaphylaxie-urgency.form-spec.md	14629
+domains/medical/briefs/_archive/kl-anaphylaxie.brief.md	6744
+domains/medical/briefs/_archive/kl-compartment-spatial-essential.vision.md	1656
+domains/medical/briefs/_archive/kl-compartment-spatial-focus.vision.md	2221
+domains/medical/briefs/_archive/kl-compartment-spatial-principle.vision.md	1281
+domains/medical/briefs/_archive/kl-compartment-spatial-schematic-correct.vision.md	3095
+domains/medical/briefs/_archive/kl-m-b-mimic.vision.md	2653
+domains/medical/briefs/_archive/kl-mi-mimic.form-spec.md	8563
+domains/medical/briefs/_archive/kl-mi-urgency.form-spec.md	12662
+domains/medical/briefs/_archive/kl-mi.brief.md	6931
+domains/medical/briefs/_archive/kl-mscc-spine.claim-audit.md	3748
+domains/medical/briefs/_archive/kl-mscc-spine.form-spec.md	4782
+domains/medical/briefs/_archive/kl-mscc-spine.vision.md	2886
+domains/medical/briefs/_archive/kl-script-system-p0.accept.md	2008
+domains/medical/briefs/_archive/kl-script-system-p1.accept.md	1131
+domains/medical/briefs/_archive/kl-script-system.brief.md	5314
+domains/medical/briefs/_archive/kl-script-system.graphics.md	3568
+domains/medical/briefs/_archive/kl-suicid-chrome.form-spec.md	10679
+domains/medical/briefs/_archive/kl-suicid-mimic.form-spec.md	7647
+domains/medical/briefs/_archive/kl-suicid-urgency.form-spec.md	12376
+domains/medical/briefs/_archive/kl-suicid.brief.md	10508
+domains/medical/briefs/_archive/kl-wave5.accept.md	2881
+domains/medical/briefs/_archive/kl-wave5.board.md	1507
+domains/medical/briefs/_archive/v-cauda-equina.accept.md	3412
+domains/medical/briefs/_archive/v-cauda-equina.brief.md	8875
+domains/medical/briefs/_archive/v-cauda-equina.feasibility.md	5571
+domains/medical/briefs/_archive/v-sept-arthritis.accept.md	2793
+domains/medical/briefs/_archive/v-sept-arthritis.brief.md	6607
+domains/medical/briefs/_archive/v-sept-arthritis.feasibility.md	3993
+domains/medical/briefs/_archive/vi1-geriatrie.accept.md	2901
+domains/medical/briefs/_archive/vi1-geriatrie.brief.md	7460
+domains/medical/briefs/_archive/vi1-geriatrie.feasibility.md	4868
+domains/medical/briefs/_archive/vii1-exam-cluster.accept.md	2345
+domains/medical/briefs/_archive/vii1-exam-cluster.brief.md	6268
+domains/medical/briefs/_archive/vii1-exam-cluster.feasibility.md	4423
+domains/medical/briefs/_explorations/README.md	2146
+domains/medical/briefs/_explorations/gemini-ontology-eval/0ac6af2392b773ed.json	34118
+domains/medical/briefs/_explorations/gemini-ontology-eval/0ac6af2392b773ed.md	12378
+domains/medical/briefs/_explorations/gemini-ontology-eval/83c5b1a68259facf.json	90359
+domains/medical/briefs/_explorations/gemini-ontology-eval/83c5b1a68259facf.md	10919
+domains/medical/briefs/_explorations/gemini-ontology-eval/SYNTHESIS-v1.1-frozen.md	9005
+domains/medical/briefs/_explorations/gemini-ontology-eval/dab02a87d49cf3ba.json	34301
+domains/medical/briefs/_explorations/gemini-ontology-eval/dab02a87d49cf3ba.md	17896
+domains/medical/briefs/_explorations/gemini-ontology-eval/round1-eval.md	6501
+domains/medical/briefs/_explorations/gemini-ontology-eval/round2-dialectic.md	9959
+domains/medical/briefs/_explorations/gemini-ontology-eval/round3-freeze.md	5751
+domains/medical/briefs/_explorations/kl-deep-execution-plan.md	1702
+domains/medical/briefs/_explorations/kl-form-space.md	18336
+domains/medical/briefs/_explorations/kl-harvest-and-reuse-plan.md	13800
+domains/medical/briefs/_explorations/kl-ontology-and-relations.md	25345
+domains/medical/briefs/_explorations/kl-phase1-critique-redesign.md	9359
+domains/medical/briefs/_explorations/welle-06-kl-content-forms-analysis.md	23052
+domains/medical/briefs/_explorations/welle-06-kl-implementation-roadmap.md	6095
+domains/medical/briefs/_wave5/00-form-space-crosscut.md	1695
+domains/medical/briefs/_wave5/ambition-raster-postmortem.md	5162
+domains/medical/briefs/_wave5/anatomy-depiction-pause.md	1302
+domains/medical/briefs/_wave5/kl-anaphylaxie.content-map.md	36029
+domains/medical/briefs/_wave5/kl-compartment.content-map.md	26213
+domains/medical/briefs/_wave5/kl-mi.content-map.md	24724
+domains/medical/briefs/_wave5/kl-stroke.content-map.md	35274
+domains/medical/briefs/_wave5/kl-suicid.content-map.md	31177
+domains/medical/briefs/_wave6/00-form-space-crosscut.md	1291
+domains/medical/briefs/_wave6/kl-gicht.content-map.md	3877
+domains/medical/briefs/_wave6/kl-le.content-map.md	3763
+domains/medical/briefs/_wave6/kl-sepsis.content-map.md	4688
+domains/medical/briefs/ii1-drei-achsen-drisc.accept.md	4843
+domains/medical/briefs/ii1-drei-achsen-drisc.brief.md	8478
+domains/medical/briefs/ii1-drei-achsen-drisc.feasibility.md	4243
+domains/medical/briefs/ii1-drei-achsen-drisc.graphics.md	1724
+domains/medical/briefs/ii1-drei-achsen-drisc.vision.md	2847
+domains/medical/briefs/iii2-bls-aed.accept.md	2716
+domains/medical/briefs/iii2-bls-aed.brief.md	6489
+domains/medical/briefs/iii2-bls-aed.feasibility.md	2610
+domains/medical/briefs/iii2-bls-aed.graphics.md	6292
+domains/medical/briefs/iii2-bls-aed.vision.md	2535
+domains/medical/briefs/iii5-cauda-notfallkarte.accept.md	4693
+domains/medical/briefs/iii5-cauda-notfallkarte.brief.md	9934
+domains/medical/briefs/iii5-cauda-notfallkarte.feasibility.md	7069
+domains/medical/briefs/iii5-cauda-notfallkarte.form-spec.md	2708
+domains/medical/briefs/iii5-cauda-notfallkarte.graphics.md	1563
+domains/medical/briefs/iii5-cauda-notfallkarte.vision.md	2627
+domains/medical/briefs/iv2-rueckenschmerz-neuro.accept.md	5759
+domains/medical/briefs/iv2-rueckenschmerz-neuro.brief.md	7466
+domains/medical/briefs/iv2-rueckenschmerz-neuro.feasibility.md	4389
+domains/medical/briefs/iv2-rueckenschmerz-neuro.form-spec.md	4849
+domains/medical/briefs/iv2-rueckenschmerz-neuro.graphics.md	3322
+domains/medical/briefs/iv2-rueckenschmerz-neuro.vision.md	3013
+domains/medical/briefs/iv4-heisses-gelenk.accept.md	5006
+domains/medical/briefs/iv4-heisses-gelenk.brief.md	7399
+domains/medical/briefs/iv4-heisses-gelenk.feasibility.md	4055
+domains/medical/briefs/iv4-heisses-gelenk.graphics.md	1518
+domains/medical/briefs/iv4-heisses-gelenk.vision.md	2892
+domains/medical/briefs/kl-ces-saddle.form-spec.md	2658
+domains/medical/briefs/kl-ces-saddle.vision.md	1903
+domains/medical/briefs/kl-compartment-mimic.form-spec.md	4600
+domains/medical/briefs/kl-compartment-spatial-sweetspot.vision.md	2653
+domains/medical/briefs/kl-compartment-spatial.claim-audit.md	1236
+domains/medical/briefs/kl-compartment-spatial.form-spec.md	11342
+domains/medical/briefs/kl-compartment-spatial.vision.md	1737
+domains/medical/briefs/kl-compartment-urgency.form-spec.md	8052
+domains/medical/briefs/kl-compartment.brief.md	7483
+domains/medical/briefs/kl-f2-urgency-ladder.form-spec.md	5341
+domains/medical/briefs/kl-f3-cue-matrix.form-spec.md	2797
+domains/medical/briefs/kl-f4-four-pole.form-spec.md	3344
+domains/medical/briefs/kl-gicht-mimic.form-spec.md	908
+domains/medical/briefs/kl-gicht-urgency.form-spec.md	2337
+domains/medical/briefs/kl-gicht.brief.md	1703
+domains/medical/briefs/kl-le-mimic.form-spec.md	994
+domains/medical/briefs/kl-le-urgency.form-spec.md	2865
+domains/medical/briefs/kl-le.brief.md	1651
+domains/medical/briefs/kl-melanom-abcde.claim-audit.md	1836
+domains/medical/briefs/kl-melanom-abcde.form-spec.md	3116
+domains/medical/briefs/kl-melanom-abcde.vision.md	4313
+domains/medical/briefs/kl-melanom-mimic.form-spec.md	2691
+domains/medical/briefs/kl-melanom-urgency.form-spec.md	5205
+domains/medical/briefs/kl-melanom.accept.md	2032
+domains/medical/briefs/kl-melanom.brief.md	3720
+domains/medical/briefs/kl-sepsis-flag-cluster.form-spec.md	2389
+domains/medical/briefs/kl-sepsis-mimic.form-spec.md	1220
+domains/medical/briefs/kl-sepsis-urgency.form-spec.md	3474
+domains/medical/briefs/kl-sepsis.brief.md	3407
+domains/medical/briefs/kl-stroke-fast.claim-audit.md	1132
+domains/medical/briefs/kl-stroke-fast.form-spec.md	10840
+domains/medical/briefs/kl-stroke-fast.vision.md	2129
+domains/medical/briefs/kl-stroke-mimic.form-spec.md	5489
+domains/medical/briefs/kl-stroke-urgency.form-spec.md	9982
+domains/medical/briefs/kl-stroke.brief.md	7732
+domains/medical/briefs/kl-u-discrimination.form-spec.md	3731
+domains/medical/briefs/kl-u-mimic.form-spec.md	3602
+domains/medical/briefs/kl-u-urgency-scope.form-spec.md	6535
+domains/medical/briefs/kl-us-d-urgency.vision.md	2251
+domains/medical/briefs/kl-wave6.accept.md	3567
+domains/medical/recipes/fallbasiert.md	1213
+domains/medical/recipes/lerntext.md	1215
+domains/medical/recipes/notfall-karte.md	9227
+domains/medical/recipes/notfall-karte.minima.yaml	1275
+domains/medical/skill/media-brief-workspace/README.md	527
+domains/medical/skill/media-brief-workspace/iteration-1/ANALYST.md	678
+domains/medical/skill/media-brief-workspace/iteration-1/benchmark.json	6087
+domains/medical/skill/media-brief-workspace/iteration-1/benchmark.md	1415
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/eval_metadata.json	1796
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/grading.json	801
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/outputs/NOTES.md	1533
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/outputs/kl-melanom-urgency.form-spec.md	10982
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/grading.json	804
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/outputs/NOTES.md	1812
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/outputs/kl-melanom-urgency.form-spec.md	11386
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/eval_metadata.json	1308
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/grading.json	692
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/NOTES.md	2787
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/abcde.form-spec.md	8360
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/form-space.md	6235
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/grading.json	695
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/NOTES.md	2061
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/abcde.form-spec.md	6960
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/form-space.md	6931
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/eval_metadata.json	980
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/grading.json	511
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/outputs/NOTES.md	1771
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/outputs/accept.md	6186
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/grading.json	514
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/outputs/NOTES.md	914
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/outputs/accept.md	3324
+domains/medical/skill/media-brief-workspace/iteration-1/review.html	130780
+domains/medical/skill/media-brief/SKILL.md	15530
+domains/medical/skill/media-brief/evals/evals.json	5054
+domains/medical/skill/media-brief/references/design-reasoning.md	6315
+domains/medical/skill/media-brief/references/kl-form-space-process.md	4164
+domains/medical/skill/media-brief/references/kl-illness-script-ontology.md	3405
+domains/medical/skill/medical-graphics-workspace/README.md	531
+domains/medical/skill/medical-graphics-workspace/iteration-1/ANALYST.md	578
+domains/medical/skill/medical-graphics-workspace/iteration-1/benchmark.json	5758
+domains/medical/skill/medical-graphics-workspace/iteration-1/benchmark.md	1296
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/eval_metadata.json	1479
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/grading.json	773
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/NOTES.md	3248
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/melanom-urgency.typ	5856
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/spike-recreate.typ	1617
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/grading.json	776
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/NOTES.md	2283
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/melanom-urgency.typ	5322
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/spike-recreate.typ	873
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/eval_metadata.json	1072
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/grading.json	596
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/NOTES.md	2854
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/abcde.typ	3475
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/abcde.vision.md	1215
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/grading.json	599
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/NOTES.md	1521
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/abcde.typ	3731
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/abcde.vision.md	1318
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/eval_metadata.json	956
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/grading.json	508
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/outputs/NOTES.md	1473
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/outputs/claim-audit.md	6157
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/grading.json	511
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/NOTES.md	1010
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/claim-audit.md	4312
+domains/medical/skill/medical-graphics-workspace/iteration-1/review.html	229696
+domains/medical/skill/medical-graphics/SKILL.md	8492
+domains/medical/skill/medical-graphics/evals/evals.json	4276
+domains/medical/skill/medical-graphics/examples/INDEX.md	2651
+domains/medical/skill/medical-graphics/playbook/00-overview.md	2449
+domains/medical/skill/medical-graphics/playbook/01-from-form-spec.md	1066
+domains/medical/skill/medical-graphics/playbook/02-free-vision.md	2148
+domains/medical/skill/medical-graphics/playbook/03-claim-audit.md	3078
+domains/medical/skill/medical-graphics/playbook/04-recreate-typst.md	1459
+domains/medical/skill/medical-graphics/playbook/05-hybrid.md	759
+domains/medical/skill/medical-graphics/playbook/06-refine-raster.md	1862
+domains/medical/skill/medical-graphics/playbook/07-ab-compare.md	705
+domains/medical/skill/medical-graphics/playbook/08-accept-handoff.md	829
+domains/medical/skill/medical-graphics/playbook/09-form-recipes.md	7412
+domains/medical/skill/medical-graphics/playbook/10-kl-chapter-pipeline.md	3321
+domains/medical/skill/medical-graphics/playbook/walkthrough-iv2.md	2127
+domains/medical/skill/medical-graphics/references/asset-pipeline.md	2029
+domains/medical/skill/medical-graphics/references/book-visual-standards.md	4256
+domains/medical/skill/medical-graphics/references/decision-heuristics.md	2602
+domains/medical/skill/medical-graphics/references/free-vision.md	3336
+domains/medical/skill/medical-graphics/references/graphic-types.md	1776
+domains/medical/skill/medical-graphics/references/kl-form-library.md	9596
+domains/medical/skill/medical-graphics/references/tools-and-generation.md	2208
+domains/medical/templates/accept-record.template.md	1854
+domains/medical/templates/form-spec.template.md	2637
+domains/medical/templates/graphic-claim-audit.template.md	1776
+domains/medical/templates/graphic-decision.template.md	2236
+domains/medical/templates/graphic-vision.template.md	1881
+domains/medical/templates/media-brief.template.md	1801
+editorconfig	263
+fonts/.gitkeep	0
+fonts/Font Awesome 6 Brands-Regular-400.otf	554744
+fonts/Font Awesome 6 Free-Regular-400.otf	189956
+fonts/Font Awesome 6 Free-Solid-900.otf	1023996
+github/skills/pinit-workflow/SKILL.md	23758
+github/skills/pinit-workflow/components/pinit-debug.typ	6445
+github/skills/pinit-workflow/debug/pinit-issues.md	6578
+github/skills/pinit-workflow/debug/pinit-regression.pdf	55865
+github/skills/pinit-workflow/debug/pinit-regression.typ	8769
+github/skills/pinit-workflow/docs/pinit-ai-playbook.md	3747
+github/skills/pinit-workflow/docs/pinit-coordinate-roundtrip.md	802
+github/skills/pinit-workflow/docs/pinit-style-guide.md	2226
+github/skills/pinit-workflow/tools/pinit-clickmap.html	2801
+github/skills/skill-creator/LICENSE.txt	11357
+github/skills/skill-creator/SKILL.md	32370
+github/skills/skill-creator/agents/analyzer.md	10376
+github/skills/skill-creator/agents/comparator.md	7287
+github/skills/skill-creator/agents/grader.md	9049
+github/skills/skill-creator/assets/eval_review.html	7058
+github/skills/skill-creator/eval-viewer/generate_review.py	16365
+github/skills/skill-creator/eval-viewer/viewer.html	44998
+github/skills/skill-creator/references/schemas.md	12061
+github/skills/skill-creator/scripts/__init__.py	0
+github/skills/skill-creator/scripts/aggregate_benchmark.py	14386
+github/skills/skill-creator/scripts/generate_report.py	12847
+github/skills/skill-creator/scripts/improve_description.py	10723
+github/skills/skill-creator/scripts/package_skill.py	4234
+github/skills/skill-creator/scripts/quick_validate.py	3972
+github/skills/skill-creator/scripts/run_eval.py	11464
+github/skills/skill-creator/scripts/run_loop.py	13685
+github/skills/skill-creator/scripts/utils.py	1661
+github/skills/typst-extension/SKILL.md	30271
+github/skills/typst-writer/SKILL.md	42060
+github/workflows/build.yml	999
+gitignore	853
+packages/bookkit-didactics/README.md	429
+packages/bookkit-didactics/didactics.typ	6071
+packages/bookkit-didactics/exam.typ	3726
+packages/bookkit-didactics/lib.typ	414
+packages/bookkit-didactics/spreads-extra.typ	849
+packages/bookkit-didactics/typst.toml	322
+packages/bookkit/README.md	1474
+packages/bookkit/components/blocks.typ	8168
+packages/bookkit/components/grids.typ	3310
+packages/bookkit/components/inline.typ	3811
+packages/bookkit/components/layouts.typ	5554
+packages/bookkit/components/spreads.typ	7346
+packages/bookkit/components/tables.typ	5881
+packages/bookkit/lib.typ	1686
+packages/bookkit/page.typ	2838
+packages/bookkit/print.typ	4795
+packages/bookkit/theme.typ	6077
+packages/bookkit/typography.typ	5114
+packages/bookkit/typst.toml	378
+pilots/kursbuch-welle-03-compose/README.md	4122
+pilots/kursbuch-welle-03-compose/_single/iv2.typ	222
+pilots/kursbuch-welle-03-compose/_single/iv4.typ	222
+pilots/kursbuch-welle-03-compose/chapters/i4.typ	20299
+pilots/kursbuch-welle-03-compose/chapters/ii1.typ	21092
+pilots/kursbuch-welle-03-compose/chapters/iii2.typ	14790
+pilots/kursbuch-welle-03-compose/chapters/iii5.typ	7741
+pilots/kursbuch-welle-03-compose/chapters/iv2.typ	14228
+pilots/kursbuch-welle-03-compose/chapters/iv4.typ	17584
+pilots/kursbuch-welle-03-compose/chapters/v-cauda.typ	19853
+pilots/kursbuch-welle-03-compose/chapters/v-sept.typ	13365
+pilots/kursbuch-welle-03-compose/chapters/vi1.typ	17194
+pilots/kursbuch-welle-03-compose/chapters/vii1.typ	14710
+pilots/kursbuch-welle-03-compose/lib/visual.typ	12618
+pilots/kursbuch-welle-03-compose/main.typ	2391
+pilots/kursbuch-welle-03-compose/reports/e2e-iii2-2026-07-20.md	2302
+pilots/kursbuch-welle-03-compose/reports/e2e-iii5-2026-07-20.md	11336
+pilots/kursbuch-welle-03-compose/reports/wave03-full-compose-2026-07-20.md	2023
+pilots/kursbuch-welle-03-compose/reports/wave03-v2-creative-2026-07-20.md	1554
+pilots/kursbuch-welle-03/CHAPTER-MAP.md	1133
+pilots/kursbuch-welle-03/README.md	1245
+pilots/kursbuch-welle-03/_single/i4.typ	211
+pilots/kursbuch-welle-03/_single/ii1.typ	213
+pilots/kursbuch-welle-03/_single/iii2.typ	215
+pilots/kursbuch-welle-03/_single/iii5.typ	215
+pilots/kursbuch-welle-03/_single/iv2.typ	213
+pilots/kursbuch-welle-03/_single/iv4.typ	213
+pilots/kursbuch-welle-03/_single/v-cauda.typ	221
+pilots/kursbuch-welle-03/_single/v-sept.typ	219
+pilots/kursbuch-welle-03/_single/vi1.typ	213
+pilots/kursbuch-welle-03/_single/vii1.typ	215
+pilots/kursbuch-welle-03/build-all.sh	1112
+pilots/kursbuch-welle-03/chapters/i4.typ	17920
+pilots/kursbuch-welle-03/chapters/ii1.typ	21176
+pilots/kursbuch-welle-03/chapters/iii2.typ	12402
+pilots/kursbuch-welle-03/chapters/iii5.typ	8004
+pilots/kursbuch-welle-03/chapters/iv2.typ	14054
+pilots/kursbuch-welle-03/chapters/iv4.typ	18506
+pilots/kursbuch-welle-03/chapters/v-cauda.typ	20992
+pilots/kursbuch-welle-03/chapters/v-sept.typ	12429
+pilots/kursbuch-welle-03/chapters/vi1.typ	16270
+pilots/kursbuch-welle-03/chapters/vii1.typ	15050
+pilots/kursbuch-welle-03/convert_md_to_typ.py	9492
+pilots/kursbuch-welle-03/main.typ	1572
+pilots/reuse-datasheet/design-brief.yaml	168
+pilots/reuse-datasheet/main.typ	3477
+prepress/PDFX_def.ps	2189
+prepress/README.md	4375
+prepress/profiles/README.md	935
+prepress/profiles/default_cmyk.icc	187484
+prepress/profiles/srgb.icc	2576
+prepress/reports/image-dpi.md	241
+prepress/reports/preflight-print.md	1373
+project-tech-stack.md	16243
+research/README.md	1524
+research/data/all_packages.json	547630
+research/data/all_templates.json	605141
+research/data/index.json	1535056
+research/data/latest_packages_meta.json	736116
+research/data/readme_urls.txt	72402
+research/data/versions.txt	422
+research/pipeline/check_versions.py	613
+research/pipeline/fetch_packages.py	3906
+research/pipeline/process_index.py	1109
+research/pipeline/process_templates.py	4070
+research/pipeline/refine_json.py	1255
+scripts/book-production-status.sh	1993
+scripts/bookkit	7318
+scripts/build.ps1	2611
+scripts/build.sh	1879
+scripts/check-image-dpi.py	7684
+scripts/graphics-refine-agy.sh	2548
+scripts/graphics-spike-init.sh	1957
+scripts/graphics-vision-agy.sh	3332
+scripts/graphics-vision-gemini.sh	3584
+scripts/preflight-print.sh	3201
+scripts/preflight.ps1	4207
+scripts/print-pdfx.ps1	3179
+scripts/print-pdfx.sh	3488
+scripts/setup.ps1	1906
+scripts/workspace-inventory.py	10883
+src/SHOWCASE-README.md	3477
+src/assets/anatomy/cell.svg	1773
+src/assets/anatomy/heart-schema.svg	1522
+src/assets/anatomy/nephron.svg	1669
+src/assets/anatomy/neuron-compact.svg	1879
+src/assets/anatomy/neuron.svg	1585
+src/chapters/00-cover.typ	271
+src/chapters/01-intro.typ	4886
+src/chapters/02-typography.typ	6356
+src/chapters/03-structure.typ	6287
+src/chapters/04-components.typ	5656
+src/chapters/05-layout.typ	6859
+src/chapters/06-advanced.typ	4852
+src/chapters/07-backmatter.typ	7170
+src/chapters/08-packages.typ	13994
+src/chapters/09-data-driven.typ	11842
+src/chapters/10-tooling.typ	9305
+src/chapters/11-academic.typ	7901
+src/chapters/12-beyond-flow.typ	5953
+src/chapters/13-wasm-meta.typ	6639
+src/chapters/14-templates.typ	6196
+src/chapters/15-book-patterns.typ	11757
+src/chapters/16-margin-patterns.typ	10886
+src/chapters/17-visual-hierarchy.typ	12139
+src/chapters/18-pinit-showcase.typ	13217
+src/chapters/19-didaktik.typ	11113
+src/chapters/20-datenvisualisierung.typ	5573
+src/chapters/21-diagramme.typ	6144
+src/chapters/22-bildintegration.typ	10153
+src/chapters/23-seitengestaltung.typ	8830
+src/chapters/24-kunststuecke.typ	3327
+src/chapters/25-rechtskunde.typ	12665
+src/components/art.typ	12315
+src/components/blocks.typ	119
+src/components/charts.typ	11411
+src/components/diagrams.typ	2958
+src/components/didactics.typ	131
+src/components/exam.typ	126
+src/components/figures.typ	11446
+src/components/grids.typ	118
+src/components/inline.typ	119
+src/components/layouts.typ	120
+src/components/legal.typ	10440
+src/components/page-design.typ	9978
+src/components/pedigree.typ	2552
+src/components/spreads.typ	220
+src/components/tables.typ	119
+src/data/glossary.yml	1053
+src/data/grundlagen.bib	154
+src/data/klinisch.bib	160
+src/data/pergamon.bib	138
+src/data/references.bib	1082
+src/data/sample-patients.json	2070
+src/data/sample-study.csv	255
+src/main.typ	3983
+src/styles/page.typ	106
+src/styles/print.typ	107
+src/styles/theme.typ	107
+src/styles/typography.typ	112
+templates/aspirationally/main.typ	8034
+templates/badformer/main.typ	111
+templates/brilliant-cv/assets/avatar.png	693969
+templates/brilliant-cv/assets/logos/abc_company.png	6252
+templates/brilliant-cv/assets/logos/pqr_corp.png	16012
+templates/brilliant-cv/assets/logos/ucla.png	398200
+templates/brilliant-cv/assets/logos/xyz_corp.png	36509
+templates/brilliant-cv/assets/publications.bib	778
+templates/brilliant-cv/assets/signature.png	145868
+templates/brilliant-cv/cv.typ	605
+templates/brilliant-cv/letter.typ	2915
+templates/brilliant-cv/metadata.toml	4560
+templates/brilliant-cv/modules_de/certificates.typ	539
+templates/brilliant-cv/modules_de/education.typ	1273
+templates/brilliant-cv/modules_de/professional.typ	2023
+templates/brilliant-cv/modules_de/projects.typ	756
+templates/brilliant-cv/modules_de/publications.typ	371
+templates/brilliant-cv/modules_de/skills.typ	916
+templates/brilliant-cv/modules_en/certificates.typ	932
+templates/brilliant-cv/modules_en/education.typ	1558
+templates/brilliant-cv/modules_en/professional.typ	1894
+templates/brilliant-cv/modules_en/projects.typ	1561
+templates/brilliant-cv/modules_en/publications.typ	550
+templates/brilliant-cv/modules_en/skills.typ	980
+templates/brilliant-cv/modules_fr/certificates.typ	403
+templates/brilliant-cv/modules_fr/education.typ	1222
+templates/brilliant-cv/modules_fr/professional.typ	1862
+templates/brilliant-cv/modules_fr/projects.typ	559
+templates/brilliant-cv/modules_fr/publications.typ	269
+templates/brilliant-cv/modules_fr/skills.typ	401
+templates/brilliant-cv/modules_it/certificates.typ	382
+templates/brilliant-cv/modules_it/education.typ	1113
+templates/brilliant-cv/modules_it/professional.typ	1684
+templates/brilliant-cv/modules_it/projects.typ	581
+templates/brilliant-cv/modules_it/publications.typ	270
+templates/brilliant-cv/modules_it/skills.typ	392
+templates/brilliant-cv/modules_zh/certificates.typ	365
+templates/brilliant-cv/modules_zh/education.typ	926
+templates/brilliant-cv/modules_zh/professional.typ	1418
+templates/brilliant-cv/modules_zh/projects.typ	402
+templates/brilliant-cv/modules_zh/publications.typ	269
+templates/brilliant-cv/modules_zh/skills.typ	385
+templates/caidan/cover.png	354194
+templates/caidan/main.typ	6738
+templates/calmly-touying/main.typ	4019
+templates/ilm/main.typ	13166
+templates/ilm/refs.bib	331
+templates/mantys/manual.typ	964
+templates/soviet-matrix/main.typ	237
+templates/tieffiction/main.typ	775
+templates/toffee-tufte/main.bib	832
+templates/toffee-tufte/main.typ	9711
+templates/touying-aqua/main.typ	363
+templates/wonderous-book/main.typ	2455
+test/pinit-radial.typ	9593
+test/scratch-pinit.typ	340
+toolset/compose/CREATIVE-COMPOSE.md	5160
+toolset/compose/README.md	4852
+toolset/compose/fixtures/fail_claims/accept.md	82
+toolset/compose/fixtures/fail_claims/chapter.typ	529
+toolset/compose/fixtures/fail_claims/content.md	201
+toolset/compose/fixtures/fail_freeze_production/accept.md	456
+toolset/compose/fixtures/fail_freeze_production/chapter.typ	1207
+toolset/compose/fixtures/fail_freeze_production/content.md	759
+toolset/compose/fixtures/fail_no_accept/accept.md	307
+toolset/compose/fixtures/fail_no_accept/chapter.typ	387
+toolset/compose/fixtures/fail_no_accept/content.md	74
+toolset/compose/fixtures/fail_unknown_form/accept.md	88
+toolset/compose/fixtures/fail_unknown_form/chapter.typ	494
+toolset/compose/fixtures/fail_unknown_form/content.md	98
+toolset/compose/fixtures/pass_freeze_production/accept.md	456
+toolset/compose/fixtures/pass_freeze_production/chapter.typ	1297
+toolset/compose/fixtures/pass_freeze_production/content.md	759
+toolset/compose/fixtures/pass_freeze_production/freeze.md	518
+toolset/compose/fixtures/pass_freeze_production/genre-minima.yaml	343
+toolset/compose/fixtures/pass_minimal/accept.md	456
+toolset/compose/fixtures/pass_minimal/chapter.typ	1207
+toolset/compose/fixtures/pass_minimal/content.md	759
+toolset/compose/fixtures/pass_minimal/genre-minima.yaml	343
+toolset/compose/scripts/run_validate.py	545
+toolset/compose/spikes/README.md	2925
+toolset/compose/spikes/graphics/_templates/lib/module.typ	1579
+toolset/compose/spikes/graphics/_templates/spike-recreate.typ	845
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/lib/pflichtsequenz.typ	9477
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-compare-layout.typ	1111
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-compare.typ	738
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-landscape.typ	1072
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-recreate.typ	1147
+toolset/compose/spikes/graphics/iii2-bls-aed/antigravity-nanobanana-brief.md	4407
+toolset/compose/spikes/graphics/iii2-bls-aed/antigravity-nanobanana-free-brief.md	3859
+toolset/compose/spikes/graphics/iii2-bls-aed/lib/primar-algorithmus.typ	8978
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-asset.typ	649
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-code.pdf	29090
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-code.typ	3888
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-compare-b2.typ	1021
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-compare.typ	1372
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-hybrid.typ	3630
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-nanobanana-free.typ	1028
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-nanobanana.typ	1125
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-raster-full.typ	1185
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-raster-hybrid.typ	2849
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-recreate.typ	1215
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-refined.typ	1120
+toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/lib/sofortmassnahmen.typ	6124
+toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/spike-compare.typ	984
+toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/spike-recreate.typ	1135
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/lib/entscheidungs-flow.typ	7804
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-compare-b2.typ	1090
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-compare.typ	1363
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-recreate.typ	1204
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-refined.typ	1130
+toolset/compose/spikes/graphics/iv4-heisses-gelenk/lib/entscheidungs-flow.typ	9795
+toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-compare.typ	1116
+toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-recreate.typ	1195
+toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-refined.typ	851
+toolset/compose/spikes/graphics/kl-script-system/README.md	2424
+toolset/compose/spikes/graphics/kl-script-system/_test-us-d.typ	312
+toolset/compose/spikes/graphics/kl-script-system/lib/cue-matrix.typ	2659
+toolset/compose/spikes/graphics/kl-script-system/lib/discrimination.typ	2345
+toolset/compose/spikes/graphics/kl-script-system/lib/four-pole.typ	2797
+toolset/compose/spikes/graphics/kl-script-system/lib/m-a-mimic.typ	1727
+toolset/compose/spikes/graphics/kl-script-system/lib/m-b-peel.typ	3906
+toolset/compose/spikes/graphics/kl-script-system/lib/melanom.typ	18026
+toolset/compose/spikes/graphics/kl-script-system/lib/script-core.typ	10401
+toolset/compose/spikes/graphics/kl-script-system/lib/urgency-ladder.typ	7483
+toolset/compose/spikes/graphics/kl-script-system/lib/us-d-dashboard.typ	6119
+toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ	6602
+toolset/compose/spikes/graphics/kl-script-system/lib/v2-cues-suspicion.typ	5381
+toolset/compose/spikes/graphics/kl-script-system/lib/v2-urgency.typ	6646
+toolset/compose/spikes/graphics/kl-script-system/spike-ambition.typ	2563
+toolset/compose/spikes/graphics/kl-script-system/spike-melanom.typ	4545
+toolset/compose/spikes/graphics/kl-script-system/spike-phase1.typ	7605
+toolset/compose/spikes/graphics/kl-script-system/spike-phase1v2.typ	6923
+toolset/compose/spikes/graphics/kl-script-system/spike-recreate.typ	4168
+toolset/compose/spikes/graphics/kl-script-system/spike-wave-o.typ	3346
+toolset/compose/spikes/graphics/kl-wave5/README.md	1887
+toolset/compose/spikes/graphics/kl-wave5/lib/anaphylaxie.typ	6045
+toolset/compose/spikes/graphics/kl-wave5/lib/compartment.typ	23723
+toolset/compose/spikes/graphics/kl-wave5/lib/mi.typ	6918
+toolset/compose/spikes/graphics/kl-wave5/lib/stroke.typ	10801
+toolset/compose/spikes/graphics/kl-wave5/lib/suicid.typ	5377
+toolset/compose/spikes/graphics/kl-wave5/spike-ambition-v2.typ	1693
+toolset/compose/spikes/graphics/kl-wave5/spike-ambition.typ	1746
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-essential.typ	422
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-nonbody.typ	803
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-principle.typ	769
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-schematic.typ	670
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-sweetspot.typ	437
+toolset/compose/spikes/graphics/kl-wave5/spike-grammar-b.typ	6802
+toolset/compose/spikes/graphics/kl-wave5/spike-grammar.typ	5177
+toolset/compose/spikes/graphics/kl-wave6/README.md	1655
+toolset/compose/spikes/graphics/kl-wave6/lib/gicht.typ	5248
+toolset/compose/spikes/graphics/kl-wave6/lib/le.typ	4784
+toolset/compose/spikes/graphics/kl-wave6/lib/sepsis.typ	7068
+toolset/compose/spikes/graphics/kl-wave6/spike-grammar.typ	4223
+toolset/compose/templates/feasibility-note.template.md	2574
+toolset/compose/tests/test_validate.py	13541
+toolset/compose/validate/__init__.py	208
+toolset/compose/validate/__main__.py	110
+toolset/compose/validate/accept_gate.py	3014
+toolset/compose/validate/body.py	2149
+toolset/compose/validate/catalog.py	5494
+toolset/compose/validate/claims.py	5303
+toolset/compose/validate/cli.py	6877
+toolset/compose/validate/compile_check.py	3096
+toolset/compose/validate/freeze_gate.py	6158
+toolset/compose/validate/minima.py	7012
+toolset/compose/validate/posthoc.py	2438
+toolset/compose/validate/runner.py	9505
+toolset/compose/validate/whitelist.py	8209
+toolset/docs/api-foundation.md	860
+toolset/examples/facet-smoke/main.typ	832
+toolset/examples/minimal/main.typ	1166
+toolset/form-catalog/README.md	2740
+toolset/form-catalog/VERSION	6
+toolset/form-catalog/core/ANTI-PATTERNS.md	2045
+toolset/form-catalog/core/BASIS.md	3706
+toolset/form-catalog/core/GAP-PROCESS.md	1875
+toolset/form-catalog/core/forms.yaml	11268
+toolset/form-catalog/scripts/check_forms.py	4408
+toolset/orchestration/book-production/README.md	521
+toolset/orchestration/book-production/demo-welle03/board.md	2600
+toolset/orchestration/book-production/demo-welle03/kickoff.md	952
+toolset/orchestration/book-production/demo-welle03/route.md	1041
+toolset/orchestration/book-production/demo-welle03/run-log.md	730
+toolset/skill-pack/book-production-orchestrator/SKILL.md	10646
+toolset/skill-pack/book-production-orchestrator/references/autonomy.md	1249
+toolset/skill-pack/book-production-orchestrator/references/phase-machine.md	1251
+toolset/skill-pack/book-production-orchestrator/templates/board.template.md	1568
+toolset/skill-pack/book-production-orchestrator/templates/kickoff.template.md	1247
+toolset/skill-pack/book-production-orchestrator/templates/route.template.md	1104
+toolset/skill-pack/book-production-orchestrator/templates/run-log.template.md	436
+toolset/skill-pack/bookkit/SKILL.md	4071
+toolset/skill-pack/compose-chapter/SKILL.md	13179
+toolset/skill-pack/provision.sh	2571
+toolset/starter/AGENTS.md	520
+toolset/starter/README.md	820
+toolset/starter/design-brief.yaml	293
+toolset/starter/main.typ	1041
+toolset/tests/test_toolset.sh	2615
+vscode/extensions.json	376
+vscode/settings.json	518
+vscode/tasks.json	1020
+workspaces/README.md	462
+workspaces/kursbuch-layout.code-workspace	309

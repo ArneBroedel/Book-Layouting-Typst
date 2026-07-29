@@ -125,6 +125,16 @@ Copy skeleton + swap claim pins (IV-2 → IV-4). Re-audit free labels always.
 | **Gold** | `kl-wave5/lib/suicid.typ` · form-specs `kl-suicid-*` |
 | **Anti** | Sensational free vision; nooses/weapons; Treat without net; invent T3 for 48h row |
 
+### `kl-flag-cluster` (Sepsis / flag-master)
+
+| | |
+|---|---|
+| **When** | Multi-flag / gatekeeper scan where **already one** vital criterion in infection context → 112 (stricter than formal score alone) |
+| **Must-see** | Equal chips (not ladder rungs); explicit “bereits EINS → 112”; score secondary with **non-clearance** if negative; DE only |
+| **Default realize** | **code** (complements nested multi-T1 full list — does not replace it) |
+| **Gold** | `kl-wave6/lib/sepsis.typ` → `flag-cluster-sepsis()` · form-spec `kl-sepsis-flag-cluster` |
+| **Anti** | qSOFA/NEWS2 as only gate; three chips as three TIME tiers; score calculator UI; form-meta labels |
+
 ### `kl-urgency-scope-dashboard`
 
 | | |

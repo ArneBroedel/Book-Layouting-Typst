@@ -18,6 +18,10 @@ Explorations: [`_explorations/`](_explorations/) · Wave notes: [`_wave5/`](_wav
 | `kl-stroke-fast` | FAST / urgency |
 | `kl-compartment-spatial` | Spatial ambition (anatomy pause — code default) |
 | `kl-ces-saddle` | Optional spatial gold |
+| `kl-sepsis` (+ flag-cluster, urgency/mimic) | Flag-master + nested multi-T1 |
+| `kl-gicht` (urgency/mimic) | Standard kl-kurz pin-swap |
+| `kl-le` (urgency/mimic) | LE nested-T1 + Wells SCOPE |
+| `kl-wave6.accept` | Wave-6 campaign Accept |
 
 ## Form-library specs (keep top-level)
 
@@ -26,6 +30,7 @@ Reusable grammar — not full chapter gold, but **transfer templates**:
 - `kl-u-urgency-scope`, `kl-u-mimic`, `kl-u-discrimination`
 - `kl-f2-urgency-ladder`, `kl-f3-cue-matrix`, `kl-f4-four-pole`
 - Related: `kl-compartment` (brief + urgency/mimic specs), `kl-stroke` (non-fast siblings)
+- Wave notes: `_wave5/` · `_wave6/`
 
 ## Active top-level files
 
