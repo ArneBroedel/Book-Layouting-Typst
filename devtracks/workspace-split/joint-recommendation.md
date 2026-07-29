@@ -40,10 +40,10 @@
                            │ ruft nur dokumentierte Verben
                            ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  bookkit CLI (eine Entry, Subcommands)                      │
-│  doctor · init · build · watch · ua                         │
-│  validate (compose gates) · prepress · catalog              │
-│  vision | refine   ← optional backends, budgetiert, gated   │
+│  bookkit CLI (eine Entry, Subcommands) — D4                 │
+│  doctor · init · build · watch · ua · print                 │
+│  validate · prepress · catalog                              │
+│  graphics vision|refine|spike-init|manifest  (gated; no loop)│
 └───────────────┬─────────────────────────────┬───────────────┘
                 │                             │
                 ▼                             ▼

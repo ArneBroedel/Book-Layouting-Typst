@@ -1,15 +1,15 @@
 # Plan — Aufräumen, Konsolidieren, Aufteilen
 
-**Status:** Umsetzungsplan (Phase 0 Inventar erledigt 2026-07-29) · **Peer-Review integriert**  
+**Status:** active — Phase 0–1 **done**; implement via phase files  
+**Implementer entry:** [`README.md`](README.md) · [`HANDOFF.md`](HANDOFF.md)  
 **Spec:** [`spec.md`](spec.md)  
+**Phase files:** [`phase1-hygiene.md`](phase1-hygiene.md) ✅ · [`phase1b-cli.md`](phase1b-cli.md) ⬅ next · [`phase2-boundaries.md`](phase2-boundaries.md) · [`phase3-split.md`](phase3-split.md) · [`phase4-skills-docs.md`](phase4-skills-docs.md)  
 **Antigravity Review:** [`antigravity-peer-review.md`](antigravity-peer-review.md)  
-**Joint Recommendation (verbindlich für nächste Schritte):** [`joint-recommendation.md`](joint-recommendation.md)  
-**Vollindex:** [`../workspace-inventory/file-index.tsv`](../workspace-inventory/file-index.tsv) (~1050 Dateien, ~185 MB inkl. `dist/`)  
-**Gruppierter Katalog:** [`../workspace-inventory/CATALOG.md`](../workspace-inventory/CATALOG.md)  
-**Bucket-Zusammenfassung:** [`../workspace-inventory/bucket-summary.tsv`](../workspace-inventory/bucket-summary.tsv)  
-**Noise-Kandidaten:** [`../workspace-inventory/noise-candidates.tsv`](../workspace-inventory/noise-candidates.tsv) (~270 Einträge)
+**Joint Recommendation (verbindlich):** [`joint-recommendation.md`](joint-recommendation.md)  
+**Decisions D1–D5 (locked):** [`decisions.md`](decisions.md)  
+**Vollindex:** [`../workspace-inventory/`](../workspace-inventory/) (re-run `scripts/workspace-inventory.py` after large moves; snapshot may predate purge)
 
-> **Korrektur nach Peer-Review:** Delivery = **Hybrid** (eine `bookkit`-CLI + Typst-Packages + Skills). Repo-Split **triggerbasiert**, nicht kalenderbasiert. Details: `joint-recommendation.md`.
+> **Binding after peer-review + Human D1–D5:** Hybrid delivery (one `bookkit` CLI + Typst packages + skills). Repo-Split **trigger-only**. Phase 1 hygiene already applied (assets ~25 MB, briefs archived, tag `archive/assets-pre-purge-2026-07-29`).
 
 ---
 
@@ -421,18 +421,9 @@ Bleibt dünn: Board/Run-log Templates + Skill, der **nur** Routing kennt und Sub
 
 ## 4. Konsolidierung pro Bereich (Aufräumen *vor/während* Split)
 
-### 4.1 Quick Wins (Phase 1, gleiches Repo, 1–2 Tage)
+### 4.1 Quick Wins (Phase 1) — **DONE** (see `phase1-hygiene.md`)
 
-| # | Maßnahme | Effekt |
-|---|---|---|
-| 1 | Root-Litter löschen: `scratch_test.*`, `v-*-compile.typ` | Klarheit |
-| 2 | `dist/` lokal leeren; sicherstellen nichts getrackt | −109 MB Disk |
-| 3 | Gitignore: `**/*.pdf` (Ausnahmen dokumentieren), spike outputs, `*-workspace/**/outputs/`, `**/*.pyc` | weniger Noise-PRs |
-| 4 | Untrack: `src/chapters/*.pdf`, `src/styles/*.pdf`, spike PDFs, test PDF | sauberes Git |
-| 5 | README + AGENTS: **Mission A first**; B/C als „companion“ | Fokus-Kommunikation |
-| 6 | `tmp/`, leere `tools/` entfernen | Hygiene |
-| 7 | Briefs: Index `domains/medical/briefs/INDEX.md` (status: gold/work/archive) | Navigation |
-| 8 | Assets: MANIFEST pro Unit auf **canonical set** kürzen; Duplikat-Visions listen | Vorarbeit −MB |
+Items 1–4, 7–8 executed. Item 5 (README/AGENTS mission) deferred to **phase4**. Item 6 residual optional in phase2.
 
 ### 4.2 A — Layout minimieren
 
@@ -482,41 +473,32 @@ Bleibt dünn: Board/Run-log Templates + Skill, der **nur** Routing kennt und Sub
 
 ## 5. CLI- & Skill-Zielbild (pro Produkt)
 
-### 5.1 A — `bookkit` CLI (erweitert)
+> **Normative CLI spec for implementers:** [`phase1b-cli.md`](phase1b-cli.md) (decision **D4**).  
+> Do **not** create separate `graphics` / `media` / `content` binaries.
+
+### 5.1 Single `bookkit` CLI (A entry; hosts B graphics verbs)
 
 ```text
 bookkit doctor | init | build | watch | ua | print
-bookkit compose validate --typ … --content … --accept … [--freeze …]
+bookkit validate …          # compose engine
 bookkit catalog check
 bookkit prepress dpi|pdfx
+bookkit graphics vision --backend gemini|agy …
+bookkit graphics refine …
+bookkit graphics spike-init <slug> [recipe]
+bookkit graphics manifest --unit <slug>
 ```
 
-Skills bedienen genau diese Verben + Typst-Edit (typst-writer).
+Skills call these verbs + Typst edit (`typst-writer`).  
+`media-brief` does **not** generate PNGs. `medical-graphics` uses `bookkit graphics` only, with playbook caps (no auto-loop in CLI).
 
-### 5.2 B — `media-graphics` CLI (neu bündeln)
+### 5.2 C — no dedicated CLI required
 
-```text
-media-brief lint path/to/brief.md          # optional schema
-graphics init-unit <slug>
-graphics vision --unit … --backend gemini|agy
-graphics refine --unit … --base …
-graphics manifest --unit …
-graphics spike-init <slug>                 # wraps graphics-spike-init
-```
+Content process remains skill-driven (`content-review`, `content-orchestrator`) + freeze artifacts. Optional later: thin helpers — not Phase 1b.
 
-Skills: `media-brief` (kein PNG), `medical-graphics` (Vision nur über CLI + Gates).
+### 5.3 Skill-Provisioning
 
-### 5.3 C — `content` CLI (minimal)
-
-```text
-content route-card …
-content checklist list
-# freeze bleibt Human-sign-off artefakt, kein agent-only
-```
-
-### 5.4 Skill-Provisioning
-
-Pro Repo: ein `provision-skills.sh` → `.github/skills` / `.grok/skills` Symlinks **nur** der lokalen Skills + dokumentierte Peer-Skills (optional read-only path).
+`toolset/skill-pack/provision.sh` + discovery symlinks. After physical split: per-repo provision only.
 
 ---
 
@@ -540,110 +522,51 @@ Pins: `bookkit` SemVer, `form-catalog` VERSION, `content_revision`, asset paths 
 
 ## 7. Umsetzungsphasen
 
-### Phase 0 — Inventar & Plan ✅
+> **Executable checklists live in phase files.** This section is the map only.
 
-- [x] Vollindex `file-index.tsv`  
-- [x] Bucket-Summary + CATALOG  
-- [x] Dieser Plan  
-
-### Phase 1 — Hygiene im Monorepo (ohne Split) — **zuerst**
-
-**Dauer:** 1–3 Tage · **Risiko:** niedrig  
-
-1. Quick Wins §4.1  
-2. Brief/Asset INDEX + canonical lists (noch nicht massenlöschen ohne Review)  
-3. Governance-Docs: Mission A first  
-4. CI: validate + package smoke; Showcase optional  
-5. Entscheidung dokumentieren: **Split-Trigger** (siehe Phase 3) vs. „nur Ordnergrenze“
-
-**Exit:** Agent öffnet Repo und sieht klar: „Layout platform; companions under domains/“.
-
-### Phase 2 — Interne Produktgrenzen schärfen (Monorepo, „fake multi-repo“)
-
-**Dauer:** 1–2 Wochen · **Risiko:** mittel  
-
-1. Ordner-Layout angleichen an Ziel:
-
-```text
-products/   # optional rename — oder domains/ beibehalten
-  layout/     → packages, toolset/{compose,form-catalog,starter}, scripts/bookkit, prepress
-  medical/    → domains/medical + graphics scripts + Medical guides
-  content/    → domains/content-maturity
-  research/   → research + templates
-```
-
-*Pragmatisch:* bestehende Pfade lassen, aber **OWNERSHIP + README pro Root** und **keine neuen Cross-Imports**.
-
-2. Spikes: stabile Typst-Module nach B `lib/` extrahieren.  
-3. Compose-Spikes-Tree auf Experiments reduzieren.  
-4. Skill-SoT unverändert, aber CLAUDE/AGENTS verweisen strikt nach Produkt.  
-5. Asset-Policy: neue Visions default **nicht** committen ohne MANIFEST-Status `accepted`.  
-6. Ein Pilot grün; alte Pilots archivieren.
-
-**Exit:** `domains/medical` ist „extract-ready“ (keine hard deps auf showcase `src/`).
-
-### Phase 3 — Physische Aufteilung (Repos)
-
-**Dauer:** 1–2 Wochen · **Risiko:** mittel–hoch · **nur nach Trigger**
-
-Trigger (bereits in PRODUCT-BOUNDARIES, hier geschärft):
-
-- zweites Werk/Domäne, **oder**  
-- Platform-Releases durch Domain-Noise blockiert, **oder**  
-- Assets/Briefs > Schwelle (z. B. >40 MB tracked media), **oder**  
-- du willst getrennte CLI-Distributionen.
-
-**Reihenfolge der Splits:**
-
-| Order | Repo | Methode | Begründung |
-|---|---|---|---|
-| 3a | **C** content-editorial | copy/split `domains/content-maturity` | Checklist fertig; klein; entkoppelt |
-| 3b | **B** medical-media | `git subtree split` domains/medical + scripts/graphics* + Guides Medical/KL + relevante spikes libs | größter Fokus-Gewinn für A |
-| 3c | **R** research | optional subtree | entlastet Clone |
-| 3d | A rename/cleanup | dieses Repo → `typst-bookkit` | Mission klar |
-
-**Pro Split-Checkliste (generisch):**
-
-1. OWNERSHIP + VERSION + README im Zielrepo  
-2. Skills + provision script  
-3. CI grün (ohne Fremdprodukte)  
-4. Pin-Dokument in A/B/C aktualisieren  
-5. Symlinks im Monorepo → Stub README „moved to …“  
-6. Multi-root workspace aktualisieren  
-7. Smoke: eine E2E-Kette mit drei Checkouts  
-
-### Phase 4 — CLI-Härtung & Agent-Skills
-
-**Dauer:** parallel ab Phase 2  
-
-1. A: compose unter `bookkit compose validate`  
-2. B: `graphics` unified CLI  
-3. Skills nur noch CLI + Artefaktpfade referenzieren (keine absoluten Monorepo-Annahmen)  
-4. Eval-Workspaces: in Skill-Repos `evals/` halten, Outputs nicht tracken  
-5. Orchestrator: Route-Card mit repo-absolute paths konfigurierbar  
+| Phase | File | Status |
+|---|---|---|
+| 0 Inventar + Plan | this file + inventory | ✅ done |
+| 1 Hygiene | [`phase1-hygiene.md`](phase1-hygiene.md) | ✅ done |
+| **1b CLI** | [`phase1b-cli.md`](phase1b-cli.md) | ⬜ **next** |
+| 2 Boundaries + spike harvest | [`phase2-boundaries.md`](phase2-boundaries.md) | ⬜ open |
+| 3 Physical split | [`phase3-split.md`](phase3-split.md) | ⏸️ trigger-only (D2) |
+| 4 Skills + docs | [`phase4-skills-docs.md`](phase4-skills-docs.md) | ⬜ open (parallel after 1b) |
+| 5 Nice-to-have | below | backlog |
 
 ### Phase 5 — Langfristig / Nice-to-have
 
 - bookkit publish (`@preview` / private registry)  
-- Graphics-Module als Typst-Package versioniert  
-- LFS oder object storage für accepted rasters  
-- Showcase-Buch als separates Demo-Repo  
-- skill-creator global (nicht in A)  
+- Graphics-Module als versioniertes Typst-Package (if not only under `domains/medical/lib`)  
+- LFS / object storage for accepted rasters  
+- Showcase move `src/` → `examples/showcase-book/` (D3)  
+- skill-creator global (not in A)  
+- Optional MCP thin wrap of `bookkit` (not primary)
 
 ---
 
-## 8. Entscheidungsmatrix (du musst wählen)
+## 8. Entscheidungsmatrix
 
-Vor Phase 3 bitte festlegen:
+### Locked (Human 2026-07-29) — see [`decisions.md`](decisions.md)
 
-| Frage | Optionen | Empfehlung |
+| ID | Decision |
+|---|---|
+| D1 | Asset purge after tag quarantine |
+| D2 | Physical split trigger-only |
+| D3 | Showcase move later |
+| D4 | `bookkit graphics …` namespace |
+| D5 | Gold brief set per INDEX |
+
+### Still open (decide when relevant — not blocking 1b)
+
+| Frage | Empfehlung | When |
 |---|---|---|
-| B1+B2 ein Repo oder zwei? | 1 Repo 2 packages / 2 Repos | **1 Repo** bis zweite Domäne |
-| Showcase im Layout-Repo? | ja / examples / eigenes Repo | **ja, examples/** vorerst |
-| Research? | im A / submodule / eigenes Repo | **submodule oder eigenes** |
-| Raster-Assets tracken? | git / LFS / external object store | **git nur accepted small SVG; LFS für PNG** |
-| Orchestrator-Heimat? | A / thin repo | **A** |
-| Windows+Linux Scripts? | beide / bash primary | **bash primary**, ps1 mirror wo nötig |
+| B Media+Graphics one repo forever? | Yes until 2nd domain | Phase 3 |
+| Research submodule vs separate repo | submodule or out-of-default | Phase 2/3 |
+| Raster LFS vs external store | git SVG + LFS/rare PNG | if assets grow again |
+| Spike lib path: `domains/medical/lib/typst` vs `packages/bookkit-graphics` | medical lib first | Phase 2 |
+| Orchestrator home | A | keep |
+| Windows ps1 mirrors | bash primary | as needed |
 
 ---
 
@@ -660,15 +583,13 @@ Vor Phase 3 bitte festlegen:
 
 ---
 
-## 10. Konkrete nächste Schritte (Startmontag)
+## 10. Konkrete nächste Schritte (für implementierenden Chat)
 
-1. **Review dieses Plans** + Entscheidungen §8 treffen.  
-2. Phase 1 PR: Hygiene (scratch, gitignore, untrack PDFs, README Mission).  
-3. `briefs/INDEX.md` + `assets/CANONICAL.md` (was bleibt).  
-4. Liste „delete after quarantine“ aus `noise-candidates.tsv` reviewen.  
-5. Spike-Module inventarisieren → Kandidaten für `lib/typst`.  
-6. C-Split vorbereiten (CONTENT_WORK_REPO Name).  
-7. Danach Phase 2 Ordner-/OWNERSHIP-Schärfung.
+1. Open [`HANDOFF.md`](HANDOFF.md) + [`phase1b-cli.md`](phase1b-cli.md).  
+2. Implement unified `bookkit` CLI; verify § HANDOFF verification suite.  
+3. Then [`phase2-boundaries.md`](phase2-boundaries.md) (spike harvest + pilots).  
+4. Then [`phase4-skills-docs.md`](phase4-skills-docs.md).  
+5. Phase 3 only if Human states a split trigger + target repos.
 
 ---
 
@@ -700,11 +621,10 @@ Vor Phase 3 bitte festlegen:
 Zum Regenerieren des Indexes:
 
 ```bash
-# siehe Logik in der Session; oder:
-python3 -c "..."  # Track kann scripts/inventory.py in Phase 1 extrahieren
+python3 scripts/workspace-inventory.py
 ```
 
-**Empfehlung:** In Phase 1 `scripts/workspace-inventory.py` committen, damit der Index reproduzierbar bleibt.
+Inventory script is already in-tree.
 
 ---
 

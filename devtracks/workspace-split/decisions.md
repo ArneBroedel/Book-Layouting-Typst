@@ -1,7 +1,8 @@
 # Human decisions — workspace-split
 
-**Date:** 2026-07-29  
-**Context:** [`joint-recommendation.md`](joint-recommendation.md) · Antigravity peer-review
+**Date:** 2026-07-29 · **Status:** locked (do not re-litigate in implementer chats)  
+**Context:** [`joint-recommendation.md`](joint-recommendation.md) · Antigravity peer-review  
+**Implementer entry:** [`HANDOFF.md`](HANDOFF.md)
 
 | # | Question | Decision |
 |---|---|---|

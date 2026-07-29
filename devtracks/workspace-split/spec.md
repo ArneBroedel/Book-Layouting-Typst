@@ -1,8 +1,11 @@
 # Spec — Workspace-Aufteilung & Konsolidierung
 
-**Status:** draft plan (2026-07-29)  
+**Status:** active implementation track (2026-07-29) — Phase 0–1 done; next = Phase 1b  
+**Entry for implementers:** [`README.md`](README.md) · [`HANDOFF.md`](HANDOFF.md)  
 **Trigger:** organisch gewachsener Monolith; Fokus „Typst Layout-Experte → druckreif“ verdünnt durch Graphics/Raster/Domain-Prozesse  
-**Inventar:** [`../workspace-inventory/`](../workspace-inventory/) (`file-index.tsv`, `CATALOG.md`, `bucket-summary.tsv`)
+**Inventar:** [`../workspace-inventory/`](../workspace-inventory/) (`file-index.tsv`, `CATALOG.md`, `bucket-summary.tsv`)  
+**Locked decisions:** [`decisions.md`](decisions.md) (D1–D5)  
+**Binding architecture:** [`joint-recommendation.md`](joint-recommendation.md)
 
 ---
 

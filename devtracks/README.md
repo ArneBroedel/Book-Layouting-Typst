@@ -44,9 +44,11 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 | Track | Product | Path | Focus |
 |---|---|---|---|
+| **workspace-split** | **A/B/C** (structure) | [`workspace-split/`](workspace-split/) · inventory [`workspace-inventory/`](workspace-inventory/) | **Active:** consolidate monorepo focus; Phase 0–1 done; **next Phase 1b CLI**. Start: `workspace-split/README.md` + `HANDOFF.md` |
 | **content-maturity** | **C** (process; transitional) | [`content-maturity/`](content-maturity/) · kit `domains/content-maturity/` | **MVP done:** Review, Human Freeze, production validate gate, human Proof; Imprimatur→v0.4; split-ready |
 | **agentic-adaptations** | **C** (+ light A/B UX) | [`agentic-adaptations/`](agentic-adaptations/) · kit `domains/content-maturity/` | **MVP done:** evaluate-only, floor, orchestrator, personas, checkpoints, patches, clarity-scan; validate H1 footer |
 | **medical-graphics** | **B** (+ A hooks) | [`medical-graphics/`](medical-graphics/) · skill `domains/medical/skill/medical-graphics/` | Graphics role: code vs asset vs hybrid vs A/B; Decision Note; domain assets; pipeline hooks MVP |
+| **kl-form-language** | **B** | [`kl-form-language/`](kl-form-language/) | Illness-script form language expansion (may harvest into B skills/guides) |
 
 Runtime products (not tracks):
 
