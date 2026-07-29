@@ -20,6 +20,8 @@ domains/medical/assets/<slug>/
 3. Every production asset: **license + alt** recorded in `*.graphics.md` Decision Note (or local MANIFEST).  
 4. Prefer **hybrid**: form in asset, claims/labels in Typst.  
 5. Process/skill: `domains/medical/skill/medical-graphics/`  
+6. **Canonical set only** — see [`CANONICAL.md`](CANONICAL.md). No intermediate AI vision drafts on `main`.  
+7. Purged history: git tag `archive/assets-pre-purge-2026-07-29`.
 
 ## Not here
 

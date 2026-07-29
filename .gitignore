@@ -1,5 +1,6 @@
 # Build output
 dist/
+!dist/.gitkeep
 **/png_output/
 
 # Node (optional tooling)
@@ -17,12 +18,24 @@ Thumbs.db
 
 # Local setup artifacts
 *.tmp
+tmp/
 
-# Transient PDFs
+# Transient / compile-next-to-source PDFs (rebuild with typst)
 src/main.pdf
+src/**/*.pdf
+test/**/*.pdf
+toolset/compose/spikes/**/*.pdf
+# Skill eval iteration outputs (keep evals.json + NOTES)
+**/skill/*-workspace/**/outputs/*.pdf
+**/skill/*-workspace/**/review.html
 
 # Root-level scratch experiment outputs (keep sources in test/)
 /test*.png
 /test*.pdf
 /test*_b64.txt
 /test*_preview.html
+/scratch_test.*
+/v-*-compile.typ
+
+# Intermediate AI vision drafts (commit only accepted / canonical refs; see domains/medical/assets/CANONICAL.md)
+# Do not re-add purged intermediate gemini variants without MANIFEST status=accepted

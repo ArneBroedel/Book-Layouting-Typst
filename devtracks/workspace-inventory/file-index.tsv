@@ -1,0 +1,1052 @@
+path	bytes	ext	bucket	role	is_symlink	purpose_bucket
+AGENTS.md	9155	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+CLAUDE.md	12056	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+Guides/KL-Form-Language.md	13086	md	B-guides-medical	markdown-doc	False	Medical media/graphics guides
+Guides/Medical-Graphics-Playbook.md	4240	md	B-guides-medical	markdown-doc	False	Medical media/graphics guides
+Guides/Medical-Presentation-Forms.md	4502	md	B-guides-medical	markdown-doc	False	Medical media/graphics guides
+Guides/Pinit-Best-Practices.md	13890	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+Guides/Template-Ranking.md	5520	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+Guides/Typst Complete Guide.md	44132	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+Guides/Typst Extensibility.md	51146	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+Guides/Typst Reference Guide.md	44132	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+Guides/Typst_Template_Report.md	9176	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+Guides/Working_With_Typst-Theory_To_Practice.md	35204	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+Guides/update2026/ROLLE &amp; ZIEL_Du bist Recherche-Assistent für e.md	25813	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+Guides/update2026/Welche Änderungen und Erweiterungen gab es in den.md	10390	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
+LICENSE	155	(none)	ROOT-misc	other	False	Root governance, scratch, licenses
+README.md	3541	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+SETUP-WINDOWS.md	1150	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+agents/skills.txt	297	txt	ROOT-misc	other	False	Root governance, scratch, licenses
+assets/figures/.gitkeep	0	(none)	A-support	other	False	Fonts, placeholders, isolated tests
+assets/photos/.gitkeep	0	(none)	A-support	other	False	Fonts, placeholders, isolated tests
+assets/tables/.gitkeep	0	(none)	A-support	other	False	Fonts, placeholders, isolated tests
+devtracks/CONSENSUS-v0.md	14375	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/PRODUCT-BOUNDARIES.md	4008	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/README.md	4984	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/ROLES-AND-FLOW.md	2906	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/additional-packages/phase1.md	3257	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/additional-packages/phase2.md	3126	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/additional-packages/phase3.md	3904	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/additional-packages/phase4.md	4386	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/additional-packages/plan.md	2231	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/additional-packages/spec.md	3976	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/capability-roadmap/plan.md	7842	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/capability-roadmap/spec.md	4195	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/compose-pipeline/plan.md	2524	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/compose-pipeline/spec.md	4567	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/form-catalog/plan.md	2269	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/form-catalog/spec.md	3141	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/image-flow/plan.md	4307	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/image-flow/spec.md	3366	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/legal-rechtskunde/plan.md	2442	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/legal-rechtskunde/spec.md	2166	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/media-design/plan.md	1924	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/media-design/spec.md	4131	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/medical-knowledge-design-competencies/COMPENDIUM.md	11442	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/medical-knowledge-design-competencies/README.md	1585	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/page-design/plan.md	3421	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/page-design/spec.md	2741	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pdf-ua-compliance/plan.md	2877	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pdf-ua-compliance/spec.md	2337	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-showcase/phase1.md	699	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-showcase/phase2.md	683	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-showcase/phase3.md	759	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-showcase/plan.md	1777	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-showcase/spec.md	1849	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-workflow/phase0.md	1285	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-workflow/phase1.md	1657	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-workflow/phase2.md	1631	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-workflow/phase3.md	1440	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-workflow/phase4.md	806	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-workflow/plan.md	2920	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/pinit-workflow/spec.md	4168	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/platform-boundaries/PHASE3-DEFERRED.md	1528	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/platform-boundaries/plan.md	4506	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/platform-boundaries/spec.md	1804	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/prepress-pdfx/decisions.md	2370	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/prepress-pdfx/plan.md	1781	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/prepress-pdfx/reports/image-dpi.md	672	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/prepress-pdfx/reports/preflight-print.md	1373	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/prepress-pdfx/spec.md	3361	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/skill-eval-baseline/plan.md	1479	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/skill-eval-baseline/reports/static-baseline-2026-07-19.md	1730	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/skill-eval-baseline/spec.md	2876	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/skill-reuse-pilot/plan.md	1794	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/skill-reuse-pilot/reports/reuse-report-2026-07-19.md	1843	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/skill-reuse-pilot/spec.md	3633	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/template-patterns/phase1.md	4351	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/template-patterns/phase2.md	3479	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/template-patterns/phase3.md	4960	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/template-patterns/phase4.md	611	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/template-patterns/plan.md	3365	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/template-patterns/spec.md	5090	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/tool-updates/plan.md	9510	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/tool-updates/spec.md	11541	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/typst-toolset/phase0-decisions.md	6230	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/typst-toolset/phase1-foundation.md	1547	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/typst-toolset/phase2-skills-starter.md	2218	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/typst-toolset/phase3-facets-cli.md	1408	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/typst-toolset/phase4-mcp-publish.md	1658	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/typst-toolset/plan.md	3580	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_archive/typst-toolset/spec.md	8288	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_orchestration/board.md	4731	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/_orchestration/boundaries-audit-w5.md	3689	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/agentic-adaptations/adoption-matrix.md	2243	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/agentic-adaptations/decisions.md	1015	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/agentic-adaptations/plan.md	2849	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/agentic-adaptations/spec.md	14173	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/content-maturity/MIGRATION-TO-C.md	255	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/content-maturity/SPLIT-CHECKLIST.md	2074	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/content-maturity/decisions.md	2225	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/content-maturity/plan.md	7942	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/content-maturity/reviews/gemini-r1-r2-2026-07-20.md	3888	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/content-maturity/spec.md	29464	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/kl-form-language/plan.md	4615	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/kl-form-language/spec.md	1332	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/kl-form-language/wave-5-chapters-plan.md	6564	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/medical-graphics/plan.md	5424	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/medical-graphics/playbook-system-plan.md	21636	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/medical-graphics/spec.md	2930	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-inventory/CATALOG.md	82648	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-inventory/README.md	862	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-inventory/all-files-with-size.tsv	61909	tsv	META-devtracks	other	False	Active/archived plans
+devtracks/workspace-inventory/all-files.txt	54157	txt	META-devtracks	other	False	Active/archived plans
+devtracks/workspace-inventory/bucket-summary.tsv	2440	tsv	META-devtracks	other	False	Active/archived plans
+devtracks/workspace-inventory/file-index.tsv	153894	tsv	META-devtracks	other	False	Active/archived plans
+devtracks/workspace-inventory/noise-candidates.tsv	26895	tsv	META-devtracks	other	False	Active/archived plans
+devtracks/workspace-split/plan.md	30881	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/spec.md	2601	md	META-devtracks	markdown-doc	False	Active/archived plans
+dist/book-print-rgb.pdf	1767467	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/book-print.pdf	24002797	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/book-skeptic.pdf	1733654	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/book-ua.pdf	1737436	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/book.pdf	1733653	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/i4.pdf	185483	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/ii1.pdf	245752	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/iii2.pdf	155991	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/iii5.pdf	108592	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/iv2.pdf	172182	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/iv4.pdf	210947	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/v-cauda.pdf	197712	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/v-sept.pdf	144344	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/vi1.pdf	171756	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/chapters/vii1.pdf	195029	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/kursbuch-pilot/kursbuch-welle-03.pdf	1611252	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/compose-iii5-iii2.pdf	210620	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/i4-draft.pdf	160921	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/ii1-draft.pdf	195330	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iii2-compose-validated.pdf	133688	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iii2-posthoc.json	395	json	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iii5-compose-validated-review.pdf	87578	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iii5-compose-validated.pdf	87578	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iii5-compose.pdf	101394	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iii5-posthoc-review.json	297	json	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iii5-posthoc.json	297	json	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iii5-wave03-validated.pdf	91461	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iv2.pdf	155530	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/iv4.pdf	183634	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/v-cauda-draft.pdf	163050	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/v-sept-draft.pdf	118936	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/vi1-draft.pdf	152774	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/vii1-draft.pdf	162444	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/fix03.png	196694	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/fix12.png	131247	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/ok03.png	203044	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/ok12.png	130721	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/ok35.png	230426	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/p01.png	116096	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/p03.png	196784	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/p08.png	186446	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/p12.png	131163	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/p18.png	244614	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/p25.png	220569	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-preview/p35.png	231749	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/i4.pdf	162570	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/ii1.pdf	205811	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/iii2.pdf	135169	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/iii5.pdf	93590	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/iv2.pdf	140620	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/iv4.pdf	165035	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/fix-iii5-1.png	199259	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/fix-iii5-2.png	233475	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/iii2-1.png	188381	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/iii2-2.png	217484	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/iii2-3.png	120599	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/iii5-1.png	199259	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/iii5-2.png	228772	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/iii5-3.png	195636	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/iii5-4.png	191590	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/p01.png	134711	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/p04.png	224585	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/p18.png	212452	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/p22.png	172473	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/p28.png	87888	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/p35.png	237429	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/p50.png	237260	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/preview/p70.png	282501	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/v-cauda.pdf	152797	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/v-sept.pdf	117081	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/vi1.pdf	145732	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/wave03-v2/vii1.pdf	149788	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/welle-03-compose-full.pdf	1216818	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/pilots/welle-03-compose-v2-creative.pdf	1227632	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/prepress-check/cover-media.png	26727	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/prepress-check/page-1.png	82480	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/prepress-check/page5-media.png	20860	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/prepress-check/page5-print.png	14185	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/smoke/t.pdf	22412	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/smoke/t.typ	501	typ	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/_eval/eval-batch-2026-07-22.md	6433	md	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/compare-layout.pdf	1120309	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/compare.pdf	1107455	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/ii1-compose-pilot.pdf	222702	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/ii1-pilot.pdf	240845	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/landscape-p1.png	218721	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/landscape.pdf	47521	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/recreate-p1.png	255809	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/recreate.pdf	52850	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/ii1-drei-achsen-drisc/vision-free-01.png	994766	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/asset-p1.png	163019	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/asset.pdf	98132	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/code-p1.png	143958	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/code.pdf	29100	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/compare-b2-p1.png	612525	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/compare-p1.png	652805	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/hybrid-p1.png	178166	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/hybrid.pdf	91581	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/iii2-pilot.pdf	172417	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/iii2-wrap.typ	141	typ	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/nanobanana-free-p1.png	847153	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/nanobanana-free-spike.pdf	923193	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/nanobanana-p1.png	777187	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/nanobanana-refined-p1.png	746085	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/nanobanana-spike-p1.png	1404416	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/nanobanana-spike.pdf	834016	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/raster-full-p1.png	1447438	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/raster-full.pdf	980814	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/raster-hybrid-p1.png	986438	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/raster-hybrid.pdf	690026	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/recreate-p1.png	257280	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/recreate.pdf	54669	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/refined-p1.png	1376053	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii2-bls-aed/refined.pdf	859932	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii5-cauda-notfallkarte/compare.pdf	1165491	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii5-cauda-notfallkarte/iii5-compose-pilot.pdf	103536	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii5-cauda-notfallkarte/iii5-pilot.pdf	112894	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii5-cauda-notfallkarte/recreate-p1.png	245252	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii5-cauda-notfallkarte/recreate.pdf	46927	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iii5-cauda-notfallkarte/vision-free-01.png	1062928	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/compare-b2.pdf	1140906	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/compare.pdf	964532	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/iv2-compose-pilot.pdf	149783	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/iv2-pilot.pdf	169355	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/recreate-p1.png	231765	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/recreate.pdf	49867	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/refined.pdf	197592	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/vision-free-01.png	883715	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv2-rueckenschmerz-neuro/vision-refined-01.png	286482	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv4-heisses-gelenk/compare.pdf	1220129	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv4-heisses-gelenk/iv4-compose-pilot.pdf	176038	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv4-heisses-gelenk/iv4-pilot.pdf	207115	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv4-heisses-gelenk/recreate-p1.png	274978	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv4-heisses-gelenk/recreate.pdf	55237	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv4-heisses-gelenk/refined.pdf	1247568	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv4-heisses-gelenk/vision-free-01.png	1076221	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/iv4-heisses-gelenk/vision-refined-01.png	1100708	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/ambition.pdf	4231132	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/kl-melanom-abcde-vision-free-01.png	926604	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/kl-melanom-abcde-vision-refined-02.png	1009814	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/m-b-test.pdf	16603	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/m-b-test.png	58398	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/melanom.pdf	1089624	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-01.png	65215	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-02.png	176614	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-03.png	119041	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-04.png	133012	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-05.png	78234	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-06.png	109104	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-07.png	77420	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-08.png	98523	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-09.png	145368	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1-10.png	90647	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1.pdf	101403	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2-1.png	54067	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2-2.png	102204	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2-3.png	157545	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2-4.png	108677	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2-5.png	143091	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2-6.png	93221	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2-7.png	155529	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2-8.png	73456	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/phase1v2.pdf	85150	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-1.png	34483	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-2.png	61933	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-3.png	136354	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-4.png	116498	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-5.png	65454	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-6.png	89958	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-7.png	134589	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-8.png	217145	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-p3.png	147911	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-p4.png	126645	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate-p5.png	70076	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate.pdf	87657	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/us-d-test.pdf	23234	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/us-d-test.png	189432	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/vision-ces-saddle-01.png	709945	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/vision-m-b-01.png	658583	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/vision-mscc-01.png	710194	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/vision-us-d-01.png	816907	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/vision-us-d-refined-01.png	1068973	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-01.png	42130	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-02.png	79043	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-03.png	45098	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-04.png	48003	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-05.png	67698	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-06.png	113682	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-07.png	112714	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-08.png	51251	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-09.png	227639	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o-10.png	259706	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/wave-o.pdf	96983	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/ambition-v2.pdf	62593	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/ambition.pdf	1087542	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/compartment-essential.pdf	23500	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/compartment-nonbody.pdf	45584	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/compartment-principle.pdf	38716	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/compartment-schematic.pdf	31007	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/compartment-sweetspot.pdf	29473	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/gemini-smoke-red-circle.png	2279980	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/grammar-b.pdf	99091	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/grammar.pdf	109122	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/kl-compartment-spatial-gemini-focus-01.png	5067855	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/kl-compartment-spatial-vision-free-01.png	514883	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/kl-compartment-spatial-vision-free-02.png	644512	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/kl-stroke-fast-vision-free-01.png	414451	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-wave5/vision-free-gemini-schematic-correct-01.png	5267289	png	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/visual-lib-spike.pdf	29054	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/visual-lib-spike.typ	1330	typ	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/toolset/facet-smoke.pdf	25083	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/toolset/minimal.pdf	43320	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/toolset/reuse-datasheet.pdf	64800	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/toolset/starter.pdf	43057	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+docs/BOOK-PRODUCTION-RUNBOOK.md	3175	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
+docs/CONSUMER.md	5325	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
+docs/KNOWLEDGE-MAP.md	8377	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
+domains/README.md	484	md	B-domains-root	markdown-doc	False	domains/ README
+domains/content-maturity/MIGRATION-TO-C.md	1186	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/OWNERSHIP.md	1404	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/README.md	2769	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/core/claims-audit.md	984	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/core/clarity-scan-de.md	1133	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/core/developmental-edit.md	1820	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/core/freeze-gate.md	803	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/core/language-proof.md	143	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/core/learner-persona.md	1410	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/core/proof-gate.md	356	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/core/safety-flags.md	1516	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checklists/profiles/medical/DEFERRED.md	633	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/checkpoints.md	2060	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/agentic-adaptations/README.md	575	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/agentic-adaptations/clarity-flags-example.md	461	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/agentic-adaptations/patch-F1.md	1266	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/agentic-adaptations/review-after-patch-evaluate.md	1504	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/agentic-adaptations/review-evaluate-only.md	2072	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/agentic-adaptations/route-card-blocked.md	942	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/agentic-adaptations/route-card-freeze-ready.md	1020	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/demo-anaphylaxis-lite/README.md	646	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/demo-anaphylaxis-lite/content-frozen.md	1119	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/demo-anaphylaxis-lite/freeze.md	1080	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/demo-anaphylaxis-lite/proof.md	1109	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/demo-anaphylaxis-lite/review-round1.md	2623	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/examples/demo-anaphylaxis-lite/review-round2.md	1383	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/fixtures/demo-anaphylaxis-lite/content.md	1118	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/skill/content-orchestrator/SKILL.md	4085	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/skill/content-review/SKILL.md	5002	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/templates/content-patch.template.md	937	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/templates/freeze-record.template.md	945	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/templates/imprimatur.template.md	611	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/templates/proof-record.template.md	1043	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/templates/review-report.template.md	2300	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/templates/route-card.template.md	991	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/content-maturity/templates/scope-brief.template.md	286	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
+domains/medical/OWNERSHIP.md	739	md	B-medical-other	markdown-doc	False	Domain README/OWNERSHIP
+domains/medical/README.md	4827	md	B-medical-other	markdown-doc	False	Domain README/OWNERSHIP
+domains/medical/assets/README.md	928	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/ii1-drei-achsen-drisc/MANIFEST.md	426	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/ii1-drei-achsen-drisc/vision-free-01.png	994766	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/MANIFEST.md	2124	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-base.svg	5329	svg	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-full.svg	7720	svg	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-base.jpg	101308	jpg	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-base.png	446103	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-full.jpg	174890	jpg	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-full.png	702109	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana-free.png	847153	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana-refined.png	746085	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii2-bls-aed/primar-algorithmus-raster-nanobanana.png	777187	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iii5-cauda-notfallkarte/MANIFEST.md	458	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/iii5-cauda-notfallkarte/vision-free-01.png	1062928	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iv2-rueckenschmerz-neuro/MANIFEST.md	891	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/iv2-rueckenschmerz-neuro/vision-free-01.png	883715	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iv2-rueckenschmerz-neuro/vision-refined-01.png	286482	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iv4-heisses-gelenk/MANIFEST.md	519	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/iv4-heisses-gelenk/vision-free-01.png	1076221	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/iv4-heisses-gelenk/vision-refined-01.png	1100708	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-ces-saddle/MANIFEST.md	264	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-ces-saddle/vision-free-01.png	709945	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/MANIFEST.md	602	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/generate_refined.typ	12684	typ	B-medical-assets	typst-source	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-01.png	514883	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-02.png	644512	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-01.png	5899219	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-essential-01.png	5565208	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-essential-02.png	4104782	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-focus-01.png	5067855	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-principle-01.png	5628439	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-schematic-correct-01.png	5267289	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-schematic-correct-02-de.png	4707057	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-sweetspot-01.png	4916952	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-free-gemini-sweetspot-02-de.png	4982671	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-compartment-spatial/vision-refined-01.png	534583	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-m-b-mimic/MANIFEST.md	351	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-m-b-mimic/vision-free-01.png	658583	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-melanom-abcde/MANIFEST.md	809	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-melanom-abcde/vision-free-01.png	926604	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-melanom-abcde/vision-refined-01.png	949325	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-melanom-abcde/vision-refined-02.png	1009814	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-mscc-spine/MANIFEST.md	723	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-mscc-spine/vision-free-01.png	710194	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-stroke-fast/MANIFEST.md	358	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-stroke-fast/vision-free-01.png	414451	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-stroke-fast/vision-refined-01.png	563418	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-us-d-urgency/MANIFEST.md	402	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-us-d-urgency/vision-free-01.png	816907	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/assets/kl-us-d-urgency/vision-refined-01.png	1068973	png	B-medical-assets	visual-artifact	False	Domain vision/refined graphic assets
+domains/medical/briefs/.gitkeep	0	(none)	B-medical-briefs	other	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/README.md	1885	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/0ac6af2392b773ed.json	34118	json	B-medical-briefs	data-config	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/0ac6af2392b773ed.md	12378	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/83c5b1a68259facf.json	90359	json	B-medical-briefs	data-config	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/83c5b1a68259facf.md	10919	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/SYNTHESIS-v1.1-frozen.md	9005	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/dab02a87d49cf3ba.json	34301	json	B-medical-briefs	data-config	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/dab02a87d49cf3ba.md	17896	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/round1-eval.md	6501	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/round2-dialectic.md	9959	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/gemini-ontology-eval/round3-freeze.md	5751	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/kl-deep-execution-plan.md	1702	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/kl-form-space.md	18336	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/kl-harvest-and-reuse-plan.md	13800	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/kl-ontology-and-relations.md	25345	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/kl-phase1-critique-redesign.md	9359	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/welle-06-kl-content-forms-analysis.md	23052	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_explorations/welle-06-kl-implementation-roadmap.md	6095	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_wave5/00-form-space-crosscut.md	1695	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_wave5/ambition-raster-postmortem.md	5162	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_wave5/anatomy-depiction-pause.md	1302	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_wave5/kl-anaphylaxie.content-map.md	36029	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_wave5/kl-compartment.content-map.md	26213	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_wave5/kl-mi.content-map.md	24724	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_wave5/kl-stroke.content-map.md	35274	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/_wave5/kl-suicid.content-map.md	31177	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/i4-ifsg.accept.md	2950	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/i4-ifsg.brief.md	7187	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/i4-ifsg.feasibility.md	3768	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/ii1-drei-achsen-drisc.accept.md	4843	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/ii1-drei-achsen-drisc.brief.md	8478	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/ii1-drei-achsen-drisc.feasibility.md	4243	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/ii1-drei-achsen-drisc.graphics.md	1724	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/ii1-drei-achsen-drisc.vision.md	2847	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii2-bls-aed.accept.md	2716	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii2-bls-aed.brief.md	6489	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii2-bls-aed.feasibility.md	2610	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii2-bls-aed.graphics.md	6292	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii2-bls-aed.vision.md	2535	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii5-cauda-notfallkarte.accept.md	4693	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii5-cauda-notfallkarte.brief.md	9934	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii5-cauda-notfallkarte.feasibility.md	7069	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii5-cauda-notfallkarte.form-spec.md	2708	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii5-cauda-notfallkarte.graphics.md	1563	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iii5-cauda-notfallkarte.vision.md	2627	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv2-rueckenschmerz-neuro.accept.md	5759	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv2-rueckenschmerz-neuro.brief.md	7466	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv2-rueckenschmerz-neuro.feasibility.md	4389	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv2-rueckenschmerz-neuro.form-spec.md	4849	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv2-rueckenschmerz-neuro.graphics.md	3322	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv2-rueckenschmerz-neuro.vision.md	3013	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv4-heisses-gelenk.accept.md	5006	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv4-heisses-gelenk.brief.md	7399	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv4-heisses-gelenk.feasibility.md	4055	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv4-heisses-gelenk.graphics.md	1518	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/iv4-heisses-gelenk.vision.md	2892	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-ambition.accept.md	1830	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-ambition.claim-audit.md	2751	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-anaphylaxie-mimic.form-spec.md	7726	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-anaphylaxie-urgency.form-spec.md	14629	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-anaphylaxie.brief.md	6744	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-ces-saddle.form-spec.md	2658	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-ces-saddle.vision.md	1903	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-mimic.form-spec.md	4600	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-spatial-essential.vision.md	1656	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-spatial-focus.vision.md	2221	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-spatial-principle.vision.md	1281	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-spatial-schematic-correct.vision.md	3095	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-spatial-sweetspot.vision.md	2653	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-spatial.claim-audit.md	1236	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-spatial.form-spec.md	11342	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-spatial.vision.md	1737	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment-urgency.form-spec.md	8052	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-compartment.brief.md	7483	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-f2-urgency-ladder.form-spec.md	5341	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-f3-cue-matrix.form-spec.md	2797	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-f4-four-pole.form-spec.md	3344	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-m-b-mimic.vision.md	2653	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-melanom-abcde.claim-audit.md	1836	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-melanom-abcde.form-spec.md	3116	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-melanom-abcde.vision.md	4313	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-melanom-mimic.form-spec.md	2691	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-melanom-urgency.form-spec.md	5205	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-melanom.accept.md	2032	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-melanom.brief.md	3720	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-mi-mimic.form-spec.md	8563	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-mi-urgency.form-spec.md	12662	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-mi.brief.md	6931	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-mscc-spine.claim-audit.md	3748	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-mscc-spine.form-spec.md	4782	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-mscc-spine.vision.md	2886	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-script-system-p0.accept.md	2008	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-script-system-p1.accept.md	1131	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-script-system.brief.md	5314	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-script-system.graphics.md	3568	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-stroke-fast.claim-audit.md	1132	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-stroke-fast.form-spec.md	10840	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-stroke-fast.vision.md	2129	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-stroke-mimic.form-spec.md	5489	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-stroke-urgency.form-spec.md	9982	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-stroke.brief.md	7732	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-suicid-chrome.form-spec.md	10679	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-suicid-mimic.form-spec.md	7647	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-suicid-urgency.form-spec.md	12376	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-suicid.brief.md	10508	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-u-discrimination.form-spec.md	3731	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-u-mimic.form-spec.md	3602	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-u-urgency-scope.form-spec.md	6535	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-us-d-urgency.vision.md	2251	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-wave5.accept.md	2881	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/kl-wave5.board.md	1507	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/v-cauda-equina.accept.md	3412	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/v-cauda-equina.brief.md	8875	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/v-cauda-equina.feasibility.md	5571	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/v-sept-arthritis.accept.md	2793	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/v-sept-arthritis.brief.md	6607	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/v-sept-arthritis.feasibility.md	3993	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/vi1-geriatrie.accept.md	2901	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/vi1-geriatrie.brief.md	7460	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/vi1-geriatrie.feasibility.md	4868	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/vii1-exam-cluster.accept.md	2345	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/vii1-exam-cluster.brief.md	6268	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/briefs/vii1-exam-cluster.feasibility.md	4423	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/recipes/fallbasiert.md	1213	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+domains/medical/recipes/lerntext.md	1215	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+domains/medical/recipes/notfall-karte.md	9227	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+domains/medical/recipes/notfall-karte.minima.yaml	1275	yaml	B-medical-meta	data-config	False	Genre recipes + media templates
+domains/medical/skill/media-brief-workspace/README.md	527	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/ANALYST.md	678	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/benchmark.json	6087	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/benchmark.md	1415	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/eval_metadata.json	1796	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/grading.json	801	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/outputs/NOTES.md	1533	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/with_skill/outputs/kl-melanom-urgency.form-spec.md	10982	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/grading.json	804	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/outputs/NOTES.md	1812	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-1-kl-transfer-urgency-form-spec/without_skill/outputs/kl-melanom-urgency.form-spec.md	11386	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/eval_metadata.json	1308	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/grading.json	692	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/NOTES.md	2787	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/abcde.form-spec.md	8360	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/with_skill/outputs/form-space.md	6235	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/grading.json	695	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/NOTES.md	2061	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/abcde.form-spec.md	6960	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-2-kl-ambition-abcde-form-space/without_skill/outputs/form-space.md	6931	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/eval_metadata.json	980	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/grading.json	511	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/outputs/NOTES.md	1771	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/with_skill/outputs/accept.md	6186	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/grading.json	514	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/outputs/NOTES.md	914	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/outputs/accept.md	3324	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief-workspace/iteration-1/review.html	130780	html	B-media-brief	other	False	media-brief skill + form-space
+domains/medical/skill/media-brief/SKILL.md	15439	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief/evals/evals.json	5054	json	B-media-brief	data-config	False	media-brief skill + form-space
+domains/medical/skill/media-brief/references/design-reasoning.md	6315	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief/references/kl-form-space-process.md	4164	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief/references/kl-illness-script-ontology.md	3405	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/medical-graphics-workspace/README.md	531	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/ANALYST.md	578	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/benchmark.json	5758	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/benchmark.md	1296	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/eval_metadata.json	1479	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/grading.json	773	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/NOTES.md	3248	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/melanom-urgency.pdf	38514	pdf	B-medical-graphics	other	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/melanom-urgency.typ	5856	typ	B-medical-graphics	typst-source	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/with_skill/outputs/spike-recreate.typ	1617	typ	B-medical-graphics	typst-source	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/grading.json	776	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/NOTES.md	2283	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/melanom-urgency.pdf	29106	pdf	B-medical-graphics	other	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/melanom-urgency.typ	5322	typ	B-medical-graphics	typst-source	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-1-transfer-melanom-urgency-code/without_skill/outputs/spike-recreate.typ	873	typ	B-medical-graphics	typst-source	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/eval_metadata.json	1072	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/grading.json	596	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/NOTES.md	2854	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/abcde.pdf	22010	pdf	B-medical-graphics	visual-artifact	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/abcde.typ	3475	typ	B-medical-graphics	typst-source	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/with_skill/outputs/abcde.vision.md	1215	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/grading.json	599	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/NOTES.md	1521	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/abcde.typ	3731	typ	B-medical-graphics	typst-source	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-2-abcde-realize-or-vision/without_skill/outputs/abcde.vision.md	1318	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/eval_metadata.json	956	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/grading.json	508	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/outputs/NOTES.md	1473	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/with_skill/outputs/claim-audit.md	6157	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/grading.json	511	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/NOTES.md	1010	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/claim-audit.md	4312	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics-workspace/iteration-1/review.html	229696	html	B-medical-graphics	other	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/SKILL.md	8242	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/evals/evals.json	4276	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/examples/INDEX.md	2651	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/00-overview.md	2429	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/01-from-form-spec.md	1066	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/02-free-vision.md	2148	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/03-claim-audit.md	3078	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/04-recreate-typst.md	1459	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/05-hybrid.md	759	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/06-refine-raster.md	1862	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/07-ab-compare.md	705	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/08-accept-handoff.md	829	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/09-form-recipes.md	6737	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/walkthrough-iv2.md	2127	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/asset-pipeline.md	2029	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/book-visual-standards.md	4256	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/decision-heuristics.md	2602	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/free-vision.md	3336	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/graphic-types.md	1776	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/kl-form-library.md	7795	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/tools-and-generation.md	2208	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/templates/accept-record.template.md	1854	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+domains/medical/templates/form-spec.template.md	2637	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+domains/medical/templates/graphic-claim-audit.template.md	1776	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+domains/medical/templates/graphic-decision.template.md	2236	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+domains/medical/templates/graphic-vision.template.md	1881	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+domains/medical/templates/media-brief.template.md	1801	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
+editorconfig	263	(none)	ROOT-misc	other	False	Root governance, scratch, licenses
+fonts/.gitkeep	0	(none)	A-support	other	False	Fonts, placeholders, isolated tests
+fonts/Font Awesome 6 Brands-Regular-400.otf	554744	otf	A-support	binary-resource	False	Fonts, placeholders, isolated tests
+fonts/Font Awesome 6 Free-Regular-400.otf	189956	otf	A-support	binary-resource	False	Fonts, placeholders, isolated tests
+fonts/Font Awesome 6 Free-Solid-900.otf	1023996	otf	A-support	binary-resource	False	Fonts, placeholders, isolated tests
+github/skills/pinit-workflow/SKILL.md	23758	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/pinit-workflow/components/pinit-debug.typ	6445	typ	ROOT-misc	typst-source	False	Root governance, scratch, licenses
+github/skills/pinit-workflow/debug/pinit-issues.md	6578	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/pinit-workflow/debug/pinit-regression.pdf	55865	pdf	ROOT-misc	other	False	Root governance, scratch, licenses
+github/skills/pinit-workflow/debug/pinit-regression.typ	8769	typ	ROOT-misc	typst-source	False	Root governance, scratch, licenses
+github/skills/pinit-workflow/docs/pinit-ai-playbook.md	3747	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/pinit-workflow/docs/pinit-coordinate-roundtrip.md	802	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/pinit-workflow/docs/pinit-style-guide.md	2226	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/pinit-workflow/tools/pinit-clickmap.html	2801	html	ROOT-misc	other	False	Root governance, scratch, licenses
+github/skills/skill-creator/LICENSE.txt	11357	txt	ROOT-misc	other	False	Root governance, scratch, licenses
+github/skills/skill-creator/SKILL.md	32370	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/skill-creator/agents/analyzer.md	10376	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/skill-creator/agents/comparator.md	7287	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/skill-creator/agents/grader.md	9049	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/skill-creator/assets/eval_review.html	7058	html	ROOT-misc	other	False	Root governance, scratch, licenses
+github/skills/skill-creator/eval-viewer/generate_review.py	16365	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/eval-viewer/viewer.html	44998	html	ROOT-misc	other	False	Root governance, scratch, licenses
+github/skills/skill-creator/references/schemas.md	12061	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/__init__.py	0	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/aggregate_benchmark.py	14386	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/generate_report.py	12847	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/improve_description.py	10723	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/package_skill.py	4234	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/quick_validate.py	3972	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/run_eval.py	11464	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/run_loop.py	13685	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/skill-creator/scripts/utils.py	1661	py	ROOT-misc	python-tool	False	Root governance, scratch, licenses
+github/skills/typst-extension/SKILL.md	30271	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/skills/typst-writer/SKILL.md	42060	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+github/workflows/build.yml	999	yml	ROOT-misc	data-config	False	Root governance, scratch, licenses
+gitignore	365	(none)	ROOT-misc	other	False	Root governance, scratch, licenses
+packages/bookkit-didactics/README.md	429	md	A-packages-bookkit	markdown-doc	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit-didactics/didactics.typ	6071	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit-didactics/exam.typ	3726	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit-didactics/lib.typ	414	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit-didactics/spreads-extra.typ	849	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit-didactics/typst.toml	322	toml	A-packages-bookkit	data-config	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/README.md	1474	md	A-packages-bookkit	markdown-doc	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/components/blocks.typ	8168	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/components/grids.typ	3310	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/components/inline.typ	3811	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/components/layouts.typ	5554	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/components/spreads.typ	7346	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/components/tables.typ	5881	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/lib.typ	1686	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/page.typ	2838	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/print.typ	4795	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/theme.typ	6077	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/typography.typ	5114	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/typst.toml	378	toml	A-packages-bookkit	data-config	False	Consumable Typst runtime (theme, components, didactics facet)
+pilots/kursbuch-welle-03-compose/README.md	4122	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/_single/iv2.typ	222	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/_single/iv4.typ	222	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/i4.typ	20299	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/ii1.typ	21092	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/iii2.typ	14790	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/iii5.typ	7741	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/iv2.typ	14228	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/iv4.typ	17584	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/v-cauda.typ	19853	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/v-sept.typ	13365	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/vi1.typ	17194	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/chapters/vii1.typ	14710	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/lib/visual.typ	12618	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/main.typ	2391	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/reports/e2e-iii2-2026-07-20.md	2302	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/reports/e2e-iii5-2026-07-20.md	11336	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/reports/wave03-full-compose-2026-07-20.md	2023	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03-compose/reports/wave03-v2-creative-2026-07-20.md	1554	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/CHAPTER-MAP.md	1133	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/README.md	1245	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/i4.typ	211	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/ii1.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/iii2.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/iii5.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/iv2.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/iv4.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/v-cauda.typ	221	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/v-sept.typ	219	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/vi1.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/_single/vii1.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/build-all.sh	1112	sh	A-pilots-dogfood	shell-tool	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/i4.typ	17920	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/ii1.typ	21176	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/iii2.typ	12402	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/iii5.typ	8004	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/iv2.typ	14054	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/iv4.typ	18506	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/v-cauda.typ	20992	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/v-sept.typ	12429	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/vi1.typ	16270	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/chapters/vii1.typ	15050	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/convert_md_to_typ.py	9492	py	A-pilots-dogfood	python-tool	False	Consumer dogfood pilots (not content SoT)
+pilots/kursbuch-welle-03/main.typ	1572	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/reuse-datasheet/design-brief.yaml	168	yaml	A-pilots-dogfood	data-config	False	Consumer dogfood pilots (not content SoT)
+pilots/reuse-datasheet/main.typ	3477	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+prepress/PDFX_def.ps	2189	ps	A-prepress	binary-resource	False	ICC profiles, PDF/X defs
+prepress/README.md	4375	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X defs
+prepress/profiles/README.md	935	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X defs
+prepress/profiles/default_cmyk.icc	187484	icc	A-prepress	binary-resource	False	ICC profiles, PDF/X defs
+prepress/profiles/srgb.icc	2576	icc	A-prepress	binary-resource	False	ICC profiles, PDF/X defs
+prepress/reports/image-dpi.md	241	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X defs
+prepress/reports/preflight-print.md	1373	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X defs
+project-tech-stack.md	16243	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+research/README.md	1524	md	R-research-corpus	markdown-doc	False	Ecosystem survey + template study corpus
+research/data/all_packages.json	547630	json	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
+research/data/all_templates.json	605141	json	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
+research/data/index.json	1535056	json	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
+research/data/latest_packages_meta.json	736116	json	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
+research/data/readme_urls.txt	72402	txt	R-research-corpus	other	False	Ecosystem survey + template study corpus
+research/data/versions.txt	422	txt	R-research-corpus	other	False	Ecosystem survey + template study corpus
+research/pipeline/check_versions.py	613	py	R-research-corpus	python-tool	False	Ecosystem survey + template study corpus
+research/pipeline/fetch_packages.py	3906	py	R-research-corpus	python-tool	False	Ecosystem survey + template study corpus
+research/pipeline/process_index.py	1109	py	R-research-corpus	python-tool	False	Ecosystem survey + template study corpus
+research/pipeline/process_templates.py	4070	py	R-research-corpus	python-tool	False	Ecosystem survey + template study corpus
+research/pipeline/refine_json.py	1255	py	R-research-corpus	python-tool	False	Ecosystem survey + template study corpus
+scratch_test.png	10730	png	ROOT-misc	other	False	Root governance, scratch, licenses
+scratch_test.svg	158	svg	ROOT-misc	other	False	Root governance, scratch, licenses
+scratch_test.typ	102	typ	ROOT-misc	typst-source	False	Root governance, scratch, licenses
+scripts/book-production-status.sh	1993	sh	A-build-scripts	shell-tool	False	Build, setup, bookkit CLI
+scripts/bookkit	7318	(none)	A-build-scripts	other	False	Build, setup, bookkit CLI
+scripts/build.ps1	2611	ps1	A-build-scripts	shell-tool	False	Build, setup, bookkit CLI
+scripts/build.sh	1879	sh	A-build-scripts	shell-tool	False	Build, setup, bookkit CLI
+scripts/check-image-dpi.py	7684	py	A-prepress-scripts	python-tool	False	Print PDF/X, DPI, preflight
+scripts/graphics-refine-agy.sh	2548	sh	B-graphics-scripts	shell-tool	False	Vision/refine shell helpers
+scripts/graphics-spike-init.sh	1957	sh	B-graphics-scripts	shell-tool	False	Vision/refine shell helpers
+scripts/graphics-vision-agy.sh	3332	sh	B-graphics-scripts	shell-tool	False	Vision/refine shell helpers
+scripts/graphics-vision-gemini.sh	3584	sh	B-graphics-scripts	shell-tool	False	Vision/refine shell helpers
+scripts/preflight-print.sh	3201	sh	A-prepress-scripts	shell-tool	False	Print PDF/X, DPI, preflight
+scripts/preflight.ps1	4207	ps1	A-prepress-scripts	shell-tool	False	Print PDF/X, DPI, preflight
+scripts/print-pdfx.ps1	3179	ps1	A-prepress-scripts	shell-tool	False	Print PDF/X, DPI, preflight
+scripts/print-pdfx.sh	3488	sh	A-prepress-scripts	shell-tool	False	Print PDF/X, DPI, preflight
+scripts/setup.ps1	1906	ps1	A-build-scripts	shell-tool	False	Build, setup, bookkit CLI
+scripts/workspace-inventory.py	8979	py	META-docs-ux	python-tool	False	Consumer docs, runbook, workspace
+src/SHOWCASE-README.md	3477	md	A-showcase-book	markdown-doc	False	Flagship showcase book dogfooding bookkit
+src/assets/anatomy/cell.svg	1773	svg	A-showcase-book	visual-artifact	False	Flagship showcase book dogfooding bookkit
+src/assets/anatomy/heart-schema.svg	1522	svg	A-showcase-book	visual-artifact	False	Flagship showcase book dogfooding bookkit
+src/assets/anatomy/nephron.svg	1669	svg	A-showcase-book	visual-artifact	False	Flagship showcase book dogfooding bookkit
+src/assets/anatomy/neuron-compact.svg	1879	svg	A-showcase-book	visual-artifact	False	Flagship showcase book dogfooding bookkit
+src/assets/anatomy/neuron.svg	1585	svg	A-showcase-book	visual-artifact	False	Flagship showcase book dogfooding bookkit
+src/chapters/00-cover.typ	271	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/01-intro.typ	4886	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/02-typography.typ	6356	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/03-structure.typ	6287	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/04-components.typ	5656	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/05-layout.typ	6859	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/06-advanced.typ	4852	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/07-backmatter.typ	7170	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/08-packages.typ	13994	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/09-data-driven.typ	11842	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/10-tooling.pdf	93328	pdf	A-showcase-book	other	False	Flagship showcase book dogfooding bookkit
+src/chapters/10-tooling.typ	9305	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/11-academic.typ	7901	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/12-beyond-flow.typ	5953	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/13-wasm-meta.typ	6639	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/14-templates.typ	6196	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/15-book-patterns.typ	11757	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/16-margin-patterns.typ	10886	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/17-visual-hierarchy.typ	12139	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/18-pinit-showcase.pdf	78929	pdf	A-showcase-book	other	False	Flagship showcase book dogfooding bookkit
+src/chapters/18-pinit-showcase.typ	13217	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/19-didaktik.typ	11113	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/20-datenvisualisierung.typ	5573	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/21-diagramme.typ	6144	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/22-bildintegration.typ	10153	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/23-seitengestaltung.typ	8830	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/24-kunststuecke.typ	3327	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/chapters/25-rechtskunde.typ	12665	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/art.typ	12315	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/blocks.typ	119	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/charts.typ	11411	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/diagrams.typ	2958	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/didactics.typ	131	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/exam.typ	126	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/figures.typ	11446	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/grids.typ	118	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/inline.typ	119	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/layouts.typ	120	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/legal.typ	10440	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/page-design.typ	9978	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/pedigree.typ	2552	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/spreads.typ	220	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/components/tables.typ	119	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/data/glossary.yml	1053	yml	A-showcase-book	data-config	False	Flagship showcase book dogfooding bookkit
+src/data/grundlagen.bib	154	bib	A-showcase-book	data-config	False	Flagship showcase book dogfooding bookkit
+src/data/klinisch.bib	160	bib	A-showcase-book	data-config	False	Flagship showcase book dogfooding bookkit
+src/data/pergamon.bib	138	bib	A-showcase-book	data-config	False	Flagship showcase book dogfooding bookkit
+src/data/references.bib	1082	bib	A-showcase-book	data-config	False	Flagship showcase book dogfooding bookkit
+src/data/sample-patients.json	2070	json	A-showcase-book	data-config	False	Flagship showcase book dogfooding bookkit
+src/data/sample-study.csv	255	csv	A-showcase-book	data-config	False	Flagship showcase book dogfooding bookkit
+src/main.typ	3983	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/styles/page.typ	106	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/styles/print.typ	107	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/styles/theme.typ	107	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+src/styles/typography.pdf	2306	pdf	A-showcase-book	other	False	Flagship showcase book dogfooding bookkit
+src/styles/typography.typ	112	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+templates/aspirationally/main.typ	8034	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/badformer/main.typ	111	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/assets/avatar.png	693969	png	R-research-corpus	visual-artifact	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/assets/logos/abc_company.png	6252	png	R-research-corpus	visual-artifact	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/assets/logos/pqr_corp.png	16012	png	R-research-corpus	visual-artifact	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/assets/logos/ucla.png	398200	png	R-research-corpus	visual-artifact	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/assets/logos/xyz_corp.png	36509	png	R-research-corpus	visual-artifact	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/assets/publications.bib	778	bib	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/assets/signature.png	145868	png	R-research-corpus	visual-artifact	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/cv.typ	605	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/letter.typ	2915	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/metadata.toml	4560	toml	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_de/certificates.typ	539	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_de/education.typ	1273	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_de/professional.typ	2023	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_de/projects.typ	756	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_de/publications.typ	371	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_de/skills.typ	916	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_en/certificates.typ	932	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_en/education.typ	1558	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_en/professional.typ	1894	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_en/projects.typ	1561	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_en/publications.typ	550	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_en/skills.typ	980	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_fr/certificates.typ	403	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_fr/education.typ	1222	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_fr/professional.typ	1862	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_fr/projects.typ	559	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_fr/publications.typ	269	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_fr/skills.typ	401	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_it/certificates.typ	382	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_it/education.typ	1113	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_it/professional.typ	1684	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_it/projects.typ	581	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_it/publications.typ	270	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_it/skills.typ	392	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_zh/certificates.typ	365	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_zh/education.typ	926	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_zh/professional.typ	1418	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_zh/projects.typ	402	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_zh/publications.typ	269	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/brilliant-cv/modules_zh/skills.typ	385	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/caidan/cover.png	354194	png	R-research-corpus	other	False	Ecosystem survey + template study corpus
+templates/caidan/main.typ	6738	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/calmly-touying/main.typ	4019	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/ilm/main.typ	13166	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/ilm/refs.bib	331	bib	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
+templates/mantys/manual.typ	964	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/soviet-matrix/main.typ	237	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/tieffiction/main.typ	775	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/toffee-tufte/main.bib	832	bib	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
+templates/toffee-tufte/main.typ	9711	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/touying-aqua/main.typ	363	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+templates/wonderous-book/main.typ	2455	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
+test/pinit-radial.pdf	19755	pdf	A-support	other	False	Fonts, placeholders, isolated tests
+test/pinit-radial.typ	9593	typ	A-support	typst-source	False	Fonts, placeholders, isolated tests
+test/scratch-pinit.typ	340	typ	A-support	typst-source	False	Fonts, placeholders, isolated tests
+toolset/compose/CREATIVE-COMPOSE.md	5160	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
+toolset/compose/README.md	4852	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
+toolset/compose/fixtures/fail_claims/accept.md	82	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_claims/chapter.typ	529	typ	A-compose-engine	typst-source	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_claims/content.md	201	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_freeze_production/accept.md	456	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_freeze_production/chapter.typ	1207	typ	A-compose-engine	typst-source	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_freeze_production/content.md	759	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_no_accept/accept.md	307	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_no_accept/chapter.typ	387	typ	A-compose-engine	typst-source	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_no_accept/content.md	74	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_unknown_form/accept.md	88	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_unknown_form/chapter.typ	494	typ	A-compose-engine	typst-source	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/fail_unknown_form/content.md	98	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_freeze_production/accept.md	456	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_freeze_production/chapter.typ	1297	typ	A-compose-engine	typst-source	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_freeze_production/content.md	759	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_freeze_production/freeze.md	518	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_freeze_production/genre-minima.yaml	343	yaml	A-compose-engine	data-config	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_minimal/accept.md	456	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_minimal/chapter.typ	1207	typ	A-compose-engine	typst-source	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_minimal/content.md	759	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
+toolset/compose/fixtures/pass_minimal/genre-minima.yaml	343	yaml	A-compose-engine	data-config	False	Compose validator CLI + fixtures/tests
+toolset/compose/scripts/run_validate.py	545	py	A-toolset-other	python-tool	False	Toolset docs/tests misc
+toolset/compose/spikes/README.md	2925	md	A/B-compose-spikes	markdown-doc	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/_templates/lib/module.typ	1579	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/_templates/spike-recreate.typ	845	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/lib/pflichtsequenz.typ	9477	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-compare-layout.typ	1111	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-compare.typ	738	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-landscape.typ	1072	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/ii1-drei-achsen-drisc/spike-recreate.typ	1147	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/antigravity-nanobanana-brief.md	4407	md	A/B-compose-spikes	markdown-doc	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/antigravity-nanobanana-free-brief.md	3859	md	A/B-compose-spikes	markdown-doc	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/lib/primar-algorithmus.typ	8978	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-asset.typ	649	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-code.pdf	29090	pdf	A/B-compose-spikes	visual-artifact	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-code.typ	3888	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-compare-b2.typ	1021	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-compare.typ	1372	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-hybrid.pdf	99800	pdf	A/B-compose-spikes	visual-artifact	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-hybrid.typ	3630	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-nanobanana-free.typ	1028	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-nanobanana.typ	1125	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-raster-full.typ	1185	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-raster-hybrid.typ	2849	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-recreate.typ	1215	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii2-bls-aed/spike-refined.typ	1120	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/lib/sofortmassnahmen.typ	6124	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/spike-compare.typ	984	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iii5-cauda-notfallkarte/spike-recreate.typ	1135	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/lib/entscheidungs-flow.typ	7804	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-compare-b2.typ	1090	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-compare.typ	1363	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-recreate.typ	1204	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv2-rueckenschmerz-neuro/spike-refined.typ	1130	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv4-heisses-gelenk/lib/entscheidungs-flow.typ	9795	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-compare.typ	1116	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-recreate.typ	1195	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-refined.typ	851	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/README.md	2424	md	A/B-compose-spikes	markdown-doc	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/_test-us-d.typ	312	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/_tmp/m-b-test.typ	159	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/cue-matrix.typ	2659	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/discrimination.typ	2345	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/four-pole.typ	2797	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/m-a-mimic.typ	1727	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/m-b-peel.typ	3906	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/melanom.typ	18026	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/script-core.typ	10401	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/urgency-ladder.typ	7483	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/us-d-dashboard.typ	6119	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ	6602	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/v2-cues-suspicion.typ	5381	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/v2-urgency.typ	6646	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/spike-ambition.typ	2563	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/spike-melanom.typ	4545	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/spike-phase1.typ	7605	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/spike-phase1v2.typ	6923	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/spike-recreate.typ	4168	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/spike-wave-o.typ	3346	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/README.md	1887	md	A/B-compose-spikes	markdown-doc	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/anaphylaxie.typ	6045	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/compartment.typ	23723	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/mi.typ	6918	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/stroke.typ	10801	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/suicid.typ	5377	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-ambition-v2.typ	1693	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-ambition.typ	1746	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-essential.typ	422	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-nonbody.typ	803	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-principle.typ	769	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-schematic.typ	670	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-compartment-sweetspot.typ	437	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-grammar-b.typ	6802	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/spike-grammar.typ	5177	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/templates/feasibility-note.template.md	2574	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
+toolset/compose/tests/test_validate.py	13541	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/__init__.py	208	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/__main__.py	110	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/accept_gate.py	3014	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/body.py	2149	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/catalog.py	5494	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/claims.py	5303	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/cli.py	6877	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/compile_check.py	3096	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/freeze_gate.py	6158	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/minima.py	7012	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/posthoc.py	2438	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/runner.py	9505	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/compose/validate/whitelist.py	8209	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
+toolset/docs/api-foundation.md	860	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
+toolset/examples/facet-smoke/main.typ	832	typ	A-starter-examples	typst-source	False	Consumer starter + smoke examples
+toolset/examples/minimal/main.typ	1166	typ	A-starter-examples	typst-source	False	Consumer starter + smoke examples
+toolset/form-catalog/README.md	2740	md	A-form-catalog	markdown-doc	False	Generic form whitelist + gap process
+toolset/form-catalog/VERSION	6	(none)	A-form-catalog	other	False	Generic form whitelist + gap process
+toolset/form-catalog/core/ANTI-PATTERNS.md	2045	md	A-form-catalog	markdown-doc	False	Generic form whitelist + gap process
+toolset/form-catalog/core/BASIS.md	3706	md	A-form-catalog	markdown-doc	False	Generic form whitelist + gap process
+toolset/form-catalog/core/GAP-PROCESS.md	1875	md	A-form-catalog	markdown-doc	False	Generic form whitelist + gap process
+toolset/form-catalog/core/forms.yaml	11268	yaml	A-form-catalog	data-config	False	Generic form whitelist + gap process
+toolset/form-catalog/scripts/check_forms.py	4408	py	A-form-catalog	python-tool	False	Generic form whitelist + gap process
+toolset/orchestration/book-production/README.md	521	md	A-orchestration	markdown-doc	False	Book production board/run-log demo
+toolset/orchestration/book-production/demo-welle03/board.md	2600	md	A-orchestration	markdown-doc	False	Book production board/run-log demo
+toolset/orchestration/book-production/demo-welle03/kickoff.md	952	md	A-orchestration	markdown-doc	False	Book production board/run-log demo
+toolset/orchestration/book-production/demo-welle03/route.md	1041	md	A-orchestration	markdown-doc	False	Book production board/run-log demo
+toolset/orchestration/book-production/demo-welle03/run-log.md	730	md	A-orchestration	markdown-doc	False	Book production board/run-log demo
+toolset/skill-pack/book-production-orchestrator/SKILL.md	10646	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/book-production-orchestrator/references/autonomy.md	1249	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/book-production-orchestrator/references/phase-machine.md	1251	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/book-production-orchestrator/templates/board.template.md	1568	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/book-production-orchestrator/templates/kickoff.template.md	1247	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/book-production-orchestrator/templates/route.template.md	1104	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/book-production-orchestrator/templates/run-log.template.md	436	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/bookkit/SKILL.md	4071	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/compose-chapter/SKILL.md	13179	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/provision.sh	2571	sh	A-skill-pack	shell-tool	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/starter/AGENTS.md	520	md	A-starter-examples	markdown-doc	False	Consumer starter + smoke examples
+toolset/starter/README.md	820	md	A-starter-examples	markdown-doc	False	Consumer starter + smoke examples
+toolset/starter/design-brief.yaml	293	yaml	A-starter-examples	data-config	False	Consumer starter + smoke examples
+toolset/starter/main.typ	1041	typ	A-starter-examples	typst-source	False	Consumer starter + smoke examples
+toolset/tests/test_toolset.sh	2615	sh	A-toolset-other	shell-tool	False	Toolset docs/tests misc
+v-cauda-compile.typ	251	typ	ROOT-misc	typst-source	False	Root governance, scratch, licenses
+v-sept-compile.typ	249	typ	ROOT-misc	typst-source	False	Root governance, scratch, licenses
+vscode/extensions.json	376	json	ROOT-misc	data-config	False	Root governance, scratch, licenses
+vscode/settings.json	518	json	ROOT-misc	data-config	False	Root governance, scratch, licenses
+vscode/tasks.json	1020	json	ROOT-misc	data-config	False	Root governance, scratch, licenses
+workspaces/README.md	462	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
+workspaces/kursbuch-layout.code-workspace	309	code-workspace	META-docs-ux	other	False	Consumer docs, runbook, workspace

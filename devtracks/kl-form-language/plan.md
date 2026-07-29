@@ -58,11 +58,17 @@ Plan: `wave-5-chapters-plan.md` · Accept: `briefs/kl-wave5.accept.md` · Spikes
 | Suizidalität | **safety chrome code** (no free vision) |
 | Kompartment | urgency code + **spatial free vision refined** |
 
+## Decision 2026-07-29 — Anatomy free pause
+
+Human: unsupervised anatomical figures not Accept-ready (Kompartment series failed).  
+**Harvest:** `briefs/_wave5/anatomy-depiction-pause.md` · standards/free-vision/SKILL/recipes updated.  
+Kompartment default = **non-body** urgency + criteria chips + mimic only.
+
 ## Next work (chapter expansion)
 
-1. ~~H4 · Melanom · Wave-5 five chapters~~  
-2. Human visual review of FAST/compartment refined assets  
-3. Optional harder skill evals; more monographs as needed  
+1. ~~H4 · Melanom · Wave-5 · anatomy pause~~  
+2. Continue non-body grammar transfers; anatomy only via H-Gfx if reopened  
+3. Optional harder skill evals  
 
 ## How to start a new chapter (operator)
 
