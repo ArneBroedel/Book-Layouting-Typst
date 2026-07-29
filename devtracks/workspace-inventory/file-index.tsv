@@ -1,6 +1,6 @@
 path	bytes	ext	bucket	role	is_symlink	purpose_bucket
-AGENTS.md	9298	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
-CLAUDE.md	12056	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+AGENTS.md	9552	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+CLAUDE.md	12552	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
 Guides/KL-Form-Language.md	13767	md	B-guides-medical	markdown-doc	False	Medical media/graphics guides
 Guides/Medical-Graphics-Playbook.md	4249	md	B-guides-medical	markdown-doc	False	Medical media/graphics guides
 Guides/Medical-Presentation-Forms.md	4502	md	B-guides-medical	markdown-doc	False	Medical media/graphics guides
@@ -14,7 +14,7 @@ Guides/Working_With_Typst-Theory_To_Practice.md	35204	md	A-guides-typst	markdown
 Guides/update2026/ROLLE &amp; ZIEL_Du bist Recherche-Assistent für e.md	25813	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
 Guides/update2026/Welche Änderungen und Erweiterungen gab es in den.md	10390	md	A-guides-typst	markdown-doc	False	Durable Typst layout theory & lessons
 LICENSE	155	(none)	ROOT-misc	other	False	Root governance, scratch, licenses
-README.md	3541	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
+README.md	4225	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
 SETUP-WINDOWS.md	1150	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
 agents/skills.txt	297	txt	ROOT-misc	other	False	Root governance, scratch, licenses
 assets/figures/.gitkeep	0	(none)	A-support	other	False	Fonts, placeholders, isolated tests
@@ -22,7 +22,7 @@ assets/photos/.gitkeep	0	(none)	A-support	other	False	Fonts, placeholders, isola
 assets/tables/.gitkeep	0	(none)	A-support	other	False	Fonts, placeholders, isolated tests
 devtracks/CONSENSUS-v0.md	14447	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/PRODUCT-BOUNDARIES.md	4035	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/README.md	4969	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/README.md	4910	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/ROLES-AND-FLOW.md	2998	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/_archive/additional-packages/phase1.md	3257	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/_archive/additional-packages/phase2.md	3126	md	META-devtracks	markdown-doc	False	Active/archived plans
@@ -108,32 +108,35 @@ devtracks/_archive/typst-toolset/plan.md	3580	md	META-devtracks	markdown-doc	Fal
 devtracks/_archive/typst-toolset/spec.md	8288	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/_orchestration/board.md	4731	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/_orchestration/boundaries-audit-w5.md	3689	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-inventory/CATALOG.md	82729	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-inventory/README.md	1443	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-inventory/all-files-with-size.tsv	61909	tsv	META-devtracks	other	False	Active/archived plans
+devtracks/workspace-inventory/CATALOG.md	118193	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-inventory/README.md	2108	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-inventory/all-files-with-size.tsv	50453	tsv	META-devtracks	other	False	Active/archived plans
 devtracks/workspace-inventory/all-files.txt	45346	txt	META-devtracks	other	False	Active/archived plans
 devtracks/workspace-inventory/bucket-summary.tsv	1952	tsv	META-devtracks	other	False	Active/archived plans
-devtracks/workspace-inventory/file-index.tsv	115172	tsv	META-devtracks	other	False	Active/archived plans
+devtracks/workspace-inventory/file-index.tsv	115171	tsv	META-devtracks	other	False	Active/archived plans
 devtracks/workspace-inventory/noise-candidates.tsv	480	tsv	META-devtracks	other	False	Active/archived plans
-devtracks/workspace-split/HANDOFF.md	6281	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-split/README.md	3390	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/HANDOFF.md	4838	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/README.md	3985	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/workspace-split/antigravity-peer-review.md	13928	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/workspace-split/decisions.md	1860	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/workspace-split/joint-recommendation.md	6711	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-split/phase1-hygiene-log.md	1464	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/phase1-hygiene-log.md	1692	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/workspace-split/phase1-hygiene.md	1632	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-split/phase1b-cli.md	6445	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-split/phase2-boundaries.md	4826	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/phase1b-cli.md	6439	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/phase2-boundaries.md	5065	md	META-devtracks	markdown-doc	False	Active/archived plans
 devtracks/workspace-split/phase3-split.md	2582	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-split/phase4-skills-docs.md	2998	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-split/plan.md	28261	md	META-devtracks	markdown-doc	False	Active/archived plans
-devtracks/workspace-split/spec.md	2887	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/phase4-skills-docs.md	3002	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/plan.md	31300	md	META-devtracks	markdown-doc	False	Active/archived plans
+devtracks/workspace-split/spec.md	3240	md	META-devtracks	markdown-doc	False	Active/archived plans
 dist/.gitkeep	0	(none)	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/spikes/graphics/kl-script-system/recreate.pdf	87657	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
 dist/spikes/graphics/kl-wave6/grammar.pdf	91206	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/toolset/minimal-cli-smoke.pdf	43320	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
+dist/toolset/minimal.pdf	43320	pdf	BUILD-dist	build-artifact	False	Generated PDFs/PNGs
 docs/BOOK-PRODUCTION-RUNBOOK.md	3175	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
-docs/CONSUMER.md	5325	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
-docs/KNOWLEDGE-MAP.md	8435	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
-domains/README.md	484	md	B-domains-root	markdown-doc	False	domains/ README
+docs/CONSUMER.md	5919	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
+docs/KNOWLEDGE-MAP.md	8705	md	META-docs-ux	markdown-doc	False	Consumer docs, runbook, workspace
+domains/README.md	1089	md	B-domains-root	markdown-doc	False	domains/ README
 domains/content-maturity/MIGRATION-TO-C.md	1195	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
 domains/content-maturity/OWNERSHIP.md	1457	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
 domains/content-maturity/README.md	2924	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
@@ -170,7 +173,7 @@ domains/content-maturity/templates/proof-record.template.md	1043	md	C-content-ma
 domains/content-maturity/templates/review-report.template.md	2300	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
 domains/content-maturity/templates/route-card.template.md	991	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
 domains/content-maturity/templates/scope-brief.template.md	286	md	C-content-maturity	markdown-doc	False	Content review/freeze/proof kit
-domains/medical/OWNERSHIP.md	739	md	B-medical-other	markdown-doc	False	Domain README/OWNERSHIP
+domains/medical/OWNERSHIP.md	891	md	B-medical-other	markdown-doc	False	Domain README/OWNERSHIP
 domains/medical/README.md	4898	md	B-medical-other	markdown-doc	False	Domain README/OWNERSHIP
 domains/medical/assets/CANONICAL.md	1268	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
 domains/medical/assets/README.md	1106	md	B-medical-assets	markdown-doc	False	Domain vision/refined graphic assets
@@ -355,6 +358,27 @@ domains/medical/briefs/kl-u-mimic.form-spec.md	3602	md	B-medical-briefs	markdown
 domains/medical/briefs/kl-u-urgency-scope.form-spec.md	6535	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
 domains/medical/briefs/kl-us-d-urgency.vision.md	2251	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
 domains/medical/briefs/kl-wave6.accept.md	3567	md	B-medical-briefs	markdown-doc	False	Briefs, form-specs, accept, vision notes
+domains/medical/lib/typst/README.md	1780	md	B-medical-other	markdown-doc	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/cue-matrix.typ	2659	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/discrimination.typ	2345	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/four-pole.typ	2797	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/m-a-mimic.typ	1727	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/m-b-peel.typ	3906	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/melanom.typ	18026	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/script-core.typ	10401	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/urgency-ladder.typ	7483	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/us-d-dashboard.typ	6119	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/us-time-scope.typ	6602	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/v2-cues-suspicion.typ	5381	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-core/v2-urgency.typ	6646	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-wave5/anaphylaxie.typ	6026	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-wave5/compartment.typ	23704	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-wave5/mi.typ	6899	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-wave5/stroke.typ	10782	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-wave5/suicid.typ	5358	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-wave6/gicht.typ	5229	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-wave6/le.typ	4765	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
+domains/medical/lib/typst/kl-wave6/sepsis.typ	7049	typ	B-medical-other	typst-source	False	Domain README/OWNERSHIP
 domains/medical/recipes/fallbasiert.md	1213	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
 domains/medical/recipes/lerntext.md	1215	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
 domains/medical/recipes/notfall-karte.md	9227	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
@@ -387,7 +411,7 @@ domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-
 domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/outputs/NOTES.md	914	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
 domains/medical/skill/media-brief-workspace/iteration-1/eval-3-accept-rubric-no-monotony/without_skill/outputs/accept.md	3324	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
 domains/medical/skill/media-brief-workspace/iteration-1/review.html	130780	html	B-media-brief	other	False	media-brief skill + form-space
-domains/medical/skill/media-brief/SKILL.md	15530	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
+domains/medical/skill/media-brief/SKILL.md	15621	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
 domains/medical/skill/media-brief/evals/evals.json	5054	json	B-media-brief	data-config	False	media-brief skill + form-space
 domains/medical/skill/media-brief/references/design-reasoning.md	6315	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
 domains/medical/skill/media-brief/references/kl-form-space-process.md	4164	md	B-media-brief	markdown-doc	False	media-brief skill + form-space
@@ -422,12 +446,12 @@ domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-
 domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/NOTES.md	1010	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/claim-audit.md	4312	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics-workspace/iteration-1/review.html	229696	html	B-medical-graphics	other	False	medical-graphics skill + playbook
-domains/medical/skill/medical-graphics/SKILL.md	8492	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/SKILL.md	9207	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/evals/evals.json	4276	json	B-medical-graphics	data-config	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/examples/INDEX.md	2651	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/playbook/00-overview.md	2449	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/playbook/01-from-form-spec.md	1066	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
-domains/medical/skill/medical-graphics/playbook/02-free-vision.md	2148	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/playbook/02-free-vision.md	2178	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/playbook/03-claim-audit.md	3078	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/playbook/04-recreate-typst.md	1459	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/playbook/05-hybrid.md	759	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
@@ -437,13 +461,13 @@ domains/medical/skill/medical-graphics/playbook/08-accept-handoff.md	829	md	B-me
 domains/medical/skill/medical-graphics/playbook/09-form-recipes.md	7412	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/playbook/10-kl-chapter-pipeline.md	3321	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/playbook/walkthrough-iv2.md	2127	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
-domains/medical/skill/medical-graphics/references/asset-pipeline.md	2029	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/asset-pipeline.md	2071	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/references/book-visual-standards.md	4256	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/references/decision-heuristics.md	2602	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/references/free-vision.md	3336	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/references/graphic-types.md	1776	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/skill/medical-graphics/references/kl-form-library.md	9596	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
-domains/medical/skill/medical-graphics/references/tools-and-generation.md	2208	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
+domains/medical/skill/medical-graphics/references/tools-and-generation.md	2320	md	B-medical-graphics	markdown-doc	False	medical-graphics skill + playbook
 domains/medical/templates/accept-record.template.md	1854	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
 domains/medical/templates/form-spec.template.md	2637	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
 domains/medical/templates/graphic-claim-audit.template.md	1776	md	B-medical-meta	markdown-doc	False	Genre recipes + media templates
@@ -486,13 +510,14 @@ github/skills/typst-extension/SKILL.md	30271	md	ROOT-misc	markdown-doc	False	Roo
 github/skills/typst-writer/SKILL.md	42060	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
 github/workflows/build.yml	999	yml	ROOT-misc	data-config	False	Root governance, scratch, licenses
 gitignore	853	(none)	ROOT-misc	other	False	Root governance, scratch, licenses
+packages/OWNERSHIP.md	1086	md	A-packages-bookkit	markdown-doc	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit-didactics/README.md	429	md	A-packages-bookkit	markdown-doc	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit-didactics/didactics.typ	6071	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit-didactics/exam.typ	3726	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit-didactics/lib.typ	414	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit-didactics/spreads-extra.typ	849	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit-didactics/typst.toml	322	toml	A-packages-bookkit	data-config	False	Consumable Typst runtime (theme, components, didactics facet)
-packages/bookkit/README.md	1474	md	A-packages-bookkit	markdown-doc	False	Consumable Typst runtime (theme, components, didactics facet)
+packages/bookkit/README.md	1654	md	A-packages-bookkit	markdown-doc	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit/components/blocks.typ	8168	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit/components/grids.typ	3310	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit/components/inline.typ	3811	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
@@ -505,6 +530,32 @@ packages/bookkit/print.typ	4795	typ	A-packages-bookkit	typst-source	False	Consum
 packages/bookkit/theme.typ	6077	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit/typography.typ	5114	typ	A-packages-bookkit	typst-source	False	Consumable Typst runtime (theme, components, didactics facet)
 packages/bookkit/typst.toml	378	toml	A-packages-bookkit	data-config	False	Consumable Typst runtime (theme, components, didactics facet)
+pilots/README.md	669	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/CHAPTER-MAP.md	1133	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/README.md	1461	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/i4.typ	211	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/ii1.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/iii2.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/iii5.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/iv2.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/iv4.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/v-cauda.typ	221	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/v-sept.typ	219	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/vi1.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/_single/vii1.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/build-all.sh	1185	sh	A-pilots-dogfood	shell-tool	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/i4.typ	17920	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/ii1.typ	21176	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/iii2.typ	12402	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/iii5.typ	8004	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/iv2.typ	14054	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/iv4.typ	18506	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/v-cauda.typ	20992	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/v-sept.typ	12429	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/vi1.typ	16270	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/chapters/vii1.typ	15050	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/convert_md_to_typ.py	9492	py	A-pilots-dogfood	python-tool	False	Consumer dogfood pilots (not content SoT)
+pilots/_archive/kursbuch-welle-03/main.typ	1572	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
 pilots/kursbuch-welle-03-compose/README.md	4122	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
 pilots/kursbuch-welle-03-compose/_single/iv2.typ	222	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
 pilots/kursbuch-welle-03-compose/_single/iv4.typ	222	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
@@ -524,31 +575,6 @@ pilots/kursbuch-welle-03-compose/reports/e2e-iii2-2026-07-20.md	2302	md	A-pilots
 pilots/kursbuch-welle-03-compose/reports/e2e-iii5-2026-07-20.md	11336	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
 pilots/kursbuch-welle-03-compose/reports/wave03-full-compose-2026-07-20.md	2023	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
 pilots/kursbuch-welle-03-compose/reports/wave03-v2-creative-2026-07-20.md	1554	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/CHAPTER-MAP.md	1133	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/README.md	1245	md	A-pilots-dogfood	markdown-doc	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/i4.typ	211	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/ii1.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/iii2.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/iii5.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/iv2.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/iv4.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/v-cauda.typ	221	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/v-sept.typ	219	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/vi1.typ	213	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/_single/vii1.typ	215	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/build-all.sh	1112	sh	A-pilots-dogfood	shell-tool	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/i4.typ	17920	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/ii1.typ	21176	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/iii2.typ	12402	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/iii5.typ	8004	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/iv2.typ	14054	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/iv4.typ	18506	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/v-cauda.typ	20992	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/v-sept.typ	12429	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/vi1.typ	16270	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/chapters/vii1.typ	15050	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/convert_md_to_typ.py	9492	py	A-pilots-dogfood	python-tool	False	Consumer dogfood pilots (not content SoT)
-pilots/kursbuch-welle-03/main.typ	1572	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
 pilots/reuse-datasheet/design-brief.yaml	168	yaml	A-pilots-dogfood	data-config	False	Consumer dogfood pilots (not content SoT)
 pilots/reuse-datasheet/main.typ	3477	typ	A-pilots-dogfood	typst-source	False	Consumer dogfood pilots (not content SoT)
 prepress/PDFX_def.ps	2189	ps	A-prepress	binary-resource	False	ICC profiles, PDF/X defs
@@ -556,10 +582,10 @@ prepress/README.md	4375	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X def
 prepress/profiles/README.md	935	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X defs
 prepress/profiles/default_cmyk.icc	187484	icc	A-prepress	binary-resource	False	ICC profiles, PDF/X defs
 prepress/profiles/srgb.icc	2576	icc	A-prepress	binary-resource	False	ICC profiles, PDF/X defs
-prepress/reports/image-dpi.md	241	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X defs
+prepress/reports/image-dpi.md	672	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X defs
 prepress/reports/preflight-print.md	1373	md	A-prepress	markdown-doc	False	ICC profiles, PDF/X defs
 project-tech-stack.md	16243	md	ROOT-misc	markdown-doc	False	Root governance, scratch, licenses
-research/README.md	1524	md	R-research-corpus	markdown-doc	False	Ecosystem survey + template study corpus
+research/README.md	1743	md	R-research-corpus	markdown-doc	False	Ecosystem survey + template study corpus
 research/data/all_packages.json	547630	json	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
 research/data/all_templates.json	605141	json	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
 research/data/index.json	1535056	json	R-research-corpus	data-config	False	Ecosystem survey + template study corpus
@@ -572,7 +598,7 @@ research/pipeline/process_index.py	1109	py	R-research-corpus	python-tool	False	E
 research/pipeline/process_templates.py	4070	py	R-research-corpus	python-tool	False	Ecosystem survey + template study corpus
 research/pipeline/refine_json.py	1255	py	R-research-corpus	python-tool	False	Ecosystem survey + template study corpus
 scripts/book-production-status.sh	1993	sh	A-build-scripts	shell-tool	False	Build, setup, bookkit CLI
-scripts/bookkit	7318	(none)	A-build-scripts	other	False	Build, setup, bookkit CLI
+scripts/bookkit	21365	(none)	A-build-scripts	other	False	Build, setup, bookkit CLI
 scripts/build.ps1	2611	ps1	A-build-scripts	shell-tool	False	Build, setup, bookkit CLI
 scripts/build.sh	1879	sh	A-build-scripts	shell-tool	False	Build, setup, bookkit CLI
 scripts/check-image-dpi.py	7684	py	A-prepress-scripts	python-tool	False	Print PDF/X, DPI, preflight
@@ -645,6 +671,7 @@ src/styles/page.typ	106	typ	A-showcase-book	typst-source	False	Flagship showcase
 src/styles/print.typ	107	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
 src/styles/theme.typ	107	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
 src/styles/typography.typ	112	typ	A-showcase-book	typst-source	False	Flagship showcase book dogfooding bookkit
+templates/README.md	319	md	R-research-corpus	markdown-doc	False	Ecosystem survey + template study corpus
 templates/aspirationally/main.typ	8034	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
 templates/badformer/main.typ	111	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
 templates/brilliant-cv/assets/avatar.png	693969	png	R-research-corpus	visual-artifact	False	Ecosystem survey + template study corpus
@@ -701,8 +728,9 @@ templates/touying-aqua/main.typ	363	typ	R-research-corpus	typst-source	False	Eco
 templates/wonderous-book/main.typ	2455	typ	R-research-corpus	typst-source	False	Ecosystem survey + template study corpus
 test/pinit-radial.typ	9593	typ	A-support	typst-source	False	Fonts, placeholders, isolated tests
 test/scratch-pinit.typ	340	typ	A-support	typst-source	False	Fonts, placeholders, isolated tests
+toolset/OWNERSHIP.md	1385	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
 toolset/compose/CREATIVE-COMPOSE.md	5160	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
-toolset/compose/README.md	4852	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
+toolset/compose/README.md	5239	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
 toolset/compose/fixtures/fail_claims/accept.md	82	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
 toolset/compose/fixtures/fail_claims/chapter.typ	529	typ	A-compose-engine	typst-source	False	Compose validator CLI + fixtures/tests
 toolset/compose/fixtures/fail_claims/content.md	201	md	A-compose-engine	markdown-doc	False	Compose validator CLI + fixtures/tests
@@ -762,18 +790,18 @@ toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-recreate.typ	1195	typ	A
 toolset/compose/spikes/graphics/iv4-heisses-gelenk/spike-refined.typ	851	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-script-system/README.md	2424	md	A/B-compose-spikes	markdown-doc	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-script-system/_test-us-d.typ	312	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/cue-matrix.typ	2659	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/discrimination.typ	2345	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/four-pole.typ	2797	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/m-a-mimic.typ	1727	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/m-b-peel.typ	3906	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/melanom.typ	18026	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/script-core.typ	10401	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/urgency-ladder.typ	7483	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/us-d-dashboard.typ	6119	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ	6602	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/v2-cues-suspicion.typ	5381	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-script-system/lib/v2-urgency.typ	6646	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/cue-matrix.typ	134	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/discrimination.typ	142	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/four-pole.typ	132	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/m-a-mimic.typ	132	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/m-b-peel.typ	130	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/melanom.typ	128	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/script-core.typ	136	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/urgency-ladder.typ	142	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/us-d-dashboard.typ	142	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ	140	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/v2-cues-suspicion.typ	148	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-script-system/lib/v2-urgency.typ	134	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-script-system/spike-ambition.typ	2563	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-script-system/spike-melanom.typ	4545	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-script-system/spike-phase1.typ	7605	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
@@ -781,11 +809,11 @@ toolset/compose/spikes/graphics/kl-script-system/spike-phase1v2.typ	6923	typ	A/B
 toolset/compose/spikes/graphics/kl-script-system/spike-recreate.typ	4168	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-script-system/spike-wave-o.typ	3346	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-wave5/README.md	1887	md	A/B-compose-spikes	markdown-doc	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-wave5/lib/anaphylaxie.typ	6045	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-wave5/lib/compartment.typ	23723	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-wave5/lib/mi.typ	6918	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-wave5/lib/stroke.typ	10801	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-wave5/lib/suicid.typ	5377	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/anaphylaxie.typ	138	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/compartment.typ	138	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/mi.typ	120	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/stroke.typ	128	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave5/lib/suicid.typ	128	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-wave5/spike-ambition-v2.typ	1693	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-wave5/spike-ambition.typ	1746	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-wave5/spike-compartment-essential.typ	422	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
@@ -796,9 +824,9 @@ toolset/compose/spikes/graphics/kl-wave5/spike-compartment-sweetspot.typ	437	typ
 toolset/compose/spikes/graphics/kl-wave5/spike-grammar-b.typ	6802	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-wave5/spike-grammar.typ	5177	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-wave6/README.md	1655	md	A/B-compose-spikes	markdown-doc	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-wave6/lib/gicht.typ	5248	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-wave6/lib/le.typ	4784	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
-toolset/compose/spikes/graphics/kl-wave6/lib/sepsis.typ	7068	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave6/lib/gicht.typ	126	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave6/lib/le.typ	120	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
+toolset/compose/spikes/graphics/kl-wave6/lib/sepsis.typ	128	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/spikes/graphics/kl-wave6/spike-grammar.typ	4223	typ	A/B-compose-spikes	typst-source	False	Experimental Typst graphics spikes (bridge A+B)
 toolset/compose/templates/feasibility-note.template.md	2574	md	A-toolset-other	markdown-doc	False	Toolset docs/tests misc
 toolset/compose/tests/test_validate.py	13541	py	A-compose-engine	python-tool	False	Compose validator CLI + fixtures/tests
@@ -830,21 +858,22 @@ toolset/orchestration/book-production/demo-welle03/board.md	2600	md	A-orchestrat
 toolset/orchestration/book-production/demo-welle03/kickoff.md	952	md	A-orchestration	markdown-doc	False	Book production board/run-log demo
 toolset/orchestration/book-production/demo-welle03/route.md	1041	md	A-orchestration	markdown-doc	False	Book production board/run-log demo
 toolset/orchestration/book-production/demo-welle03/run-log.md	730	md	A-orchestration	markdown-doc	False	Book production board/run-log demo
-toolset/skill-pack/book-production-orchestrator/SKILL.md	10646	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/book-production-orchestrator/SKILL.md	10676	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
 toolset/skill-pack/book-production-orchestrator/references/autonomy.md	1249	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
 toolset/skill-pack/book-production-orchestrator/references/phase-machine.md	1251	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
 toolset/skill-pack/book-production-orchestrator/templates/board.template.md	1568	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
 toolset/skill-pack/book-production-orchestrator/templates/kickoff.template.md	1247	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
 toolset/skill-pack/book-production-orchestrator/templates/route.template.md	1104	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
 toolset/skill-pack/book-production-orchestrator/templates/run-log.template.md	436	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
-toolset/skill-pack/bookkit/SKILL.md	4071	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
-toolset/skill-pack/compose-chapter/SKILL.md	13179	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/bookkit/SKILL.md	5103	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
+toolset/skill-pack/compose-chapter/SKILL.md	13325	md	A-skill-pack	markdown-doc	False	Platform skills: bookkit, compose-chapter, orchestrator
 toolset/skill-pack/provision.sh	2571	sh	A-skill-pack	shell-tool	False	Platform skills: bookkit, compose-chapter, orchestrator
 toolset/starter/AGENTS.md	520	md	A-starter-examples	markdown-doc	False	Consumer starter + smoke examples
 toolset/starter/README.md	820	md	A-starter-examples	markdown-doc	False	Consumer starter + smoke examples
 toolset/starter/design-brief.yaml	293	yaml	A-starter-examples	data-config	False	Consumer starter + smoke examples
 toolset/starter/main.typ	1041	typ	A-starter-examples	typst-source	False	Consumer starter + smoke examples
-toolset/tests/test_toolset.sh	2615	sh	A-toolset-other	shell-tool	False	Toolset docs/tests misc
+toolset/tests/test_bookkit_cli.sh	2012	sh	A-toolset-other	shell-tool	False	Toolset docs/tests misc
+toolset/tests/test_toolset.sh	2665	sh	A-toolset-other	shell-tool	False	Toolset docs/tests misc
 vscode/extensions.json	376	json	ROOT-misc	data-config	False	Root governance, scratch, licenses
 vscode/settings.json	518	json	ROOT-misc	data-config	False	Root governance, scratch, licenses
 vscode/tasks.json	1020	json	ROOT-misc	data-config	False	Root governance, scratch, licenses

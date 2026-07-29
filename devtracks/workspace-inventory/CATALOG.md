@@ -1,14 +1,14 @@
 # Workspace File Catalog (grouped)
-Generated inventory: `851` files (excl. `.git`, `__pycache__`, `.playwright-mcp`).
+Generated inventory: `880` files (excl. `.git`, `__pycache__`, `.playwright-mcp`).
 Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, role, purpose).
 
 ## `(root)`
-- **n:** 8 · **size:** 43 KiB · **buckets:** ROOT-misc
+- **n:** 8 · **size:** 44 KiB · **buckets:** ROOT-misc
 - **purpose:** Root governance, scratch, licenses
-  - `AGENTS.md` (md, 9298 B) — markdown-doc
-  - `CLAUDE.md` (md, 12056 B) — markdown-doc
+  - `AGENTS.md` (md, 9552 B) — markdown-doc
+  - `CLAUDE.md` (md, 12552 B) — markdown-doc
   - `LICENSE` ((none), 155 B) — other
-  - `README.md` (md, 3541 B) — markdown-doc
+  - `README.md` (md, 4225 B) — markdown-doc
   - `SETUP-WINDOWS.md` (md, 1150 B) — markdown-doc
   - `editorconfig` ((none), 263 B) — other
   - `gitignore` ((none), 853 B) — other
@@ -243,7 +243,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 ## `devtracks/README.md`
 - **n:** 1 · **size:** 5 KiB · **buckets:** META-devtracks
 - **purpose:** Active/archived plans
-  - `devtracks/README.md` (md, 4969 B) — markdown-doc
+  - `devtracks/README.md` (md, 4910 B) — markdown-doc
 
 ## `devtracks/ROLES-AND-FLOW.md`
 - **n:** 1 · **size:** 3 KiB · **buckets:** META-devtracks
@@ -251,42 +251,53 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `devtracks/ROLES-AND-FLOW.md` (md, 2998 B) — markdown-doc
 
 ## `devtracks/workspace-inventory/`
-- **n:** 7 · **size:** 302 KiB · **buckets:** META-devtracks
+- **n:** 7 · **size:** 326 KiB · **buckets:** META-devtracks
 - **purpose:** Active/archived plans
-  - `devtracks/workspace-inventory/CATALOG.md` (md, 82729 B) — markdown-doc
-  - `devtracks/workspace-inventory/README.md` (md, 1443 B) — markdown-doc
-  - `devtracks/workspace-inventory/all-files-with-size.tsv` (tsv, 61909 B) — other
+  - `devtracks/workspace-inventory/CATALOG.md` (md, 118193 B) — markdown-doc
+  - `devtracks/workspace-inventory/README.md` (md, 2108 B) — markdown-doc
+  - `devtracks/workspace-inventory/all-files-with-size.tsv` (tsv, 50453 B) — other
   - `devtracks/workspace-inventory/all-files.txt` (txt, 45346 B) — other
   - `devtracks/workspace-inventory/bucket-summary.tsv` (tsv, 1952 B) — other
-  - `devtracks/workspace-inventory/file-index.tsv` (tsv, 115172 B) — other
+  - `devtracks/workspace-inventory/file-index.tsv` (tsv, 115171 B) — other
   - `devtracks/workspace-inventory/noise-candidates.tsv` (tsv, 480 B) — other
 
 ## `devtracks/workspace-split/`
-- **n:** 13 · **size:** 81 KiB · **buckets:** META-devtracks
+- **n:** 13 · **size:** 84 KiB · **buckets:** META-devtracks
 - **purpose:** Active/archived plans
-  - `devtracks/workspace-split/HANDOFF.md` (md, 6281 B) — markdown-doc
-  - `devtracks/workspace-split/README.md` (md, 3390 B) — markdown-doc
+  - `devtracks/workspace-split/HANDOFF.md` (md, 4838 B) — markdown-doc
+  - `devtracks/workspace-split/README.md` (md, 3985 B) — markdown-doc
   - `devtracks/workspace-split/antigravity-peer-review.md` (md, 13928 B) — markdown-doc
   - `devtracks/workspace-split/decisions.md` (md, 1860 B) — markdown-doc
   - `devtracks/workspace-split/joint-recommendation.md` (md, 6711 B) — markdown-doc
-  - `devtracks/workspace-split/phase1-hygiene-log.md` (md, 1464 B) — markdown-doc
+  - `devtracks/workspace-split/phase1-hygiene-log.md` (md, 1692 B) — markdown-doc
   - `devtracks/workspace-split/phase1-hygiene.md` (md, 1632 B) — markdown-doc
-  - `devtracks/workspace-split/phase1b-cli.md` (md, 6445 B) — markdown-doc
-  - `devtracks/workspace-split/phase2-boundaries.md` (md, 4826 B) — markdown-doc
+  - `devtracks/workspace-split/phase1b-cli.md` (md, 6439 B) — markdown-doc
+  - `devtracks/workspace-split/phase2-boundaries.md` (md, 5065 B) — markdown-doc
   - `devtracks/workspace-split/phase3-split.md` (md, 2582 B) — markdown-doc
-  - `devtracks/workspace-split/phase4-skills-docs.md` (md, 2998 B) — markdown-doc
-  - `devtracks/workspace-split/plan.md` (md, 28261 B) — markdown-doc
-  - `devtracks/workspace-split/spec.md` (md, 2887 B) — markdown-doc
+  - `devtracks/workspace-split/phase4-skills-docs.md` (md, 3002 B) — markdown-doc
+  - `devtracks/workspace-split/plan.md` (md, 31300 B) — markdown-doc
+  - `devtracks/workspace-split/spec.md` (md, 3240 B) — markdown-doc
 
 ## `dist/.gitkeep`
 - **n:** 1 · **size:** 0 KiB · **buckets:** BUILD-dist
 - **purpose:** Generated PDFs/PNGs
   - `dist/.gitkeep` ((none), 0 B) — build-artifact
 
+## `dist/spikes/graphics/kl-script-system/`
+- **n:** 1 · **size:** 86 KiB · **buckets:** BUILD-dist
+- **purpose:** Generated PDFs/PNGs
+  - `dist/spikes/graphics/kl-script-system/recreate.pdf` (pdf, 87657 B) — build-artifact
+
 ## `dist/spikes/graphics/kl-wave6/`
 - **n:** 1 · **size:** 89 KiB · **buckets:** BUILD-dist
 - **purpose:** Generated PDFs/PNGs
   - `dist/spikes/graphics/kl-wave6/grammar.pdf` (pdf, 91206 B) — build-artifact
+
+## `dist/toolset/`
+- **n:** 2 · **size:** 85 KiB · **buckets:** BUILD-dist
+- **purpose:** Generated PDFs/PNGs
+  - `dist/toolset/minimal-cli-smoke.pdf` (pdf, 43320 B) — build-artifact
+  - `dist/toolset/minimal.pdf` (pdf, 43320 B) — build-artifact
 
 ## `docs/BOOK-PRODUCTION-RUNBOOK.md`
 - **n:** 1 · **size:** 3 KiB · **buckets:** META-docs-ux
@@ -294,14 +305,14 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `docs/BOOK-PRODUCTION-RUNBOOK.md` (md, 3175 B) — markdown-doc
 
 ## `docs/CONSUMER.md`
-- **n:** 1 · **size:** 5 KiB · **buckets:** META-docs-ux
+- **n:** 1 · **size:** 6 KiB · **buckets:** META-docs-ux
 - **purpose:** Consumer docs, runbook, workspace
-  - `docs/CONSUMER.md` (md, 5325 B) — markdown-doc
+  - `docs/CONSUMER.md` (md, 5919 B) — markdown-doc
 
 ## `docs/KNOWLEDGE-MAP.md`
-- **n:** 1 · **size:** 8 KiB · **buckets:** META-docs-ux
+- **n:** 1 · **size:** 9 KiB · **buckets:** META-docs-ux
 - **purpose:** Consumer docs, runbook, workspace
-  - `docs/KNOWLEDGE-MAP.md` (md, 8435 B) — markdown-doc
+  - `docs/KNOWLEDGE-MAP.md` (md, 8705 B) — markdown-doc
 
 ## `domains/content-maturity/`
 - **n:** 4 · **size:** 7 KiB · **buckets:** C-content-maturity
@@ -378,7 +389,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 ## `domains/medical/`
 - **n:** 2 · **size:** 6 KiB · **buckets:** B-medical-other
 - **purpose:** Domain README/OWNERSHIP
-  - `domains/medical/OWNERSHIP.md` (md, 739 B) — markdown-doc
+  - `domains/medical/OWNERSHIP.md` (md, 891 B) — markdown-doc
   - `domains/medical/README.md` (md, 4898 B) — markdown-doc
 
 ## `domains/medical/assets/`
@@ -640,6 +651,43 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `domains/medical/briefs/_wave6/kl-le.content-map.md` (md, 3763 B) — markdown-doc
   - `domains/medical/briefs/_wave6/kl-sepsis.content-map.md` (md, 4688 B) — markdown-doc
 
+## `domains/medical/lib/typst/`
+- **n:** 1 · **size:** 2 KiB · **buckets:** B-medical-other
+- **purpose:** Domain README/OWNERSHIP
+  - `domains/medical/lib/typst/README.md` (md, 1780 B) — markdown-doc
+
+## `domains/medical/lib/typst/kl-core/`
+- **n:** 12 · **size:** 72 KiB · **buckets:** B-medical-other
+- **purpose:** Domain README/OWNERSHIP
+  - `domains/medical/lib/typst/kl-core/cue-matrix.typ` (typ, 2659 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/discrimination.typ` (typ, 2345 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/four-pole.typ` (typ, 2797 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/m-a-mimic.typ` (typ, 1727 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/m-b-peel.typ` (typ, 3906 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/melanom.typ` (typ, 18026 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/script-core.typ` (typ, 10401 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/urgency-ladder.typ` (typ, 7483 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/us-d-dashboard.typ` (typ, 6119 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/us-time-scope.typ` (typ, 6602 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/v2-cues-suspicion.typ` (typ, 5381 B) — typst-source
+  - `domains/medical/lib/typst/kl-core/v2-urgency.typ` (typ, 6646 B) — typst-source
+
+## `domains/medical/lib/typst/kl-wave5/`
+- **n:** 5 · **size:** 52 KiB · **buckets:** B-medical-other
+- **purpose:** Domain README/OWNERSHIP
+  - `domains/medical/lib/typst/kl-wave5/anaphylaxie.typ` (typ, 6026 B) — typst-source
+  - `domains/medical/lib/typst/kl-wave5/compartment.typ` (typ, 23704 B) — typst-source
+  - `domains/medical/lib/typst/kl-wave5/mi.typ` (typ, 6899 B) — typst-source
+  - `domains/medical/lib/typst/kl-wave5/stroke.typ` (typ, 10782 B) — typst-source
+  - `domains/medical/lib/typst/kl-wave5/suicid.typ` (typ, 5358 B) — typst-source
+
+## `domains/medical/lib/typst/kl-wave6/`
+- **n:** 3 · **size:** 17 KiB · **buckets:** B-medical-other
+- **purpose:** Domain README/OWNERSHIP
+  - `domains/medical/lib/typst/kl-wave6/gicht.typ` (typ, 5229 B) — typst-source
+  - `domains/medical/lib/typst/kl-wave6/le.typ` (typ, 4765 B) — typst-source
+  - `domains/medical/lib/typst/kl-wave6/sepsis.typ` (typ, 7049 B) — typst-source
+
 ## `domains/medical/recipes/`
 - **n:** 4 · **size:** 13 KiB · **buckets:** B-medical-meta
 - **purpose:** Genre recipes + media templates
@@ -747,7 +795,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 ## `domains/medical/skill/media-brief/`
 - **n:** 1 · **size:** 15 KiB · **buckets:** B-media-brief
 - **purpose:** media-brief skill + form-space
-  - `domains/medical/skill/media-brief/SKILL.md` (md, 15530 B) — markdown-doc
+  - `domains/medical/skill/media-brief/SKILL.md` (md, 15621 B) — markdown-doc
 
 ## `domains/medical/skill/media-brief/evals/`
 - **n:** 1 · **size:** 5 KiB · **buckets:** B-media-brief
@@ -860,9 +908,9 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `domains/medical/skill/medical-graphics-workspace/iteration-1/eval-3-claim-audit-fail-scenario/without_skill/outputs/claim-audit.md` (md, 4312 B) — markdown-doc
 
 ## `domains/medical/skill/medical-graphics/`
-- **n:** 1 · **size:** 8 KiB · **buckets:** B-medical-graphics
+- **n:** 1 · **size:** 9 KiB · **buckets:** B-medical-graphics
 - **purpose:** medical-graphics skill + playbook
-  - `domains/medical/skill/medical-graphics/SKILL.md` (md, 8492 B) — markdown-doc
+  - `domains/medical/skill/medical-graphics/SKILL.md` (md, 9207 B) — markdown-doc
 
 ## `domains/medical/skill/medical-graphics/evals/`
 - **n:** 1 · **size:** 4 KiB · **buckets:** B-medical-graphics
@@ -879,7 +927,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 - **purpose:** medical-graphics skill + playbook
   - `domains/medical/skill/medical-graphics/playbook/00-overview.md` (md, 2449 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/playbook/01-from-form-spec.md` (md, 1066 B) — markdown-doc
-  - `domains/medical/skill/medical-graphics/playbook/02-free-vision.md` (md, 2148 B) — markdown-doc
+  - `domains/medical/skill/medical-graphics/playbook/02-free-vision.md` (md, 2178 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/playbook/03-claim-audit.md` (md, 3078 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/playbook/04-recreate-typst.md` (md, 1459 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/playbook/05-hybrid.md` (md, 759 B) — markdown-doc
@@ -893,13 +941,13 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 ## `domains/medical/skill/medical-graphics/references/`
 - **n:** 7 · **size:** 25 KiB · **buckets:** B-medical-graphics
 - **purpose:** medical-graphics skill + playbook
-  - `domains/medical/skill/medical-graphics/references/asset-pipeline.md` (md, 2029 B) — markdown-doc
+  - `domains/medical/skill/medical-graphics/references/asset-pipeline.md` (md, 2071 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/references/book-visual-standards.md` (md, 4256 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/references/decision-heuristics.md` (md, 2602 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/references/free-vision.md` (md, 3336 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/references/graphic-types.md` (md, 1776 B) — markdown-doc
   - `domains/medical/skill/medical-graphics/references/kl-form-library.md` (md, 9596 B) — markdown-doc
-  - `domains/medical/skill/medical-graphics/references/tools-and-generation.md` (md, 2208 B) — markdown-doc
+  - `domains/medical/skill/medical-graphics/references/tools-and-generation.md` (md, 2320 B) — markdown-doc
 
 ## `domains/medical/templates/`
 - **n:** 6 · **size:** 12 KiB · **buckets:** B-medical-meta
@@ -914,7 +962,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 ## `domains/README.md`
 - **n:** 1 · **size:** 1 KiB · **buckets:** B-domains-root
 - **purpose:** domains/ README
-  - `domains/README.md` (md, 484 B) — markdown-doc
+  - `domains/README.md` (md, 1089 B) — markdown-doc
 
 ## `fonts/.gitkeep`
 - **n:** 1 · **size:** 0 KiB · **buckets:** A-support
@@ -1091,7 +1139,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 ## `packages/bookkit/`
 - **n:** 7 · **size:** 22 KiB · **buckets:** A-packages-bookkit
 - **purpose:** Consumable Typst runtime (theme, components, didactics facet)
-  - `packages/bookkit/README.md` (md, 1474 B) — markdown-doc
+  - `packages/bookkit/README.md` (md, 1654 B) — markdown-doc
   - `packages/bookkit/lib.typ` (typ, 1686 B) — typst-source
   - `packages/bookkit/page.typ` (typ, 2838 B) — typst-source
   - `packages/bookkit/print.typ` (typ, 4795 B) — typst-source
@@ -1108,6 +1156,48 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `packages/bookkit/components/layouts.typ` (typ, 5554 B) — typst-source
   - `packages/bookkit/components/spreads.typ` (typ, 7346 B) — typst-source
   - `packages/bookkit/components/tables.typ` (typ, 5881 B) — typst-source
+
+## `packages/OWNERSHIP.md`
+- **n:** 1 · **size:** 1 KiB · **buckets:** A-packages-bookkit
+- **purpose:** Consumable Typst runtime (theme, components, didactics facet)
+  - `packages/OWNERSHIP.md` (md, 1086 B) — markdown-doc
+
+## `pilots/_archive/kursbuch-welle-03/`
+- **n:** 5 · **size:** 14 KiB · **buckets:** A-pilots-dogfood
+- **purpose:** Consumer dogfood pilots (not content SoT)
+  - `pilots/_archive/kursbuch-welle-03/CHAPTER-MAP.md` (md, 1133 B) — markdown-doc
+  - `pilots/_archive/kursbuch-welle-03/README.md` (md, 1461 B) — markdown-doc
+  - `pilots/_archive/kursbuch-welle-03/build-all.sh` (sh, 1185 B) — shell-tool
+  - `pilots/_archive/kursbuch-welle-03/convert_md_to_typ.py` (py, 9492 B) — python-tool
+  - `pilots/_archive/kursbuch-welle-03/main.typ` (typ, 1572 B) — typst-source
+
+## `pilots/_archive/kursbuch-welle-03/_single/`
+- **n:** 10 · **size:** 2 KiB · **buckets:** A-pilots-dogfood
+- **purpose:** Consumer dogfood pilots (not content SoT)
+  - `pilots/_archive/kursbuch-welle-03/_single/i4.typ` (typ, 211 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/ii1.typ` (typ, 213 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/iii2.typ` (typ, 215 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/iii5.typ` (typ, 215 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/iv2.typ` (typ, 213 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/iv4.typ` (typ, 213 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/v-cauda.typ` (typ, 221 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/v-sept.typ` (typ, 219 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/vi1.typ` (typ, 213 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/_single/vii1.typ` (typ, 215 B) — typst-source
+
+## `pilots/_archive/kursbuch-welle-03/chapters/`
+- **n:** 10 · **size:** 153 KiB · **buckets:** A-pilots-dogfood
+- **purpose:** Consumer dogfood pilots (not content SoT)
+  - `pilots/_archive/kursbuch-welle-03/chapters/i4.typ` (typ, 17920 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/ii1.typ` (typ, 21176 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/iii2.typ` (typ, 12402 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/iii5.typ` (typ, 8004 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/iv2.typ` (typ, 14054 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/iv4.typ` (typ, 18506 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/v-cauda.typ` (typ, 20992 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/v-sept.typ` (typ, 12429 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/vi1.typ` (typ, 16270 B) — typst-source
+  - `pilots/_archive/kursbuch-welle-03/chapters/vii1.typ` (typ, 15050 B) — typst-source
 
 ## `pilots/kursbuch-welle-03-compose/`
 - **n:** 2 · **size:** 6 KiB · **buckets:** A-pilots-dogfood
@@ -1148,42 +1238,10 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `pilots/kursbuch-welle-03-compose/reports/wave03-full-compose-2026-07-20.md` (md, 2023 B) — markdown-doc
   - `pilots/kursbuch-welle-03-compose/reports/wave03-v2-creative-2026-07-20.md` (md, 1554 B) — markdown-doc
 
-## `pilots/kursbuch-welle-03/`
-- **n:** 5 · **size:** 14 KiB · **buckets:** A-pilots-dogfood
+## `pilots/README.md`
+- **n:** 1 · **size:** 1 KiB · **buckets:** A-pilots-dogfood
 - **purpose:** Consumer dogfood pilots (not content SoT)
-  - `pilots/kursbuch-welle-03/CHAPTER-MAP.md` (md, 1133 B) — markdown-doc
-  - `pilots/kursbuch-welle-03/README.md` (md, 1245 B) — markdown-doc
-  - `pilots/kursbuch-welle-03/build-all.sh` (sh, 1112 B) — shell-tool
-  - `pilots/kursbuch-welle-03/convert_md_to_typ.py` (py, 9492 B) — python-tool
-  - `pilots/kursbuch-welle-03/main.typ` (typ, 1572 B) — typst-source
-
-## `pilots/kursbuch-welle-03/_single/`
-- **n:** 10 · **size:** 2 KiB · **buckets:** A-pilots-dogfood
-- **purpose:** Consumer dogfood pilots (not content SoT)
-  - `pilots/kursbuch-welle-03/_single/i4.typ` (typ, 211 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/ii1.typ` (typ, 213 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/iii2.typ` (typ, 215 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/iii5.typ` (typ, 215 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/iv2.typ` (typ, 213 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/iv4.typ` (typ, 213 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/v-cauda.typ` (typ, 221 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/v-sept.typ` (typ, 219 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/vi1.typ` (typ, 213 B) — typst-source
-  - `pilots/kursbuch-welle-03/_single/vii1.typ` (typ, 215 B) — typst-source
-
-## `pilots/kursbuch-welle-03/chapters/`
-- **n:** 10 · **size:** 153 KiB · **buckets:** A-pilots-dogfood
-- **purpose:** Consumer dogfood pilots (not content SoT)
-  - `pilots/kursbuch-welle-03/chapters/i4.typ` (typ, 17920 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/ii1.typ` (typ, 21176 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/iii2.typ` (typ, 12402 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/iii5.typ` (typ, 8004 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/iv2.typ` (typ, 14054 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/iv4.typ` (typ, 18506 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/v-cauda.typ` (typ, 20992 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/v-sept.typ` (typ, 12429 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/vi1.typ` (typ, 16270 B) — typst-source
-  - `pilots/kursbuch-welle-03/chapters/vii1.typ` (typ, 15050 B) — typst-source
+  - `pilots/README.md` (md, 669 B) — markdown-doc
 
 ## `pilots/reuse-datasheet/`
 - **n:** 2 · **size:** 4 KiB · **buckets:** A-pilots-dogfood
@@ -1211,7 +1269,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 ## `prepress/reports/`
 - **n:** 2 · **size:** 2 KiB · **buckets:** A-prepress
 - **purpose:** ICC profiles, PDF/X defs
-  - `prepress/reports/image-dpi.md` (md, 241 B) — markdown-doc
+  - `prepress/reports/image-dpi.md` (md, 672 B) — markdown-doc
   - `prepress/reports/preflight-print.md` (md, 1373 B) — markdown-doc
 
 ## `research/data/`
@@ -1234,9 +1292,9 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `research/pipeline/refine_json.py` (py, 1255 B) — python-tool
 
 ## `research/README.md`
-- **n:** 1 · **size:** 1 KiB · **buckets:** R-research-corpus
+- **n:** 1 · **size:** 2 KiB · **buckets:** R-research-corpus
 - **purpose:** Ecosystem survey + template study corpus
-  - `research/README.md` (md, 1524 B) — markdown-doc
+  - `research/README.md` (md, 1743 B) — markdown-doc
 
 ## `scripts/book-production-status.sh`
 - **n:** 1 · **size:** 2 KiB · **buckets:** A-build-scripts
@@ -1244,9 +1302,9 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `scripts/book-production-status.sh` (sh, 1993 B) — shell-tool
 
 ## `scripts/bookkit`
-- **n:** 1 · **size:** 7 KiB · **buckets:** A-build-scripts
+- **n:** 1 · **size:** 21 KiB · **buckets:** A-build-scripts
 - **purpose:** Build, setup, bookkit CLI
-  - `scripts/bookkit` ((none), 7318 B) — other
+  - `scripts/bookkit` ((none), 21365 B) — other
 
 ## `scripts/build.ps1`
 - **n:** 1 · **size:** 3 KiB · **buckets:** A-build-scripts
@@ -1504,6 +1562,11 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 - **purpose:** Ecosystem survey + template study corpus
   - `templates/mantys/manual.typ` (typ, 964 B) — typst-source
 
+## `templates/README.md`
+- **n:** 1 · **size:** 1 KiB · **buckets:** R-research-corpus
+- **purpose:** Ecosystem survey + template study corpus
+  - `templates/README.md` (md, 319 B) — markdown-doc
+
 ## `templates/soviet-matrix/`
 - **n:** 1 · **size:** 1 KiB · **buckets:** R-research-corpus
 - **purpose:** Ecosystem survey + template study corpus
@@ -1544,7 +1607,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 - **n:** 2 · **size:** 10 KiB · **buckets:** A-toolset-other
 - **purpose:** Toolset docs/tests misc
   - `toolset/compose/CREATIVE-COMPOSE.md` (md, 5160 B) — markdown-doc
-  - `toolset/compose/README.md` (md, 4852 B) — markdown-doc
+  - `toolset/compose/README.md` (md, 5239 B) — markdown-doc
 
 ## `toolset/compose/fixtures/fail_claims/`
 - **n:** 3 · **size:** 1 KiB · **buckets:** A-compose-engine
@@ -1696,20 +1759,20 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `toolset/compose/spikes/graphics/kl-script-system/spike-wave-o.typ` (typ, 3346 B) — typst-source
 
 ## `toolset/compose/spikes/graphics/kl-script-system/lib/`
-- **n:** 12 · **size:** 72 KiB · **buckets:** A/B-compose-spikes
+- **n:** 12 · **size:** 2 KiB · **buckets:** A/B-compose-spikes
 - **purpose:** Experimental Typst graphics spikes (bridge A+B)
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/cue-matrix.typ` (typ, 2659 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/discrimination.typ` (typ, 2345 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/four-pole.typ` (typ, 2797 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/m-a-mimic.typ` (typ, 1727 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/m-b-peel.typ` (typ, 3906 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/melanom.typ` (typ, 18026 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/script-core.typ` (typ, 10401 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/urgency-ladder.typ` (typ, 7483 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/us-d-dashboard.typ` (typ, 6119 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ` (typ, 6602 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/v2-cues-suspicion.typ` (typ, 5381 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-script-system/lib/v2-urgency.typ` (typ, 6646 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/cue-matrix.typ` (typ, 134 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/discrimination.typ` (typ, 142 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/four-pole.typ` (typ, 132 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/m-a-mimic.typ` (typ, 132 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/m-b-peel.typ` (typ, 130 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/melanom.typ` (typ, 128 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/script-core.typ` (typ, 136 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/urgency-ladder.typ` (typ, 142 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/us-d-dashboard.typ` (typ, 142 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/us-time-scope.typ` (typ, 140 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/v2-cues-suspicion.typ` (typ, 148 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-script-system/lib/v2-urgency.typ` (typ, 134 B) — typst-source
 
 ## `toolset/compose/spikes/graphics/kl-wave5/`
 - **n:** 10 · **size:** 20 KiB · **buckets:** A/B-compose-spikes
@@ -1726,13 +1789,13 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `toolset/compose/spikes/graphics/kl-wave5/spike-grammar.typ` (typ, 5177 B) — typst-source
 
 ## `toolset/compose/spikes/graphics/kl-wave5/lib/`
-- **n:** 5 · **size:** 52 KiB · **buckets:** A/B-compose-spikes
+- **n:** 5 · **size:** 1 KiB · **buckets:** A/B-compose-spikes
 - **purpose:** Experimental Typst graphics spikes (bridge A+B)
-  - `toolset/compose/spikes/graphics/kl-wave5/lib/anaphylaxie.typ` (typ, 6045 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-wave5/lib/compartment.typ` (typ, 23723 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-wave5/lib/mi.typ` (typ, 6918 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-wave5/lib/stroke.typ` (typ, 10801 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-wave5/lib/suicid.typ` (typ, 5377 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-wave5/lib/anaphylaxie.typ` (typ, 138 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-wave5/lib/compartment.typ` (typ, 138 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-wave5/lib/mi.typ` (typ, 120 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-wave5/lib/stroke.typ` (typ, 128 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-wave5/lib/suicid.typ` (typ, 128 B) — typst-source
 
 ## `toolset/compose/spikes/graphics/kl-wave6/`
 - **n:** 2 · **size:** 6 KiB · **buckets:** A/B-compose-spikes
@@ -1741,11 +1804,11 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `toolset/compose/spikes/graphics/kl-wave6/spike-grammar.typ` (typ, 4223 B) — typst-source
 
 ## `toolset/compose/spikes/graphics/kl-wave6/lib/`
-- **n:** 3 · **size:** 17 KiB · **buckets:** A/B-compose-spikes
+- **n:** 3 · **size:** 1 KiB · **buckets:** A/B-compose-spikes
 - **purpose:** Experimental Typst graphics spikes (bridge A+B)
-  - `toolset/compose/spikes/graphics/kl-wave6/lib/gicht.typ` (typ, 5248 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-wave6/lib/le.typ` (typ, 4784 B) — typst-source
-  - `toolset/compose/spikes/graphics/kl-wave6/lib/sepsis.typ` (typ, 7068 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-wave6/lib/gicht.typ` (typ, 126 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-wave6/lib/le.typ` (typ, 120 B) — typst-source
+  - `toolset/compose/spikes/graphics/kl-wave6/lib/sepsis.typ` (typ, 128 B) — typst-source
 
 ## `toolset/compose/templates/`
 - **n:** 1 · **size:** 3 KiB · **buckets:** A-toolset-other
@@ -1821,6 +1884,11 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `toolset/orchestration/book-production/demo-welle03/route.md` (md, 1041 B) — markdown-doc
   - `toolset/orchestration/book-production/demo-welle03/run-log.md` (md, 730 B) — markdown-doc
 
+## `toolset/OWNERSHIP.md`
+- **n:** 1 · **size:** 1 KiB · **buckets:** A-toolset-other
+- **purpose:** Toolset docs/tests misc
+  - `toolset/OWNERSHIP.md` (md, 1385 B) — markdown-doc
+
 ## `toolset/skill-pack/`
 - **n:** 1 · **size:** 3 KiB · **buckets:** A-skill-pack
 - **purpose:** Platform skills: bookkit, compose-chapter, orchestrator
@@ -1829,7 +1897,7 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
 ## `toolset/skill-pack/book-production-orchestrator/`
 - **n:** 1 · **size:** 10 KiB · **buckets:** A-skill-pack
 - **purpose:** Platform skills: bookkit, compose-chapter, orchestrator
-  - `toolset/skill-pack/book-production-orchestrator/SKILL.md` (md, 10646 B) — markdown-doc
+  - `toolset/skill-pack/book-production-orchestrator/SKILL.md` (md, 10676 B) — markdown-doc
 
 ## `toolset/skill-pack/book-production-orchestrator/references/`
 - **n:** 2 · **size:** 2 KiB · **buckets:** A-skill-pack
@@ -1846,14 +1914,14 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `toolset/skill-pack/book-production-orchestrator/templates/run-log.template.md` (md, 436 B) — markdown-doc
 
 ## `toolset/skill-pack/bookkit/`
-- **n:** 1 · **size:** 4 KiB · **buckets:** A-skill-pack
+- **n:** 1 · **size:** 5 KiB · **buckets:** A-skill-pack
 - **purpose:** Platform skills: bookkit, compose-chapter, orchestrator
-  - `toolset/skill-pack/bookkit/SKILL.md` (md, 4071 B) — markdown-doc
+  - `toolset/skill-pack/bookkit/SKILL.md` (md, 5103 B) — markdown-doc
 
 ## `toolset/skill-pack/compose-chapter/`
 - **n:** 1 · **size:** 13 KiB · **buckets:** A-skill-pack
 - **purpose:** Platform skills: bookkit, compose-chapter, orchestrator
-  - `toolset/skill-pack/compose-chapter/SKILL.md` (md, 13179 B) — markdown-doc
+  - `toolset/skill-pack/compose-chapter/SKILL.md` (md, 13325 B) — markdown-doc
 
 ## `toolset/starter/`
 - **n:** 4 · **size:** 3 KiB · **buckets:** A-starter-examples
@@ -1864,9 +1932,10 @@ Machine index: [`file-index.tsv`](file-index.tsv) (path, bytes, ext, bucket, rol
   - `toolset/starter/main.typ` (typ, 1041 B) — typst-source
 
 ## `toolset/tests/`
-- **n:** 1 · **size:** 3 KiB · **buckets:** A-toolset-other
+- **n:** 2 · **size:** 5 KiB · **buckets:** A-toolset-other
 - **purpose:** Toolset docs/tests misc
-  - `toolset/tests/test_toolset.sh` (sh, 2615 B) — shell-tool
+  - `toolset/tests/test_bookkit_cli.sh` (sh, 2012 B) — shell-tool
+  - `toolset/tests/test_toolset.sh` (sh, 2665 B) — shell-tool
 
 ## `vscode/extensions.json`
 - **n:** 1 · **size:** 1 KiB · **buckets:** ROOT-misc

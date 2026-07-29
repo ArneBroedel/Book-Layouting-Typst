@@ -1,6 +1,6 @@
 # Phase 1b — Unified `bookkit` CLI
 
-**Status:** ⬜ **OPEN — implement next**  
+**Status:** ✅ **DONE** (2026-07-29)  
 **Risk:** medium (script surface; do not break existing build/doctor)  
 **Depends on:** Phase 1 done; decisions D4  
 **Out of scope:** repo split, showcase move, spike harvest, skill text rewrites (phase4)
@@ -59,18 +59,18 @@ bookkit graphics manifest --unit SLUG
 
 ### 1. Extend `scripts/bookkit` without breaking existing commands
 
-- [ ] Preserve current: `doctor`, `init`, `build`, `watch`, `ua`, `brief-check`
-- [ ] Add nested command parsing for `graphics`, `prepress` (and top-level `validate`, `catalog`, `print`)
-- [ ] Use `Root` as today (repo of the script); honor `--root` for consumer projects where applicable
-- [ ] `validate` / `graphics` that touch domain assets may require **studio root** when paths are monorepo-relative — document in usage()
+- [x] Preserve current: `doctor`, `init`, `build`, `watch`, `ua`, `brief-check`
+- [x] Add nested command parsing for `graphics`, `prepress` (and top-level `validate`, `catalog`, `print`)
+- [x] Use `Root` as today (repo of the script); honor `--root` for consumer projects where applicable
+- [x] `validate` / `graphics` that touch domain assets may require **studio root** when paths are monorepo-relative — document in usage()
 
 ### 2. `bookkit validate` → existing Python engine
 
-- [ ] Forward flags to `python3 "$Root/toolset/compose/scripts/run_validate.py"` (or `validate/cli.py`)
-- [ ] Default `--catalog` to `$Root/toolset/form-catalog/core/forms.yaml` if omitted
-- [ ] Default `--font-path fonts` / repro flags consistent with compose README
-- [ ] Exit code: pass through Python process (0/1)
-- [ ] Smoke:
+- [x] Forward flags to `python3 "$Root/toolset/compose/scripts/run_validate.py"` (or `validate/cli.py`)
+- [x] Default `--catalog` to `$Root/toolset/form-catalog/core/forms.yaml` if omitted
+- [x] Default `--font-path fonts` / repro flags consistent with compose README
+- [x] Exit code: pass through Python process (0/1)
+- [x] Smoke:
 
 ```bash
 ./scripts/bookkit validate \
@@ -83,14 +83,14 @@ bookkit graphics manifest --unit SLUG
 
 ### 3. `bookkit print` + `prepress`
 
-- [ ] Replace print stub with call to `scripts/print-pdfx.sh` (document required tools: typst, gs)
-- [ ] `prepress dpi` → `python3 scripts/check-image-dpi.py …`
-- [ ] `prepress pdfx` → alias or subset of print pipeline
-- [ ] If full print integration is large, minimum: **remove “deferred” message** and invoke existing scripts with clear errors if `gs` missing
+- [x] Replace print stub with call to `scripts/print-pdfx.sh` (document required tools: typst, gs)
+- [x] `prepress dpi` → `python3 scripts/check-image-dpi.py …`
+- [x] `prepress pdfx` → alias or subset of print pipeline
+- [x] If full print integration is large, minimum: **remove “deferred” message** and invoke existing scripts with clear errors if `gs` missing
 
 ### 4. `bookkit catalog check`
 
-- [ ] Run `python3 "$Root/toolset/form-catalog/scripts/check_forms.py"` (no CLI args; checks `core/forms.yaml` vs `VERSION` from catalog dir)
+- [x] Run `python3 "$Root/toolset/form-catalog/scripts/check_forms.py"` (no CLI args; checks `core/forms.yaml` vs `VERSION` from catalog dir)
 
 ### 5. `bookkit graphics *` wrappers
 
@@ -102,20 +102,20 @@ bookkit graphics manifest --unit SLUG
 | `spike-init` | `scripts/graphics-spike-init.sh` | positional slug [recipe] |
 | `manifest` | small bash | check MANIFEST + list dir; warn if > canonical keep set |
 
-- [ ] Usage text lists backends and that vision/refine are **gated** (claim audit / caps live in skill — CLI does not auto-loop)
-- [ ] Do **not** implement multi-round refine loops in CLI
-- [ ] `--help` for `bookkit graphics` always works offline
+- [x] Usage text lists backends and that vision/refine are **gated** (claim audit / caps live in skill — CLI does not auto-loop)
+- [x] Do **not** implement multi-round refine loops in CLI
+- [x] `--help` for `bookkit graphics` always works offline
 
 ### 6. Docs touch (minimal — full skill rewrite in phase4)
 
-- [ ] Update usage in `scripts/bookkit` header comment
-- [ ] One paragraph in `docs/CONSUMER.md` under compose: “preferred: `./scripts/bookkit validate …`”
-- [ ] One line in `toolset/compose/README.md` pointing to bookkit CLI
-- [ ] Optional: `scripts/bookkit` VERSION bump comment 0.1.0 → 0.1.1 if you treat surface as API
+- [x] Update usage in `scripts/bookkit` header comment
+- [x] One paragraph in `docs/CONSUMER.md` under compose: “preferred: `./scripts/bookkit validate …`”
+- [x] One line in `toolset/compose/README.md` pointing to bookkit CLI
+- [x] Optional: `scripts/bookkit` VERSION bump comment 0.1.0 → 0.1.1 if you treat surface as API
 
 ### 7. Tests
 
-- [ ] Add shell smoke in `toolset/tests/test_toolset.sh` or new `toolset/tests/test_bookkit_cli.sh`:
+- [x] Add shell smoke in `toolset/tests/test_toolset.sh` or new `toolset/tests/test_bookkit_cli.sh`:
   - `bookkit --help` / unknown command fails
   - `bookkit graphics --help`
   - `bookkit validate … --skip-compile` on pass_minimal fixture
@@ -135,12 +135,12 @@ bookkit graphics manifest --unit SLUG
 
 ## Exit criteria
 
-- [ ] All commands in “Target surface” either implemented or explicitly documented as deferred with reason
-- [ ] Existing `bookkit build/doctor/init` still green on starter
-- [ ] Validate fixture green via `bookkit validate`
-- [ ] `bookkit graphics --help` documents backends
-- [ ] No second top-level CLI binary introduced
-- [ ] Phase status in `README.md` updated to done for 1b
+- [x] All commands in “Target surface” either implemented or explicitly documented as deferred with reason
+- [x] Existing `bookkit build/doctor/init` still green on starter
+- [x] Validate fixture green via `bookkit validate`
+- [x] `bookkit graphics --help` documents backends
+- [x] No second top-level CLI binary introduced
+- [x] Phase status in `README.md` updated to done for 1b
 
 ## Done definition for commit message (suggestion)
 

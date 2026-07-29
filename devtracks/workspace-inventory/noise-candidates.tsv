@@ -1,6 +1,9 @@
 action	path	reason
 delete-or-gitignore	dist/.gitkeep	build output
+delete-or-gitignore	dist/spikes/graphics/kl-script-system/recreate.pdf	build output
 delete-or-gitignore	dist/spikes/graphics/kl-wave6/grammar.pdf	build output
+delete-or-gitignore	dist/toolset/minimal-cli-smoke.pdf	build output
+delete-or-gitignore	dist/toolset/minimal.pdf	build output
 archive-or-gitignore	domains/medical/skill/medical-graphics-workspace/iteration-1/review.html	skill eval binary outputs
 archive-or-gitignore	domains/medical/skill/media-brief-workspace/iteration-1/review.html	skill eval binary outputs
 delete-from-git	toolset/compose/spikes/graphics/iii2-bls-aed/spike-code.pdf	compiled PDF next to source

@@ -1,16 +1,16 @@
 # Plan — Aufräumen, Konsolidieren, Aufteilen
 
-**Status:** active — Phase 0–1 **done**; implement via phase files  
-**Currency audit:** 2026-07-29 — inventur refreshed; narrative aligned to HEAD  
+**Status:** **implemented** (0–1, 1b, 2, 4) — Phase 3 trigger-only  
+**Currency audit:** 2026-07-29 — full phase delivery  
 **Implementer entry:** [`README.md`](README.md) · [`HANDOFF.md`](HANDOFF.md)  
 **Spec:** [`spec.md`](spec.md)  
-**Phase files:** [`phase1-hygiene.md`](phase1-hygiene.md) ✅ · [`phase1b-cli.md`](phase1b-cli.md) ⬅ next · [`phase2-boundaries.md`](phase2-boundaries.md) · [`phase3-split.md`](phase3-split.md) · [`phase4-skills-docs.md`](phase4-skills-docs.md)  
+**Phase files:** [`phase1-hygiene.md`](phase1-hygiene.md) ✅ · [`phase1b-cli.md`](phase1b-cli.md) ✅ · [`phase2-boundaries.md`](phase2-boundaries.md) ✅ · [`phase3-split.md`](phase3-split.md) ⏸ · [`phase4-skills-docs.md`](phase4-skills-docs.md) ✅  
 **Antigravity Review:** [`antigravity-peer-review.md`](antigravity-peer-review.md)  
 **Joint Recommendation (verbindlich):** [`joint-recommendation.md`](joint-recommendation.md)  
 **Decisions D1–D5 (locked):** [`decisions.md`](decisions.md)  
 **Vollindex:** [`../workspace-inventory/`](../workspace-inventory/) — live via `python3 scripts/workspace-inventory.py` (rewrites TSV + `CATALOG.md`)
 
-> **Binding after peer-review + Human D1–D5:** Hybrid delivery (one `bookkit` CLI + Typst packages + skills). Repo-Split **trigger-only**. Phase 1 hygiene applied (assets ~26 MB, gold briefs + `_archive/`, tag `archive/assets-pre-purge-2026-07-29`). **CLI Phase 1b still open** (`scripts/bookkit` print remains stub; no `validate` / `graphics` verbs yet).
+> **Binding after peer-review + Human D1–D5:** Hybrid delivery (one `bookkit` CLI + Typst packages + skills). Repo-Split **trigger-only**. Phase 1 hygiene + **1b CLI** (`validate` / `print` / `prepress` / `graphics`) + **2 harvest** (`domains/medical/lib/typst/`) + **4 skills/docs** delivered 2026-07-29.
 
 ### Currency (what changed since the original inventur write-up)
 
@@ -18,11 +18,11 @@
 |---|---|
 | Phase 0 inventur + plan | done |
 | Phase 1 hygiene (purge, archive, gitignore, tag) | **done** |
-| Inventory TSVs / CATALOG | **regenerated** (post-hygiene; ~851 files) |
+| Inventory TSVs / CATALOG | **regenerated** (post-implementation) |
 | `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` | **harvested →** `devtracks/_archive/` (skills/kits live under `domains/`) |
 | Wave‑6 KL chapters + `playbook/10-kl-chapter-pipeline.md` | landed in B (ops; not open work for this track) |
-| Phase **1b** unified CLI | **open — next** |
-| Phase 2 / 4 | open · Phase 3 trigger-only (D2) |
+| Phase **1b** unified CLI | **done** (`scripts/bookkit` v0.1.1) |
+| Phase 2 / 4 | **done** · Phase 3 trigger-only (D2) · D3 showcase move deferred |
 
 ---
 
@@ -151,7 +151,7 @@
 
 | Pfad | Zweck |
 |---|---|
-| `scripts/bookkit` | CLI doctor/build/watch/ua/init/brief-check; **print still stub**; no validate/prepress/graphics yet → **Phase 1b** |
+| `scripts/bookkit` | CLI v0.1.1: doctor/build/watch/ua/init/brief-check + **print**, **validate**, **catalog**, **prepress**, **graphics** |
 | `scripts/build.sh`, `build.ps1` | Showcase-Build |
 | `scripts/setup.ps1`, `preflight.ps1` | Windows toolchain |
 | `scripts/print-pdfx.sh/.ps1`, `preflight-print.sh`, `check-image-dpi.py` | Prepress |
