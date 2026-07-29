@@ -100,18 +100,33 @@ Never omit `--ignore-system-fonts --font-path fonts`.
 
 When composing chapters (Produkt A engine; **creative-first** by default — see `toolset/compose/CREATIVE-COMPOSE.md`):
 
+**Preferred** (unified CLI):
+
 ```bash
-python3 toolset/compose/scripts/run_validate.py \
+./scripts/bookkit validate \
   --typ path/to/chapter.typ \
   --content path/to/content.md \          # Produkt C — external path OK
-  --catalog toolset/form-catalog/core/forms.yaml \
   --accept path/to/accept.md \
   --genre-minima path/to/genre-minima.yaml \  # optional; domain B may supply
   --root . \
   --font-path fonts
+# --catalog defaults to toolset/form-catalog/core/forms.yaml in the studio checkout
 ```
 
+Equivalent engine (still valid): `python3 toolset/compose/scripts/run_validate.py …`
+
 Fail-fast, no auto-heal. Full options: [`toolset/compose/README.md`](../toolset/compose/README.md).
+
+### Print / prepress / graphics (studio)
+
+```bash
+./scripts/bookkit print --root . --entry main.typ --out dist/book-print.pdf   # needs gs
+./scripts/bookkit prepress dpi --paths path/to/assets
+./scripts/bookkit prepress pdfx dist/book-print-rgb.pdf dist/book-print.pdf
+./scripts/bookkit catalog check
+# Domain B free vision (gated; skill medical-graphics owns caps):
+./scripts/bookkit graphics vision --backend gemini --brief … --out …
+```
 
 ---
 
@@ -144,7 +159,7 @@ Do **not** put medical genre logic into foundation `packages/bookkit`.
 production-compose consumer of bookkit + didactics after Media Accept. Clinical
 content remains under the external Kursbuch staging tree (Produkt C).
 
-Related baseline layout pilot: [`pilots/kursbuch-welle-03/`](../pilots/kursbuch-welle-03/).
+Legacy layout pilot (archived): [`pilots/_archive/kursbuch-welle-03/`](../pilots/_archive/kursbuch-welle-03/).
 
 ---
 

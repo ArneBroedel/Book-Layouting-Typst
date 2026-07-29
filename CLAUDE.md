@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+> **Mission + boundaries (read first)**  
+> **A** = layout platform (`packages/`, `toolset/`, `scripts/bookkit`) · **B** = medical media (`domains/medical/`) · **C** = content external + process kit (`domains/content-maturity/`) · **R** = `research/` (not default context).  
+> Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics. Product map: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md). Consumer guide: [`docs/CONSUMER.md`](docs/CONSUMER.md).
+
 ## What this is
 
 A reproducible Typst book-production system **and generalizable toolset**. The flagship showcase is a multi-part medical-didactic book (`src/main.typ`) with ~18 chapters and many components. **Product runtime** lives under `packages/bookkit` (foundation) and `packages/bookkit-didactics` (optional facet); consumers use `toolset/starter`, `scripts/bookkit`, and `toolset/skill-pack/`. Showcase `src/styles/*` and foundation components **re-export** the packages (dogfood). The repo also surveys the Typst ecosystem under `research/`.

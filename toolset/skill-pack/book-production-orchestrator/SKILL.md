@@ -102,7 +102,7 @@ If user says “analyze what we already did”:
 | Graphics | **P4** | free→audit→recreate/hybrid/refine | `medical-graphics` playbook 00–08 |
 | Accept | **P5** | Media Accept + graphic winners | `media-brief` Accept · **H2** production |
 | Compose | **P6** | chapter.typ embed winners | `compose-chapter` |
-| Assembly | **P7** | main book PDF | typst/bookkit build |
+| Assembly | **P7** | main book PDF | `./scripts/bookkit build` (configurable `--root`) |
 | Validate | **P8** | claims/compile/UA optional | compose validate |
 | Visual QA | **P9** | PNG pages, Form Spec Must-see | Human + agent inspect |
 | Prepress | **P10** | print/PDF-X/DPI | scripts + Human |

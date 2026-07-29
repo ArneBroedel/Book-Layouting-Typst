@@ -103,9 +103,33 @@ Numbered action protocol with visual step weight — prefer over plain `#enum` f
 - Assuming MCP holds skill text — skills are file-first
 - Using plain bullets for multi-step clinical SOPs when `protocol-steps` is available
 
-## CLI
+## CLI (`./scripts/bookkit`, v0.1.1+)
 
-`bookkit doctor | build | watch | ua | init | print(stub) | brief-check`
+One entrypoint for layout **and** gated helpers (workspace-split Phase 1b, D4):
+
+```text
+bookkit doctor | build | watch | ua | init | print | brief-check
+bookkit validate …          # compose validate engine (preferred over raw python)
+bookkit catalog check       # form-catalog pin / schema
+bookkit prepress dpi|pdfx   # check-image-dpi / print-pdfx
+bookkit graphics vision|refine|spike-init|manifest
+```
+
+Examples:
+
+```bash
+./scripts/bookkit doctor --root .
+./scripts/bookkit build --root . --entry main.typ --out dist/book.pdf
+./scripts/bookkit validate \
+  --typ path/to/chapter.typ --content path/to/content.md \
+  --accept path/to/accept.md --root . --skip-compile
+./scripts/bookkit catalog check
+./scripts/bookkit prepress dpi --paths domains/medical/assets
+./scripts/bookkit graphics vision --backend gemini --brief … --out …
+```
+
+Graphics vision/refine are **one-shot** (no multi-round loops in CLI). Caps live in `medical-graphics`.  
+Direct engines (`toolset/compose/scripts/run_validate.py`, `scripts/graphics-*.sh`) remain valid; agents prefer `bookkit`.
 
 ## Separation rule
 

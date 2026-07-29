@@ -1,109 +1,120 @@
 # Book Layouting with Typst
 
-Robustes, reproduzierbares Buch-Setup mit Typst auf Windows 11 (ohne WSL/Docker).
+**Mission A first:** a reproducible **Typst layout platform** (packages + CLI + skills) that turns content into print-ready PDFs.
 
-Enthält ein vollständiges medizinisch-didaktisches Showcase-Buch mit 11 Kapiteln, 28 Komponenten und 15 Layout-Patterns.
+Companion layers live in the same modular monorepo until a split trigger fires:
 
-## Neues System in 5 Minuten
+| Produkt | What | Path |
+|---|---|---|
+| **A** | Layout platform — bookkit, form-catalog, compose, CLI | `packages/`, `toolset/`, `scripts/bookkit` |
+| **B** | Domain media (medical briefs, graphics) | `domains/medical/` (split candidate) |
+| **C** | Content works + editorial kit | **external** content + transitional `domains/content-maturity/` |
+| **R** | Ecosystem survey | `research/` — **not** default agent context |
 
-1. Repository klonen.
-2. PowerShell 7 als Administrator öffnen.
-3. Setup ausführen:
+Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) · modular monorepo track: [`devtracks/workspace-split/`](devtracks/workspace-split/).
 
-```powershell
-./scripts/setup.ps1
+---
+
+## Start in 5 minutes (layout consumer)
+
+```bash
+# From a studio checkout
+./scripts/bookkit doctor --root .
+./scripts/bookkit build --root . --entry toolset/examples/minimal/main.typ --out dist/toolset/minimal.pdf
+./scripts/bookkit validate \
+  --typ toolset/compose/fixtures/pass_minimal/chapter.typ \
+  --content toolset/compose/fixtures/pass_minimal/content.md \
+  --accept toolset/compose/fixtures/pass_minimal/accept.md \
+  --genre-minima toolset/compose/fixtures/pass_minimal/genre-minima.yaml \
+  --root . --skip-compile
+./scripts/bookkit catalog check
 ```
 
-4. Terminal neu starten.
-5. Vollprüfung inkl. Test-Build:
+Scaffold a new consumer:
 
-```powershell
-./scripts/preflight.ps1 -RunBuildTest
+```bash
+./scripts/bookkit init /path/to/my-book
 ```
 
-Danach läuft der normale Workflow sofort.
+**Always** build with repro flags (enforced by CLI):
 
-## Voraussetzungen
-
-- Git
-- VS Code
-- Typst CLI
-- PowerShell 7
-- Node.js LTS
-- Python 3.10+
-
-## Projektstruktur
-
-```
-src/
-  main.typ              ← Einstiegsdatei
-  styles/               ← Design-Tokens, Typografie, Seitengeometrie
-    theme.typ
-    typography.typ
-    page.typ
-  components/            ← Wiederverwendbare Bausteine (28 Komponenten)
-    blocks.typ           ← Callout, Card, Blockquote, Pull-Quote, Side-Note, Code-Block, Key-Concept
-    inline.typ           ← Badge, Tag, Highlight-Text, Kbd, Icon-Text
-    tables.typ           ← Styled-Table, Comparison-Table
-    grids.typ            ← Gallery-Grid, Feature-Grid, Stats-Grid, Comparison-Grid
-    layouts.typ          ← Sidebar, Magazine, Scientific-Paper, Comparison, Adaptive, Breakout
-    spreads.typ          ← Book-Cover, Chapter-Opener, Section-Break, Part-Page
-  chapters/              ← 11 Kapitel (00-cover bis 10-tooling)
-  data/                  ← Glossar, Literatur, JSON/CSV-Beispieldaten
-scripts/                 ← Build-Automatisierung (PowerShell)
-assets/                  ← Bilder/Tabellenquellen
-fonts/                   ← Schriftdateien (lizenzgeprüft)
-Guides/                  ← Typst-Referenzmaterial
+```bash
+typst compile --root . --ignore-system-fonts --font-path fonts main.typ dist/book.pdf
 ```
 
-## Schnellstart
+Full consumer guide: **[`docs/CONSUMER.md`](docs/CONSUMER.md)**  
+Pins: bookkit `0.1.0` · form-catalog `0.1.0`.
 
-1. Fonts in `fonts/` ablegen (lizenzgeprüft).
-2. Kapitel in `src/chapters/` bearbeiten.
-3. Build ausführen:
-   - VS Code Task: `typst: build (fast)`
-   - oder PowerShell: `./scripts/build.ps1`
+### CLI surface (`./scripts/bookkit`)
 
-## Using this platform from another repo
-
-This repo is a **layout platform** (bookkit + form-catalog + compose), not a content SoT.
-
-- **Consumer guide:** [`docs/CONSUMER.md`](docs/CONSUMER.md) — pins, imports, fonts, validate CLI, skills, external content.
-- **Pins (current):** bookkit `0.1.0` (`packages/bookkit/typst.toml`); form-catalog `0.1.0` (`toolset/form-catalog/VERSION`).
-- **Starter:** `toolset/starter/` · **CLI:** `./scripts/bookkit` · **Dogfood pilot:** `pilots/kursbuch-welle-03-compose/` (not content SoT).
-
-## Wichtige Prinzipien
-
-- Reproduzierbar: `--ignore-system-fonts --font-path fonts`
-- Trennung der Zuständigkeiten:
-  - `src/` = Buchlogik (Kapitel, Komponenten, Styles, Daten)
-  - `packages/` = consumable runtime (bookkit / bookkit-didactics)
-  - `assets/` = Bilder/Tabellenquellen
-  - `dist/` = Build-Artefakte (nicht versionieren)
-
-## Tasks
-
-- `typst: build (fast)` → `dist/book.pdf`
-- `typst: watch` → laufender Build
-- `typst: build (UA-1)` → `dist/book-ua.pdf`
-
-## Preflight
-
-PowerShell-Check ausführen:
-
-```powershell
-./scripts/preflight.ps1
+```text
+doctor | build | watch | ua | print | init | brief-check
+validate | catalog check | prepress dpi|pdfx
+graphics vision|refine|spike-init|manifest
 ```
 
-Mit Build-Test:
+---
 
-```powershell
-./scripts/preflight.ps1 -RunBuildTest
+## Showcase (dogfood)
+
+The multi-part medical-didactic book under `src/` dogfoods the packages via thin re-exports.
+
+```bash
+# Linux / this workspace
+./scripts/build.sh fast
+# or:
+typst compile --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf
 ```
 
-## Design-System
+Windows: `./scripts/setup.ps1` then `./scripts/preflight.ps1 -RunBuildTest` · `./scripts/build.ps1 -Mode fast`.
 
-- **Farben**: Teal-Primär (#0d7377), Amber-Akzent (#d4a039), semantische Töne (Info, Success, Warning, Danger)
-- **Schriften**: Libertinus Serif (Fließtext), Calibri/Segoe UI (Sans), Inconsolata (Mono)
-- **Kapitel 01–07**: Keine externen Abhängigkeiten
-- **Kapitel 08–10**: Demonstrieren optionale @preview-Pakete (CeTZ, Fletcher, Codly, Showybox, Tablem)
+Print (needs Ghostscript): `./scripts/build.sh print` or `./scripts/bookkit print --entry src/main.typ`.
+
+---
+
+## Project map (short)
+
+```text
+packages/bookkit/          foundation runtime
+packages/bookkit-didactics/ optional didactic boxes
+toolset/                   compose, form-catalog, starter, skill-pack, examples
+scripts/bookkit            unified CLI
+src/                       showcase book (not content SoT for other works)
+domains/medical/           Produkt B media + harvested Typst libs
+domains/content-maturity/  Produkt C process kit (transitional)
+pilots/                    dogfood only (see pilots/README.md)
+research/                  ecosystem lab (not default context)
+docs/CONSUMER.md           how to consume this platform
+```
+
+---
+
+## Agent skills
+
+Prefer **project skills** over generic Typst advice. Discovery: `.github/skills/` · Grok: `.grok/skills/` (symlinks to SoT).
+
+| Skill | When |
+|---|---|
+| `bookkit` | packages, starter, full CLI |
+| `compose-chapter` | feasibility → compose → `bookkit validate` |
+| `typst-writer` | any `.typ` edit / layout debug |
+| `media-brief` / `medical-graphics` | domain B (SoT under `domains/medical/skill/`) |
+| `book-production-orchestrator` | full-book board → print |
+
+Prefer **`./scripts/bookkit …`** over hunting ad-hoc scripts.
+
+---
+
+## Principles
+
+- Reproducible: `--ignore-system-fonts --font-path fonts`
+- **theme → styles → components → chapters → main**
+- No medical genre logic in foundation `packages/bookkit`
+- Content SoT stays external (C); no auto-heal compose loops
+- Intermediate AI vision PNGs: CANONICAL policy under `domains/medical/assets/`
+
+## Related
+
+- Knowledge map: [`docs/KNOWLEDGE-MAP.md`](docs/KNOWLEDGE-MAP.md)
+- Agent instructions: [`AGENTS.md`](AGENTS.md) · architecture detail: [`CLAUDE.md`](CLAUDE.md)
+- Prepress: [`prepress/README.md`](prepress/README.md)

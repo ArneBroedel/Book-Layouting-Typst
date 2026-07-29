@@ -85,32 +85,43 @@ Raster **may** be final — only with gates in [`playbook/06-refine-raster.md`](
 | Claim audit | template `graphic-claim-audit.template.md` |
 | Decision Note | `…/<slug>.graphics.md` |
 | Assets | `domains/medical/assets/<slug>/` |
-| Modules | `toolset/compose/spikes/graphics/<slug>/lib/` |
+| Modules (SoT) | `domains/medical/lib/typst/` (`kl-core/`, `kl-wave5/`, `kl-wave6/`) |
+| Spike re-exports / drivers | `toolset/compose/spikes/graphics/<slug>/lib/` · `spike-*.typ` |
 | Spikes out | `dist/spikes/graphics/<slug>/` |
 
 ## Commands
 
+Prefer unified **`bookkit graphics`** (one-shot only — **not** a refine loop):
+
 ```bash
-./scripts/graphics-vision-agy.sh \
+./scripts/bookkit graphics vision --backend agy \
   --brief domains/medical/briefs/<slug>.vision.md \
   --out domains/medical/assets/<slug>/vision-free-01.png
 
-# If agy image quota (429): Gemini Web UI Nano Banana (logged-in gemini-chat)
-./scripts/graphics-vision-gemini.sh \
+# If agy image quota (429): Gemini Web UI Nano Banana
+./scripts/bookkit graphics vision --backend gemini \
   --brief domains/medical/briefs/<slug>.vision.md \
   --out domains/medical/assets/<slug>/vision-free-gemini-01.png
 
-./scripts/graphics-refine-agy.sh \
+./scripts/bookkit graphics refine \
   --vision domains/medical/assets/<slug>/vision-free-01.png \
   --brief domains/medical/briefs/<slug>.vision.md \
   --notes "…" --out domains/medical/assets/<slug>/vision-refined-01.png
 
-./scripts/graphics-spike-init.sh <slug> <recipe-id>
+./scripts/bookkit graphics spike-init <slug> <recipe-id>
+./scripts/bookkit graphics manifest --unit <slug>
+./scripts/bookkit prepress dpi --paths domains/medical/assets/<slug>
+
+# Legacy thin engines (still valid):
+# ./scripts/graphics-vision-agy.sh | graphics-vision-gemini.sh | graphics-refine-agy.sh | graphics-spike-init.sh
 
 typst compile --root . --ignore-system-fonts --font-path fonts \
   toolset/compose/spikes/graphics/<slug>/spike-recreate.typ \
   dist/spikes/graphics/<slug>/recreate.pdf
 ```
+
+**Caps still apply** (max 2 free + 2 refine gens / unit) — enforce here, not via CLI loops.  
+Do **not** commit intermediate vision PNGs without MANIFEST `accepted` (`assets/CANONICAL.md`).
 
 ## Form recipes
 
@@ -122,7 +133,7 @@ See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):
 ## Gold examples
 
 [`examples/INDEX.md`](examples/INDEX.md) · Walkthrough [`playbook/walkthrough-iv2.md`](playbook/walkthrough-iv2.md)  
-**KL spikes:** `kl-script-system/` · `kl-wave5/` · `kl-wave6/` under `toolset/compose/spikes/graphics/`
+**KL modules:** `domains/medical/lib/typst/` · spike drivers under `toolset/compose/spikes/graphics/{kl-script-system,kl-wave5,kl-wave6}/`
 
 ## Grammar vs ambition (KL lesson)
 

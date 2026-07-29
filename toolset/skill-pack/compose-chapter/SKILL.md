@@ -185,19 +185,23 @@ Smoke/platform: `--profile smoke` (default) may omit freeze.
 Engine: `toolset/compose/` · Policy: `CREATIVE-COMPOSE.md`.
 
 ```bash
-python3 toolset/compose/scripts/run_validate.py \
+# Preferred (unified CLI):
+./scripts/bookkit validate \
   --typ path/to/chapter.typ \
   --content path/to/content.md \
-  --catalog toolset/form-catalog/core/forms.yaml \
   --accept path/to/accept.md \
   --genre-minima path/to/genre.minima.yaml \
   --root . \
   --font-path fonts \
   --out-pdf dist/chapter.pdf
+# catalog defaults to toolset/form-catalog/core/forms.yaml
 # default whitelist-mode=creative (catalog advisory)
 # legacy hard catalog: --whitelist-mode strict
 # production freeze: --profile production --freeze path/to/freeze.md
 # smoke without accept: --exception-no-brief --profile smoke
+
+# Equivalent engine (still valid):
+# python3 toolset/compose/scripts/run_validate.py …
 ```
 
 **Hard checks:** compile; critical-claims strict; accept (or exception); freeze on production profile.  
@@ -253,7 +257,7 @@ If multiple roles in one session: Brief → Feasibility/Graphics Decision → Ac
 |---|---|
 | **Creative-first policy** | `toolset/compose/CREATIVE-COMPOSE.md` |
 | Feasibility template | `toolset/compose/templates/feasibility-note.template.md` |
-| Compose engine / validate | `toolset/compose/` · CLI `scripts/run_validate.py` |
+| Compose engine / validate | `toolset/compose/` · prefer `./scripts/bookkit validate` (engine: `scripts/run_validate.py`) |
 | Spikes | `toolset/compose/spikes/README.md` |
 | Preferred library | `toolset/form-catalog/VERSION`, `core/forms.yaml`, `core/BASIS.md` |
 | bookkit API skill | `toolset/skill-pack/bookkit/SKILL.md` |

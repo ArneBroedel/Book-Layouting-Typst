@@ -13,13 +13,13 @@ Form Spec (Must-see + pins + genre) + Vision template.
 5. Generate:
 
 ```bash
-./scripts/graphics-vision-agy.sh \
+./scripts/bookkit graphics vision --backend agy \
   --brief domains/medical/briefs/<slug>.vision.md \
   --out domains/medical/assets/<slug>/vision-free-01.png \
   --preview dist/spikes/graphics/<slug>/vision-free-01.png
 
 # On agy 429 / quota exhaustion — real free vision via Gemini Web UI:
-./scripts/graphics-vision-gemini.sh \
+./scripts/bookkit graphics vision --backend gemini \
   --brief domains/medical/briefs/<slug>.vision.md \
   --out domains/medical/assets/<slug>/vision-free-gemini-01.png
 ```

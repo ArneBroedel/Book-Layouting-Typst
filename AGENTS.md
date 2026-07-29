@@ -28,6 +28,9 @@ Layers: **Package = code**, **Skills = procedures**, **CLI = orchestration**, **
 Do **not** clone `src/chapters` or `research/` into consumers. Studio dogfoods packages via thin
 re-exports in `src/styles/*` and foundation `src/components/*`.
 
+**Prefer `./scripts/bookkit`** for build, validate, catalog, prepress, and graphics (one binary).
+Do **not** load `research/` or `templates/` into default book-production agent context (Produkt R).
+
 ## Language
 
 - **Book / chapter content:** German (professional / medical-didactic register where applicable).
@@ -117,7 +120,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | compose engine | A | `toolset/compose/` |
 | medical domain media | **B** | `domains/medical/` (split candidate; Phase 3 deferred) |
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
-| **workspace-split** (active) | **A/B/C** structure | `devtracks/workspace-split/` · inventory `workspace-inventory/` · Phase 0–1 done; **next 1b CLI** |
+| **workspace-split** (active→closing) | **A/B/C** structure | `devtracks/workspace-split/` · Phase 0–1 + **1b CLI** + **2 boundaries** + **4 skills/docs** done; Phase 3 physical split **trigger-only** (D2) |
 | **kl-form-language** (archived) | **B** | `devtracks/_archive/kl-form-language/` · system complete; ops: `playbook/10-kl-chapter-pipeline.md` |
 | Consumer guide | A | `docs/CONSUMER.md` |
 

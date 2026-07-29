@@ -18,8 +18,9 @@
 | **Grok Imagine** | Optional free / edit |
 | **Typst / Fletcher / CeTZ** | Recreate, code spikes — **not** silent free-vision substitute |
 | **Hand SVG** (Inkscape…) | Gold vector / hybrid base |
-| **scripts/graphics-vision-agy.sh** | Free vision wrapper (agy) |
-| **scripts/graphics-vision-gemini.sh** | Free vision via Gemini web UI |
+| **`bookkit graphics`** (vision / refine / …) | **Preferred CLI** (wraps scripts below) |
+| **scripts/graphics-vision-agy.sh** | Free vision engine (agy) |
+| **scripts/graphics-vision-gemini.sh** | Free vision engine (Gemini web UI) |
 | **scripts/graphics-refine-agy.sh** | Refine with standards + notes |
 
 ### Gemini Web UI path (Wave-5)
@@ -28,7 +29,7 @@
 # Session once:
 python3 …/sh-gemini-chat/scripts/gemini_chat/cli.py doctor   # or login
 
-./scripts/graphics-vision-gemini.sh \
+./scripts/bookkit graphics vision --backend gemini \
   --brief domains/medical/briefs/<slug>.vision.md \
   --out domains/medical/assets/<slug>/vision-free-gemini-01.png
 

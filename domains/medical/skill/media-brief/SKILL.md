@@ -178,7 +178,7 @@ Do not open a third Media↔Tech round without Human.
 | Emit Brief / Form Spec / Accept **files** | Design monologue without artifact |
 | Treat recipes as functional checklists | Brief = form-id shopping list only |
 | Stop at 2 Media↔Tech rounds → Human | Implement feasibility/spike yourself |
-| Point Graphics at Form Spec path | Generate free-vision PNGs in this skill |
+| Point Graphics at Form Spec path + gold `briefs/INDEX.md` | Generate free-vision PNGs in this skill (use `medical-graphics` → `bookkit graphics …`) |
 | KL: load ontology; TIME≠SCOPE; no form-meta in figures | KL: invent T3/tiers; Scope as ladder step; 2×2 for §3/§4 |
 
 ## Boundary vs Tech / Graphics
@@ -207,7 +207,7 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | Graphics Decision template | `domains/medical/templates/graphic-decision.template.md` |
 | Graphics skill / playbook | `domains/medical/skill/medical-graphics/` |
 | Recipes | `domains/medical/recipes/` |
-| Briefs / gold | `domains/medical/briefs/` |
+| Briefs / gold INDEX | `domains/medical/briefs/INDEX.md` |
 | KL exploration index | `domains/medical/briefs/_explorations/README.md` |
 | KL form language (archived) | `devtracks/_archive/kl-form-language/` · ops pipeline `medical-graphics/playbook/10-kl-chapter-pipeline.md` |
 | Ownership | `domains/medical/OWNERSHIP.md` |

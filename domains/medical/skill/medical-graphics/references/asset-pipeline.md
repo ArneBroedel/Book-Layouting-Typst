@@ -15,7 +15,7 @@ Prefer one slug folder per chapter/pilot graphic set. Co-locate a short `MANIFES
 
 1. **SVG first** — scalable, reproducible, print-friendly.  
 2. **Raster** (PNG/JPEG) only when needed; print target **≥ 300 dpi** at final size.  
-3. Preflight: `python3 scripts/check-image-dpi.py --paths domains/medical/assets`  
+3. Preflight: `./scripts/bookkit prepress dpi --paths domains/medical/assets` (or `python3 scripts/check-image-dpi.py …`)  
 4. Every production figure needs **`alt`** text (PDF/UA).  
 
 ## Manifest fields (required per production asset)
