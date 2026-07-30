@@ -360,12 +360,69 @@ If Human finds a `block`-class issue, that is a **process incident** → root-ca
 - Soft accept_gate checks for `Visual CLEAN: yes` strings  
 - **Not** required for v1: automated aesthetic scoring / LLM vision CI  
 
-### WP9 — Pilot re-run (validation of process, not scope of first ship)
-- After policy ships: re-do **one** CRPS unit (e.g. mechanism + mimic peel) under full council  
-- Compare to re-run failure modes  
-- Only then full chapter if Human wants  
+### WP9 — Unit pilot under full council (process proof)
+
+**Status:** implementing 2026-07-31  
+**Goal:** Prove Design CLEAN → Realize → Visual CLEAN on **two** CRPS units that failed hard on the re-run, without shipping a full chapter.  
+**Slug:** `kl-crps-wp9-2026-07-31`  
+**Units:** `U-mechanism` + `U-mimic`  
+**Not in scope:** full V-3 chapter, regional-cues free vision, urgency ladder, Accept of re-run artifacts  
+
+#### WP9-0 Guardrails
+
+| Rule | Detail |
+|---|---|
+| No winner-copy | Do **not** import `crps-rerun.typ` / re-run accept winners as SoT |
+| C pins only | Claim text from content map / C chapter (read-only) |
+| Roles | Separate artifacts per role (MD → DC → GX → VC → AX); no self-CLEAN |
+| Floor | Open `block` → no Accept, no “done” PDF claim |
+| Exploration bar | Same Visual CLEAN as production (D1) |
+
+#### WP9-1 Phase D (Design Council)
+
+| Step | Unit | Deliverable |
+|---|---|---|
+| D1 | both | Form Spec + Design Contract |
+| D2 | both | Design Critique (adversarial, separate file) |
+| D3 | both | Revise until DC `clean` (budget ≤4 rounds) |
+| Packet | — | Design CLEAN paths linked in quality packet |
+
+**Expected design pressure (from negative gold):**
+
+| Unit | Re-run failure | Council bias |
+|---|---|---|
+| U-mechanism | Cramped CeTZ chain; no gain vs list | Default **simple alternative** unless Contract proves chain wins |
+| U-mimic | 4-col peel + **code leak**; microtext | Prefer **map-rows** frame→danger with readable German; reject 4-col peel unless text fits at ≥7.5pt |
+
+#### WP9-2 Phase R (Realize Council)
+
+| Step | Detail |
+|---|---|
+| R0 | Mechanism: track `none` / code-simple. Mimic: code hierarchy map (ambition form without new free gen if Contract rejects peel theater) |
+| R1–R2 | Free vision only if Contract still requires ambition raster; claim audit if free ran |
+| R3 | New module `domains/medical/lib/typst/kl-wave6/crps-wp9.typ` + pilot `toolset/compose/pilots/kl-crps-wp9-2026-07-31/unit.typ` |
+| R4–R5 | PNG every unit page → Visual Critique → fix loop (≤5 rounds) |
+
+**Craft DoD (auto-block):** no raw markup; no overflow; no uncontracted color; diagram not worse than simple alternative.
+
+#### WP9-3 Phase A + proof
+
+| Deliverable | Path pattern |
+|---|---|
+| Quality packet | `domains/medical/briefs/kl-crps-wp9-2026-07-31.quality-packet.md` |
+| Accept (only if CLEAN) | `…accept.md` |
+| Diff vs negative gold | `…vs-negative-gold.md` |
+| PNG set | `dist/pilots/kl-crps-wp9-2026-07-31/pages/` |
+
+**Success (S10):** Human first look would not find block-class defects that re-run had (code leak, unjustified chrome, worse-than-simple mechanism). Residual `should`/`nit` listed honestly.
+
+#### WP9-4 After pilot
+
+- Full CRPS chapter re-pilot only if Human greenlights after this unit proof  
+- Harvest process incidents into eval fixtures if VC/DC found new failure modes  
 
 ---
+
 
 ## 9. Caps & “until nothing left” (resolve tension)
 
