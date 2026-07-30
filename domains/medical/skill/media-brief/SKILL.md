@@ -49,8 +49,8 @@ Autor (C) ──► Media Brief (this skill) ──► Tech Feasibility ◄─�
 Media designs the **best medical-pedagogical presentation** (flows, lanes, spreads, hierarchy) **without** asking first what is catalog-stable. For **ambitious visual units**, Media writes a **Form Spec** (Must-see, zones, claim pins, genre chrome, success criterion) so Graphics can free-vision and recreate without inventing pedagogy.  
 Tech **realizes** accepted winners. **Graphics** runs free vision → claim audit → recreate/hybrid/refine. Media **accepts** proximity to Form Spec / ideal — not “only stable forms”.
 
-**MUST:** unit→hypothesis; free ideal; **Form Spec + Design Contract** for non-prose visual units; **Design Critic** until Design CLEAN (builder ≠ critic); simple-alternative doctrine; atom-level justification (color/arrow/chrome); Accept only with Design CLEAN + Visual CLEAN; ask Author only targeted questions.  
-**MUST NOT:** change Critical Claims; build the Brief as a form-id shopping list; pre-shrink the ideal to “what we know compiles”; accept monotony or dirty craft because validate is green; leave Graphics to invent the pedagogical form; **self-Accept** units you sole-built; ship exploration PDFs without Visual CLEAN; skip Design Critic.
+**MUST:** unit→hypothesis; free ideal; **Form Spec + Design Contract** for non-prose visual units; **Design Critic** until Design CLEAN (builder ≠ critic); simple-alternative doctrine; **space budget / density** (graphics only when gain is clear/essential *and* compact enough for book scale); atom-level justification (color/arrow/chrome); Accept only with Design CLEAN + Visual CLEAN; ask Author only targeted questions.  
+**MUST NOT:** change Critical Claims; build the Brief as a form-id shopping list; pre-shrink the ideal to “what we know compiles”; accept monotony or dirty craft because validate is green; **ship sparse full-page graphics for thin content**; leave Graphics to invent the pedagogical form; **self-Accept** units you sole-built; ship exploration PDFs without Visual CLEAN; skip Design Critic.
 
 ## Inputs
 
@@ -101,11 +101,14 @@ Exploration provenance: `domains/medical/briefs/_explorations/README.md` (not no
    - Template: `domains/medical/templates/design-contract.template.md`  
    - Path: `domains/medical/briefs/<slug>.design-contract.md` (or per-unit headed sections)  
    - **Atom table:** every color, arrow, border, hub, peel, chain, badge — with media-design + medical-pedagogy reason  
-   - **Simple alternative** doctrine: if complex form is not clearly better under scan stress, **choose simple**  
+   - **Form intensity ladder (L0–L6):** lowest level that earns gain — see [`references/form-intensity-ladder.md`](references/form-intensity-ladder.md). **L2–L3 (formatted / panel text) is first-class middle path** before L4–L6 diagrams/raster.  
+   - **Simple alternative** doctrine: if higher L is not clearly better under scan stress, **step down**  
+   - **Space budget (required):** teaching gain vs next-lower L (`none|weak|clear|essential`) + max vertical budget (~⅛ / ¼ / ⅓ / ½ / ≤1 page). If gain ≤ weak → step down. Ambition must fit density — **sparse sprawl is not Design CLEAN**.  
    - Anti-theater list: rejected chrome
 6. **Design Critic (Phase D2) — mandatory, separate role**  
    - Template: `domains/medical/templates/design-critique.template.md`  
    - Role **DC** attacks Contract + Form Spec; severity `block` | `should` | `nit`  
+   - Attack **over-intensity**, **sparse-sprawl**, missing space budget as hard as unjustified chrome  
    - MD revises (D3) until status **clean** (budget: 4 rounds → H-Design / Human)  
    - **Forbidden:** free vision or realize with open design `block`  
    - Builder of Contract must **not** mark Design CLEAN alone
@@ -194,7 +197,10 @@ Do not open a third Media↔Tech round without Human.
 | **Form Spec + Design Contract** for non-prose visual units | Leave pedagogical form to Graphics alone |
 | **Design Critic** until Design CLEAN (separate role) | Self-CLEAN design you sole-authored |
 | Atom justification for color/arrow/chrome | Unjustified orange/red/variety chrome |
-| Simple alternative doctrine | Complex form when list/table teaches better |
+| Intensity ladder L0–L6; lowest that earns gain | Binary “text vs graphic” only; jump to L5/L6 by default |
+| Middle path L2–L3 (color/weight/panels) first-class | Skip straight to complex diagram or bare walls |
+| Simple alternative / step-down doctrine | Higher L when lower L teaches as well |
+| **Space budget + density** (gain vs next-lower L; often ~⅛–⅓ page) | Sparse hero chrome / full-page for few claims |
 | Claim pins = copy-through from C | Invent thresholds in Form Spec |
 | Visible wishlist / ambitious patterns | Critical Claim rewrite |
 | Accept only with Design CLEAN + Visual CLEAN | Accept on validate green / compile only |
@@ -222,6 +228,7 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | Artifact | Path |
 |---|---|
 | Design reasoning (B-core) | `domains/medical/skill/media-brief/references/design-reasoning.md` |
+| **Form intensity ladder L0–L6** | [`references/form-intensity-ladder.md`](references/form-intensity-ladder.md) |
 | **KL ontology v1.1** | [`references/kl-illness-script-ontology.md`](references/kl-illness-script-ontology.md) |
 | **KL form-space process** | [`references/kl-form-space-process.md`](references/kl-form-space-process.md) |
 | KL form library (Graphics) | `domains/medical/skill/medical-graphics/references/kl-form-library.md` |

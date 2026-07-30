@@ -37,6 +37,7 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 - [ ] Text overflow, cut-off, collision, or unreadable size  
 - [ ] Color/emphasis **not** in Design Contract atom table  
 - [ ] Diagram/geometry **less clear** than Contract’s simple alternative  
+- [ ] **Sparse sprawl:** unit burns large vertical space / empty regions for few claims (fails Contract space budget)  
 - [ ] Ambition track + pin-monotone (harvest proximity fail)  
 - [ ] Duplicate competing presentations without role split  
 - [ ] Broken layout (empty peel, missing labels, code leak in cards)  

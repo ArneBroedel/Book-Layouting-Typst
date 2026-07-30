@@ -16,7 +16,11 @@
 
 ## Attack checklist (tick only after real attack)
 
-- [ ] Simple alternative considered; form not worse than list/table when teaching equal  
+- [ ] **Intensity level** L0–L6 chosen; lowest that earns gain; middle path L2–L3 considered before L4–L6  
+- [ ] Why-not L−1 and why-not L+1 present and concrete  
+- [ ] Simple/floor alternative considered; not worse than lower L when teaching equal  
+- [ ] **Space budget** set; teaching gain vs next-lower intensity clear/essential (else step down)  
+- [ ] Form does **not** spend ~full page / huge whitespace on few claims (density attack)  
 - [ ] Every color / arrow / border / badge / hub / peel / chain has an atom row  
 - [ ] Colors encode meaning (not decorative variety)  
 - [ ] Primary job findable in first screenful (genre-dependent)  
@@ -37,6 +41,9 @@
 |---|---|
 | unjustified-chrome | element without atom row / weak reason |
 | worse-than-simple | complex form less clear than simple alternative |
+| **sparse-sprawl** | high page cost / whitespace for little claim density; budget missing or blown |
+| **over-intensity** | L higher than job needs (e.g. L5 when L2 would do) |
+| **under-intensity** | job fails under scan because form too flat (only with evidence) |
 | dual-coding | color/shape contradicts or confuses meaning |
 | scan | job not findable under time pressure |
 | claim-risk | visual implies clinical priority not in pins |

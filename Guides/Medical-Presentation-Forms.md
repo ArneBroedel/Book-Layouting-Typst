@@ -20,7 +20,20 @@ The operational artifacts are:
    `domains/medical/templates/design-critique.template.md`
 
 Process: `devtracks/design-quality-system/`.  
-Doctrine: if a complex form is not clearly better than a list/table under scan stress, **choose simple**. Unjustified chrome is theater.
+
+**Doctrine (intensity continuum, not binary):** use the **lowest** form intensity that earns clear teaching gain under book density:
+
+| L | Form |
+|---|---|
+| L0 | Plain prose |
+| L1 | Structured text (lists) |
+| L2 | Formatted text (semantic color / weight) |
+| L3 | Panel text (backgrounds, accent bars, quiet icons) |
+| L4 | Schematic structure (relation-encoding grids/rows) |
+| L5 | Complex diagram |
+| L6 | Free vision / pictorial raster / hybrid |
+
+**L2–L3 is the default middle path** — first-class, not a failed compromise. Climb only for a named cognitive win; step down when there is no Mehrwert. Full ladder: `domains/medical/skill/media-brief/references/form-intensity-ladder.md`. Unjustified chrome is theater; sparse full-page figures for thin content are process failures.
 
 ---
 

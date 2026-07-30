@@ -20,9 +20,31 @@ stop | recognize | choose | execute | distinguish | understand | look up
 
 **Primary job in one sentence:**
 
+## Form intensity (required — continuum, not binary)
+
+Reference: `domains/medical/skill/media-brief/references/form-intensity-ladder.md`
+
+Pick the **lowest** level that still earns clear teaching gain:
+
+| L | Name |
+|---|---|
+| L0 | Plain prose |
+| L1 | Structured text (list / numbered) |
+| L2 | Formatted text (semantic color / weight / micro-emphasis) |
+| L3 | Panel text (backgrounds, accent bars, compact callouts, quiet icons) |
+| L4 | Schematic structure (grids/rows that encode relations) |
+| L5 | Complex diagram (multi-node code geometry) |
+| L6 | Pictorial / free vision / hybrid raster |
+
+- **Chosen level:** L_  
+- **Why not L−1** (concrete job/scan failure if lower):  
+- **Why not L+1** (no extra gain / density / wrong tool):  
+
+**Middle path L2–L3 is first-class** — not a failed compromise. Prefer it before L4–L6 when color/weight/panels already fix the load risk.
+
 ## Simple alternative (required)
 
-What is the **boring** default form if we refuse theater?
+What is the **boring** floor if we refuse theater? (usually L0–L1)
 
 - [ ] numbered / bulleted list  
 - [ ] plain prose  
@@ -30,12 +52,24 @@ What is the **boring** default form if we refuse theater?
 - [ ] existing library module pin-swap without new chrome  
 - [ ] other:
 
-**Why not simple** (or: we **choose simple** — say so and stop chrome):
+**Why not only that floor** (or: we **stay at floor** — say so):
+
+## Space budget (required — book density)
+
+The monographic book is **dense** (tight type, multi-column, hundreds of pages). Graphics that spend a full page on few claims are a **process failure**.
+
+- **Teaching gain vs next-lower intensity:** none | weak | clear | essential  
+- **Max vertical budget (A4 body, approx):** ☐ ~⅛ page · ☐ ~¼ page · ☐ ~⅓ page · ☐ ~½ page · ☐ ≤1 page (exception, justify)  
+- **Why this budget is earned**:  
+- **If gain ≤ weak → step down one level** — do not ship higher intensity chrome  
+
+**Hard rules:** Ambition must meet space budget. **Sparse sprawl is not Design CLEAN.** Higher L is not “better quality.”
 
 ## Form choice
 
 - **Pattern name** (hypothesis, not form-id):  
-- **Media-design reason** (2–4 sentences: hierarchy, contiguity, dual coding, segmenting, signaling…):  
+- **Intensity level:** L_ (must match section above)  
+- **Media-design reason** (2–4 sentences: hierarchy, contiguity, dual coding, segmenting, signaling, **density**…):  
 - **Medical-pedagogy reason** (2–4 sentences: scan under time pressure, error class avoided, job of HP/learner…):  
 
 ## Reading order (scan path under time pressure)

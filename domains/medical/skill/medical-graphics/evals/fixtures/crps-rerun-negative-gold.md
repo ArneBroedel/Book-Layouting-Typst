@@ -13,6 +13,7 @@
 | §1.4 Klinische Hinweise table | Untersuchung orange without pedagogical color semantics | uncontracted-atom / dual-coding |
 | §1.5 Trügerische Erklärungen | Raw Typst `block(…)` source on page | **code-leak** |
 | Process | Agent self-Accept; validate OK; no PNG Visual Critic | missing Visual CLEAN / self-accept |
+| WP9b pilot (post-process) | Tall mechanism spine + full peel cards: few claims, large air | **sparse-sprawl** (space budget missing) |
 
 ## What process must catch (evals)
 

@@ -26,7 +26,7 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 ```
 
 2. **Open every page image** with the image/read tool (or equivalent). List paths in critique file.  
-3. Run **auto-block** checklist (code-leak, overflow, uncontracted color, worse-than-simple, pin-monotone, broken peel/cards).  
+3. Run **auto-block** checklist (code-leak, overflow, uncontracted color, worse-than-simple, **sparse-sprawl / space budget**, pin-monotone, broken peel/cards).  
 4. Write findings `block` | `should` | `nit` with page + location.  
 5. Status:  
    - open blocks → **revise** (GX fixes → re-export → new VC round)  
@@ -43,6 +43,12 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 | One table row orange without Contract atom | uncontracted-atom |
 | Mechanism chain less clear than numbered list | worse-than-simple |
 | Empty peel cards / partial markup | craft |
+| Unit fills most of a page with few claims / large empty regions | **sparse-sprawl** (fails space budget) |
+| Peel edge strips + oversized insets waste vertical space vs map-row density | sparse-sprawl / craft |
+
+## Density (book scale)
+
+The monographic book is already ~hundreds of pages at tight type. VC must ask: *could the same pins live in ~¼–½ page without losing the teaching hierarchy?* If yes and the unit still sprawls → **block** or force denser layout. Ambition ≠ air.
 
 ## NEVER
 
@@ -50,3 +56,5 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 - Use “validate OK” or “compile green” as visual pass  
 - Builder self-CLEAN  
 - Accept exploration PDF with open visual blocks  
+- Treat “looks premium / airy” as success when density fails  
+

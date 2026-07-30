@@ -79,16 +79,24 @@ Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spe
 
 Load full procedure: `devtracks/design-quality-system/` · templates `design-contract.template.md` · `design-critique.template.md`.
 
-**Doctrine:** every non-default visual decision (color, arrow, border, hub, peel, chain, badge, type weight) must help the learner **process content**. If a complex form is not clearly better than a list/table under scan stress, **choose simple**.
+**Doctrine:** every non-default visual decision (color, arrow, border, hub, peel, chain, badge, type weight) must help the learner **process content**.
+
+**Form intensity ladder (not binary simple vs graphic):**  
+L0 plain prose → L1 structured text → **L2 formatted text (color/weight)** → **L3 panel text (bg/bars/icons)** → L4 schematic structure → L5 complex diagram → L6 free vision/raster.  
+Full table: [`form-intensity-ladder.md`](form-intensity-ladder.md).  
+Pick the **lowest** L with clear/essential gain. **L2–L3 is the default middle path** for many units — first-class, not a failed compromise. Climb only for a named cognitive win; step down when Human/DC sees no Mehrwert.
+
+**Space / density doctrine (book scale):** Every level must earn its **vertical page cost**. Sparse full-page units for few claims explode page count. Contract sets gain vs **next-lower L** and max budget (often ~⅛–⅓ page). If gain ≤ weak → **step down**. Ambition never excuses sprawl.
 
 | Atom needs | Reject if |
 |---|---|
-| Media-design principle (hierarchy, contiguity, dual coding, signaling, segmenting) | “Looks nicer” / library clone only |
+| Media-design principle (hierarchy, contiguity, dual coding, signaling, segmenting, **density**) | “Looks nicer” / library clone only / premium air |
 | Medical-pedagogy reason (error class, job, time pressure) | Decoration that do not change learner action |
 | Mapping: color → meaning | Orange/red “for variety” or unmotivated emphasis |
 | “If removed, what breaks?” | Nothing breaks → delete atom |
+| Space budget row | Unit spends ~page for thin pins (**sparse-sprawl**) |
 
-**Design Critic (adversarial, separate role):** attack Contract with `block` / `should` / `nit`. CLEAN only with zero open blocks. Builder must not self-CLEAN.
+**Design Critic (adversarial, separate role):** attack Contract with `block` / `should` / `nit` — include **sparse-sprawl**. CLEAN only with zero open blocks. Builder must not self-CLEAN.
 
 ---
 
@@ -116,6 +124,7 @@ Load full procedure: `devtracks/design-quality-system/` · templates `design-con
 | Visual CLEAN missing / pages not opened / code-leak or overflow | `revise` (Phase R visual critique) |
 | Uncontracted color/chrome on page | `revise` |
 | Complex form worse than simple alternative on the page | `revise` (simplify or redesign) |
+| Sparse sprawl: high vertical cost / empty regions for few claims (space budget blown) | `revise` (densify or simple form) |
 | Self-Accept by sole builder | `revise` (separate AX + critiques) |
 | Embed path for Tech missing on graphic winner | `revise` (fill Accept compose notes) |
 | A/B winner chosen without ideal/learner-job rationale | `revise` |

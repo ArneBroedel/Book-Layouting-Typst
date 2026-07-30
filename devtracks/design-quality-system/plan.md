@@ -1,6 +1,6 @@
 # Plan — Design-Quality System (adversarial · atom-justified · visual-loop · pre-Human clean)
 
-**Status:** implementing P1–P2 (Human approved 2026-07-30; defaults D1–D4 locked in spec.md)  
+**Status:** P1–P2 + WP7 + WP9 unit pilot done (Human approved 2026-07-30; defaults D1–D4 locked)  
 **Trigger:** CRPS re-run: pipeline artifacts complete, product quality failing (bad form choices, unmotivated color, **Typst source leaking into PDF**, agent self-Accept without visual read)  
 **Scope:** Produkt **B** (media-brief + medical-graphics) · thin wires to **A** (compose, validate, studio, book-production) · **C** Human gates unchanged for freeze/proof  
 **Not this plan:** rewrite clinical content; auto-heal claims; fold medical genre into `packages/bookkit`
@@ -360,66 +360,57 @@ If Human finds a `block`-class issue, that is a **process incident** → root-ca
 - Soft accept_gate checks for `Visual CLEAN: yes` strings  
 - **Not** required for v1: automated aesthetic scoring / LLM vision CI  
 
-### WP9 — Unit pilot under full council (process proof)
+### WP9 — Unit pilot under full council — **done**; **WP9b ambition** 2026-07-31
 
-**Status:** implementing 2026-07-31  
-**Goal:** Prove Design CLEAN → Realize → Visual CLEAN on **two** CRPS units that failed hard on the re-run, without shipping a full chapter.  
+**Status:** WP9a craft CLEAN → Human “uninspired” → **WP9b** Design reopen + free vision + realize + Visual CLEAN r3  
 **Slug:** `kl-crps-wp9-2026-07-31`  
-**Units:** `U-mechanism` + `U-mimic`  
-**Not in scope:** full V-3 chapter, regional-cues free vision, urgency ladder, Accept of re-run artifacts  
+**Module:** `domains/medical/lib/typst/kl-wave6/crps-wp9.typ`  
+**Pilot:** `toolset/compose/pilots/kl-crps-wp9-2026-07-31/unit.typ`  
 
-#### WP9-0 Guardrails
+**Human view (absolute paths):**
 
-| Rule | Detail |
-|---|---|
-| No winner-copy | Do **not** import `crps-rerun.typ` / re-run accept winners as SoT |
-| C pins only | Claim text from content map / C chapter (read-only) |
-| Roles | Separate artifacts per role (MD → DC → GX → VC → AX); no self-CLEAN |
-| Floor | Open `block` → no Accept, no “done” PDF claim |
-| Exploration bar | Same Visual CLEAN as production (D1) |
+- `/home/arneb/repos/company/Book-Layouting-Typst/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/p1.png`  
+- `/home/arneb/repos/company/Book-Layouting-Typst/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/p2.png`  
+- `/home/arneb/repos/company/Book-Layouting-Typst/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/unit.pdf`  
 
-#### WP9-1 Phase D (Design Council)
+#### Outcomes
 
-| Step | Unit | Deliverable |
-|---|---|---|
-| D1 | both | Form Spec + Design Contract |
-| D2 | both | Design Critique (adversarial, separate file) |
-| D3 | both | Revise until DC `clean` (budget ≤4 rounds) |
-| Packet | — | Design CLEAN paths linked in quality packet |
+| Unit | WP9a (rejected by Human ambition) | WP9b | Design | Visual |
+|---|---|---|---|---|
+| U-mechanism | numbered list + callouts | trigger → 3 equal pathway chips → converge → DDx\|Chroni fork | clean | clean r3 |
+| U-mimic | flat map-rows | full-width peel stack + free vision provenance | clean | clean r3 |
 
-**Expected design pressure (from negative gold):**
+**Process lessons:**
 
-| Unit | Re-run failure | Council bias |
-|---|---|---|
-| U-mechanism | Cramped CeTZ chain; no gain vs list | Default **simple alternative** unless Contract proves chain wins |
-| U-mimic | 4-col peel + **code leak**; microtext | Prefer **map-rows** frame→danger with readable German; reject 4-col peel unless text fits at ≥7.5pt |
+1. Design CLEAN on *simple-wins* is necessary but **not sufficient** — ambition bar when the job needs geometry.  
+2. **Ambition without density is also failure** — sparse full-page units for few claims explode monographic page count. Human WP9c: space budget mandatory.  
 
-#### WP9-2 Phase R (Realize Council)
+#### WP9c density (2026-07-31)
 
-| Step | Detail |
-|---|---|
-| R0 | Mechanism: track `none` / code-simple. Mimic: code hierarchy map (ambition form without new free gen if Contract rejects peel theater) |
-| R1–R2 | Free vision only if Contract still requires ambition raster; claim audit if free ran |
-| R3 | New module `domains/medical/lib/typst/kl-wave6/crps-wp9.typ` + pilot `toolset/compose/pilots/kl-crps-wp9-2026-07-31/unit.typ` |
-| R4–R5 | PNG every unit page → Visual Critique → fix loop (≤5 rounds) |
+- **Space budget doctrine** harvested into Design Contract / DC / VC / media-brief / medical-graphics  
+- Dense pathway strip + dual-band mimic — density OK; mechanism graphic still weak on teaching gain  
 
-**Craft DoD (auto-block):** no raw markup; no overflow; no uncontracted color; diagram not worse than simple alternative.
+#### WP9d simple mechanism (2026-07-31)
 
-#### WP9-3 Phase A + proof
+- Human: density better, but **mechanism still no clear Mehrwert vs text**  
+- **Chose simple (L0/L1):** compact prose + two consequence lines  
+- Mimic dual-band retained (**L4** error hierarchy)  
 
-| Deliverable | Path pattern |
-|---|---|
-| Quality packet | `domains/medical/briefs/kl-crps-wp9-2026-07-31.quality-packet.md` |
-| Accept (only if CLEAN) | `…accept.md` |
-| Diff vs negative gold | `…vs-negative-gold.md` |
-| PNG set | `dist/pilots/kl-crps-wp9-2026-07-31/pages/` |
+#### Form intensity ladder (Human doctrine 2026-07-31)
 
-**Success (S10):** Human first look would not find block-class defects that re-run had (code leak, unjustified chrome, worse-than-simple mechanism). Residual `should`/`nit` listed honestly.
+Continuum encoded: L0 prose → L1 list → **L2 formatted text** → **L3 panel text** → L4 schematic → L5 diagram → L6 free vision.  
+SoT: `domains/medical/skill/media-brief/references/form-intensity-ladder.md` · Contract + DC + skills/guides wired.  
+**Middle path L2–L3 first-class**; lowest L that earns gain + space budget.
 
-#### WP9-4 After pilot
+```bash
+code toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/p1.png
+code toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/unit.pdf
+```
 
-- Full CRPS chapter re-pilot only if Human greenlights after this unit proof  
-- Harvest process incidents into eval fixtures if VC/DC found new failure modes  
+#### After pilot
+
+- Full CRPS chapter re-pilot only on Human greenlight  
+- Commit harvest + intensity ladder + WP9d when Human OK  
 
 ---
 
@@ -483,10 +474,10 @@ Existing culture: no Genesis endless loops; max 2 Media↔Tech; gen caps.
 | **P2** | WP4 studio/orchestrator/compose wires + WP5 guides | default path enforces packets |
 | **P3** | WP7 evals + negative gold | regression |
 | **P4** | Optional WP8 tooling | ergonomics |
-| **P5** | WP9 CRPS unit re-pilot under new process | proof the bar |
+| **P5** | WP9 CRPS unit re-pilot under new process | **agent CLEAN 2026-07-31** (`kl-crps-wp9-…`); Human H-Explore optional |
 
 **Estimate:** P1–P2 = substantial docs/skills session(s); P5 = real graphics work after process exists.  
-**Do not** claim process fixed until P5 (or equivalent) survives Human eyes.
+**Agent bar met for two units;** full chapter still Human-gated.
 
 ---
 

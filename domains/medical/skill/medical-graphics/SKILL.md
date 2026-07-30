@@ -55,8 +55,8 @@ G4  Decision Note → Media Accept (AX)     playbook/08
 Tech embed accepted winner
 ```
 
-**MUST:** refuse free gen / realize without **Design CLEAN**; name **track** per unit; free vision without structure clone on ambition track; **claim audit** after free; **harvest** mapped to **atom_ids**; port harvest must-cues; **export PNG and Visual Critic** until Visual CLEAN (builder ≠ critic); pin labels from C; document realize_path + harvest + visual_critique_path; **German labels only**; no form-meta in figures.  
-**MUST NOT:** invent clinical content; free vision without Design CLEAN; free vision without harvest; pin-monotone winner on ambition; **self-CLEAN visual**; handoff Accept without PNG inspection; code-leak / overflow ship; accept-asset on FAIL; endless AI gens beyond caps; transfer decorative bars without meaning.
+**MUST:** refuse free gen / realize without **Design CLEAN**; name **track** per unit; realize at Contract **intensity level** (L0–L6; do not silently upgrade to diagram/raster); free vision only when Contract is L6 (or explicit ambition track); **claim audit** after free; **harvest** mapped to **atom_ids**; port harvest must-cues; **honor Contract space budget** (dense book: often ~⅛–⅓ page); **export PNG and Visual Critic** until Visual CLEAN (builder ≠ critic); pin labels from C; document realize_path + harvest + visual_critique_path; **German labels only**; no form-meta in figures.  
+**MUST NOT:** invent clinical content; free vision without Design CLEAN; free vision without harvest; free vision when Contract chose L0–L3; pin-monotone winner on ambition; **self-CLEAN visual**; handoff Accept without PNG inspection; code-leak / overflow / **sparse-sprawl** / **over-intensity** ship; accept-asset on FAIL; endless AI gens beyond caps; transfer decorative bars without meaning; expand insets/spacers for “premium air” when pins are few.
 
 ## End product policy
 
