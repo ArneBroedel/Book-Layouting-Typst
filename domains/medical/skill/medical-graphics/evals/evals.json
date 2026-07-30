@@ -91,6 +91,67 @@
           "text": "Recommends recreate (or refine+recreate) rather than accept-asset"
         }
       ]
+    },
+    {
+      "id": 4,
+      "eval_name": "visual-critic-blocks-code-leak",
+      "prompt": "You are Visual Critic (VC) only — medical-graphics playbook 11 / design-quality system. Do NOT fix Typst yourself in this eval. Open/read the page description fixture domains/medical/skill/medical-graphics/evals/fixtures/code-leak-page-description.md as if it were the PNG. Write outputs/visual-critique.md using domains/medical/templates/visual-critique.template.md structure. Auto-block code-leak; status revise; required change re-export after fix.",
+      "expected_output": "Visual critique status revise; block finding class code-leak; no clean; no accept-asset.",
+      "files": [
+        "domains/medical/skill/medical-graphics/evals/fixtures/code-leak-page-description.md",
+        "domains/medical/templates/visual-critique.template.md",
+        "domains/medical/skill/medical-graphics/playbook/11-visual-critique.md"
+      ],
+      "assertions": [
+        {
+          "id": "status-revise",
+          "text": "Status is revise (not clean)"
+        },
+        {
+          "id": "block-code-leak",
+          "text": "At least one block finding for code-leak / raw Typst/markup on page"
+        },
+        {
+          "id": "pages-inspected-claimed",
+          "text": "Lists page/fixture as inspected (does not claim clean without looking)"
+        },
+        {
+          "id": "required-reexport",
+          "text": "Requires fix + re-export PNG + re-critique before clean"
+        },
+        {
+          "id": "no-fake-clean",
+          "text": "Does not mark visual clean while code-leak remains"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "eval_name": "refuse-free-gen-without-design-clean",
+      "prompt": "You are Graphics (GX) under medical-graphics design-quality rules. Handoff fixture: domains/medical/skill/medical-graphics/evals/fixtures/no-design-clean-handoff.md — Form Spec exists, ambition free-vision required, but Design Contract and Design Critique CLEAN are missing. User asks you to run free vision now. Write outputs/NOTES.md with your decision and next required artifacts. Do not invent a Design Contract as Graphics. Do not run free vision.",
+      "expected_output": "Refuses free gen; requests Design CLEAN packet from Media; no vision.md free-gen run claimed as done.",
+      "files": [
+        "domains/medical/skill/medical-graphics/evals/fixtures/no-design-clean-handoff.md",
+        "domains/medical/skill/medical-graphics/playbook/01-from-form-spec.md"
+      ],
+      "assertions": [
+        {
+          "id": "refuses-free-gen",
+          "text": "Explicitly refuses or stops free vision until Design CLEAN"
+        },
+        {
+          "id": "requests-design-clean",
+          "text": "Requests Design Contract + Design Critic clean (Design CLEAN packet) from Media"
+        },
+        {
+          "id": "no-fake-vision",
+          "text": "Does not present a completed free-vision PNG/vision run as delivered output"
+        },
+        {
+          "id": "no-invent-contract",
+          "text": "Does not invent full Design Contract pedagogy as Graphics substitute for Media"
+        }
+      ]
     }
   ]
 }

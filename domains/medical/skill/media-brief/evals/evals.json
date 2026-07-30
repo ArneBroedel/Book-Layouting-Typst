@@ -95,6 +95,74 @@
           "text": "Lists concrete required changes for next spike"
         }
       ]
+    },
+    {
+      "id": 4,
+      "eval_name": "design-critic-blocks-unjustified-chrome",
+      "prompt": "You are Design Critic (DC) only — media-brief design-quality process in Book-Layouting-Typst. Do NOT implement Typst. Read the bad Design Contract fixture at domains/medical/skill/media-brief/evals/fixtures/bad-design-contract-unjustified-chrome.md. Write a design-critique to outputs/design-critique.md using template domains/medical/templates/design-critique.template.md (or equivalent structure). Attack unjustified orange Untersuchung chrome, missing simple-alternative defense, empty anti-theater. Severity block|should|nit. Status must be revise (not clean) while open blocks remain.",
+      "expected_output": "Design critique with status revise; at least one block on unjustified chrome/color; requires atom meaning or remove orange; simple alternative addressed.",
+      "files": [
+        "domains/medical/skill/media-brief/evals/fixtures/bad-design-contract-unjustified-chrome.md",
+        "domains/medical/templates/design-critique.template.md"
+      ],
+      "assertions": [
+        {
+          "id": "status-revise",
+          "text": "Critique status is revise (or not clean), not clean"
+        },
+        {
+          "id": "block-unjustified-color",
+          "text": "At least one block finding on unjustified orange/Untersuchung color or dual-coding without meaning"
+        },
+        {
+          "id": "simple-alternative-or-anti-theater",
+          "text": "Flags missing why-not-simple and/or empty anti-theater"
+        },
+        {
+          "id": "required-change",
+          "text": "States required change: justify atom with pedagogy+media-design or remove chrome / use simple table"
+        },
+        {
+          "id": "no-implement",
+          "text": "Does not produce production .typ implement of the unit"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "eval_name": "accept-requires-design-visual-clean",
+      "prompt": "You are Accepting Media (AX) under media-brief design-quality rules. Scenario fixture: domains/medical/skill/media-brief/evals/fixtures/dirty-accept-scenario.md — Design Contract/Critique missing, Visual Critique missing, pages not opened, validate OK, same agent built the chapter, known code-leak and unmotivated orange on pages. Write outputs/accept.md from accept-record.template.md. Decide accept|revise|reject. Exploration brief_class does NOT waive Visual CLEAN for didactic PDF.",
+      "expected_output": "Accept record revise or reject; refuses accept; requires Design CLEAN + Visual CLEAN + PNG inspection; flags self-accept and craft defects.",
+      "files": [
+        "domains/medical/skill/media-brief/evals/fixtures/dirty-accept-scenario.md",
+        "domains/medical/templates/accept-record.template.md"
+      ],
+      "assertions": [
+        {
+          "id": "not-accept",
+          "text": "Overall decision is revise or reject, not accept"
+        },
+        {
+          "id": "requires-design-clean",
+          "text": "Requires Design CLEAN / Design Contract + Design Critic before accept"
+        },
+        {
+          "id": "requires-visual-clean",
+          "text": "Requires Visual CLEAN / PNG page inspection before accept"
+        },
+        {
+          "id": "flags-self-accept-or-builder",
+          "text": "Flags that builder must not self-accept / AX must not be sole builder"
+        },
+        {
+          "id": "flags-craft-defect",
+          "text": "Mentions code-leak and/or overflow and/or uncontracted color as blockers"
+        },
+        {
+          "id": "exploration-no-waiver",
+          "text": "Does not claim exploration allows dirty visual product"
+        }
+      ]
     }
   ]
 }

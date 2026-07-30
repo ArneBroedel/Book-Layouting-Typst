@@ -349,10 +349,11 @@ If Human finds a `block`-class issue, that is a **process incident** → root-ca
 - `docs/BOOK-PRODUCTION-RUNBOOK.md` + phase-machine: earlier visual gate  
 - AGENTS.md / CLAUDE.md skill-gate table: point to design-quality when visuals  
 
-### WP7 — Evals + negative gold
-- media-brief eval: Design Critic must block unjustified chrome  
-- medical-graphics eval: Visual Critic must block code-in-PDF / overflow fixtures  
-- Store CRPS re-run page PNGs + findings as **negative example** under `examples/` or `evals/fixtures/` (not as Accept gold)  
+### WP7 — Evals + negative gold — **done 2026-07-30**
+- media-brief evals **4–5** in `evals/evals.json` + fixtures under `evals/fixtures/`  
+- medical-graphics evals **4–5** + `crps-rerun-negative-gold.md` fixtures  
+- Workspace READMEs list iter-2 pending skill-creator run  
+- examples/INDEX negative gold points at fixtures  
 
 ### WP8 — Optional tooling (phase 2, not blocking policy)
 - `bookkit graphics critique-export` helper: compile unit → PNG dir → stub critique file  

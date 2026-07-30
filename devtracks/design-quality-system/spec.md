@@ -1,6 +1,6 @@
 # Spec — Design-Quality System
 
-**Status:** implementing (Human approved plan 2026-07-30)  
+**Status:** implementing (Human approved plan 2026-07-30) · WP7 evals shipped  
 **Product:** B (media-brief, medical-graphics) · thin A (studio, compose, CREATIVE-COMPOSE) · C checkpoints  
 **Plan:** [plan.md](plan.md)
 

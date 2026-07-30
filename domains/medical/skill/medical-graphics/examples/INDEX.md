@@ -30,7 +30,7 @@ Pointer index only (no asset duplicates). Learn from paths + Accept winners.
 | KL Melanom urgency | exceptional-T1 strip when 112 not primary |
 | KL grammar vs ambition | Track **named** per unit; default posture free-vision-ambition; grammar-only opt-in only |
 | **CRPS pilot (negative harvest lesson)** | Free vision ran but pin-faithful code without harvest port. Policy: free-vision-harvest. Paths: `briefs/kl-crps.*` · `lib/typst/kl-wave6/crps.typ`. |
-| **CRPS re-run (negative design-quality lesson)** | Pipeline complete + validate OK, product failed: Typst **code-leak** in “Trügerische Erklärungen”, unmotivated orange Untersuchung row, mechanism chain less readable than a list, agent self-Accept without PNG eyes. **Policy fix:** design-quality-system (Design Contract + Design Critic + Visual Critic). Paths: `pilots/kl-crps-rerun-2026-07-30/` · `lib/typst/kl-wave6/crps-rerun.typ` · `dist/pilots/kl-crps-rerun-2026-07-30/pages/`. Not Accept gold. |
+| **CRPS re-run (negative design-quality lesson)** | Pipeline complete + validate OK, product failed: Typst **code-leak** in “Trügerische Erklärungen”, unmotivated orange Untersuchung row, mechanism chain less readable than a list, agent self-Accept without PNG eyes. **Policy fix:** design-quality-system. Eval fixtures: `medical-graphics/evals/fixtures/crps-rerun-negative-gold.md` (+ code-leak / no-design-clean fixtures). Paths: `pilots/kl-crps-rerun-2026-07-30/` · `lib/typst/kl-wave6/crps-rerun.typ`. Not Accept gold. |
 
 ## Walkthrough
 
