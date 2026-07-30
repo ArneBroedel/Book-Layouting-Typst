@@ -90,12 +90,22 @@ Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spe
 | Ambitious unit missing Form Spec (no Must-see / claim pins) | `revise` (Media) or document exception |
 | Winner misses Form Spec **Must-see** or fails claim audit (if asset) | `revise` |
 | Criteria-by-picture: icons/scales contradict pin **meaning** (even if labels match) | `revise` (surgical refine or recreate) |
+| **Free-vision-ambition** track + winner is **pin-monotone** (ignores harvest hierarchy/chrome) | `revise` (Graphics: port harvest must-cues) |
+| Ambition track + free vision ran but **no harvest** documented | `revise` (Graphics: write harvest) |
+| Harvest must-cues waived without reason | `revise` |
+| Embed path for Tech missing on graphic winner | `revise` (fill Accept compose notes) |
 | A/B winner chosen without ideal/learner-job rationale | `revise` |
 | No claim rewrite / no new clinical thresholds in layout (incl. inside images) | `reject` or Author loop |
 
+| Track context | Proximity check |
+|---|---|
+| `free-vision-ambition` | Free-vision proximity **required** (yes or partial with note; **no** → revise) |
+| `grammar-only` | Free-vision proximity N/A; code pin-swap OK |
+| `none` | No graphic Accept surface |
+
 Freeze pin rules unchanged (`brief_class`, H1/H2). Optional **H-Gfx** when production assets depict anatomy/procedure risk motifs.
 
-**Creative-first:** Accept is about proximity to the **ideal**, not about staying inside stable form-catalog. Tech may use full Typst/bookkit/@preview/custom **and** accepted image assets/hybrid; Graphics decides code vs asset vs A/B. See `toolset/compose/CREATIVE-COMPOSE.md` and `medical-graphics`.
+**Creative-first:** Accept is about proximity to the **ideal** (and free-vision harvest on ambition track), not about staying inside stable form-catalog. Tech may use full Typst/bookkit/@preview/custom **and** accepted image assets/hybrid; Graphics decides code vs asset vs A/B after harvest. See `toolset/compose/CREATIVE-COMPOSE.md` and `medical-graphics`.
 
 ---
 

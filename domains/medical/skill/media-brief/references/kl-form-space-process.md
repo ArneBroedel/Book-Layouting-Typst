@@ -25,8 +25,8 @@ Stopping at (2) only → clean but uninspired (Human feedback).
 | **R** Relation map | Media | Units + dimensions; prefer **content-map** file (`briefs/_wave5/<slug>.content-map.md` pattern) |
 | **C** Form-Space | Media | ≥3 valuable + ≥2 rejected paths per *new* unit; shortlist |
 | **M** Form Spec | Media | Gold density: zones, Must-see, pins, genre, success criterion; **Icon meaning** if criteria-by-picture |
-| **G** Realize | Graphics | code and/or free vision → **claim audit** (labels+icons) → recreate/hybrid/refine |
-| **A** Accept | Media | accept/revise/reject + carrier; exploration vs production |
+| **G** Realize | Graphics | **track** (default free-vision-ambition) → free vision → **claim audit** → **harvest** → hierarchy-faithful recreate/hybrid/refine |
+| **A** Accept | Media | accept/revise/reject + carrier + **free-vision proximity** on ambition track; exploration vs production |
 | **O** Transfer | Media/Tech | Same recipe, new pins; re-audit free labels **and** icons |
 | **h** Mini-harvest | Media/Graphics | New durable pattern → `kl-form-library.md` + recipe |
 

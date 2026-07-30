@@ -2,28 +2,32 @@
 
 **Load when:** choosing Phase A/B and `graphic_mode` / `realize_path`.
 
-## 0. Ladder (v0.3 free-first + Form Spec)
+## 0. Ladder (v0.4 free-first + track + harvest)
 
 ```text
 0. Form Spec (Media)     — Must-see + claim pins + genre
-1. Free vision first     — ambitious visual units (default)
+0b. Track (Graphics G0)  — free-vision-ambition (default) | grammar-only (opt-in) | none
+1. Free vision           — when track = free-vision-ambition
 2. Claim audit           — mandatory after free
-3. Best realization      — multi-round: recreate | hybrid | refine | accept-asset
-4. Prefer maintainable   — when quality ≈ equal (code/hybrid > low-DPI raster)
-5. Raster end allowed    — only if gates PASS (playbook 06)
-6. Fallback simpler      — only if vision + realize fail
+2b. Harvest note         — layout cues ALWAYS after free (indep. of PASS/DRIFT/FAIL)
+3. Best realization      — hierarchy-faithful recreate | hybrid | refine | accept-asset
+4. Prefer maintainable   — code if ≈ equal *after harvest* (D4)
+5. Raster end allowed    — only if gates PASS (playbook 06) + proximity
+6. Media Accept          — free-vision proximity on ambition track
+7. Fallback simpler      — only if vision + realize fail
 ```
 
-**Code first** = preferred *realization* when free vision skipped or qualities equal — **not** the first creative filter for ambitious graphics.  
+**Code first** = preferred *realization carrier* when qualities equal after harvest — **not** “skip free vision” for real visual units.  
 **Playbook:** `playbook/00-overview.md`
 
 ## 1. When to run free vision
 
-| Yes | No / skip |
+| Yes (default track free-vision-ambition) | No / skip (grammar-only opt-in or none) |
 |---|---|
-| Wishlist high / ambitious diagram | Trivial callout/table |
-| decision-flow, mechanism, cue-cluster, spatial | Smoke / EXCEPTION |
-| Media ideal needs non-box form | Already have accepted gold vision |
+| Real visual unit: urgency, mimic, cues, discrimination graphic, peel, dashboard | Trivial callout/table (`none`) |
+| decision-flow, mechanism, cue-cluster, criteria-by-picture, spatial (non-body) | Documented pure re-pin of already harvested module |
+| Media ambition required/optional | Explicit Human/Media skip; smoke / EXCEPTION |
+| Media ideal needs non-box form | Anatomy free blocked without H-Gfx |
 
 ## 2. Free vision quality (Phase A rubric)
 

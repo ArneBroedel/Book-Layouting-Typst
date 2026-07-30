@@ -48,20 +48,27 @@ If new unit type → ≥3 valuable + ≥2 rejected paths (see form-space process
 
 ## 4. G — Realize
 
-| Unit class | Default |
-|------------|---------|
-| Band grammar (urgency, mimic, FA, cues, …) | **code** from lib; pin-swap |
-| Flag-master single-criterion | `kl-flag-cluster` code |
-| Safety / psych red flags | `kl-safety-chrome` code only |
-| Mnemonic criteria (ABCDE/FAST) | free vision optional; code densified often wins |
-| Spatial anatomy | free vision → audit; **anatomy free paused** unless H-Gfx |
+**Track posture (Human 2026-07-30):** no chapter-wide / kl-kurz-wide `grammar-only` default.  
+Name track **per unit**; preferred default for real visual units = **`free-vision-ambition`**.
+
+| Unit class | Default track posture | Realize |
+|---|---|---|
+| Urgency / discrimination / mimic / cues (visual) | **`free-vision-ambition`** | free → **harvest** → hierarchy-faithful recreate or asset |
+| Novel chrome / peel / dashboard | **`free-vision-ambition`** | same |
+| ABCDE / FAST criteria-by-picture | **`free-vision-ambition`** | audit semantics + harvest; code-if-equal after port |
+| Flag-master / safety chrome | **`free-vision-ambition`** unless pure re-pin of harvested module | free + harvest **or** documented grammar-only transfer |
+| Spatial anatomy | free vision **blocked** without H-Gfx | non-body free vision or code; H-Gfx if true anatomy |
+| Conscious re-pin only (documented) | **`grammar-only` opt-in** | code pin-swap, no free gen |
+| Pure prose / no graphic | `none` | skip G1 |
+
+`grammar-only` only if: explicit Media/Human skip, pure re-pin of **already harvested** module with **no** new chrome job, or H-Gfx block → non-body alternative may be code without free vision.
 
 Spike layout:
 
 ```text
 toolset/compose/spikes/graphics/kl-<slug-or-wave>/
-  lib/<slug>.typ
-  spike-grammar.typ
+  lib/<slug>.typ   # or domains/medical/lib/typst/…
+  spike-grammar.typ / spike-recreate.typ
 ```
 
 Compile:
@@ -72,7 +79,13 @@ typst compile --root . --ignore-system-fonts --font-path fonts \
   dist/spikes/graphics/kl-…/….pdf
 ```
 
-Claim audit after any free vision (labels **and** illustration-semantics).
+Claim audit after any free vision (labels **and** illustration-semantics).  
+**Harvest** after free vision (see template `graphic-harvest.template.md`).  
+**Forbidden:** free vision → DRIFT → pin-monotone code without harvest.
+
+### Harvest before Accept
+
+On `free-vision-ambition`, Media Accept requires **free-vision proximity**: the winner must still feel like the free-vision job (hierarchy/rails/peel/dual-coding), not pins alone. Pin-monotone → **revise** Graphics.
 
 ---
 

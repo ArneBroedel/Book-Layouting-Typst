@@ -37,22 +37,23 @@ description: "ALWAYS use after Media Brief/Form Spec for visual units: free visi
 Form Spec (Media)
     │
     ▼
-G0  Visual-Units + recipe          playbook/01
-G1  Free vision (no structure)     playbook/02
-G2  Claim audit (mandatory)        playbook/03
+G0  Visual-Units + recipe + **track**   playbook/01
+G1  Free vision (if free-vision-ambition) playbook/02
+G2  Claim audit (mandatory)               playbook/03
+    Harvest note (layout cues always)     template graphic-harvest
 G3  Realize ladder:
-      R1 Typst recreate            playbook/04
-      R2 Hybrid (optional)         playbook/05
-      R3 Refine / raster gates     playbook/06
-      R4 Fair A/B                  playbook/07
-G4  Decision Note → Media Accept   playbook/08
+      R1 Hierarchy-faithful Typst recreate playbook/04
+      R2 Hybrid (optional)                 playbook/05
+      R3 Refine / raster gates             playbook/06
+      R4 Fair A/B                          playbook/07
+G4  Decision Note + free-vision proximity → Media Accept  playbook/08
     │
     ▼
-Tech embed accepted winner
+Tech embed accepted winner (proximity winners authoritative)
 ```
 
-**MUST:** read Form Spec; free vision without structure clone (ambitious units); **claim audit after free** (labels **and** illustration-semantics: icons/scales must match pin *meaning*); pin labels from C; document `realize_path`; Media Accept owns ideal proximity; **German labels only** in production graphics; **no form-meta** inside figures (ontology IDs, “keine Dringlichkeitsstufe”, EN “Action/Trigger cluster”); surgical refine for icon/scale mismatches when composition is otherwise good.  
-**MUST NOT:** invent clinical content; foot-legend-only hybrid as fair A/B; accept-asset on audit FAIL or on icon-DRIFT left unfixed; endless AI loops; production “done” without Accept; put designer legends that *explain the form language* inside the graphic; transfer decorative bars/spectra that do not name their meaning.
+**MUST:** name **track** per unit before free gen (`free-vision-ambition` default for real visual units; `grammar-only` opt-in only); read Form Spec; free vision without structure clone on ambition track; **claim audit after free** (labels **and** illustration-semantics); **harvest** composition cues after free vision (independent of audit verdict); port harvest **must** cues on recreate; pin labels from C; document `realize_path` + harvest; Media Accept owns ideal + **free-vision proximity**; **German labels only** in production graphics; **no form-meta** inside figures; surgical refine for icon/scale mismatches when composition is otherwise good.  
+**MUST NOT:** invent clinical content; silent grammar-only chapter/genre default; free vision without harvest; free vision → DRIFT → pin-monotone table as winner; foot-legend-only hybrid as fair A/B; accept-asset on audit FAIL or on icon-DRIFT left unfixed; endless AI loops; production “done” without Accept; put designer legends that *explain the form language* inside the graphic; transfer decorative bars/spectra that do not name their meaning.
 
 ## End product policy
 
@@ -82,6 +83,7 @@ Raster **may** be final — only with gates in [`playbook/06-refine-raster.md`](
 |---|---|
 | Form Spec (Media) | `domains/medical/briefs/<slug>.form-spec.md` |
 | Vision Brief | `…/<slug>.vision.md` |
+| Harvest | section in `*.graphics.md` or `…/<slug>.harvest.md` · template `graphic-harvest.template.md` |
 | Claim audit | template `graphic-claim-audit.template.md` |
 | Decision Note | `…/<slug>.graphics.md` |
 | Assets | `domains/medical/assets/<slug>/` |
@@ -135,17 +137,21 @@ See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):
 [`examples/INDEX.md`](examples/INDEX.md) · Walkthrough [`playbook/walkthrough-iv2.md`](playbook/walkthrough-iv2.md)  
 **KL modules:** `domains/medical/lib/typst/` · spike drivers under `toolset/compose/spikes/graphics/{kl-script-system,kl-wave5,kl-wave6}/`
 
-## Grammar vs ambition (KL lesson)
+## Track + harvest (free-vision-ambition default)
 
-| Track | When | Default |
-|-------|------|---------|
-| **Grammar** | Band units §3–§5, discrimination, mimic map | **code** recreate from library modules |
-| **Ambition** | Spatial, peel chrome, novel dashboard, **criteria-by-picture** (ABCDE) | free vision → audit (**labels + icons**) → surgical refine if needed → asset **or** recreate DE |
+| Track | When | Free vision? | Default posture |
+|-------|------|--------------|-----------------|
+| **`free-vision-ambition`** | Real visual units: urgency, mimic, cues, discrimination graphic, peels, dashboards, criteria-by-picture, novel chrome | Yes → audit → **harvest** → hierarchy-faithful recreate / refine / asset | **Yes** — normal path |
+| **`grammar-only`** | Opt-in: pure re-pin of already harvested pattern; documented Human/Media skip; time-box | No | **No** — never silent chapter/genre default |
+| **`none`** | No graphic object | No | — |
 
-Free vision may invent EN/meta chrome (US-D lesson) → **refine** or **code SoT**.  
-Criteria icons may look right while teaching wrong (Melanom B/D) → **illustration-semantics** in audit + surgical refine. Never accept-asset on claim FAIL.  
-**Quota / 429 fallback to Typst must not be Accept-ed as free vision** (Wave-5: hexagon compartment, empty FAST dashboard). Name the carrier; prefer intentional code/CeTZ.  
-**Body/anatomy free vision:** **paused by default** (Human 2026-07-29) — do not Accept unsupervised anatomy; non-body units only until H-Gfx reopen.
+**Harvest:** non-claim layout cues (zones, weight, peel, rails, dual-coding). Template `domains/medical/templates/graphic-harvest.template.md`.  
+**DRIFT ≠ discard composition** — refine or recreate-with-harvest; pin-monotone fails free-vision proximity Accept.  
+**Carrier (D4):** hierarchy-faithful **code first**; code if ≈ equal after harvest; asset when chrome cannot match.  
+Never accept-asset on claim FAIL. Free vision may invent EN/meta chrome → refine or code SoT with harvest.  
+Criteria icons may look right while teaching wrong (Melanom B/D) → illustration-semantics + surgical refine.  
+**Quota / 429 fallback to Typst must not be Accept-ed as free vision.** Name the carrier.  
+**Body/anatomy free vision:** **paused by default** (Human 2026-07-29) — H-Gfx to reopen.
 
 ## References
 

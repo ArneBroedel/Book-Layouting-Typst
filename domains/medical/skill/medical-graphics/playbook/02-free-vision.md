@@ -2,15 +2,18 @@
 
 ## Input
 
-Form Spec (Must-see + pins + genre) + Vision template.
+- Form Spec (Must-see + pins + genre) + Vision template  
+- **Track = `free-vision-ambition`** from [01-from-form-spec](01-from-form-spec.md)  
+- If track is `grammar-only` or `none` → **skip this playbook** (no free-gen theater)
 
 ## Steps
 
-1. Write `domains/medical/briefs/<slug>.vision.md` from template.  
-2. Set **structure_reference: none**.  
-3. Copy claim pins from Form Spec into vision “Content to show”.  
-4. Restate invariants + must-not (German only, no invention).  
-5. Generate:
+1. Confirm track is written (`free-vision-ambition`).  
+2. Write `domains/medical/briefs/<slug>.vision.md` from template.  
+3. Set **structure_reference: none**.  
+4. Copy claim pins from Form Spec into vision “Content to show”.  
+5. Restate invariants + must-not (German only, no invention).  
+6. Generate:
 
 ```bash
 ./scripts/bookkit graphics vision --backend agy \
@@ -24,16 +27,21 @@ Form Spec (Must-see + pins + genre) + Vision template.
   --out domains/medical/assets/<slug>/vision-free-gemini-01.png
 ```
 
-6. Cap **2** free gens (count agy + gemini together).  
-7. Update MANIFEST.md (`ai-gen:nanobanana` or `ai-gen:gemini-web-nanobanana`).  
-8. **Immediately** run [03-claim-audit](03-claim-audit.md).
+7. Cap **2** free gens (count agy + gemini together).  
+8. Update MANIFEST.md (`ai-gen:nanobanana` or `ai-gen:gemini-web-nanobanana`).  
+9. **Write / draft harvest** (composition cues) **before or with** claim audit — you can list hierarchy/chrome even if labels DRIFT.  
+   - Template: `domains/medical/templates/graphic-harvest.template.md`  
+   - Single unit → `## Harvest` section in `*.graphics.md`  
+   - Multi-unit → `*.harvest.md` or headed sections  
+10. **Immediately** run [03-claim-audit](03-claim-audit.md).
 
 ## Rules
 
 - **Do not** attach repo SVG/PNG flowcharts as layout templates.  
 - Composition free; **labels** constrained by pins.  
 - Detail: [`../references/free-vision.md`](../references/free-vision.md)  
-- **Body / cut / organ:** **paused by default** (Human 2026-07-29) — do not free-gen anatomy; use non-body forms unless Human reopens H-Gfx.
+- **Body / cut / organ:** **paused by default** (Human 2026-07-29) — do not free-gen anatomy; use non-body forms unless Human reopens H-Gfx.  
+- **No free vision without harvest** on ambition track (exit criterion).
 
 ### Silent fallback forbidden (Wave-5 lesson)
 
@@ -53,3 +61,4 @@ Claim audit: if a free image contains body anatomy without H-Gfx reopen → **do
 |---|---|
 | `vision-free-01.png` | free candidate |
 | `*.vision.md` | brief + self-check |
+| harvest section / `*.harvest.md` | composition cues to port (non-claim) |

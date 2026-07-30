@@ -54,13 +54,16 @@ Write brief + form-specs for ambitious units. No production .typ.
 ```text
 Skill: medical-graphics
 Form Spec: <path>
-Run playbook free vision → claim audit → realize. Caps 2+2.
+Track: free-vision-ambition (default) | grammar-only (opt-in only)
+Run playbook: G0 track → free vision → claim audit → harvest → hierarchy-faithful realize.
+Caps 2 free + 2 refine. No pin-monotone winner on ambition track.
 ```
 
 **Compose:**
 ```text
 Skill: compose-chapter
-Accept: <path> · Content: <path> · Compose chapter.typ then bookkit validate.
+Accept: <path> · Content: <path> · graphic_decisions: <path>
+Embed Accept winners (free-vision proximity authoritative). Then bookkit validate.
 ```
 
 ---

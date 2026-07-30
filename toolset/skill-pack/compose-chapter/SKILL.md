@@ -106,7 +106,7 @@ Allowed **only** for smoke tests, platform fixtures, legacy comparison — **not
 
 1. Read Media Brief **as design authority** — do not open forms.yaml first.
 2. For each section: state how the **ideal** will be realized (ladder above). Prefer `mapped` only when stable form = best shape.
-3. For **visual units** (diagrams, schemas, illustrations, flows, icon systems, wishlist graphics): expect Media **Form Spec** (`*.form-spec.md`) for ambitious units; set **`graphic_mode`** (`code` | `asset` | `hybrid` | `ab-test` | `none`). Prefer code when it meets the ideal; always consider asset/hybrid; A/B when unsure. Load **`medical-graphics`** playbook for free vision → claim audit → recreate/hybrid/refine; embed **Media Accept winners** only.
+3. For **visual units** (diagrams, schemas, illustrations, flows, icon systems, wishlist graphics): expect Media **Form Spec** (`*.form-spec.md`) for ambitious units; set **`graphic_mode`** (`code` | `asset` | `hybrid` | `ab-test` | `none`). Prefer code when it meets the ideal; always consider asset/hybrid; A/B when unsure. Load **`medical-graphics`** playbook for free vision → claim audit → **harvest** → hierarchy-faithful recreate/hybrid/refine; embed **Media Accept winners** only. Link `graphic_decisions` + harvest path in feasibility when Graphics ran.
 4. Pin optional `catalog_version` for preferred library awareness — **not** a cage.
 5. Spike recommended? yes/no + goal (layout, code-graphic, asset-graphic, or ab-pair).
 6. Ready for Media Accept? yes / blockers.
@@ -141,7 +141,8 @@ Only after **Accept = yes** (or documented exception).
    - CeTZ / Fletcher / other `@preview` packages (pin versions; load `typst-extension`)
    - local `#let` helpers, `#grid`/`#stack`/`#place` when the design needs them
    - page-design / spread helpers from packages when appropriate
-   - **accepted graphic winners**: pure code diagrams **or** embedded assets / hybrid (`plate`, `wrap-figure`, `figure` + `alt`) per Decision Note
+   - **accepted graphic winners**: pure code diagrams **or** embedded assets / hybrid (`plate`, `wrap-figure`, `figure` + `alt`) per Decision Note / Accept  
+   - **post-Accept free-vision proximity winners are authoritative** — if Accept names a hierarchy-faithful code module or asset, do **not** replace it with a plain `styled-table` / pin dump
 2. **Prefer known-good** only as *quality preference*, never as *exclusive whitelist*.
 3. **Fallback** to simpler forms only after attempt; record in header/feasibility.
 4. **Claims copy-through** verbatim (normalized whitespace ok). **NEVER** paraphrase claims.
@@ -238,6 +239,7 @@ When ideal needs a **reusable** pattern:
 | Document fallbacks honestly | Claim paraphrase / content rewrite |
 | Compose post-Accept (or documented exception) | Auto-heal compile/validate retry loops |
 | Claims copy-through | Skip Accept under time pressure for real production |
+| Embed Accept graphic winners (proximity-authoritative) | Quietly replace hierarchy module with pin-monotone table |
 | Validate with creative mode (default) | Fail a good design solely for using Fletcher/custom |
 
 ## Boundary vs `media-brief` / `medical-graphics`

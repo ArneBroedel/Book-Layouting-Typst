@@ -28,7 +28,8 @@ Pointer index only (no asset duplicates). Learn from paths + Accept winners.
 | KL Melanom ABCDE | free vision + illustration-semantics; surgical B/D refine → `vision-refined-02.png` |
 | KL Melanom enabling | no unlabeled tempo color bar; named Evolution vs Jahre poles |
 | KL Melanom urgency | exceptional-T1 strip when 112 not primary |
-| KL grammar vs ambition | Invariants first; then free vision/spatial for creativity |
+| KL grammar vs ambition | Track **named** per unit; default posture free-vision-ambition; grammar-only opt-in only |
+| **CRPS pilot (negative harvest lesson)** | Free vision ran (mimic/cues) but code winners stayed pin-faithful without harvest port → free vision looked “unused”. Policy fix: track → harvest → hierarchy-faithful recreate + free-vision proximity Accept. Paths: `briefs/kl-crps.*` · `lib/typst/kl-wave6/crps.typ` · untracked vision PNGs under `assets/kl-crps-*` (do not treat as Accept gold). Retrofit optional later. |
 
 ## Walkthrough
 

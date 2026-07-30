@@ -18,9 +18,17 @@
 
 ## Graphic winners (if Decision Note / A/B)
 
-| unit_id | accepted winner (code\|asset\|hybrid) | form_spec Must-see met? | note |
-|---|---|---|---|
-| | | yes/no | |
+| unit_id | track | accepted winner (code\|asset\|hybrid) | form_spec Must-see met? | free-vision proximity | harvest must met/waived | embed path (module/asset) | note |
+|---|---|---|---|---|---|---|---|
+| | free-vision-ambition\|grammar-only\|none | | yes/no | yes\|partial\|no\|n/a | yes\|waived\|n/a | | |
+
+### Free-vision proximity outcomes (Media)
+
+| Situation | Decision |
+|---|---|
+| Ambition + pin-monotone code (no harvest port) | **revise** (Graphics: port harvest) |
+| Ambition + hierarchy code or asset PASS | **accept** (if other rubric OK) |
+| Grammar-only + clean code | **accept** (proximity N/A) |
 
 ## If revise
 
@@ -36,6 +44,9 @@ From `media-brief/references/design-reasoning.md` §5 — tick or note fail → 
 - [ ] Urgency weights from Brief not flattened in spike/approx
 - [ ] **Form Spec Must-see** met by winner (when Form Spec exists)
 - [ ] Graphic / free-vision candidates reviewed when present (ideal proximity + learner job)
+- [ ] **If track = free-vision-ambition:** winner shows free-vision proximity (not pin-monotone)
+- [ ] Harvest must-cues listed as met or explicitly waived with reason
+- [ ] Embed path filled for Tech (module and/or asset)
 - [ ] Production path after vision: recreate / refine / accept-asset noted if Graphics ran
 - [ ] Asset winner: claim audit PASS + DPI/manifest gates (playbook 06)
 - [ ] No claim rewrite or new clinical thresholds in layout (incl. images)

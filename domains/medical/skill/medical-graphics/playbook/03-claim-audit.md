@@ -15,15 +15,18 @@ Free vision is **not** claim-safe by default (IV-4 invented vitals; III-5 EN chr
    - Does each **icon / diagram element** show what its label *means*?  
    - Do **scales / size cues** match the stated threshold (e.g. *typisch > 5 mm* must not look like 2 mm)?  
    - No decorative metaphor that teaches the wrong criterion (e.g. hard zigzag ≠ unscharfe Begrenzung).  
-6. Verdict:
+6. Verdict + **realize default** (depends on track):
 
-| Verdict | Next |
-|---|---|
-| **PASS** | Labels **and** illustration-semantics OK → R1 recreate; optional R3 refine; asset path open if gates OK |
-| **DRIFT** | EN chrome, minor wording, **or** icon/scale mismatch fixable by surgical refine → B2 notes |
-| **FAIL** | Invented clinical content / thresholds → never accept-asset until fixed |
+| Verdict | Track | Default next | Forbidden |
+|---|---|---|---|
+| **PASS** | free-vision-ambition | R1 hierarchy-faithful recreate **and/or** R3 refine → accept-asset path | pin-monotone code as winner |
+| **DRIFT** | free-vision-ambition | (1) surgical refine for labels/icons **or** (2) **recreate-with-harvest** (ports cues; fixes labels in Typst) | drop harvest; “table only”; treat DRIFT as “ignore free vision” |
+| **FAIL** | free-vision-ambition | recreate from Form Spec + **non-clinical** harvest cues; **never** accept-asset free PNG | ship free PNG |
+| any | grammar-only | code transfer (no free gen) | free gen theater |
+| any | free-vision-ambition | harvest note **still required** (composition cues independent of verdict) | free vision with no harvest |
 
-7. Record result in `*.graphics.md` (Phase A notes) or audit file.
+7. Record result in `*.graphics.md` (Phase A notes) or audit file; link `harvest_path` or `## Harvest` section.  
+8. Confirm harvest **must** cues are listed even when verdict is DRIFT/FAIL (labels may fail; layout cues still usable).
 
 ## Illustration-semantics (icon honesty)
 
@@ -52,8 +55,10 @@ Exploration series may keep demoted PNGs as **negative provenance** (what not to
 ## NEVER
 
 - `accept-asset` on FAIL  
+- Treat DRIFT as “discard free vision composition” on ambition track  
 - Treat “looks good” / “all German labels present” as claim pass without icon check when icons teach criteria  
-- Ship free vision as winner after text audit only when the unit is **criteria-by-picture** (ABCDE, spatial anatomy, scales)
+- Ship free vision as winner after text audit only when the unit is **criteria-by-picture** (ABCDE, spatial anatomy, scales)  
+- Accept pin-monotone code as ambition winner without harvest port
 
 ## Evidence
 

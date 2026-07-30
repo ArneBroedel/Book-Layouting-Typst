@@ -129,11 +129,12 @@ Hard rules:
 
 1. **Production** compose quality bar needs **H1 freeze** + later **H2 accept** — say so early.  
 2. Ambitious visuals → **Form Spec** (`media-brief`) **before** free vision (`medical-graphics`).  
-3. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics (not ad-hoc script hunting).  
-4. Full multi-chapter durable drive → create/use board via **`book-production-orchestrator`**.  
-5. C-only review loops → **`content-orchestrator`** (max 2 rounds → H3).  
-6. Never invent clinical claims; never agent-sign freeze/proof.  
-7. Anatomy free vision: paused unless Human **H-Gfx** reopens.
+3. Real visual units default to **`free-vision-ambition`** track (harvest + free-vision proximity Accept) — no chapter-wide grammar-only default.  
+4. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics (not ad-hoc script hunting).  
+5. Full multi-chapter durable drive → create/use board via **`book-production-orchestrator`**.  
+6. C-only review loops → **`content-orchestrator`** (max 2 rounds → H3).  
+7. Never invent clinical claims; never agent-sign freeze/proof.  
+8. Anatomy free vision: paused unless Human **H-Gfx** reopens.
 
 ### Mini-pipeline (situation 2 — one chapter)
 
@@ -190,12 +191,15 @@ Before the first specialist work product, write a short route (chat + optional f
 - content: <paths>
 - project_root: …
 - book_id: <or n/a>
+- graphics_track: free-vision-ambition | grammar-only | mixed | none | tbd
 - next_skill: …
 - next_action: …
 - cli: `./scripts/bookkit …` if any
 - human_gate_soon: none | H1 | H2 | H-Gfx | H4 | …
 - do_not: …
 ```
+
+When visual ambition is heavy (situation 2/4), expect **`graphics_track: free-vision-ambition`** (or `mixed`) for ≥1 unit — **not** a silent grammar-only skip. Do **not** recommend “skip free vision to save time” when the brief already set ambition required.
 
 Optional path: `toolset/orchestration/studio-routes/<slug>-<date>.md` (create dir if useful).  
 For full-book, prefer board `route.md` from book-production-orchestrator templates.
@@ -227,6 +231,7 @@ For full-book, prefer board `route.md` from book-production-orchestrator templat
 | Start with goal + situation menu when ambiguous | Assume full-book production without asking |
 | Ask only missing intake fields | Copy content SoT into `packages/` or this repo as SoT |
 | Name next_skill + Human gates before deep work | Skip Form Spec for free-vision ambition |
+| Surface `graphics_track` on route card when visuals matter | Recommend skip free vision to save time when ambition required |
 | Prefer bookkit CLI verbs | Invent Critical Claims or clinical numbers |
 | Stop at H1/H2/H4/H5/H-Gfx | Agent-sign freeze/proof/imprimatur |
 | Keep A/B/C boundaries | Dump research/ as default context |

@@ -134,14 +134,16 @@ When Tech returns a feasibility note and optional spike PDF/PNG (and optional Gr
 
 1. Read Brief + **Form Spec** + Feasibility (+ spikes; + `*.graphics.md` if present).
 2. Per overall + strittige Abschnitte: **`accept` | `revise` | `reject`** + 1–3 sentence note.
-3. Run the **Accept rubric** in [`references/design-reasoning.md`](references/design-reasoning.md) §5 (gatekeeper findable, action louder than sources, order visible, urgency not flattened, **flows look like flows**, **not box monotony**, no claim rewrite).
+3. Run the **Accept rubric** in [`references/design-reasoning.md`](references/design-reasoning.md) §5 (gatekeeper findable, action louder than sources, order visible, urgency not flattened, **flows look like flows**, **not box monotony**, no claim rewrite, **free-vision proximity** on ambition track).
 4. **Form Spec proximity:** Does the winner meet **Must-see** and genre chrome? If free-vision unit has no Form Spec → revise Media first or document exception.
 5. If graphic candidates / A/B: pick **winner** by ideal proximity + learner job + Form Spec success criterion (not “prettiest PNG”); note carrier (`code`|`hybrid`|`asset`). Raster winner only if claim audit PASS + gates (see medical-graphics playbook 06).
-6. If Tech/Graphics fell back from wishlist/ideal without documented attempt: **revise**.
-7. If **revise**: state required changes (artifact, not chat-only).
-8. Check **Production compose authorized?** only on accept path.
-9. For **production** Accept: verify freeze pin. Exploration must not authorize production compose.
-10. Write Accept record from **`domains/medical/templates/accept-record.template.md`** (include `form_spec_path`, graphic winners).
+6. **Free-vision proximity (ambition track):** If `*.graphics.md` track = `free-vision-ambition`, the winner must still feel like the free-vision job (hierarchy/rails/peel/dual-coding — harvest must-cues met or waived). **Pin-monotone code → revise** (Graphics ports harvest). Grammar-only: proximity N/A.
+7. Confirm **embed path** for Tech (module and/or asset) is filled on Accept.
+8. If Tech/Graphics fell back from wishlist/ideal without documented attempt: **revise**.
+9. If **revise**: state required changes (artifact, not chat-only).
+10. Check **Production compose authorized?** only on accept path.
+11. For **production** Accept: verify freeze pin. Exploration must not authorize production compose.
+12. Write Accept record from **`domains/medical/templates/accept-record.template.md`** (include `form_spec_path`, graphic winners, track, free-vision proximity, harvest).
 
 Suggested path: `domains/medical/briefs/<slug>.accept.md` (or next to feasibility).
 
@@ -175,6 +177,7 @@ Do not open a third Media↔Tech round without Human.
 | Claim pins = copy-through from C | Invent thresholds in Form Spec |
 | Visible wishlist / ambitious patterns | Critical Claim rewrite |
 | Accept on proximity to **Form Spec / ideal** | Accept monotony because catalog green |
+| Free-vision proximity on ambition track (not pin-monotone) | Accept ambition unit that ignores free-vision harvest |
 | Emit Brief / Form Spec / Accept **files** | Design monologue without artifact |
 | Treat recipes as functional checklists | Brief = form-id shopping list only |
 | Stop at 2 Media↔Tech rounds → Human | Implement feasibility/spike yourself |
@@ -205,6 +208,7 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | Brief template | `domains/medical/templates/media-brief.template.md` |
 | Accept template | `domains/medical/templates/accept-record.template.md` |
 | Graphics Decision template | `domains/medical/templates/graphic-decision.template.md` |
+| Graphic Harvest template | `domains/medical/templates/graphic-harvest.template.md` |
 | Graphics skill / playbook | `domains/medical/skill/medical-graphics/` |
 | Recipes | `domains/medical/recipes/` |
 | Briefs / gold INDEX | `domains/medical/briefs/INDEX.md` |

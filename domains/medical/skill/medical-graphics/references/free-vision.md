@@ -1,7 +1,9 @@
 # Free vision (Phase A)
 
-**When:** ambitious Visual-Units after Media Brief (decision-flow, mechanism, cue-cluster, spatial, high wishlist).  
-**Goal:** best *didactic visual idea* — not bookkit compliance.
+**When:** track = **`free-vision-ambition`** (default for real visual units after Form Spec / Media Brief — decision-flow, mechanism, cue-cluster, urgency, mimic, spatial, high wishlist).  
+**Not when:** track = `grammar-only` (opt-in re-pin only) or `none`.  
+**Goal:** best *didactic visual idea* — not bookkit compliance.  
+**After every free gen:** write **harvest** (composition cues) — see `domains/medical/templates/graphic-harvest.template.md`. DRIFT does not discard harvest.
 
 ## Inputs allowed
 

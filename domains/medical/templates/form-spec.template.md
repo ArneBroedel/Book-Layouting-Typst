@@ -9,10 +9,12 @@
 - **author_role:** media
 - **date:**
 - **ambition:** free-vision **required** | optional | skip
+- **track hint (Graphics G0):** preferred **`free-vision-ambition`** when ambition is required/optional and the unit is a real visual graphic; `grammar-only` only if Media/Human consciously skip free vision (document here)
 
-> Medizinpädagogisch **beste** Darstellungsform — spezifiziert genug für Graphics Free Vision + Recreate.  
+> Medizinpädagogisch **beste** Darstellungsform — spezifiziert genug für Graphics Free Vision + Harvest + Recreate.  
 > **Keine** form ids / bookkit-APIs. **Keine** Claim-Erfindung (Pins = copy-through aus C).  
-> Skill: `media-brief` · Guide: `Guides/Medical-Presentation-Forms.md`
+> Skill: `media-brief` · Guide: `Guides/Medical-Presentation-Forms.md`  
+> Graphics track default: free-vision-ambition (no chapter-wide grammar-only).
 
 ## Learner context
 

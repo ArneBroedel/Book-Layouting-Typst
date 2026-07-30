@@ -27,9 +27,11 @@ Use this when mapping a user goal to a workflow. Prefer the **smallest** path th
 1. Content mature? → else `content-review`  
 2. Production? → **H1 freeze**  
 3. `media-brief` → brief + form-specs  
-4. Visual units → `medical-graphics` (playbook; `bookkit graphics`)  
-5. Accept **H2**  
-6. `compose-chapter` → `bookkit validate` / build  
+4. Visual units → `medical-graphics` (playbook; track default **free-vision-ambition**; harvest; `bookkit graphics`)  
+5. Accept **H2** (incl. free-vision proximity on ambition units)  
+6. `compose-chapter` → embed Accept winners → `bookkit validate` / build  
+
+**Route card:** set `graphics_track` when visuals matter. Do not default the whole chapter to grammar-only.
 
 **Optional:** create a one-chapter board under book-production if user wants resume later.
 
@@ -58,7 +60,8 @@ Use this when mapping a user goal to a workflow. Prefer the **smallest** path th
 
 **CLI:** `./scripts/bookkit graphics vision|refine|manifest`  
 **Libs:** `domains/medical/lib/typst/`  
-**Gold:** `domains/medical/briefs/INDEX.md`
+**Gold:** `domains/medical/briefs/INDEX.md`  
+**Track:** expect `free-vision-ambition` for real visual units; harvest after free vision; pin-monotone → revise.
 
 Do **not** Accept asset on claim FAIL. Anatomy pause → H-Gfx.
 
