@@ -5,10 +5,11 @@ description: "ALWAYS use when drafting or revising a Media Brief, Form Spec for 
 
 # media-brief (Domain medical — Produkt B)
 
-Executable procedure for the **Media** role: free didactic–media ideal → **Form Spec** (ambitious units) → Media Brief → Accept after Tech/Graphics.
+Executable procedure for the **Media** role: free didactic–media ideal → **Form Spec** + **Design Contract** → adversarial Design Critic until **Design CLEAN** → (Graphics realize + Visual CLEAN) → **Accept** only on CLEAN packets.
 
 **Why (presentation forms):** `Guides/Medical-Presentation-Forms.md`  
-**KL illness-script guide:** `Guides/KL-Form-Language.md`
+**KL illness-script guide:** `Guides/KL-Form-Language.md`  
+**Design-quality system:** `devtracks/design-quality-system/` (atom justification · dual critique · pre-Human clean)
 
 **SoT of this skill:** `domains/medical/skill/media-brief/` (Produkt B).  
 **Not** platform foundation; not a substitute for `compose-chapter` / Tech.  
@@ -48,8 +49,8 @@ Autor (C) ──► Media Brief (this skill) ──► Tech Feasibility ◄─�
 Media designs the **best medical-pedagogical presentation** (flows, lanes, spreads, hierarchy) **without** asking first what is catalog-stable. For **ambitious visual units**, Media writes a **Form Spec** (Must-see, zones, claim pins, genre chrome, success criterion) so Graphics can free-vision and recreate without inventing pedagogy.  
 Tech **realizes** accepted winners. **Graphics** runs free vision → claim audit → recreate/hybrid/refine. Media **accepts** proximity to Form Spec / ideal — not “only stable forms”.
 
-**MUST:** unit→hypothesis; free ideal; **Form Spec for free-vision-required units**; surface ambitious presentation; evaluate proposals against Form Spec Must-see; ask Author only targeted questions.  
-**MUST NOT:** change Critical Claims; build the Brief as a form-id shopping list; pre-shrink the ideal to “what we know compiles”; accept monotony just because validate is green; leave Graphics to invent the pedagogical form.
+**MUST:** unit→hypothesis; free ideal; **Form Spec + Design Contract** for non-prose visual units; **Design Critic** until Design CLEAN (builder ≠ critic); simple-alternative doctrine; atom-level justification (color/arrow/chrome); Accept only with Design CLEAN + Visual CLEAN; ask Author only targeted questions.  
+**MUST NOT:** change Critical Claims; build the Brief as a form-id shopping list; pre-shrink the ideal to “what we know compiles”; accept monotony or dirty craft because validate is green; leave Graphics to invent the pedagogical form; **self-Accept** units you sole-built; ship exploration PDFs without Visual CLEAN; skip Design Critic.
 
 ## Inputs
 
@@ -89,21 +90,32 @@ Exploration provenance: `domains/medical/briefs/_explorations/README.md` (not no
 1. **Design reasoning (compact)** — load [`references/design-reasoning.md`](references/design-reasoning.md). For each content unit (heading/role only): **unit type → learner job → load risk → presentation hypothesis → recipe function** (if any). No claim paraphrase; **no form ids** (hypotheses are pattern names: urgency-lane, branching flowchart, protocol sequence, case frame, …). For KL: also check ontology unit ids (U-urgency, U-mimic, …).
 2. **ALWAYS free ideal next** — overall presentation goal for the learner/actor (not clinical restatement; not bookkit APIs). Ask: *what is the hypothetically best didactic presentation?* Including ambitious visuals (true flowcharts, triage lanes, dual-channel diagrams). **At least one ambition slot** per KL chapter exploration when pedagogically justified (spatial, peel, free vision) — do not stop at box monotony.
 3. **Section plan in prose** — for each section: content anchor, ideal presentation, priority / page intent. Optional **hypothesis** column. Genre recipe = **function checklist**, not form cage.
-4. **Form Spec (ambitious visual units) — REQUIRED when free-vision ambition is high**  
+4. **Form Spec (ambitious / non-prose visual units)**  
    - Template: `domains/medical/templates/form-spec.template.md`  
-   - Path: `domains/medical/briefs/<slug>.form-spec.md` (one file per unit or multi-unit sections clearly headed)  
-   - Fill: learner context, job, load risks, **zones**, **Must-see**, **claim pins** (copy-through C), genre chrome, invariants, success criterion, ambition flag  
-   - When free vision will **draw** criteria (ABCDE, scales, spatial signs): fill optional **Icon meaning** table (what drawing must show / must not) — labels alone are not enough for Graphics audit  
+   - Path: `domains/medical/briefs/<slug>.form-spec.md`  
+   - Fill: learner context, job, **simple alternative**, load risks, **zones**, **Must-see**, **claim pins** (copy-through C), genre chrome, invariants, success criterion, ambition flag  
+   - When free vision will **draw** criteria (ABCDE, scales, spatial signs): fill **Icon meaning** table  
    - Guide: `Guides/Medical-Presentation-Forms.md` · KL: `Guides/KL-Form-Language.md`  
-   - Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spec.md`, KL: `kl-u-urgency-scope.form-spec.md`, `kl-melanom-abcde.form-spec.md`, `kl-ces-saddle.form-spec.md`  
-   - Skip Form Spec only for trivial units (`ambition: skip`) documented in Brief.
-5. **Wishlist / ambitious patterns** — explicit wishlist with why + severity. Visible ambition is success.
-6. **Author questions** — targeted only; no claim rewrite.
-7. **Explicit non-goals** — include “no clinical simplification in layout”; for KL: “no form-meta inside figures”.
-8. **NEVER production Typst** — no `.typ` / bookkit sketches as Brief body.
-9. **Write artifacts** — Brief + Form Spec files. Chat without files is incomplete.
+   - Skip Form Spec only for pure prose (`ambition: skip`) documented in Brief.
+5. **Design Contract (Phase D1) — REQUIRED for every non-prose visual unit**  
+   - Template: `domains/medical/templates/design-contract.template.md`  
+   - Path: `domains/medical/briefs/<slug>.design-contract.md` (or per-unit headed sections)  
+   - **Atom table:** every color, arrow, border, hub, peel, chain, badge — with media-design + medical-pedagogy reason  
+   - **Simple alternative** doctrine: if complex form is not clearly better under scan stress, **choose simple**  
+   - Anti-theater list: rejected chrome
+6. **Design Critic (Phase D2) — mandatory, separate role**  
+   - Template: `domains/medical/templates/design-critique.template.md`  
+   - Role **DC** attacks Contract + Form Spec; severity `block` | `should` | `nit`  
+   - MD revises (D3) until status **clean** (budget: 4 rounds → H-Design / Human)  
+   - **Forbidden:** free vision or realize with open design `block`  
+   - Builder of Contract must **not** mark Design CLEAN alone
+7. **Wishlist / ambitious patterns** — explicit wishlist with why + severity.
+8. **Author questions** — targeted only; no claim rewrite.
+9. **Explicit non-goals** — include “no clinical simplification in layout”; for KL: “no form-meta inside figures”.
+10. **NEVER production Typst** — no `.typ` / bookkit sketches as Brief body.
+11. **Write artifacts** — Brief + Form Spec + Design Contract + Design Critique. Chat without files is incomplete.
 
-Keep reasoning **short** in the Brief table; put detail in Form Spec.
+Keep reasoning **short** in the Brief table; put detail in Form Spec + Design Contract.
 
 ## Output: Media Brief
 
@@ -130,25 +142,31 @@ Fill all sections:
 
 ## Accept-record procedure (after Feasibility / Spike)
 
-When Tech returns a feasibility note and optional spike PDF/PNG (and optional Graphics Decision Note / A/B candidates):
+When Graphics/Tech return candidates — **only after Design CLEAN + Visual CLEAN**:
 
-1. Read Brief + **Form Spec** + Feasibility (+ spikes; + `*.graphics.md` if present).
+0. **Quality packet gate (hard):**  
+   - Design Critic status **clean** for every non-prose unit  
+   - Visual Critic status **clean** on **latest PNG set** for every graphic unit  
+   - Quality packet (`*.quality-packet.md`) or equivalent table  
+   - If missing → **revise** / stop — do **not** Accept. Exploration does **not** waive Visual CLEAN for didactic PDFs.  
+   - Accepting Media (**AX**) must **not** be the sole builder of the implement under review.
+1. Read Brief + **Form Spec** + **Design Contract** + Feasibility (+ spikes; + `*.graphics.md` + visual-critique).
 2. Per overall + strittige Abschnitte: **`accept` | `revise` | `reject`** + 1–3 sentence note.
-3. Run the **Accept rubric** in [`references/design-reasoning.md`](references/design-reasoning.md) §5 (gatekeeper findable, action louder than sources, order visible, urgency not flattened, **flows look like flows**, **not box monotony**, no claim rewrite, **free-vision proximity** on ambition track).
-4. **Form Spec proximity:** Does the winner meet **Must-see** and genre chrome? If free-vision unit has no Form Spec → revise Media first or document exception.
-5. If graphic candidates / A/B: pick **winner** by ideal proximity + learner job + Form Spec success criterion (not “prettiest PNG”); note carrier (`code`|`hybrid`|`asset`). Raster winner only if claim audit PASS + gates (see medical-graphics playbook 06).
-6. **Free-vision proximity (ambition track):** If `*.graphics.md` track = `free-vision-ambition`, the winner must still feel like the free-vision job (hierarchy/rails/peel/dual-coding — harvest must-cues met or waived). **Pin-monotone code → revise** (Graphics ports harvest). Grammar-only: proximity N/A.
-7. Confirm **embed path** for Tech (module and/or asset) is filled on Accept.
-8. If Tech/Graphics fell back from wishlist/ideal without documented attempt: **revise**.
-9. If **revise**: state required changes (artifact, not chat-only).
-10. Check **Production compose authorized?** only on accept path.
-11. For **production** Accept: verify freeze pin. Exploration must not authorize production compose.
-12. Write Accept record from **`domains/medical/templates/accept-record.template.md`** (include `form_spec_path`, graphic winners, track, free-vision proximity, harvest).
+3. Run the **Accept rubric** in [`references/design-reasoning.md`](references/design-reasoning.md) §5 (minimum scan checks — **not** a substitute for Design/Visual CLEAN).
+4. **Form Spec / Contract proximity:** winner meets Must-see + atom table; no uncontracted chrome.
+5. Graphic winners: ideal proximity + learner job + success criterion; carrier `code`|`hybrid`|`asset`. Raster only if claim audit PASS + gates (playbook 06).
+6. **Free-vision proximity (ambition):** pin-monotone → **revise**.
+7. Confirm **embed path** for Tech.
+8. Fallback from wishlist without attempt → **revise**.
+9. If **revise**: required changes as artifact.
+10. **Production compose authorized?** only on accept path + freeze.
+11. Exploration may authorize exploration compose **only** with Visual CLEAN; never production.
+12. Write Accept from **`domains/medical/templates/accept-record.template.md`** (CLEAN checkboxes + quality_packet_path).
 
-Suggested path: `domains/medical/briefs/<slug>.accept.md` (or next to feasibility).
+Suggested path: `domains/medical/briefs/<slug>.accept.md`.
 
-**Compose may run only after Media accept** (or a documented pilot exception — not the quality bar).  
-**Production compose** also requires content freeze (validate `--profile production`).
+**Compose may run only after Media accept** (or documented smoke exception).  
+**Production compose** also requires content freeze.
 
 ### Checkpoints (Human)
 
@@ -173,15 +191,19 @@ Do not open a third Media↔Tech round without Human.
 |---|---|
 | Unit→hypothesis **before** any form-id thought | Production `.typ` / bookkit layout in this skill |
 | Free ideal = hypothetically **best** presentation | Pre-shrink ideal to “what maps to stable” |
-| **Form Spec** for free-vision-required units | Leave pedagogical form to Graphics alone |
+| **Form Spec + Design Contract** for non-prose visual units | Leave pedagogical form to Graphics alone |
+| **Design Critic** until Design CLEAN (separate role) | Self-CLEAN design you sole-authored |
+| Atom justification for color/arrow/chrome | Unjustified orange/red/variety chrome |
+| Simple alternative doctrine | Complex form when list/table teaches better |
 | Claim pins = copy-through from C | Invent thresholds in Form Spec |
 | Visible wishlist / ambitious patterns | Critical Claim rewrite |
-| Accept on proximity to **Form Spec / ideal** | Accept monotony because catalog green |
-| Free-vision proximity on ambition track (not pin-monotone) | Accept ambition unit that ignores free-vision harvest |
-| Emit Brief / Form Spec / Accept **files** | Design monologue without artifact |
+| Accept only with Design CLEAN + Visual CLEAN | Accept on validate green / compile only |
+| Accept on proximity to **Form Spec / Contract** | Accept monotony because catalog green |
+| Free-vision proximity on ambition track | Accept ambition unit that ignores free-vision harvest |
+| Emit Brief / Form Spec / Contract / Critique / Accept **files** | Design monologue without artifact |
 | Treat recipes as functional checklists | Brief = form-id shopping list only |
 | Stop at 2 Media↔Tech rounds → Human | Implement feasibility/spike yourself |
-| Point Graphics at Form Spec path + gold `briefs/INDEX.md` | Generate free-vision PNGs in this skill (use `medical-graphics` → `bookkit graphics …`) |
+| Point Graphics at Design-CLEAN packet | Generate free-vision PNGs in this skill |
 | KL: load ontology; TIME≠SCOPE; no form-meta in figures | KL: invent T3/tiers; Scope as ladder step; 2×2 for §3/§4 |
 
 ## Boundary vs Tech / Graphics
@@ -205,10 +227,15 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | KL form library (Graphics) | `domains/medical/skill/medical-graphics/references/kl-form-library.md` |
 | Presentation forms guide | `Guides/Medical-Presentation-Forms.md` |
 | Form Spec template | `domains/medical/templates/form-spec.template.md` |
+| **Design Contract** | `domains/medical/templates/design-contract.template.md` |
+| **Design Critique** | `domains/medical/templates/design-critique.template.md` |
+| **Visual Critique** | `domains/medical/templates/visual-critique.template.md` |
+| **Quality Packet** | `domains/medical/templates/quality-packet.template.md` |
 | Brief template | `domains/medical/templates/media-brief.template.md` |
 | Accept template | `domains/medical/templates/accept-record.template.md` |
 | Graphics Decision template | `domains/medical/templates/graphic-decision.template.md` |
 | Graphic Harvest template | `domains/medical/templates/graphic-harvest.template.md` |
+| Design-quality track | `devtracks/design-quality-system/` |
 | Graphics skill / playbook | `domains/medical/skill/medical-graphics/` |
 | Recipes | `domains/medical/recipes/` |
 | Briefs / gold INDEX | `domains/medical/briefs/INDEX.md` |

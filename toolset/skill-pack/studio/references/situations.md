@@ -26,12 +26,12 @@ Use this when mapping a user goal to a workflow. Prefer the **smallest** path th
 
 1. Content mature? → else `content-review`  
 2. Production? → **H1 freeze**  
-3. `media-brief` → brief + form-specs  
-4. Visual units → `medical-graphics` (playbook; track default **free-vision-ambition**; harvest; `bookkit graphics`)  
-5. Accept **H2** (incl. free-vision proximity on ambition units)  
+3. `media-brief` → brief + form-specs + **design-contracts** → Design Critic until **Design CLEAN**  
+4. Visual units → `medical-graphics` (track default **free-vision-ambition**; harvest→atoms; realize) → **Visual Critic on PNG until Visual CLEAN**  
+5. Accept only on quality packet (H2 if production; exploration still needs Visual CLEAN)  
 6. `compose-chapter` → embed Accept winners → `bookkit validate` / build  
 
-**Route card:** set `graphics_track` when visuals matter. Do not default the whole chapter to grammar-only.
+**Route card:** `graphics_track`, `design_clean`, `visual_clean`. No grammar-only chapter default. Validate OK ≠ done.
 
 **Optional:** create a one-chapter board under book-production if user wants resume later.
 

@@ -75,7 +75,26 @@ Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spe
 
 ---
 
-## 5. Accept rubric (use on Accept; 30-second pass)
+## 4b. Design Contract & atoms (Phase D — before free vision)
+
+Load full procedure: `devtracks/design-quality-system/` · templates `design-contract.template.md` · `design-critique.template.md`.
+
+**Doctrine:** every non-default visual decision (color, arrow, border, hub, peel, chain, badge, type weight) must help the learner **process content**. If a complex form is not clearly better than a list/table under scan stress, **choose simple**.
+
+| Atom needs | Reject if |
+|---|---|
+| Media-design principle (hierarchy, contiguity, dual coding, signaling, segmenting) | “Looks nicer” / library clone only |
+| Medical-pedagogy reason (error class, job, time pressure) | Decoration that do not change learner action |
+| Mapping: color → meaning | Orange/red “for variety” or unmotivated emphasis |
+| “If removed, what breaks?” | Nothing breaks → delete atom |
+
+**Design Critic (adversarial, separate role):** attack Contract with `block` / `should` / `nit`. CLEAN only with zero open blocks. Builder must not self-CLEAN.
+
+---
+
+## 5. Accept rubric (use on Accept; minimum pass — **not** a substitute for Design/Visual CLEAN)
+
+**Hard gate before this rubric:** Design CLEAN + Visual CLEAN (PNG-inspected) quality packet. Without it → `revise`, never accept.
 
 | Check | Fail → |
 |-------|--------|
@@ -93,6 +112,11 @@ Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spe
 | **Free-vision-ambition** track + winner is **pin-monotone** (ignores harvest hierarchy/chrome) | `revise` (Graphics: port harvest must-cues) |
 | Ambition track + free vision ran but **no harvest** documented | `revise` (Graphics: write harvest) |
 | Harvest must-cues waived without reason | `revise` |
+| Design CLEAN missing / open design `block` | `revise` (Phase D) |
+| Visual CLEAN missing / pages not opened / code-leak or overflow | `revise` (Phase R visual critique) |
+| Uncontracted color/chrome on page | `revise` |
+| Complex form worse than simple alternative on the page | `revise` (simplify or redesign) |
+| Self-Accept by sole builder | `revise` (separate AX + critiques) |
 | Embed path for Tech missing on graphic winner | `revise` (fill Accept compose notes) |
 | A/B winner chosen without ideal/learner-job rationale | `revise` |
 | No claim rewrite / no new clinical thresholds in layout (incl. inside images) | `reject` or Author loop |

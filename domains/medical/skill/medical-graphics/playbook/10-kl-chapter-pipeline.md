@@ -37,12 +37,16 @@ If new unit type → ≥3 valuable + ≥2 rejected paths (see form-space process
 
 ---
 
-## 3. M — Brief + Form Specs
+## 3. M — Brief + Form Specs + Design Contracts
 
 - Brief: `domains/medical/briefs/<slug>.brief.md` (`brief_class: exploration` until freeze)  
 - Form Specs: urgency (+ scope), mimic if present, **ambition unit** if justified  
+- **Design Contract** per non-prose unit (atom table + simple alternative)  
+- **Design Critic** until Design CLEAN (budget 4)  
 - Icon meaning table when criteria-by-picture  
-- Transfer hygiene: new pins, no decorative bar copy from Erysipel
+- Transfer hygiene: new pins, no decorative bar copy; library is candidate not auto-winner  
+
+Exploration still requires **Visual CLEAN** for didactic PDF quality (not dirty pilots).
 
 ---
 
@@ -79,19 +83,22 @@ typst compile --root . --ignore-system-fonts --font-path fonts \
   dist/spikes/graphics/kl-…/….pdf
 ```
 
+**Design CLEAN required** before free vision / realize.  
 Claim audit after any free vision (labels **and** illustration-semantics).  
-**Harvest** after free vision (see template `graphic-harvest.template.md`).  
-**Forbidden:** free vision → DRIFT → pin-monotone code without harvest.
+**Harvest** after free vision — cues map to Contract atom_ids.  
+**Visual Critique** ([11-visual-critique](11-visual-critique.md)) on PNG until Visual CLEAN (budget 5).  
+**Forbidden:** free vision without Design CLEAN; free vision → pin-monotone; Accept without PNG eyes; code-leak ship.
 
-### Harvest before Accept
+### Harvest + Visual CLEAN before Accept
 
-On `free-vision-ambition`, Media Accept requires **free-vision proximity**: the winner must still feel like the free-vision job (hierarchy/rails/peel/dual-coding), not pins alone. Pin-monotone → **revise** Graphics.
+On `free-vision-ambition`, Accept requires free-vision proximity **and** Visual CLEAN. Pin-monotone or craft defects → **revise**.
 
 ---
 
 ## 5. A — Accept exploration
 
-Template: `domains/medical/templates/accept-record.template.md`  
+Template: `domains/medical/templates/accept-record.template.md` + quality packet.  
+Requires Design CLEAN + Visual CLEAN even for exploration didactic PDFs.  
 Exploration → production compose **no**.  
 Production → also need freeze pin (content-maturity).
 

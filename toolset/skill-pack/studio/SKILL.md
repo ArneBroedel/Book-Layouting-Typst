@@ -128,13 +128,15 @@ Full table: [`references/routes.md`](references/routes.md).
 Hard rules:
 
 1. **Production** compose quality bar needs **H1 freeze** + later **H2 accept** — say so early.  
-2. Ambitious visuals → **Form Spec** (`media-brief`) **before** free vision (`medical-graphics`).  
-3. Real visual units default to **`free-vision-ambition`** track (harvest + free-vision proximity Accept) — no chapter-wide grammar-only default.  
-4. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics (not ad-hoc script hunting).  
-5. Full multi-chapter durable drive → create/use board via **`book-production-orchestrator`**.  
-6. C-only review loops → **`content-orchestrator`** (max 2 rounds → H3).  
-7. Never invent clinical claims; never agent-sign freeze/proof.  
-8. Anatomy free vision: paused unless Human **H-Gfx** reopens.
+2. Non-prose visuals → **Form Spec + Design Contract + Design Critic (Design CLEAN)** before free vision (`medical-graphics`).  
+3. Real visual units default to **`free-vision-ambition`** track; after realize → **Visual Critic on PNG (Visual CLEAN)** before Accept.  
+4. Exploration does **not** waive Visual CLEAN for didactic chapter PDFs.  
+5. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics (not ad-hoc script hunting).  
+6. Full multi-chapter durable drive → create/use board via **`book-production-orchestrator`**.  
+7. C-only review loops → **`content-orchestrator`** (max 2 rounds → H3).  
+8. Never invent clinical claims; never agent-sign freeze/proof.  
+9. Anatomy free vision: paused unless Human **H-Gfx** reopens.  
+10. **L2** may auto-run MD→DC→GX→VC within budgets; must **not** declare “done” on validate alone or self-Accept sole-built work.
 
 ### Mini-pipeline (situation 2 — one chapter)
 
@@ -144,9 +146,11 @@ When autonomy ≥ L1, **orchestrate in-session** by loading each skill’s proce
 content ready?
   no  → content-review / author (C)
   yes → freeze? (H1 if production)
-        → media-brief (Brief + Form Specs)
-        → medical-graphics for visual units (playbook; bookkit graphics)
-        → media-brief Accept (H2 if production)
+        → media-brief: Brief + Form Specs + Design Contracts
+        → Design Critic loop until Design CLEAN (budget 4 → H-Design)
+        → medical-graphics: track → free vision → harvest → realize
+        → Visual Critic on PNG until Visual CLEAN (budget 5 → Human)
+        → quality packet → media-brief Accept (AX; H2 if production)
         → compose-chapter
         → bookkit validate (+ build)
         → optional prepress / proof (H4)
@@ -192,14 +196,16 @@ Before the first specialist work product, write a short route (chat + optional f
 - project_root: …
 - book_id: <or n/a>
 - graphics_track: free-vision-ambition | grammar-only | mixed | none | tbd
+- design_clean: no | yes | partial | tbd
+- visual_clean: no | yes | partial | tbd
 - next_skill: …
 - next_action: …
 - cli: `./scripts/bookkit …` if any
-- human_gate_soon: none | H1 | H2 | H-Gfx | H4 | …
+- human_gate_soon: none | H1 | H-Design | H2 | H-Explore | H-Gfx | H4 | …
 - do_not: …
 ```
 
-When visual ambition is heavy (situation 2/4), expect **`graphics_track: free-vision-ambition`** (or `mixed`) for ≥1 unit — **not** a silent grammar-only skip. Do **not** recommend “skip free vision to save time” when the brief already set ambition required.
+When visual ambition is heavy (situation 2/4), expect **`graphics_track: free-vision-ambition`** (or `mixed`) for ≥1 unit — **not** a silent grammar-only skip. Require **Design CLEAN** before free vision and **Visual CLEAN** (PNG) before Accept. Do **not** treat first PDF + validate OK as done.
 
 Optional path: `toolset/orchestration/studio-routes/<slug>-<date>.md` (create dir if useful).  
 For full-book, prefer board `route.md` from book-production-orchestrator templates.
@@ -231,7 +237,8 @@ For full-book, prefer board `route.md` from book-production-orchestrator templat
 | Start with goal + situation menu when ambiguous | Assume full-book production without asking |
 | Ask only missing intake fields | Copy content SoT into `packages/` or this repo as SoT |
 | Name next_skill + Human gates before deep work | Skip Form Spec for free-vision ambition |
-| Surface `graphics_track` on route card when visuals matter | Recommend skip free vision to save time when ambition required |
+| Surface `graphics_track` + `design_clean` / `visual_clean` on route card | Recommend skip free vision to save time when ambition required |
+| Enforce Design CLEAN → Visual CLEAN before Accept | Declare chapter done on validate alone / self-Accept |
 | Prefer bookkit CLI verbs | Invent Critical Claims or clinical numbers |
 | Stop at H1/H2/H4/H5/H-Gfx | Agent-sign freeze/proof/imprimatur |
 | Keep A/B/C boundaries | Dump research/ as default context |

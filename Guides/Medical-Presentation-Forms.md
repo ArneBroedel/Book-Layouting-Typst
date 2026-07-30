@@ -10,9 +10,17 @@
 
 Before any Free Vision or Typst module, Media specifies the **hypothetically best medical-pedagogical presentation** so that Graphics can visualize without re-inventing pedagogy or claims.
 
-The operational artifact is the **Form Spec**:  
-`domains/medical/briefs/<slug>.form-spec.md`  
-(template: `domains/medical/templates/form-spec.template.md`)
+The operational artifacts are:
+
+1. **Form Spec** — zones, Must-see, claim pins, genre chrome  
+   `domains/medical/briefs/<slug>.form-spec.md`  
+2. **Design Contract** — atom-level justification (every color, arrow, chrome) + **simple alternative** doctrine  
+   `domains/medical/templates/design-contract.template.md`  
+3. **Design Critique** — adversarial pass until **Design CLEAN**  
+   `domains/medical/templates/design-critique.template.md`
+
+Process: `devtracks/design-quality-system/`.  
+Doctrine: if a complex form is not clearly better than a list/table under scan stress, **choose simple**. Unjustified chrome is theater.
 
 ---
 

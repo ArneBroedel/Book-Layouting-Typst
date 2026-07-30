@@ -51,8 +51,8 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | `Working_With_Typst-Theory_To_Practice.md` (canonical lessons-learned ledger) | `typst-writer` |
 | `Typst Extensibility.md` | `typst-extension` |
 | `Pinit-Best-Practices.md` | `pinit-workflow` |
-| `Medical-Presentation-Forms.md` (Form Spec, zones, claim pins) | `media-brief` + `medical-graphics` |
-| `Medical-Graphics-Playbook.md` (free-first, claim audit, hybrid, raster gates) | `medical-graphics` |
+| `Medical-Presentation-Forms.md` (Form Spec, Design Contract, zones, claim pins) | `media-brief` + `medical-graphics` |
+| `Medical-Graphics-Playbook.md` (free-first, claim audit, harvest, visual critique) | `medical-graphics` |
 | `KL-Form-Language.md` (illness-script grammar + ambition + transfer) | `media-brief` + `medical-graphics` |
 | `docs/BOOK-PRODUCTION-RUNBOOK.md` (full book → print, board/resume) | `book-production-orchestrator` |
 
@@ -69,6 +69,8 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | Spike modules | `toolset/compose/spikes/graphics/kl-script-system/README.md` |
 | Transfer eval (Melanom) | `spike-melanom.typ` · briefs `kl-melanom*.md` · PDF `melanom.pdf` |
 | Skill evals | `domains/medical/skill/*-workspace/` + `*/evals/evals.json` |
+| **Design-quality system (active)** | `devtracks/design-quality-system/` · Design CLEAN + Visual CLEAN pre-Human |
+| Free-vision harvest (archived) | `devtracks/_archive/free-vision-harvest/` |
 
 ---
 

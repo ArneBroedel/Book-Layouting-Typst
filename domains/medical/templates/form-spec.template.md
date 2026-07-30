@@ -10,11 +10,14 @@
 - **date:**
 - **ambition:** free-vision **required** | optional | skip
 - **track hint (Graphics G0):** preferred **`free-vision-ambition`** when ambition is required/optional and the unit is a real visual graphic; `grammar-only` only if Media/Human consciously skip free vision (document here)
+- **design_contract_path:** `domains/medical/briefs/<slug>.design-contract.md` (required for non-prose visual units — Phase D)
+- **design_clean:** no | yes (only after Design Critic)
 
 > Medizinpädagogisch **beste** Darstellungsform — spezifiziert genug für Graphics Free Vision + Harvest + Recreate.  
 > **Keine** form ids / bookkit-APIs. **Keine** Claim-Erfindung (Pins = copy-through aus C).  
 > Skill: `media-brief` · Guide: `Guides/Medical-Presentation-Forms.md`  
-> Graphics track default: free-vision-ambition (no chapter-wide grammar-only).
+> Graphics track default: free-vision-ambition (no chapter-wide grammar-only).  
+> **Design-Quality:** every non-default atom justified in Design Contract; Design CLEAN before free vision (`devtracks/design-quality-system/`).
 
 ## Learner context
 
@@ -27,6 +30,11 @@
 stop | recognize | choose | execute | distinguish | understand | look up  
 
 **Primary job in one sentence:**
+
+## Simple alternative (required — expand in Design Contract)
+
+- boring default: list | prose | 2-col table | library pin-swap | other:  
+- why not simple / **or we choose simple:**
 
 ## Load risks (if form is wrong)
 

@@ -5,11 +5,13 @@ description: "ALWAYS use after Media Brief/Form Spec for visual units: free visi
 
 # medical-graphics (Domain medical — Produkt B)
 
-**Graphics** role: after Media’s **Form Spec** / Brief ideal, produce the best **visual realization**.
+**Graphics** role: after Media’s **Design CLEAN** packet (Form Spec + Design Contract + Design Critic), produce the best **visual realization**, then pass **Visual Critic** until Visual CLEAN.
 
 **SoT:** `domains/medical/skill/medical-graphics/`  
 **Playbook (run this):** [`playbook/00-overview.md`](playbook/00-overview.md)  
+**Visual critique:** [`playbook/11-visual-critique.md`](playbook/11-visual-critique.md)  
 **Policy:** `toolset/compose/CREATIVE-COMPOSE.md`  
+**Design-quality:** `devtracks/design-quality-system/`  
 **Why-guide:** `Guides/Medical-Graphics-Playbook.md`  
 **KL form language:** `Guides/KL-Form-Language.md` · library [`references/kl-form-library.md`](references/kl-form-library.md)
 
@@ -34,26 +36,27 @@ description: "ALWAYS use after Media Brief/Form Spec for visual units: free visi
 ## Pipeline
 
 ```text
-Form Spec (Media)
+Design CLEAN packet (Media: Form Spec + Design Contract + Design Critic)
     │
     ▼
-G0  Visual-Units + recipe + **track**   playbook/01
+G0  Visual-Units + recipe + **track**     playbook/01
 G1  Free vision (if free-vision-ambition) playbook/02
 G2  Claim audit (mandatory)               playbook/03
-    Harvest note (layout cues always)     template graphic-harvest
+    Harvest → map to Contract atom_ids    graphic-harvest
 G3  Realize ladder:
       R1 Hierarchy-faithful Typst recreate playbook/04
       R2 Hybrid (optional)                 playbook/05
       R3 Refine / raster gates             playbook/06
       R4 Fair A/B                          playbook/07
-G4  Decision Note + free-vision proximity → Media Accept  playbook/08
+G3b Visual Critique on PNG pages          playbook/11  ← until Visual CLEAN
+G4  Decision Note → Media Accept (AX)     playbook/08
     │
     ▼
-Tech embed accepted winner (proximity winners authoritative)
+Tech embed accepted winner
 ```
 
-**MUST:** name **track** per unit before free gen (`free-vision-ambition` default for real visual units; `grammar-only` opt-in only); read Form Spec; free vision without structure clone on ambition track; **claim audit after free** (labels **and** illustration-semantics); **harvest** composition cues after free vision (independent of audit verdict); port harvest **must** cues on recreate; pin labels from C; document `realize_path` + harvest; Media Accept owns ideal + **free-vision proximity**; **German labels only** in production graphics; **no form-meta** inside figures; surgical refine for icon/scale mismatches when composition is otherwise good.  
-**MUST NOT:** invent clinical content; silent grammar-only chapter/genre default; free vision without harvest; free vision → DRIFT → pin-monotone table as winner; foot-legend-only hybrid as fair A/B; accept-asset on audit FAIL or on icon-DRIFT left unfixed; endless AI loops; production “done” without Accept; put designer legends that *explain the form language* inside the graphic; transfer decorative bars/spectra that do not name their meaning.
+**MUST:** refuse free gen / realize without **Design CLEAN**; name **track** per unit; free vision without structure clone on ambition track; **claim audit** after free; **harvest** mapped to **atom_ids**; port harvest must-cues; **export PNG and Visual Critic** until Visual CLEAN (builder ≠ critic); pin labels from C; document realize_path + harvest + visual_critique_path; **German labels only**; no form-meta in figures.  
+**MUST NOT:** invent clinical content; free vision without Design CLEAN; free vision without harvest; pin-monotone winner on ambition; **self-CLEAN visual**; handoff Accept without PNG inspection; code-leak / overflow ship; accept-asset on FAIL; endless AI gens beyond caps; transfer decorative bars without meaning.
 
 ## End product policy
 
@@ -73,19 +76,25 @@ Raster **may** be final — only with gates in [`playbook/06-refine-raster.md`](
 |---|---|---|
 | Free gens / unit | **2** | Human/Media |
 | Refine gens | **2** | recreate or Human |
-| Solid recreate | **1** (+ polish) | Accept or fallback |
+| Solid recreate | **1** (+ polish) | visual loop |
 | Fair hybrid | **1** | — |
-| Media↔Graphics | **2** | Human |
+| **Visual critique rounds** | **5** | Human (do not fake clean) |
+| Media↔Graphics feasibility | **2** | Human |
+
+**Floor beats schedule:** open visual `block` → no Accept. Simplification to Contract simple alternative is a valid CLEAN path.
 
 ## Artifacts
 
 | Artifact | Path |
 |---|---|
-| Form Spec (Media) | `domains/medical/briefs/<slug>.form-spec.md` |
+| Form Spec + Design Contract (Media) | `…form-spec.md` · `…design-contract.md` |
+| Design Critique CLEAN | `…design-critique.md` |
 | Vision Brief | `…/<slug>.vision.md` |
-| Harvest | section in `*.graphics.md` or `…/<slug>.harvest.md` · template `graphic-harvest.template.md` |
+| Harvest | section in `*.graphics.md` or `…/<slug>.harvest.md` · map to atom_ids |
 | Claim audit | template `graphic-claim-audit.template.md` |
+| Visual Critique CLEAN | `…visual-critique.md` + page PNGs |
 | Decision Note | `…/<slug>.graphics.md` |
+| Quality packet | `…quality-packet.md` |
 | Assets | `domains/medical/assets/<slug>/` |
 | Modules (SoT) | `domains/medical/lib/typst/` (`kl-core/`, `kl-wave5/`, `kl-wave6/`) |
 | Spike re-exports / drivers | `toolset/compose/spikes/graphics/<slug>/lib/` · `spike-*.typ` |

@@ -106,7 +106,7 @@ Allowed **only** for smoke tests, platform fixtures, legacy comparison — **not
 
 1. Read Media Brief **as design authority** — do not open forms.yaml first.
 2. For each section: state how the **ideal** will be realized (ladder above). Prefer `mapped` only when stable form = best shape.
-3. For **visual units** (diagrams, schemas, illustrations, flows, icon systems, wishlist graphics): expect Media **Form Spec** (`*.form-spec.md`) for ambitious units; set **`graphic_mode`** (`code` | `asset` | `hybrid` | `ab-test` | `none`). Prefer code when it meets the ideal; always consider asset/hybrid; A/B when unsure. Load **`medical-graphics`** playbook for free vision → claim audit → **harvest** → hierarchy-faithful recreate/hybrid/refine; embed **Media Accept winners** only. Link `graphic_decisions` + harvest path in feasibility when Graphics ran.
+3. For **visual units**: expect **Design CLEAN** packet (Form Spec + Design Contract + Design Critic) before graphics; set **`graphic_mode`**. Load **`medical-graphics`** for realize + **Visual CLEAN** (PNG critique). Embed **Media Accept winners** only when Accept links Design CLEAN + Visual CLEAN. Link `graphic_decisions` + quality packet in feasibility.
 4. Pin optional `catalog_version` for preferred library awareness — **not** a cage.
 5. Spike recommended? yes/no + goal (layout, code-graphic, asset-graphic, or ab-pair).
 6. Ready for Media Accept? yes / blockers.
@@ -240,6 +240,7 @@ When ideal needs a **reusable** pattern:
 | Compose post-Accept (or documented exception) | Auto-heal compile/validate retry loops |
 | Claims copy-through | Skip Accept under time pressure for real production |
 | Embed Accept graphic winners (proximity-authoritative) | Quietly replace hierarchy module with pin-monotone table |
+| Prefer Accept that links Design CLEAN + Visual CLEAN | Compose “done” from validate-only dirty pilots |
 | Validate with creative mode (default) | Fail a good design solely for using Fletcher/custom |
 
 ## Boundary vs `media-brief` / `medical-graphics`

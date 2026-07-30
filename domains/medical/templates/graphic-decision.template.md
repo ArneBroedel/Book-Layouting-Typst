@@ -7,11 +7,15 @@
 - **feasibility_path:** (if any)
 - **content_source:** (C, read-only, if claims/labels)
 - **content_revision:** (if production)
-- **author_role:** graphics
+- **author_role:** graphics (GX)
 - **date:**
+- **design_contract_path:** (required for non-prose units)
+- **design_clean:** no | yes
+- **visual_critique_path:**
+- **visual_clean:** no | yes
 
-> Form Spec → free vision → claim audit → multi-round realize.  
-> Skill: `domains/medical/skill/medical-graphics/` · playbook `00-overview.md`
+> Design CLEAN → free vision / realize → claim audit → harvest → implement → **Visual CLEAN** (PNG) → handoff.  
+> Skill: `domains/medical/skill/medical-graphics/` · playbook `00-overview.md` · design-quality-system
 
 ## Track (G0 — required before free gen)
 
@@ -81,10 +85,13 @@ Harvest = **non-claim** composition only. DRIFT does not skip harvest.
 ## Ready for Media Accept?
 
 - [ ] Form Spec present (or documented skip)
+- [ ] **Design CLEAN** (Design Critic) for every non-prose unit
 - [ ] Track recorded per unit
 - [ ] Claim audit recorded
-- [ ] Harvest present if free-vision-ambition + free vision ran
+- [ ] Harvest present if free-vision-ambition + free vision ran (cues map to atom_ids)
 - [ ] Free-vision proximity ≠ no on recommended winner (ambition)
+- [ ] **Visual CLEAN** (Visual Critic) on latest PNG set — not compile-only
+- [ ] No open visual `block` (code-leak, overflow, uncontracted color, …)
 - [ ] yes
 - [ ] no — blockers:
 

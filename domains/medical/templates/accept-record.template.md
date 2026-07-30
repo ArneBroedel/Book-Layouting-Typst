@@ -5,9 +5,22 @@
 - **form_spec_path:** (if any — `*.form-spec.md`)
 - **feasibility_path:**
 - **graphics_decision_path:** (if any — `*.graphics.md`)
+- **quality_packet_path:** (if any — `*.quality-packet.md`)
 - **spike_paths:** (if any; include A/B candidates)
 - **date:**
-- **media_reviewer:**
+- **media_reviewer:** (role **AX** — must **not** be sole builder of units under Accept)
+
+## Quality CLEAN gate (mandatory for didactic chapter PDF)
+
+Exploration does **not** waive this for anything presented as a quality result.
+
+- [ ] Design CLEAN for every non-prose unit (`*.design-critique.md` status clean)
+- [ ] Visual CLEAN for every graphic unit (`*.visual-critique.md` status clean on **latest** PNG set)
+- [ ] Quality packet linked (or equivalent table filled)
+- [ ] Page PNGs listed and were inspected (not compile-only)
+- [ ] **No** self-accept: reviewer did not sole-author the implement under review
+
+If any box unchecked → overall must be **revise** or **reject**, never accept.
 
 ## Decision
 
@@ -49,6 +62,8 @@ From `media-brief/references/design-reasoning.md` §5 — tick or note fail → 
 - [ ] Embed path filled for Tech (module and/or asset)
 - [ ] Production path after vision: recreate / refine / accept-asset noted if Graphics ran
 - [ ] Asset winner: claim audit PASS + DPI/manifest gates (playbook 06)
+- [ ] Design Contract atoms still hold on the page (no uncontracted chrome)
+- [ ] No code-leak / overflow / unreadable craft defects (Visual CLEAN)
 - [ ] No claim rewrite or new clinical thresholds in layout (incl. images)
 
 ## Content freeze pin (production)

@@ -24,9 +24,11 @@ Stopping at (2) only → clean but uninspired (Human feedback).
 |------|--------|--------|
 | **R** Relation map | Media | Units + dimensions; prefer **content-map** file (`briefs/_wave5/<slug>.content-map.md` pattern) |
 | **C** Form-Space | Media | ≥3 valuable + ≥2 rejected paths per *new* unit; shortlist |
-| **M** Form Spec | Media | Gold density: zones, Must-see, pins, genre, success criterion; **Icon meaning** if criteria-by-picture |
-| **G** Realize | Graphics | **track** (default free-vision-ambition) → free vision → **claim audit** → **harvest** → hierarchy-faithful recreate/hybrid/refine |
-| **A** Accept | Media | accept/revise/reject + carrier + **free-vision proximity** on ambition track; exploration vs production |
+| **M** Form Spec + **Design Contract** | Media (MD) | Gold density + **atom table** + simple alternative; Icon meaning if criteria-by-picture |
+| **D** Design Critic | Media (DC, separate) | Attack Contract until **Design CLEAN** (budget 4 → H-Design) |
+| **G** Realize | Graphics (GX) | Design CLEAN required → track → free vision → claim audit → harvest→atoms → implement |
+| **V** Visual Critic | Graphics (VC, separate) | PNG/PDF pages until **Visual CLEAN** (budget 5 → Human) |
+| **A** Accept | Media (AX ≠ sole builder) | only Design CLEAN + Visual CLEAN + free-vision proximity; exploration still requires Visual CLEAN for didactic PDF |
 | **O** Transfer | Media/Tech | Same recipe, new pins; re-audit free labels **and** icons |
 | **h** Mini-harvest | Media/Graphics | New durable pattern → `kl-form-library.md` + recipe |
 

@@ -42,28 +42,29 @@ print_target: screen|print-pdfx|both
 Resume book-production board <book_id> autonomy L2
 ```
 
-**Media:**
+**Media (design council):**
 ```text
 Skill: media-brief
 Content: <path>
 Genre: …
-Write brief + form-specs for ambitious units. No production .typ.
+Write brief + form-specs + design-contracts. Design Critic until Design CLEAN.
+No production .typ. No free vision until Design CLEAN.
 ```
 
-**Graphics:**
+**Graphics (realize + visual council):**
 ```text
 Skill: medical-graphics
-Form Spec: <path>
+Design CLEAN packet: <form-spec + contract + design-critique clean>
 Track: free-vision-ambition (default) | grammar-only (opt-in only)
-Run playbook: G0 track → free vision → claim audit → harvest → hierarchy-faithful realize.
-Caps 2 free + 2 refine. No pin-monotone winner on ambition track.
+G0→free vision→claim audit→harvest→atoms→realize→Visual Critic on PNG until Visual CLEAN.
+Caps: 2 free + 2 refine + 5 visual rounds. No pin-monotone / code-leak / self-CLEAN.
 ```
 
 **Compose:**
 ```text
 Skill: compose-chapter
-Accept: <path> · Content: <path> · graphic_decisions: <path>
-Embed Accept winners (free-vision proximity authoritative). Then bookkit validate.
+Accept (Design+Visual CLEAN): <path> · Content: <path> · graphic_decisions: <path>
+Embed Accept winners only. Then bookkit validate (not a design pass).
 ```
 
 ---

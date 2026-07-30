@@ -2,21 +2,23 @@
 
 **Skill:** `medical-graphics`  
 **Full plan (archived):** `devtracks/_archive/medical-graphics/playbook-system-plan.md`  
-**Harvest policy:** `devtracks/_archive/free-vision-harvest/` (track + harvest + free-vision proximity)
+**Harvest policy:** `devtracks/_archive/free-vision-harvest/`  
+**Design-quality:** `devtracks/design-quality-system/` (Design CLEAN → realize → Visual CLEAN)
 
 ## End-to-end
 
 ```text
-Form Spec (Media)
+Design CLEAN (Form Spec + Design Contract + Design Critic)
   → G0 Visual-Units + **track** (default free-vision-ambition)
   → G1 Free vision (if ambition track)
   → G2 Claim audit
-  → **Harvest note** (layout cues — always after free vision)
-  → G3 Realize ladder (hierarchy-faithful recreate / hybrid / refine / A/B)
-  → Decision Note (proximity) → Media Accept → Tech embed winner
+  → Harvest (cues → Contract atom_ids)
+  → G3 Realize (hierarchy-faithful recreate / hybrid / refine / A/B)
+  → G3b Visual Critique on PNG (playbook 11) until Visual CLEAN
+  → Decision Note → Media Accept (AX) → Tech embed
 ```
 
-**Anti-pattern to kill:** free vision → DRIFT → pin-monotone table with no harvest.
+**Anti-patterns to kill:** free vision without Design CLEAN; free vision → pin-monotone; Accept without opening page PNGs; code-leak on page.
 
 ## Stages (this skill owns G0–G4)
 
@@ -29,7 +31,8 @@ Form Spec (Media)
 | G3b | [05-hybrid](05-hybrid.md) | hybrid spike (optional) |
 | G3c | [06-refine-raster](06-refine-raster.md) | refined PNG; **raster end gates** |
 | G3d | [07-ab-compare](07-ab-compare.md) | compare.pdf + scores |
-| G4 | [08-accept-handoff](08-accept-handoff.md) | `*.graphics.md` + free-vision proximity |
+| G3b | [11-visual-critique](11-visual-critique.md) | PNG inspect → Visual CLEAN |
+| G4 | [08-accept-handoff](08-accept-handoff.md) | `*.graphics.md` + CLEAN packet |
 | Recipes | [09-form-recipes](09-form-recipes.md) | skeletons |
 | KL path | [10-kl-chapter-pipeline](10-kl-chapter-pipeline.md) | one monograph E2E |
 | Example | [walkthrough-iv2](walkthrough-iv2.md) | full run |
@@ -80,11 +83,13 @@ Raster is **allowed**, not default. See 06.
 
 | ALWAYS | NEVER |
 |---|---|
+| **Design CLEAN** before free gen / realize | Free gen without Design Contract + Critic clean |
 | Name **track** before free gen | Silent grammar-only chapter default |
-| Read Form Spec before free gen | Free gen with structure SVG attach |
+| Read Form Spec + Contract before free gen | Free gen with structure SVG attach |
 | Claim audit after free | accept-asset on FAIL audit |
-| **Harvest** after free vision (ambition) | Free vision → pin-monotone code as winner |
+| **Harvest** → atom_ids after free vision | Free vision → pin-monotone code as winner |
 | Port harvest **must** cues on recreate | Drop composition because DRIFT |
+| **PNG + Visual Critic** until Visual CLEAN | Self-CLEAN / compile-only handoff |
 | Labels on nodes if hybrid | Foot-legend-only as equal flowchart |
-| Document realize_path + harvest_path | Invent clinical thresholds |
-| Media Accept free-vision proximity | Endless AI loops without artifact |
+| Document realize_path + harvest + visual_critique | Invent clinical thresholds |
+| Media Accept only on CLEAN packet | Endless AI loops without artifact |

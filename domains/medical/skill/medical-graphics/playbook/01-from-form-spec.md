@@ -2,12 +2,14 @@
 
 ## Input
 
-- `domains/medical/briefs/<slug>.form-spec.md` (required for ambitious units)
+- `domains/medical/briefs/<slug>.form-spec.md` (required for non-prose visual units)
+- `…design-contract.md` + `…design-critique.md` with status **clean** (**Design CLEAN** — required)
 - Media Brief + pilot/content pins if Form Spec missing → **stop and request Media Form Spec**
+- If Design Critic not clean → **stop**; do not free-gen or implement (Phase D first)
 
 ## Steps
 
-1. Open Form Spec for the unit.  
+1. Open Form Spec + **Design Contract**; confirm Design Critic status **clean**.  
 2. Confirm Media **ambition:** free-vision required | optional | skip.  
 3. Extract:
    - Must-see list  

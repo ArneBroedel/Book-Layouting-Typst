@@ -22,12 +22,14 @@
 
 ## Composition cues to port (non-claim)
 
-| cue_id | what free vision did | port to code/hybrid as | priority |
-|---|---|---|---|
-| H1 | e.g. 4-tile matrix + gestalt header | grid 2×2 + header band | must |
-| H2 | solid bottom escape rail | full-width danger bar | must |
-| H3 | row-4 red outline peel | accent stroke on last mimic row | should |
-| | | | |
+Each cue must map to a **Design Contract atom_id**. New chrome not in the Contract → **reopen Phase D** (do not silently invent atoms at harvest).
+
+| cue_id | atom_id | what free vision did | port to code/hybrid as | priority |
+|---|---|---|---|---|
+| H1 | A? | e.g. 4-tile matrix + gestalt header | grid 2×2 + header band | must |
+| H2 | A? | solid bottom escape rail | full-width danger bar | must |
+| H3 | A? | row-4 red outline peel | accent stroke on last mimic row | should |
+| | | | | |
 
 ## Explicitly NOT porting
 

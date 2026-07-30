@@ -19,32 +19,35 @@ Fill `domains/medical/templates/graphic-decision.template.md` → `…/<slug>.gr
 
 Only when:
 
-- [ ] Form Spec exists (ambitious units)  
+- [ ] **Design CLEAN** (Contract + Design Critic)  
+- [ ] Form Spec exists (non-prose units)  
 - [ ] Claim audit recorded  
 - [ ] Track recorded per unit  
-- [ ] If free-vision-ambition + free vision ran: harvest present; must-cues ported or waived  
+- [ ] If free-vision-ambition + free vision ran: harvest present; cues → atom_ids; must-cues ported or waived  
 - [ ] Free-vision proximity ≠ **no** on recommended winner (ambition track)  
+- [ ] **Visual CLEAN** ([11-visual-critique](11-visual-critique.md)) on **latest PNG set**  
 - [ ] At least one production-eligible carrier  
 - [ ] Spikes compile  
-- [ ] Caps respected  
+- [ ] Caps / visual-round budget respected  
+- [ ] Quality packet filled or Decision Note carries CLEAN flags  
 
-## Free-vision proximity (Graphics self-check → Media gate)
+## Free-vision proximity + Visual CLEAN
 
 | Situation | Ready? |
 |---|---|
-| Ambition + hierarchy-faithful code or asset PASS | yes → Media Accept |
-| Ambition + pin-monotone code | **no** → revise (port harvest) before handoff |
-| Grammar-only + clean code | yes (proximity N/A) |
+| Ambition + hierarchy-faithful code/asset + Visual CLEAN | yes → Media Accept (AX) |
+| Ambition + pin-monotone code | **no** → revise harvest port |
+| Any unit with code-leak / overflow / uncontracted chrome | **no** → visual revise |
+| Grammar-only + Visual CLEAN | yes (proximity N/A) |
 
 ## Media Accept inputs
 
-- Brief + Form Spec + graphics.md (+ harvest) + spikes  
-- Media picks winner by **ideal proximity + learner job + free-vision proximity** (ambition)  
-- Compose notes: which function/asset to embed — **Accept winners are authoritative**  
+- Quality packet + Brief + Form Spec + Design Contract + graphics.md + visual-critique + page PNGs + spikes  
+- AX ≠ sole builder; picks winner by Contract proximity + learner job + free-vision proximity  
+- Compose notes: embed path authoritative  
 
-Template Accept: `domains/medical/templates/accept-record.template.md`  
-Media rubric: `media-brief/references/design-reasoning.md` §5
+Templates: `accept-record.template.md` · `quality-packet.template.md`
 
 ## After Accept
 
-Tech (`compose-chapter`): embed winner (hierarchy code module or asset as Accept states); do not re-author ideal; do not replace proximity winners with plain styled-table.
+Tech (`compose-chapter`): embed winner; do not re-author ideal; do not replace CLEAN winners with pin-monotone tables.

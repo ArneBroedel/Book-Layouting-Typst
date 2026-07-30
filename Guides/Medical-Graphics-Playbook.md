@@ -77,12 +77,13 @@ Illness-script monographs: load **form library** + **ontology**, then transfer o
 **Track default (2026-07-30):** real visual units use **`free-vision-ambition`** — not a chapter/genre-wide grammar-only baseline.  
 `grammar-only` is **opt-in** (documented re-pin of an already harvested pattern, or explicit skip).
 
-**Ambition path:** free vision → claim audit → **harvest** (layout cues) → hierarchy-faithful code/hybrid/asset.  
-**DRIFT ≠ discard free vision** — port harvest must-cues; pin-monotone code fails Accept proximity.  
-Prefer **code if ≈ equal** after harvest; asset when chrome cannot match.  
-Never put form-meta (ontology captions, EN stage chrome) inside the figure.  
-Form Spec states genre chrome explicitly.  
-Templates: `graphic-harvest.template.md` · playbook `00` / `10`.
+**Design-quality (2026-07-30):** Design CLEAN (Contract + Critic) **before** free vision; Visual CLEAN (PNG + Visual Critic) **before** Accept — including exploration didactic PDFs.  
+**Ambition path:** Design CLEAN → free vision → claim audit → **harvest→atoms** → hierarchy-faithful code/hybrid/asset → **visual critique loop**.  
+**DRIFT ≠ discard free vision** — port harvest must-cues; pin-monotone fails proximity.  
+Prefer **code if ≈ equal** after harvest; **simple form if complex is not better**.  
+Never put form-meta inside the figure.  
+Templates: `design-contract` · `visual-critique` · `graphic-harvest` · playbook `00` / `11` / `10`.  
+**Negative gold:** CRPS re-run (`kl-crps-rerun-2026-07-30`) — code-leak in peel, unmotivated orange row, mechanism chain worse than list; process without visual eyes.
 
 ---
 

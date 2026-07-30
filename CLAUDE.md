@@ -61,7 +61,7 @@ When editing a component, change tokens in `theme.typ` rather than inlining colo
 - **typst-extension** — use when importing any `@preview` package, loading JSON/CSV data, or configuring `typst.toml`/CI.
 - **bookkit** — use when building with `/packages/bookkit`, starter/CLI consumers, design-brief, or didactics facet.
 - **book-production-orchestrator** — top-level board (`toolset/orchestration/book-production/`), run-log, autonomous L0–L3; runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`.
-- **media-brief** / **medical-graphics** — domain B (SoT under `domains/medical/skill/`); Form Spec + ideal vs free-vision → claim audit → recreate/hybrid/refine playbook (`playbook/00–09`). **KL Illness Script:** ontology + form-space process (`media-brief/references/kl-*.md`) · form library (`medical-graphics/references/kl-form-library.md`). Guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`.
+- **media-brief** / **medical-graphics** — domain B (SoT under `domains/medical/skill/`); Design Contract + Design Critic (Design CLEAN) → free vision → claim audit → harvest → realize → Visual Critic on PNG (Visual CLEAN) → Accept. Playbook `00–11`. Track: `devtracks/design-quality-system/`. **KL Illness Script:** ontology + form-space (`media-brief/references/kl-*.md`) · form library (`medical-graphics/references/kl-form-library.md`). Guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`.
 - **pinit-workflow** — use for any `#pin*` / pinit annotation work; self-contained (debug module, regression tests, style guide, and AI playbook ship inside the skill).
 - **skill-creator** — use to create, improve, evaluate, or benchmark a skill (e.g. when harvesting a completed devtrack into a skill).
 
