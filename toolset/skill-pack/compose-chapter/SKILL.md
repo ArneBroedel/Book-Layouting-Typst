@@ -181,6 +181,46 @@ Smoke/platform: `--profile smoke` (default) may omit freeze.
 
 7. **One-shot compose** toward validate — no self-healing re-prompt loop on compile fail.
 
+8. **Macro page structure (required before claiming compose done)** — multi-chapter harvest 2026-08-01:  
+   After embed, export **chapter PNG pages** and check **reader scan-path**, not only unit chrome:
+   - **One calm reading path** top→bottom (or documented columns); no competing equal-weight walls  
+   - **Section hierarchy** obvious (heading → body → unit → next heading)  
+   - **Consistent indent / left edge / card insets** — no random nested inset drift  
+   - **Quiet rhythm** between blocks (neither squish-compress nor restless panel patchwork)  
+   - **Flow units** (TIME stack, protocol, leitsymptom vertical) must *look* ordered, not only pin-correct  
+   - **Section heads (H2):** fixed air **above** each section (not weak-only); modest air below; **flush left** — never list-indented “1. Section” look  
+   - **In-card lists:** near-zero list indent so bullets don’t nest under section numbers (see `section-rhythm.typ` / typst-writer §7)  
+
+   Fail → fix layout (typst-writer) → re-export PNG → re-run Visual Critic.  
+   **Validate OK + 3 pages does not prove structure is followable.**
+
+   **Exploration pilots:** prefer  
+   `#import "/domains/medical/lib/typst/explore-2026-08/section-rhythm.typ": setup-pilot-sections, pilot-title-stack`  
+   then `#show: setup-pilot-sections()` after `setup-typography()`.
+
+9. **Chrome intensity ladder (required — Human 2026-08-01)** — unified house chrome; do not mix solid full-bleed danger with pale left-bar bands on the same page without reason:
+
+   | Level | Look | Use for |
+   |---|---|---|
+   | **quiet** | left bar + pale/neutral fill, dark type | OS, info, R/I/S, secondary |
+   | **flag** | left bar + pale danger/warning, dark type | ordinary RF / ranking / First-Look steps |
+   | **shout** | **solid** accent + white type | **exceptional only** — easy to miss *and* worse than ordinary RF (e.g. Default-to-Danger when findings are *unclear*) |
+
+   Shared helpers: `domains/medical/lib/typst/explore-2026-08/chrome.typ` (`chrome-band`, `chrome-lead`, `chrome-shout-line`).  
+   **Budget:** at most **one** shout cluster per page region; never solid-red every step of a flow.  
+   Free-vision airy solid cards are **not** the print default.
+
+10. **Print density / space budget (required — Human 2026-08-01)** — books are long and print is expensive; content volume is high:
+   - **Sparse-sprawl is a hard fail at page level**, not only unit level. A flow that looks “premium” but fills a whole page with 4–5 short steps + fat arrows/air = **NO-GO**.
+   - **Default for vertical flows in chapter body:** `density: "compact"` (thin left-accent bands, tight row-gutter, no dual-header card + fat arrow stack). Reserve `density: "airy"` for free-vision / spike comparison only — never as print default.
+   - **Do not force `#pagebreak()` before/after a flow** just to give it a “hero page”. Flow must **share the page** with following content (C-Muster, RF table, next section).
+   - **Half-empty page bottoms** only OK if the *chapter truly ends*; otherwise pack next section up (or tighten previous unit).
+   - **Two-sided density:** densify airy heroes *without* squish-compress (crushed type, 2pt stacks, glued margins). Target: high information density + still scannable hierarchy.
+   - **Do not densify by stealing section-head air** — packing content is good; gluing H2 to the previous card is not (Human 2026-08-01 · kompartment).
+   - **PNG check question:** *Could this page hold ~30–50% more useful content without losing the scan-path?* If yes and large white remains mid-chapter → densify. *Also:* is each H2 clearly separated from content above?
+
+   Concrete fails (revise wave): II-1 p2 airy Pflichtsequenz; IV-2 p2 airy Entscheidungs-Flow; IV-2 p1 half-empty opener; cramped H2 after density pass (kompartment).
+
 ## Validate (E)
 
 Engine: `toolset/compose/` · Policy: `CREATIVE-COMPOSE.md`.
@@ -242,6 +282,9 @@ When ideal needs a **reusable** pattern:
 | Embed Accept graphic winners (proximity-authoritative) | Quietly replace hierarchy module with pin-monotone table |
 | Prefer Accept that links Design CLEAN + Visual CLEAN | Compose “done” from validate-only dirty pilots |
 | Validate with creative mode (default) | Fail a good design solely for using Fletcher/custom |
+| Macro scan-path on full chapter PNGs (structure, indent, flow) | Ship restless/unclear page structure as “Visual CLEAN enough” |
+| Print-dense compact flows; share page with next content | Full-page airy free-vision card stack as book body default |
+| Pack mid-chapter page bottoms | Half-empty pages mid-chapter for “premium air” |
 
 ## Boundary vs `media-brief` / `medical-graphics`
 

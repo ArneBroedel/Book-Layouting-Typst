@@ -70,6 +70,22 @@ Media owns Form Spec + Accept (ideal / Form Spec proximity). Graphics owns free 
 | Fail-fast compile (no auto-heal loops) | “Green compile = good design” |
 | Media Accept on **proximity to ideal** | Accept only because whitelist/minima pass |
 | Document fallbacks in feasibility | Quiet table-only monotony |
+| **Section air + flush H2** (pilot rhythm) | Weak-only spacing above H2; list-indented section titles |
+
+### Section rhythm (exploration pilots)
+
+Dense content is good; **glued section heads are not**. After `setup-typography()`:
+
+```typst
+#import "/domains/medical/lib/typst/explore-2026-08/section-rhythm.typ": setup-pilot-sections, pilot-title-stack
+#show: setup-pilot-sections()
+```
+
+- Fixed `block(above:)` on H2 (not only `v(..., weak: true)`)
+- Lists/enums in pilot scope: near-zero indent so “1. Section” does not look nested
+- Title stack: small gap under title, clear gap under subtitle before first band
+
+Skills: `typst-writer` §7 · `compose-chapter` macro structure §8–10.
 
 ## Validator modes
 

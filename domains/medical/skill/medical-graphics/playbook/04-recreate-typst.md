@@ -28,6 +28,7 @@ toolset/compose/spikes/graphics/<slug>/
 4. **Port harvest `must` cues first** (zones, weight, rails, peel chrome, dual-coding geometry) — non-claim only.  
 5. Encode Form Spec zones with **claim pins only** (copy-through C).  
 6. Match free vision hierarchy (loud cards, arrows, banners) without inventing text.  
+6b. **Print density after hierarchy port (required):** free vision is often *airy* (large cards, fat arrows, full-bleed step height). For **chapter body ship**, provide a **`density: "compact"`** default (thin left-accent bands, tight gutters, no fat inter-step arrows) that keeps scan order + dual-coding. Keep `density: "airy"` only for free-vs-recreate comparison spikes. **Do not** embed airy full-page stack as book default — Human 2026-08-01: print cost + content volume make sparse full-page flows a **NO-GO**.  
 7. Compile always:
 
 ```bash
@@ -49,8 +50,19 @@ typst compile --root . --ignore-system-fonts --font-path fonts \
 - [ ] Optional: side-by-side free vs recreate when free PNG exists  
 - [ ] `*.graphics.md` lists `harvest_path` (or section) + which cues landed  
 - [ ] Winner is **not** pin-monotone on free-vision-ambition track  
+- [ ] **Ship path is print-dense** (`compact` default); airy not the only/only-export mode  
+- [ ] Embedded in chapter: unit does **not** force a mostly-empty hero page
 
 **Carrier bias (Human D4):** prefer **code if ≈ equal** after harvest port; asset/hybrid when chrome cannot match fairly.
+
+## When free vision FAILED (demotion landing)
+
+If claim audit is **FAIL** (or Human rejects pretty FAIL):
+
+1. **Do not** invent decorative placeholder geometry (colored blocks, oval “limbs”) as a “honest schematic”.  
+2. **Step down intensity** to Form Spec **simple alternative** or L2–L4 clinical typography: recognition cluster, Seitenvergleich table, map-rows, cue chips with real C pins.  
+3. That step-down can be the **Accept winner** (simple-alternative success) — solid unimpressive > pretty wrong (CRPS 2026-07-31).  
+4. Keep free PNG as **provenance only**; name carrier `code` in Decision Note.
 
 ## Patterns
 

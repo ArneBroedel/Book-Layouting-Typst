@@ -31,17 +31,32 @@ Until explicitly reopened (Human + **H-Gfx** or human-drawn gold):
 1. **Do not** free-gen limbs, organ cuts, fascial loges, NV anatomy, “comic legs”, or atlas-lite cuts.  
 2. Prefer **non-body** units: urgency, discrimination, mimic, cue tables, abstract process without body drawing.  
 3. CES/MSCC/saddle-style spatial free vision = **only** if Human reopens H-Gfx path — not agent default.  
-4. Record failed exploration under assets as **provenance demoted**, not winners.
+4. Record failed exploration under assets as **provenance demoted**, not winners.  
+5. **Contralateral clinical compare** (e.g. CRPS hand vs Gegenseite) is still a **body graphic** — same pause unless H-Gfx or a proven non-body substitute (exam table / cue cluster) is chosen.
+
+## Focus doctrine (CRPS 2026-07-31 harvest)
+
+Defaults — override only with a written reason in `*.vision.md` / Decision Note:
+
+| Default | Why | Flexible override |
+|---|---|---|
+| **One visual claim per free gen** | Multi-pin dashboards collapse into wrong laterality, arbitrary leaders, duplicates | Explicit multi-zone only if harvest + audit capacity is planned |
+| **No labels / no leader callouts in free raster** | Text-in-image invents, garbles, and fakes precision | Single short pin only if Form Spec requires criteria-by-picture *and* audit is harsh |
+| **Typst owns German claim text** | Maintainable, C-pin faithful | Hybrid labels-on-nodes after PASS composition |
+| **Pretty ≠ ready** | First-glance polish failed expert textbook scrutiny | Human H-Explore / H-Gfx may still pass a PASS audit |
+
+Negative gold: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md` · assets `domains/medical/assets/kl-crps-2026-07-31/` (provenance only).
 
 ## Prompt layers
 
 ### Layer A — Free (default)
 
 ```text
-Content steps (German, pinned)
-+ didactic jobs (branch must be visible, 4a = loop+escalate, …)
+ONE focused visual claim (German clinical meaning, no multi-pin dashboard)
++ didactic job for that single claim (e.g. asymmetry only; flow only)
 + genre / stress context
 + invent composition; do NOT copy repo layouts
++ DEFAULT: no text, no labels, no arrows-to-labels, no footer chrome in the image
 + output path
 ```
 
@@ -70,12 +85,15 @@ Attach SVG/PNG as layout template
 
 Free vision is **not** claim-safe by default. Before Phase B `accept-asset` or Media Accept of a raster:
 
-1. Read every on-image German/English label against Content C / pilot pin table.  
+1. Read every on-image German/English label against Content C / pilot pin table (if any text slipped in).  
 2. **Reject accept-asset** if any invented numbers, vitals, doses, or English decorative stage titles.  
-3. Prefer `recreate` (Typst) when free chrome is good but labels drift — recreate becomes claim SoT.  
-4. English stage chrome (STOP / ASSESSMENT / …) → B2 refine or strip in recreate.  
+3. **Illustration-semantics** (even when label-free): laterality/side-compare role truth; leaders point at meaning; no same-hand palm/dorsum sold as contralateral; no arbitrary callout dots.  
+4. Prefer `recreate` (Typst) when free chrome is good but labels/structure drift — recreate becomes claim SoT.  
+5. English stage chrome (STOP / ASSESSMENT / …) → B2 refine or strip in recreate.  
+6. **FAIL or expert-doubt → demote raster** and step down intensity (clinical table / code grammar) — **never** invent decorative placeholder “geometry theater” as a fake fix.
 
 **Eval evidence (2026-07-22):** IV-4 free invented First-Look vitals gibberish → production = recreate only. III-5 free used English stage titles. II-1 free was claim-clean and genre-correct (framework OS, not emergency red wall).  
+**CRPS 2026-07-31:** multi-pin labeled hands → laterality FAIL + arbitrary leaders; refine did not fix structure; blob demotion was worse; solid win = L3–L4 Seitenvergleich table.  
 Full batch: `dist/spikes/graphics/_eval/eval-batch-2026-07-22.md`.
 
 ## Gold example (III-2 S4)

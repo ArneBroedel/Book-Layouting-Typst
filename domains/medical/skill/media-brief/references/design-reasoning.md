@@ -125,6 +125,10 @@ Pick the **lowest** L with clear/essential gain. **L2–L3 is the default middle
 | Uncontracted color/chrome on page | `revise` |
 | Complex form worse than simple alternative on the page | `revise` (simplify or redesign) |
 | Sparse sprawl: high vertical cost / empty regions for few claims (space budget blown) | `revise` (densify or simple form) |
+| Squish-compress: crushed rhythm/type for page-count vanity | `revise` (restore breathing room; page count ≠ quality) |
+| Ambition FAIL replaced by decorative placeholder geometry (colored “anatomy” blobs) | `revise` (step down to simple alternative that teaches) |
+| Solid L2–L4 clinical table after free demote, pins honest | may **accept** (success of simple-alternative doctrine) |
+| Chapter pages restless / unclear structure / odd indent (macro scan-path) | `revise` compose (not a free-vision issue) — Visual CLEAN incomplete |
 | Self-Accept by sole builder | `revise` (separate AX + critiques) |
 | Embed path for Tech missing on graphic winner | `revise` (fill Accept compose notes) |
 | A/B winner chosen without ideal/learner-job rationale | `revise` |

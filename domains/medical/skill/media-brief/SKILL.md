@@ -201,8 +201,13 @@ Do not open a third Media↔Tech round without Human.
 | Middle path L2–L3 (color/weight/panels) first-class | Skip straight to complex diagram or bare walls |
 | Simple alternative / step-down doctrine | Higher L when lower L teaches as well |
 | **Space budget + density** (gain vs next-lower L; often ~⅛–⅓ page) | Sparse hero chrome / full-page for few claims |
+| **Two-sided density:** anti-sprawl *and* anti-squish; page count ≠ quality | Crush margins/type to “fit N pages” |
+| Accept solid simple alternative after ambition FAIL | Decorative placeholder geometry as demotion “fix” |
 | Claim pins = copy-through from C | Invent thresholds in Form Spec |
 | Visible wishlist / ambitious patterns | Critical Claim rewrite |
+| Document free-vision **skip** / grammar-only opt-in when no ambition unit | Silent chapter-wide grammar-only without note |
+| Scores (Wells/YEARS/ABCD²/MHS/…) as SCOPE/Sensibilisierung | Score as TIME tier or rule-out green step |
+| T3 collapse when C silent (no invent) | Empty T3 slot / fake zeitnah tier |
 | Accept only with Design CLEAN + Visual CLEAN | Accept on validate green / compile only |
 | Accept on proximity to **Form Spec / Contract** | Accept monotony because catalog green |
 | Free-vision proximity on ambition track | Accept ambition unit that ignores free-vision harvest |

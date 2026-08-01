@@ -169,6 +169,8 @@ For each chapter on the board, track:
 | **L2 auto** | Runs P3–P8 across chapters; stops only at H1/H2/H4/H5/H-Gfx, caps, or errors |
 | **L3 long-run** | L2 + durable board; user may leave; on resume continue; optional scheduled “status pulse” |
 
+**L2 multi-chapter hard rule:** with `agent-only` / D4 H-Explore, **continue until portfolio idle** (all locked board rows done) — never pause after one chapter “for the Human chat” while rows remain todo. Detail: [`references/autonomy.md`](references/autonomy.md) · [`references/multi-chapter-explore.md`](references/multi-chapter-explore.md).
+
 **Hard stops (all levels):** inventing clinical claims; agent-only freeze/proof; accept-asset on claim FAIL; 3rd Media↔Tech round without Human; production compose without Accept+freeze when production.
 
 **Caps (inherit specialists):** free gens 2, refine 2, review rounds 2, Media↔Tech 2.
@@ -241,10 +243,12 @@ Status CLI: `./scripts/book-production-status.sh <book-id>`
 |---|---|
 | Persist board + run-log on disk | Rely only on chat memory for multi-hour |
 | Stop at H1/H2/H4/H5/H-Gfx | Agent-sign freeze/proof |
+| L2: continue to portfolio idle when agent-only | Premature stop after one chapter while rows todo |
 | Route Form Spec before free vision | Skip claim audit for asset path |
 | Point to specialist playbooks | Rewrite Critical Claims |
 | Document rollback targets | Silent infinite loops past caps |
 | Reconcile FS vs board on resume | Invent chapter freeze status |
+| Chapter done only after full PNG macro + density check | Claim done on validate OK alone |
 
 ---
 
@@ -270,6 +274,8 @@ Prefer **`/studio`** if the user has not yet chosen full-book vs single-chapter 
 |---|---|
 | **Front door / intake** | `toolset/skill-pack/studio/` · slash `/studio` |
 | Runbook | `docs/BOOK-PRODUCTION-RUNBOOK.md` |
+| Multi-chapter explore ops | [`references/multi-chapter-explore.md`](references/multi-chapter-explore.md) |
+| Autonomy / L2 idle | [`references/autonomy.md`](references/autonomy.md) |
 | Graphics playbook | `domains/medical/skill/medical-graphics/playbook/` |
 | Media | `domains/medical/skill/media-brief/` |
 | Compose | `toolset/skill-pack/compose-chapter/` |

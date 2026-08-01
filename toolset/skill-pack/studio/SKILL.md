@@ -136,7 +136,12 @@ Hard rules:
 7. C-only review loops → **`content-orchestrator`** (max 2 rounds → H3).  
 8. Never invent clinical claims; never agent-sign freeze/proof.  
 9. Anatomy free vision: paused unless Human **H-Gfx** reopens.  
-10. **L2** may auto-run MD→DC→GX→VC within budgets; must **not** declare “done” on validate alone or self-Accept sole-built work.
+10. **L2** may auto-run MD→DC→GX→VC within budgets; must **not** declare “done” on validate alone or self-Accept sole-built work.  
+11. **Density is two-sided** (CRPS 2026-07-31): avoid empty sprawl *and* avoid squish-compress; page count is not a success metric.  
+12. Free-vision ambition: default **focused, label-free raster**; FAIL → demote to solid simple form — **never** decorative placeholder “geometry theater”.  
+13. **Pretty first-glance** is not Accept; prefer Human H-Explore on ambitious units when laterality/body/leaders are in play.  
+14. **L2 multi-chapter:** continue until portfolio idle (or hard stop) — no premature single-chapter exit.  
+15. **Macro layout scan-path** (structure, indent, calm flow on full page PNGs) is part of Visual CLEAN / compose done (portfolio 2026-08-01).
 
 ### Mini-pipeline (situation 2 — one chapter)
 
@@ -148,15 +153,20 @@ content ready?
   yes → freeze? (H1 if production)
         → media-brief: Brief + Form Specs + Design Contracts
         → Design Critic loop until Design CLEAN (budget 4 → H-Design)
-        → medical-graphics: track → free vision → harvest → realize
+        → medical-graphics: track → free vision (focused; default no labels in raster)
+              → claim audit (labels + illustration-semantics + laterality)
+              → harvest → realize (or step down intensity on FAIL)
         → Visual Critic on PNG until Visual CLEAN (budget 5 → Human)
+              attack sparse-sprawl AND squish-compress
         → quality packet → media-brief Accept (AX; H2 if production)
-        → compose-chapter
+              solid simple alternative after ambition FAIL may accept
+        → compose-chapter (readable book rhythm; no page-count vanity)
         → bookkit validate (+ build)
         → optional prepress / proof (H4)
 ```
 
-At each Human gate: **stop**, state exactly what the user must decide/sign, paths, then wait.
+At each Human gate: **stop**, state exactly what the user must decide/sign, paths, then wait.  
+Process evidence: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`.
 
 ### Full book (situation 1)
 
@@ -242,6 +252,8 @@ For full-book, prefer board `route.md` from book-production-orchestrator templat
 | Prefer bookkit CLI verbs | Invent Critical Claims or clinical numbers |
 | Stop at H1/H2/H4/H5/H-Gfx | Agent-sign freeze/proof/imprimatur |
 | Keep A/B/C boundaries | Dump research/ as default context |
+| Two-sided density; solid simple form after free FAIL | Squish layout for page count; blob placeholder demotion |
+| Focus free vision; pretty ≠ textbook-ready | Multi-pin labeled limb dashboards as default “ambition” |
 
 ---
 

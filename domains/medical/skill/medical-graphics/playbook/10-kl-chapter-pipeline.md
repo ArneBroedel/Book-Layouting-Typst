@@ -22,9 +22,10 @@ Emit `domains/medical/briefs/_waveN/<slug>.content-map.md` (or chapter folder):
 
 - What the chapter teaches (DA job)  
 - Units → ontology ids  
-- TIME matrix pin-ready (T3 collapse if silent)  
+- TIME matrix pin-ready (**T3 collapse** if silent — no empty slot, no invent)  
 - Mimic frames · SCOPE · distinctive pressure vs library  
-- Ambition candidate or **skip**
+- **SCORE / CERTAINTY** items (Wells, YEARS, ABCD², MHS, …) listed under SCOPE — never as TIME steps  
+- Ambition candidate or **skip** (document skip reason in brief)
 
 **Never** rewrite claims. Missing clinical text → Author (C).
 

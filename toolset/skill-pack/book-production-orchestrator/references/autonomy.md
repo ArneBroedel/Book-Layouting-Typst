@@ -9,6 +9,20 @@
 | L2 | Multi-chapter P3–P8 | H1/H2/H4/H5/H-Gfx, caps, errors |
 | L3 | L2 + resume-friendly; optional scheduled pulses | Same hard stops |
 
+### L2 hard rule (multi-chapter explore 2026-08-01)
+
+**Do not** stop after the first completed chapter (or first W1 chapter) to “wait for Human chat” when:
+
+- autonomy is L2, and  
+- `agent-only` / no hard H-Explore per wave, and  
+- board still has `todo` / incomplete rows, and  
+- no H-Design / H-Gfx / cap / error is open.
+
+**Continue** until **portfolio idle** (all locked rows done) or a documented hard stop.  
+A premature stop is a **process failure** (observed after Kompartment; corrected by continuing #4–#10).
+
+Parallel workers are allowed for throughput **if** each chapter still produces full skill packets and board is reconciled before claiming idle.
+
 ## Multi-hour / multi-session
 
 1. **Board is SoT** — never only chat.  

@@ -70,6 +70,7 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | Transfer eval (Melanom) | `spike-melanom.typ` · briefs `kl-melanom*.md` · PDF `melanom.pdf` |
 | Skill evals | `domains/medical/skill/*-workspace/` + `*/evals/evals.json` |
 | **Design-quality system (active)** | `devtracks/design-quality-system/` · Design CLEAN + Visual CLEAN pre-Human |
+| **Multi-chapter explore layout (active)** | `devtracks/multi-chapter-explore-layout/` · portfolio waves via book-production board (exploration) |
 | Free-vision harvest (archived) | `devtracks/_archive/free-vision-harvest/` |
 
 ---

@@ -54,6 +54,34 @@ Free models invent:
 FAIL → recreate owns claims; free is composition provenance only.  
 Icon/scale DRIFT with good layout → **surgical refine** (tile-scoped notes), not always full re-free.
 
+### CRPS 2026-07-31 (process harvest)
+
+| Lesson | Default practice |
+|---|---|
+| First-glance pretty fails textbook scrutiny | Do not Accept on polish alone; audit laterality, leaders, structure |
+| Multi-pin labeled free dashboards overload the model | Prefer **one visual claim** per free gen; **no labels in free raster** by default (Typst owns pins) |
+| Body/contralateral limbs remain high-risk | Stay under anatomy pause unless H-Gfx |
+| Bad demotion is worse than no free vision | On FAIL → L3–L4 clinical table/cluster — **not** colored placeholder “hands” |
+| Density is two-sided | Block sparse-sprawl *and* squish-compress; page count ≠ quality |
+| Solid unimpressive can Accept | Simple-alternative success after ambition FAIL is a win |
+
+Evidence: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`.
+
+### Multi-chapter portfolio 2026-08-01 (ops + layout)
+
+| Lesson | Default practice |
+|---|---|
+| L2 premature stop after one chapter | Continue to portfolio idle unless hard stop |
+| Parallel workers | Allowed if full packets + board reconcile; re-check macro page structure |
+| Selective free vision across portfolio | Code when grammar teaches; free/hybrid only when gestalt needs it; **document skips** |
+| Genre mix in one board | KL / notfall / leitsymptom / framework viable |
+| **Macro page restlessness / odd indent / unclear flow** | Visual CLEAN + compose must re-read **full chapter PNGs** for scan-path — validate OK is not enough |
+| **Print density (Human densify pass)** | Body flows `density: "compact"`; no hero pagebreaks for thin steps; mid-chapter bottoms fill |
+| SCORE hygiene (Wells / ABCD² / MHS) | SCOPE / Sensibilisierung — never TIME ladder |
+| T3 silent in C | Collapse — no empty third urgency card |
+
+Evidence: `devtracks/multi-chapter-explore-layout/retro-2026-08-01.md` · `evaluation/09-human-density-critique.md` · board `kursbuch-explore-2026-08` · ops `toolset/skill-pack/book-production-orchestrator/references/multi-chapter-explore.md`.
+
 ---
 
 ## 5. Genre chrome matters

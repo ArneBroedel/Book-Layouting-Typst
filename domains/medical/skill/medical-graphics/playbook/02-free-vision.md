@@ -38,10 +38,12 @@
 ## Rules
 
 - **Do not** attach repo SVG/PNG flowcharts as layout templates.  
-- Composition free; **labels** constrained by pins.  
+- Composition free; **default: no labels / no leader callouts in the free raster** — Typst owns German pins (CRPS 2026-07-31).  
+- Prefer **one visual claim per gen** (not a multi-pin labeled dashboard).  
 - Detail: [`../references/free-vision.md`](../references/free-vision.md)  
-- **Body / cut / organ:** **paused by default** (Human 2026-07-29) — do not free-gen anatomy; use non-body forms unless Human reopens H-Gfx.  
-- **No free vision without harvest** on ambition track (exit criterion).
+- **Body / cut / organ / contralateral limb compare:** **paused by default** (Human 2026-07-29 / 2026-07-31) — do not free-gen anatomy; use non-body forms unless Human reopens H-Gfx.  
+- **No free vision without harvest** on ambition track (exit criterion).  
+- **Pretty first-glance is not exit criterion** — illustration-semantics + laterality must survive textbook scrutiny.
 
 ### Silent fallback forbidden (Wave-5 lesson)
 

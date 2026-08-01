@@ -1,0 +1,22 @@
+# Studio route — 2026-08-01
+
+- **goal:** Layout + Grafiken für alle 4 Kapitel im D-RISC-Batch neu (exploration pilots)
+- **situation:** 1 (multi-chapter)
+- **brief_class:** exploration
+- **autonomy:** L2
+- **content:** `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-08-d-risc-batch`
+- **project_root:** monorepo `.` (Book-Layouting-Typst)
+- **book_id:** `d-risc-batch-2026-08`
+- **graphics_track:** mixed (code OS/flow/urgency; free vision only if gain clear)
+- **design_clean:** tbd → required per unit
+- **visual_clean:** tbd → required before Accept
+- **next_skill:** book-production-orchestrator (drives media-brief → medical-graphics → compose-chapter)
+- **next_action:** P3 media packages for ii1 / iv2 / gicht / kompartment
+- **cli:** `./scripts/bookkit` build/validate/graphics as needed
+- **human_gate_soon:** none hard (agent-only H-Explore); H-Design only if DC budget 4 fails
+- **do_not:**
+  - treat `*-2026-08-01` pilots as finished for this batch
+  - invent Critical Claims
+  - production Accept / freeze
+  - skip Design CLEAN or Visual CLEAN
+  - squish for page count; sparse hero chrome

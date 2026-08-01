@@ -125,6 +125,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | **workspace-split** (archived) | **A/B/C** structure | `devtracks/_archive/workspace-split/` · modular monorepo done; inventory `devtracks/_archive/workspace-inventory/`; Phase 3 split deferred (D2) |
 | **kl-form-language** (archived) | **B** | `devtracks/_archive/kl-form-language/` · system complete; ops: `playbook/10-kl-chapter-pipeline.md` |
 | **design-quality-system** (active) | **B** | `devtracks/design-quality-system/` · Design Contract + dual critique + Visual CLEAN pre-Human |
+| **multi-chapter-explore-layout** (active) | **A/B** | `devtracks/multi-chapter-explore-layout/` · curated multi-chapter exploration portfolio (board waves, creativity + CRPS quality norms) |
 | **free-vision-harvest** (archived) | **B** | `devtracks/_archive/free-vision-harvest/` · track/harvest/proximity (substrate for realize) |
 | Consumer guide | A | `docs/CONSUMER.md` |
 

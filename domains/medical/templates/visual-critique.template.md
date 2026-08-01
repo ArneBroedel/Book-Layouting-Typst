@@ -38,6 +38,10 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 - [ ] Color/emphasis **not** in Design Contract atom table  
 - [ ] Diagram/geometry **less clear** than Contract’s simple alternative  
 - [ ] **Sparse sprawl:** unit burns large vertical space / empty regions for few claims (fails Contract space budget)  
+- [ ] **Squish-compress:** margins/type/stacks crushed for page-count vanity; page feels glued/unprofessional  
+- [ ] Decorative placeholder geometry (colored “anatomy” blobs) worse than simple clinical table  
+- [ ] **Macro scan-path fail:** restless page, unclear structure, hard to follow flow, inconsistent indent/alignment  
+
 - [ ] Ambition track + pin-monotone (harvest proximity fail)  
 - [ ] Duplicate competing presentations without role split  
 - [ ] Broken layout (empty peel, missing labels, code leak in cards)  

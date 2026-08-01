@@ -54,6 +54,18 @@
 **CERTAINTY** = property of SCOPE (score ≠ rule-out).  
 **COMMUNICATION** = loudness modifier on qualifiers (not an axis).
 
+### SCORE / CERTAINTY hygiene (portfolio 2026-08 — LE / Stroke / MI)
+
+Clinical prediction or risk **scores** in C (examples: **Wells**, **YEARS**, **ABCD²**, **Marburger Herz-Score**, similar “Items stark positiv”) are **not** TIME tiers.
+
+| Put them… | Never as… |
+|---|---|
+| Inside **SCOPE** / competence brake (“Sensibilisierung, kein HP-Ausschluss”) | A green/amber ladder step between T2 and T4 |
+| As a **qualifier inside T2** text when C uses them as same-day triage cue | “Score low → may treat” clearance |
+| As warnhinweis language only | Rule-out or final LE/ACS/Stroke exclusion |
+
+Geometry still: SCOPE frame outside TIME stack. No form-meta caption “not a score tier.”
+
 ---
 
 ## Invariants (designer checklist)
@@ -67,7 +79,9 @@
 7. U-ddx only as **delta** vs must-not-miss (else omit).  
 8. §4 = three relations sequential — **not** one 2×2.  
 9. §3 = four equal channels — **not** a fake matrix.  
-10. Claim pins copy-through from Content C only.
+10. Claim pins copy-through from Content C only.  
+11. Scores (Wells/YEARS/ABCD²/MHS/…) = **CERTAINTY/SCOPE**, not TIME.  
+12. **T3 collapse:** if C has no zeitnah tier → no empty T3 and no invented T3.
 
 ---
 

@@ -42,7 +42,13 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 ## Open tracks
 
-*None.* Modular monorepo work from **workspace-split** is delivered (CLI, boundaries, harvest, skills/docs). Physical multi-repo split remains **deferred** (D2) — checklist frozen at [`_archive/workspace-split/phase3-split.md`](_archive/workspace-split/phase3-split.md).
+| Track | Focus |
+|---|---|
+| [`design-quality-system/`](design-quality-system/) | Design CLEAN + Visual CLEAN pre-Human (B + thin A) |
+| [`multi-chapter-explore-layout/`](multi-chapter-explore-layout/) | Curated multi-chapter exploration portfolio (board waves; not full catalog/print) |
+| [`chapter-form-lab/`](chapter-form-lab/) | Medium-extreme chapter lab (T/C/V/R→compare→S); orchestrated multi-session iterative craft to medium-optimum |
+
+Physical multi-repo split remains **deferred** (D2) — checklist frozen at [`_archive/workspace-split/phase3-split.md`](_archive/workspace-split/phase3-split.md).
 
 Runtime products (not tracks):
 

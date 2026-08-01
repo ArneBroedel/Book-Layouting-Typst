@@ -55,8 +55,8 @@ G4  Decision Note → Media Accept (AX)     playbook/08
 Tech embed accepted winner
 ```
 
-**MUST:** refuse free gen / realize without **Design CLEAN**; name **track** per unit; realize at Contract **intensity level** (L0–L6; do not silently upgrade to diagram/raster); free vision only when Contract is L6 (or explicit ambition track); **claim audit** after free; **harvest** mapped to **atom_ids**; port harvest must-cues; **honor Contract space budget** (dense book: often ~⅛–⅓ page); **export PNG and Visual Critic** until Visual CLEAN (builder ≠ critic); pin labels from C; document realize_path + harvest + visual_critique_path; **German labels only**; no form-meta in figures.  
-**MUST NOT:** invent clinical content; free vision without Design CLEAN; free vision without harvest; free vision when Contract chose L0–L3; pin-monotone winner on ambition; **self-CLEAN visual**; handoff Accept without PNG inspection; code-leak / overflow / **sparse-sprawl** / **over-intensity** ship; accept-asset on FAIL; endless AI gens beyond caps; transfer decorative bars without meaning; expand insets/spacers for “premium air” when pins are few.
+**MUST:** refuse free gen / realize without **Design CLEAN**; name **track** per unit; realize at Contract **intensity level** (L0–L6; do not silently upgrade to diagram/raster); free vision only when Contract is L6 (or explicit ambition track); prefer **one focused visual claim** per free gen and **default no labels in free raster** (Typst owns German pins); **claim audit** after free including illustration-semantics (laterality, leaders, structure — not text-only); **harvest** mapped to **atom_ids**; port harvest must-cues; **honor Contract space budget** without **squish-compress** (dense book: often ~⅛–⅓ page teaching density, still readable rhythm); **export PNG and Visual Critic** until Visual CLEAN (builder ≠ critic); pin labels from C; document realize_path + harvest + visual_critique_path; **German labels only** in ship text; no form-meta in figures. On free **FAIL**: demote raster and **step down** to simple alternative / L3–L4 clinical typography.  
+**MUST NOT:** invent clinical content; free vision without Design CLEAN; free vision without harvest; free vision when Contract chose L0–L3; pin-monotone winner on ambition when free truly passed; **self-CLEAN visual**; handoff Accept without PNG inspection; code-leak / overflow / **sparse-sprawl** / **squish-compress** / **over-intensity** ship; accept-asset on FAIL; endless AI gens beyond caps; transfer decorative bars without meaning; expand insets/spacers for “premium air” when pins are few; replace failed free vision with **decorative placeholder geometry** (colored “hand” blocks, empty ovals); treat first-glance pretty or minimized page count as done.
 
 ## End product policy
 
@@ -160,7 +160,8 @@ See [`playbook/09-form-recipes.md`](playbook/09-form-recipes.md):
 Never accept-asset on claim FAIL. Free vision may invent EN/meta chrome → refine or code SoT with harvest.  
 Criteria icons may look right while teaching wrong (Melanom B/D) → illustration-semantics + surgical refine.  
 **Quota / 429 fallback to Typst must not be Accept-ed as free vision.** Name the carrier.  
-**Body/anatomy free vision:** **paused by default** (Human 2026-07-29) — H-Gfx to reopen.
+**Body/anatomy free vision:** **paused by default** (Human 2026-07-29) — H-Gfx to reopen.  
+**CRPS 2026-07-31:** multi-pin labeled limbs fail textbook scrutiny (laterality, arbitrary leaders); demote path must not invent blob theater — solid clinical table is a valid Accept winner. Process review: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`.
 
 ## References
 

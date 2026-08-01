@@ -46,9 +46,69 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 | Unit fills most of a page with few claims / large empty regions | **sparse-sprawl** (fails space budget) |
 | Peel edge strips + oversized insets waste vertical space vs map-row density | sparse-sprawl / craft |
 
-## Density (book scale)
+## Density (book scale) — two-sided
 
-The monographic book is already ~hundreds of pages at tight type. VC must ask: *could the same pins live in ~¼–½ page without losing the teaching hierarchy?* If yes and the unit still sprawls → **block** or force denser layout. Ambition ≠ air.
+The monographic book is already ~hundreds of pages at tight type; print cost scales with page count. VC must ask **both**:
+
+1. **Sparse-sprawl:** *Could the same pins live in ~¼–½ page without losing hierarchy?* If yes and the unit still wastes large empty regions → **block** densify. Ambition ≠ air.  
+2. **Squish-compress (CRPS 2026-07-31):** *Did we crush margins, leading, stack gaps, or type to hit a page-count target so the page feels glued and unprofessional?* If yes → **block** or **should**: restore breathing room.  
+
+| Success | Failure |
+|---|---|
+| Teaching hierarchy + readable rhythm | Empty hero chrome for thin claims |
+| Honest simple form (table/cluster) that scans | Page-count vanity via micro type + 2pt stacks |
+| Solid unimpressive clinical panel | Pretty wrong raster or decorative placeholder geometry |
+| Compact flow (~⅓–½ page) + next section continues | **Full-page airy flow** (fat cards + fat arrows + air) for 4–5 short steps — **Human NO-GO 2026-08-01** |
+| Mid-chapter pages filled to useful density | Half-empty page bottoms mid-article |
+
+**Page-level sparse-sprawl (harder than unit crop):** After free-vision recreate, agents often ship `breakable: false` card stacks that monopolize a whole A4 page. That can look “premium” and still **fail print density**. Mark **block** and densify (`density: "compact"`, drop hero pagebreaks, share page with following content).
+
+Page count alone is **not** success — but **wasted half-pages mid-chapter** also fail. “3 pages because we airied” and “2 pages because we squished” are both process fails.
+
+## Macro layout scan-path (chapter pages — multi-chapter harvest 2026-08-01)
+
+After unit chrome is OK, VC **must** re-read **full page PNG** as a reader:
+
+| Ask | Fail if |
+|---|---|
+| **One clear reading path?** | Eye jumps; competing equal-weight boxes; no quiet hierarchy |
+| **Section structure obvious?** | Headings/blocks blend; unclear what is next |
+| **Air above section heads?** | H2 glued to previous card/body (`weak` spacing collapsed); densify without stealing section air (Human 2026-08-01) |
+| **Section heads flush left?** | “1. Section” sits on list indent — reads as nested enum under bookkit list defaults |
+| **Indent / alignment consistent?** | Nested insets wander; left edges jitter; tables/cards misaligned for no reason |
+| **Rhythm calm enough?** | Restless patchwork of panels with no grouping (Human: “unruhig”) |
+| **Flow followable?** | Protocol/TIME/stack order not visible without re-reading text |
+
+**Pilot helper:** `domains/medical/lib/typst/explore-2026-08/section-rhythm.typ` · skills: typst-writer §7, compose-chapter §8.
+
+| Severity | When |
+|---|---|
+| **block** | Structure so noisy that primary job is not findable in a calm scan |
+| **should** | Indent/alignment/rhythm issues that hurt professionalism but job still recoverable |
+| **nit** | Minor edge inconsistency |
+
+**Portfolio note:** Parallel chapter workers tend to ship locally OK units and **miss** this page-level pass — run macro scan-path before Accept on the **composed chapter PNG set**, not only spike unit crops.
+
+## Auto-block / should add-ons
+
+| Defect | Class |
+|---|---|
+| Decorative color blocks / ovals pretending to be anatomy after free demote | worse-than-simple / unjustified-chrome |
+| Unreadable crushed stacks / vanishing section air for “density” | **squish-compress** (craft) |
+| Raster looks polished but laterality/leaders fail expert read | proximity / pedagogy (escalate; do not self-pretty-pass) |
+| Restless multi-panel page / unclear structure / odd indent | **scan-path** / craft (macro layout) |
+| Solid full-bleed danger/OS on every step while matrix/peers use left-bar pale | **over-intensity** / chrome inconsistency |
+| More than one solid “shout” where ordinary flag chrome would suffice | over-intensity |
+
+## Chrome ladder (print body)
+
+| Level | Visual | When |
+|---|---|---|
+| quiet | left bar + pale | default OS / info |
+| flag | left bar + pale danger/warning | usual RF / triage steps |
+| shout | solid + white type | **exceptional** must-not-miss, easy to under-call (Default-to-Danger when *unclear*) |
+
+SoT helpers: `domains/medical/lib/typst/explore-2026-08/chrome.typ`. Free-vision solid stacks ≠ book default.
 
 ## NEVER
 
@@ -57,4 +117,7 @@ The monographic book is already ~hundreds of pages at tight type. VC must ask: *
 - Builder self-CLEAN  
 - Accept exploration PDF with open visual blocks  
 - Treat “looks premium / airy” as success when density fails  
+- Treat “page count minimized” as success when the page is squished  
+- Ship teal/orange placeholder “Gegenseite / Betroffene” blobs as a free-vision fallback  
+- Mark Visual CLEAN on unit spikes only while **chapter page flow** is restless or structurally unclear  
 

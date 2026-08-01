@@ -77,18 +77,30 @@ L2–L3 must still obey: color = meaning, density, no unjustified chrome.
 | L2 rainbow colors without meaning | dual-coding fail |
 | L4 sparse full-page for four short pins | sparse-sprawl |
 | “Simple vs complex” binary only | misses L2–L3 middle path |
+| After free FAIL: teal/orange placeholder “anatomy” blocks | worse-than-simple theater (CRPS 2026-07-31) |
+| Crush type/margins to hit a page count | **squish-compress** — density is teaching gain, not vanity page count |
 
 ---
+
+## Space budget: two-sided density (CRPS 2026-07-31)
+
+| Fail | Meaning | Fix |
+|---|---|---|
+| **Sparse-sprawl** | high page cost / empty regions for few claims | densify or step down L |
+| **Squish-compress** | unreadable stacks, vanishing air, micro-type to “fit 3 pages” | restore book rhythm; page count is not the KPI |
+
+**Success look:** solid, scannable, professional — may be “unimpressive” and still Accept-worthy.  
+**Simple alternative success:** stepping down to L2–L4 clinical table/cluster after ambition FAIL is a **win**, not a failure of the pipeline.
 
 ## Contract fields (use in Design Contract)
 
 - **Intensity level:** L0 … L6  
 - **Why not L−1:** one concrete scan/job failure  
 - **Why not L+1:** density / no extra gain / wrong tool  
-- **Space budget** + teaching gain (unchanged hard rules)  
+- **Space budget** + teaching gain (two-sided density rules)  
 
 ## Critic attacks
 
 - **over-intensity:** level higher than job needs  
 - **under-intensity:** job fails because form too flat (only if evidence)  
-- **sparse-sprawl** / **worse-than-simple** still apply at every level  
+- **sparse-sprawl** / **squish-compress** / **worse-than-simple** apply at every level  

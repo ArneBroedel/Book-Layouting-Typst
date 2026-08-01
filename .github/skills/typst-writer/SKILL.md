@@ -260,6 +260,30 @@ When you pass `= Heading` inside a component body, it's still a global level-1 h
 
 If `#chapter-opener("Title")` is your visual heading, don't also write `= Title` — that creates two level-1 headings on the page.
 
+### Section rhythm (pilots & short chapters) — required
+
+Harvested from d-risc-batch visual QA (2026-08-01): dense cards + **weak** spacing above H2 produce **cramped section heads**; bookkit `list`/`enum` indent makes “1. Section” read like a nested bullet.
+
+**Rules:**
+
+1. **Air above every section head** — use `block(above: …)` (≈ 11–14pt for pilot H2), **not** only `v(Npt, weak: true)` (weak collapses after dense grids/cards).
+2. **Modest air below the head** into body/cards (≈ 5–6pt) — hierarchy, not glued title+grid.
+3. **Flush left** — `width: 100%`, `align(left)`, `par(first-line-indent: 0pt, hanging-indent: 0pt)`. Section titles must **not** inherit list/enum indent.
+4. **Lists inside cards / TIME triggers** — `set list(indent: 0pt, body-indent: 0.55em)` (and same for `enum`) in the pilot scope so bullets sit near text and don’t look nested under “1. / 2. / 3.” section numbers.
+5. **Title block** — small gap under main title, **clear gap under subtitle** before lead/danger banner (≈ 6pt).
+6. **Sub-labels** under an H2 (“Klinische Zeichen”, “Vier Kanäle”) need their own small gap above — not jammed against the H2 or previous card.
+
+**Reusable helper (exploration pilots):**
+
+```typst
+#import "/domains/medical/lib/typst/explore-2026-08/section-rhythm.typ": setup-pilot-sections, pilot-title-stack
+#show: setup-typography()
+#show: setup-pilot-sections()
+#pilot-title-stack([Chapter title], subtitle: […])
+```
+
+**PNG check:** Is there a visible breathing gap *before* each numbered section? Do H2s share the same left edge as body/cards (not inset like a list)?
+
 ---
 
 ## 8 — Page Setup for Books
