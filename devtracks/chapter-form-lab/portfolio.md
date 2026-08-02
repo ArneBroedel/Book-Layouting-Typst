@@ -101,3 +101,18 @@ Master board (optional): `form-lab/portfolio-2026-08/board.md` listing all four.
 
 - Coherence jobs C01–C06 (not single monographs)  
 - Remaining 84 monographs — harvest may later pick transfer targets  
+
+---
+
+## B-wave restart (2026-08-b)
+
+Clean restart labs (prior `*-2026-08` retained as provenance):
+
+| Chapter | lab_id |
+|---|---|
+| Gicht | `form-lab/gicht-2026-08-b` |
+| Schlaganfall | `form-lab/schlaganfall-2026-08-b` |
+| Melanom | `form-lab/melanom-abcde-2026-08-b` |
+| Anaphylaxie | `form-lab/anaphylaxie-2026-08-b` |
+
+Master: `form-lab/portfolio-2026-08-b/board.md`
