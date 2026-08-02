@@ -11,6 +11,7 @@ Maximum teaching with **many small raster images** (aspects / Kacheln — *not* 
 - Per-aspect **Semantic Read PASS** + claim audit; surgical refine / regen  
 - Higher gen budget than production (see kickoff D8)  
 - **Short positive prompts** only — see SoT below  
+- **Clinical context** when the job is in-situ gestalt (lesion on skin field, joint on foot, face on person)  
 
 ## Deny
 
@@ -20,6 +21,8 @@ Maximum teaching with **many small raster images** (aspects / Kacheln — *not* 
 - **Silent demotion** of the whole pass to code boxes mid-stream (requires Orchestrator + residual note)  
 - Labels that invent clinical claims  
 - Learner-facing captions that normalize bad gens (“Atom T”) when the image is wrong  
+- **Redundant aspects for the same job** (three mouth/face variants when one strong face-droop suffices)  
+- Sticker cutouts on pure white when the job needs **on-skin / body-part** gestalt  
 
 ## Prompt craft (mandatory)
 
@@ -30,7 +33,9 @@ SoT: `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read
 - Do **not** scale quality via per-chapter negative word lists in the prompt  
 - **§1.1 preflight:** scan draft for dual-meaning / process jargon (*atomic*, *cascade*, *urgency* alone, …).  
   Agent intent “focused single detail” must **not** appear as the word *atomic* in the image prompt — rewrite to concrete subject language before gen  
-- Never put Form Lab medium names or `atom_id` jargon into the image prompt
+- Prefer **clinical context** in the prompt when job is in-situ (skin field, not freestanding lesion sticker)  
+- Never put Form Lab medium names or `atom_id` jargon into the image prompt  
+- **One primary aspect per learner job** — second image only for a distinct sub-cue  
 
 ## Semantic Read (hard gate — before mount / optimum)
 
@@ -38,7 +43,7 @@ Immediately after each gen, **open the image**:
 
 1. **Lesart** — what do I see in ~2s without caption?  
 2. **Job-Fit** — is that the intended learner job?  
-3. **Falsche Lehre** — wrong rule risk?  
+3. **Falsche Lehre** — wrong rule risk? (e.g. grimace as FAST speech)  
 4. **Claim-Trennung** — triage/diagnosis outside the image?  
 
 **FAIL → block** (regen with clearer short prompt **or** demote / drop aspect).  

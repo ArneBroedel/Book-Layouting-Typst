@@ -50,7 +50,7 @@ Negative gold: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md` · 
 ## Prompt layers
 
 **Canonical craft + hard gate after gen:** [`prompt-and-semantic-read.md`](prompt-and-semantic-read.md)  
-(short positive prompts; Semantic Read before Accept / optimum; no scaling via negative word lists).
+(short positive prompts; clinical context when in-situ; one claim per job; Semantic Read before Accept / optimum; same gate for CeTZ/SVG teaching glyphs; no scaling via negative word lists).
 
 ### Layer A — Free (default)
 

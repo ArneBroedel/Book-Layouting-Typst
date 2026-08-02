@@ -22,7 +22,7 @@ Only when:
 - [ ] **Design CLEAN** (Contract + Design Critic)  
 - [ ] Form Spec exists (non-prose units)  
 - [ ] Claim audit recorded  
-- [ ] **Semantic Read PASS** on every free/refined raster in the winner path ([prompt-and-semantic-read](../references/prompt-and-semantic-read.md)) — FAIL open → **not** ready  
+- [ ] **Semantic Read PASS** on every free/refined raster **and** teaching vector glyph in the winner path ([prompt-and-semantic-read](../references/prompt-and-semantic-read.md)) — FAIL open → **not** ready; caption does not clear 
 - [ ] Track recorded per unit  
 - [ ] If free-vision-ambition + free vision ran: harvest present; cues → atom_ids; must-cues ported or waived  
 - [ ] Free-vision proximity ≠ **no** on recommended winner (ambition track)  

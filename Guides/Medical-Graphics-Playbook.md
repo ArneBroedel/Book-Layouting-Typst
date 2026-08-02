@@ -108,6 +108,7 @@ Illness-script monographs: load **form library** + **ontology**, then transfer o
 **Design-quality (2026-07-30):** Design CLEAN (Contract + Critic) **before** free vision; Visual CLEAN (PNG + Visual Critic) **before** Accept — including exploration didactic PDFs.  
 **Ambition path:** Design CLEAN → free vision (**short positive prompt** → gen → **Semantic Read hard gate**) → claim audit → **harvest→atoms** → hierarchy-faithful code/hybrid/asset → **visual critique loop** (Semantic Read FAIL = block until regen/demote).  
 **Do not** scale quality via per-chapter negative prompt lists — SoT: `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`.  
+**Semantic Read covers Typst/CeTZ glyphs too** (Form Lab Pass V lesson 2026-08): caption-rescued doodles (foot-blob+dot, smiley droop, red airway arcs, equal-circles+polygon “ugly duckling”) are **FAIL**, not style. **Omit is a win** when type/chrome or a strong raster already teaches. One primary aspect per learner job; prefer in-situ clinical context over sticker cutouts.  
 **DRIFT ≠ discard free vision** — port harvest must-cues; pin-monotone fails proximity.  
 Prefer **code if ≈ equal** after harvest; **simple form if complex is not better**.  
 Never put form-meta inside the figure.  

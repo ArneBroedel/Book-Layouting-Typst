@@ -57,7 +57,9 @@ Run a **Form Lab** on a **small set of chapters** (default: one anchor):
 6. **PNG eyes every craft round** — no clean without page images.  
 7. **Compare before synthesize**.  
 8. **Floor: claim honesty** — medium extremism does not license wrong clinical meaning.  
-9. **Semantic Read hard gate** — free gens use short positive prompts; review must catch nonsense motifs before medium-optimum / Human handoff as done (`prompt-and-semantic-read.md`).
+9. **Semantic Read hard gate** — free gens *and* teaching glyphs: short positive prompts / legible schemas; review must catch nonsense motifs **and** caption-only doodles before medium-optimum / matrix winner / Human handoff (`prompt-and-semantic-read.md`).  
+10. **Omit is a win (Pass S)** — do not force every medium onto the page; one strongest PASS mark per learner job.  
+11. **Matrix scores caption-free teaching** — presence of a weak glyph is not a high score.
 
 ## 6. Pass catalog (v1)
 
@@ -65,10 +67,10 @@ Run a **Form Lab** on a **small set of chapters** (default: one anchor):
 |---|---|---|---|
 | **T** | Type + Icon | Typography, hierarchy, lists/tables, simple icons | What is the best teaching we can do *without* area chrome / free vision / rich SVG scenes? |
 | **C** | Color / Chrome | Color meaning, panels, bands, grids, shapes (simple toolset) | What is the best hierarchy/scan we can do with layout chrome *without* rich illustration? |
-| **V** | Vector | Many small SVGs / CeTZ vector schemas / pictogram system | What is the best teaching with *vector* atoms (not one giant SVG poster)? |
-| **R** | Raster atomic | Many small free-vision / refined rasters per aspect | What is the best teaching with *many small images* (not one mega-infographic)? |
+| **V** | Vector | Many small SVGs / CeTZ schemas that **PASS Semantic Read without caption** | What is the best teaching with *legible vector* marks (not caption-rescued doodles)? |
+| **R** | Raster atomic | Many small free-vision / refined rasters per aspect (one primary per job) | What is the best teaching with *many small images* (not one mega-infographic)? |
 | **D** | Diagram *(optional)* | Relation: flow, fork, timeline, matrix-as-graph | What is best when *relations* are the medium? |
-| **S** | Synthesis | Combination of proven winners only | Best overall chapter after comparison |
+| **S** | Synthesis | Proven winners only; **omit is a win** | Best overall chapter after comparison |
 
 ## 7. Roles
 
@@ -77,8 +79,8 @@ Run a **Form Lab** on a **small set of chapters** (default: one anchor):
 | **OR** Form-Lab Orchestrator | Board, route, budgets, spawn/handoff, stop conditions, comparison schedule | Implement a full pass craft loop itself as sole builder |
 | **PW** Pass Worker (Builder) | Implement pass under medium rules; revise from critique | Mark medium-optimum alone; switch medium mid-pass |
 | **PC** Pass Critic | Adversarial visual + pedagogy critique on **latest PNGs**; medium-rule audit | Soften to ship; rewrite claims; implement fixes |
-| **CM** Comparator | Cross-pass matrix after all optima | Prefer aesthetics without learner-job link |
-| **SY** Synthesizer | Build Pass S from matrix winners | Invent untested forms |
+| **CM** Comparator | Cross-pass matrix after all optima; caption-free scores only | Prefer aesthetics without learner-job link; score FAIL glyphs as winners |
+| **SY** Synthesizer | Build Pass S from matrix winners; omit weak media | Invent untested forms; force all media onto p1 |
 | **H** Human | Kickoff locks, optional mid-pass gate, ranking, archive | Receive one-shot passes as “done” |
 
 **Quorum:** Medium-optimum = PW latest build + **PC** status `medium-optimum` (or Human override).  

@@ -11,7 +11,7 @@ Free vision is **not** claim-safe by default (IV-4 invented vitals; III-5 EN chr
 2. Transcribe **every** on-image label.  
 3. Match against Form Spec claim pins / pilot C.  
 4. Check: invented numbers, English stage titles, broken invariants, wrong genre.  
-5. **Semantic Read + illustration-semantics** (mandatory for every free raster / mounted aspect — **also when label-free**). Full procedure: [`../references/prompt-and-semantic-read.md`](../references/prompt-and-semantic-read.md).  
+5. **Semantic Read + illustration-semantics** (mandatory for every free raster / mounted aspect **and** teaching CeTZ/SVG glyph — **also when label-free**). Full procedure: [`../references/prompt-and-semantic-read.md`](../references/prompt-and-semantic-read.md). 
    - **2-second Lesart:** What do I see without caption?  
    - **Job-Fit:** Is that the intended learner job (not “something medical”)?  
    - **Falsche Lehre:** Could this teach a wrong rule (wrong metaphor, wrong scale, wrong side)?  
@@ -49,7 +49,7 @@ Free vision is **not** claim-safe by default (IV-4 invented vitals; III-5 EN chr
 | False side-compare | palm + dorsum of same laterality sold as L/R or healthy/sick | demote; code exam table or H-Gfx reopen |
 | Arbitrary leaders | callout dots not at the sign they name | remove leaders from free gen; Typst pins only |
 | Placeholder demotion | teal/orange blocks / ovals as “hands” after free FAIL | forbidden — use clinical table/list instead |
-| **Semantic Read FAIL** | Intended “time / urgency” reads as abstract science icon; cascade reads as random arcs; UI rainbow for ABCDE-C | regen with short concrete prompt **or** demote; do not Accept |
+| **Semantic Read FAIL** | Intended “time / urgency” reads as abstract science icon; cascade reads as random arcs; UI rainbow for ABCDE-C; caption-only doodle (blob+dot, smiley, arc airway) | regen/redraw with short concrete subject **or** demote; do not Accept |
 | Chrome/clinical color mix | Five rainbow letter cards as if “Color” were UI hues | Quiet letter hierarchy + lesion depiction in melanin tones |
 
 Label-only PASS with icon/structure FAIL → overall **DRIFT** or **FAIL** (not full PASS for accept-asset).  

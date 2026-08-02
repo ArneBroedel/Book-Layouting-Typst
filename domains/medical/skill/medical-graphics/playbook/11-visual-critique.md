@@ -27,7 +27,7 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 
 2. **Open every page image** with the image/read tool (or equivalent). List paths in critique file.  
 3. Run **auto-block** checklist (code-leak, overflow, uncontracted color, worse-than-simple, **sparse-sprawl / space budget**, pin-monotone, broken peel/cards).  
-4. **Semantic Read** on every teaching raster/vector glyph ([prompt-and-semantic-read](../references/prompt-and-semantic-read.md)): Lesart · Job-Fit · Falsche Lehre · Claim-Trennung. FAIL → **`block`** (not nit). Caption does not clear.  
+4. **Semantic Read** on every teaching raster/vector glyph ([prompt-and-semantic-read](../references/prompt-and-semantic-read.md)): Lesart · Job-Fit · Falsche Lehre · Claim-Trennung **without reading captions**. Also: thumbnail legibility; anti-doodle patterns (blob+hotspot, smiley-face, arc-only airway, abstract ugly-duck dots); redundant same-job stacks. FAIL → **`block`** (not nit). Caption does not clear. 
 5. Write findings `block` | `should` | `nit` with page + location.  
 6. Status:  
    - open blocks → **revise** (GX fixes → re-export → new VC round)  
@@ -47,6 +47,8 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 | Unit fills most of a page with few claims / large empty regions | **sparse-sprawl** (fails space budget) |
 | Peel edge strips + oversized insets waste vertical space vs map-row density | sparse-sprawl / craft |
 | Teaching image fails Semantic Read (wrong motif / false teaching) | **semantic-read** — regen or demote before clean |
+| Caption-only “glyph” (geometry needs adjacent text to mean anything) | **semantic-read** / decorative placeholder — redraw or drop |
+| Three redundant marks for one job (e.g. face + grimace + smiley) | craft — keep strongest only |
 
 ## Density (book scale) — two-sided
 

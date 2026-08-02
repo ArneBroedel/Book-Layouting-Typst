@@ -154,12 +154,14 @@ domains/medical/assets/form-lab/<lab-id>/<pass>/…       # V/R assets
 
 | Allow | Deny |
 |---|---|
-| Many small SVGs; pictogram set; CeTZ as vector drawing | One full-page “infographic SVG” dumping all claims |
+| Many small SVGs; pictogram set; **thumbnail-legible** CeTZ schemas | One full-page “infographic SVG” dumping all claims |
 | Hybrid: SVG base + Typst labels on slots | Raster AI photos as primary |
-| Motif reuse across units | Falling back to Pass-C box stack for recognition jobs |
-| Creative exploration within claim honesty | Undocumented claim invention in drawings |
+| Motif reuse across units | Caption-rescued doodles (blob+dot, smiley, arc-only “airway”, abstract ugly-duck) |
+| Creative exploration within claim honesty | Shipping glyphs without **Semantic Read PASS** (same gate as R) |
+| Honest residual when R already covers recognition | Force-weak vector “winners” for medium balance |
 
-**Exhaustion means:** vector atoms cover recognition/relation jobs; residual needs photo realism or pure type.
+**SoT:** `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md` §2  
+**Exhaustion means:** vector marks that **PASS** cover recognition/relation; residual needs photo or pure type — **not** a caption next to geometry.
 
 ### Pass R — Raster aspects (small gens)
 
@@ -170,6 +172,7 @@ domains/medical/assets/form-lab/<lab-id>/<pass>/…       # V/R assets
 | Typst safety text outside raster | Demoting all rasters to code mid-pass without OR + dossier |
 | Higher gen budget than production (kickoff D8) | Ignoring Semantic Read / icon-semantics FAIL (not a nit) |
 | **Short positive prompts** (concrete subject) | Long kitchen-sink prompts; negative-list-as-strategy |
+| Clinical context when job is in-situ; **one aspect per job** | Redundant face stacks; sticker cutouts when skin field teaches |
 
 **SoT:** `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`  
 **Exhaustion means:** additional gens only reshuffle; teaching gain flat; document limits of raster for this chapter.
@@ -178,9 +181,10 @@ domains/medical/assets/form-lab/<lab-id>/<pass>/…       # V/R assets
 
 | Allow | Deny |
 |---|---|
-| Winners from matrix + Human rank | New medium not tested in T/C/V/R(/D) |
-| Mixing e.g. T body + V recognition + C urgency | Reintroducing portfolio KL monotony by habit |
-| Aspects with **Semantic Read PASS** only | Mounting aspects that failed Semantic Read in R (or elsewhere) |
+| Winners from matrix + Human rank with **Semantic Read PASS** | New medium not tested in T/C/V/R(/D) |
+| Mixing e.g. T body + **one** R recognition + C urgency | Reintroducing portfolio KL monotony by habit |
+| **Omit is a win** (drop whole medium if it does not teach) | Force-including V doodles / co-winners for “C+T+V+R balance” |
+| Single strongest mark per learner job | Stacking face + grimace + face-glyph for one job |
 
 ---
 
@@ -264,15 +268,18 @@ Same pattern as Phase 1 with C rules.
 
 ### Phase 3 — Pass V (Vector atomic)
 
-- Plan motif list before gen (OR/PW): e.g. hot MTP-I glyph, fever mark, crystal-not-clear, 112, scope boundary, …  
+- Plan motif list before draw (OR/PW): e.g. hot MTP-I glyph, fever mark, crystal-not-clear, 112, scope boundary, …  
 - Prefer SVG files under assets; Typst assembly.  
-- Craft loop includes **vector redesign**, not only layout spacing.
+- Craft loop includes **vector redesign**, not only layout spacing.  
+- **Every glyph:** open PNG → Semantic Read without caption; anti-doodle FAIL → redraw or demote.  
+- Do not score recognition jobs as V-winners on caption-only geometry.
 
 ### Phase 4 — Pass R (Raster atomic)
 
-- Unit aspect map: many small targets, not one scene.  
-- Claim audit per atom; hybrid labels in Typst.  
-- **Forbidden:** demote entire pass to code because “scan path” — fix montage or atom instead; demote only with OR + residual note.
+- Unit aspect map: many small targets, not one scene; **one primary per learner job**.  
+- Claim audit + Semantic Read per aspect; hybrid labels in Typst.  
+- Clinical context when in-situ gestalt matters.  
+- **Forbidden:** demote entire pass to code because “scan path” — fix montage or aspect instead; demote only with OR + residual note.
 
 ### Phase 5 — Optional Pass D
 
@@ -416,6 +423,9 @@ medium-optimum gate (spec) + exhaustion.md
 
 ## 8. Comparison matrix (jobs × passes)
 
+Template: `toolset/orchestration/form-lab/_templates/comparison-matrix.md`  
+SoT scoring: `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md` §3
+
 Rows = learner jobs from pins (examples for Gicht):
 
 1. Gatekeeper: septisch mitdenken / Kristalle entwarnen nicht  
@@ -428,7 +438,10 @@ Rows = learner jobs from pins (examples for Gicht):
 
 Columns = T · C · V · R · (D) · later S  
 
-Scores 1–5: Lehrkraft · Scan · Ruhe · Claim-Klarheit · Medium-Ehrlichkeit  
+Scores **1–5 = caption-free teaching power** (not “mark exists for job”).  
+- Semantic Read FAIL → not a winner (score 1 / n/a)  
+- Caption-dependent glyph → max **2**  
+- Co-winners only for **distinct** cues  
 
 Human final rank overrides agent if conflict.
 
@@ -459,10 +472,12 @@ Minimal scripts (optional):
 | One-shot pass | min_rounds hard; optimum gate |
 | Pass C looks like current portfolio | Critic: “is this just KL shell?” as block if no craft growth |
 | Pass V/R collapse to boxes | medium deny-list; demotion needs OR |
+| Pass V caption-doodles win matrix | Semantic Read on glyphs; caption-dependent ≤2; omit-is-win in S |
 | Context blowup | new session per pass; handoff on disk |
-| Claim drift in images | pins + per-atom audit R; labels Typst |
+| Claim drift in images | pins + per-aspect audit R; labels Typst |
 | Infinite polish | max_rounds + residual dossier is valid exit |
 | Human bottleneck | agent-optimum allowed with later Human matrix rank (D7) |
+| S forces all media on page 1 | medium-rules-S: omit is a win; one mark per job |
 
 ---
 

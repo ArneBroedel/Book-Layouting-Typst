@@ -49,20 +49,25 @@ Read board.md + run-log.md + route.md. Route next; do not craft the pass.
 Form Lab Pass <P> Worker. Load toolset/orchestration/form-lab/<lab-id>/passes/<P>/HAND-OFF.md
 ```
 
-## Prompt craft + Semantic Read (Pass R / free gen)
+## Prompt craft + Semantic Read (Pass R **and** Pass V glyphs)
 
 **SoT (shared with medical-graphics):**  
-`domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`
+`domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`  
+Pointer: [`PROMPT-AND-SEMANTIC-READ.md`](PROMPT-AND-SEMANTIC-READ.md)
 
 | Rule | Detail |
 |---|---|
-| Prompts | Short, positive, one concrete subject — no negative-list scaling |
-| After each gen | Open image → Semantic Read (hard gate) |
-| FAIL | Regen or demote — not nit; no medium-optimum with FAIL mounted |
-| Pass S | Only aspects with Semantic Read PASS |
-| Captions | Prefer *Aspekt/Kachel/Gestalt* over “Atom …” for learner-facing labels |
+| Prompts (R) | Short, positive, one concrete subject; §1.1 jargon preflight; clinical context when job is in-situ |
+| Glyphs (V) | Same Semantic Read **without caption**; thumbnail-legible anatomy; anti-doodle reject patterns |
+| After each gen/draw | Open PNG → Semantic Read (hard gate) |
+| FAIL | Regen/redraw or demote — not nit; no medium-optimum / matrix winner with FAIL mounted |
+| Matrix | Caption-free teaching scores only; caption-dependent ≤2; FAIL cannot win |
+| Pass S | Strongest PASS per job; **omit is a win** (no forced medium collage) |
+| Redundancy | One primary aspect per learner job |
+| Captions | Prefer *Aspekt/Kachel/Gestalt*; caption never clears Semantic Read FAIL |
 
-Templates: `medium-rules-R.md`, critique section in `devtracks/chapter-form-lab/pass-craft-loop.md`.
+Templates: `medium-rules-R.md` · `medium-rules-V.md` · `medium-rules-S.md` · `comparison-matrix.md`  
+Loop: `devtracks/chapter-form-lab/pass-craft-loop.md`
 
 ## Status
 

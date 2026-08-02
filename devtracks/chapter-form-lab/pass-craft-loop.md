@@ -2,6 +2,9 @@
 
 Companion to [plan.md](plan.md) §3. Used by Pass Workers and Critics.
 
+**SoT (images + glyphs):**  
+`domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`
+
 ---
 
 ## Loop (mandatory)
@@ -15,10 +18,17 @@ while true:
   2. Implement only fixes + medium-legal improvements
      Pass R: for each new free gen —
        (a) short positive draft prompt
-       (b) §1.1 jargon preflight (rewrite *atomic*/cascade/… to concrete subject language)
-       (c) gen only after preflight
-       (d) open image → Semantic Read before montage
-       SoT: domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md
+       (b) §1.1 jargon preflight (rewrite *atomic*/cascade/… to concrete subject)
+       (c) clinical context when job is in-situ gestalt
+       (d) one primary aspect per learner job (no redundant face stack)
+       (e) gen only after preflight
+       (f) open image → Semantic Read before montage
+     Pass V: for each new/revised teaching glyph —
+       (a) aim for thumbnail-legible simplified anatomy / relation
+       (b) draw → export PNG → Semantic Read without caption
+       (c) anti-doodle reject (blob+dot, smiley, arc-only airway, abstract ugly-duck, …)
+       (d) FAIL → redraw or demote — never caption-rescue
+     Pass S: import matrix winners with PASS only; omit-is-win; one mark per job
   3. Compile with repo font flags
   4. Export ALL chapter pages to PNG (overwrite dist/.../p*.png)
   5. Append run-log: PASS <id> round r BUILD done + png paths
@@ -31,7 +41,8 @@ while true:
        - craft ceiling (what still extractable from THIS medium)
        - claim honesty
        - density / scan
-       - **Semantic Read** (every teaching raster/vector glyph) — FAIL = block
+       - **Semantic Read** (every teaching raster **and** vector glyph) — FAIL = block
+       - redundancy check (same job × multiple weak marks)
        - status: revise | medium-optimum-candidate
        - blocks[] with page + required change
   8. Append run-log: CRITIQUE status
@@ -72,12 +83,16 @@ while true:
 - allow/deny violations:
 
 ## Semantic Read (every teaching image/glyph — hard gate)
-| aspect / locus | intended job | 2s lesart | job-fit | false teaching? | verdict PASS/FAIL |
-|---|---|---|---|---|---|
-| | | | | | |
+| aspect / locus | intended job | 2s lesart (no caption) | job-fit | false teaching? | caption-dependent? | verdict PASS/FAIL |
+|---|---|---|---|---|---|---|
+| | | | | | | |
 
-FAIL → **block** (regen or demote). Caption does not clear FAIL.
+FAIL → **block** (regen/redraw or demote). Caption does not clear FAIL.  
+Anti-doodle / thumbnail fails count as FAIL.  
 SoT: `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`
+
+## Redundancy
+- Same learner job covered by multiple marks? Keep strongest only for S readiness.
 
 ## Learner jobs
 | job | present | strong | note |
@@ -116,17 +131,32 @@ What a strong designer would still do *without leaving the medium*:
 -
 
 ## Residual weaknesses this medium cannot fix
-- (these motivate other passes)
+- (these motivate other passes — or honest omit in S)
 
 ## Explicit non-claims
 - We do not claim production Accept
 - We do not claim best overall chapter (that is comparison + S)
+- We do not claim recognition winners for caption-only doodles
 
 ## Artifacts
 - pdf:
 - pngs:
 - final critique:
 ```
+
+---
+
+## Comparison (CM) + Synthesis (SY)
+
+### Matrix
+
+Copy `_templates/comparison-matrix.md` → `comparison/matrix.md`.  
+Score **caption-free** teaching only. FAIL marks cannot win. Caption-dependent ≤2.
+
+### Pass S
+
+Load `medium-rules-S.md`. **Omit is a win.** One strongest PASS mark per job.  
+Crop-test every imported visual. Do not force V because V existed.
 
 ---
 
@@ -148,7 +178,7 @@ Self-CLEAN in the same breath as build = **process fail**.
 3. `exhaustion.md` exists  
 4. PNG mtimes ≥ chapter.typ mtime  
 5. Spot-check: open p1 — medium deny-list not obviously violated  
-6. **Semantic Read:** critique table has no FAIL rows; Pass R/S mounts only PASS aspects  
+6. **Semantic Read:** critique table has no FAIL rows on **rasters and glyphs**; Pass R/V/S mount only PASS  
 7. Update board + route next pass or comparison  
 
-**Pass S:** synthesizer must not reintroduce aspects that failed Semantic Read in T/C/V/R.
+**Pass S:** synthesizer must not reintroduce aspects that failed Semantic Read in T/C/V/R; must not force-include weak co-winners for medium balance.

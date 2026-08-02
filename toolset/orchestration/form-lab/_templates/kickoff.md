@@ -35,5 +35,6 @@
 ## First route after freeze
 
 1. Freeze `pins.md`  
-2. Copy medium-rules + HAND-OFF for Pass T  
-3. **New session:** Pass T Worker  
+2. Copy from `_templates/`: medium-rules for T/C/V/R/**S**, HAND-OFF, **comparison-matrix.md** → `comparison/matrix.md` (fill later)  
+3. Confirm workers load SoT: `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md` (R **and** V glyphs; S omit-is-win)  
+4. **New session:** Pass T Worker  

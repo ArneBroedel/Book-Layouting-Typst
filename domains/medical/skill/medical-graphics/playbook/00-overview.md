@@ -20,9 +20,10 @@ Design CLEAN (Form Spec + Design Contract + Design Critic)
   → Decision Note → Media Accept (AX) → Tech embed
 ```
 
-**Anti-patterns to kill:** free vision without Design CLEAN; free vision → pin-monotone; Accept without opening page PNGs; code-leak on page; **process “done” while Semantic Read FAIL is open**; long negative-list prompts as quality strategy.
+**Anti-patterns to kill:** free vision without Design CLEAN; free vision → pin-monotone; Accept without opening page PNGs; code-leak on page; **process “done” while Semantic Read FAIL is open**; long negative-list prompts as quality strategy; **caption-rescued CeTZ doodles** (blob+dot, smiley, arc-only airway) as “vector teaching”; **redundant marks for one job**; freestanding sticker cutouts when in-situ gestalt is the job.
 
-**Prompt + Semantic Read SoT:** [`../references/prompt-and-semantic-read.md`](../references/prompt-and-semantic-read.md)
+**Prompt + Semantic Read SoT:** [`../references/prompt-and-semantic-read.md`](../references/prompt-and-semantic-read.md)  
+Applies to free-gen **and** Typst/CeTZ teaching glyphs. Caption does not clear FAIL. Form Lab Pass S: **omit is a win**.
 
 ## Stages (this skill owns G0–G4)
 
