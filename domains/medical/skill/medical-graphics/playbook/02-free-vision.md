@@ -33,17 +33,21 @@
    - Template: `domains/medical/templates/graphic-harvest.template.md`  
    - Single unit → `## Harvest` section in `*.graphics.md`  
    - Multi-unit → `*.harvest.md` or headed sections  
-10. **Immediately** run [03-claim-audit](03-claim-audit.md).
+10. **Immediately** open the PNG and run **Semantic Read** ([prompt-and-semantic-read](../references/prompt-and-semantic-read.md)) — hard gate.  
+11. **Immediately** run [03-claim-audit](03-claim-audit.md) (includes illustration-semantics + Semantic Read).
 
 ## Rules
 
 - **Do not** attach repo SVG/PNG flowcharts as layout templates.  
 - Composition free; **default: no labels / no leader callouts in the free raster** — Typst owns German pins (CRPS 2026-07-31).  
 - Prefer **one visual claim per gen** (not a multi-pin labeled dashboard).  
+- **Prompt craft:** short, positive, one photographable subject — **not** long kitchen-sink prompts and **not** per-chapter negative word lists. See [`../references/prompt-and-semantic-read.md`](../references/prompt-and-semantic-read.md).  
+- **Jargon preflight (§1.1):** before gen, rewrite dual-meaning process words (*atomic*, *cascade*, abstract *urgency*, …) into concrete subject language so the image model cannot take them literally (e.g. *atomic* → physics atoms). Intent “focused single detail” is prompt *shape*, not the word *atomic*.  
+- **Immediately after each gen:** open the image and run **Semantic Read** (hard gate in that reference). FAIL → regen or demote **before** harvest-as-winner / montage / Accept path. Caption does not save a FAIL.  
 - Detail: [`../references/free-vision.md`](../references/free-vision.md)  
 - **Body / cut / organ / contralateral limb compare:** **paused by default** (Human 2026-07-29 / 2026-07-31) — do not free-gen anatomy; use non-body forms unless Human reopens H-Gfx.  
 - **No free vision without harvest** on ambition track (exit criterion).  
-- **Pretty first-glance is not exit criterion** — illustration-semantics + laterality must survive textbook scrutiny.
+- **Pretty first-glance is not exit criterion** — illustration-semantics + Semantic Read + laterality must survive textbook scrutiny.
 
 ### Silent fallback forbidden (Wave-5 lesson)
 

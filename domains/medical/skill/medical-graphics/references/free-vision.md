@@ -49,16 +49,24 @@ Negative gold: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md` · 
 
 ## Prompt layers
 
+**Canonical craft + hard gate after gen:** [`prompt-and-semantic-read.md`](prompt-and-semantic-read.md)  
+(short positive prompts; Semantic Read before Accept / optimum; no scaling via negative word lists).
+
 ### Layer A — Free (default)
 
+Keep prompts **short and concrete** (one subject you could photograph or draw). Prefer 1–3 short sentences over long kitchen-sink lists.
+
 ```text
-ONE focused visual claim (German clinical meaning, no multi-pin dashboard)
-+ didactic job for that single claim (e.g. asymmetry only; flow only)
-+ genre / stress context
-+ invent composition; do NOT copy repo layouts
-+ DEFAULT: no text, no labels, no arrows-to-labels, no footer chrome in the image
-+ output path
+[Concrete subject — e.g. irregular brown-black skin lesion / swollen MTP-I / face mouth droop].
+[Simple textbook or clinical photo style if needed].
+[White or plain background].
+[DEFAULT: no text, no labels, no arrows-to-labels, no footer chrome in the image].
 ```
+
+- ONE focused visual claim (no multi-pin dashboard).  
+- Invent composition; do NOT copy repo layouts.  
+- Do **not** rely on long “must not” catalogs in the prompt — fix quality with **clear want** + **jargon preflight** + **Semantic Read**.  
+- Run **§1.1 pictorial-trigger preflight** before gen: process jargon (*atomic*, *cascade*, …) must be rewritten to unambiguous subject language (see prompt-and-semantic-read.md).
 
 ### Layer B — Refine (Phase B2 only)
 
@@ -81,16 +89,18 @@ Attach SVG/PNG as layout template
 | Free gens per unit | 2 |
 | Then | Media/Human picks direction or Phase B with current best |
 
-## Post-gen claim audit (mandatory before accept-asset)
+## Post-gen: Semantic Read then claim audit (mandatory before accept-asset)
 
-Free vision is **not** claim-safe by default. Before Phase B `accept-asset` or Media Accept of a raster:
+Free vision is **not** claim-safe by default. **Immediately after each gen** (before montage / Accept path):
 
+0. **Semantic Read** ([prompt-and-semantic-read.md](prompt-and-semantic-read.md)): Lesart · Job-Fit · Falsche Lehre · Claim-Trennung. **FAIL → block** (regen or demote). Caption does not convert FAIL → PASS.  
 1. Read every on-image German/English label against Content C / pilot pin table (if any text slipped in).  
 2. **Reject accept-asset** if any invented numbers, vitals, doses, or English decorative stage titles.  
 3. **Illustration-semantics** (even when label-free): laterality/side-compare role truth; leaders point at meaning; no same-hand palm/dorsum sold as contralateral; no arbitrary callout dots.  
 4. Prefer `recreate` (Typst) when free chrome is good but labels/structure drift — recreate becomes claim SoT.  
 5. English stage chrome (STOP / ASSESSMENT / …) → B2 refine or strip in recreate.  
-6. **FAIL or expert-doubt → demote raster** and step down intensity (clinical table / code grammar) — **never** invent decorative placeholder “geometry theater” as a fake fix.
+6. **FAIL or expert-doubt → demote raster** and step down intensity (clinical table / code grammar) — **never** invent decorative placeholder “geometry theater” as a fake fix.  
+7. Do **not** mark process complete / hand to Human as “done” while Semantic Read FAIL is open.
 
 **Eval evidence (2026-07-22):** IV-4 free invented First-Look vitals gibberish → production = recreate only. III-5 free used English stage titles. II-1 free was claim-clean and genre-correct (framework OS, not emergency red wall).  
 **CRPS 2026-07-31:** multi-pin labeled hands → laterality FAIL + arbitrary leaders; refine did not fix structure; blob demotion was worse; solid win = L3–L4 Seitenvergleich table.  

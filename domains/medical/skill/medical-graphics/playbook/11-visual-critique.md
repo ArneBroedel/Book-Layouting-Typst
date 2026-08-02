@@ -27,12 +27,13 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 
 2. **Open every page image** with the image/read tool (or equivalent). List paths in critique file.  
 3. Run **auto-block** checklist (code-leak, overflow, uncontracted color, worse-than-simple, **sparse-sprawl / space budget**, pin-monotone, broken peel/cards).  
-4. Write findings `block` | `should` | `nit` with page + location.  
-5. Status:  
+4. **Semantic Read** on every teaching raster/vector glyph ([prompt-and-semantic-read](../references/prompt-and-semantic-read.md)): Lesart · Job-Fit · Falsche Lehre · Claim-Trennung. FAIL → **`block`** (not nit). Caption does not clear.  
+5. Write findings `block` | `should` | `nit` with page + location.  
+6. Status:  
    - open blocks → **revise** (GX fixes → re-export → new VC round)  
    - zero blocks, shoulds resolved/waived → **clean**  
-6. Budget: max **5** visual rounds / unit → then Human (do **not** fake clean).  
-7. Handoff to Accept only when status **clean** on **latest** PNG set.
+7. Budget: max **5** visual rounds / unit → then Human (do **not** fake clean).  
+8. Handoff to Accept only when status **clean** on **latest** PNG set — **never** mark clean while Semantic Read FAIL remains open.
 
 ## Auto-block examples (from CRPS re-run negative gold)
 
@@ -45,6 +46,7 @@ typst compile --root . --ignore-system-fonts --font-path fonts --format png --pp
 | Empty peel cards / partial markup | craft |
 | Unit fills most of a page with few claims / large empty regions | **sparse-sprawl** (fails space budget) |
 | Peel edge strips + oversized insets waste vertical space vs map-row density | sparse-sprawl / craft |
+| Teaching image fails Semantic Read (wrong motif / false teaching) | **semantic-read** — regen or demote before clean |
 
 ## Density (book scale) — two-sided
 

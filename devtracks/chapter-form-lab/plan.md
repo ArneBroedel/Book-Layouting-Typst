@@ -2,8 +2,9 @@
 
 **Status:** planning · Human intent locked 2026-08-02 (orchestrated multi-session iterative extrema)  
 **Spec:** [spec.md](spec.md)  
+**Portfolio (N=4):** [portfolio.md](portfolio.md) — Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie  
 **Runtime (to create at kickoff):** `toolset/orchestration/form-lab/<lab-id>/`  
-**Anchor (default):** Gicht · kl-kurz · content pin Kursbuch V-3  
+**First chapter:** Gicht · kl-kurz · `chapter-v-3-gicht.md`  
 
 ---
 
@@ -160,15 +161,17 @@ domains/medical/assets/form-lab/<lab-id>/<pass>/…       # V/R assets
 
 **Exhaustion means:** vector atoms cover recognition/relation jobs; residual needs photo realism or pure type.
 
-### Pass R — Raster atomic
+### Pass R — Raster aspects (small gens)
 
 | Allow | Deny |
 |---|---|
 | Many **small** gens/refines per aspect (joint, fever cue, mimic frame visual, …) | Single mega-infographic free vision |
-| Montage/layout of atoms in Typst | Shipping without claim audit per atom |
+| Montage/layout of aspects in Typst | Shipping without **Semantic Read PASS** + claim audit per aspect |
 | Typst safety text outside raster | Demoting all rasters to code mid-pass without OR + dossier |
-| Higher gen budget than production (kickoff D8) | Ignoring icon-semantics FAIL |
+| Higher gen budget than production (kickoff D8) | Ignoring Semantic Read / icon-semantics FAIL (not a nit) |
+| **Short positive prompts** (concrete subject) | Long kitchen-sink prompts; negative-list-as-strategy |
 
+**SoT:** `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`  
 **Exhaustion means:** additional gens only reshuffle; teaching gain flat; document limits of raster for this chapter.
 
 ### Pass S — Synthesis
@@ -177,6 +180,7 @@ domains/medical/assets/form-lab/<lab-id>/<pass>/…       # V/R assets
 |---|---|
 | Winners from matrix + Human rank | New medium not tested in T/C/V/R(/D) |
 | Mixing e.g. T body + V recognition + C urgency | Reintroducing portfolio KL monotony by habit |
+| Aspects with **Semantic Read PASS** only | Mounting aspects that failed Semantic Read in R (or elsewhere) |
 
 ---
 
@@ -200,6 +204,7 @@ domains/medical/assets/form-lab/<lab-id>/<pass>/…       # V/R assets
 4. **Craft ceiling** — “what would a strong designer still fix in *this medium*?”  
 5. **Claim honesty** — no false teaching  
 6. **Density** — sparse-sprawl and squish both blocked  
+7. **Semantic Read** (hard) — every teaching image/glyph: Lesart · Job-Fit · Falsche Lehre · Claim-Trennung; FAIL = **block**  
 
 ### 3.3 Medium-optimum gate
 
@@ -207,11 +212,12 @@ All must hold:
 
 - [ ] `round >= min_craft_rounds` (default **3**)  
 - [ ] PC status `medium-optimum-candidate` with **empty block list** (nits OK)  
+- [ ] **No open Semantic Read FAIL** on mounted aspects  
 - [ ] Exhaustion dossier answers: *What did we try? What still hurts? Why can’t this medium fix it?*  
 - [ ] OR records `pass_status: optimum` (or Human H-Pass sign)  
 - [ ] Latest PNG set linked (not stale)
 
-**Not sufficient:** validate green, “looks fine”, single round, Builder self-praise.
+**Not sufficient:** validate green, “looks fine”, single round, Builder self-praise, disclaimer caption under a wrong image.
 
 ### 3.4 Caps (defaults — confirm at kickoff)
 
@@ -493,6 +499,7 @@ Do **not** start Pass C until T medium-optimum (or Human waiver with residual).
 |---|---|
 | [spec.md](spec.md) | Goals, roles, success criteria, pass catalog |
 | [plan.md](plan.md) | Architecture, phases, caps, prompts |
+| [portfolio.md](portfolio.md) | Four chapters + diversity rationale + order |
 | [pass-craft-loop.md](pass-craft-loop.md) | Iterative build→PNG→critique loop + templates |
 | Runtime | `toolset/orchestration/form-lab/` |
 | Templates | `toolset/orchestration/form-lab/_templates/` |
@@ -503,8 +510,8 @@ Do **not** start Pass C until T medium-optimum (or Human waiver with residual).
 
 | ID | Decision | Date |
 |---|---|---|
-| D1 Anchor chapter | *pending* | |
-| D2 Second chapter | *pending* | |
+| D1 Portfolio N=4 | **Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie** ([portfolio.md](portfolio.md)) | 2026-08-02 |
+| D2 Execution order | *pending* (default A depth-first, Gicht first) | |
 | D3 Pass D | *pending* | |
 | D4 Min rounds | *pending* (default 3) | |
 | D5 Max rounds | *pending* (default 12) | |

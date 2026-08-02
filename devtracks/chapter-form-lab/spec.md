@@ -56,7 +56,8 @@ Run a **Form Lab** on a **small set of chapters** (default: one anchor):
 5. **Session boundaries are features** — new session per pass (or per major craft wave) preferred.  
 6. **PNG eyes every craft round** — no clean without page images.  
 7. **Compare before synthesize**.  
-8. **Floor: claim honesty** — medium extremism does not license wrong clinical meaning.
+8. **Floor: claim honesty** — medium extremism does not license wrong clinical meaning.  
+9. **Semantic Read hard gate** — free gens use short positive prompts; review must catch nonsense motifs before medium-optimum / Human handoff as done (`prompt-and-semantic-read.md`).
 
 ## 6. Pass catalog (v1)
 
@@ -97,12 +98,27 @@ Builder ≠ sole Critic on the same artifact version.
 New runtime: `toolset/orchestration/form-lab/<lab-id>/`  
 New skill (phase): `form-lab-orchestrator` (or extension pack under skill-pack).
 
-## 9. Open decisions (kickoff)
+## 9. Chapter portfolio (locked selection 2026-08-02)
+
+**N = 4** monographs from  
+`Kursbuch5/.../2026-07-welle-06-kl-full/monographs/`.  
+Full rationale: [portfolio.md](portfolio.md).
+
+| # | Chapter | File | Form-lab stress |
+|---|---|---|---|
+| 1 | **Gicht** | `chapter-v-3-gicht.md` | lokale Gelenk-Gestalt, Mimic, TIME |
+| 2 | **Schlaganfall** | `chapter-v-4-schlaganfall.md` | FAST Körper-Schema, hyper-akut, kl-voll |
+| 3 | **Melanom ABCDE** | `chapter-v-10-melanom-abcde-hautscreening.md` | Kriterien-Icons, Screening, Icon-Semantik |
+| 4 | **Anaphylaxie** | `chapter-v-12-anaphylaxie.md` | Multi-System-Kaskade, Handlungssequenz, kl-voll |
+
+Execution default: **depth-first** (all passes on Gicht, then Schlaganfall, …) — see portfolio Option A.
+
+## 10. Open decisions (kickoff)
 
 | ID | Question | Default proposal |
 |---|---|---|
-| **D1** | Anchor chapter | Gicht (`chapter-v-3-gicht` pins; slug `form-lab-gicht`) |
-| **D2** | Second chapter | Deferred until after Gicht S |
+| **D1** | Portfolio | **Locked:** Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie ([portfolio.md](portfolio.md)) |
+| **D2** | Execution order | **A** depth-first per chapter (Gicht first); alt B medium-first |
 | **D3** | Pass D (diagram) | Optional after T/C/V/R comparison if matrix gaps |
 | **D4** | Min craft rounds per pass | **3** (hard floor); soft target 5–8 until exhaustion |
 | **D5** | Max craft rounds per pass | **12** then Human / stop with residual dossier |
@@ -112,7 +128,7 @@ New skill (phase): `form-lab-orchestrator` (or extension pack under skill-pack).
 
 ---
 
-## 10. Acceptance of this spec
+## 11. Acceptance of this spec
 
-Human confirms D1–D8 (or overrides) → implement board + Pass T handoff.  
-Plan: [plan.md](plan.md).
+Human confirms D2–D8 (D1 portfolio locked 2026-08-02) → implement master + Gicht board + Pass T handoff.  
+Plan: [plan.md](plan.md) · Portfolio: [portfolio.md](portfolio.md).

@@ -49,6 +49,21 @@ Read board.md + run-log.md + route.md. Route next; do not craft the pass.
 Form Lab Pass <P> Worker. Load toolset/orchestration/form-lab/<lab-id>/passes/<P>/HAND-OFF.md
 ```
 
+## Prompt craft + Semantic Read (Pass R / free gen)
+
+**SoT (shared with medical-graphics):**  
+`domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`
+
+| Rule | Detail |
+|---|---|
+| Prompts | Short, positive, one concrete subject — no negative-list scaling |
+| After each gen | Open image → Semantic Read (hard gate) |
+| FAIL | Regen or demote — not nit; no medium-optimum with FAIL mounted |
+| Pass S | Only aspects with Semantic Read PASS |
+| Captions | Prefer *Aspekt/Kachel/Gestalt* over “Atom …” for learner-facing labels |
+
+Templates: `medium-rules-R.md`, critique section in `devtracks/chapter-form-lab/pass-craft-loop.md`.
+
 ## Status
 
 Templates and first lab-id are created at **kickoff** after Human locks D1–D8 in the track plan.

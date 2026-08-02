@@ -57,6 +57,18 @@ python3 …/cli.py image "…" --out /tmp/out.png --json
 
 - Paths to existing flowchart SVG/PNG as “copy this layout”  
 - Catalog form ids as design ceiling  
+- Long kitchen-sink prompts and **per-chapter negative word lists** as the main quality strategy (do not scale; prefer short positive prompts + Semantic Read — [`prompt-and-semantic-read.md`](prompt-and-semantic-read.md))
+
+## Before every gen
+
+1. Draft short positive prompt.  
+2. **§1.1 jargon / pictorial-trigger preflight** (same reference): rewrite dual-meaning process words (*atomic*, *cascade*, …) to concrete subject language.  
+
+## After every gen
+
+1. Open the image.  
+2. **Semantic Read** hard gate (same reference).  
+3. Only then harvest / claim audit remainder / accept path.
 
 ## Theme
 

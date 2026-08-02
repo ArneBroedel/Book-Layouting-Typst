@@ -11,14 +11,18 @@
 Design CLEAN (Form Spec + Design Contract + Design Critic)
   → G0 Visual-Units + **track** (default free-vision-ambition)
   → G1 Free vision (if ambition track)
-  → G2 Claim audit
+       short positive prompt → gen → **Semantic Read hard gate**
+  → G2 Claim audit (incl. Semantic Read / illustration-semantics)
   → Harvest (cues → Contract atom_ids)
   → G3 Realize (hierarchy-faithful recreate / hybrid / refine / A/B)
   → G3b Visual Critique on PNG (playbook 11) until Visual CLEAN
+       Semantic Read FAIL remains auto-block
   → Decision Note → Media Accept (AX) → Tech embed
 ```
 
-**Anti-patterns to kill:** free vision without Design CLEAN; free vision → pin-monotone; Accept without opening page PNGs; code-leak on page.
+**Anti-patterns to kill:** free vision without Design CLEAN; free vision → pin-monotone; Accept without opening page PNGs; code-leak on page; **process “done” while Semantic Read FAIL is open**; long negative-list prompts as quality strategy.
+
+**Prompt + Semantic Read SoT:** [`../references/prompt-and-semantic-read.md`](../references/prompt-and-semantic-read.md)
 
 ## Stages (this skill owns G0–G4)
 

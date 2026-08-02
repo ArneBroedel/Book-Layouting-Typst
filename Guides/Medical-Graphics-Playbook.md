@@ -106,7 +106,8 @@ Illness-script monographs: load **form library** + **ontology**, then transfer o
 `grammar-only` is **opt-in** (documented re-pin of an already harvested pattern, or explicit skip).
 
 **Design-quality (2026-07-30):** Design CLEAN (Contract + Critic) **before** free vision; Visual CLEAN (PNG + Visual Critic) **before** Accept — including exploration didactic PDFs.  
-**Ambition path:** Design CLEAN → free vision → claim audit → **harvest→atoms** → hierarchy-faithful code/hybrid/asset → **visual critique loop**.  
+**Ambition path:** Design CLEAN → free vision (**short positive prompt** → gen → **Semantic Read hard gate**) → claim audit → **harvest→atoms** → hierarchy-faithful code/hybrid/asset → **visual critique loop** (Semantic Read FAIL = block until regen/demote).  
+**Do not** scale quality via per-chapter negative prompt lists — SoT: `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`.  
 **DRIFT ≠ discard free vision** — port harvest must-cues; pin-monotone fails proximity.  
 Prefer **code if ≈ equal** after harvest; **simple form if complex is not better**.  
 Never put form-meta inside the figure.  

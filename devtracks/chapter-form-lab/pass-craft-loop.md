@@ -13,6 +13,12 @@ while true:
   ── BUILD (Pass Worker · Builder role) ──────────────────
   1. Read pins.md + medium-rules.md + last critique (if r>1)
   2. Implement only fixes + medium-legal improvements
+     Pass R: for each new free gen —
+       (a) short positive draft prompt
+       (b) §1.1 jargon preflight (rewrite *atomic*/cascade/… to concrete subject language)
+       (c) gen only after preflight
+       (d) open image → Semantic Read before montage
+       SoT: domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md
   3. Compile with repo font flags
   4. Export ALL chapter pages to PNG (overwrite dist/.../p*.png)
   5. Append run-log: PASS <id> round r BUILD done + png paths
@@ -25,6 +31,7 @@ while true:
        - craft ceiling (what still extractable from THIS medium)
        - claim honesty
        - density / scan
+       - **Semantic Read** (every teaching raster/vector glyph) — FAIL = block
        - status: revise | medium-optimum-candidate
        - blocks[] with page + required change
   8. Append run-log: CRITIQUE status
@@ -32,7 +39,8 @@ while true:
   ── GATE ────────────────────────────────────────────────
   9. if status == medium-optimum-candidate
         and r >= min_craft_rounds
-        and blocks empty:
+        and blocks empty
+        and no open Semantic Read FAIL:
           write exhaustion.md
           board pass → optimum (or candidate + H-Pass)
           STOP → return to Orchestrator
@@ -63,6 +71,14 @@ while true:
 ## Medium purity
 - allow/deny violations:
 
+## Semantic Read (every teaching image/glyph — hard gate)
+| aspect / locus | intended job | 2s lesart | job-fit | false teaching? | verdict PASS/FAIL |
+|---|---|---|---|---|---|
+| | | | | | |
+
+FAIL → **block** (regen or demote). Caption does not clear FAIL.
+SoT: `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md`
+
 ## Learner jobs
 | job | present | strong | note |
 |---|---|---|---|
@@ -80,8 +96,9 @@ What a strong designer would still do *without leaving the medium*:
 |
 
 ## Disposition
-- open blocks: N
+- open blocks: N (must include Semantic Read FAILs)
 - if 0 and round>=min: may set medium-optimum-candidate
+- **never** medium-optimum-candidate while Semantic Read FAIL is open
 ```
 
 ---
@@ -131,4 +148,7 @@ Self-CLEAN in the same breath as build = **process fail**.
 3. `exhaustion.md` exists  
 4. PNG mtimes ≥ chapter.typ mtime  
 5. Spot-check: open p1 — medium deny-list not obviously violated  
-6. Update board + route next pass or comparison
+6. **Semantic Read:** critique table has no FAIL rows; Pass R/S mounts only PASS aspects  
+7. Update board + route next pass or comparison  
+
+**Pass S:** synthesizer must not reintroduce aspects that failed Semantic Read in T/C/V/R.
