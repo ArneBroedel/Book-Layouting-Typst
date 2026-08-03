@@ -6,11 +6,12 @@ description: >
   "what next", "where do I start", "turn content into layout/graphics", or wants
   guided intake before specializing. Interview the user, pick the best entry
   (full-book production, single chapter, content review, graphics only, compose,
-  platform smoke, resume board), gather required paths/policy, then route into
-  book-production-orchestrator, content-orchestrator, media-brief,
-  medical-graphics, compose-chapter, or bookkit — and keep guiding until blocked
-  or the user exits. Do NOT replace specialist skill procedures, invent clinical
-  claims, or skip Human gates H1/H2/H4/H5/H-Gfx.
+  platform smoke, resume board, Form Lab lab-learning), gather required paths/policy,
+  then route into book-production-orchestrator, form-lab-orchestrator (situation 9
+  only), content-orchestrator, media-brief, medical-graphics, compose-chapter, or
+  bookkit — and keep guiding until blocked or the user exits. Do NOT replace
+  specialist skill procedures, invent clinical claims, skip Human gates
+  H1/H2/H4/H5/H-Gfx, or run Form Lab T→C→V→R craft yourself (handoff only).
 user-invocable: true
 argument-hint: "[goal | resume <book-id> | status]"
 metadata:
@@ -51,6 +52,7 @@ specialist procedure when its turn comes).
 | Only compose/validate chapter.typ | `compose-chapter` |
 | Only bookkit API / init / theme | `bookkit` |
 | Typst syntax / layout bug | `typst-writer` |
+| Form Lab already agreed (lab-id / medium extremes) | `form-lab-orchestrator` |
 
 If the user **is** unclear, **start here even if** a specialist might also match.
 
@@ -85,13 +87,14 @@ Present roughly:
 | # | User goal | Route |
 |---|---|---|
 | **1** | **Ganzes Buch** (mehrere Kapitel) → Layout + Grafik + PDF/Print | `book-production-orchestrator` kickoff |
-| **2** | **Ein Kapitel** textfertig → optimiertes Layout (+ ggf. Grafiken) | guided mini-pipeline (below) |
+| **2** | **Ein Kapitel** textfertig → optimiertes Layout (+ ggf. Grafiken) | guided mini-pipeline (below) — **not** Form Lab |
 | **3** | **Nur Text reifen** (Review / Freeze vorbereiten) | `content-orchestrator` → `content-review` |
 | **4** | **Nur Grafik/Form** für eine Unit (Brief/Form Spec schon da oder parallel) | `media-brief` and/or `medical-graphics` |
 | **5** | **Nur umsetzen/validieren** (Accept existiert) | `compose-chapter` + `./scripts/bookkit validate` |
 | **6** | **Plattform lernen / Smoke** (Consumer, bookkit, Showcase) | `bookkit` + `docs/CONSUMER.md` |
-| **7** | **Board fortsetzen / Status** | `book-production-orchestrator` resume / status |
+| **7** | **Board fortsetzen / Status** | `book-production-orchestrator` resume / status (form-lab boards → situation 9) |
 | **8** | **Unklar — du entscheidest mit mir** | intake interview (references/intake.md) |
+| **9** | **Form Lab** (lab-learning: full T→C→V→R→matrix→S best-of + harvest) | **handoff** `form-lab-orchestrator` (default **L2 autodrive**); Studio does **not** craft itself |
 
 Details and phrasing: [`references/situations.md`](references/situations.md).
 
@@ -199,12 +202,14 @@ Before the first specialist work product, write a short route (chat + optional f
 ```markdown
 # Studio route — <date>
 - goal: …
-- situation: <1–8>
-- brief_class: exploration | production
+- situation: <1–9>
+- workflow_class: production | exploration | lab-learning | platform
+- brief_class: exploration | production | n/a
 - autonomy: L0|L1|L2
 - content: <paths>
 - project_root: …
 - book_id: <or n/a>
+- lab_id: <or n/a>
 - graphics_track: free-vision-ambition | grammar-only | mixed | none | tbd
 - design_clean: no | yes | partial | tbd
 - visual_clean: no | yes | partial | tbd
@@ -212,7 +217,7 @@ Before the first specialist work product, write a short route (chat + optional f
 - next_action: …
 - cli: `./scripts/bookkit …` if any
 - human_gate_soon: none | H1 | H-Design | H2 | H-Explore | H-Gfx | H4 | …
-- do_not: …
+- do_not: … (for situation 9: do not run Form Lab medium craft in studio)
 ```
 
 When visual ambition is heavy (situation 2/4), expect **`graphics_track: free-vision-ambition`** (or `mixed`) for ≥1 unit — **not** a silent grammar-only skip. Require **Design CLEAN** before free vision and **Visual CLEAN** (PNG) before Accept. Do **not** treat first PDF + validate OK as done.
@@ -254,6 +259,8 @@ For full-book, prefer board `route.md` from book-production-orchestrator templat
 | Keep A/B/C boundaries | Dump research/ as default context |
 | Two-sided density; solid simple form after free FAIL | Squish layout for page count; blob placeholder demotion |
 | Focus free vision; pretty ≠ textbook-ready | Multi-pin labeled limb dashboards as default “ambition” |
+| Route Form Lab to situation **9** → `form-lab-orchestrator` | Run Form Lab T→C→V→R craft stack inside studio |
+| Treat Form Lab as **lab-learning** (not default chapter path) | Open Form Lab for every “layout this chapter” request |
 
 ---
 
@@ -262,6 +269,7 @@ For full-book, prefer board `route.md` from book-production-orchestrator templat
 | Skill | Role |
 |---|---|
 | **`book-production-orchestrator`** | Multi-chapter board → print (P0–P11) |
+| **`form-lab-orchestrator`** | Form Lab lab-learning (L0–L7 full program, default L2 autodrive + S best-of); situation **9** only — not production default |
 | **`content-orchestrator`** / **`content-review`** | C maturity only |
 | **`media-brief`** | Ideal + Form Spec + Accept |
 | **`medical-graphics`** | Vision → audit → realize |

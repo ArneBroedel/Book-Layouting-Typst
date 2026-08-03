@@ -1,11 +1,26 @@
 # Spec — Chapter Form Lab
 
-**Status:** planning (Human approved intent 2026-08-02)  
+**Status:** active · craft waves a/b/c executed · skill separation implemented 2026-08-02  
+**Mission class:** **lab-learning** (not default production chapter pipeline)  
 **Product:** B (visual craft) · thin A (compose/Typst) · orchestration pattern  
+**Executable skill:** `form-lab-orchestrator` → SoT `toolset/skill-pack/form-lab-orchestrator/` (default **L2 autodrive-to-complete**: full T→C→V→R→matrix→S best-of + harvest)  
+**Runtime:** `toolset/orchestration/form-lab/`  
 **Related:** `design-quality-system`, `multi-chapter-explore-layout`, archived `free-vision-harvest` / `medical-graphics` / `kl-form-language`  
-**Not this track:** full-book production, claim rewrite, portfolio throughput N× chapters
+**Not this track:** full-book production default, claim rewrite, per-chapter production compose, portfolio throughput N× chapters as production SoT
 
 ---
+
+## 0. Lab-learning vs production (hard)
+
+| Form Lab (this track / skill) | Production / studio situations 1–2 |
+|---|---|
+| Depth-first **medium extremes** T→C→V→R→S | Single best path under Design+Visual CLEAN |
+| Goal: **learn** which medium wins which job | Goal: ship chapter/book PDF |
+| Terminal COMPLETE requires **harvest** (form-vocabulary + production-bridge) or explicit waiver | COMPLETE = Accept + compose + gates |
+| Studio **situation 9** only — handoff to `form-lab-orchestrator` | Situations 1–7 never run Form Lab craft stack |
+| Output feeds vocabulary / production-bridge for later compose | Output is production chapter |
+
+**Agents must not** treat Form Lab as the default way to layout a chapter.
 
 ## 1. Problem
 
@@ -23,7 +38,7 @@ Run a **Form Lab** on a **small set of chapters** (default: one anchor):
 4. An **Orchestrator** owns board, routing, budgets, resume across sessions — **never** does all pass craft in one monologue.  
 5. **Pass Workers** (subagents or **new sessions**) execute one pass at a time with Builder ↔ Critic loops.  
 6. After all passes: **compare**, then **synthesize** a hybrid chapter from proven winners only.  
-7. **Harvest** vocabulary + when-to-use rules into skills/guides.
+7. **Harvest** vocabulary + production-bridge (job→carrier defaults, anti-patterns) — **required for terminal COMPLETE**.
 
 ## 3. Non-goals
 
@@ -45,7 +60,8 @@ Run a **Form Lab** on a **small set of chapters** (default: one anchor):
 | **S4** | Pass T ships with **almost no** panel-fill chrome; Pass V ships **many** vectors; Pass R ships **many small** rasters — medium rules enforced by Critic |
 | **S5** | Comparison matrix unit×pass filled with Human-visible scores |
 | **S6** | Synthesis chapter cites evidence from passes (no untested media) |
-| **S7** | Harvest: form vocabulary + ladder deltas + orchestrator pattern encoded |
+| **S7** | **Harvest hard gate:** `form-vocabulary` + `production-bridge` written (portfolio- or lab-level); board `harvest=done` (or explicit documented waiver). PDF/PNG alone ≠ COMPLETE for new labs after skill establishment |
+| **S8** | Skill `form-lab-orchestrator` discoverable; studio routes lab goals to it without running the medium stack itself |
 
 ## 5. Locked design principles
 
@@ -97,8 +113,8 @@ Builder ≠ sole Critic on the same artifact version.
 | `compose-chapter` | Chapter assembly per pass slug |
 | design-quality Visual CLEAN | Adapted: **medium-optimum** is stricter on craft, looser on portfolio monotony |
 
-New runtime: `toolset/orchestration/form-lab/<lab-id>/`  
-New skill (phase): `form-lab-orchestrator` (or extension pack under skill-pack).
+**Runtime:** `toolset/orchestration/form-lab/<lab-id>/`  
+**Skill (SoT):** `toolset/skill-pack/form-lab-orchestrator/` — discovery via `.github/skills/` + `.grok/skills/` symlinks (same pattern as book-production-orchestrator).
 
 ## 9. Chapter portfolio (locked selection 2026-08-02)
 

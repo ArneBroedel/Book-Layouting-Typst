@@ -66,6 +66,12 @@ if src="$(resolve_skill_src book-production-orchestrator \
   provision_skill book-production-orchestrator "$src"
 fi
 
+# Form Lab orchestrator (lab-learning meta — not production default)
+if src="$(resolve_skill_src form-lab-orchestrator \
+    "$Root/toolset/skill-pack/form-lab-orchestrator")"; then
+  provision_skill form-lab-orchestrator "$src"
+fi
+
 # Domain Media skill (B) — SoT under domains/medical; skill-pack may hold a symlink
 if src="$(resolve_skill_src media-brief \
     "$Root/domains/medical/skill/media-brief" \

@@ -20,7 +20,8 @@ Use this when mapping a user goal to a workflow. Prefer the **smallest** path th
 
 ## 2 — One chapter → optimized layout (+ graphics)
 
-**Signals:** single MD/chapter, “dieses Kapitel layouten”, one Form Spec set.
+**Signals:** single MD/chapter, “dieses Kapitel layouten”, one Form Spec set.  
+**Not Form Lab:** for medium-extreme research use situation **9**.
 
 **Entry:** studio **hosts** mini-pipeline (not necessarily a full board):
 
@@ -100,6 +101,7 @@ Showcase dogfood: `src/main.typ` via `./scripts/build.sh fast` (not content SoT 
 
 **Entry:** `book-production-orchestrator` status/resume  
 **CLI:** `./scripts/book-production-status.sh <book-id>`  
+**If form-lab board** under `toolset/orchestration/form-lab/`: situation **9** → `form-lab-orchestrator` resume (Orchestrator only).  
 **If no board:** studio intake → create kickoff or situation 2.
 
 ---
@@ -108,9 +110,52 @@ Showcase dogfood: `src/main.typ` via `./scripts/build.sh fast` (not content SoT 
 
 Run short interview ([`intake.md`](intake.md)):
 
-1. End state (PDF? print? only brief? only graphic?)  
+1. End state (PDF? print? only brief? only graphic? form research?)  
 2. How much content is ready?  
 3. One unit vs whole book?  
-4. Exploration vs production quality bar?  
+4. Exploration vs production quality bar vs **lab-learning** (Form Lab)?  
 
-Then map to 1–7 and confirm with the user.
+Then map to 1–7 or **9** and confirm with the user.
+
+---
+
+## 9 — Form Lab (lab-learning medium extremes)
+
+**Signals:** “Form Lab”, medium extremes, T/C/V/R passes, form vocabulary, “welche Form gewinnt”, clean restart wave, full medium program, best-of fusion, harvest production-bridge.
+
+**workflow_class:** `lab-learning`  
+**Entry:** **handoff** to `form-lab-orchestrator` (that skill’s **default = L2 autodrive-to-complete**)  
+**Board:** `toolset/orchestration/form-lab/<lab-id>/`  
+**Phases:** L0–L7 (kickoff → T→C→V→R iterative → matrix → **S best-of** → **harvest**)
+
+**Studio must:**
+
+1. Confirm lab-learning intent (not silent default for “layout this chapter”).  
+2. Collect: lab_id (or new), content pin paths, portfolio vs single lab.  
+3. Emit route card with `situation: 9`, `workflow_class: lab-learning`, `next_skill: form-lab-orchestrator`, `autonomy: L2` (unless user asked route-only).  
+4. **Hand off** — do **not** run Pass T–R craft inside studio; the form-lab skill drives craft after handoff.
+
+**Studio must not:**
+
+- Execute the full medium-stack craft **as studio** (wrong skill body)  
+- Force route-only / “stop after handoff” unless the user asked  
+- Mark Form Lab COMPLETE  
+- Route ordinary production chapter goals here  
+
+**Must collect:** lab_id or “new”, content pins, whether resume existing board, D1–D8 if kickoff.
+
+**Human gates:** kickoff D1–D8; optional H-Pass / Human S-rank (often waived under autodrive); harvest before COMPLETE.
+
+**Pasteable handoff:**
+
+```text
+Skill: form-lab-orchestrator
+lab_id / portfolio: <slug>
+content pins: <paths>
+mission_class: lab-learning
+autonomy: L2 autodrive-to-complete
+Kickoff if new; else resume. Full program T→C→V→R→matrix→S best-of→harvest → COMPLETE.
+Do not stop after L0 handoff.
+```
+
+**If user actually wants production chapter:** redirect to situation **2** (or **1** for full book).

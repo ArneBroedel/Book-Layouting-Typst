@@ -1,16 +1,29 @@
 # Plan — Chapter Form Lab
 
-**Status:** planning · Human intent locked 2026-08-02 (orchestrated multi-session iterative extrema)  
+**Status:** active · craft waves a/b/c done · **lab-learning skill established** 2026-08-02  
+**Mission class:** **lab-learning** — not default production chapter pipeline  
 **Spec:** [spec.md](spec.md)  
 **Portfolio (N=4):** [portfolio.md](portfolio.md) — Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie  
-**Runtime (to create at kickoff):** `toolset/orchestration/form-lab/<lab-id>/`  
+**Runtime:** `toolset/orchestration/form-lab/<lab-id>/`  
+**Skill SoT:** `toolset/skill-pack/form-lab-orchestrator/` (default **L2 autodrive-to-complete**)  
+**Studio entry:** situation **9** → handoff to `form-lab-orchestrator` (Studio never crafts itself; skill drives full program)  
 **First chapter:** Gicht · kl-kurz · `chapter-v-3-gicht.md`  
 
 ---
 
 ## 0. One-line intent
 
-**Orchestrator** steuert; **Pass-Sessions** holen pro Medium iterativ das **Maximum** heraus; erst danach **Vergleich** und **Synthese** — kein One-Shot, kein Alles-in-einer-Session.
+**Orchestrator** steuert; **Pass-Sessions** holen pro Medium iterativ das **Maximum** heraus; erst danach **Vergleich**, **Synthese** und **Harvest** — kein One-Shot, kein Alles-in-einer-Session, **kein Production-Default**.
+
+### 0.1 Terminal COMPLETE (hard gate, post skill establishment)
+
+| Required | Not sufficient alone |
+|---|---|
+| Medium optima + matrix + Pass S (or residual with OR note) | PDF/PNG in `dist/form-lab/` |
+| **`harvest` = done:** form-vocabulary + production-bridge (portfolio-level OK) | `terminal_status: COMPLETE` without harvest cell |
+| Explicit **waiver** documented on board if Human skips harvest | Agent silence on harvest |
+
+Legacy boards (waves a/b, early c craft) may keep historical COMPLETE with `harvest | deferred` — new labs and portfolio-c after skill establishment follow the hard gate.
 
 ---
 
@@ -235,9 +248,23 @@ All must hold:
 
 ---
 
-## 4. Phases
+## 4. Phases (L0–L7 skill machine)
 
-### Phase 0 — Kickoff & freeze
+Skill phases align with craft phases; **L7 harvest is mandatory for COMPLETE**.
+
+| Phase | Lab | Goal | Exit |
+|---|---|---|---|
+| **L0** | Kickoff & freeze | lab-id, pins, D1–D8, scaffold | route → Pass T |
+| **L1** | Pass T | type+icon medium-optimum | exhaustion + board T=optimum |
+| **L2** | Pass C | color/chrome optimum | same |
+| **L3** | Pass V | vector atomic + SR on glyphs | same |
+| **L4** | Pass R | raster atomic + SR | same |
+| *(opt)* | Pass D | relation medium if matrix gap | optional |
+| **L5** | Comparison | jobs × passes matrix; Human S-rank optional/waivable | matrix ready for S |
+| **L6** | Pass S Synthesis | winners only; omit-is-win | synthesis-clean |
+| **L7** | **Harvest** | form-vocabulary + production-bridge (+ optional SR log) | board harvest=done → terminal COMPLETE |
+
+### Phase 0 / L0 — Kickoff & freeze
 
 | Step | Owner | Output |
 |---|---|---|
@@ -249,7 +276,7 @@ All must hold:
 
 **Exit:** route says `NEXT: Pass T session handoff`.
 
-### Phase 1 — Pass T (Type+Icon) to medium-optimum
+### Phase 1 / L1 — Pass T (Type+Icon) to medium-optimum
 
 | Step | Owner |
 |---|---|
@@ -261,12 +288,12 @@ All must hold:
 
 **Exit:** T optimum artifacts in `dist/form-lab/.../T/`.
 
-### Phase 2 — Pass C (Color/Chrome)
+### Phase 2 / L2 — Pass C (Color/Chrome)
 
 Same pattern as Phase 1 with C rules.  
 **May reuse structure ideas from T**, not copy chrome into T retroactively.
 
-### Phase 3 — Pass V (Vector atomic)
+### Phase 3 / L3 — Pass V (Vector atomic)
 
 - Plan motif list before draw (OR/PW): e.g. hot MTP-I glyph, fever mark, crystal-not-clear, 112, scope boundary, …  
 - Prefer SVG files under assets; Typst assembly.  
@@ -274,7 +301,7 @@ Same pattern as Phase 1 with C rules.
 - **Every glyph:** open PNG → Semantic Read without caption; anti-doodle FAIL → redraw or demote.  
 - Do not score recognition jobs as V-winners on caption-only geometry.
 
-### Phase 4 — Pass R (Raster atomic)
+### Phase 4 / L4 — Pass R (Raster atomic)
 
 - Unit aspect map: many small targets, not one scene; **one primary per learner job**.  
 - Claim audit + Semantic Read per aspect; hybrid labels in Typst.  
@@ -285,33 +312,42 @@ Same pattern as Phase 1 with C rules.
 
 Only if comparison prep shows relation jobs weak in all of T/C/V/R.
 
-### Phase 6 — Comparison
+### Phase 6 / L5 — Comparison
 
 | Step | Owner |
 |---|---|
 | P6.1 Build matrix template (jobs × passes) | CM/OR |
 | P6.2 Agent scores from PNGs | CM |
 | P6.3 Optional Gemini / second reader | CM |
-| P6.4 **Human ranking** | H |
+| P6.4 **Human ranking** (waivable → agent matrix + later H-S-rank) | H |
 | P6.5 Winner map per job | CM |
 
 **Exit:** `comparison/matrix.md` complete enough for S.
 
-### Phase 7 — Pass S Synthesis
+### Phase 7 / L6 — Pass S Synthesis
 
 Iterative (not one-shot): draft hybrid → critique → revise until **synthesis-clean** (different bar: coherence of mix + evidence links).
 
-### Phase 8 — Harvest
+### Phase 8 / L7 — Harvest (required for COMPLETE)
 
-| Into | What |
+| Deliverable | Path pattern | Content |
+|---|---|---|
+| form-vocabulary | `…/harvest/form-vocabulary.md` (lab or portfolio) | job classes → winning media patterns, ladder notes |
+| production-bridge | `…/harvest/production-bridge.md` | job→carrier defaults for compose / medical-graphics; **do-not** anti-patterns from this lab |
+| human-s-rank | optional stub | Human override cells; waiver OK |
+| sr-log | optional | Semantic Read FAIL/PASS ledger for R/V |
+
+Templates: `toolset/orchestration/form-lab/_templates/form-vocabulary.md` etc.
+
+| Into (longer term) | What |
 |---|---|
-| `Guides/Medical-Graphics-Playbook.md` or new Form-Lab section | When medium wins |
-| form-intensity-ladder | L2.5 icons, L3.5 SVG, atomic raster |
-| medical-graphics / media-brief | anti-collapse-to-boxes; no demote-without-dossier |
-| form-lab-orchestrator skill | this process |
-| multi-chapter / design-quality | optional cross-links |
+| production-bridge consumers | `compose-chapter`, `medical-graphics`, studio mini-pipeline |
+| form-lab-orchestrator skill | process already encoded; vocabulary stays in harvest docs |
+| Guides (deferred until vocabulary stabilizes) | optional Form-Lab section |
 
-Archive track only after harvest footer.
+**Archive track** only after harvest footer + skill establishment proven.
+
+Wave-c portfolio harvest SoT: `toolset/orchestration/form-lab/portfolio-2026-08-c/harvest/`.
 
 ---
 
@@ -449,18 +485,17 @@ Human final rank overrides agent if conflict.
 
 ## 9. Skill / tooling work (phased)
 
-| When | Work |
-|---|---|
-| P0 | Templates under `toolset/orchestration/form-lab/_templates/` |
-| After T optimum | Note gaps in typst-writer / icon use |
-| After V/R | Asset naming + SVG-first notes |
-| After S + harvest | New skill `form-lab-orchestrator` OR section in studio + book-production references |
-| Not blocking lab | Full MCP / automation |
+| When | Work | Status |
+|---|---|---|
+| P0 | Templates under `toolset/orchestration/form-lab/_templates/` | done |
+| Craft waves a/b/c | four monographs depth-first T→S | craft done |
+| Skill separation | `form-lab-orchestrator` + studio situation 9 + harvest gate | **done 2026-08-02** |
+| Wave-c harvest | portfolio form-vocabulary + production-bridge | done (no re-craft) |
+| Not blocking lab | Full MCP / automation / skill-creator eval suite | deferred |
 
-Minimal scripts (optional):
+Scripts:
 
-- `scripts/form-lab-export.sh <lab-id> <pass>` — compile + png pages  
-- status: list pass dirs + latest critique status  
+- `scripts/form-lab/verify-form-lab-complete.py` — craft artifact gates (waves a/b; does **not** prove skill/harvest)
 
 ---
 
@@ -538,4 +573,12 @@ Do **not** start Pass C until T medium-optimum (or Human waiver with residual).
 
 ## Harvested into
 
-*(empty until Phase 8)*
+| Target | What |
+|---|---|
+| `toolset/skill-pack/form-lab-orchestrator/` | Process skill L0–L7, ALWAYS/NEVER, lab≠production |
+| `toolset/orchestration/form-lab/README.md` + `_templates/` | Harvest gate + templates |
+| `toolset/orchestration/form-lab/portfolio-2026-08-c/harvest/` | Wave-c form-vocabulary + production-bridge |
+| `toolset/skill-pack/studio/` situation 9 | Route to form-lab-orchestrator |
+| `AGENTS.md` / `CLAUDE.md` / `docs/KNOWLEDGE-MAP.md` | When-to-use / when-not-default-production |
+
+Track remains **active** until optional guide harvest + archive decision; craft research waves complete.

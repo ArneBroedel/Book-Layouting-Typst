@@ -20,6 +20,8 @@ After intake, pick **next_skill** and optional **CLI**. Studio may **execute** t
 | 4 Graphics only | `media-brief` and/or `medical-graphics` | see situations.md §4 |
 | 5 Compose only | `compose-chapter` | `./scripts/bookkit validate …` |
 | 6 Platform | `bookkit` | doctor, init, examples, CONSUMER.md |
+| **9 Form Lab (lab-learning)** | **`form-lab-orchestrator`** | board under `toolset/orchestration/form-lab/<lab-id>/`; Studio **handoff only**; skill default **L2 autodrive-to-complete** (full T→S + harvest) |
+| 7 Resume form-lab board | `form-lab-orchestrator` | default: `Resume … autonomy L2 autodrive-to-complete`; opt-out: Orchestrator only |
 
 ---
 
@@ -65,6 +67,24 @@ Caps: 2 free + 2 refine + 5 visual rounds. No pin-monotone / code-leak / self-CL
 Skill: compose-chapter
 Accept (Design+Visual CLEAN): <path> · Content: <path> · graphic_decisions: <path>
 Embed Accept winners only. Then bookkit validate (not a design pass).
+```
+
+**Form Lab (situation 9 — handoff only; skill autodrives):**
+```text
+Skill: form-lab-orchestrator
+lab_id / portfolio: <slug>
+content pins: <paths>
+mission_class: lab-learning
+autonomy: L2 autodrive-to-complete
+Kickoff if new; else resume. Full program to COMPLETE; do not stop after L0 handoff.
+Do not run medium craft inside studio (form-lab skill does after handoff).
+```
+
+**Form Lab resume (default):**
+```text
+Resume Form Lab board <lab-id|portfolio-id> autonomy L2 autodrive-to-complete.
+Skill: form-lab-orchestrator.
+Read board.md + run-log.md + route.md. Continue full program to COMPLETE.
 ```
 
 ---
