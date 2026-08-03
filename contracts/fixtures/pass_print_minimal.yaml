@@ -1,0 +1,18 @@
+schema_version: "1"
+chapter_id: fixture-print-minimal
+content_revision: "git:abcdef0"
+channel_scope: print
+assets:
+  - id: fixture-asset
+    status: accepted
+accept_paths:
+  - contracts/fixtures/README.md
+channels:
+  print:
+    status: pending
+    outputs: []
+  web:
+    status: n/a
+    outputs: []
+design_clean: true
+visual_clean: true

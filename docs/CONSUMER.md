@@ -6,11 +6,13 @@ consume packages, catalog, CLI, and skills — they do **not** treat studio
 
 | Produkt | What it is | Where |
 |---|---|---|
-| **A** | Layout platform (bookkit, form-catalog core, compose, starter, CLI) | this repo |
-| **B** | Domain media (e.g. medical recipes, `media-brief`) | `domains/medical/` (optional; split candidate) |
+| **A** | Print layout platform (bookkit, form-catalog core, compose, starter, CLI) | this repo |
+| **B** | Domain media (e.g. medical recipes, `media-brief`, assets) | `domains/medical/` (optional; split candidate) |
 | **C** | Content works (author Markdown, claims) | **external** — never SoT here |
+| **W** | Web layout (Astro o. ä.) | scaffold `channels/web/` — not bookkit foundation |
 
-Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md).
+Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md).  
+Shared release package: [`contracts/`](../contracts/) · `./scripts/bookkit boundaries check-tree|check-release`.
 
 ---
 

@@ -1,0 +1,21 @@
+schema_version: "1"
+chapter_id: fixture-both
+content_revision: "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+channel_scope: both
+assets:
+  - id: fixture-icon
+    status: accepted
+    path: domains/medical/assets/fixture-icon/
+accept_paths:
+  - contracts/fixtures/README.md
+channels:
+  print:
+    status: composed
+    outputs:
+      - dist/example.pdf
+  web:
+    status: built
+    outputs:
+      - channels/web/dist/example/index.html
+design_clean: contracts/fixtures/README.md
+visual_clean: true

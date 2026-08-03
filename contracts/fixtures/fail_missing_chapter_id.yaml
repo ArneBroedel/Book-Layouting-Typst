@@ -1,0 +1,7 @@
+schema_version: "1"
+chapter_id: ""
+content_revision: "git:abcdef0"
+channel_scope: print
+channels:
+  print:
+    status: pending

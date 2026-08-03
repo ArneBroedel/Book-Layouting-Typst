@@ -1,9 +1,9 @@
 # Collaboration Contract
 
-**Operational short law** for skill collaboration (A/B/C). Not a second CONSENSUS.  
+**Operational short law** for skill collaboration (A/B/C/**W**). Not a second CONSENSUS.  
 **SoT:** this file · **Cite, do not fork.**
 
-Depth: [`CONSENSUS-v0`](../../devtracks/CONSENSUS-v0.md) · Bounds: [`PRODUCT-BOUNDARIES`](../../devtracks/PRODUCT-BOUNDARIES.md) · CLEAN science: B skills + DQS provenance [`STATUS`](../../devtracks/_archive/design-quality-system/STATUS.md) · Gates: [`checkpoints`](../../domains/content-maturity/checkpoints.md)
+Depth: [`CONSENSUS-v0`](../../devtracks/CONSENSUS-v0.md) · Bounds: [`PRODUCT-BOUNDARIES`](../../devtracks/PRODUCT-BOUNDARIES.md) v0.3 · Contracts: [`contracts/`](../../contracts/) · CLEAN science: B skills + DQS provenance [`STATUS`](../../devtracks/_archive/design-quality-system/STATUS.md) · Gates: [`checkpoints`](../../domains/content-maturity/checkpoints.md)
 
 ---
 
@@ -23,8 +23,11 @@ Depth: [`CONSENSUS-v0`](../../devtracks/CONSENSUS-v0.md) · Bounds: [`PRODUCT-BO
 
 ```text
 freeze? → design council (Design CLEAN) → open-assets iff needed
-  → realize → Visual CLEAN → packet index → Accept → compose → validate
+  → realize → Visual CLEAN → packet index → Accept (channel_scope)
+  → A compose/validate  and/or  W web build
 ```
+
+**Accept `channel_scope`:** `print` \| `web` \| `both` (missing → print). Release package: `contracts/` + `bookkit boundaries check-release`.
 
 Detail wire (open-assets conditionals, chapter macro VC): **T2 live** — sit.2 / book-prod P4 / G0b / templates use `open_asset_scan`. Board quality cells (**T3 Phase A live**): `design_clean`, `visual_clean`, `macro_vc`, `quality_packet`, `open_assets` on book-production board/route — enums + paths only.
 
@@ -47,9 +50,10 @@ Detail wire (open-assets conditionals, chapter macro VC): **T2 live** — sit.2 
 |---|---|---|
 | **Media** | Brief, Form Spec, Design Contract, Accept | Sole Visual CLEAN; production `.typ` body |
 | **Graphics** | Free vision → audit → realize; Decision Note | Author ideal alone; Accept; self Visual CLEAN |
-| **Tech** | Feasibility, compose, validate, embed winners | Rewrite claims; invent Accept; mark CLEAN on own sole build |
+| **Tech (A)** | Feasibility, compose, validate, embed winners (print) | Rewrite claims; invent Accept; mark CLEAN on own sole build; own W |
+| **Web (W)** | Astro/web consume freeze + accepted assets | Content SoT; B asset SoT; Print Accept |
 | **C / Human** | Content, freeze (H1), proof/imprimatur | Layout craft as agent autopilot |
-| **Orchestrators** | Route, log, board, stop at gates | Replace craft; self-CLEAN; self-Accept |
+| **Orchestrators** | Route, log, board, stop at gates; release package pins | Replace craft; self-CLEAN; self-Accept |
 
 ---
 

@@ -13,7 +13,7 @@ Vollständig: [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) **v0.3** (ADR 50�
 | **C** | Content-Werk | externes Repo (Kursbuch) = **Inhalts-SoT**; Prozess-Kit übergangsweise `domains/content-maturity/` |
 | **B** | Domain-Media (Medizin) | `domains/medical/` → später eigenes Repo |
 | **A** | Print-Layout-Plattform | **dieses Repo** (`packages/`, `toolset/`) |
-| **W** | Web-Layout (Astro o. ä.) | noch nicht implementiert; Grenzvertrag in PRODUCT-BOUNDARIES v0.3 |
+| **W** | Web-Layout (Astro o. ä.) | Scaffold `channels/web/`; contracts + `bookkit boundaries`; Runtime bei Web-Pilot |
 
 ## Rollen
 
@@ -54,6 +54,6 @@ C1 Draft → C2 Content-Review (core+claims+safety-flags, max 2 Runden)
 
 **Multi-Channel (PRODUCT-BOUNDARIES v0.3):** nach B Accept (Scope `print` \| `web` \| `both`)  
 → **A** Print und/oder **W** Web konsumieren dieselbe `content_revision` + accepted Asset-IDs.  
-W ist Grenzvertrag; Implementierung erst mit Web-Pilot.
+Release package: `contracts/` · validate: `./scripts/bookkit boundaries check-release …` · tree: `check-tree`.
 
-Multi-root UX: `workspaces/kursbuch-layout.code-workspace` (A+C; später +B/+W).
+Multi-root UX: `workspaces/kursbuch-layout.code-workspace` (A+B+C+W).

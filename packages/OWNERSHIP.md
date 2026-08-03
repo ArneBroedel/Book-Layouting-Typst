@@ -5,7 +5,7 @@
 | **Produkt** | **A** — Layout platform |
 | **Tree** | `packages/` |
 | **May change** | bookkit foundation, bookkit-didactics facet, package README/typst.toml |
-| **Must not** | Import `domains/medical`, embed clinical content, free-vision / raster pipeline |
+| **Must not** | Import `domains/medical`, embed clinical content, free-vision / raster pipeline, host Astro/web app (Produkt **W** → `channels/web/`) |
 
 ## Packages
 

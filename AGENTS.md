@@ -28,7 +28,8 @@ Layers: **Package = code**, **Skills = procedures**, **CLI = orchestration**, **
 Do **not** clone `src/chapters` or `research/` into consumers. Studio dogfoods packages via thin
 re-exports in `src/styles/*` and foundation `src/components/*`.
 
-**Prefer `./scripts/bookkit`** for build, validate, catalog, prepress, and graphics (one binary).
+**Prefer `./scripts/bookkit`** for build, validate, catalog, prepress, graphics, and **boundaries** (one binary).
+Product map (C content · B media · A print · W web): [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md); contracts [`contracts/`](contracts/); W scaffold [`channels/web/`](channels/web/).
 Do **not** load `research/` or `templates/` into default book-production agent context (Produkt R).
 
 ## Language

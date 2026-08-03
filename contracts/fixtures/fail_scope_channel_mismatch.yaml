@@ -1,0 +1,8 @@
+schema_version: "1"
+chapter_id: fixture-scope-mismatch
+content_revision: "git:1234567"
+channel_scope: web
+# web required in channels when scope is web/both
+channels:
+  print:
+    status: pending

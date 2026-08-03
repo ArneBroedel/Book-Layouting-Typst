@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 > **Mission + boundaries (read first)**  
 > **A** = layout platform (`packages/`, `toolset/`, `scripts/bookkit`) · **B** = medical media (`domains/medical/`) · **C** = content external + process kit (`domains/content-maturity/`) · **R** = `research/` (not default context).  
-> **Start when unsure:** skill **`studio`** (slash `/studio`) — guided intake, then route. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics. Product map: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md). Consumer guide: [`docs/CONSUMER.md`](docs/CONSUMER.md).
+> **Start when unsure:** skill **`studio`** (slash `/studio`) — guided intake, then route. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics / **boundaries**. Product map (C/B/A/W): [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md). Contracts: [`contracts/`](contracts/). Consumer guide: [`docs/CONSUMER.md`](docs/CONSUMER.md).
 
 ## What this is
 

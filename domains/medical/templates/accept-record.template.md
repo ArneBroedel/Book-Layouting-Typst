@@ -7,6 +7,10 @@
 - **graphics_decision_path:** (if any — `*.graphics.md`)
 - **quality_packet_path:** (if any — `*.quality-packet.md`)
 - **spike_paths:** (if any; include A/B candidates)
+- **channel_scope:** print \| web \| both
+  - Default historical Accepts without this field = **print** (ADR 53).
+  - `web` / `both` required before Produkt **W** production build.
+  - Mirror into chapter release package: `contracts/templates/chapter-release.template.yaml`.
 - **date:**
 - **media_reviewer:** (role **AX** — must **not** be sole builder of units under Accept)
 

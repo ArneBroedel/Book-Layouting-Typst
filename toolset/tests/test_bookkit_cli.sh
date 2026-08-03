@@ -31,12 +31,21 @@ log "=== bookkit CLI smoke ==="
 run_ok "help" ./scripts/bookkit --help
 run_ok "graphics help" ./scripts/bookkit graphics --help
 run_ok "prepress help" ./scripts/bookkit prepress --help
+run_ok "boundaries help" ./scripts/bookkit boundaries --help
 run_fail "unknown command" ./scripts/bookkit not-a-real-command
 run_fail "unknown graphics sub" ./scripts/bookkit graphics not-a-sub
 
 run_ok "doctor" ./scripts/bookkit doctor --root "$Root"
 
 run_ok "catalog check" ./scripts/bookkit catalog check
+
+run_ok "boundaries check-tree" ./scripts/bookkit boundaries check-tree --root "$Root"
+run_ok "boundaries check-release pass" ./scripts/bookkit boundaries check-release \
+  contracts/fixtures/pass_print_minimal.yaml --root "$Root"
+run_fail "boundaries check-release fail" ./scripts/bookkit boundaries check-release \
+  contracts/fixtures/fail_bad_revision.yaml --root "$Root"
+run_ok "boundaries check combined" ./scripts/bookkit boundaries check \
+  --root "$Root" --release contracts/fixtures/pass_print_minimal.yaml
 
 run_ok "validate pass_minimal" ./scripts/bookkit validate \
   --typ toolset/compose/fixtures/pass_minimal/chapter.typ \

@@ -103,7 +103,7 @@ Numbered action protocol with visual step weight — prefer over plain `#enum` f
 - Assuming MCP holds skill text — skills are file-first
 - Using plain bullets for multi-step clinical SOPs when `protocol-steps` is available
 
-## CLI (`./scripts/bookkit`, v0.1.1+)
+## CLI (`./scripts/bookkit`, v0.1.2+)
 
 One entrypoint for layout **and** gated helpers (workspace-split Phase 1b, D4):
 
@@ -111,6 +111,7 @@ One entrypoint for layout **and** gated helpers (workspace-split Phase 1b, D4):
 bookkit doctor | build | watch | ua | init | print | brief-check
 bookkit validate …          # compose validate engine (preferred over raw python)
 bookkit catalog check       # form-catalog pin / schema
+bookkit boundaries …        # A/B/C/W tree + chapter release package (contracts/)
 bookkit prepress dpi|pdfx   # check-image-dpi / print-pdfx
 bookkit graphics vision|refine|spike-init|manifest
 ```
@@ -124,14 +125,18 @@ Examples:
   --typ path/to/chapter.typ --content path/to/content.md \
   --accept path/to/accept.md --root . --skip-compile
 ./scripts/bookkit catalog check
+./scripts/bookkit boundaries check-tree
+./scripts/bookkit boundaries check-release contracts/fixtures/pass_print_minimal.yaml
 ./scripts/bookkit prepress dpi --paths domains/medical/assets
 ./scripts/bookkit graphics vision --backend gemini --brief … --out …
 ```
 
 Graphics vision/refine are **one-shot** (no multi-round loops in CLI). Caps live in `medical-graphics`.  
+Boundaries enforce **PRODUCT-BOUNDARIES** shared contracts (not design quality).  
 Direct engines (`toolset/compose/scripts/run_validate.py`, `scripts/graphics-*.sh`) remain valid; agents prefer `bookkit`.
 
 ## Separation rule
 
 - Token/color change → package/theme (or named args), not skill rewrites
 - Agent gotcha fix → skill, not silent API break
+- Content SoT → **C** (external); media assets → **B**; print → **A**; web → **W** (`channels/web/`) — never fold W into foundation

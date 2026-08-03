@@ -6,7 +6,7 @@
 | **Tree** | `toolset/` |
 | **May change** | compose engine, form-catalog core, starter, skill-pack (platform skills), examples, tests, orchestration board helpers |
 | **Must not** | Medical content SoT, domain free-vision policy, clinical claims, Kursbuch chapter Markdown |
-| **Primary CLI** | `./scripts/bookkit` (repo root) — build, validate, catalog, prepress, graphics wrappers |
+| **Primary CLI** | `./scripts/bookkit` — build, validate, catalog, prepress, graphics, **boundaries** |
 
 ## Dependency rules
 
@@ -14,6 +14,7 @@
 |---|---|
 | toolset/compose → `domains/medical` | **No** hardcoded; only caller-supplied paths |
 | toolset/form-catalog core → medical recipes | **No** (genre minima via CLI path) |
+| toolset/boundaries → domains content | **No** (structure + release package only) |
 | skill-pack (A) → packages/bookkit | Yes (document API) |
 | skill-pack (A) → medical skill SoT | Link only; do not fork |
 
@@ -22,6 +23,7 @@
 | Path | Role |
 |---|---|
 | `compose/` | Validate engine + spikes (spikes may dogfood B assets) |
+| `boundaries/` | Product tree check + chapter release package validator (ADR 60) |
 | `form-catalog/` | Generic form whitelist pin (`VERSION`) |
 | `starter/` | `bookkit init` template |
 | `skill-pack/` | Platform skills SoT (bookkit, compose-chapter, orchestrator) |

@@ -1,0 +1,7 @@
+schema_version: "1"
+chapter_id: fixture-bad-rev
+content_revision: "main"   # invalid — must be git:… or sha256:…
+channel_scope: print
+channels:
+  print:
+    status: pending

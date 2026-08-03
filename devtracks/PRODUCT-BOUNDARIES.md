@@ -23,7 +23,7 @@
 | **C** | Content-Werk | Fachtext, Claims, Quellen, Review, Freeze, Proof/Imprimatur | Content-Repo (z. B. Kursbuch) | **extern**; Prozess-Kit transitional `domains/content-maturity/` |
 | **B** | Domain-Media | Mediendesign-Intent, open-assets, Graphics, freigegebene Assets + Rechte | eigenes Repo *später* | `domains/medical/` hier (auslagerbar) |
 | **A** | Print-Layout-Plattform | Typst/bookkit, compose, validate, prepress, PDF/X | **dieses Repo** | dieses Repo (`packages/`, `toolset/`, …) |
-| **W** | Web-Layout | Astro (o. ä.) HTML/CSS, Web-Komponenten, Routing, Web-Build | eigenes Repo *oder* `channels/web/` | **noch nicht implementiert** — nur Grenzvertrag (dieses Doc) |
+| **W** | Web-Layout | Astro (o. ä.) HTML/CSS, Web-Komponenten, Routing, Web-Build | eigenes Repo *oder* `channels/web/` | **Scaffold** `channels/web/` + OWNERSHIP; Runtime/Astro erst mit Web-Pilot |
 
 Optional: Multi-root **Workspace-Datei** nur als UX (kein fünftes Produkt mit Business-Logik).
 
@@ -50,7 +50,8 @@ A und W sind **Präsentationskanäle**. Sie teilen **C-Revision** und **B-Asset-
 | Domain-Assets (`MANIFEST`, license sidecars, accepted SVG/PNG) | **B** | `domains/medical/assets/<slug>/` |
 | Kapitel-MD, Claims, Literatur-SoT | **C** | **extern** — nie dauerhaft hier |
 | Content-Reife-Prozess (Review, Freeze, Proof, Imprimatur) | **C** | Scaffold `domains/content-maturity/` → Split nach C |
-| Astro-Projekt, Web-Komponenten, `public/`-Derivates *mit Provenance* | **W** | TBD: sibling repo oder `channels/web/` — **nicht** in `packages/bookkit` |
+| Astro-Projekt, Web-Komponenten, `public/`-Derivates *mit Provenance* | **W** | `channels/web/` (scaffold) oder sibling repo — **nicht** in `packages/bookkit` |
+| Shared contracts (release package schema/templates/fixtures) | **shared** | `contracts/` — engine `toolset/boundaries/` · CLI `bookkit boundaries` |
 | Pilots die nur Plattform dogfooden | **A** | `pilots/` (kein Content-SoT) |
 | Kursbuch-Layout-Outputs (Print) | **A** (+ B-Artefakte) | `pilots/kursbuch-*`, compose outputs — Content bleibt C |
 | Research / Template-Korpus | **R** (kein Produktionsprodukt) | `research/`, `templates/` — außerhalb Default-Agent-Kontext |
@@ -96,30 +97,42 @@ Pro Asset-Slug unter B (Policy: `domains/medical/assets/CANONICAL.md`, open-asse
 
 Kanal-spezifische Wünsche (Doppelseite vs. progressive disclosure) sind **dünne Anhänge**, keine zweite Content-Wahrheit.
 
-### 4. Chapter Release Package (Orchestrierung)
+### 4. Chapter Release Package (Orchestrierung) — **hard schema**
 
-Logisches Bündel (Board/Route oder Datei — Schema darf YAML/JSON/MD-Frontmatter sein):
+| Artefakt | Pfad |
+|---|---|
+| JSON Schema | `contracts/schemas/chapter-release.schema.json` |
+| Template | `contracts/templates/chapter-release.template.yaml` |
+| Fixtures | `contracts/fixtures/` |
+| Engine | `toolset/boundaries/` |
+| CLI | `./scripts/bookkit boundaries check-release PATH` |
 
 ```yaml
-# conceptual — not yet a hard CLI schema
+schema_version: "1"
 chapter_id: string
-content_revision: "git:…" | "sha256:…"
+content_revision: "git:…" | "sha256:…"   # only these forms
+channel_scope: print | web | both        # ADR 53
 assets:
-  - id: string          # B slug
-    rev_or_status: accepted
-accept_paths: []        # quality packet / accept record
+  - id: string                           # B slug
+    status: accepted | draft | gap | rejected
+    path: optional
+accept_paths: []                         # quality packet / accept record
 channels:
   print:
-    status: pending | composed | validated | proofed
-    outputs: []         # pdf paths pins optional
+    status: pending | composed | validated | proofed | n/a
+    outputs: []
   web:
-    status: pending | built | proofed
-    outputs: []         # deploy/build pins optional
-design_clean: path|bool
-visual_clean: path|bool
+    status: pending | built | proofed | n/a
+    outputs: []
+design_clean: path|bool|null
+visual_clean: path|bool|null
 ```
 
+**Rules enforced by CLI:** valid freeze pin; scope requires matching `channels.*` keys; asset statuses from enum; optional `--check-paths` for accept/asset paths on disk.
+
 Orchestratoren (`book-production-orchestrator`, später Web-Route) **routen und loggen** dieses Paket; sie ersetzen weder Freeze noch CLEAN noch Accept.
+
+**Tree ownership check:** `./scripts/bookkit boundaries check-tree` (OWNERSHIP markers, contracts/, channels/web scaffold, no `domains/medical` imports in `packages/bookkit`).
 
 ### 5. Plattform-Pins
 
@@ -222,11 +235,11 @@ Beide Optionen unterliegen demselben Contract (C-Pin + B-Assets). Workspace-UX: 
 | Root (Name) | Path (Beispiel) |
 |---|---|
 | A — Print layout platform | dieses Repo |
-| C — Content | `../../Kursbuch5` (o. ä.) |
 | B — Media & assets | `domains/medical` (gleicher Clone) oder später eigenes Repo |
-| W — Web layout | TBD bei Pilot |
+| C — Content | `../../Kursbuch5` (o. ä.) |
+| W — Web layout | `channels/web` (scaffold) |
 
-Bestehend: `workspaces/kursbuch-layout.code-workspace` (A+C).  
+Live: `workspaces/kursbuch-layout.code-workspace` (A+B+C+W roots).  
 Nur Checkout-Hilfe — **keine** Business-Logik im Workspace-File.
 
 ---
@@ -243,7 +256,8 @@ Fortsetzung der Produkt-ADRs aus CONSENSUS v0.2 (19–26). Nummern **50+** bewus
 | **53** | **Accept trägt Channel-Scope** `print` \| `web` \| `both`. Fehlt Scope historisch → gilt als `print` (Backcompat). |
 | **54** | **Asset-Derivates erlaubt in A/W**, SoT und Lizenz bleiben B (MANIFEST/sidecars); Provenance Pflicht. |
 | **55** | **Chapter Release Package** ist das orchestrierbare Bündel (Pins + Accept + Kanalstatus); Orchestrator routet, craftet nicht. |
-| **56** | **W ist Grenzvertrag ab v0.3**, Implementierung erst mit bewusstem Web-Pilot (Repo oder `channels/web/`). Kein Astro in `packages/bookkit`. |
+| **56** | **W hat Scaffold ab v0.3** (`channels/web/` + OWNERSHIP); Astro-Runtime erst mit bewusstem Web-Pilot. Kein Astro in `packages/bookkit`. |
+| **60** | **Chapter release package + tree check are hard CLI contracts** under `contracts/` + `toolset/boundaries` + `bookkit boundaries` (not docs-only). |
 | **57** | **Repo-Default bleibt modular monorepo (A+B)**; physische Splits (B, C-process, W, R) nur **triggerbasiert** (workspace-split D2 + Triggerliste oben). |
 | **58** | **Arbeitsfolge verbindlich für Produktion:** C Freeze → B Accept → dann A und/oder W. Kein Production-Compose/-Build ohne Freeze; keine Visual-Units ohne Accept (Smoke/Lab-Ausnahmen dokumentiert). |
 | **59** | **Multi-root Workspace = UX only** — kein fünftes Produkt. |
@@ -264,6 +278,7 @@ Fortsetzung der Produkt-ADRs aus CONSENSUS v0.2 (19–26). Nummern **50+** bewus
 
 | Version | Datum | Änderung |
 |---|---|---|
+| **v0.3.1** | 2026-08-03 | Hard CLI: `contracts/` + `toolset/boundaries` + `bookkit boundaries`; `channels/web` scaffold; multi-root A+B+C+W; ADR **60** |
 | **v0.3** | 2026-08-03 | Produkt **W** (Web); A als Print-Kanal geschärft; Shared Contracts; Release Package; ADR 50–59; Phasen Text→Assets→Kanäle |
 | v0.2 | 2026-07-20 | A/B/C; modular monorepo; B/C transitional paths |
 | v0.1 | — | in CONSENSUS/Rollen aufgegangen |
@@ -274,6 +289,9 @@ Fortsetzung der Produkt-ADRs aus CONSENSUS v0.2 (19–26). Nummern **50+** bewus
 
 - Rollen & Flow: [`CONSENSUS-v0.md`](CONSENSUS-v0.md) · [`ROLES-AND-FLOW.md`](ROLES-AND-FLOW.md)  
 - Collaboration short law: [`../toolset/skill-pack/COLLABORATION-CONTRACT.md`](../toolset/skill-pack/COLLABORATION-CONTRACT.md)  
+- Shared contracts: [`../contracts/README.md`](../contracts/README.md) · engine `toolset/boundaries/`  
+- Channels: [`../channels/README.md`](../channels/README.md) · W [`../channels/web/OWNERSHIP.md`](../channels/web/OWNERSHIP.md)  
 - B ownership / assets: [`../domains/medical/OWNERSHIP.md`](../domains/medical/OWNERSHIP.md) · [`../domains/medical/assets/CANONICAL.md`](../domains/medical/assets/CANONICAL.md)  
+- Workspace UX: [`../workspaces/`](../workspaces/)  
 - Split deferred: [`_archive/workspace-split/`](_archive/workspace-split/)  
 - Consumer (Print): [`../docs/CONSUMER.md`](../docs/CONSUMER.md)

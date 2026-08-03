@@ -2,12 +2,13 @@
 # bookkit — unified CLI for the Typst layout toolset (Produkt A)
 # Always enforces --ignore-system-fonts --font-path fonts for reproducible builds.
 #
-# Surface (v0.1.1): doctor | init | build | watch | ua | print | brief-check
+# Surface (v0.1.2): doctor | init | build | watch | ua | print | brief-check
 #                   validate | catalog check | prepress dpi|pdfx | graphics …
+#                   boundaries check-tree|check-release|check
 set -euo pipefail
 
 Root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VERSION="0.1.1"
+VERSION="0.1.2"
 
 usage() {
   cat <<EOF
@@ -35,6 +36,11 @@ Usage:
   bookkit catalog check
       # form-catalog schema / VERSION pin check
 
+  bookkit boundaries check-tree
+  bookkit boundaries check-release PATH [--check-paths]
+  bookkit boundaries check [--release PATH] [--check-paths]
+      # Produkt A/B/C/W ownership + chapter release package (contracts/)
+
   bookkit prepress dpi [--paths PATH…] [check-image-dpi.py flags…]
   bookkit prepress pdfx [input.pdf] [output.pdf] [--profile ICC] [--pdfx 3|4]
 
@@ -54,6 +60,7 @@ Repro flags (always on for build/watch/ua/print):
 Notes:
   - validate / graphics may need studio monorepo root for default catalog & domain paths.
   - graphics vision/refine are gated one-shots (no multi-round loops in CLI).
+  - boundaries enforces PRODUCT-BOUNDARIES v0.3 shared contracts (not craft quality).
   - Direct scripts under scripts/graphics-*.sh and run_validate.py remain valid thin engines.
 EOF
 }
@@ -151,6 +158,18 @@ cmd_doctor() {
     cmd_brief_check "$PROJECT_ROOT/design-brief.yaml" || true
   else
     echo "  design-brief.yaml: none (ok for smoke builds)"
+  fi
+  # Product boundary markers (studio monorepo only — soft when consumer root)
+  if [[ -f "$Root/devtracks/PRODUCT-BOUNDARIES.md" && -d "$Root/toolset/boundaries" ]]; then
+    if [[ "$PROJECT_ROOT" == "$Root" ]] || [[ -f "$PROJECT_ROOT/devtracks/PRODUCT-BOUNDARIES.md" ]]; then
+      echo "  boundaries: checking product tree (A/B/C/W)…"
+      if ! cmd_boundaries check-tree --root "$Root" >/dev/null; then
+        echo "  boundaries: FAIL (run: bookkit boundaries check-tree)"
+        ok=1
+      else
+        echo "  boundaries: OK (OWNERSHIP + contracts + channels/web scaffold)"
+      fi
+    fi
   fi
   if [[ $ok -ne 0 ]]; then
     echo "doctor: FAIL"
@@ -580,6 +599,21 @@ cmd_graphics_manifest() {
   return 0
 }
 
+# ── boundaries (Produkt A/B/C/W + release package) ─────────────
+
+cmd_boundaries() {
+  local engine="$Root/toolset/boundaries"
+  [[ -d "$engine" ]] || die "missing boundaries engine: $engine"
+  # Ensure toolset is on PYTHONPATH so `boundaries` package imports resolve
+  local py_args=()
+  # Allow optional --root before or after subcommand: re-pass all args to cli
+  (
+    cd "$Root"
+    PYTHONPATH="$Root/toolset${PYTHONPATH:+:$PYTHONPATH}" \
+      python3 -m boundaries "$@"
+  )
+}
+
 # ── dispatch ──────────────────────────────────────────────────
 
 cmd="${1:-}"
@@ -637,6 +671,9 @@ case "$cmd" in
     ;;
   graphics)
     cmd_graphics "$@"
+    ;;
+  boundaries)
+    cmd_boundaries "$@"
     ;;
   *)
     die "unknown command: $cmd"

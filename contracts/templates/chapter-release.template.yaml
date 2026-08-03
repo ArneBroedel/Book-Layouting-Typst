@@ -1,0 +1,30 @@
+# Chapter Release Package — copy per chapter / board cell
+# Schema: contracts/schemas/chapter-release.schema.json
+# Policy: devtracks/PRODUCT-BOUNDARIES.md ADR 50–59
+# Validate: ./scripts/bookkit boundaries check-release THIS_FILE
+
+schema_version: "1"
+chapter_id: ""                          # stable id, e.g. kl-crps-wp9
+content_revision: "git:0000000"         # git:<7–40 hex> | sha256:<64 hex> only
+channel_scope: print                    # print | web | both  (from Media Accept)
+
+assets:
+  # - id: example-slug
+  #   status: accepted                  # accepted | draft | gap | rejected
+  #   path: domains/medical/assets/example-slug/
+
+accept_paths: []
+  # - domains/medical/briefs/<id>.accept.md
+  # - path/to/quality-packet.md
+
+channels:
+  print:
+    status: pending                     # pending | composed | validated | proofed | n/a
+    outputs: []
+    # - dist/pilots/<id>/chapter.pdf
+  web:
+    status: n/a                         # pending | built | proofed | n/a
+    outputs: []
+
+design_clean: null                      # path or true
+visual_clean: null                      # path or true

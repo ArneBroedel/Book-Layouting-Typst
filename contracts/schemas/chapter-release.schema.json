@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bookkit.local/contracts/chapter-release.schema.json",
+  "title": "ChapterReleasePackage",
+  "description": "Orchestration bundle: C freeze pin + B accept/assets + A/W channel status. PRODUCT-BOUNDARIES ADR 55.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "chapter_id",
+    "content_revision",
+    "channel_scope",
+    "channels"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1",
+      "description": "Release package schema major version."
+    },
+    "chapter_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable chapter identifier (not a filesystem SoT path)."
+    },
+    "content_revision": {
+      "type": "string",
+      "pattern": "^(git:[0-9a-fA-F]{7,40}|sha256:[0-9a-fA-F]{64})$",
+      "description": "Frozen content pin from Produkt C."
+    },
+    "channel_scope": {
+      "type": "string",
+      "enum": ["print", "web", "both"],
+      "description": "Accept channel scope (ADR 53). Missing historical accepts default to print."
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": ["accepted", "draft", "gap", "rejected"]
+          },
+          "path": { "type": "string" }
+        }
+      }
+    },
+    "accept_paths": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "channels": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "print": {
+          "type": "object",
+          "required": ["status"],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["pending", "composed", "validated", "proofed", "n/a"]
+            },
+            "outputs": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "web": {
+          "type": "object",
+          "required": ["status"],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["pending", "built", "proofed", "n/a"]
+            },
+            "outputs": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "design_clean": {
+      "description": "Path to design-critique or boolean true when clean documented elsewhere.",
+      "oneOf": [{ "type": "string" }, { "type": "boolean" }, { "type": "null" }]
+    },
+    "visual_clean": {
+      "description": "Path to visual-critique or boolean true when clean documented elsewhere.",
+      "oneOf": [{ "type": "string" }, { "type": "boolean" }, { "type": "null" }]
+    }
+  }
+}

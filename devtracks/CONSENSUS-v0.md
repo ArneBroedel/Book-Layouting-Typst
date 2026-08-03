@@ -185,12 +185,13 @@ Brief/Feasibility dürfen YAML/MD sein — sie steuern **Menschen/Agenten**, sie
 
 ## ADR v0.3 (Multi-Channel — PRODUCT-BOUNDARIES)
 
-**SoT:** [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) v0.3 (ADR **50–59**). Kurz:
+**SoT:** [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) v0.3+ (ADR **50–60**). Kurz:
 
 50. Vier logische Produkte: **C** Content · **B** Media · **A** Print-Layout · **W** Web-Layout.  
 51. Kanäle teilen C+B-Pins, nicht Code.  
 52–55. B = Intent+Assets+Accept (Channel-Scope); Release Package orchestriert A‖W.  
-56–59. W Grenzvertrag bis Pilot; modular monorepo default; Freeze→Accept→Kanal; Workspace = UX only.
+56–59. W scaffold (`channels/web/`); modular monorepo default; Freeze→Accept→Kanal; Workspace = UX only.  
+60. Hard CLI contracts: `contracts/` + `toolset/boundaries` + `bookkit boundaries` (tree + release package).
 
 v0.2 ADR 19 „drei Produkte“ wird durch ADR 50 **erweitert** (nicht ersetzt in der Rollenlogik C/B/A).
 
