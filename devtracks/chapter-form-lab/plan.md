@@ -1,9 +1,10 @@
 # Plan — Chapter Form Lab
 
-**Status:** active · craft waves a/b/c done · **lab-learning skill established** 2026-08-02  
+**Status:** active · craft waves a/b/c done · **lab-learning skill established** 2026-08-02 · **Pass O open-asset pilot** 2026-08-03  
 **Mission class:** **lab-learning** — not default production chapter pipeline  
 **Spec:** [spec.md](spec.md)  
 **Portfolio (N=4):** [portfolio.md](portfolio.md) — Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie  
+**Open-Asset pilot (parallel, testable):** policy [`domains/medical/OPEN-ASSET-POLICY.md`](../../domains/medical/OPEN-ASSET-POLICY.md) · board `toolset/orchestration/form-lab/portfolio-open-asset-2026-08/` · labs `*-2026-08-o` · pilots `form-lab-*-o` — **not** deep-wired into production Graphics or Form Lab COMPLETE  
 **Runtime:** `toolset/orchestration/form-lab/<lab-id>/`  
 **Skill SoT:** `toolset/skill-pack/form-lab-orchestrator/` (default **L2 autodrive-to-complete**)  
 **Studio entry:** situation **9** → handoff to `form-lab-orchestrator` (Studio never crafts itself; skill drives full program)  

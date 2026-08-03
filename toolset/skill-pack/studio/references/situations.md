@@ -58,11 +58,13 @@ Use this when mapping a user goal to a workflow. Prefer the **smallest** path th
 |---|---|
 | No | `media-brief` Form Spec first |
 | Yes | `medical-graphics` playbook from G0/G1 |
+| Need free/open photos, icons, licenses, credits | **`open-assets`** (source scan → MANIFEST/CREDITS) **before** free vision when realism/icons needed |
 
 **CLI:** `./scripts/bookkit graphics vision|refine|manifest`  
 **Libs:** `domains/medical/lib/typst/`  
 **Gold:** `domains/medical/briefs/INDEX.md`  
-**Track:** expect `free-vision-ambition` for real visual units; harvest after free vision; pin-monotone → revise.
+**Track:** expect `free-vision-ambition` for real visual units; harvest after free vision; pin-monotone → revise.  
+**Open assets:** skill `open-assets` · policy `domains/medical/OPEN-ASSET-POLICY.md`
 
 Do **not** Accept asset on claim FAIL. Anatomy pause → H-Gfx.
 

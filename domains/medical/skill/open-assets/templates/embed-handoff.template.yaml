@@ -1,0 +1,17 @@
+# Embed handoff — open-assets → compose / medical-graphics
+slug: ""
+learner_job: ""
+path: domains/medical/assets/...
+license: CC-BY-4.0
+license_uri: https://creativecommons.org/licenses/by/4.0/
+author: ""
+attribution_full: ""
+attribution_short: ""
+alt: ""
+modifications: none
+personality_rights: n/a
+max_print_width_mm: 0
+planned_layout_width_mm: 0
+manifest_status: accepted
+sidecar: path/to/file.license.json
+notes: ""

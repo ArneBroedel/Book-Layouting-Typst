@@ -52,17 +52,18 @@ Project skills encode hard-won conventions and **supersede general Typst advice*
 | `form-lab-orchestrator` | **Form Lab lab-learning** only: default **L2 autodrive** full T→C→V→R→matrix→**S best-of** + harvest; board under `toolset/orchestration/form-lab/`; studio situation **9** — **not** default production chapter pipeline |
 | `media-brief` | Media Brief + **Form Spec** + **Design Contract** + Design Critic until **Design CLEAN**; Accept only with Design+Visual CLEAN (Produkt B) — **not** production `.typ` or free-vision PNG gen |
 | `medical-graphics` | After Design CLEAN: free vision → claim audit → harvest→atoms → realize → **Visual Critic on PNG until Visual CLEAN**; KL form library; Decision Note (Produkt B) — **not** Form Spec authorship or full compose |
+| `open-assets` | Third-party / free visuals: source scan, license ampule, attribution, MANIFEST/CREDITS/sidecars, personality rights, print size — **before** free vision when realism/icons needed; Pass O — **not** claim rewrite or free gen itself |
 | `content-orchestrator` / `content-review` | Content maturity C1–C4 (Produkt C process) |
 | `pinit-workflow` | Any `#pin*` / pinit annotation work |
 | `skill-creator` | Create, improve, evaluate, or harvest skills |
 
 **Canonical bodies:** platform skills under `.github/skills/<name>/` (or `toolset/skill-pack/` for bookkit / compose-chapter / book-production-orchestrator / form-lab-orchestrator / studio).  
-**Domain exception:** `media-brief` and `medical-graphics` SoT under `domains/medical/skill/`; discovery paths
+**Domain exception:** `media-brief`, `medical-graphics`, and `open-assets` SoT under `domains/medical/skill/`; discovery paths
 (`.github/skills/…`, `.grok/skills/…`, `toolset/skill-pack/…`) are symlinks.
 
 **Grok discovery:** Grok does **not** scan `.github/skills/` by default. Project skills are exposed
 via relative symlinks under `.grok/skills/`. Edit the SoT body only (platform: `.github/skills/` or
-skill-pack; media-brief / medical-graphics: `domains/medical/skill/…`); never fork a second copy under `.grok/`.
+skill-pack; media-brief / medical-graphics / open-assets: `domains/medical/skill/…`); never fork a second copy under `.grok/`.
 
 ## Build (always reproducible flags)
 
@@ -135,7 +136,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 **Flow (v0.3 target):** C draft → **content-review / freeze** → B brief → A compose path → **proof / imprimatur** → print. Spec: `devtracks/_archive/content-maturity/`.  
 **Form Lab (optional research):** studio situation 9 → `form-lab-orchestrator` L0–L7 → harvest (vocabulary/bridge) — never silent default for chapter layout.
 
-**Skill gate:** **`studio`** (`/studio`) for guided intake when the path is unclear; **`book-production-orchestrator`** for full-book board → print (runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`); **`form-lab-orchestrator`** for Form Lab lab-learning only (situation 9; not production default); `media-brief` (Design CLEAN) + **`medical-graphics`** (Visual CLEAN) (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`). Design-quality: `devtracks/design-quality-system/`. Graphics guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`. Human checkpoints: `domains/content-maturity/checkpoints.md` (**H-Design**, **H-Explore**, **H-Gfx**). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content. Validate green ≠ design quality.
+**Skill gate:** **`studio`** (`/studio`) for guided intake when the path is unclear; **`book-production-orchestrator`** for full-book board → print (runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`); **`form-lab-orchestrator`** for Form Lab lab-learning only (situation 9; not production default); `media-brief` (Design CLEAN) + **`open-assets`** (source scan / rights docs when third-party visuals) + **`medical-graphics`** (Visual CLEAN) (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`). Design-quality: `devtracks/design-quality-system/`. Graphics guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`. Human checkpoints: `domains/content-maturity/checkpoints.md` (**H-Design**, **H-Explore**, **H-Gfx**). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content. Validate green ≠ design quality.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 

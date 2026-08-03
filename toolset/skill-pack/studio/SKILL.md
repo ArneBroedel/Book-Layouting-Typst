@@ -273,6 +273,7 @@ For full-book, prefer board `route.md` from book-production-orchestrator templat
 | **`content-orchestrator`** / **`content-review`** | C maturity only |
 | **`media-brief`** | Ideal + Form Spec + Accept |
 | **`medical-graphics`** | Vision → audit → realize |
+| **`open-assets`** | Third-party visuals: search, license, attribution, MANIFEST/CREDITS |
 | **`compose-chapter`** | Feasibility → compose → validate |
 | **`bookkit`** | Package API + CLI surface |
 | **`typst-writer`** | Typst implementation details |

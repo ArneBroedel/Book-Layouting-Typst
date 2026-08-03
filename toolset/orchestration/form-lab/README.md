@@ -57,9 +57,12 @@ toolset/orchestration/form-lab/
 |---|---|
 | `board.md` / `kickoff.md` / `route.md` / `HAND-OFF.md` | OR + worker state |
 | `medium-rules-{T,C,V,R,S}.md` | Critic allow/deny; S = best-of fusion |
+| `medium-rules-O.md` | **Pilot only:** Open-Asset pass (not production default) |
 | `comparison-matrix.md` | jobs × passes |
 | `form-vocabulary.md` / `production-bridge.md` | L7 |
 | `human-s-rank.md` / `sr-log.md` | optional |
+
+**Open-Asset pilot (2026-08):** policy `domains/medical/OPEN-ASSET-POLICY.md` · portfolio `portfolio-open-asset-2026-08/` · labs `*-2026-08-o` · compose `form-lab-*-o`. Parallel to T–S; **not** autodrive COMPLETE requirement.
 
 ---
 

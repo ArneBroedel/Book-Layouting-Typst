@@ -53,6 +53,7 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | `Pinit-Best-Practices.md` | `pinit-workflow` |
 | `Medical-Presentation-Forms.md` (Form Spec, Design Contract, zones, claim pins) | `media-brief` + `medical-graphics` |
 | `Medical-Graphics-Playbook.md` (free-first, claim audit, harvest, visual critique) | `medical-graphics` |
+| Open third-party images (search, license, attribution, MANIFEST) | `open-assets` · policy `domains/medical/OPEN-ASSET-POLICY.md` |
 | `KL-Form-Language.md` (illness-script grammar + ambition + transfer) | `media-brief` + `medical-graphics` |
 | `docs/BOOK-PRODUCTION-RUNBOOK.md` (full book → print, board/resume) | `book-production-orchestrator` |
 | Form Lab runtime README + harvest docs (lab-learning, not production default) | `form-lab-orchestrator` |

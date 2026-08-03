@@ -18,6 +18,7 @@ After intake, pick **next_skill** and optional **CLI**. Studio may **execute** t
 | 2 Accept yes → typ | `compose-chapter` | `bookkit validate` / `build` |
 | 3 Content only | `content-orchestrator` | C templates |
 | 4 Graphics only | `media-brief` and/or `medical-graphics` | see situations.md §4 |
+| 4 Open/free images, licenses, attribution | **`open-assets`** | MANIFEST/CREDITS; before free vision when realism needed |
 | 5 Compose only | `compose-chapter` | `./scripts/bookkit validate …` |
 | 6 Platform | `bookkit` | doctor, init, examples, CONSUMER.md |
 | **9 Form Lab (lab-learning)** | **`form-lab-orchestrator`** | board under `toolset/orchestration/form-lab/<lab-id>/`; Studio **handoff only**; skill default **L2 autodrive-to-complete** (full T→S + harvest) |

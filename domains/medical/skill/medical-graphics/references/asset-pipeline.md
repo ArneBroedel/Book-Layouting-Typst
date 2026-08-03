@@ -26,6 +26,7 @@ Prefer one slug folder per chapter/pilot graphic set. Co-locate a short `MANIFES
 | `format` | svg / png |
 | `source` | hand / inkscape / ai-gen / open-license URL |
 | `license` | CC0 / project-internal / … |
+| *(pilot)* open-asset extras | see `domains/medical/OPEN-ASSET-POLICY.md` — `provenance_url`, gates, credits; Pass O labs `*-2026-08-o` |
 | `alt` | German short description for accessibility |
 | `role` | main | hybrid-base | icon |
 | `print_ok` | yes / dpi-checked / n/a (vector) |
