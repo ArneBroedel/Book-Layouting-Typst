@@ -447,6 +447,26 @@ class TestQualityPacketGate(unittest.TestCase):
         for noise in ("clean", "pass", "n/a", "foo()", "..."):
             self.assertNotIn(noise, tokens)
 
+    def test_extract_drops_hyphen_suffix_of_absolute(self):
+        """Relative fragments carved from hyphenated absolute dirs are noise."""
+        abs_png = (
+            "/home/user/Book-Layouting-Typst/toolset/compose/pilots/"
+            "kl-crps-wp9-2026-07-31/preview/p1.png"
+        )
+        text = f"PNG: `{abs_png}`\n"
+        tokens = extract_path_tokens(text)
+        self.assertIn(abs_png, tokens)
+        # Must not also keep Layouting-Typst/... suffix false positive
+        self.assertFalse(
+            any(
+                t != abs_png and abs_png.endswith(t)
+                for t in tokens
+            ),
+            tokens,
+        )
+        self.assertNotIn("…-urgency.md", extract_path_tokens("`…-urgency.md`"))
+        self.assertNotIn("*-urgency.md", extract_path_tokens("`*-urgency.md`"))
+
     def test_runner_no_flag_skips_quality_packet(self):
         report = run_validation(
             _cfg(

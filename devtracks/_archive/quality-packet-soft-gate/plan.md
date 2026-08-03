@@ -1,8 +1,8 @@
 # Plan — Quality Packet Soft Gate
 
-**Status:** planned · **blocked** on [collab-wire-dogfood](../collab-wire-dogfood/) **GO**  
+**Status:** **complete** 2026-08-03 · soft path gate shipped  
 **Spec:** [spec.md](spec.md)  
-**Predecessor dogfood:** [collab-wire-dogfood/](../collab-wire-dogfood/)  
+**Predecessor dogfood:** [collab-wire-dogfood/](../collab-wire-dogfood/) (GO · findings.md)  
 **Archived T3 Phase B notes:** [../_archive/orchestration-quality-state/plan.md](../_archive/orchestration-quality-state/plan.md)
 
 ---
@@ -17,14 +17,11 @@ If dogfood proves Accept-without-packet still happens, ship a **soft path-existe
 
 Copy from dogfood findings when unblocking:
 
-- [ ] Findings path: `devtracks/collab-wire-dogfood/…`  
-- [ ] Decision: **GO**  
-- [ ] Evidence bullets (Accept/idle + missing paths):  
-  - …  
-- [ ] Human OK / waiver noted:  
-
-If **NO-GO**: mark this track **cancelled** in status log; archive empty or with STATUS “not needed”.  
-If **DEFER**: leave blocked; do not implement.
+- [x] Findings path: `devtracks/collab-wire-dogfood/findings.md`  
+- [x] Decision: **GO**  
+- [x] Evidence bullets (Accept/idle + missing paths):  
+  - Hollow packets after Accept; board idle without quality_packet cells; cited PNG missing (wp9 p2)  
+- [x] Human OK / waiver noted: full R1+R2 charter 2026-08-03
 
 ---
 
@@ -154,11 +151,18 @@ Avoid: packages/bookkit medical logic; board template redesign; CLEAN criteria; 
 | Date | Note |
 |---|---|
 | 2026-08-03 | Track planned as conditional residual of T3 Phase B. **Blocked** on collab-wire-dogfood GO. No implementation until entry criteria met. |
+| 2026-08-03 | Unblocked by dogfood GO; implemented soft gate + tests + docs; hyphen-suffix false-positive fix. |
 
 ---
 
 ## Harvested into
 
-*(fill on completion or cancellation)*
+- `toolset/compose/validate/quality_packet_gate.py`
+- `toolset/compose/validate/{cli,runner}.py`
+- `toolset/compose/fixtures/quality_packet_{ok,broken}/`
+- `toolset/compose/tests/test_validate.py` (TestQualityPacketGate)
+- `toolset/compose/README.md`
+- `docs/BOOK-PRODUCTION-RUNBOOK.md`
+- `scripts/bookkit` (`--quality-packet`)
+- Index: `devtracks/skill-collaboration/README.md`  
 
-- …  

@@ -72,7 +72,7 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | Transfer eval (Melanom) | `spike-melanom.typ` · briefs `kl-melanom*.md` · PDF `melanom.pdf` |
 | Skill evals | `domains/medical/skill/*-workspace/` + `*/evals/evals.json` |
 | **Skill collaboration trilogy (archived 2026-08-03)** | Index `devtracks/skill-collaboration/` · provenance `_archive/{collab-control-plane,open-assets-production-wire,orchestration-quality-state}/` · **living SoT:** `toolset/skill-pack/COLLABORATION-CONTRACT.md` + studio/book-production wire + board templates |
-| **Post-trilogy residuals (open)** | R1 `devtracks/collab-wire-dogfood/` (next) · R2 `devtracks/quality-packet-soft-gate/` (blocked on R1 GO) |
+| **Post-trilogy residuals (archived)** | R1 `devtracks/_archive/collab-wire-dogfood/` (GO) · R2 `devtracks/_archive/quality-packet-soft-gate/` · CLI: `bookkit validate --quality-packet PATH` |
 | Design-quality (archived 2026-08-03) | Provenance `devtracks/_archive/design-quality-system/` · **living SoT:** media-brief + medical-graphics + templates |
 | Chapter Form Lab (archived 2026-08-03) | Provenance `devtracks/_archive/chapter-form-lab/` · **living SoT:** `form-lab-orchestrator` + `toolset/orchestration/form-lab/` · studio **9** |
 | Multi-chapter explore (archived 2026-08-03) | Provenance `devtracks/_archive/multi-chapter-explore-layout/` · **living SoT:** book-production-orchestrator multi-chapter-explore ops |

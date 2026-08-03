@@ -1,6 +1,6 @@
 # Spec — Collaboration Wire Dogfood
 
-**Status:** planned (2026-08-03) · **implement next** (post-trilogy residual)  
+**Status:** **complete** 2026-08-03 · findings GO · harvested  
 **Product:** A/B control verification (studio, book-production, open-assets, media-brief, medical-graphics)  
 **Plan:** [plan.md](plan.md)  
 **Successor (conditional):** [quality-packet-soft-gate](../quality-packet-soft-gate/)  

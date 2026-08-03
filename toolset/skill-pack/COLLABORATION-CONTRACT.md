@@ -163,6 +163,6 @@ if @preview/print load typst-extension; consumer API load bookkit.
 | Full-book runbook | `docs/BOOK-PRODUCTION-RUNBOOK.md` |
 | **T2** open-assets production wire (archived) | `devtracks/_archive/open-assets-production-wire/` |
 | **T3** orchestration quality state (archived Phase A) | `devtracks/_archive/orchestration-quality-state/` |
-| **R1** dogfood residual (open) | `devtracks/collab-wire-dogfood/` |
-| **R2** soft packet gate (blocked on R1 GO) | `devtracks/quality-packet-soft-gate/` |
+| **R1** dogfood residual (archived · GO) | `devtracks/_archive/collab-wire-dogfood/` |
+| **R2** soft packet gate (archived · live CLI) | `devtracks/_archive/quality-packet-soft-gate/` · `./scripts/bookkit validate --quality-packet PATH` |
 | Trilogy index | `devtracks/skill-collaboration/README.md` |

@@ -1,8 +1,9 @@
 # Plan — Collaboration Wire Dogfood
 
-**Status:** planned · **not started** · **next residual after trilogy**  
+**Status:** **complete** 2026-08-03 · Phase B **GO** · ready to archive  
 **Spec:** [spec.md](spec.md)  
-**Successor:** [quality-packet-soft-gate](../quality-packet-soft-gate/) (blocked until GO)  
+**Findings:** [findings.md](findings.md)  
+**Successor:** [quality-packet-soft-gate](../quality-packet-soft-gate/) (unblocked · implemented)  
 **Trilogy index:** [skill-collaboration/README.md](../skill-collaboration/README.md)
 
 ---
@@ -181,11 +182,16 @@ If re-craft is required for C, cap ambition: **one** multi-unit chapter only.
 | Date | Note |
 |---|---|
 | 2026-08-03 | Track opened as post-trilogy residual planning. Implementation (suite run) not started. |
+| 2026-08-03 | Suite A–F run; findings GO; hygiene patches; board dogfood-sit2-2026-08-03; unblocked R2. |
 
 ---
 
 ## Harvested into
 
-*(fill on completion)*
+- `devtracks/collab-wire-dogfood/findings.md` (provenance)
+- `toolset/orchestration/book-production/dogfood-sit2-2026-08-03/` (sample T3 board)
+- `toolset/skill-pack/studio/references/routes.md` (skip enum hygiene)
+- `domains/medical/templates/form-spec.template.md` (`open_asset_scan` handoff tick)
+- Unblocked R2 → `toolset/compose/validate/quality_packet_gate.py`
+- Index: `devtracks/skill-collaboration/README.md`  
 
-- …  

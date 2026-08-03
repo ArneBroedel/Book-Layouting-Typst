@@ -44,8 +44,7 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 | Track | Status | Focus |
 |---|---|---|
-| [`collab-wire-dogfood/`](collab-wire-dogfood/) | **planned · next** | Post-trilogy dogfood: sit.2, board cells, open-assets, packet discipline → Phase B go/no-go |
-| [`quality-packet-soft-gate/`](quality-packet-soft-gate/) | planned · **blocked on dogfood GO** | Soft validate `--quality-packet` path gate (WARN; never certifies CLEAN) |
+
 
 **Index (not a feature track):** [`skill-collaboration/`](skill-collaboration/) — trilogy complete + residual pointers; living Contract at `toolset/skill-pack/COLLABORATION-CONTRACT.md`.
 
@@ -73,7 +72,7 @@ Runtime products (not tracks):
 **Consumer guide:** [`docs/CONSUMER.md`](../docs/CONSUMER.md).  
 **Pilot dogfood:** `pilots/kursbuch-welle-03-compose/`.
 
-**Recently archived (2026-08-03):** skill-collaboration trilogy (`collab-control-plane`, `open-assets-production-wire`, `orchestration-quality-state`), plus earlier same-day `design-quality-system`, `chapter-form-lab`, `multi-chapter-explore-layout`.  
+**Recently archived (2026-08-03):** skill-collaboration trilogy + residuals R1 `collab-wire-dogfood` + R2 `quality-packet-soft-gate` (soft `--quality-packet` gate live), earlier same-day `design-quality-system`, `chapter-form-lab`, `multi-chapter-explore-layout`.  
 **Recently archived (2026-07-29):** `workspace-split` + companion `workspace-inventory` (modular monorepo delivered; Phase 3 split deferred), `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` under `_archive/`.  
 **v0.2 archived:** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` under `_archive/`.  
 Earlier: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx`, …

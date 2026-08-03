@@ -1,6 +1,6 @@
 # Spec — Quality Packet Soft Gate
 
-**Status:** planned · **blocked** until [collab-wire-dogfood](../collab-wire-dogfood/) records **GO**  
+**Status:** **complete** 2026-08-03 · soft gate live (opt-in WARN)  
 **Product:** thin A (`toolset/compose/validate`, bookkit CLI) · indexes B packet paths only  
 **Plan:** [plan.md](plan.md)  
 **Predecessor:** collab-wire-dogfood (decision) · trilogy T3 Phase B deferred notes  
@@ -45,13 +45,11 @@ T3 Phase A intentionally left a **soft machine path-gate** optional. This track 
 
 ## Entry criteria (hard)
 
-**Do not start implementation until all are true:**
+**Entry criteria (met 2026-08-03):**
 
-1. [ ] `collab-wire-dogfood` findings report exists.  
-2. [ ] Decision = **GO** with evidence of Accept/idle without resolvable packet paths (or repeated pattern).  
-3. [ ] Human confirms GO (or agent documents Human waiver in findings).  
-
-If decision is **NO-GO** or **DEFER**, this track stays blocked/cancelled — **no speculative CLI**.
+1. [x] `collab-wire-dogfood` findings report exists.  
+2. [x] Decision = **GO** with evidence of Accept/idle without resolvable packet paths (or repeated pattern).  
+3. [x] Human confirms GO (or agent documents Human waiver in findings).
 
 ---
 

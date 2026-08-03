@@ -128,9 +128,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | Web layout (Astro o. ä.) | **W** | Grenzvertrag only until pilot (`channels/web/` or sibling repo) |
 | **workspace-split** (archived) | **A/B/C** structure | `devtracks/_archive/workspace-split/` · modular monorepo done; inventory `devtracks/_archive/workspace-inventory/`; Phase 3 split deferred (D2) |
 | **kl-form-language** (archived) | **B** | `devtracks/_archive/kl-form-language/` · system complete; ops: `playbook/10-kl-chapter-pipeline.md` |
-| **skill collaboration trilogy** (archived 2026-08-03) | A/B/C control | Index `devtracks/skill-collaboration/` · T1–T3A under `devtracks/_archive/{collab-control-plane,open-assets-production-wire,orchestration-quality-state}/` · Contract SoT: `toolset/skill-pack/COLLABORATION-CONTRACT.md` |
-| **collab-wire-dogfood** (open residual) | A/B verify | `devtracks/collab-wire-dogfood/` — sit.2/board/open-assets/packet dogfood → Phase B go/no-go |
-| **quality-packet-soft-gate** (open, blocked) | thin A | `devtracks/quality-packet-soft-gate/` — soft `--quality-packet` path gate; start only after dogfood **GO** |
+| **skill collaboration trilogy** (archived 2026-08-03) | A/B/C control | Index `devtracks/skill-collaboration/` · T1–T3A + R1/R2 under `devtracks/_archive/` · Contract SoT: `toolset/skill-pack/COLLABORATION-CONTRACT.md` · soft packet gate: `./scripts/bookkit validate --quality-packet PATH` |
 | **free-vision-harvest** (archived) | **B** | `devtracks/_archive/free-vision-harvest/` · track/harvest/proximity (substrate for realize) |
 | Consumer guide | A | `docs/CONSUMER.md` |
 
@@ -142,7 +140,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 
-**Archived (harvested):** skill-collaboration trilogy (`collab-control-plane`, `open-assets-production-wire`, `orchestration-quality-state` → Contract + default-path wire + board quality cells), `design-quality-system` (CLEAN doctrine → B skills), `chapter-form-lab` (→ `form-lab-orchestrator` + runtime), `multi-chapter-explore-layout` (→ book-production-orchestrator multi-chapter ops), `workspace-split`, `workspace-inventory`, `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` (runtime stays under `packages/`, `toolset/`, `domains/`).  
+**Archived (harvested):** skill-collaboration trilogy + residuals (`collab-control-plane`, `open-assets-production-wire`, `orchestration-quality-state`, `collab-wire-dogfood`, `quality-packet-soft-gate` → Contract + wire + board cells + soft `--quality-packet` WARN gate), `design-quality-system` (CLEAN doctrine → B skills), `chapter-form-lab` (→ `form-lab-orchestrator` + runtime), `multi-chapter-explore-layout` (→ book-production-orchestrator multi-chapter ops), `workspace-split`, `workspace-inventory`, `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` (runtime stays under `packages/`, `toolset/`, `domains/`).  
 Earlier: `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries`, plus more under `devtracks/_archive/`.
 
 

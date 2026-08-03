@@ -51,24 +51,24 @@
 | Metric | N |
 |---|---|
 | Accept records | 25 |
-| No `quality_packet_path` field (and no reliable link) | **10** |
+| No `quality_packet_path` field (and no reliable link) | **9** active (+ archive legacy) |
 | Linked packet file missing | 0 |
-| Packets with **no resolvable file path tokens** (hollow / code-only prose) | **12** |
-| Packets with ≥1 listed path missing on disk (after filter) | **≥1** clear (e.g. crps vision asset paths; basename-only PNG tokens) |
-| Live boards with T3 `quality_packet` column | **0 / 3** |
-| Accepted-ish chapter rows on pre-T3 boards | **19** (explore 10 + demo 5 + d-risc 4) without qp cell |
+| Packets with **no resolvable file path tokens** (hollow / code-only prose) | **≥8 hard** (+ near-hollow) |
+| Packets with ≥1 listed path missing on disk (after filter) | **≥1** clear (wp9 `preview/p2.png`) |
+| Live boards with T3 `quality_packet` column | **0 / 3** (sample dogfood board added) |
+| Accepted-ish chapter rows on pre-T3 boards | **22** without qp cell |
 
 ### GO evidence (concrete)
 
-1. **Accept without packet field:** e.g.  
-   `domains/medical/briefs/kl-crps-wp9-2026-07-31.accept.md`  
+1. **Accept without packet field (active):** e.g.  
    `domains/medical/briefs/iii5-cauda-notfallkarte.accept.md`  
-   (+ 8 more in list above) — Accept recorded; no machine-checkable packet link.
+   `domains/medical/briefs/kl-crps-rerun-2026-07-30.accept.md`  
+   (+ 7 more) — Accept recorded; no machine-checkable packet link.
 2. **Hollow packets after Accept:** e.g.  
-   `ii1-drisc-batch-2026-08.accept.md` → sibling quality-packet with no resolvable `.png/.pdf` path tokens (code winners only; no PNG presence proof).  
-   Same pattern: `kl-mi-2026-08-01`, `kl-stroke-2026-08-01`, batch packets, etc. (**12**).
-3. **Board idle/accepted without quality_packet cell:** all three live boards use pre-T3 schema; portfolio marked accepted/idle cannot resume-check packet path from board alone.
-4. **Path presence gap even when packet links exist:** listed vision/PDF basenames or absolute-ish tokens that do not resolve consistently; dist pilot PNGs are **gitignored** (`dist/`) so clean clones lose Accept-linked page evidence while Accept remains.
+   `kl-mi-2026-08-01.accept.md` → quality-packet with no resolvable path tokens while `dist/pilots/kl-mi-…` PNGs exist.  
+   Same pattern: `kl-stroke`, `kl-osteo`, `ii1-drisc`, etc.
+3. **Board idle/accepted without quality_packet cell:** all three live boards use pre-T3 schema; **22** accepted rows cannot resume-check packet from board alone.
+4. **Path presence gap:** wp9 cites `preview/p2.png` (**missing**); dist pilot PNGs are **gitignored** so clean clones lose Accept-linked page evidence.
 
 ### Non-evidence (not used for GO alone)
 
@@ -84,7 +84,7 @@
 | **Decision** | **GO** |
 | **Soft-gate track action** | **Unblock** `quality-packet-soft-gate` and implement |
 | **Human OK / waiver** | Human message 2026-08-03: execute R1+R2 fully through implementation — treated as GO confirmation |
-| **Evidence** | F: 10 Accepts without packet field; 12 hollow packets; 0/3 boards with T3 qp cells while accepted rows exist; gitignored dist PNG paths under Accept-linked packets |
+| **Evidence** | F: 9 active Accepts without packet field; ≥8 hollow packets; 22 board accepted rows without T3 qp cell; wp9 missing p2; gitignored dist PNG paths |
 | **Why not DEFER** | Pattern is **portfolio-wide**, not a single slip; soft presence gate is exactly the T3 Phase B residual |
 
 ### Soft-gate intent (for R2)
@@ -102,7 +102,7 @@
 | studio `routes.md` open-assets handoff dropped `skip` | small | **fixed** (add `required \| optional \| skip` + skip note) |
 | Legacy form-specs omit `open_asset_scan` | process debt | **documented** — no mass backfill in R1 |
 | Pre-T3 boards lack quality columns | process debt | **sample board only** — no mass migrate |
-| Form Spec checklist missing “open_asset_scan set” tick | small | optional follow-up if not patched in R1 |
+| Form Spec checklist missing “open_asset_scan set” tick | small | **fixed** in `form-spec.template.md` |
 
 No CLI in this track. No CLEAN redefinition.
 
