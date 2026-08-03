@@ -44,9 +44,10 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 | Track | Status | Focus |
 |---|---|---|
-| *(none — feature tracks clear as of 2026-08-03)* | — | Residual: T3 Phase B soft quality-packet CLI only if dogfood demands (no open track) |
+| [`collab-wire-dogfood/`](collab-wire-dogfood/) | **planned · next** | Post-trilogy dogfood: sit.2, board cells, open-assets, packet discipline → Phase B go/no-go |
+| [`quality-packet-soft-gate/`](quality-packet-soft-gate/) | planned · **blocked on dogfood GO** | Soft validate `--quality-packet` path gate (WARN; never certifies CLEAN) |
 
-**Index (not a feature track):** [`skill-collaboration/`](skill-collaboration/) — trilogy complete; living Contract at `toolset/skill-pack/COLLABORATION-CONTRACT.md`.
+**Index (not a feature track):** [`skill-collaboration/`](skill-collaboration/) — trilogy complete + residual pointers; living Contract at `toolset/skill-pack/COLLABORATION-CONTRACT.md`.
 
 **Recently archived (2026-08-03):**  
 [`_archive/collab-control-plane/`](_archive/collab-control-plane/) ·  

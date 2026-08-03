@@ -18,14 +18,19 @@
 | **SA6** | No semantic CLEAN in A; no critique bodies in board | **pass** |
 | **SA7** | Harvest Phase A into orchestrator + studio (+ status script) | **pass** |
 
-## Phase B — deferred
+## Phase B — deferred → successor tracks
 
-Soft `bookkit validate --quality-packet PATH` (WARN on missing paths; never certifies Visual CLEAN) is **optional** and **not implemented**. Reopen mini-PR later if dogfood shows Accept with empty packet links after T1–T2–A.
+Soft `bookkit validate --quality-packet PATH` was **not** implemented in this track.
+
+| Residual | Path | Role |
+|---|---|---|
+| **R1 Dogfood** | [`../../collab-wire-dogfood/`](../../collab-wire-dogfood/) | Prove wire; **GO/NO-GO** for CLI |
+| **R2 Soft gate** | [`../../quality-packet-soft-gate/`](../../quality-packet-soft-gate/) | Implement CLI **only if R1 = GO** |
 
 ## Archive policy
 
 - Track archived after Phase A (D3) together with T1–T2.  
-- Phase B (soft quality-packet CLI) may reopen as a mini-PR without a new trilogy track if dogfood demands it.
+- Phase B residual **planned** as R1+R2 (not reopened inside this frozen track).
 
 ## Residual risks
 

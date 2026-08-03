@@ -1,9 +1,30 @@
 # Skill collaboration trilogy
 
-**Status:** **complete / archived** 2026-08-03 · T1+T2+T3 Phase A implemented · Phase B optional residual deferred  
+**Status:** **complete / archived** 2026-08-03 · T1+T2+T3 Phase A implemented  
+**Residuals (new tracks):** dogfood suite + conditional soft packet CLI — see below.  
 **Not a feature track itself** — durable index only. Provenance tracks live under `_archive/`.  
 **Origin:** Panel synthesis on project skill collaboration (control plane, default-path wire, durable quality state).  
 **Does not replace:** archived [`design-quality-system`](../_archive/design-quality-system/) (CLEAN doctrine → B skills) · archived [`chapter-form-lab`](../_archive/chapter-form-lab/) (lab → `form-lab-orchestrator`) · [`CONSENSUS-v0`](../CONSENSUS-v0.md) / [`PRODUCT-BOUNDARIES`](../PRODUCT-BOUNDARIES.md).
+
+---
+
+## Post-trilogy residuals (open)
+
+| # | Track | Mission | Status |
+|---|---|---|---|
+| **R1** | [`collab-wire-dogfood/`](../collab-wire-dogfood/) | Bounded sit.2 / board / open-assets / packet dogfood suite; **Phase B go/no-go** | **planned · next** |
+| **R2** | [`quality-packet-soft-gate/`](../quality-packet-soft-gate/) | Soft `--quality-packet` path gate (WARN; never certifies CLEAN) | **planned · blocked on R1 GO** |
+
+```text
+Trilogy T1–T3A ✅ archived
+        │
+        ▼
+R1 collab-wire-dogfood (scenarios A–F + findings)
+        │
+        ├─ NO-GO / DEFER ──► R2 stays blocked or cancelled
+        │
+        └─ GO ──► R2 implement soft path gate → harvest
+```
 
 ---
 
@@ -30,7 +51,7 @@ T2 Default-path wire (open-assets, bridge, macro VC)  ✅ archived
         ▼
 T3 Phase A board/resume cells                     ✅ archived
         │
-        └─► T3 Phase B soft CLI (optional, dogfood-triggered)  ⏸ deferred residual
+        └─► T3 Phase B soft CLI  → split out as R1 dogfood + R2 soft-gate (open residuals)
 ```
 
 **Contract SoT (living):** `toolset/skill-pack/COLLABORATION-CONTRACT.md`  
@@ -84,4 +105,5 @@ T3 Phase A board/resume cells                     ✅ archived
 | 2026-08-03 | **T1 complete** — Contract live; provision C; controllers wired. |
 | 2026-08-03 | **T2 complete** — open-assets production wire; chapter macro VC; bridge cite-if-present. |
 | 2026-08-03 | **T3 Phase A complete** — board quality cells; sit.2 board policy; Phase B deferred. |
-| 2026-08-03 | **T1–T3 archived** under `devtracks/_archive/`. Index remains here. Phase B residual only. |
+| 2026-08-03 | **T1–T3 archived** under `devtracks/_archive/`. Index remains here. |
+| 2026-08-03 | Residuals planned as **R1** `collab-wire-dogfood` (next) + **R2** `quality-packet-soft-gate` (blocked on R1 GO). |

@@ -162,5 +162,7 @@ if @preview/print load typst-extension; consumer API load bookkit.
 | Human gates | `domains/content-maturity/checkpoints.md` |
 | Full-book runbook | `docs/BOOK-PRODUCTION-RUNBOOK.md` |
 | **T2** open-assets production wire (archived) | `devtracks/_archive/open-assets-production-wire/` |
-| **T3** orchestration quality state (archived; Phase B deferred) | `devtracks/_archive/orchestration-quality-state/` |
+| **T3** orchestration quality state (archived Phase A) | `devtracks/_archive/orchestration-quality-state/` |
+| **R1** dogfood residual (open) | `devtracks/collab-wire-dogfood/` |
+| **R2** soft packet gate (blocked on R1 GO) | `devtracks/quality-packet-soft-gate/` |
 | Trilogy index | `devtracks/skill-collaboration/README.md` |

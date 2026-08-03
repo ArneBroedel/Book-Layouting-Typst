@@ -127,7 +127,9 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
 | **workspace-split** (archived) | **A/B/C** structure | `devtracks/_archive/workspace-split/` · modular monorepo done; inventory `devtracks/_archive/workspace-inventory/`; Phase 3 split deferred (D2) |
 | **kl-form-language** (archived) | **B** | `devtracks/_archive/kl-form-language/` · system complete; ops: `playbook/10-kl-chapter-pipeline.md` |
-| **skill collaboration trilogy** (archived 2026-08-03) | A/B/C control | Index `devtracks/skill-collaboration/` · T1–T3A under `devtracks/_archive/{collab-control-plane,open-assets-production-wire,orchestration-quality-state}/` · Contract SoT: `toolset/skill-pack/COLLABORATION-CONTRACT.md` · Phase B soft CLI deferred residual |
+| **skill collaboration trilogy** (archived 2026-08-03) | A/B/C control | Index `devtracks/skill-collaboration/` · T1–T3A under `devtracks/_archive/{collab-control-plane,open-assets-production-wire,orchestration-quality-state}/` · Contract SoT: `toolset/skill-pack/COLLABORATION-CONTRACT.md` |
+| **collab-wire-dogfood** (open residual) | A/B verify | `devtracks/collab-wire-dogfood/` — sit.2/board/open-assets/packet dogfood → Phase B go/no-go |
+| **quality-packet-soft-gate** (open, blocked) | thin A | `devtracks/quality-packet-soft-gate/` — soft `--quality-packet` path gate; start only after dogfood **GO** |
 | **free-vision-harvest** (archived) | **B** | `devtracks/_archive/free-vision-harvest/` · track/harvest/proximity (substrate for realize) |
 | Consumer guide | A | `docs/CONSUMER.md` |
 
