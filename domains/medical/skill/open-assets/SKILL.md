@@ -15,10 +15,26 @@ This skill does **not** invent pedagogy or clinical claims. It supplies **carrie
 
 ---
 
+## Production entry (default path — not only sit.4 / Pass O)
+
+This skill is a **unit-conditional specialist** on the production default path:
+
+| Caller | When |
+|---|---|
+| **Studio situation 2** | After Design CLEAN; before free vision when `open_asset_scan=required` (optional light path) |
+| **book-production P4** | Same sequence per unit — **not** a fixed always-on book phase |
+| **medical-graphics G0b** | Hard refuse free gen / asset Accept when scan **required** and no MANIFEST outcome |
+| Studio situation 4 | Graphics-focus entry (existing) |
+| Form Lab Pass O | Lab-learning pilot only |
+
+**Sequence:** Design CLEAN → **(this skill if needed)** → free vision / realize → Visual CLEAN → packet → Accept.  
+**Never** always-on for every unit — `skip` for code/schema is correct and needs no empty MANIFEST.
+
 ## When to use
 
 - User asks for free/open/stock/clinic photos, icons, Wikimedia, CDC, “Lizenz”, Attribution, Abbildungsnachweis  
 - Before AI free vision / new illustration when **realism** or **standard icons** help the learner job  
+- Production sit.2 / book-prod / G0b when Media set `open_asset_scan=required` (or optional)  
 - Form Lab **Pass O** or any pilot that embeds third-party visuals  
 - Reviewing whether an existing figure is legally documentable  
 - Building or repairing MANIFEST / CREDITS / license sidecars  
@@ -33,6 +49,7 @@ This skill does **not** invent pedagogy or clinical claims. It supplies **carrie
 | Full Form Lab T→S program | `form-lab-orchestrator` |
 | Clinical claim rewrite | Content / `content-review` |
 | Typst syntax only | `typst-writer` |
+| Pure code/schema unit with `open_asset_scan=skip` | Stay on medical-graphics / compose — no ceremony |
 
 ---
 
@@ -276,7 +293,7 @@ python3 domains/medical/skill/open-assets/scripts/print_size_check.py \
 | **compose-chapter** | Embeds accepted paths + credits; does not re-license |
 | **form-lab-orchestrator** | Pass O uses this skill’s procedure under medium-rules-O |
 
-Suggested Graphics insertion point (when integrated): **G0b Source Scan** between Design CLEAN and free vision.
+**G0b Source Scan** is the production insertion point: between Design CLEAN and free vision (sit.2, book-prod P4, medical-graphics). Wire: `devtracks/_archive/open-assets-production-wire/`.
 
 ---
 

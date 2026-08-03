@@ -1,7 +1,7 @@
 # Form Lab kickoff — `schlaganfall-2026-08`
 
 - **date:** 2026-08-02
-- **track:** `devtracks/chapter-form-lab/`
+- **track:** `devtracks/_archive/chapter-form-lab/`
 - **Human decisions:** D1 locked portfolio; D2–D8 objective defaults (H-Pass waived)
 
 ## Content

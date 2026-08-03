@@ -24,4 +24,4 @@ See `../../pins.md`. No claim invention.
 - **last_png:** dist/form-lab/melanom-abcde-2026-08-c/T/p1.png, p2.png
 
 ## Loop
-Follow `devtracks/chapter-form-lab/pass-craft-loop.md`.
+Follow `devtracks/_archive/chapter-form-lab/pass-craft-loop.md`.

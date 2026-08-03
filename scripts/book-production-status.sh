@@ -35,7 +35,23 @@ done
 echo
 echo "=== Board head ==="
 if [[ -f "$DIR/board.md" ]]; then
-  head -n 40 "$DIR/board.md"
+  head -n 50 "$DIR/board.md"
+fi
+
+echo
+echo "=== Quality cell hints (board enums — not evidence) ==="
+if [[ -f "$DIR/board.md" ]]; then
+  # Best-effort: surface presence of T3 resume fields. Humans/agents still read tables.
+  for key in design_clean visual_clean macro_vc quality_packet open_assets needs_open_assets scope playbook_pin production_bridge; do
+    if grep -q "$key" "$DIR/board.md" 2>/dev/null; then
+      echo "[present] $key"
+    else
+      echo "[absent]  $key  (legacy board? update from board.template.md)"
+    fi
+  done
+  echo "(validate OK ≠ Visual CLEAN ≠ Accept — cells are resume index only)"
+else
+  echo "(no board.md)"
 fi
 
 echo
@@ -66,4 +82,4 @@ echo "=== Spike modules ==="
 find toolset/compose/spikes/graphics -path '*/lib/*.typ' 2>/dev/null | head -30 || true
 
 echo
-echo "Done. Orchestrator should reconcile board cells against these paths."
+echo "Done. Orchestrator should reconcile board cells (incl. design_clean/visual_clean/macro_vc/quality_packet/open_assets) against artifact paths."

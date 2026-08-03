@@ -9,7 +9,7 @@ Executable procedure for the **Media** role: free didactic–media ideal → **F
 
 **Why (presentation forms):** `Guides/Medical-Presentation-Forms.md`  
 **KL illness-script guide:** `Guides/KL-Form-Language.md`  
-**Design-quality system:** `devtracks/design-quality-system/` (atom justification · dual critique · pre-Human clean)
+**Design-quality system:** `devtracks/_archive/design-quality-system/` (atom justification · dual critique · pre-Human clean)
 
 **SoT of this skill:** `domains/medical/skill/media-brief/` (Produkt B).  
 **Not** platform foundation; not a substitute for `compose-chapter` / Tech.  
@@ -104,7 +104,16 @@ Exploration provenance: `domains/medical/briefs/_explorations/README.md` (not no
    - **Form intensity ladder (L0–L6):** lowest level that earns gain — see [`references/form-intensity-ladder.md`](references/form-intensity-ladder.md). **L2–L3 (formatted / panel text) is first-class middle path** before L4–L6 diagrams/raster.  
    - **Simple alternative** doctrine: if higher L is not clearly better under scan stress, **step down**  
    - **Space budget (required):** teaching gain vs next-lower L (`none|weak|clear|essential`) + max vertical budget (~⅛ / ¼ / ⅓ / ½ / ≤1 page). If gain ≤ weak → step down. Ambition must fit density — **sparse sprawl is not Design CLEAN**.  
-   - Anti-theater list: rejected chrome
+   - Anti-theater list: rejected chrome  
+   - **`open_asset_scan` (Media sets need — SoT for G0b / sit.2 / book-prod P4):**
+
+| Value | When |
+|---|---|
+| **`required`** | Real disease appearance essential; high clinical risk if wrong photo; standard third-party icons/photos intended as carrier; anatomy free vision would be unsafe without archive search |
+| **`optional`** | Realism/icons *may* help but Typst schema is a valid primary path |
+| **`skip`** | Pure code/schema/flow/TIME ladder — **no** MANIFEST ceremony |
+
+   Also set on Form Spec meta. Orchestrator/Graphics must not invent Commons scans when Media set **skip**. Optional awareness only of Form Lab `production-bridge` (`production_bridge_seen` path) — **do not** start ideation from matrix winners.
 6. **Design Critic (Phase D2) — mandatory, separate role**  
    - Template: `domains/medical/templates/design-critique.template.md`  
    - Role **DC** attacks Contract + Form Spec; severity `block` | `should` | `nit`  
@@ -158,13 +167,14 @@ When Graphics/Tech return candidates — **only after Design CLEAN + Visual CLEA
 3. Run the **Accept rubric** in [`references/design-reasoning.md`](references/design-reasoning.md) §5 (minimum scan checks — **not** a substitute for Design/Visual CLEAN).
 4. **Form Spec / Contract proximity:** winner meets Must-see + atom table; no uncontracted chrome.
 5. Graphic winners: ideal proximity + learner job + success criterion; carrier `code`|`hybrid`|`asset`. Raster only if claim audit PASS + gates (playbook 06).
-6. **Free-vision proximity (ambition):** pin-monotone → **revise**.
-7. Confirm **embed path** for Tech.
-8. Fallback from wishlist without attempt → **revise**.
-9. If **revise**: required changes as artifact.
-10. **Production compose authorized?** only on accept path + freeze.
-11. Exploration may authorize exploration compose **only** with Visual CLEAN; never production.
-12. Write Accept from **`domains/medical/templates/accept-record.template.md`** (CLEAN checkboxes + quality_packet_path).
+6. **Third-party / open asset carriers:** rights/MANIFEST outcome `accepted` required to Accept embed; `gap` → demote to Typst simple alternative is valid — **block** Accept of third-party embed without rights outcome.
+7. **Free-vision proximity (ambition):** pin-monotone → **revise**.
+8. Confirm **embed path** for Tech.
+9. Fallback from wishlist without attempt → **revise**.
+10. If **revise**: required changes as artifact.
+11. **Production compose authorized?** only on accept path + freeze.
+12. Exploration may authorize exploration compose **only** with Visual CLEAN; never production.
+13. Write Accept from **`domains/medical/templates/accept-record.template.md`** (CLEAN checkboxes + quality_packet_path + rights row when asset).
 
 Suggested path: `domains/medical/briefs/<slug>.accept.md`.
 
@@ -215,6 +225,8 @@ Do not open a third Media↔Tech round without Human.
 | Treat recipes as functional checklists | Brief = form-id shopping list only |
 | Stop at 2 Media↔Tech rounds → Human | Implement feasibility/spike yourself |
 | Point Graphics at Design-CLEAN packet | Generate free-vision PNGs in this skill |
+| Set `open_asset_scan` per unit from realism / third-party intent | Leave scan need inventable by Graphics for pure code units |
+| Block Accept of third-party embed without MANIFEST rights outcome | Accept open photo/icon without accepted rights row |
 | KL: load ontology; TIME≠SCOPE; no form-meta in figures | KL: invent T3/tiers; Scope as ladder step; 2×2 for §3/§4 |
 
 ## Boundary vs Tech / Graphics
@@ -247,7 +259,7 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | Accept template | `domains/medical/templates/accept-record.template.md` |
 | Graphics Decision template | `domains/medical/templates/graphic-decision.template.md` |
 | Graphic Harvest template | `domains/medical/templates/graphic-harvest.template.md` |
-| Design-quality track | `devtracks/design-quality-system/` |
+| Design-quality track | `devtracks/_archive/design-quality-system/` |
 | Graphics skill / playbook | `domains/medical/skill/medical-graphics/` |
 | Recipes | `domains/medical/recipes/` |
 | Briefs / gold INDEX | `domains/medical/briefs/INDEX.md` |

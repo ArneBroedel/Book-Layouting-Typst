@@ -11,7 +11,7 @@ description: "ALWAYS use after Media Brief/Form Spec for visual units: free visi
 **Playbook (run this):** [`playbook/00-overview.md`](playbook/00-overview.md)  
 **Visual critique:** [`playbook/11-visual-critique.md`](playbook/11-visual-critique.md)  
 **Policy:** `toolset/compose/CREATIVE-COMPOSE.md`  
-**Design-quality:** `devtracks/design-quality-system/`  
+**Design-quality:** `devtracks/_archive/design-quality-system/`  
 **Why-guide:** `Guides/Medical-Graphics-Playbook.md`  
 **KL form language:** `Guides/KL-Form-Language.md` · library [`references/kl-form-library.md`](references/kl-form-library.md)
 
@@ -40,7 +40,9 @@ Design CLEAN packet (Media: Form Spec + Design Contract + Design Critic)
     │
     ▼
 G0  Visual-Units + recipe + **track**     playbook/01
-G0b **Open-assets scan** (when realism/icons)  skill `open-assets` — before free gen
+G0b **Open-assets scan** when open_asset_scan=required (optional light path)
+      skill `open-assets` — MANIFEST accepted|gap BEFORE free gen
+      skip documented for code-only / schema units
 G1  Free vision (if free-vision-ambition) playbook/02
 G2  Claim audit (mandatory)               playbook/03
     Harvest → map to Contract atom_ids    graphic-harvest
@@ -51,13 +53,28 @@ G3  Realize ladder:
       R4 Fair A/B                          playbook/07
 G3b Visual Critique on PNG pages          playbook/11  ← until Visual CLEAN
 G4  Decision Note → Media Accept (AX)     playbook/08
+      (+ production-bridge cite-if-present; rights when asset)
     │
     ▼
 Tech embed accepted winner
 ```
 
-**MUST:** refuse free gen / realize without **Design CLEAN**; when `realism_required` or standard icons warrant, run **`open-assets`** source scan (G0b) before free gen and document gap if none; name **track** per unit; realize at Contract **intensity level** (L0–L6; do not silently upgrade to diagram/raster); free vision only when Contract is L6 (or explicit ambition track); prefer **one focused visual claim** per free gen and **default no labels in free raster** (Typst owns German pins); write **short positive prompts** (concrete subject; clinical context when in-situ; no long kitchen-sink / no negative-list-as-strategy; **§1.1 rewrite dual-meaning jargon** e.g. *atomic*/*cascade* before gen — [`references/prompt-and-semantic-read.md`](references/prompt-and-semantic-read.md)); **open every gen and every teaching CeTZ/SVG glyph and run Semantic Read** (Lesart · Job-Fit · Falsche Lehre · Claim-Trennung **without caption**) as **hard gate** before montage/Accept; **claim audit** after free including illustration-semantics (laterality, leaders, structure — not text-only); **harvest** mapped to **atom_ids**; port harvest must-cues; **honor Contract space budget** without **squish-compress** (dense book: often ~⅛–⅓ page teaching density, still readable rhythm); **export PNG and Visual Critic** until Visual CLEAN (builder ≠ critic); pin labels from C; document realize_path + harvest + visual_critique_path; **German labels only** in ship text; no form-meta in figures. On free **FAIL** or Semantic Read FAIL: demote raster/glyph and **step down** to simple alternative / L3–L4 clinical typography (**omit is a win** — do not force weak vectors).  
-**MUST NOT:** invent clinical content; free vision without Design CLEAN; free vision without harvest; free vision when Contract chose L0–L3; pin-monotone winner on ambition when free truly passed; **self-CLEAN visual**; handoff Accept without PNG inspection; **declare process done / Accept-ready while Semantic Read FAIL is open**; code-leak / overflow / **sparse-sprawl** / **squish-compress** / **over-intensity** ship; accept-asset on FAIL; endless AI gens beyond caps; transfer decorative bars without meaning; expand insets/spacers for “premium air” when pins are few; replace failed free vision with **decorative placeholder geometry** (colored “hand” blocks, empty ovals, caption-only blob+dot / smiley / arc doodles); stack redundant marks for one learner job; treat first-glance pretty or minimized page count as done; use caption/disclaimer to waive a Semantic Read FAIL.
+### G0b hard gate (`open_asset_scan`)
+
+| `open_asset_scan` (Media SoT) | Graphics action |
+|---|---|
+| **`required`** | **Hard refuse** free gen **and** asset Accept until source-scan + MANIFEST outcome `accepted` **or** `gap` (gap → Typst simple alternative; **no** silent AI-as-photo) |
+| **`optional`** | Light scan when realism/icons may help; document if skipped |
+| **`skip`** | Code/schema only — no MANIFEST ceremony; free vision only if track still wants it |
+
+If Media left the field empty but `realism_required=essential` or third-party/standard icons are the intended carrier → treat as **required** until Media corrects.
+
+### production-bridge (Decision Note — advisory)
+
+After Design CLEAN / intensity chosen, when a Form Lab harvest bridge exists for the job class (e.g. `toolset/orchestration/form-lab/**/harvest/production-bridge.md`, prefer portfolio harvest when present): **cite default carrier or override reason** in Decision Note. Never hard gate; never catalog cage; never waives Design/Visual CLEAN or Accept.
+
+**MUST:** refuse free gen / realize without **Design CLEAN**; when `open_asset_scan=required` (or `realism_required`/standard icons warrant and scan not set to skip), run **`open-assets`** source scan (G0b) before free gen and document MANIFEST `accepted`|`gap`; name **track** per unit; realize at Contract **intensity level** (L0–L6; do not silently upgrade to diagram/raster); free vision only when Contract is L6 (or explicit ambition track); prefer **one focused visual claim** per free gen and **default no labels in free raster** (Typst owns German pins); write **short positive prompts** (concrete subject; clinical context when in-situ; no long kitchen-sink / no negative-list-as-strategy; **§1.1 rewrite dual-meaning jargon** e.g. *atomic*/*cascade* before gen — [`references/prompt-and-semantic-read.md`](references/prompt-and-semantic-read.md)); **open every gen and every teaching CeTZ/SVG glyph and run Semantic Read** (Lesart · Job-Fit · Falsche Lehre · Claim-Trennung **without caption**) as **hard gate** before montage/Accept; **claim audit** after free including illustration-semantics (laterality, leaders, structure — not text-only); **harvest** mapped to **atom_ids**; port harvest must-cues; **honor Contract space budget** without **squish-compress** (dense book: often ~⅛–⅓ page teaching density, still readable rhythm); **export PNG and Visual Critic** until Visual CLEAN (builder ≠ critic); pin labels from C; document realize_path + harvest + visual_critique_path; **German labels only** in ship text; no form-meta in figures. On free **FAIL** or Semantic Read FAIL: demote raster/glyph and **step down** to simple alternative / L3–L4 clinical typography (**omit is a win** — do not force weak vectors).  
+**MUST NOT:** invent clinical content; free vision without Design CLEAN; free vision when `open_asset_scan=required` without source-scan + MANIFEST outcome; free vision without harvest; free vision when Contract chose L0–L3; pin-monotone winner on ambition when free truly passed; **self-CLEAN visual**; handoff Accept without PNG inspection; **declare process done / Accept-ready while Semantic Read FAIL is open**; code-leak / overflow / **sparse-sprawl** / **squish-compress** / **over-intensity** ship; accept-asset on FAIL or without rights/MANIFEST when third-party; endless AI gens beyond caps; transfer decorative bars without meaning; expand insets/spacers for “premium air” when pins are few; replace failed free vision with **decorative placeholder geometry** (colored “hand” blocks, empty ovals, caption-only blob+dot / smiley / arc doodles); stack redundant marks for one learner job; treat first-glance pretty or minimized page count as done; use caption/disclaimer to waive a Semantic Read FAIL.
 
 ## End product policy
 
@@ -184,12 +201,13 @@ Criteria icons may look right while teaching wrong (Melanom B/D) → illustratio
 
 | Graphics | Media | Tech |
 |---|---|---|
-| Vision + realize + assets | Form Spec + ideal + Accept | Feasibility, compose, validate |
+| Vision + realize + assets | Form Spec + ideal + Accept + `open_asset_scan` | Feasibility, compose, validate |
 | Does not invent Form Spec | Does not write production `.typ` | Does not invent ideal |
 | Does not own Accept | Does not free-gen production claims | Embeds Accept winners |
+| Calls `open-assets` at G0b when required | Sets scan need from realism / third-party intent | May read production-bridge as comment only |
 
 ## Product note
 
 Produkt **B**. Do not fold medical free-vision logic into `packages/bookkit`.
 
-**Background:** `Guides/Medical-Graphics-Playbook.md` · Track `devtracks/_archive/medical-graphics/`
+**Background:** `Guides/Medical-Graphics-Playbook.md` · Track `devtracks/_archive/medical-graphics/` · Open-assets wire: `devtracks/_archive/open-assets-production-wire/`

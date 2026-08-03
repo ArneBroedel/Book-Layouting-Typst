@@ -42,11 +42,19 @@ only tracks with open work (plus durable governance docs that are not “feature
 
 ## Open tracks
 
-| Track | Focus |
-|---|---|
-| [`design-quality-system/`](design-quality-system/) | Design CLEAN + Visual CLEAN pre-Human (B + thin A) |
-| [`multi-chapter-explore-layout/`](multi-chapter-explore-layout/) | Curated multi-chapter exploration portfolio (board waves; not full catalog/print) |
-| [`chapter-form-lab/`](chapter-form-lab/) | Medium-extreme chapter lab (T/C/V/R→compare→S); orchestrated multi-session iterative craft to medium-optimum |
+| Track | Status | Focus |
+|---|---|---|
+| *(none — feature tracks clear as of 2026-08-03)* | — | Residual: T3 Phase B soft quality-packet CLI only if dogfood demands (no open track) |
+
+**Index (not a feature track):** [`skill-collaboration/`](skill-collaboration/) — trilogy complete; living Contract at `toolset/skill-pack/COLLABORATION-CONTRACT.md`.
+
+**Recently archived (2026-08-03):**  
+[`_archive/collab-control-plane/`](_archive/collab-control-plane/) ·  
+[`_archive/open-assets-production-wire/`](_archive/open-assets-production-wire/) ·  
+[`_archive/orchestration-quality-state/`](_archive/orchestration-quality-state/) (trilogy T1–T3A) ·  
+[`_archive/design-quality-system/`](_archive/design-quality-system/) (CLEAN doctrine — living SoT in B skills) ·  
+[`_archive/chapter-form-lab/`](_archive/chapter-form-lab/) (lab program — living skill `form-lab-orchestrator` + runtime) ·  
+[`_archive/multi-chapter-explore-layout/`](_archive/multi-chapter-explore-layout/) (N=10 explore — living ops in book-production-orchestrator).
 
 Physical multi-repo split remains **deferred** (D2) — checklist frozen at [`_archive/workspace-split/phase3-split.md`](_archive/workspace-split/phase3-split.md).
 
@@ -63,6 +71,7 @@ Runtime products (not tracks):
 **Consumer guide:** [`docs/CONSUMER.md`](../docs/CONSUMER.md).  
 **Pilot dogfood:** `pilots/kursbuch-welle-03-compose/`.
 
+**Recently archived (2026-08-03):** skill-collaboration trilogy (`collab-control-plane`, `open-assets-production-wire`, `orchestration-quality-state`), plus earlier same-day `design-quality-system`, `chapter-form-lab`, `multi-chapter-explore-layout`.  
 **Recently archived (2026-07-29):** `workspace-split` + companion `workspace-inventory` (modular monorepo delivered; Phase 3 split deferred), `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` under `_archive/`.  
 **v0.2 archived:** `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries` under `_archive/`.  
 Earlier: `typst-toolset`, `skill-eval-baseline`, `skill-reuse-pilot`, `prepress-pdfx`, …

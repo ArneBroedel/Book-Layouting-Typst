@@ -3,7 +3,7 @@
 **Status:** active pilot (2026-08-03) — **not** deep-integrated into production Media→Graphics pipeline  
 **Executable skill (SoT):** [`domains/medical/skill/open-assets/`](skill/open-assets/SKILL.md) — search, sources, licenses, attribution, MANIFEST/CREDITS, personality, print size  
 **Scope now:** lab + compose pilots under Form Lab **Pass O** (Open Asset); any third-party figure work  
-**Production default:** still Design CLEAN → free vision / code realize unless a unit explicitly runs Pass O / open-assets scan  
+**Production default:** Design CLEAN → **conditional** open-assets (`open_asset_scan: required|optional|skip`) → free vision / code realize. Wire: sit.2 / book-prod P4 / G0b (`devtracks/_archive/open-assets-production-wire/`). Not always-on.
 **Research basis:** Gemini + Perplexity open-asset research (2026-08) + internal strategy  
 **Pilot wave:** `toolset/orchestration/form-lab/portfolio-open-asset-2026-08/`
 

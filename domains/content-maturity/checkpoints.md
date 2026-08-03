@@ -15,7 +15,7 @@
 
 ### Design-quality (agent floors — not Human-optional)
 
-See `devtracks/design-quality-system/`. Agents must reach **Design CLEAN** + **Visual CLEAN** (PNG-inspected) before Accept — **including exploration** didactic chapter PDFs. Exploration allows draft **content**, not dirty **layout craft**.
+See `devtracks/_archive/design-quality-system/`. Agents must reach **Design CLEAN** + **Visual CLEAN** (PNG-inspected) before Accept — **including exploration** didactic chapter PDFs. Exploration allows draft **content**, not dirty **layout craft**.
 
 ## Agent routing
 

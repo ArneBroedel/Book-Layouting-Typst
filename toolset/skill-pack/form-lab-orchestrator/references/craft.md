@@ -1,6 +1,6 @@
 # Craft loop & medium rules (summary)
 
-Full track detail: `devtracks/chapter-form-lab/plan.md` · `pass-craft-loop.md`.  
+Full track detail: `devtracks/_archive/chapter-form-lab/plan.md` · `pass-craft-loop.md`.  
 Runtime medium-rules copies: `toolset/orchestration/form-lab/_templates/medium-rules-*.md`.
 
 ## Loop (every pass)

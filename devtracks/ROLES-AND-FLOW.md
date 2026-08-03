@@ -1,6 +1,7 @@
 # Rollen & Ablauf (v0.2 + Content-Reife in Arbeit) — Kurzüberblick
 
 Ausführlich: [`CONSENSUS-v0.md`](CONSENSUS-v0.md) · Grenzen: [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md)  
+**Skill collaboration (complete):** index [`skill-collaboration/`](skill-collaboration/) · **operational short law:** [`COLLABORATION-CONTRACT.md`](../toolset/skill-pack/COLLABORATION-CONTRACT.md) (controllers, greens, session law, done — no full-text fork here) · provenance T1–T3 under `_archive/` 
 **Content-Reife-Schleife (MVP archived):** [`_archive/content-maturity/`](_archive/content-maturity/) → spezifiziert C0–C5 für CONSENSUS v0.3; live kit `domains/content-maturity/`
 
 ## Produkte

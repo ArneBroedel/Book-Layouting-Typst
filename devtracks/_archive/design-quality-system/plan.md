@@ -1,9 +1,10 @@
 # Plan — Design-Quality System (adversarial · atom-justified · visual-loop · pre-Human clean)
 
-**Status:** P1–P2 + WP7 + WP9 unit pilot done (Human approved 2026-07-30; defaults D1–D4 locked)  
+**Status:** **ARCHIVED 2026-08-03** · core complete · residual deferred to trilogy · [STATUS.md](STATUS.md)  
 **Trigger:** CRPS re-run: pipeline artifacts complete, product quality failing (bad form choices, unmotivated color, **Typst source leaking into PDF**, agent self-Accept without visual read)  
 **Scope:** Produkt **B** (media-brief + medical-graphics) · thin wires to **A** (compose, validate, studio, book-production) · **C** Human gates unchanged for freeze/proof  
-**Not this plan:** rewrite clinical content; auto-heal claims; fold medical genre into `packages/bookkit`
+**Not this plan:** rewrite clinical content; auto-heal claims; fold medical genre into `packages/bookkit`; T1–T3 control-plane / board cells / open-assets production wire  
+**Human approved:** 2026-07-30 · defaults D1–D4 locked
 
 ---
 
@@ -355,10 +356,11 @@ If Human finds a `block`-class issue, that is a **process incident** → root-ca
 - Workspace READMEs list iter-2 pending skill-creator run  
 - examples/INDEX negative gold points at fixtures  
 
-### WP8 — Optional tooling (phase 2, not blocking policy)
+### WP8 — Optional tooling (phase 2, not blocking policy) — **deferred out of this track**
 - `bookkit graphics critique-export` helper: compile unit → PNG dir → stub critique file  
-- Soft accept_gate checks for `Visual CLEAN: yes` strings  
+- Soft accept_gate / quality-packet **path** checks (existence only)  
 - **Not** required for v1: automated aesthetic scoring / LLM vision CI  
+- **2026-08-03 disposition:** soft path-gate + durable board quality cells live under trilogy **T3** (`orchestration-quality-state`). Do not re-open this track solely for WP8.
 
 ### WP9 — Unit pilot under full council — **done**; **WP9b ambition** 2026-07-31
 
@@ -503,3 +505,53 @@ Existing culture: no Genesis endless loops; max 2 Media↔Tech; gen caps.
 ## 15. One-sentence summary
 
 **Turn “pipeline with self-ticked Accept” into a Design + Realize council with atom-level justification, adversarial critique, mandatory visual PNG loops, and a hard ban on presenting anything unclean to Human — while reusing Form Spec, free-vision harvest, claim audit, creative-first, and role boundaries as the substrate.**
+
+---
+
+## 16. Implementation status (audit 2026-08-03)
+
+| Package | Status | SoT / evidence |
+|---|---|---|
+| WP0 Devtrack + vocabulary | **done** | this directory + skill language |
+| WP1 Templates | **done** | `domains/medical/templates/*contract*`, `*critique*`, `quality-packet*` |
+| WP2 media-brief Phase D + Accept | **done** | `domains/medical/skill/media-brief/` |
+| WP3 medical-graphics Phase R + playbook 11 | **done** | `…/medical-graphics/` + `playbook/11-visual-critique.md` |
+| WP4 Studio / orchestrator / CREATIVE-COMPOSE | **done** (policy); board **cells** still coarse | studio + CREATIVE-COMPOSE; cell enums → **T3** |
+| WP5 Guides | **done** | Presentation-Forms + Graphics-Playbook + form-intensity ladder |
+| WP6 Checkpoints + runbook | **done** | H-Design / H-Explore in `checkpoints.md` |
+| WP7 Evals + negative gold | **done** | media-brief + medical-graphics evals |
+| WP8 Optional tooling | **deferred → T3 Phase B** | not blocking archive of doctrine |
+| WP9 Unit pilot + intensity ladder | **done** | `kl-crps-wp9-2026-07-31` · form-intensity-ladder.md |
+
+### Alignment with open tracks
+
+| Track | Relation |
+|---|---|
+| [chapter-form-lab](../chapter-form-lab/) | Lab medium-optimum; must not redefine Design/Visual CLEAN science |
+| [multi-chapter-explore-layout](../multi-chapter-explore-layout/) | Dogfood complete; process harvested; optional craft residual only |
+| [collab-control-plane](../../collab-control-plane/) **T1** | Short law: who marks CLEAN / done — **cites** this plan |
+| [open-assets-production-wire](../../open-assets-production-wire/) **T2** | Sequence: Design CLEAN → open-assets? → realize → Visual CLEAN |
+| [orchestration-quality-state](../../orchestration-quality-state/) **T3** | Board/route quality cells + optional soft path-gate (WP8 home) |
+
+### Next actions after archive
+
+1. **Do not** re-implement WP1–WP7 or re-open this track for doctrine.  
+2. Prefer **T1 → T2 → T3** for remaining production wiring.  
+3. Optional dogfood: full CRPS chapter re-pilot only on explicit Human greenlight (separate session).
+
+## Harvested into (core — living skills)
+
+| Destination | What |
+|---|---|
+| `domains/medical/skill/media-brief/` | Design Council, Contract, DC, Accept CLEAN |
+| `domains/medical/skill/medical-graphics/` | R0–R5, playbook 11, intensity, free-vision gates |
+| `domains/medical/templates/` | design-contract/critique, visual-critique, quality-packet |
+| `domains/medical/skill/media-brief/references/form-intensity-ladder.md` | L0–L6 continuum |
+| `toolset/skill-pack/studio/` | design_clean / visual_clean route fields; L2 floors |
+| `toolset/compose/CREATIVE-COMPOSE.md` | quality loops ≠ validate |
+| `domains/content-maturity/checkpoints.md` | H-Design, H-Explore |
+| Guides Presentation-Forms + Graphics-Playbook | doctrine narrative |
+| Evals media-brief / medical-graphics | skip-critique + CRPS negative gold |
+| Trilogy T1–T3 (deferred residual) | authority/done · open-assets wire · board cells / soft path-gate |
+
+**Archive:** `git mv` → `devtracks/_archive/design-quality-system/` on 2026-08-03 (Human: close three old tracks).

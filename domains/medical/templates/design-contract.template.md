@@ -3,7 +3,7 @@
 > **Phase D (Media Designer).** Justifies every non-trivial visual decision before free vision / Typst.  
 > Grounding: media design + medical pedagogy. Decoration without learner job = forbidden.  
 > Skill: `media-brief` · Guide: `Guides/Medical-Presentation-Forms.md`  
-> Track: `devtracks/design-quality-system/`
+> Track: `devtracks/_archive/design-quality-system/`
 
 - **chapter_id / slug:**
 - **unit_id:**
@@ -13,6 +13,9 @@
 - **author_role:** media-designer (MD)
 - **date:**
 - **status:** draft | in-critique | **design-clean** | blocked
+- **open_asset_scan:** required | optional | skip  
+  (Media SoT for G0b: realism/third-party intent → required; code/schema → skip; no empty ceremony)
+- **production_bridge_seen:** n/a | path (optional awareness only — not design cage)
 
 ## Learner job (one primary)
 

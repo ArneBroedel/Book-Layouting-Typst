@@ -1,11 +1,11 @@
 # Spec — Multi-Chapter Explore Layout (Portfolio)
 
-**Status:** open · 2026-08-01  
+**Status:** **ARCHIVED 2026-08-03** · process complete · board idle · [STATUS.md](STATUS.md)  
 **Products:** A (compose, board, bookkit) · B (media-brief, medical-graphics) · C content **read-only** (Kursbuch external)  
 **Plan:** [plan.md](plan.md)  
 **Studio entry:** Situation **1 light** / multi-chapter exploration (not full print production)  
 **Orchestrator:** `book-production-orchestrator` with `brief_class: exploration`  
-**Related:** `design-quality-system` (active) · CRPS process review `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`
+**Related:** `design-quality-system` (floors dogfooded; core complete) · `chapter-form-lab` (medium extremes — different mission) · CRPS process review `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`
 
 ---
 
@@ -114,13 +114,16 @@ Success is measured by **chapter quality + process fidelity + creative variety**
 
 ---
 
-## Open decisions (Human at kickoff)
+## Decisions (kickoff — locked 2026-08-01)
 
-See [plan.md](plan.md) §0 and [decisions.md](decisions.md).
+See [decisions.md](decisions.md). All D1–D8 resolved. No open kickoff decisions.
 
-Minimum:
+## Residual (optional only)
 
-1. Portfolio size N and exact chapter list  
-2. Genre mix vs KL-only  
-3. Autonomy L1 vs L2  
-4. H-Explore depth (sample 2–3 vs all PDFs per wave)  
+| Item | Not a process gap |
+|---|---|
+| Optional R2 craft (BLS / Stroke / residual revise debt) | Regular skill path if Human wants polish |
+| P3 assembly | Deferred D8 until Human reopens |
+| W2 expansion | Human portfolio edit only |
+| Board quality cell schema | Trilogy **T3** — explore board is provenance |
+| Archive track | Human “archive explore” / process enough |  

@@ -1,6 +1,7 @@
 # Plan — Multi-Chapter Explore Layout (Portfolio)
 
-**Status:** open · Phase 0–2 done · 4a harvest done · **4b eval done** · **Layout revise wave + re-eval done 2026-08-01** · archive deferred (residual KL/BLS/Stroke optional)
+**Status:** **ARCHIVED 2026-08-03** · process complete · board idle · [STATUS.md](STATUS.md)  
+**Phase snapshot:** 0–2 done · 3 deferred (D8) · 4a/4b done · revise wave + re-eval done 2026-08-01  
 **Verification:** [verification-2026-08-01.md](verification-2026-08-01.md)  
 **Retro:** [retro-2026-08-01.md](retro-2026-08-01.md)  
 **Full eval:** [evaluation/](evaluation/) (rubric · inventory · agent audit · Gemini · synthesis)  
@@ -138,10 +139,12 @@ Per-chapter cells: content · brief · form_specs · graphics · accept · compo
 
 ## 8. Exit criteria (track done)
 
-- [ ] S1–S9 from spec met (S2 N as agreed)  
-- [ ] Human confirms portfolio “enough for now” or promotion plan to production track  
-- [ ] Phase 4 harvest footer written  
-- [ ] `git mv` to `devtracks/_archive/multi-chapter-explore-layout/`  
+- [x] S1–S9 from spec met (S2 N=10; S8 waived by D4 agent-only H-Explore)  
+- [x] Phase 4 harvest footer written (process + eval)  
+- [x] Human archive without aesthetic perfection claim (2026-08-03)  
+- [x] `git mv` to `devtracks/_archive/multi-chapter-explore-layout/`  
+
+**Note:** Residual craft (BLS/Stroke/KL shell) remains optional via regular skills; not reopened as track work.
 
 ---
 
@@ -149,21 +152,22 @@ Per-chapter cells: content · brief · form_specs · graphics · accept · compo
 
 | Dependency | Use |
 |---|---|
-| `design-quality-system` | CLEAN floors |
+| `design-quality-system` | CLEAN floors (core complete; this track dogfooded them) |
 | `book-production-orchestrator` | board runtime |
 | `studio` | front door / status |
 | CRPS process-review | free vision + density norms (already harvested) |
 | `kl-form-language` (archived) | grammar library transfer, not content SoT |
+| `chapter-form-lab` | **Different mission** (medium extremes lab); overlapping disease names ≠ same pilots |
+| trilogy **T1–T3** | Control plane / open-assets wire / board quality cells — not blockers for archiving this track |
 
 ---
 
-## 10. Immediate next actions
+## 10. Post-archive guidance
 
-1. ~~Human decisions~~ **done** 2026-08-01 (D1–D8).  
-2. ~~Phase 0–1~~ **done**.  
-3. ~~Phase 2 W0+W1 (N=10)~~ **done** — production session + filesystem verify PASS.  
-4. ~~Phase 4a/4b~~ **done** — see [evaluation/](evaluation/).  
-5. **Next:** layout revise wave (DRISC, Rücken, Kompartment, Gicht) via regular skills; board idle until then.
+1. Board `kursbuch-explore-2026-08` stays **idle** runtime provenance.  
+2. Optional polish → regular skills on named pilots (no track reopen).  
+3. W2 / assembly / production promote → Human charter + orchestrator, not this plan.  
+4. New multi-chapter explore ops → living skill refs, not this archived folder as working memory.
 
 ---
 
@@ -202,11 +206,11 @@ Per-chapter cells: content · brief · form_specs · graphics · accept · compo
 | `evaluation/04-synthesis.md` | Ranking, patterns, revise P1–P8 |
 | `evaluation/05-phase4-scope-note.md` | 4a vs 4b clarification |
 
-**Not archived:** layout revise wave recommended (DRISC, Rücken, Kompartment, Gicht first).
-
+**Later:** revise wave executed same day; track archived 2026-08-03 without claiming full aesthetic perfection.
 
 ## Revise wave 2026-08-01 (done)
 
 See [evaluation/06-revise-wave.md](evaluation/06-revise-wave.md) and [evaluation/07-revise-reeval.md](evaluation/07-revise-reeval.md).
 
-Targets: DRISC, Rücken, Kompartment, Gicht. Goals P2/P3/P7 met with residual craft debt. Next: Human H-Explore or optional R2 residual; no archive as quality success yet.
+Targets: DRISC, Rücken, Kompartment, Gicht. Goals P2/P3/P7 met with residual craft debt.  
+**Archive 2026-08-03:** process track closed; residual craft optional outside track.

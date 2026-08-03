@@ -1,6 +1,6 @@
 ---
 name: book-production-orchestrator
-description: "ALWAYS use as the top-level controller for full-book or multi-chapter production from content-ready/frozen text to print-ready PDF: maintain board state, log every step, route next skill (content-review, media-brief, medical-graphics, compose-chapter, human gates, prepress), resume after hours, plan kickoff with user, then drive autonomously until blocked. Covers Form Spec → graphics playbook → accept → compose → assembly → visual QA → print. Do NOT rewrite clinical claims, replace specialist skills' work products, or skip Human checkpoints H1/H2/H4/H5/H-Gfx."
+description: "ALWAYS use as the top-level controller for full-book or multi-chapter production from content-ready/frozen text to print-ready PDF: maintain board state, log every step, route next skill (content-review, media-brief, open-assets when needed, medical-graphics, compose-chapter, human gates, prepress), resume after hours, plan kickoff with user, then drive autonomously until blocked. Covers Form Spec → Design CLEAN → conditional open-assets → graphics playbook → accept → compose → chapter macro VC → assembly → visual QA → print. Do NOT rewrite clinical claims, replace specialist skills' work products, or skip Human checkpoints H1/H2/H4/H5/H-Gfx."
 ---
 
 # book-production-orchestrator
@@ -13,7 +13,8 @@ Keeps **overview**, **documents every step**, answers **where are we / what's ne
 **Board runtime:** `toolset/orchestration/book-production/<book-id>/`  
 **Runbook:** `docs/BOOK-PRODUCTION-RUNBOOK.md`  
 **Checkpoints:** `domains/content-maturity/checkpoints.md`  
-**Does not replace:** `content-review`, `media-brief`, `medical-graphics`, `compose-chapter` — **routes and logs** them.
+**Does not replace:** `content-review`, `media-brief`, `open-assets`, `medical-graphics`, `compose-chapter` — **routes and logs** them (craft stays in specialists).  
+**Obey:** [`COLLABORATION-CONTRACT.md`](../COLLABORATION-CONTRACT.md) — controllers, greens, session law, done. **When a board already exists under book-production, this skill is the resume owner** (studio must not keep a shadow board).
 
 ## When to use
 
@@ -52,8 +53,8 @@ After freeze, prefer **this** skill for production layout path. C-orchestrator m
 First session for a book:
 
 1. Create `toolset/orchestration/book-production/<book-id>/`  
-2. Write `kickoff.md` from template (content roots, genre mix, print target, autonomy level).  
-3. Write `board.md` from template (chapter inventory).  
+2. Write `kickoff.md` from template (content roots, genre mix, print target, autonomy, **scope**, optional `playbook_pin` / `production_bridge`).  
+3. Write `board.md` from template (chapter inventory + quality/open-assets/packet/macro_vc cells).  
 4. Write empty `run-log.md`.  
 5. Agree **autonomy charter** (see below).  
 6. Emit first **route** and either stop for Human or start Phase loop.
@@ -101,13 +102,13 @@ If user says “analyze what we already did”:
 | Kickoff / plan | **P0** | book-id, inventory, autonomy, print target | (this) + Human |
 | Design SoT | **P1** | theme/fonts/main skeleton once | `bookkit` / Human design |
 | Content gate | **P2** | per chapter frozen or exploration policy | `content-orchestrator` / Human **H1** |
-| Media plan | **P3** | brief + **form-spec** per ambitious unit | `media-brief` |
-| Graphics | **P4** | free→audit→recreate/hybrid/refine | `medical-graphics` playbook 00–08 |
-| Accept | **P5** | Media Accept + graphic winners | `media-brief` Accept · **H2** production |
-| Compose | **P6** | chapter.typ embed winners | `compose-chapter` |
+| Media plan | **P3** | brief + **form-spec** + `open_asset_scan` per ambitious unit | `media-brief` |
+| Graphics | **P4** | Design CLEAN → **conditional open-assets** → free→audit→realize | `open-assets` (iff needed) · `medical-graphics` 00–08 |
+| Accept | **P5** | Media Accept + graphic winners (+ rights if asset) | `media-brief` Accept · **H2** production |
+| Compose | **P6** | chapter.typ embed winners + multi-unit **chapter macro VC** | `compose-chapter` |
 | Assembly | **P7** | main book PDF | `./scripts/bookkit build` (configurable `--root`) |
 | Validate | **P8** | claims/compile/UA optional | compose validate |
-| Visual QA | **P9** | PNG pages, Form Spec Must-see | Human + agent inspect |
+| Visual QA | **P9** | multi-chapter assembly sample PNG / Must-see | Human + agent inspect |
 | Prepress | **P10** | print/PDF-X/DPI | scripts + Human |
 | Proof / release | **P11** | proof + imprimatur | Human **H4** / **H5** |
 
@@ -117,20 +118,59 @@ Chapter rows advance **P2→P6** largely independently; **P1** once; **P7–P11*
 
 ## Chapter cell states
 
-For each chapter on the board, track:
+For each chapter on the board, track (full vocabulary in `templates/board.template.md`):
 
-| Cell | Values (example) |
+| Cell | Values |
 |---|---|
 | content | missing \| draft \| review \| **frozen** \| blocked |
 | brief | missing \| draft \| done |
 | form_specs | none-needed \| missing \| partial \| done |
 | graphics | none-needed \| todo \| in-progress \| units-done |
+| **design_clean** | n/a \| missing \| partial \| **clean** \| blocked |
+| **visual_clean** | n/a \| missing \| partial \| **clean** \| blocked |
+| **macro_vc** | todo \| **clean** \| blocked \| n/a |
+| **quality_packet** | missing \| path \| **ready** |
+| **open_assets** | n/a \| needed \| partial \| done \| blocked |
 | accept | missing \| revise \| **accepted** |
-| compose | missing \| draft \| done |
-| pdf_chapter | missing \| path |
-| notes | free text |
+| compose | missing \| draft \| **done** |
+| pdf | missing \| path |
+| notes | free text (short labels only — **no critique bodies**) |
 
-**Unit-level** (optional subtable): unit_id, form_spec, vision, claim_audit, realize_path, winner, spike paths.
+**Board YAML header also:** `scope` (`full-book` \| `single-chapter` \| `explore-portfolio`), optional `playbook_pin`, advisory `production_bridge`.
+
+**Unit-level** subtable: unit_id, form_spec, design_clean, vision, claim_audit, **needs_open_assets** (yes\|no), **open_assets** (n/a\|needed\|scanning\|manifest_ok\|blocked), **manifest_path**, realize, visual_clean, winner, spikes.
+
+**Cell = resume index.** Evidence stays in artifact trees (Form Spec, Design Contract, critic notes, real PNG paths, MANIFEST). Do not paste critique full text into `board.md`.
+
+### Chapter done (board-gated)
+
+```text
+design_clean   = clean | n/a
+visual_clean   = clean where graphics units exist (else n/a)
+macro_vc       = clean | n/a
+quality_packet = ready
+accept         = accepted
+compose        = done
+pdf            = path present
+validate OK    → necessary but NOT sufficient alone
+```
+
+**validate green ≠ Visual CLEAN ≠ Accept ≠ chapter idle.** L2 must not mark portfolio idle until every locked row meets this checklist.
+
+---
+
+## Sit.2 / single-chapter board policy
+
+When studio situation **2** (one chapter) needs durable resume, **reuse this board family** — do not invent a shadow studio board:
+
+| Autonomy / context | Board? |
+|---|---|
+| L0 route-only, single short session | No |
+| L1 single-unit single-session | Optional |
+| L1+ multi-unit **or** continue later **or** L2 | **Create** `toolset/orchestration/book-production/<slug>/` with `scope: single-chapter` |
+| User requests resume/status | Create if missing |
+
+**Resume ownership:** if a board exists under book-production → **this skill** owns resume (studio sit.7). Studio must not keep a parallel schema.
 
 ---
 
@@ -140,12 +180,15 @@ For each chapter on the board, track:
 2. **P1 incomplete** and no design SoT → P1 before mass compose.  
 3. Chapter **not frozen** and `brief_class: production` required → P2 / content path.  
 4. Frozen, no brief → `media-brief` (P3).  
-5. Brief done, ambitious units without form_spec → `media-brief` Form Spec.  
-6. Form Spec free-vision required, no graphics decision / module → `medical-graphics`.  
-7. Graphics done, no accept → `media-brief` Accept (H2 if production).  
-8. Accept yes, no chapter typ → `compose-chapter`.  
-9. All target chapters composed → P7 assembly.  
-10. Assembly PDF → P8 validate → P9 visual QA → P10 prepress → P11 proof.
+5. Brief done, ambitious units without form_spec → `media-brief` Form Spec (+ set `open_asset_scan`).  
+6. Form Spec free-vision required, Design CLEAN, `open_asset_scan=required`, no source-scan/MANIFEST outcome → **`open-assets`** (before free gen).  
+7. Scan resolved (or skip/optional), no graphics decision / module → `medical-graphics` free vision / realize.  
+8. Graphics done, no accept → `media-brief` Accept (H2 if production; block asset Accept without rights outcome).  
+9. Accept yes, no chapter typ → `compose-chapter` (+ multi-unit **chapter macro VC** before quality done).  
+10. All target chapters composed → P7 assembly.  
+11. Assembly PDF → P8 validate → P9 visual QA → P10 prepress → P11 proof.
+
+**P4 open-assets rule:** unit-conditional specialist only — **not** a fixed empty phase for every chapter. Code/schema units: `open_asset_scan=skip`.
 
 **Rollback** when:
 
@@ -245,10 +288,12 @@ Status CLI: `./scripts/book-production-status.sh <book-id>`
 | Stop at H1/H2/H4/H5/H-Gfx | Agent-sign freeze/proof |
 | L2: continue to portfolio idle when agent-only | Premature stop after one chapter while rows todo |
 | Route Form Spec before free vision | Skip claim audit for asset path |
+| Route open-assets when `open_asset_scan=required` before free gen | Always-on open-assets / empty MANIFEST for code-only |
 | Point to specialist playbooks | Rewrite Critical Claims |
 | Document rollback targets | Silent infinite loops past caps |
 | Reconcile FS vs board on resume | Invent chapter freeze status |
-| Chapter done only after full PNG macro + density check | Claim done on validate OK alone |
+| Chapter done only after design_clean/visual_clean/macro_vc/quality_packet/accept/compose/pdf checklist | Claim done on validate OK alone |
+| Enums + paths only in board cells | Critique full text or CLEAN proof in board.md |
 
 ---
 
@@ -276,9 +321,12 @@ Prefer **`/studio`** if the user has not yet chosen full-book vs single-chapter 
 | Runbook | `docs/BOOK-PRODUCTION-RUNBOOK.md` |
 | Multi-chapter explore ops | [`references/multi-chapter-explore.md`](references/multi-chapter-explore.md) |
 | Autonomy / L2 idle | [`references/autonomy.md`](references/autonomy.md) |
+| Phase machine detail | [`references/phase-machine.md`](references/phase-machine.md) |
 | Graphics playbook | `domains/medical/skill/medical-graphics/playbook/` |
 | Media | `domains/medical/skill/media-brief/` |
+| Open assets (conditional) | `domains/medical/skill/open-assets/` |
 | Compose | `toolset/skill-pack/compose-chapter/` |
 | C router | `domains/content-maturity/skill/content-orchestrator/` |
 | Prepress | `prepress/README.md` |
 | Checkpoints | `domains/content-maturity/checkpoints.md` |
+| Collaboration Contract | [`../COLLABORATION-CONTRACT.md`](../COLLABORATION-CONTRACT.md) |

@@ -39,7 +39,8 @@ Do **not** load `research/` or `templates/` into default book-production agent c
 
 ## Skill gate (read before acting)
 
-Project skills encode hard-won conventions and **supersede general Typst advice** in their domain.
+Project skills encode hard-won conventions and **supersede general Typst advice** in their domain.  
+**Collaboration (who leads / done / CLEAN authority):** short law `toolset/skill-pack/COLLABORATION-CONTRACT.md` — cite, do not fork.
 
 | Skill | When |
 |---|---|
@@ -126,9 +127,7 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
 | **workspace-split** (archived) | **A/B/C** structure | `devtracks/_archive/workspace-split/` · modular monorepo done; inventory `devtracks/_archive/workspace-inventory/`; Phase 3 split deferred (D2) |
 | **kl-form-language** (archived) | **B** | `devtracks/_archive/kl-form-language/` · system complete; ops: `playbook/10-kl-chapter-pipeline.md` |
-| **design-quality-system** (active) | **B** | `devtracks/design-quality-system/` · Design Contract + dual critique + Visual CLEAN pre-Human |
-| **multi-chapter-explore-layout** (active) | **A/B** | `devtracks/multi-chapter-explore-layout/` · curated multi-chapter exploration portfolio (board waves, creativity + CRPS quality norms) |
-| **chapter-form-lab** (active, lab-learning) | **B**/thin A | `devtracks/chapter-form-lab/` · skill `form-lab-orchestrator` · runtime `toolset/orchestration/form-lab/` · studio situation **9** — **not** production default |
+| **skill collaboration trilogy** (archived 2026-08-03) | A/B/C control | Index `devtracks/skill-collaboration/` · T1–T3A under `devtracks/_archive/{collab-control-plane,open-assets-production-wire,orchestration-quality-state}/` · Contract SoT: `toolset/skill-pack/COLLABORATION-CONTRACT.md` · Phase B soft CLI deferred residual |
 | **free-vision-harvest** (archived) | **B** | `devtracks/_archive/free-vision-harvest/` · track/harvest/proximity (substrate for realize) |
 | Consumer guide | A | `docs/CONSUMER.md` |
 
@@ -136,11 +135,11 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 **Flow (v0.3 target):** C draft → **content-review / freeze** → B brief → A compose path → **proof / imprimatur** → print. Spec: `devtracks/_archive/content-maturity/`.  
 **Form Lab (optional research):** studio situation 9 → `form-lab-orchestrator` L0–L7 → harvest (vocabulary/bridge) — never silent default for chapter layout.
 
-**Skill gate:** **`studio`** (`/studio`) for guided intake when the path is unclear; **`book-production-orchestrator`** for full-book board → print (runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`); **`form-lab-orchestrator`** for Form Lab lab-learning only (situation 9; not production default); `media-brief` (Design CLEAN) + **`open-assets`** (source scan / rights docs when third-party visuals) + **`medical-graphics`** (Visual CLEAN) (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`). Design-quality: `devtracks/design-quality-system/`. Graphics guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`. Human checkpoints: `domains/content-maturity/checkpoints.md` (**H-Design**, **H-Explore**, **H-Gfx**). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content. Validate green ≠ design quality.
+**Skill gate:** **`studio`** (`/studio`) for guided intake when the path is unclear; **`book-production-orchestrator`** for full-book board → print (runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`); **`form-lab-orchestrator`** for Form Lab lab-learning only (situation 9; not production default); `media-brief` (Design CLEAN) + **`open-assets`** (source scan / rights docs when third-party visuals) + **`medical-graphics`** (Visual CLEAN) (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`). Design-quality living SoT: B skills + templates (provenance: `devtracks/_archive/design-quality-system/`). Graphics guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`. Human checkpoints: `domains/content-maturity/checkpoints.md` (**H-Design**, **H-Explore**, **H-Gfx**). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content. Validate green ≠ design quality.
 
 **Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
 
-**Archived (harvested):** `workspace-split`, `workspace-inventory`, `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` (runtime stays under `packages/`, `toolset/`, `domains/`).  
+**Archived (harvested):** skill-collaboration trilogy (`collab-control-plane`, `open-assets-production-wire`, `orchestration-quality-state` → Contract + default-path wire + board quality cells), `design-quality-system` (CLEAN doctrine → B skills), `chapter-form-lab` (→ `form-lab-orchestrator` + runtime), `multi-chapter-explore-layout` (→ book-production-orchestrator multi-chapter ops), `workspace-split`, `workspace-inventory`, `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` (runtime stays under `packages/`, `toolset/`, `domains/`).  
 Earlier: `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries`, plus more under `devtracks/_archive/`.
 
 

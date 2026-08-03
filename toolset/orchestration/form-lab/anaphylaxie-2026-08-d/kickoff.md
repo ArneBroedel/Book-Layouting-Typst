@@ -4,7 +4,7 @@
 - **mission_class:** lab-learning (not production default)
 - **skill:** form-lab-orchestrator
 - **wave:** 2026-08-d clean restart
-- **track:** `devtracks/chapter-form-lab/`
+- **track:** `devtracks/_archive/chapter-form-lab/`
 - **portfolio:** `portfolio-2026-08-d` (N=4 depth-first · lab 4 of 4)
 
 ## Content

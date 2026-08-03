@@ -10,6 +10,11 @@
 - **date:**
 - **ambition:** free-vision **required** | optional | skip
 - **track hint (Graphics G0):** preferred **`free-vision-ambition`** when ambition is required/optional and the unit is a real visual graphic; `grammar-only` only if Media/Human consciously skip free vision (document here)
+- **open_asset_scan:** **required** | optional | **skip**  
+  - `required` — disease photo / high clinical risk / third-party icons-as-carrier intended  
+  - `optional` — realism may help; Typst schema still valid primary  
+  - `skip` — pure code/schema/flow — no MANIFEST ceremony  
+  - Media sets this; Graphics G0b / sit.2 / book-prod P4 must not invent scans when `skip`
 - **design_contract_path:** `domains/medical/briefs/<slug>.design-contract.md` (required for non-prose visual units — Phase D)
 - **design_clean:** no | yes (only after Design Critic)
 
@@ -17,7 +22,7 @@
 > **Keine** form ids / bookkit-APIs. **Keine** Claim-Erfindung (Pins = copy-through aus C).  
 > Skill: `media-brief` · Guide: `Guides/Medical-Presentation-Forms.md`  
 > Graphics track default: free-vision-ambition (no chapter-wide grammar-only).  
-> **Design-Quality:** every non-default atom justified in Design Contract; Design CLEAN before free vision (`devtracks/design-quality-system/`).
+> **Design-Quality:** every non-default atom justified in Design Contract; Design CLEAN before free vision (`devtracks/_archive/design-quality-system/`).
 
 ## Learner context
 

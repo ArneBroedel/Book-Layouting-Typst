@@ -6,7 +6,7 @@
 **Entry skill:** [`form-lab-orchestrator`](../../skill-pack/form-lab-orchestrator/SKILL.md)  
 **Default autonomy:** **L2 autodrive-to-complete** (full program; do not stop after L0 handoff).  
 **Studio:** situation **9** → handoff to that skill (Studio does **not** run craft itself).  
-**Track:** `devtracks/chapter-form-lab/`  
+**Track:** `devtracks/_archive/chapter-form-lab/`  
 **Not:** full book production (`book-production/`). Sibling pattern (board / run-log / route / resume).
 
 ---
@@ -119,7 +119,7 @@ Pointer: [`PROMPT-AND-SEMANTIC-READ.md`](PROMPT-AND-SEMANTIC-READ.md)
 | Pass S | Strongest PASS per job; **omit is a win**; use prepared winners |
 | Captions | Aspekt/Kachel/Gestalt; never clear SR FAIL |
 
-Loop: `devtracks/chapter-form-lab/pass-craft-loop.md` · skill refs: `autonomy.md`, `phases.md`, `craft.md`
+Loop: `devtracks/_archive/chapter-form-lab/pass-craft-loop.md` · skill refs: `autonomy.md`, `phases.md`, `craft.md`
 
 ---
 

@@ -113,13 +113,13 @@
     base + "melanoma-ssm.jpg",
     w: 72mm,
     [Klinische pigmentierte Läsion (Lehrbeispiel)],
-    [Wikimedia · Melanoma.jpg · Public domain],
+    [Unknown · PD · Wikimedia],
   ),
   fig(
     base + "melanoma-blausen-cc-by.png",
     w: 68mm,
     [Illustration Melanom (didaktisch)],
-    [Blausen 0633 Melanoma · CC BY 3.0],
+    [Blausen Medical Communications, Inc. · CC BY 3.0 · Wikimedia],
   ),
 )
 

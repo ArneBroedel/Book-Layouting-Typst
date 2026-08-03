@@ -137,7 +137,7 @@
     #v(1pt)
     #set text(size: 6.4pt, font: fonts.sans)
     #align(center)[*MIMIC* · periphere Fazialis (Lehrbeispiel)]
-    #credit[Bell's Palsy smiling · CC0 · Wikimedia]
+    #credit[Shantoo · CC0 · Wikimedia · MIMIC only]
   ],
   soft[Diskrimination (Pins)][
     - Periphere Fazialis (Bell) *kann* Mimik betreffen — ist *nicht* der Stroke-Schnellbeweis.

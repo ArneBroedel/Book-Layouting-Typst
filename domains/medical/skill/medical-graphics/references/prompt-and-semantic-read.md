@@ -278,4 +278,4 @@ Import strongest PASS per job (§4 omit-is-win)
 - Free vision: [`free-vision.md`](free-vision.md) · playbook [`../playbook/02-free-vision.md`](../playbook/02-free-vision.md)  
 - Claim audit: [`../playbook/03-claim-audit.md`](../playbook/03-claim-audit.md)  
 - Visual critique: [`../playbook/11-visual-critique.md`](../playbook/11-visual-critique.md)  
-- Form Lab: `toolset/orchestration/form-lab/_templates/medium-rules-R.md` · `medium-rules-V.md` · `medium-rules-S.md` · `comparison-matrix.md` · `devtracks/chapter-form-lab/pass-craft-loop.md`
+- Form Lab: `toolset/orchestration/form-lab/_templates/medium-rules-R.md` · `medium-rules-V.md` · `medium-rules-S.md` · `comparison-matrix.md` · `devtracks/_archive/chapter-form-lab/pass-craft-loop.md`

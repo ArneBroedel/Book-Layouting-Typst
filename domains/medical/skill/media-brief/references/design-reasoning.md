@@ -77,7 +77,7 @@ Gold: `iv2-rueckenschmerz-neuro.form-spec.md`, `iii5-cauda-notfallkarte.form-spe
 
 ## 4b. Design Contract & atoms (Phase D — before free vision)
 
-Load full procedure: `devtracks/design-quality-system/` · templates `design-contract.template.md` · `design-critique.template.md`.
+Load full procedure: `devtracks/_archive/design-quality-system/` · templates `design-contract.template.md` · `design-critique.template.md`.
 
 **Doctrine:** every non-default visual decision (color, arrow, border, hub, peel, chain, badge, type weight) must help the learner **process content**.
 

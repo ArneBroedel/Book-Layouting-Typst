@@ -14,7 +14,7 @@
 - **visual_critique_path:**
 - **visual_clean:** no | yes
 
-> Design CLEAN → free vision / realize → claim audit → harvest → implement → **Visual CLEAN** (PNG) → handoff.  
+> Design CLEAN → (open-assets if needed) → free vision / realize → claim audit → harvest → implement → **Visual CLEAN** (PNG) → handoff.  
 > Skill: `domains/medical/skill/medical-graphics/` · playbook `00-overview.md` · design-quality-system
 
 ## Track (G0 — required before free gen)
@@ -22,6 +22,18 @@
 | unit_id | track | free vision? | notes |
 |---|---|---|---|
 | | free-vision-ambition \| grammar-only \| none | yes/no/skip | default posture = free-vision-ambition for real visual units |
+
+## Open-assets (G0b — before free gen when not skip)
+
+| unit_id | open_asset_scan | source-scan path | MANIFEST outcome | notes |
+|---|---|---|---|---|
+| | required \| optional \| skip | path or n/a | accepted \| gap \| n/a | hard refuse free gen if required + no outcome |
+
+## production-bridge (advisory cite-if-present)
+
+- **bridge_path:** n/a | e.g. `toolset/orchestration/form-lab/**/harvest/production-bridge.md`
+- **cite:** default carrier from bridge | **override:** reason after Design CLEAN / intensity
+- Never Accept / Visual CLEAN waive; never catalog cage.
 
 ## Phase A — Free vision
 
@@ -87,11 +99,13 @@ Harvest = **non-claim** composition only. DRIFT does not skip harvest.
 - [ ] Form Spec present (or documented skip)
 - [ ] **Design CLEAN** (Design Critic) for every non-prose unit
 - [ ] Track recorded per unit
+- [ ] `open_asset_scan` resolved; required → MANIFEST `accepted`\|`gap` before free gen / asset Accept
 - [ ] Claim audit recorded
 - [ ] Harvest present if free-vision-ambition + free vision ran (cues map to atom_ids)
 - [ ] Free-vision proximity ≠ no on recommended winner (ambition)
 - [ ] **Visual CLEAN** (Visual Critic) on latest PNG set — not compile-only
 - [ ] No open visual `block` (code-leak, overflow, uncontracted color, …)
+- [ ] production-bridge cited or n/a (advisory only)
 - [ ] yes
 - [ ] no — blockers:
 

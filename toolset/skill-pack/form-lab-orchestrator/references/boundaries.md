@@ -1,5 +1,7 @@
 # Boundaries — Form Lab vs production vs studio
 
+**Law:** [`COLLABORATION-CONTRACT.md`](../../COLLABORATION-CONTRACT.md) — Form Lab **L2 ≠ production L2** (lab default = **autodrive-to-complete**); Form Lab **COMPLETE ≠ production Accept**.
+
 ## Product placement
 
 | Layer | Form Lab role |
@@ -29,7 +31,8 @@ Different goals. Do not fold Form Lab into situation 2 as “more thorough compo
 | Board root | `toolset/orchestration/form-lab/` | `toolset/orchestration/book-production/` |
 | Phases | L0–L7 medium passes | P0–P11 book lifecycle |
 | Success | vocabulary + bridge + lab PDFs | print-ready multi-chapter PDF |
-| Autonomy | serial passes; new session/pass | L0–L3 chapter rows |
+| Autonomy | **L2 = autodrive-to-complete** (full T→S+harvest) — **not** production L2 | L0–L3 between Human gates |
+| COMPLETE | Lab program done | ≠ production **Accept** |
 
 ### Studio role
 

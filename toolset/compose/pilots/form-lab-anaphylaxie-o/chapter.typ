@@ -109,9 +109,9 @@
 #grid(
   columns: (1fr, 1fr, 1fr),
   gutter: 5pt,
-  fig(base + "urticaria-cc0.jpg", w: 48mm, [Urtikaria / Quaddeln], [Hives urticaria.jpg · CC0]),
-  fig(base + "urticaria-arm-pd.jpg", w: 44mm, [Urtikaria Arm], [Urticaria arm.jpg · PD]),
-  fig(base + "urticaria-cc0-2024.jpg", w: 48mm, [Urtikaria (weiteres Beispiel)], [Urticaria12.2024.jpg · CC0]),
+  fig(base + "urticaria-cc0.jpg", w: 48mm, [Urtikaria / Quaddeln], [Psixtras · CC0 · Wikimedia]),
+  fig(base + "urticaria-arm-pd.jpg", w: 44mm, [Urtikaria Arm], [Heckat · PD · Wikimedia]),
+  fig(base + "urticaria-cc0-2024.jpg", w: 48mm, [Urtikaria (weiteres Beispiel)], [מ.י.ש.הו 0 · CC0 · Wikimedia]),
 )
 
 #v(4pt)
@@ -122,13 +122,13 @@
     base + "angioedema-face-cc-by.jpg",
     w: 62mm,
     [Angioödem Gesicht — cascade cue],
-    [Angioedema of the face · CC BY 4.0 · ethisch sensibel],
+    [Boussetta N et al. · CC BY 4.0 · Wikimedia · personality unknown],
   ),
   fig(
     base + "angioedema-blausen-cc-by.png",
     w: 62mm,
     [Illustration Angioödem],
-    [Blausen 0023 · CC BY 3.0],
+    [BruceBlaus / Blausen Medical · CC BY 3.0 · Wikimedia],
   ),
 )
 

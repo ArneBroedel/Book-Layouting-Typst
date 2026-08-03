@@ -10,8 +10,8 @@ Append-only.
 - **action:** Human decisions D1–D8 applied; created kickoff, board, route, notes; portfolio W0+W1 locked (N=10, Mix)  
 - **artifacts:**  
   - `toolset/orchestration/book-production/kursbuch-explore-2026-08/*`  
-  - `devtracks/multi-chapter-explore-layout/decisions.md` (resolved)  
-  - `devtracks/multi-chapter-explore-layout/portfolio.md` (locked)  
+  - `devtracks/_archive/multi-chapter-explore-layout/decisions.md` (resolved)  
+  - `devtracks/_archive/multi-chapter-explore-layout/portfolio.md` (locked)  
 - **next:** Phase 2 W0 — start `kl-gicht-2026-08-01` (content map → media-brief…)  
 - **evidence:** content roots verified; CRPS baseline linked done  
 
@@ -141,7 +141,7 @@ Append-only.
 ### [2026-08-01] track — verification + continuation plan
 
 - **skill:** review (disk audit, not new compose)  
-- **action:** Verified 10/10 pilots, accepts, critiques packets, board idle; gicht spot-validate OK. Wrote `devtracks/multi-chapter-explore-layout/verification-2026-08-01.md` + `continuation-plan.md`.  
+- **action:** Verified 10/10 pilots, accepts, critiques packets, board idle; gicht spot-validate OK. Wrote `devtracks/_archive/multi-chapter-explore-layout/verification-2026-08-01.md` + `continuation-plan.md`.  
 - **verdict:** portfolio complete (process PASS); optional Human sample; next default Phase 4 harvest  
 - **next:** await Human branch A harvest / B H-Explore / C W2 / D production / E assembly  
 
@@ -149,7 +149,7 @@ Append-only.
 
 - **skill:** skill-creator / track harvest (no new chapter compose)  
 - **action:** Retro + deltas: macro scan-path in VC/compose; L2 no premature stop; SESSION-START 10–11; studio 14–15; playbook guide  
-- **artifacts:** `devtracks/multi-chapter-explore-layout/retro-2026-08-01.md`; plan.md `## Harvested into`  
+- **artifacts:** `devtracks/_archive/multi-chapter-explore-layout/retro-2026-08-01.md`; plan.md `## Harvested into`  
 - **note:** Human layout notes (indent, restless structure, hard visual flow) encoded as **open quality debt** — not fixed this step  
 - **next:** Human sample and/or layout revise list; archive only after quality evaluation complete  
 
@@ -157,7 +157,7 @@ Append-only.
 
 - **skill:** evaluation (agent multimodal + Gemini pro)  
 - **action:** Full rubric audit all 10 chapters; form inventory; agent PNG reads (all p1 + key p2/p3); Gemini 15 PNGs; synthesis ranking + revise priorities  
-- **artifacts:** `devtracks/multi-chapter-explore-layout/evaluation/*`  
+- **artifacts:** `devtracks/_archive/multi-chapter-explore-layout/evaluation/*`  
 - **finding:** pipeline solid; macro layout/restlessness confirmed; best Stroke FAST / BLS flow; worst table-walls DRISC/Rücken; Kompartment over-loud  
 - **next:** optional layout revise wave (not more chapters)  
 
@@ -166,8 +166,8 @@ Append-only.
 - **skill:** compose-chapter (layout polish) + medical-graphics (ship form defaults) + evaluation
 - **action:** Applied 4b revise list P2/P3/P7 on DRISC, Rücken, Kompartment, Gicht; recompiled PDF/PNG; agent multimodal re-eval + Gemini Pro re-review
 - **artifacts:**
-  - `devtracks/multi-chapter-explore-layout/evaluation/06-revise-wave.md`
-  - `devtracks/multi-chapter-explore-layout/evaluation/07-revise-reeval.md`
+  - `devtracks/_archive/multi-chapter-explore-layout/evaluation/06-revise-wave.md`
+  - `devtracks/_archive/multi-chapter-explore-layout/evaluation/07-revise-reeval.md`
   - `dist/pilots/{ii1-drisc,iv2-ruecken,kl-kompartment,kl-gicht}-2026-08-01/`
 - **evidence:** Goals met with residual craft debt; D-RISC/Gicht strongest; Kompartment still densest; track remains open (no archive as quality success)
 - **next:** Human H-Explore on revise 4, or optional R2 residual (KL shell / BLS / Stroke)
@@ -179,7 +179,7 @@ Append-only.
 - **action:** Human rejected full-page airy flows (II-1 p2, IV-2 p2) and half-empty IV-2 p1; densified Pflichtsequenz + Entscheidungs-Flow to compact default; repacked chapters (DRISC/Rücken 3→2 pages); harvested print-density rules into compose-chapter §9 + VC/recreate playbooks
 - **artifacts:**
   - `domains/medical/lib/typst/explore-2026-08/{pflichtsequenz,entscheidungs-flow}.typ`
-  - `devtracks/multi-chapter-explore-layout/evaluation/09-human-density-critique.md`
+  - `devtracks/_archive/multi-chapter-explore-layout/evaluation/09-human-density-critique.md`
   - skill patches: compose-chapter, playbook 04/11
 - **next:** Human re-view densified PNGs
 

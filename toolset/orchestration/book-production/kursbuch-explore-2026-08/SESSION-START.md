@@ -19,7 +19,7 @@ Rules (mandatory):
    - medical-graphics: domains/medical/skill/medical-graphics/SKILL.md + playbook/
    - compose-chapter: toolset/skill-pack/compose-chapter/SKILL.md
 4. Per chapter use the track pipeline in:
-   devtracks/multi-chapter-explore-layout/phase2-wave-execution.md
+   devtracks/_archive/multi-chapter-explore-layout/phase2-wave-execution.md
 5. After every unit/chapter step: update board.md + append run-log.md + refresh route.md.
 6. Quality floors (non-negotiable): Design CLEAN → Visual CLEAN before Accept;
    free vision focused + default no labels in raster; no blob demotion; anti-squish;

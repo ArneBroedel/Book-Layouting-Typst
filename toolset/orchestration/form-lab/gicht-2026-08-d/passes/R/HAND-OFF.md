@@ -40,7 +40,7 @@ See `../../pins.md`. No claim invention. No clinical rewrite.
 
 ## Loop
 
-Follow `devtracks/chapter-form-lab/pass-craft-loop.md`.
+Follow `devtracks/_archive/chapter-form-lab/pass-craft-loop.md`.
 
 ## Done when
 

@@ -20,5 +20,5 @@ This file is a pointer only so Form Lab workers find the gate from `toolset/orch
 2. Red arcs / foot-blob+dot / smiley-face / equal-circles+polygon that need a caption are **Semantic Read FAIL**, not “vector style.”  
 3. Best-of fusion is **not** “all media on the page.”
 
-Loop: `devtracks/chapter-form-lab/pass-craft-loop.md`  
+Loop: `devtracks/_archive/chapter-form-lab/pass-craft-loop.md`  
 Templates: `_templates/medium-rules-R.md` · `medium-rules-V.md` · `medium-rules-S.md` · `comparison-matrix.md`

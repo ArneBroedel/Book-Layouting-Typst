@@ -9,8 +9,8 @@ brief_class_default: exploration
 print_target: screen
 blocked: false
 block_reason: ""
-devtrack: devtracks/multi-chapter-explore-layout/
-portfolio: devtracks/multi-chapter-explore-layout/portfolio.md
+devtrack: devtracks/_archive/multi-chapter-explore-layout/
+portfolio: devtracks/_archive/multi-chapter-explore-layout/portfolio.md
 ```
 
 ## Banner

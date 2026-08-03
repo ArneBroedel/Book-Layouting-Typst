@@ -1,12 +1,12 @@
 # Spec — Chapter Form Lab
 
-**Status:** active · craft waves a/b/c executed · skill separation implemented 2026-08-02  
+**Status:** **ARCHIVED 2026-08-03** · lab program complete · skill/runtime live · [STATUS.md](STATUS.md)  
 **Mission class:** **lab-learning** (not default production chapter pipeline)  
 **Product:** B (visual craft) · thin A (compose/Typst) · orchestration pattern  
 **Executable skill:** `form-lab-orchestrator` → SoT `toolset/skill-pack/form-lab-orchestrator/` (default **L2 autodrive-to-complete**: full T→C→V→R→matrix→S best-of + harvest)  
 **Runtime:** `toolset/orchestration/form-lab/`  
-**Related:** `design-quality-system`, `multi-chapter-explore-layout`, archived `free-vision-harvest` / `medical-graphics` / `kl-form-language`  
-**Not this track:** full-book production default, claim rewrite, per-chapter production compose, portfolio throughput N× chapters as production SoT
+**Related:** `design-quality-system` (CLEAN science; Form Lab adapts bar to medium-optimum), `multi-chapter-explore-layout` (portfolio explore — different mission), trilogy **T2** (consumes production-bridge / open-assets wire)  
+**Not this track:** full-book production default, claim rewrite, per-chapter production compose, portfolio throughput N× chapters as production SoT, Collaboration Contract (T1), board quality cells (T3)
 
 ---
 
@@ -131,22 +131,29 @@ Full rationale: [portfolio.md](portfolio.md).
 
 Execution default: **depth-first** (all passes on Gicht, then Schlaganfall, …) — see portfolio Option A.
 
-## 10. Open decisions (kickoff)
+## 10. Decisions (locked by practice 2026-08-02/03)
 
-| ID | Question | Default proposal |
+| ID | Decision | Status |
 |---|---|---|
-| **D1** | Portfolio | **Locked:** Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie ([portfolio.md](portfolio.md)) |
-| **D2** | Execution order | **A** depth-first per chapter (Gicht first); alt B medium-first |
-| **D3** | Pass D (diagram) | Optional after T/C/V/R comparison if matrix gaps |
-| **D4** | Min craft rounds per pass | **3** (hard floor); soft target 5–8 until exhaustion |
-| **D5** | Max craft rounds per pass | **12** then Human / stop with residual dossier |
-| **D6** | Subagent vs new session | **New session preferred** per pass; subagent OK for single craft round |
-| **D7** | Human gate per pass | After medium-optimum candidate (H-Pass); may waive to agent-optimum for exploration with later Human rank |
-| **D8** | Free vision caps in Pass R | Raised vs production (e.g. 8–12 atomic gens) with per-atom audit — Human confirm at kickoff |
+| **D1** | Portfolio: Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie ([portfolio.md](portfolio.md)) | **locked** |
+| **D2** | Execution order **A** depth-first per chapter | **locked** (driven on c/d) |
+| **D3** | Pass D optional if matrix gaps | **locked** (not required on completed waves) |
+| **D4** | Min craft rounds **3** | **locked** |
+| **D5** | Max craft rounds **12** then residual | **locked** |
+| **D6** | New session preferred; L2 may in-session role-split | **locked** (skill autonomy) |
+| **D7** | H-Pass waived under agent PC + matrix (documented on boards) | **locked** as practiced |
+| **D8** | Pass R gen budget above production (8–12 class) | **locked** as plan default |
 
----
+## 11. Residual (not a re-open of T–S craft)
 
-## 11. Acceptance of this spec
+| Item | Owner |
+|---|---|
+| Pass O pilot close-out (`portfolio-open-asset-2026-08`) | this track (pilot only) |
+| production-bridge cite on production path | trilogy **T2** |
+| Form Lab L2 ≠ book-production L2 in short law | trilogy **T1** |
+| Optional guide prose | optional harvest before archive |
 
-Human confirms D2–D8 (D1 portfolio locked 2026-08-02) → implement master + Gicht board + Pass T handoff.  
-Plan: [plan.md](plan.md) · Portfolio: [portfolio.md](portfolio.md).
+## 12. Spec acceptance
+
+Core lab program **accepted by execution** (waves c/d COMPLETE + skill).  
+Plan: [plan.md](plan.md) · Portfolio: [portfolio.md](portfolio.md) · Status: [STATUS.md](STATUS.md).

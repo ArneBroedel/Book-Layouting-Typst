@@ -2,7 +2,7 @@
 
 **Role:** Visual Critic (**VC**) — separate from Graphics Realizer (**GX**).  
 **Template:** `domains/medical/templates/visual-critique.template.md`  
-**Track:** `devtracks/design-quality-system/`
+**Track:** `devtracks/_archive/design-quality-system/`
 
 ## When
 

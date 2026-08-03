@@ -4,7 +4,7 @@
 - **mission_class:** lab-learning (not production default)
 - **skill:** form-lab-orchestrator
 - **Human decisions:** D1–D8 below
-- **track:** `devtracks/chapter-form-lab/`
+- **track:** `devtracks/_archive/chapter-form-lab/`
 
 ## Content
 

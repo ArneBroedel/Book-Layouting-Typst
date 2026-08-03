@@ -2,7 +2,7 @@
 
 > Index of CLEAN artifacts. Required before Accept and before presenting a chapter PDF as quality result.  
 > Exploration does **not** waive Visual CLEAN for didactic PDFs.  
-> Track: `devtracks/design-quality-system/`
+> Track: `devtracks/_archive/design-quality-system/`
 
 - **slug:**
 - **date:**
@@ -11,9 +11,9 @@
 
 ## Units
 
-| unit_id | design_contract | design_critique status | visual_critique status | page PNGs | winner embed path |
-|---|---|---|---|---|---|
-| | path | clean? | clean? | paths | |
+| unit_id | design_contract | design_critique status | visual_critique status | open_asset_scan | MANIFEST / rights | page PNGs | winner embed path |
+|---|---|---|---|---|---|---|---|
+| | path | clean? | clean? | required\|optional\|skip | accepted\|gap\|n/a | paths | |
 
 ## Packet checklist
 
@@ -23,7 +23,10 @@
 - [ ] No open `block` findings anywhere in packet  
 - [ ] Claim audits recorded (PASS/DRIFT/FAIL) where free vision ran  
 - [ ] Harvest maps to atom_ids (ambition track)  
+- [ ] `open_asset_scan=required` units: source-scan + MANIFEST outcome before free gen / asset Accept  
+- [ ] Asset/open-* winners: rights outcome `accepted` (or gap → code demote noted)  
 - [ ] Anti-theater / rejected alternatives summarized below  
+- [ ] Multi-unit chapter quality PDF: **chapter macro VC** done (or n/a single-unit stated)  
 - [ ] Accept record may be drafted only if all above true  
 
 ## What we rejected (short)

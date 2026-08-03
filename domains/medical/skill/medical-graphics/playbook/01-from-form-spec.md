@@ -34,13 +34,24 @@
 - Agents **must still name the track** per unit (no silent free gen, no silent skip).  
 - Record track in Decision Note draft Phase A and (if present) content-map ambition row.
 
-7. Create asset dir: `domains/medical/assets/<slug>/` + spike dir under `toolset/compose/spikes/graphics/<slug>/`.  
-8. Optional: `./scripts/graphics-spike-init.sh <slug> <recipe-id>` or `./scripts/bookkit graphics spike-init …`
+7. **`open_asset_scan` (G0b — before free gen):**
+
+| Value | Action |
+|---|---|
+| **`required`** | Load skill **`open-assets`**; source scan + MANIFEST outcome `accepted`\|`gap` **before** G1. **Hard refuse** free gen / asset Accept without outcome. |
+| **`optional`** | Light scan when realism/icons may help; document skip if none. |
+| **`skip`** | Code/schema carrier — no MANIFEST ceremony. |
+
+Read field from Form Spec / Design Contract (Media SoT). If empty but realism essential / third-party intent → treat as **required** until Media corrects.
+
+8. Create asset dir: `domains/medical/assets/<slug>/` + spike dir under `toolset/compose/spikes/graphics/<slug>/`.  
+9. Optional: `./scripts/graphics-spike-init.sh <slug> <recipe-id>` or `./scripts/bookkit graphics spike-init …`
 
 ## Output
 
 - Checklist in working notes or Decision Note draft “Phase A planned”  
 - **Track** per unit (`free-vision-ambition` | `grammar-only` | `none`)  
+- **`open_asset_scan`** + MANIFEST path/outcome when not skip  
 - Recipe id chosen  
 
 ## Anti-patterns
@@ -49,3 +60,5 @@
 - Skipping Must-see when free-genning  
 - Silent `grammar-only` for a chapter or genre “to save time”  
 - Free vision run with no track recorded  
+- Free gen when `open_asset_scan=required` without MANIFEST `accepted`\|`gap`  
+- Empty MANIFEST ceremony for pure code/schema units

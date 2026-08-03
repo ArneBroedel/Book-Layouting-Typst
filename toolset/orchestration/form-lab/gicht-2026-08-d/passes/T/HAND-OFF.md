@@ -64,7 +64,7 @@ New sources and glyphs only. Pass T: no free-vision rasters; simple icons OK und
 
 ## Loop
 
-Follow `devtracks/chapter-form-lab/pass-craft-loop.md`.
+Follow `devtracks/_archive/chapter-form-lab/pass-craft-loop.md`.
 
 Each round:
 

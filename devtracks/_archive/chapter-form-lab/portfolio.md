@@ -4,7 +4,8 @@
 `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/`  
 
 **Locked:** 2026-08-02 · N=**4** · diversity for media extremes (T/C/V/R)  
-**Source wave:** `2026-07-welle-06-kl-full` (INDEX GRÜN / done)
+**Source wave:** `2026-07-welle-06-kl-full` (INDEX GRÜN / done)  
+**Execution status:** waves **c** and **d** T–S + harvest **COMPLETE** · Pass **O** pilot parallel · see [STATUS.md](STATUS.md)
 
 ---
 

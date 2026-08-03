@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 # Provision skill-pack into multi-agent discovery paths.
 # SoT map:
-#   bookkit          → toolset/skill-pack/bookkit  (Produkt A)
-#   compose-chapter  → toolset/skill-pack/compose-chapter  (Produkt A)
-#   media-brief      → domains/medical/skill/media-brief  (Produkt B; skill-pack may symlink)
-#   generic          → studio .github/skills/*
+#   bookkit                      → toolset/skill-pack/bookkit  (Produkt A)
+#   compose-chapter              → toolset/skill-pack/compose-chapter  (Produkt A)
+#   studio                       → toolset/skill-pack/studio  (A meta)
+#   book-production-orchestrator → toolset/skill-pack/book-production-orchestrator  (A meta)
+#   form-lab-orchestrator        → toolset/skill-pack/form-lab-orchestrator  (lab-learning meta)
+#   media-brief                  → domains/medical/skill/media-brief  (Produkt B)
+#   medical-graphics             → domains/medical/skill/medical-graphics  (Produkt B)
+#   open-assets                  → domains/medical/skill/open-assets  (Produkt B)
+#   content-orchestrator         → domains/content-maturity/skill/content-orchestrator  (Produkt C)
+#   content-review               → domains/content-maturity/skill/content-review  (Produkt C)
+#   generic                      → studio .github/skills/* (typst-writer, typst-extension, pinit-workflow)
 set -euo pipefail
 Root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 Target="${1:-.}"
@@ -91,6 +98,19 @@ if src="$(resolve_skill_src open-assets \
     "$Root/domains/medical/skill/open-assets" \
     "$Root/toolset/skill-pack/open-assets")"; then
   provision_skill open-assets "$src"
+fi
+
+# Content maturity skills (C) — SoT under domains/content-maturity
+if src="$(resolve_skill_src content-orchestrator \
+    "$Root/domains/content-maturity/skill/content-orchestrator" \
+    "$Root/toolset/skill-pack/content-orchestrator")"; then
+  provision_skill content-orchestrator "$src"
+fi
+
+if src="$(resolve_skill_src content-review \
+    "$Root/domains/content-maturity/skill/content-review" \
+    "$Root/toolset/skill-pack/content-review")"; then
+  provision_skill content-review "$src"
 fi
 
 # Generic skills from studio (if present)

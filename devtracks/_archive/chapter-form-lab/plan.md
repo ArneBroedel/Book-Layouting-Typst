@@ -1,14 +1,14 @@
 # Plan — Chapter Form Lab
 
-**Status:** active · craft waves a/b/c done · **lab-learning skill established** 2026-08-02 · **Pass O open-asset pilot** 2026-08-03  
+**Status:** **ARCHIVED 2026-08-03** · lab program complete · Pass O pilot closed as delivered · [STATUS.md](STATUS.md)  
 **Mission class:** **lab-learning** — not default production chapter pipeline  
 **Spec:** [spec.md](spec.md)  
 **Portfolio (N=4):** [portfolio.md](portfolio.md) — Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie  
-**Open-Asset pilot (parallel, testable):** policy [`domains/medical/OPEN-ASSET-POLICY.md`](../../domains/medical/OPEN-ASSET-POLICY.md) · board `toolset/orchestration/form-lab/portfolio-open-asset-2026-08/` · labs `*-2026-08-o` · pilots `form-lab-*-o` — **not** deep-wired into production Graphics or Form Lab COMPLETE  
+**Open-Asset pilot (parallel, testable):** policy [`domains/medical/OPEN-ASSET-POLICY.md`](../../domains/medical/OPEN-ASSET-POLICY.md) · board `toolset/orchestration/form-lab/portfolio-open-asset-2026-08/` · labs `*-2026-08-o` · pilots `form-lab-*-o` — **not** deep-wired into production Graphics or Form Lab COMPLETE (production wire → trilogy **T2**)  
 **Runtime:** `toolset/orchestration/form-lab/<lab-id>/`  
 **Skill SoT:** `toolset/skill-pack/form-lab-orchestrator/` (default **L2 autodrive-to-complete**)  
 **Studio entry:** situation **9** → handoff to `form-lab-orchestrator` (Studio never crafts itself; skill drives full program)  
-**First chapter:** Gicht · kl-kurz · `chapter-v-3-gicht.md`  
+**Canonical harvest:** `toolset/orchestration/form-lab/portfolio-2026-08-d/harvest/` (prefer latest; c also complete)  
 
 ---
 
@@ -488,10 +488,12 @@ Human final rank overrides agent if conflict.
 
 | When | Work | Status |
 |---|---|---|
-| P0 | Templates under `toolset/orchestration/form-lab/_templates/` | done |
-| Craft waves a/b/c | four monographs depth-first T→S | craft done |
+| P0 | Templates under `toolset/orchestration/form-lab/_templates/` | **done** |
+| Craft waves a/b/c/d | four monographs depth-first T→S | **craft COMPLETE** |
 | Skill separation | `form-lab-orchestrator` + studio situation 9 + harvest gate | **done 2026-08-02** |
-| Wave-c harvest | portfolio form-vocabulary + production-bridge | done (no re-craft) |
+| Wave-c/d harvest | portfolio form-vocabulary + production-bridge | **done** |
+| Pass O pilot | open-asset policy + four `*-o` labs drafted | **closed at archive** (pilot delivered; wire → T2) |
+| Production consumption of bridge / open-assets | sit.2 + book-prod wire | **→ T2** (not this plan) |
 | Not blocking lab | Full MCP / automation / skill-creator eval suite | deferred |
 
 Scripts:
@@ -534,20 +536,25 @@ Expect **many sessions**. That is the design.
 
 ---
 
-## 12. Immediate next steps (after Human plan OK)
+## 12. Post-archive guidance
 
-1. Human confirms D1–D8 (or edits in kickoff).  
-2. OR creates `toolset/orchestration/form-lab/gicht-2026-08/` (or chosen lab-id) from `_templates/`.  
-3. Write `pins.md` from Kursbuch Gicht + existing pilot claims.  
-4. Emit Pass T HAND-OFF + `medium-rules-T.md`.  
-5. **Stop OR.** Start **new session** Pass T Worker only.
+**Do not** restart Pass T kickoff or re-open this track for craft waves.
 
-Do **not** start Pass C until T medium-optimum (or Human waiver with residual).
+1. New Form Lab work → skill `form-lab-orchestrator` + runtime boards (not this archived plan as working memory).  
+2. Production open-assets wire → [open-assets-production-wire](../../open-assets-production-wire/) after **T1**.  
+3. Design/Visual CLEAN science → archived DQS provenance + living B skills.
+
+### Historical kickoff sequence (provenance — waves already ran)
+
+1. Human confirms D1–D8 → OR scaffolds lab-id from `_templates/`.  
+2. pins → Pass T HAND-OFF → craft loop → … → harvest.  
+3. Do not start Pass C until T medium-optimum (or residual waiver).
 
 ### File index (this track)
 
 | File | Role |
 |---|---|
+| [STATUS.md](STATUS.md) | Audit verdict, residual, alignment |
 | [spec.md](spec.md) | Goals, roles, success criteria, pass catalog |
 | [plan.md](plan.md) | Architecture, phases, caps, prompts |
 | [portfolio.md](portfolio.md) | Four chapters + diversity rationale + order |
@@ -557,18 +564,30 @@ Do **not** start Pass C until T medium-optimum (or Human waiver with residual).
 
 ---
 
-## 13. Decisions log (fill at kickoff)
+## 13. Decisions log
 
 | ID | Decision | Date |
 |---|---|---|
 | D1 Portfolio N=4 | **Gicht · Schlaganfall · Melanom-ABCDE · Anaphylaxie** ([portfolio.md](portfolio.md)) | 2026-08-02 |
-| D2 Execution order | *pending* (default A depth-first, Gicht first) | |
-| D3 Pass D | *pending* | |
-| D4 Min rounds | *pending* (default 3) | |
-| D5 Max rounds | *pending* (default 12) | |
-| D6 Session model | *pending* (default new session / pass) | |
-| D7 H-Pass gate | *pending* | |
-| D8 Pass R gen budget | *pending* | |
+| D2 Execution order | **A** depth-first, Gicht first | 2026-08-02 (practiced) |
+| D3 Pass D | Optional; not required on completed waves | 2026-08-02 |
+| D4 Min rounds | **3** | 2026-08-02 |
+| D5 Max rounds | **12** | 2026-08-02 |
+| D6 Session model | New session preferred; L2 in-session role-split OK | 2026-08-02 |
+| D7 H-Pass gate | **Waived** agent PC + matrix (board-documented) | 2026-08-02 |
+| D8 Pass R gen budget | Above production (8–12 class) | 2026-08-02 |
+
+---
+
+## 14. Alignment with open tracks
+
+| Track | Relation |
+|---|---|
+| [design-quality-system](../design-quality-system/) | CLEAN science SoT; Form Lab uses PNG/claim honesty with **medium-optimum** bar |
+| [multi-chapter-explore-layout](../multi-chapter-explore-layout/) | Explore portfolio throughput (done/idle); different mission from medium extremes |
+| [collab-control-plane](../../collab-control-plane/) **T1** | Form Lab ≠ production default; L2 glossary split; COMPLETE ≠ Accept |
+| [open-assets-production-wire](../../open-assets-production-wire/) **T2** | Reads production-bridge; wires open-assets on **production** paths (not Pass O re-run) |
+| [orchestration-quality-state](../../orchestration-quality-state/) **T3** | Book-production board cells; Form Lab boards stay separate phase machine |
 
 ---
 
@@ -577,9 +596,12 @@ Do **not** start Pass C until T medium-optimum (or Human waiver with residual).
 | Target | What |
 |---|---|
 | `toolset/skill-pack/form-lab-orchestrator/` | Process skill L0–L7, ALWAYS/NEVER, lab≠production |
-| `toolset/orchestration/form-lab/README.md` + `_templates/` | Harvest gate + templates |
+| `toolset/orchestration/form-lab/README.md` + `_templates/` | Harvest gate + templates (+ medium-rules-O pilot) |
 | `toolset/orchestration/form-lab/portfolio-2026-08-c/harvest/` | Wave-c form-vocabulary + production-bridge |
+| `toolset/orchestration/form-lab/portfolio-2026-08-d/harvest/` | Wave-d form-vocabulary + production-bridge (**prefer latest**) |
+| `domains/medical/OPEN-ASSET-POLICY.md` + Pass O boards | Open-asset pilot policy (lab) |
 | `toolset/skill-pack/studio/` situation 9 | Route to form-lab-orchestrator |
 | `AGENTS.md` / `CLAUDE.md` / `docs/KNOWLEDGE-MAP.md` | When-to-use / when-not-default-production |
+| Trilogy T1–T2 (deferred residual) | L2 glossary / Form Lab ≠ Accept · production-bridge + open-assets wire |
 
-Track remains **active** until optional guide harvest + archive decision; craft research waves complete.
+**Archive:** `git mv` → `devtracks/_archive/chapter-form-lab/` on 2026-08-03 (Human: close three old tracks). Runtime + skill stay live.

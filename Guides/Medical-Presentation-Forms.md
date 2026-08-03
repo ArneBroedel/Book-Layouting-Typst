@@ -19,7 +19,7 @@ The operational artifacts are:
 3. **Design Critique** — adversarial pass until **Design CLEAN**  
    `domains/medical/templates/design-critique.template.md`
 
-Process: `devtracks/design-quality-system/`.  
+Process: `devtracks/_archive/design-quality-system/`.  
 
 **Doctrine (intensity continuum, not binary):** use the **lowest** form intensity that earns clear teaching gain under book density:
 

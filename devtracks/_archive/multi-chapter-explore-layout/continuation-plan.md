@@ -1,7 +1,7 @@
-# Continuation plan — after portfolio idle (2026-08-01)
+# Continuation plan — after portfolio idle
 
-**Status:** Phase 2 (W0+W1) **complete** · portfolio idle  
-**Verification:** [verification-2026-08-01.md](verification-2026-08-01.md)
+**Status:** process **complete** · portfolio idle · **archive-eligible** (audit 2026-08-03)  
+**Verification:** [verification-2026-08-01.md](verification-2026-08-01.md) · [STATUS.md](STATUS.md)
 
 ---
 
@@ -12,8 +12,9 @@ P0 Kickoff ────────────── done
 P1 Portfolio lock ─────── done (N=10 Mix)
 P2 Wave execution ─────── done (10/10 pilots)
 P3 Optional assembly ──── deferred (D8)
-P4 Harvest (process) ──── done 2026-08-01 · archive deferred
-Human layout evaluation ─ open (indent / structure / scan-path)
+P4 Harvest (process+eval) done 2026-08-01 · revise wave done
+Archive Human decision ── open
+Optional craft residual ─ not process-blocking
 ```
 
 Board: `toolset/orchestration/book-production/kursbuch-explore-2026-08/` · route: **portfolio idle**
@@ -22,37 +23,32 @@ Board: `toolset/orchestration/book-production/kursbuch-explore-2026-08/` · rout
 
 ## Branching options (Human chooses)
 
-### Option A — **Harvest now** (recommended default if quality “good enough”)
+### Option A — **Archive now** (recommended if process enough)
 
-**Goal:** Close the track’s *process* work; encode multi-chapter lessons; archive or keep board for later W2.
+Process harvest, eval corpus, and revise wave are **already done**.
 
 | Step | Action | Owner |
 |---|---|---|
-| A1 | Optional: Human sample 4–5 PDFs (see verification) | Human |
-| A2 | Write short retro (what scaled, monotony, parallel-worker risks) | Agent |
-| A3 | Execute [phase4-harvest.md](phase4-harvest.md): deltas to orchestrator/studio only if new | Agent |
-| A4 | Fill board unit-detail gaps lightly (optional) | Agent |
-| A5 | Footer `## Harvested into` on plan.md | Agent |
-| A6 | Keep board **idle** for future W2 **or** archive track if no W2 planned | Human |
+| A1 | Optional sample of PDFs (curiosity, not gate) | Human |
+| A2 | Confirm “archive explore track” | Human |
+| A3 | Agent: final STATUS/plan footer check · `git mv` → `_archive/` | Agent |
+| A4 | Keep board dir as frozen provenance under `toolset/orchestration/…` | — |
 
 **Do not** force P7 assembly unless Human reopens D8.
 
 ---
 
-### Option B — **Human H-Explore first**, then harvest or revise
+### Option B — **Optional R2 craft** (polish only)
 
 | Step | Action |
 |---|---|
-| B1 | Human opens sample PDFs (genre cross-cut) |
-| B2 | For each: `go` / `revise` / `note` |
-| B3a | All go → Option A harvest |
-| B3b | Revise list → reopen board cells; new SESSION-START session for **only** revise chapters (regular skill path) |
+| B1 | Human names residual chapters (e.g. BLS, Stroke, Rücken intensity) |
+| B2 | New session: regular skills (compose / graphics / VC) — **not** Form Lab by default |
+| B3 | Log on board notes; track may still archive after |
 
 ---
 
 ### Option C — **W2 expansion** (more chapters)
-
-Only after A or B.
 
 | Step | Action |
 |---|---|
@@ -64,15 +60,15 @@ Suggested W2 themes (not locked): more quiet KL; IV leitsymptom; one legal/I-cha
 
 ---
 
-### Option D — **Promote subset to production** (later track or same board mode switch)
+### Option D — **Promote subset to production**
 
-Out of current exploration charter:
+Out of exploration charter:
 
 - H1 freeze per chapter  
 - production Accept H2  
 - possibly P7–P11  
 
-Requires **explicit** Human decision + likely new `brief_class: production` board or row flags — **not** silent upgrade of exploration accepts.
+Requires **explicit** Human decision + likely new `brief_class: production` board — **not** silent upgrade of exploration accepts. Trilogy T1–T3 should be preferred for production wiring before large promote.
 
 ---
 
@@ -86,15 +82,15 @@ Requires **explicit** Human decision + likely new `brief_class: production` boar
 
 ---
 
-## Recommended sequence (default) — updated after harvest
+## Recommended default (2026-08-03)
 
 ```text
-1. You: H-Explore / layout craft sample (indent, structure, flow)
-2. Optional: layout revise wave on named chapters (regular skill path, new session)
-3. When quality evaluation complete → archive track OR open W2
+1. Human: archive track (process complete) OR name R2 list
+2. Do not reopen full portfolio re-run
+3. Medium extremes / open-assets production wire → chapter-form-lab residual / trilogy T2 — not this board
 ```
 
-Process harvest is **done**. Remaining work is **quality**, not “more pipeline volume” unless you expand portfolio.
+Process harvest is **done**. Remaining work is **optional quality** or **explicit expansion**, not missing pipeline.
 
 ---
 

@@ -13,7 +13,7 @@ Owns **board + run-log + route**, drives **serial medium passes** with iterative
 
 **SoT:** `toolset/skill-pack/form-lab-orchestrator/`  
 **Runtime:** `toolset/orchestration/form-lab/<lab-id>/`  
-**Track:** `devtracks/chapter-form-lab/`  
+**Track:** `devtracks/_archive/chapter-form-lab/`  
 **README:** `toolset/orchestration/form-lab/README.md`  
 **Autonomy detail:** [`references/autonomy.md`](references/autonomy.md)
 
@@ -247,6 +247,6 @@ Templates: `toolset/orchestration/form-lab/_templates/`.
 | Production one chapter | studio situation 2 |
 | Pass R helpers | `medical-graphics` + `prompt-and-semantic-read.md` |
 | Typst craft | `typst-writer` / `compose-chapter` |
-| Track | `devtracks/chapter-form-lab/` |
+| Track | `devtracks/_archive/chapter-form-lab/` |
 | Boundaries | [`references/boundaries.md`](references/boundaries.md) |
 | Roles | [`references/roles.md`](references/roles.md) |

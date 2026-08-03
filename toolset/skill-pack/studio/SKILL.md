@@ -30,7 +30,8 @@ specialist procedure when its turn comes).
 
 **SoT:** `toolset/skill-pack/studio/`  
 **Does not replace:** specialist skills — **routes and interviews** into them.  
-**Full-book durable board** still lives in **`book-production-orchestrator`**.
+**Full-book durable board** still lives in **`book-production-orchestrator`**.  
+**Obey:** [`COLLABORATION-CONTRACT.md`](../COLLABORATION-CONTRACT.md) — entry, controllers, greens, session law, **done definition** (packet + Accept + embed + validate; multi-unit + chapter macro VC). Studio routes; does not invent Accept or CLEAN.
 
 ---
 
@@ -132,19 +133,21 @@ Hard rules:
 
 1. **Production** compose quality bar needs **H1 freeze** + later **H2 accept** — say so early.  
 2. Non-prose visuals → **Form Spec + Design Contract + Design Critic (Design CLEAN)** before free vision (`medical-graphics`).  
-3. Real visual units default to **`free-vision-ambition`** track; after realize → **Visual Critic on PNG (Visual CLEAN)** before Accept.  
-4. Exploration does **not** waive Visual CLEAN for didactic chapter PDFs.  
-5. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics (not ad-hoc script hunting).  
-6. Full multi-chapter durable drive → create/use board via **`book-production-orchestrator`**.  
-7. C-only review loops → **`content-orchestrator`** (max 2 rounds → H3).  
-8. Never invent clinical claims; never agent-sign freeze/proof.  
-9. Anatomy free vision: paused unless Human **H-Gfx** reopens.  
-10. **L2** may auto-run MD→DC→GX→VC within budgets; must **not** declare “done” on validate alone or self-Accept sole-built work.  
-11. **Density is two-sided** (CRPS 2026-07-31): avoid empty sprawl *and* avoid squish-compress; page count is not a success metric.  
-12. Free-vision ambition: default **focused, label-free raster**; FAIL → demote to solid simple form — **never** decorative placeholder “geometry theater”.  
-13. **Pretty first-glance** is not Accept; prefer Human H-Explore on ambitious units when laterality/body/leaders are in play.  
-14. **L2 multi-chapter:** continue until portfolio idle (or hard stop) — no premature single-chapter exit.  
-15. **Macro layout scan-path** (structure, indent, calm flow on full page PNGs) is part of Visual CLEAN / compose done (portfolio 2026-08-01).
+3. After Design CLEAN: resolve **`open_asset_scan`** (required | optional | skip) **before** free gen when realism/icons/third-party may apply — call **`open-assets`** when required; skip documented for code-only.  
+4. Real visual units default to **`free-vision-ambition`** track; after realize → **Visual Critic on PNG (Visual CLEAN)** before Accept.  
+5. Multi-unit quality chapter → **chapter macro VC** on assembled full-page PNGs after compose (not only unit CLEAN). Book **P9** stays multi-chapter assembly sample.  
+6. Exploration does **not** waive Visual CLEAN for didactic chapter PDFs.  
+7. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics (not ad-hoc script hunting).  
+8. Full multi-chapter durable drive → create/use board via **`book-production-orchestrator`**.  
+9. C-only review loops → **`content-orchestrator`** (max 2 rounds → H3).  
+10. Never invent clinical claims; never agent-sign freeze/proof.  
+11. Anatomy free vision: paused unless Human **H-Gfx** reopens.  
+12. **L2** may auto-run MD→DC→(open-assets if needed)→GX→VC within budgets; must **not** declare “done” on validate alone or self-Accept sole-built work.  
+13. **Density is two-sided** (CRPS 2026-07-31): avoid empty sprawl *and* avoid squish-compress; page count is not a success metric.  
+14. Free-vision ambition: default **focused, label-free raster**; FAIL → demote to solid simple form — **never** decorative placeholder “geometry theater”.  
+15. **Pretty first-glance** is not Accept; prefer Human H-Explore on ambitious units when laterality/body/leaders are in play.  
+16. **L2 multi-chapter:** continue until portfolio idle (or hard stop) — no premature single-chapter exit.  
+17. **Macro layout scan-path** (structure, indent, calm flow on full page PNGs) is part of Visual CLEAN / compose done (portfolio 2026-08-01).
 
 ### Mini-pipeline (situation 2 — one chapter)
 
@@ -155,18 +158,30 @@ content ready?
   no  → content-review / author (C)
   yes → freeze? (H1 if production)
         → media-brief: Brief + Form Specs + Design Contracts
+              (set open_asset_scan: required | optional | skip per unit)
         → Design Critic loop until Design CLEAN (budget 4 → H-Design)
+        → open-assets when open_asset_scan = required
+              (optional: light path when optional)
+              (skip: one-line Decision Note / packet when n/a — code-only OK)
+              MANIFEST outcome accepted|gap before free gen when required
         → medical-graphics: track → free vision (focused; default no labels in raster)
               → claim audit (labels + illustration-semantics + laterality)
               → harvest → realize (or step down intensity on FAIL)
-        → Visual Critic on PNG until Visual CLEAN (budget 5 → Human)
+        → unit Visual Critic on PNG until Visual CLEAN (budget 5 → Human)
               attack sparse-sprawl AND squish-compress
         → quality packet → media-brief Accept (AX; H2 if production)
               solid simple alternative after ambition FAIL may accept
+              third-party embed needs rights/MANIFEST outcome
         → compose-chapter (readable book rhythm; no page-count vanity)
+        → (multi-unit quality chapter) chapter macro VC on full-page PNGs
+              (code-leak, overflow, macro scan-path, uncontracted chrome;
+               cap ~2 assembly rounds → H-Explore / stop unclean)
         → bookkit validate (+ build)
         → optional prepress / proof (H4)
 ```
+
+**Sequence lock:** Design CLEAN → (conditional open-assets) → free vision → unit Visual CLEAN → packet → Accept → compose → (chapter macro VC if multi-unit) → validate.  
+open-assets is **unit-conditional** only — never always-on. If a production-bridge harvest exists for the topic, specialists cite-if-present (advisory).
 
 At each Human gate: **stop**, state exactly what the user must decide/sign, paths, then wait.  
 Process evidence: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`.
@@ -180,6 +195,17 @@ Hand durable control to **`book-production-orchestrator`**:
 3. Either continue as that orchestrator **or** tell the user the resume phrase for later sessions.
 
 Studio may **stay as session host**: after each specialist step, re-check route (status) and call the next skill — still using the **board** as SoT when a book-id exists.
+
+### Sit.2 durable board policy
+
+| Autonomy / context | Board? |
+|---|---|
+| L0 route-only, single short session | **No** |
+| L1 single-unit single-session | Optional |
+| L1+ multi-unit **or** “continue later” **or** L2 | **Create** `toolset/orchestration/book-production/<slug>/` with `scope: single-chapter` |
+| User requests resume/status | Create if missing |
+
+One board family only (book-production templates). **If board already exists → resume owner is `book-production-orchestrator`** (situation 7) — no shadow studio board schema.
 
 ---
 
@@ -211,19 +237,23 @@ Before the first specialist work product, write a short route (chat + optional f
 - book_id: <or n/a>
 - lab_id: <or n/a>
 - graphics_track: free-vision-ambition | grammar-only | mixed | none | tbd
-- design_clean: no | yes | partial | tbd
-- visual_clean: no | yes | partial | tbd
-- next_skill: …
+- design_clean: n/a | missing | partial | clean | blocked | tbd
+- visual_clean: n/a | missing | partial | clean | blocked | tbd
+- macro_vc: todo | clean | blocked | n/a | tbd
+- quality_packet: missing | path | ready | tbd
+- open_assets: n/a | needed | partial | done | blocked | tbd
+- open_asset_scan: required | optional | skip | — (focus unit Media SoT)
+- next_skill: … (include open-assets when scan required)
 - next_action: …
 - cli: `./scripts/bookkit …` if any
 - human_gate_soon: none | H1 | H-Design | H2 | H-Explore | H-Gfx | H4 | …
 - do_not: … (for situation 9: do not run Form Lab medium craft in studio)
 ```
 
-When visual ambition is heavy (situation 2/4), expect **`graphics_track: free-vision-ambition`** (or `mixed`) for ≥1 unit — **not** a silent grammar-only skip. Require **Design CLEAN** before free vision and **Visual CLEAN** (PNG) before Accept. Do **not** treat first PDF + validate OK as done.
+When visual ambition is heavy (situation 2/4), expect **`graphics_track: free-vision-ambition`** (or `mixed`) for ≥1 unit — **not** a silent grammar-only skip. Require **Design CLEAN** before free vision and **Visual CLEAN** (PNG) before Accept. Do **not** treat first PDF + validate OK as done. Route-card quality fields are **resume indices** — critique/PNG evidence stays in artifacts.
 
 Optional path: `toolset/orchestration/studio-routes/<slug>-<date>.md` (create dir if useful).  
-For full-book, prefer board `route.md` from book-production-orchestrator templates.
+For full-book or sit.2 durable resume, prefer board `route.md` from book-production-orchestrator templates (`scope: full-book` \| `single-chapter`).
 
 ---
 
@@ -252,8 +282,9 @@ For full-book, prefer board `route.md` from book-production-orchestrator templat
 | Start with goal + situation menu when ambiguous | Assume full-book production without asking |
 | Ask only missing intake fields | Copy content SoT into `packages/` or this repo as SoT |
 | Name next_skill + Human gates before deep work | Skip Form Spec for free-vision ambition |
-| Surface `graphics_track` + `design_clean` / `visual_clean` on route card | Recommend skip free vision to save time when ambition required |
-| Enforce Design CLEAN → Visual CLEAN before Accept | Declare chapter done on validate alone / self-Accept |
+| Surface `graphics_track` + `design_clean` / `visual_clean` + open-assets need on route card | Recommend skip free vision to save time when ambition required |
+| Enforce Design CLEAN → (open-assets if required) → free vision → Visual CLEAN before Accept | Free vision when `open_asset_scan=required` without source-scan + MANIFEST outcome (`accepted`\|`gap`) |
+| Multi-unit quality chapter: **chapter macro VC** after assemble before done | Multi-unit chapter done on unit CLEAN alone / validate alone / self-Accept |
 | Prefer bookkit CLI verbs | Invent Critical Claims or clinical numbers |
 | Stop at H1/H2/H4/H5/H-Gfx | Agent-sign freeze/proof/imprimatur |
 | Keep A/B/C boundaries | Dump research/ as default context |
@@ -261,6 +292,9 @@ For full-book, prefer board `route.md` from book-production-orchestrator templat
 | Focus free vision; pretty ≠ textbook-ready | Multi-pin labeled limb dashboards as default “ambition” |
 | Route Form Lab to situation **9** → `form-lab-orchestrator` | Run Form Lab T→C→V→R craft stack inside studio |
 | Treat Form Lab as **lab-learning** (not default chapter path) | Open Form Lab for every “layout this chapter” request |
+| open-assets unit-conditional (`required`\|`optional`\|`skip`) | Always-on open-assets phase for every unit / empty MANIFEST ceremony for code-only |
+| Sit.2 durable board only when multi-unit / multi-session / L2 / user asks (`scope: single-chapter`) | Always-on sit.2 boards for L0; shadow studio board schema |
+| Resume → book-production when board exists | Keep parallel studio board as SoT |
 
 ---
 

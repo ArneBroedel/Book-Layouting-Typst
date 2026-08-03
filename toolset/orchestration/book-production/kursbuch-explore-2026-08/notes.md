@@ -13,7 +13,7 @@ Mark done + link
 defer
 ```
 
-Mapped to track D1–D8 in `devtracks/multi-chapter-explore-layout/decisions.md`.
+Mapped to track D1–D8 in `devtracks/_archive/multi-chapter-explore-layout/decisions.md`.
 
 ## Interpretation of “agent only”
 
@@ -25,6 +25,6 @@ Mapped to track D1–D8 in `devtracks/multi-chapter-explore-layout/decisions.md`
 
 | | |
 |---|---|
-| Track | `devtracks/multi-chapter-explore-layout/` |
+| Track | `devtracks/_archive/multi-chapter-explore-layout/` |
 | Board | `toolset/orchestration/book-production/kursbuch-explore-2026-08/` |
 | CRPS baseline PDF | `dist/pilots/kl-crps-2026-07-31/chapter.pdf` |

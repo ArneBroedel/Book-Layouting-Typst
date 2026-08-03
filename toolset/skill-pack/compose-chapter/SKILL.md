@@ -106,11 +106,12 @@ Allowed **only** for smoke tests, platform fixtures, legacy comparison — **not
 
 1. Read Media Brief **as design authority** — do not open forms.yaml first.
 2. For each section: state how the **ideal** will be realized (ladder above). Prefer `mapped` only when stable form = best shape.
-3. For **visual units**: expect **Design CLEAN** packet (Form Spec + Design Contract + Design Critic) before graphics; set **`graphic_mode`**. Load **`medical-graphics`** for realize + **Visual CLEAN** (PNG critique). Embed **Media Accept winners** only when Accept links Design CLEAN + Visual CLEAN. Link `graphic_decisions` + quality packet in feasibility.
-4. Pin optional `catalog_version` for preferred library awareness — **not** a cage.
-5. Spike recommended? yes/no + goal (layout, code-graphic, asset-graphic, or ab-pair).
-6. Ready for Media Accept? yes / blockers.
-7. **Write the feasibility file** (link `graphics_decision_path` when Graphics was invoked).
+3. For **visual units**: expect **Design CLEAN** packet (Form Spec + Design Contract + Design Critic) before graphics; set **`graphic_mode`**. Load **`medical-graphics`** for realize + **Visual CLEAN** (PNG critique). Embed **Media Accept winners** only when Accept links Design CLEAN + Visual CLEAN. Link `graphic_decisions` + quality packet in feasibility. Third-party assets need MANIFEST rights outcome on Accept — do not re-license.
+4. **production-bridge (read-if-present, advisory):** if a Form Lab harvest bridge exists for the job class (`toolset/orchestration/form-lab/**/harvest/production-bridge.md` or portfolio harvest), may note it as a comment / bias — **never** as whitelist, Accept substitute, or form-id cage. Media still owns ideal; Graphics cites bridge after Design CLEAN.
+5. Pin optional `catalog_version` for preferred library awareness — **not** a cage.
+6. Spike recommended? yes/no + goal (layout, code-graphic, asset-graphic, or ab-pair).
+7. Ready for Media Accept? yes / blockers.
+8. **Write the feasibility file** (link `graphics_decision_path` when Graphics was invoked).
 
 Suggested path: `…/<slug>.feasibility.md`.
 
@@ -198,6 +199,19 @@ Smoke/platform: `--profile smoke` (default) may omit freeze.
    `#import "/domains/medical/lib/typst/explore-2026-08/section-rhythm.typ": setup-pilot-sections, pilot-title-stack`  
    then `#show: setup-pilot-sections()` after `setup-typography()`.
 
+8b. **Chapter macro VC (multi-unit quality chapters — non-skippable)** — Collaboration Contract §8 / T2 wire:  
+   When a chapter is presented as a **quality result** with **multiple visual units**, unit Visual CLEAN alone is **not** done.
+
+   | | |
+   |---|---|
+   | **When** | Multi-unit chapter quality PDF (production or exploration) |
+   | **What** | Export **assembled** chapter full-page PNGs; Visual Critic auto-blocks: code-leak, overflow, macro scan-path, uncontracted chrome |
+   | **Cap** | ~**2** assembly rounds → **H-Explore** / stop unclean (align DQS budgets) |
+   | **Single-unit** | macro VC may be **n/a** if unit PNGs already full-page context — **state explicitly** |
+   | **vs book P9** | Book **P9** remains multi-chapter portfolio re-check — do **not** call chapter re-check “mini-P9” |
+
+   Fail → fix compose → re-export → re-run Visual Critic. Do not mark quality done without this when multi-unit.
+
 9. **Chrome intensity ladder (required — Human 2026-08-01)** — unified house chrome; do not mix solid full-bleed danger with pale left-bar bands on the same page without reason:
 
    | Level | Look | Use for |
@@ -283,8 +297,11 @@ When ideal needs a **reusable** pattern:
 | Prefer Accept that links Design CLEAN + Visual CLEAN | Compose “done” from validate-only dirty pilots |
 | Validate with creative mode (default) | Fail a good design solely for using Fletcher/custom |
 | Macro scan-path on full chapter PNGs (structure, indent, flow) | Ship restless/unclear page structure as “Visual CLEAN enough” |
+| Multi-unit quality chapter: **chapter macro VC** after assemble | Multi-unit done on unit CLEAN / validate alone |
+| production-bridge read-if-present as comment only | Treat bridge as whitelist / Accept substitute / form cage |
 | Print-dense compact flows; share page with next content | Full-page airy free-vision card stack as book body default |
 | Pack mid-chapter page bottoms | Half-empty pages mid-chapter for “premium air” |
+| Embed only Accept winners with rights when asset | Re-license or invent shorter BY credits |
 
 ## Boundary vs `media-brief` / `medical-graphics`
 
@@ -309,6 +326,8 @@ If multiple roles in one session: Brief → Feasibility/Graphics Decision → Ac
 | bookkit API skill | `toolset/skill-pack/bookkit/SKILL.md` |
 | Media skill (B) | `domains/medical/skill/media-brief/` |
 | Graphics skill (B) | `domains/medical/skill/medical-graphics/` |
+| Open assets (B) | `domains/medical/skill/open-assets/` |
+| Collaboration Contract | `toolset/skill-pack/COLLABORATION-CONTRACT.md` |
 | Governance | `devtracks/CONSENSUS-v0.md`, `PRODUCT-BOUNDARIES.md` |
 
 Produkt **A** engine is domain-agnostic. Content paths from **C**. Domain briefs/recipes from **B**.

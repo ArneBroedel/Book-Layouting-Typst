@@ -2,6 +2,9 @@
 
 Use this when mapping a user goal to a workflow. Prefer the **smallest** path that still hits quality bars.
 
+**Law:** [`COLLABORATION-CONTRACT.md`](../../COLLABORATION-CONTRACT.md) — controllers, greens, done.  
+**Negatives:** sit.**2** ≠ Form Lab · sit.**9** only lab-learning · “layout this chapter” ≠ Form Lab · Form Lab COMPLETE ≠ production Accept.
+
 ---
 
 ## 1 — Full book → layout + graphics + PDF/print
@@ -21,20 +24,50 @@ Use this when mapping a user goal to a workflow. Prefer the **smallest** path th
 ## 2 — One chapter → optimized layout (+ graphics)
 
 **Signals:** single MD/chapter, “dieses Kapitel layouten”, one Form Spec set.  
-**Not Form Lab:** for medium-extreme research use situation **9**.
+**Not Form Lab:** sit.2 is production/exploration mini-pipeline — **not** lab-learning. For medium-extreme research use situation **9** only.
+
+**Done (Contract):** packet index + Accept + embed winners + validate; multi-unit quality PDF also needs **chapter macro VC**. See [`COLLABORATION-CONTRACT.md`](../../COLLABORATION-CONTRACT.md) §8.
 
 **Entry:** studio **hosts** mini-pipeline (not necessarily a full board):
 
-1. Content mature? → else `content-review`  
-2. Production? → **H1 freeze**  
-3. `media-brief` → brief + form-specs + **design-contracts** → Design Critic until **Design CLEAN**  
-4. Visual units → `medical-graphics` (track default **free-vision-ambition**; harvest→atoms; realize) → **Visual Critic on PNG until Visual CLEAN**  
-5. Accept only on quality packet (H2 if production; exploration still needs Visual CLEAN)  
-6. `compose-chapter` → embed Accept winners → `bookkit validate` / build  
+```text
+content ready?
+  no  → content-review / author (C)
+  yes → freeze? (H1 if production)
+        → media-brief: Brief + Form Specs + Design Contracts
+              (Media sets open_asset_scan: required | optional | skip per unit)
+        → Design Critic loop until Design CLEAN
+        → open-assets branch (unit-conditional — NOT always-on):
+              required → source scan + MANIFEST outcome accepted|gap before free gen
+              optional → light scan when realism/icons may help
+              skip     → one-line Decision Note / packet field (code-only / schema OK)
+        → medical-graphics: free vision / realize (only after scan branch resolved)
+              → claim audit → harvest → realize
+        → unit Visual CLEAN (PNG; budget → Human)
+        → quality packet → media-brief Accept (AX; H2 if production)
+        → compose-chapter (embed Accept winners)
+        → (multi-unit) chapter macro VC on assembled full-page PNGs
+              (cap ~2 assembly rounds → H-Explore / stop unclean)
+        → bookkit validate (+ build)
+        → optional prepress / proof (H4)
+```
 
-**Route card:** `graphics_track`, `design_clean`, `visual_clean`. No grammar-only chapter default. Validate OK ≠ done.
+**open-assets is unit-conditional only** — never a fixed always-on phase. Code/schema units: `skip` without MANIFEST ceremony. Asset/third-party embed: Accept blocked without rights outcome (`accepted` | `gap` → demote to Typst alternative).
 
-**Optional:** create a one-chapter board under book-production if user wants resume later.
+**production-bridge (advisory):** if a Form Lab harvest bridge exists for the job class (e.g. `toolset/orchestration/form-lab/**/harvest/production-bridge.md` or portfolio harvest), specialists **cite-if-present** after Design CLEAN — never hard gate, never catalog cage.
+
+**Route card:** `graphics_track`, `design_clean`, `visual_clean`, `open_asset_scan` (per unit or chapter summary), `quality_packet`, `open_assets`, `macro_vc` when multi-unit. No grammar-only chapter default. Validate OK ≠ done.
+
+### Sit.2 durable board policy (one board family — no shadow studio board)
+
+| Autonomy / context | Board? |
+|---|---|
+| L0 route-only, single short session | **No** |
+| L1 single-unit single-session | Optional |
+| L1+ multi-unit **or** “continue later” **or** L2 | **Create** `toolset/orchestration/book-production/<slug>/` with `scope: single-chapter` |
+| User requests resume/status | Create if missing |
+
+Schema = book-production templates (`board` / `route` / `kickoff`). Resume owner when board exists → **book-production-orchestrator** (situation **7**). Studio must **not** invent a second board type.
 
 ---
 
@@ -104,7 +137,9 @@ Showcase dogfood: `src/main.typ` via `./scripts/build.sh fast` (not content SoT 
 **Entry:** `book-production-orchestrator` status/resume  
 **CLI:** `./scripts/book-production-status.sh <book-id>`  
 **If form-lab board** under `toolset/orchestration/form-lab/`: situation **9** → `form-lab-orchestrator` resume (Orchestrator only).  
-**If no board:** studio intake → create kickoff or situation 2.
+**If board exists under book-production:** resume owner = **book-production-orchestrator** — studio does **not** keep a shadow board; hand off with book_id.  
+**If no board:** studio intake → create kickoff (sit.1) or sit.2 mini-pipeline; create durable board only per sit.2 policy (`scope: single-chapter` when multi-session/L2).  
+**On resume:** reconcile quality cells (`design_clean`, `visual_clean`, `macro_vc`, `quality_packet`, `open_assets`) against artifact trees — do not invent CLEAN from chat.
 
 ---
 
@@ -123,7 +158,8 @@ Then map to 1–7 or **9** and confirm with the user.
 
 ## 9 — Form Lab (lab-learning medium extremes)
 
-**Signals:** “Form Lab”, medium extremes, T/C/V/R passes, form vocabulary, “welche Form gewinnt”, clean restart wave, full medium program, best-of fusion, harvest production-bridge.
+**Signals:** “Form Lab”, medium extremes, T/C/V/R passes, form vocabulary, “welche Form gewinnt”, clean restart wave, full medium program, best-of fusion, harvest production-bridge.  
+**Only lab-learning** — never silent default for sit.2 chapter layout. Form Lab L2 = autodrive-to-complete (≠ production L2). COMPLETE ≠ production Accept.
 
 **workflow_class:** `lab-learning`  
 **Entry:** **handoff** to `form-lab-orchestrator` (that skill’s **default = L2 autodrive-to-complete**)  

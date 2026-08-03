@@ -80,7 +80,7 @@ Evidence: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`.
 | SCORE hygiene (Wells / ABCD² / MHS) | SCOPE / Sensibilisierung — never TIME ladder |
 | T3 silent in C | Collapse — no empty third urgency card |
 
-Evidence: `devtracks/multi-chapter-explore-layout/retro-2026-08-01.md` · `evaluation/09-human-density-critique.md` · board `kursbuch-explore-2026-08` · ops `toolset/skill-pack/book-production-orchestrator/references/multi-chapter-explore.md`.
+Evidence: `devtracks/_archive/multi-chapter-explore-layout/retro-2026-08-01.md` · `evaluation/09-human-density-critique.md` · board `kursbuch-explore-2026-08` · ops `toolset/skill-pack/book-production-orchestrator/references/multi-chapter-explore.md`.
 
 ---
 

@@ -2,7 +2,7 @@
 
 **Slug:** `kl-crps-rerun-2026-07-30`  
 **Role:** regression / eval fixture notes — **not** Accept gold  
-**Policy track:** `devtracks/design-quality-system/`  
+**Policy track:** `devtracks/_archive/design-quality-system/`  
 **Prior harvest lesson:** `devtracks/_archive/free-vision-harvest/`
 
 ## What failed (product)

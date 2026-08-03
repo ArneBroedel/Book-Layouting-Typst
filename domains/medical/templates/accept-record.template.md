@@ -35,6 +35,15 @@ If any box unchecked → overall must be **revise** or **reject**, never accept.
 |---|---|---|---|---|---|---|---|
 | | free-vision-ambition\|grammar-only\|none | | yes/no | yes\|partial\|no\|n/a | yes\|waived\|n/a | | |
 
+### Rights / open-assets (when winner is asset or open-*)
+
+| unit_id | open_asset_scan | MANIFEST path | rights outcome | may Accept embed? |
+|---|---|---|---|---|
+| | required\|optional\|skip | path or n/a | accepted\|gap\|n/a | yes only if accepted **or** code demote after gap |
+
+- [ ] **No third-party embed without MANIFEST outcome `accepted`** (gap → Typst simple alternative is valid Accept path; silent AI-as-photo is not)
+- [ ] CREDITS / attribution_full present for CC BY and required licenses
+
 ### Free-vision proximity outcomes (Media)
 
 | Situation | Decision |
@@ -62,6 +71,7 @@ From `media-brief/references/design-reasoning.md` §5 — tick or note fail → 
 - [ ] Embed path filled for Tech (module and/or asset)
 - [ ] Production path after vision: recreate / refine / accept-asset noted if Graphics ran
 - [ ] Asset winner: claim audit PASS + DPI/manifest gates (playbook 06)
+- [ ] Asset/open-* winner: rights/MANIFEST `accepted` (or gap demote to code documented)
 - [ ] Design Contract atoms still hold on the page (no uncontracted chrome)
 - [ ] No code-leak / overflow / unreadable craft defects (Visual CLEAN)
 - [ ] No claim rewrite or new clinical thresholds in layout (incl. images)

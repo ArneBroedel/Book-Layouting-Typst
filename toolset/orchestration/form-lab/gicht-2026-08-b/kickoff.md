@@ -2,7 +2,7 @@
 
 - **date:** 2026-08-02
 - **wave:** 2026-08-b clean restart
-- **track:** `devtracks/chapter-form-lab/`
+- **track:** `devtracks/_archive/chapter-form-lab/`
 - **prior lab (provenance only):** `gicht-2026-08`
 
 ## Content

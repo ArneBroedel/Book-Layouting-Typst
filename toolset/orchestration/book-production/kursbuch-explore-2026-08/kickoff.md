@@ -4,7 +4,7 @@
 - **date:** 2026-08-01
 - **orchestrator:** book-production-orchestrator
 - **owner_human:** (session)
-- **devtrack:** `devtracks/multi-chapter-explore-layout/`
+- **devtrack:** `devtracks/_archive/multi-chapter-explore-layout/`
 
 ## Banner
 
@@ -18,7 +18,7 @@
 |---|---|
 | content_root (C) R6 | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs` |
 | content_root (C) R4 | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-04-fullbook` |
-| chapter list | `devtracks/multi-chapter-explore-layout/portfolio.md` (N=10 locked) |
+| chapter list | `devtracks/_archive/multi-chapter-explore-layout/portfolio.md` (N=10 locked) |
 | content_status expected | exploration mixed (format-ok pilots / monographs) |
 | content_revision pin | n/a exploration |
 

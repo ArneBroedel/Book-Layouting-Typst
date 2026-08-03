@@ -23,6 +23,17 @@ A premature stop is a **process failure** (observed after Kompartment; corrected
 
 Parallel workers are allowed for throughput **if** each chapter still produces full skill packets and board is reconciled before claiming idle.
 
+### L2 idle requires quality cells (T3)
+
+Do **not** mark a chapter row or portfolio **idle** until board-gated done is met:
+
+```text
+design_clean = clean|n/a · visual_clean rollup OK · macro_vc = clean|n/a
+quality_packet = ready · accept = accepted · compose = done · pdf path present
+```
+
+`validate` OK alone is **not** idle. Missing `quality_packet` / `macro_vc=todo` (when multi-unit) / open `open_assets=needed|blocked` → keep driving or stop as blocked — never silent idle.
+
 ## Multi-hour / multi-session
 
 1. **Board is SoT** — never only chat.  

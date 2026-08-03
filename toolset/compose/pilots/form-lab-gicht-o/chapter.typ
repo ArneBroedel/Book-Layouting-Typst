@@ -101,13 +101,13 @@
     base + "podagra-cc-by.jpg",
     w: 72mm,
     [Podagra — MTP-I gerötet/geschwollen],
-    [Wikimedia · Podagra.jpg · CC BY 3.0 DE],
+    [Gonzosft · CC BY 3.0 DE · Wikimedia],
   ),
   fig(
     base + "chronic-gout-cc-by.jpg",
     w: 58mm,
     [Chronische Gichtveränderung (Lehrbeispiel)],
-    [Wikimedia · ChronicGout.jpg · CC BY 2.5],
+    [NickGorton · CC BY 2.5 · Wikimedia],
   ),
 )
 

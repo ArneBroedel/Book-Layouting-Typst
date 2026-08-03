@@ -3,13 +3,16 @@
 **Skill:** `medical-graphics`  
 **Full plan (archived):** `devtracks/_archive/medical-graphics/playbook-system-plan.md`  
 **Harvest policy:** `devtracks/_archive/free-vision-harvest/`  
-**Design-quality:** `devtracks/design-quality-system/` (Design CLEAN → realize → Visual CLEAN)
+**Design-quality:** `devtracks/_archive/design-quality-system/` (Design CLEAN → realize → Visual CLEAN)
 
 ## End-to-end
 
 ```text
 Design CLEAN (Form Spec + Design Contract + Design Critic)
   → G0 Visual-Units + **track** (default free-vision-ambition)
+  → G0b open-assets when open_asset_scan=required
+       (optional light path; skip for code-only — no empty MANIFEST)
+       MANIFEST accepted|gap before free gen
   → G1 Free vision (if ambition track)
        short positive prompt → gen → **Semantic Read hard gate**
   → G2 Claim audit (incl. Semantic Read / illustration-semantics)
@@ -17,10 +20,10 @@ Design CLEAN (Form Spec + Design Contract + Design Critic)
   → G3 Realize (hierarchy-faithful recreate / hybrid / refine / A/B)
   → G3b Visual Critique on PNG (playbook 11) until Visual CLEAN
        Semantic Read FAIL remains auto-block
-  → Decision Note → Media Accept (AX) → Tech embed
+  → Decision Note (cite production-bridge if present) → Media Accept (AX) → Tech embed
 ```
 
-**Anti-patterns to kill:** free vision without Design CLEAN; free vision → pin-monotone; Accept without opening page PNGs; code-leak on page; **process “done” while Semantic Read FAIL is open**; long negative-list prompts as quality strategy; **caption-rescued CeTZ doodles** (blob+dot, smiley, arc-only airway) as “vector teaching”; **redundant marks for one job**; freestanding sticker cutouts when in-situ gestalt is the job.
+**Anti-patterns to kill:** free vision without Design CLEAN; free vision when `open_asset_scan=required` without MANIFEST outcome; free vision → pin-monotone; Accept without opening page PNGs; asset Accept without rights outcome; code-leak on page; **process “done” while Semantic Read FAIL is open**; long negative-list prompts as quality strategy; **caption-rescued CeTZ doodles** (blob+dot, smiley, arc-only airway) as “vector teaching”; **redundant marks for one job**; freestanding sticker cutouts when in-situ gestalt is the job.
 
 **Prompt + Semantic Read SoT:** [`../references/prompt-and-semantic-read.md`](../references/prompt-and-semantic-read.md)  
 Applies to free-gen **and** Typst/CeTZ teaching glyphs. Caption does not clear FAIL. Form Lab Pass S: **omit is a win**.
@@ -29,7 +32,8 @@ Applies to free-gen **and** Typst/CeTZ teaching glyphs. Caption does not clear F
 
 | Stage | Playbook | Output |
 |---|---|---|
-| G0 | [01-from-form-spec](01-from-form-spec.md) | unit list + recipe + **track** |
+| G0 | [01-from-form-spec](01-from-form-spec.md) | unit list + recipe + **track** + `open_asset_scan` |
+| G0b | skill `open-assets` (when required) | source-scan + MANIFEST `accepted`\|`gap` |
 | G1 | [02-free-vision](02-free-vision.md) | `*.vision.md` + PNG + **harvest draft** |
 | G2 | [03-claim-audit](03-claim-audit.md) | PASS/DRIFT/FAIL (harvest still required on ambition) |
 | G3a | [04-recreate-typst](04-recreate-typst.md) | hierarchy-faithful `lib/*.typ` + spike |
