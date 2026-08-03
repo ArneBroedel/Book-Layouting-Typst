@@ -23,6 +23,10 @@ from validate.claims import check_claims, extract_claims_from_content, normalize
 from validate.freeze_gate import check_freeze, is_valid_revision, parse_revision  # noqa: E402
 from validate.minima import check_minima, load_minima  # noqa: E402
 from validate.posthoc import build_posthoc  # noqa: E402
+from validate.quality_packet_gate import (  # noqa: E402
+    check_quality_packet,
+    extract_path_tokens,
+)
 from validate.runner import ValidateConfig, run_validation  # noqa: E402
 from validate.whitelist import check_whitelist, extract_calls  # noqa: E402
 
@@ -43,6 +47,7 @@ def _cfg(
     content: str | None = "content.md",
     profile: str = "smoke",
     whitelist_mode: str = "creative",
+    quality_packet: Path | None = None,
 ) -> ValidateConfig:
     base = FIXTURES / fixture
     return ValidateConfig(
@@ -58,6 +63,7 @@ def _cfg(
         skip_compile=skip_compile,
         profile=profile,
         whitelist_mode=whitelist_mode,  # type: ignore[arg-type]
+        quality_packet=quality_packet,
     )
 
 
@@ -394,6 +400,98 @@ class TestRunnerFixtures(unittest.TestCase):
             text = path.read_text(encoding="utf-8")
             self.assertNotIn("Kursbuch5", text, msg=path.name)
             self.assertNotIn("/home/arneb/repos/company/Kursbuch", text, msg=path.name)
+
+
+
+class TestQualityPacketGate(unittest.TestCase):
+    def test_ok_fixture_paths_exist(self):
+        pkt = FIXTURES / "quality_packet_ok" / "quality-packet.md"
+        r = check_quality_packet(pkt, root=REPO)
+        self.assertTrue(r.ok, r.messages)
+        self.assertTrue(all(m.startswith("quality-packet:") for m in r.messages))
+        joined = " ".join(r.messages).lower()
+        # must never claim CLEAN certification
+        self.assertNotIn("certifies design clean", joined)
+        self.assertNotIn("visual clean certified", joined)
+        self.assertIn("does not certify", joined)
+
+    def test_broken_fixture_missing_png(self):
+        pkt = FIXTURES / "quality_packet_broken" / "quality-packet.md"
+        r = check_quality_packet(pkt, root=REPO)
+        self.assertFalse(r.ok)
+        self.assertTrue(any("missing.png" in m for m in r.messages))
+        self.assertTrue(all(m.startswith("quality-packet:") for m in r.messages))
+        joined = " ".join(r.messages)
+        self.assertIn("does not certify", joined)
+        # never claim Visual CLEAN as certified
+        self.assertNotRegex(joined, r"(?i)visual clean certified")
+        self.assertNotRegex(joined, r"(?i)media accept (certified|passed)")
+
+    def test_missing_packet_file(self):
+        r = check_quality_packet(FIXTURES / "quality_packet_ok" / "no-such-packet.md")
+        self.assertFalse(r.ok)
+        self.assertTrue(any("not found" in m for m in r.messages))
+        self.assertTrue(all(m.startswith("quality-packet:") for m in r.messages))
+
+    def test_extract_filters_noise(self):
+        text = (
+            "| u1 | clean | pass | n/a | `preview.png` | missing.png |\n"
+            "See [manifest](assets/MANIFEST.md) and /tmp/out.pdf\n"
+            "ignore foo() and ...\n"
+        )
+        tokens = extract_path_tokens(text)
+        self.assertIn("preview.png", tokens)
+        self.assertIn("missing.png", tokens)
+        self.assertIn("assets/MANIFEST.md", tokens)
+        self.assertIn("/tmp/out.pdf", tokens)
+        for noise in ("clean", "pass", "n/a", "foo()", "..."):
+            self.assertNotIn(noise, tokens)
+
+    def test_runner_no_flag_skips_quality_packet(self):
+        report = run_validation(
+            _cfg(
+                "pass_minimal",
+                skip_compile=True,
+                genre_minima=FIXTURES / "pass_minimal" / "genre-minima.yaml",
+            )
+        )
+        self.assertTrue(report.ok, report.render_text())
+        qp = next(c for c in report.checks if c.name == "quality_packet")
+        self.assertEqual(qp.status, "skip")
+
+    def test_runner_broken_packet_warns_not_hard_fail(self):
+        report = run_validation(
+            _cfg(
+                "pass_minimal",
+                skip_compile=True,
+                genre_minima=FIXTURES / "pass_minimal" / "genre-minima.yaml",
+                quality_packet=FIXTURES
+                / "quality_packet_broken"
+                / "quality-packet.md",
+            )
+        )
+        # Soft: overall still OK despite missing paths
+        self.assertTrue(report.ok, report.render_text())
+        qp = next(c for c in report.checks if c.name == "quality_packet")
+        self.assertEqual(qp.status, "warn")
+        self.assertTrue(any("missing.png" in m for m in qp.messages))
+        self.assertTrue(all(m.startswith("quality-packet:") for m in qp.messages))
+        joined = " ".join(qp.messages).lower()
+        self.assertIn("does not certify", joined)
+        self.assertNotIn("visual clean certified", joined)
+
+    def test_runner_ok_packet_pass(self):
+        report = run_validation(
+            _cfg(
+                "pass_minimal",
+                skip_compile=True,
+                genre_minima=FIXTURES / "pass_minimal" / "genre-minima.yaml",
+                quality_packet=FIXTURES / "quality_packet_ok" / "quality-packet.md",
+            )
+        )
+        self.assertTrue(report.ok, report.render_text())
+        qp = next(c for c in report.checks if c.name == "quality_packet")
+        self.assertEqual(qp.status, "pass", qp.messages)
 
 
 @unittest.skipUnless(

@@ -6,11 +6,14 @@ Ausführlich: [`CONSENSUS-v0.md`](CONSENSUS-v0.md) · Grenzen: [`PRODUCT-BOUNDAR
 
 ## Produkte
 
+Vollständig: [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) **v0.3** (ADR 50–59).
+
 | ID | Produkt | Heimat |
 |---|---|---|
-| A | Layout-Plattform | **dieses Repo** (`packages/`, `toolset/`) |
-| B | Domain-Media (Medizin) | `domains/medical/` → später eigenes Repo |
-| C | Content-Werk | externes Repo (Kursbuch) = **Inhalts-SoT**; Prozess-Kit übergangsweise `domains/content-maturity/` |
+| **C** | Content-Werk | externes Repo (Kursbuch) = **Inhalts-SoT**; Prozess-Kit übergangsweise `domains/content-maturity/` |
+| **B** | Domain-Media (Medizin) | `domains/medical/` → später eigenes Repo |
+| **A** | Print-Layout-Plattform | **dieses Repo** (`packages/`, `toolset/`) |
+| **W** | Web-Layout (Astro o. ä.) | noch nicht implementiert; Grenzvertrag in PRODUCT-BOUNDARIES v0.3 |
 
 ## Rollen
 
@@ -49,4 +52,8 @@ C1 Draft → C2 Content-Review (core+claims+safety-flags, max 2 Runden)
 # C5 Imprimatur hard-gate → v0.4
 ```
 
-Multi-root UX: `workspaces/kursbuch-layout.code-workspace` (später + C editorial tree).
+**Multi-Channel (PRODUCT-BOUNDARIES v0.3):** nach B Accept (Scope `print` \| `web` \| `both`)  
+→ **A** Print und/oder **W** Web konsumieren dieselbe `content_revision` + accepted Asset-IDs.  
+W ist Grenzvertrag; Implementierung erst mit Web-Pilot.
+
+Multi-root UX: `workspaces/kursbuch-layout.code-workspace` (A+C; später +B/+W).

@@ -145,6 +145,24 @@ validate OK → necessary but NOT sufficient alone
 
 ---
 
+
+### Soft quality-packet path check (opt-in)
+
+Validate can soft-check that a Quality Packet file and its referenced paths exist:
+
+```bash
+./scripts/bookkit validate \
+  --typ path/to/chapter.typ \
+  --accept path/to/accept.md \
+  --quality-packet path/to/quality-packet.md \
+  --root . --skip-compile
+```
+
+- **Default off** — without `--quality-packet`, pure A smoke stays green (no medical packet required).
+- **WARN only** — missing packet or missing listed PNG/MD paths surface as `[WARN] quality_packet`; they do **not** hard-fail validate.
+- **Presence only** — this does **not** certify Design CLEAN, Visual CLEAN, or Media Accept. Board cells + Human gates remain authoritative for quality.
+- Spec: `devtracks/quality-packet-soft-gate/`.
+
 ## Human gates (cannot be agent-signed)
 
 | ID | Meaning |

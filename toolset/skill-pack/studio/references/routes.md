@@ -60,7 +60,8 @@ No production .typ. No free vision until Design CLEAN.
 **Open-assets (after Design CLEAN when scan required/optional):**
 ```text
 Skill: open-assets
-Unit: <unit_id> · open_asset_scan: required | optional
+Unit: <unit_id> · open_asset_scan: required | optional | skip
+  (skip → do not run open-assets; no MANIFEST ceremony)
 Job brief: learner_job / must_see / realism_required / clinical_risk
 Run source scan → Rights + Clinical gates → MANIFEST + CREDITS.
 Outcome: accepted (embed path) | gap (document; demote to Typst simple — no silent AI-as-photo).

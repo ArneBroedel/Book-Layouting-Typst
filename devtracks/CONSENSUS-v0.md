@@ -172,16 +172,27 @@ Brief/Feasibility dürfen YAML/MD sein — sie steuern **Menschen/Agenten**, sie
 29. **Hard gates remain:** claims copy-through, compile, accept, freeze (production profile).  
 30. **Policy SoT:** `toolset/compose/CREATIVE-COMPOSE.md`; skills `media-brief` + `compose-chapter` bind to it.
 
-## ADR v0.2 (Produkt- & Repo-Grenzen — neu)
+## ADR v0.2 (Produkt- & Repo-Grenzen)
 
-19. **Drei Produkte:** A Layout-Plattform (dieses Repo) · B Domain-Media · C Content-Werk.  
+19. **Drei Produkte (v0.2):** A Layout-Plattform (dieses Repo) · B Domain-Media · C Content-Werk.  
 20. **A bleibt generalisierbar:** keine Content-SoT; medizinische Spezialisierung nicht in Foundation-Pflicht.  
 21. **B lebt Übergang in `domains/medical/`**, auslagerbar in eigenes Repo bei Split-Trigger.  
 22. **C bleibt externes Content-Repo** (z. B. Kursbuch); Layout nur Consumer.  
 23. **Kopplung** über versionierte bookkit/catalog-Pins + Rollen-Artefakte — nicht über Chat oder ungepinnte `main`.  
 24. **Monorepo ok innerhalb von A** (`packages/*`, `toolset/*`); das ist Package-Monorepo, nicht All-in-One-Enterprise.  
-25. **Multi-root Workspace** nur UX; kein viertes Produkt mit Business-Logik.  
+25. **Multi-root Workspace** nur UX; kein Produkt mit Business-Logik im Workspace-File.  
 26. Track **`platform-boundaries`** steuert vorbereitende Struktur und Split-Readiness.
+
+## ADR v0.3 (Multi-Channel — PRODUCT-BOUNDARIES)
+
+**SoT:** [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) v0.3 (ADR **50–59**). Kurz:
+
+50. Vier logische Produkte: **C** Content · **B** Media · **A** Print-Layout · **W** Web-Layout.  
+51. Kanäle teilen C+B-Pins, nicht Code.  
+52–55. B = Intent+Assets+Accept (Channel-Scope); Release Package orchestriert A‖W.  
+56–59. W Grenzvertrag bis Pilot; modular monorepo default; Freeze→Accept→Kanal; Workspace = UX only.
+
+v0.2 ADR 19 „drei Produkte“ wird durch ADR 50 **erweitert** (nicht ersetzt in der Rollenlogik C/B/A).
 
 ---
 

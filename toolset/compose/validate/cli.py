@@ -140,6 +140,16 @@ def build_parser() -> argparse.ArgumentParser:
             "calls warn only. strict: hard-fail on planned/unknown (legacy audit)."
         ),
     )
+    p.add_argument(
+        "--quality-packet",
+        type=Path,
+        default=None,
+        help=(
+            "Optional path to a Quality Packet markdown file. Soft-checks that "
+            "the packet and referenced paths exist. Does not certify Design CLEAN, "
+            "Visual CLEAN, or Media Accept quality."
+        ),
+    )
     return p
 
 
@@ -207,6 +217,13 @@ def main(argv: list[str] | None = None) -> int:
         body_hard_fail=args.body_hard_fail,
         profile=args.profile,
         whitelist_mode=args.whitelist_mode,
+        quality_packet=(
+            args.quality_packet.resolve()
+            if args.quality_packet and args.quality_packet.is_absolute()
+            else (Path.cwd() / args.quality_packet).resolve()
+            if args.quality_packet
+            else None
+        ),
     )
 
     report = run_validation(cfg)

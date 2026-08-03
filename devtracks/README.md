@@ -36,7 +36,7 @@ only tracks with open work (plus durable governance docs that are not “feature
 |---|---|
 | [`ORCHESTRATION.md`](ORCHESTRATION.md) | Implementierungs-Orchestrierung (Waves, Reviews, E1–E12) — **complete 2026-07-20** |
 | [`CONSENSUS-v0.md`](CONSENSUS-v0.md) | Rollen, Workflow, ADR |
-| [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) | Produkte A/B/C, Repo-Schnitt, Interfaces |
+| [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) | Produkte **C/B/A/W** v0.3, Multi-Channel, Release-Contracts, ADR 50–59 |
 | [`ROLES-AND-FLOW.md`](ROLES-AND-FLOW.md) | Rollen-Kurzform |
 | [`_orchestration/`](_orchestration/) | Board, audits (runtime notes) |
 
@@ -63,11 +63,12 @@ Runtime products (not tracks):
 
 | Product | Path |
 |---|---|
-| **A** form-catalog / compose / bookkit | `toolset/form-catalog/`, `toolset/compose/`, `packages/bookkit*` |
-| **B** medical media | `domains/medical/` |
 | **C** content + editorial process | external SoT (e.g. Kursbuch); process kit transitional: `domains/content-maturity/` |
+| **B** medical media | `domains/medical/` |
+| **A** print layout (form-catalog / compose / bookkit) | `toolset/form-catalog/`, `toolset/compose/`, `packages/bookkit*` |
+| **W** web layout | Grenzvertrag only (v0.3); implement with pilot (`channels/web/` or sibling repo) |
 
-**Flow (target v0.3):** Content draft (C) → **Content-Review / Freeze (C)** → Media Brief (B) → Feasibility/Spike (A) → Accept (B) → Compose/Validate (A) → **Proof / Imprimatur (C)** → Print (A).
+**Flow (target v0.3 + multi-channel):** Content draft (C) → **Content-Review / Freeze (C)** → Media Brief (B) → Feasibility/Spike (A) ↔ Graphics (B) → **Accept (B, scope print\|web\|both)** → Compose/Validate (**A**) and/or Web build (**W**) → **Proof / Imprimatur (C)**.
 
 **Consumer guide:** [`docs/CONSUMER.md`](../docs/CONSUMER.md).  
 **Pilot dogfood:** `pilots/kursbuch-welle-03-compose/`.

@@ -46,6 +46,7 @@ Fail-fast on **hard** checks; no auto-heal. Content path and genre minima are **
 | post-hoc intent | info | ordered list of catalog forms found |
 | accept-gate | hard | accept authorizes **exploration** and/or **production** compose **or** `--exception-no-brief` (smoke only). Messages distinguish levels — overall accept / exploration checkbox never reports as production. |
 | freeze-gate | hard on `--profile production` | Human freeze record + `content_revision` pin; **skipped** on default `--profile smoke` |
+| quality-packet | **soft WARN** if `--quality-packet PATH` | Presence only (packet + listed paths exist). **Does not** certify Design CLEAN / Visual CLEAN / Media Accept. Skipped when flag absent. |
 
 ### Run validate
 
@@ -122,6 +123,8 @@ Fixtures under `toolset/compose/fixtures/`:
 | `fail_unknown_form` | **green/warn** under default `creative`; **red** under `--whitelist-mode strict` |
 | `fail_no_accept` | red — accept not authorized |
 | `fail_claims` | red — critical claims missing in `.typ` |
+| `quality_packet_ok` | soft path gate green when `--quality-packet …` |
+| `quality_packet_broken` | soft WARN (missing PNG); overall still OK |
 
 ## Related
 

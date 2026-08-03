@@ -112,5 +112,6 @@ Under scan stress the learner **recognizes X** and **does Y**.
 
 - [ ] Form Spec complete for this unit
 - [ ] Ambition flag set
+- [ ] `open_asset_scan` set (`required` | `optional` | `skip`)
 - [ ] Claim pins reviewed against C
 - Visual-Unit → `medical-graphics` playbook from Stage G0

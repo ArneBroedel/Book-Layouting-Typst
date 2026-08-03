@@ -15,6 +15,7 @@ from .compile_check import compile_typ
 from .freeze_gate import check_freeze
 from .minima import check_minima, load_minima
 from .posthoc import build_posthoc, write_posthoc
+from .quality_packet_gate import check_quality_packet
 from .whitelist import WhitelistMode, check_whitelist
 
 
@@ -90,6 +91,8 @@ class ValidateConfig:
     profile: str = "smoke"
     # creative (default): catalog inventory advisory; strict: legacy hard whitelist
     whitelist_mode: WhitelistMode = "creative"
+    # optional soft path gate for quality packet MD (presence only; WARN never hard-fail)
+    quality_packet: Path | None = None
 
 
 def run_validation(cfg: ValidateConfig) -> ValidationReport:
@@ -105,6 +108,7 @@ def run_validation(cfg: ValidateConfig) -> ValidationReport:
         "skip_compile": cfg.skip_compile,
         "profile": cfg.profile,
         "whitelist_mode": cfg.whitelist_mode,
+        "quality_packet": str(cfg.quality_packet) if cfg.quality_packet else None,
     }
 
     typ_path = Path(cfg.typ)
@@ -237,6 +241,23 @@ def run_validation(cfg: ValidateConfig) -> ValidationReport:
     else:
         report.ok = False
         report.add("freeze", "fail", fr.messages)
+
+    # ── 10. quality-packet soft path gate (opt-in) ────────────
+    # Presence only. Missing paths → WARN. Never flips report.ok.
+    # Does not certify Design CLEAN / Visual CLEAN / Media Accept.
+    if cfg.quality_packet is None:
+        report.add(
+            "quality_packet",
+            "skip",
+            "quality-packet: skipped (no --quality-packet)",
+        )
+    else:
+        qp = check_quality_packet(cfg.quality_packet, root=cfg.root)
+        if qp.ok:
+            report.add("quality_packet", "pass", qp.messages)
+        else:
+            # Soft: surface as WARN only — do not set report.ok = False
+            report.add("quality_packet", "warn", qp.messages)
 
     return report
 

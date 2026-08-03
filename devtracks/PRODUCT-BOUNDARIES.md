@@ -1,89 +1,279 @@
-# Produkt- & Repo-Grenzen (v0.2)
+# Produkt- & Repo-Grenzen (v0.3)
 
-**Status:** accepted direction (2026-07-20)  
-**Ergänzt:** [`CONSENSUS-v0.md`](CONSENSUS-v0.md) (Rollen/Workflow)  
-**Track (archived):** [`_archive/platform-boundaries/`](_archive/platform-boundaries/) · Phase 3 deferred note there
+**Status:** accepted direction (2026-08-03)  
+**Supersedes:** v0.2 (2026-07-20) — three products only; print-only presentation  
+**Ergänzt:** [`CONSENSUS-v0.md`](CONSENSUS-v0.md) (Rollen/Workflow) · [`ROLES-AND-FLOW.md`](ROLES-AND-FLOW.md)  
+**Track (archived):** [`_archive/platform-boundaries/`](_archive/platform-boundaries/) · split deferred [`_archive/workspace-split/phase3-split.md`](_archive/workspace-split/phase3-split.md)
 
 ---
 
 ## Ziel
 
-- **Dieses Repo** = generalisierbare **Layout-Plattform** (Typst/bookkit/compose/catalog-core).  
-- **Spezialisierung** (Medizindidaktik, Kursbuch-Medien) = **Schicht darüber**, austauschbar.  
-- **Content** (Autor) = **eigenes Produkt**, SoT nie hier.  
-- Trennung der Aufgaben **ohne** Micro-Repo-Chaos und **ohne** Alles-in-einem-Brei.
+- **Text, Medien/Assets und Präsentation** sind getrennte Aufgabenbereiche mit eigenen SoTs und Rollen.  
+- **Ein Inhalt** (C) und **freigegebene Assets** (B) speisen **mehrere Kanäle** (Print **A**, Web **W**), ohne Content- oder Asset-Fork.  
+- **Dieses Repo** bleibt primär **Print-Layout-Plattform (A)** plus transitional **Domain-Media (B)**; Content-SoT bleibt **extern (C)**.  
+- Trennung **ohne** Micro-Repo-Chaos und **ohne** Alles-in-einem-Brei: modular monorepo zuerst, physischer Split nur triggerbasiert.
 
 ---
 
-## Drei Produkte
+## Vier Produkte / Kanäle
 
-| ID | Produkt | Default-Heimat (Ziel) | Heute (Übergang) |
-|---|---|---|---|
-| **A** | Layout-Plattform | **dieses Repo** | dieses Repo |
-| **B** | Domain-Media (z. B. Medizin) | eigenes Repo *später* | `domains/medical/` hier (auslagerbar) |
-| **C** | Content-Werk | Kursbuch-Repo (extern) | extern; nur read-only Inputs |
+| ID | Produkt | Verantwortung | Default-Heimat (Ziel) | Heute (Übergang) |
+|---|---|---|---|---|
+| **C** | Content-Werk | Fachtext, Claims, Quellen, Review, Freeze, Proof/Imprimatur | Content-Repo (z. B. Kursbuch) | **extern**; Prozess-Kit transitional `domains/content-maturity/` |
+| **B** | Domain-Media | Mediendesign-Intent, open-assets, Graphics, freigegebene Assets + Rechte | eigenes Repo *später* | `domains/medical/` hier (auslagerbar) |
+| **A** | Print-Layout-Plattform | Typst/bookkit, compose, validate, prepress, PDF/X | **dieses Repo** | dieses Repo (`packages/`, `toolset/`, …) |
+| **W** | Web-Layout | Astro (o. ä.) HTML/CSS, Web-Komponenten, Routing, Web-Build | eigenes Repo *oder* `channels/web/` | **noch nicht implementiert** — nur Grenzvertrag (dieses Doc) |
 
-Optional: Multi-root **Workspace-Datei** nur als UX (kein viertes Produkt).
+Optional: Multi-root **Workspace-Datei** nur als UX (kein fünftes Produkt mit Business-Logik).
+
+### Phasen-Mapping (Arbeitsfolge)
+
+| Phase | Produkt | Kurz |
+|---|---|---|
+| 1 Text ausarbeiten | **C** | Draft → Review → **Human Freeze** |
+| 2 Assets suchen / erstellen | **B** | Brief/Design → open-assets und/oder Graphics → **Visual CLEAN** → **Accept** |
+| 3a Buchlayout | **A** | Compose (post-Accept) → validate → PDF / Print |
+| 3b Weblayout | **W** | Consume frozen C + accepted B → Astro build |
+
+A und W sind **Präsentationskanäle**. Sie teilen **C-Revision** und **B-Asset-IDs**, nicht Code und nicht eine gemeinsame „Layout-Wahrheit“.
 
 ---
 
 ## Was wohin gehört
 
-| Artefakt / Track | Produkt | Pfad-Konvention (Übergang) |
+| Artefakt | Produkt | Pfad-Konvention (Übergang) |
 |---|---|---|
-| `packages/bookkit*`, CLI, showcase | A | `packages/`, `scripts/`, `src/` |
-| form-catalog **core** (generische Forms, Schema) | A | `toolset/form-catalog/core/` |
-| compose validator engine, `compose-chapter` skill | A | `toolset/compose/`, `toolset/skill-pack/compose-chapter/` |
-| Genre-Rezepte Medizin, Gold-Briefs, `media-brief` / `medical-graphics` skills, Domain-Assets | B | `domains/medical/` → später eigenes Repo |
-| Kapitel-MD, Claims, Content-SoT | C | **extern** (Kursbuch-Repo) — nie dauerhaft hier |
-| Content-Reife-Prozess (Review, Freeze, Proof, Imprimatur) | C | Track [`_archive/content-maturity/`](_archive/content-maturity/); Scaffold **`domains/content-maturity/`** (nur Prozess/Skills/Fixtures) → **Split nach C** |
-| pilots die **nur** Plattform dogfooden | A | `pilots/` (austauschbar, nicht Content-SoT) |
-| Kursbuch-Layout-Outputs | A oder B | `pilots/kursbuch-*` = **consumer dogfood**, Content bleibt C |
+| `packages/bookkit*`, CLI, showcase, fonts, prepress | **A** | `packages/`, `scripts/`, `src/`, `prepress/` |
+| form-catalog **core**, compose engine, `compose-chapter` | **A** | `toolset/form-catalog/core/`, `toolset/compose/`, skill-pack |
+| Genre-Rezepte, Gold-Briefs, `media-brief` / `medical-graphics` / `open-assets` | **B** | `domains/medical/` → später eigenes Repo |
+| Domain-Assets (`MANIFEST`, license sidecars, accepted SVG/PNG) | **B** | `domains/medical/assets/<slug>/` |
+| Kapitel-MD, Claims, Literatur-SoT | **C** | **extern** — nie dauerhaft hier |
+| Content-Reife-Prozess (Review, Freeze, Proof, Imprimatur) | **C** | Scaffold `domains/content-maturity/` → Split nach C |
+| Astro-Projekt, Web-Komponenten, `public/`-Derivates *mit Provenance* | **W** | TBD: sibling repo oder `channels/web/` — **nicht** in `packages/bookkit` |
+| Pilots die nur Plattform dogfooden | **A** | `pilots/` (kein Content-SoT) |
+| Kursbuch-Layout-Outputs (Print) | **A** (+ B-Artefakte) | `pilots/kursbuch-*`, compose outputs — Content bleibt C |
+| Research / Template-Korpus | **R** (kein Produktionsprodukt) | `research/`, `templates/` — außerhalb Default-Agent-Kontext |
 
 ---
 
-## Schnittstellen (Kopplung)
+## Shared Contracts (Kopplung C → B → A|W)
 
-1. **SemVer bookkit** + **form-catalog `version`** — Consumer pinnen.  
-2. **Artefakte:** Brief, Feasibility, Accept, `.typ`, PDF (siehe CONSENSUS).  
-3. **Content-Pfade:** absolute/konfigurierbare Inputs aus C; keine Kopie als SoT in A.  
-4. **Skills:** A-skills generisch; B-skills domain; Workspace provisioniert beide.  
-5. **Gaps:** Domain meldet `catalog-gap` → PR/Issue nach A (`planned` → `stable`).
+Kopplung läuft über **versionierte Pins und Artefakte**, nicht über Chat oder ungepinnte `main`.
+
+### 1. Content Contract (C → B, A, W)
+
+| Feld / Artefakt | Regel |
+|---|---|
+| Content body (MD o. ä.) | SoT nur in **C** |
+| Critical Claims | copy-through; keine stillen Paraphrasen in A/B/W |
+| `content_revision` | nur `git:<short>` oder `sha256:<filehash>` (siehe CONSENSUS v0.3) |
+| Freeze | **Human-only** vor Production-Brief (B) und Production-Compose (A/W) |
+
+### 2. Asset Contract (B → A, W)
+
+Pro Asset-Slug unter B (Policy: `domains/medical/assets/CANONICAL.md`, open-assets Ampel):
+
+| Feld | Pflicht für Accept | Kanal |
+|---|---|---|
+| `id` / slug | ja | A + W |
+| `status` (`accepted` / …) | ja | A + W |
+| license + attribution + permalink | ja (third-party) | A + W |
+| canonical file(s) (SVG preferred) | ja | A + W |
+| `alt` / caption source | ja wo figure | A + W |
+| `variants.print` (PPI, optional CMYK notes) | wenn Print | **A** |
+| `variants.web` (max-width, WebP/AVIF optional) | wenn Web | **W** |
+
+**Regel:** A und W **referenzieren** freigegebene B-Assets. Sie dürfen **Derivates** erzeugen (Resize, WebP, PDF-X raster), müssen aber Provenance zum MANIFEST/Slug behalten. Keine stille zweite SoT unter `src/assets` oder Astro `public/` ohne Link zurück nach B.
+
+### 3. Intent & Accept (B)
+
+| Artefakt | Owner | Gilt für |
+|---|---|---|
+| Media Brief / Form Spec / Design Contract | B Media | didaktische Darstellung (kanal-agnostisch zuerst) |
+| Design CLEAN / Visual CLEAN | B Critic-Rollen | siehe Collaboration Contract |
+| Accept / Quality Packet | B Media | Scope: `print` \| `web` \| `both` (Default Produktion historisch: print; web explizit setzen) |
+
+Kanal-spezifische Wünsche (Doppelseite vs. progressive disclosure) sind **dünne Anhänge**, keine zweite Content-Wahrheit.
+
+### 4. Chapter Release Package (Orchestrierung)
+
+Logisches Bündel (Board/Route oder Datei — Schema darf YAML/JSON/MD-Frontmatter sein):
+
+```yaml
+# conceptual — not yet a hard CLI schema
+chapter_id: string
+content_revision: "git:…" | "sha256:…"
+assets:
+  - id: string          # B slug
+    rev_or_status: accepted
+accept_paths: []        # quality packet / accept record
+channels:
+  print:
+    status: pending | composed | validated | proofed
+    outputs: []         # pdf paths pins optional
+  web:
+    status: pending | built | proofed
+    outputs: []         # deploy/build pins optional
+design_clean: path|bool
+visual_clean: path|bool
+```
+
+Orchestratoren (`book-production-orchestrator`, später Web-Route) **routen und loggen** dieses Paket; sie ersetzen weder Freeze noch CLEAN noch Accept.
+
+### 5. Plattform-Pins
+
+1. **SemVer bookkit** + **form-catalog `version`** — Consumer (A-intern und externe Print-Consumer) pinnen.  
+2. **B** pinnt bookkit/catalog, wenn Domain-Typst-Libs A nutzen.  
+3. **W** pinnt `content_revision` + Asset-Release (B), nicht bookkit-Foundation als Runtime.  
+4. **Gaps:** Domain meldet `catalog-gap` → Issue/PR nach A (`planned` → `stable`).  
+5. **Skills:** A generisch; B domain; W web-spezifisch (noch nicht SoT); C editorial — Workspace provisioniert nach Bedarf.
+
+---
+
+## Ablauf (Multi-Channel)
+
+```text
+C  Draft → Content-Review → Human Freeze (content_revision)
+        │
+        ▼
+B  Media Brief / Design CLEAN
+        │
+        ├─► open-assets (iff realism/icons)
+        ├─► Graphics realize → Visual CLEAN
+        ▼
+B  Accept (quality packet; channel scope print|web|both)
+        │
+        ├──────────────────┬──────────────────┐
+        ▼                  ▼                  │
+A  Compose/Validate     W  Astro consume     │
+   → PDF / Print           → Web build        │
+        │                  │                  │
+        └────────┬─────────┘                  │
+                 ▼                            │
+C  Proof / Imprimatur (per channel or joint)  │
+```
+
+**Normalfall Print (heute implementiert):** Freeze → B → Accept → A → Proof.  
+**Normalfall Web (Ziel):** Freeze → B → Accept(scope includes web) → W → Proof.  
+**Parallel A‖W** nur nach Accept mit Scope `both` (oder zwei Accepts).
+
+Iterations- und CLEAN-Regeln: [`CONSENSUS-v0.md`](CONSENSUS-v0.md) · [`COLLABORATION-CONTRACT.md`](../toolset/skill-pack/COLLABORATION-CONTRACT.md).
+
+---
+
+## Repo-Strategie
+
+```text
+JETZT  → Modular Monorepo für A + B (harte OWNERSHIP + Ordnergrenzen)
+         C extern; Multi-root UX A+C[+B]
+SPÄTER → subtree split nur bei Trigger (D2 workspace-split):
+         • 2. Fachdomäne / 2. Werk in Produktion, oder
+         • externes Autoren-/Grafik-/Web-Team mit getrennten Rechten, oder
+         • Plattform-Releases durch Domain-/Web-Noise blockiert, oder
+         • tracked size trotz Purge/LFS schmerzhaft, oder
+         • Human nennt Ziel-Remotes und fordert Split
+W      → eigener Checkout (Repo oder `channels/web/`) sobald erster Web-Pilot startet;
+         nicht in bookkit-Foundation mischen
+```
+
+### Auslagerungs-Trigger (B)
+
+Unverändert sinngemäß:
+
+- zweites Werk / zweite Domäne, **oder**  
+- `domains/medical/` stabile Skills + Gold-Set + eigene CI, **oder**  
+- A-Releases durch B-Noise blockiert.
+
+Methode: `git subtree split` — Checkliste: [`_archive/workspace-split/phase3-split.md`](_archive/workspace-split/phase3-split.md).
+
+### Content-maturity split (C process)
+
+1. unter `domains/content-maturity/` bleiben (nicht `packages/`, nicht compose-Engine),  
+2. **keine** Kapitel-SoT (nur Fixtures),  
+3. bei Trigger nach **C** (`_archive/content-maturity/SPLIT-CHECKLIST.md`).  
+
+A behält Freeze/Revision-**Gates** in validate/docs. B verlangt Freeze für Production-Briefs.
+
+### W-Heimat (Entscheidung bei Pilot-Start)
+
+| Option | Wann |
+|---|---|
+| Sibling-Repo `kursbuch-web` (o. ä.) | Web-Team/CI getrennt; empfohlener Default bei ernsthaftem Dual-Publish |
+| `channels/web/` in diesem Monorepo | früher Pilot, ein Team, noch keine Split-Kosten |
+
+Beide Optionen unterliegen demselben Contract (C-Pin + B-Assets). Workspace-UX: Roots `C | B | A | W`.
 
 ---
 
 ## Was dieses Repo **nicht** ist
 
-- Autor-Workspace für medizinische Kapitel  
-- Dauerhafte SoT für Kursbuch-Markdown  
-- Dauerhafte Heimat der Content-Reife-Schleife (nur **transitional** unter `domains/content-maturity/` — siehe Track `content-maturity`)  
+- Autor-Workspace / dauerhafte SoT für Kursbuch-Markdown (**C**)  
+- Dauerhafte Heimat der Content-Reife-Schleife (nur transitional `domains/content-maturity/`)  
+- Dauerhafte „alles Medien“-Heimat nach B-Split (heute: `domains/medical/` ist B-in-A)  
+- Astro/Web-Anwendungs-SoT (**W** — eigener Kanal)  
 - „Ein Agent sieht alles und macht alles“ ohne Rollen-Artefakte  
-
-## Content-maturity split (Produkt C process)
-
-Analog Domain-Media (B): Prozess-Kit darf hier **vorbereitet** werden, muss aber:
-
-1. unter `domains/content-maturity/` bleiben (nicht `packages/`, nicht `toolset/compose` als Engine-Heimat),  
-2. **keine** Kapitel-SoT enthalten (nur synthetische Fixtures),  
-3. bei Split-Trigger nach **C** wandern (`_archive/content-maturity/SPLIT-CHECKLIST.md`).  
-
-A behält höchstens **Gates** (z. B. Freeze/Revision-Pins in compose docs/CLI). B behält Freeze als Voraussetzung für Production-Briefs.
+- Zweite Content- oder Asset-SoT unter Showcase/`src/chapters` oder Web-`public/`
 
 ---
 
-## Auslagerungs-Trigger (Repo B abspalten)
+## Workspace-UX
 
-Domain-Media in eigenes Repo ziehen, wenn **eines** gilt:
+| Root (Name) | Path (Beispiel) |
+|---|---|
+| A — Print layout platform | dieses Repo |
+| C — Content | `../../Kursbuch5` (o. ä.) |
+| B — Media & assets | `domains/medical` (gleicher Clone) oder später eigenes Repo |
+| W — Web layout | TBD bei Pilot |
 
-- zweites Werk / zweite Domäne startet, **oder**  
-- `domains/medical/` hat stabile Skills + ≥2 Gold-Briefs + eigene CI-Bedürfnisse, **oder**  
-- Plattform-Releases werden durch Domain-Noise blockiert.
-
-Methode: `git subtree split` / history sparse — vorbereiten durch **klare Ordnergrenze ab jetzt**.
+Bestehend: `workspaces/kursbuch-layout.code-workspace` (A+C).  
+Nur Checkout-Hilfe — **keine** Business-Logik im Workspace-File.
 
 ---
 
-## Workspace-UX (optional)
+## ADR (v0.3 — Multi-Channel & Boundaries)
 
-Beispiel: `workspaces/kursbuch-layout.code-workspace` (Multi-root A+C[+B]).  
-Nur Checkout-Hilfe — **keine** Business-Logik im Workspace-Repo nötig.
+Fortsetzung der Produkt-ADRs aus CONSENSUS v0.2 (19–26). Nummern **50+** bewusst, um Kollisionen mit Content-/Compose-ADRs in CONSENSUS zu vermeiden.
+
+| ADR | Entscheidung |
+|---|---|
+| **50** | **Vier logische Produkte:** C Content · B Domain-Media · A Print-Layout-Plattform · W Web-Layout. |
+| **51** | **Kanäle teilen C+B, nicht Code:** Print (A) und Web (W) konsumieren dieselbe `content_revision` und dieselben accepted Asset-IDs; keine gemeinsame Layout-SoT. |
+| **52** | **B = Intent + Rechte + Visuals**, nicht nur Dateiordner: Brief/Design → (open-assets |) Graphics → CLEAN → Accept vor Kanal-Produktion. |
+| **53** | **Accept trägt Channel-Scope** `print` \| `web` \| `both`. Fehlt Scope historisch → gilt als `print` (Backcompat). |
+| **54** | **Asset-Derivates erlaubt in A/W**, SoT und Lizenz bleiben B (MANIFEST/sidecars); Provenance Pflicht. |
+| **55** | **Chapter Release Package** ist das orchestrierbare Bündel (Pins + Accept + Kanalstatus); Orchestrator routet, craftet nicht. |
+| **56** | **W ist Grenzvertrag ab v0.3**, Implementierung erst mit bewusstem Web-Pilot (Repo oder `channels/web/`). Kein Astro in `packages/bookkit`. |
+| **57** | **Repo-Default bleibt modular monorepo (A+B)**; physische Splits (B, C-process, W, R) nur **triggerbasiert** (workspace-split D2 + Triggerliste oben). |
+| **58** | **Arbeitsfolge verbindlich für Produktion:** C Freeze → B Accept → dann A und/oder W. Kein Production-Compose/-Build ohne Freeze; keine Visual-Units ohne Accept (Smoke/Lab-Ausnahmen dokumentiert). |
+| **59** | **Multi-root Workspace = UX only** — kein fünftes Produkt. |
+
+### Verworfen / nicht Ziel
+
+| Idee | Status |
+|---|---|
+| Vier Soft-Repos „weil aufgeräumt“ ohne Trigger | **verworfen** (Kosten > Nutzen) |
+| Web als Unterordner von bookkit foundation | **verworfen** |
+| Content-MD nach A/B kopieren als SoT | **verworfen** |
+| Ein Super-Agent ohne Artefakt-Firewall | **verworfen** |
+| Asset-SoT nur im Print-`src/assets` oder nur in Astro `public/` | **verworfen** |
+
+---
+
+## Changelog
+
+| Version | Datum | Änderung |
+|---|---|---|
+| **v0.3** | 2026-08-03 | Produkt **W** (Web); A als Print-Kanal geschärft; Shared Contracts; Release Package; ADR 50–59; Phasen Text→Assets→Kanäle |
+| v0.2 | 2026-07-20 | A/B/C; modular monorepo; B/C transitional paths |
+| v0.1 | — | in CONSENSUS/Rollen aufgegangen |
+
+---
+
+## Related
+
+- Rollen & Flow: [`CONSENSUS-v0.md`](CONSENSUS-v0.md) · [`ROLES-AND-FLOW.md`](ROLES-AND-FLOW.md)  
+- Collaboration short law: [`../toolset/skill-pack/COLLABORATION-CONTRACT.md`](../toolset/skill-pack/COLLABORATION-CONTRACT.md)  
+- B ownership / assets: [`../domains/medical/OWNERSHIP.md`](../domains/medical/OWNERSHIP.md) · [`../domains/medical/assets/CANONICAL.md`](../domains/medical/assets/CANONICAL.md)  
+- Split deferred: [`_archive/workspace-split/`](_archive/workspace-split/)  
+- Consumer (Print): [`../docs/CONSUMER.md`](../docs/CONSUMER.md)

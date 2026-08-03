@@ -27,7 +27,8 @@ Usage:
       --typ PATH [--catalog PATH] [--content PATH] [--accept PATH]
       [--freeze PATH] [--genre-minima PATH] [--root DIR] [--font-path PATH]
       [--profile smoke|production] [--whitelist-mode creative|strict]
-      [--exception-no-brief] [--skip-compile] [--out-pdf PATH] …
+      [--quality-packet PATH] [--exception-no-brief] [--skip-compile] [--out-pdf PATH] …
+      # --quality-packet: soft path presence only (WARN); not Design/Visual CLEAN cert
       # Default catalog: toolset/form-catalog/core/forms.yaml (studio)
       # Preferred over: python3 toolset/compose/scripts/run_validate.py
 
@@ -268,6 +269,7 @@ cmd_validate() {
   local root_arg="" font_path="" profile="" whitelist="" out_pdf=""
   local posthoc="" catalog_overlay=""
   local skip_compile=0 exception=0 json=0 body_hard=0
+  local quality_packet=""
   local extra=()
 
   while [[ $# -gt 0 ]]; do
@@ -289,6 +291,7 @@ cmd_validate() {
       --skip-compile) skip_compile=1; shift ;;
       --json) json=1; shift ;;
       --body-hard-fail) body_hard=1; shift ;;
+      --quality-packet) quality_packet="$2"; shift 2 ;;
       -h|--help)
         echo "bookkit validate — see bookkit --help; forwards to toolset/compose/scripts/run_validate.py"
         exit 0
@@ -332,6 +335,7 @@ cmd_validate() {
   [[ $exception -eq 1 ]] && args+=(--exception-no-brief)
   [[ $json -eq 1 ]] && args+=(--json)
   [[ $body_hard -eq 1 ]] && args+=(--body-hard-fail)
+  [[ -n "$quality_packet" ]] && args+=(--quality-packet "$quality_packet")
   if [[ ${#extra[@]} -gt 0 ]]; then
     args+=("${extra[@]}")
   fi
