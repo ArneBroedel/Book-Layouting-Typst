@@ -151,9 +151,12 @@ toolset/orchestration/form-lab/portfolio-2026-08-d/harvest/production-bridge.md
 
 | From | Must not |
 |---|---|
-| A compose | Invent didactic ideal when brief exists |
-| B media | Write production `.typ` |
-| B graphics | Invent Form Spec / claims; endless refine loops |
-| C review | Rewrite claims silently; agent freeze |
+| **C** content | Layout craft as SoT; agent-only freeze |
+| **B** media | Write production `.typ`; invent claims |
+| **B** graphics | Invent Form Spec / claims; endless refine loops |
+| **A** compose | Invent didactic ideal when brief exists; own web app |
+| **W** web | Content/asset SoT; print Accept authority |
 
-Boundaries: `devtracks/PRODUCT-BOUNDARIES.md` · consensus: `devtracks/CONSENSUS-v0.md` · Contract: `toolset/skill-pack/COLLABORATION-CONTRACT.md`.
+**Production order:** C Freeze → B Accept (`channel_scope: print|web|both`) → A and/or W.  
+**Hard checks:** `./scripts/bookkit boundaries check-tree` · `check-release <package.yaml>`.  
+**Contracts:** `contracts/` · policy: `devtracks/PRODUCT-BOUNDARIES.md` v0.3.1 · consensus: `devtracks/CONSENSUS-v0.md` · short law: `toolset/skill-pack/COLLABORATION-CONTRACT.md` · W scaffold: `channels/web/`.

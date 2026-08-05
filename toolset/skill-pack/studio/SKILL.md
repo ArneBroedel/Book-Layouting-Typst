@@ -18,7 +18,7 @@ metadata:
   short-description: "Guided intake — layout, graphics, book production"
 ---
 
-# studio — guided front door (Produkt A/B/C)
+# studio — guided front door (Produkt C / B / A / W)
 
 **You are the intake desk and session guide** for this layout monorepo.
 
@@ -63,7 +63,7 @@ If the user **is** unclear, **start here even if** a specialist might also match
 
 When this skill starts (slash or trigger), **do not** dump the whole monorepo.
 
-1. One short orientation sentence (Mission A layout platform + B media + C content external).  
+1. One short orientation sentence (C content external → B media/assets → A print layout; optional W web scaffold).  
 2. Ask **what they want to achieve now** (if not already in the message / args).  
 3. Use a **small menu** of situations (see below). Prefer structured options when the product supports them; otherwise number the choices in chat.  
 4. After the choice: run the **intake checklist** for that situation (only missing fields).  
@@ -117,6 +117,7 @@ After situation is known, collect (skip known answers):
 | **book_id** | for multi-chapter board |
 | **project_root** | consumer dir or monorepo studio root |
 | **print_target** | screen \| print-pdfx \| both |
+| **channel_scope** (after Accept intent) | print \| web \| both — default historical **print**; web only when W pilot needed |
 | **autonomy** | L0 guided (ask each step) \| L1 semi \| L2 auto between Human gates |
 | **existing artifacts** | freeze, brief, form-spec, accept, typ, pdf, board paths if any |
 
@@ -137,7 +138,7 @@ Hard rules:
 4. Real visual units default to **`free-vision-ambition`** track; after realize → **Visual Critic on PNG (Visual CLEAN)** before Accept.  
 5. Multi-unit quality chapter → **chapter macro VC** on assembled full-page PNGs after compose (not only unit CLEAN). Book **P9** stays multi-chapter assembly sample.  
 6. Exploration does **not** waive Visual CLEAN for didactic chapter PDFs.  
-7. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics (not ad-hoc script hunting).  
+7. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics / **boundaries** (not ad-hoc script hunting).  
 8. Full multi-chapter durable drive → create/use board via **`book-production-orchestrator`**.  
 9. C-only review loops → **`content-orchestrator`** (max 2 rounds → H3).  
 10. Never invent clinical claims; never agent-sign freeze/proof.  
@@ -264,13 +265,16 @@ For full-book or sit.2 durable resume, prefer board `route.md` from book-product
 | Doctor / build | `./scripts/bookkit doctor|build …` |
 | Validate chapter | `./scripts/bookkit validate --typ … --content … --accept …` |
 | Catalog | `./scripts/bookkit catalog check` |
+| Product boundaries / release package | `./scripts/bookkit boundaries check-tree` · `check-release PATH` · `contracts/` |
 | Graphics vision/refine | `./scripts/bookkit graphics …` |
 | Prepress DPI / PDFX | `./scripts/bookkit prepress dpi|pdfx …` |
 | Book board status | `./scripts/book-production-status.sh <book-id>` |
 | Gold briefs | `domains/medical/briefs/INDEX.md` |
 | KL modules | `domains/medical/lib/typst/` |
+| Web channel (scaffold) | `channels/web/` |
 | Consumer guide | `docs/CONSUMER.md` |
 | Full-book runbook | `docs/BOOK-PRODUCTION-RUNBOOK.md` |
+| Product map | `devtracks/PRODUCT-BOUNDARIES.md` |
 | Human gates | `domains/content-maturity/checkpoints.md` |
 
 ---
@@ -287,7 +291,7 @@ For full-book or sit.2 durable resume, prefer board `route.md` from book-product
 | Multi-unit quality chapter: **chapter macro VC** after assemble before done | Multi-unit chapter done on unit CLEAN alone / validate alone / self-Accept |
 | Prefer bookkit CLI verbs | Invent Critical Claims or clinical numbers |
 | Stop at H1/H2/H4/H5/H-Gfx | Agent-sign freeze/proof/imprimatur |
-| Keep A/B/C boundaries | Dump research/ as default context |
+| Keep C/B/A/W boundaries (PRODUCT-BOUNDARIES) | Dump research/ as default context; put web app in bookkit |
 | Two-sided density; solid simple form after free FAIL | Squish layout for page count; blob placeholder demotion |
 | Focus free vision; pretty ≠ textbook-ready | Multi-pin labeled limb dashboards as default “ambition” |
 | Route Form Lab to situation **9** → `form-lab-orchestrator` | Run Form Lab T→C→V→R craft stack inside studio |

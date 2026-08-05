@@ -303,7 +303,7 @@ python3 domains/medical/skill/open-assets/scripts/print_size_check.py \
 domains/medical/assets/form-lab/<lab-id>/
   MANIFEST.md  CREDITS.md  *.license.json  <files>
 toolset/orchestration/form-lab/<lab-id>/source-scan.md
-toolset/compose/pilots/form-lab-*-o/chapter.typ
+toolset/compose/lab/form-lab-*-o/chapter.typ
 ```
 
 Pass O medium rules: `toolset/orchestration/form-lab/_templates/medium-rules-O.md`

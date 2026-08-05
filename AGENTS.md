@@ -51,7 +51,7 @@ Project skills encode hard-won conventions and **supersede general Typst advice*
 | `bookkit` | Importing bookkit packages, starter/CLI consumer work, design-brief/presets |
 | `compose-chapter` | Tech compose: feasibility note, catalog-whitelist `chapter.typ`, spike, validate chapter (Produkt A) — **not** free didactic ideal / gold brief |
 | `book-production-orchestrator` | **Full-book** durable drive: board + run-log, kickoff→print, L0–L3 between Human gates — after `/studio` chooses full book, or direct kickoff |
-| `form-lab-orchestrator` | **Form Lab lab-learning** only: default **L2 autodrive** full T→C→V→R→matrix→**S best-of** + harvest; board under `toolset/orchestration/form-lab/`; studio situation **9** — **not** default production chapter pipeline |
+| `form-lab-orchestrator` | **Form Lab lab-learning** only: default **L2 autodrive** full T→C→V→R→matrix→**S best-of** + harvest; board under `toolset/orchestration/form-lab/` (+ `_archive/`); chapter.typ `toolset/compose/lab/`; studio situation **9** — **not** default production chapter pipeline |
 | `media-brief` | Media Brief + **Form Spec** + **Design Contract** + Design Critic until **Design CLEAN**; Accept only with Design+Visual CLEAN (Produkt B) — **not** production `.typ` or free-vision PNG gen |
 | `medical-graphics` | After Design CLEAN: free vision → claim audit → harvest→atoms → realize → **Visual Critic on PNG until Visual CLEAN**; KL form library; Decision Note (Produkt B) — **not** Form Spec authorship or full compose |
 | `open-assets` | Third-party / free visuals: source scan, license ampule, attribution, MANIFEST/CREDITS/sidecars, personality rights, print size — **before** free vision when realism/icons needed; Pass O — **not** claim rewrite or free gen itself |
@@ -116,30 +116,33 @@ into skills/guides, footer the plan, `git mv` to `devtracks/_archive/`.
 
 ### Active / recent tracks
 
-**Boundaries v0.3** — `devtracks/PRODUCT-BOUNDARIES.md` (C/B/A + Web **W**, ADR 50–59) · `devtracks/CONSENSUS-v0.md`.  
+**Boundaries v0.3.1** — `devtracks/PRODUCT-BOUNDARIES.md` (C/B/A + Web **W**, ADR **50–60**) · contracts `contracts/` · CLI `bookkit boundaries` · `devtracks/CONSENSUS-v0.md`.  
 **Orchestration complete** (Waves 0–5, E1–E12): `devtracks/ORCHESTRATION.md` + `_orchestration/board.md`.
 
 | Area | Product | Path |
 |---|---|---|
-| Print layout platform (this repo) | **A** | `packages/`, `toolset/` |
+| Print layout platform (this repo) | **A** | `packages/`, `toolset/` (compose, **boundaries**, form-catalog) |
 | form-catalog core | A | `toolset/form-catalog/core/` (pin `VERSION` = `0.1.0`) |
 | compose engine | A | `toolset/compose/` |
+| shared contracts (release package) | shared | `contracts/` · `./scripts/bookkit boundaries` |
 | medical domain media | **B** | `domains/medical/` (split candidate; Phase 3 deferred) |
 | Kursbuch / content works | **C** | **external** — never SoT in this repo |
-| Web layout (Astro o. ä.) | **W** | Grenzvertrag only until pilot (`channels/web/` or sibling repo) |
+| Web layout (Astro o. ä.) | **W** | scaffold `channels/web/` (runtime with pilot; not bookkit) |
 | **workspace-split** (archived) | **A/B/C** structure | `devtracks/_archive/workspace-split/` · modular monorepo done; inventory `devtracks/_archive/workspace-inventory/`; Phase 3 split deferred (D2) |
 | **kl-form-language** (archived) | **B** | `devtracks/_archive/kl-form-language/` · system complete; ops: `playbook/10-kl-chapter-pipeline.md` |
 | **skill collaboration trilogy** (archived 2026-08-03) | A/B/C control | Index `devtracks/skill-collaboration/` · T1–T3A + R1/R2 under `devtracks/_archive/` · Contract SoT: `toolset/skill-pack/COLLABORATION-CONTRACT.md` · soft packet gate: `./scripts/bookkit validate --quality-packet PATH` |
 | **free-vision-harvest** (archived) | **B** | `devtracks/_archive/free-vision-harvest/` · track/harvest/proximity (substrate for realize) |
 | Consumer guide | A | `docs/CONSUMER.md` |
 
-**Flow (v0.2):** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.  
-**Flow (v0.3):** C draft → **content-review / freeze** → B brief → Accept (scope `print`\|`web`\|`both`) → **A** compose/validate and/or **W** web build → **proof / imprimatur**. Spec: `devtracks/_archive/content-maturity/` · boundaries ADR 50–59.  
+**Lab vs production:** Form Lab (`toolset/orchestration/form-lab/`, `toolset/compose/lab/`) is **lab-learning** (studio 9) — not the default chapter ship path. See `docs/KNOWLEDGE-MAP.md`.
+
+**Flow (v0.2 historical):** C content → B media brief → A feasibility/spike → B accept → A compose/validate → PDF.  
+**Flow (v0.3 production):** C draft → **content-review / freeze** → B brief → Accept (`channel_scope` `print`\|`web`\|`both`) → **A** compose/validate and/or **W** web → **proof / imprimatur**. Release package: `contracts/` · ADR **50–60**.  
 **Form Lab (optional research):** studio situation 9 → `form-lab-orchestrator` L0–L7 → harvest (vocabulary/bridge) — never silent default for chapter layout.
 
 **Skill gate:** **`studio`** (`/studio`) for guided intake when the path is unclear; **`book-production-orchestrator`** for full-book board → print (runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`); **`form-lab-orchestrator`** for Form Lab lab-learning only (situation 9; not production default); `media-brief` (Design CLEAN) + **`open-assets`** (source scan / rights docs when third-party visuals) + **`medical-graphics`** (Visual CLEAN) (domain B); `compose-chapter` / `bookkit` / `typst-writer` (platform A); **`content-review`** + **`content-orchestrator`** (C — under `domains/content-maturity/skill/`). Design-quality living SoT: B skills + templates (provenance: `devtracks/_archive/design-quality-system/`). Graphics guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`. Human checkpoints: `domains/content-maturity/checkpoints.md` (**H-Design**, **H-Explore**, **H-Gfx**). Do not put medical genre logic into `packages/bookkit` foundation. Do not copy chapter SoT into this repo. No Genesis-style score auto-rewrite loops on clinical content. Validate green ≠ design quality.
 
-**Workspace:** `workspaces/kursbuch-layout.code-workspace` (A+C multi-root UX only).
+**Workspace:** `workspaces/kursbuch-layout.code-workspace` (multi-root **A + B + C + W** UX only — no fifth product).
 
 **Archived (harvested):** skill-collaboration trilogy + residuals (`collab-control-plane`, `open-assets-production-wire`, `orchestration-quality-state`, `collab-wire-dogfood`, `quality-packet-soft-gate` → Contract + wire + board cells + soft `--quality-packet` WARN gate), `design-quality-system` (CLEAN doctrine → B skills), `chapter-form-lab` (→ `form-lab-orchestrator` + runtime), `multi-chapter-explore-layout` (→ book-production-orchestrator multi-chapter ops), `workspace-split`, `workspace-inventory`, `kl-form-language`, `medical-graphics`, `content-maturity`, `agentic-adaptations` (runtime stays under `packages/`, `toolset/`, `domains/`).  
 Earlier: `form-catalog`, `media-design`, `compose-pipeline`, `platform-boundaries`, plus more under `devtracks/_archive/`.

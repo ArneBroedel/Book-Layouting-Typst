@@ -208,6 +208,6 @@ Criteria icons may look right while teaching wrong (Melanom B/D) → illustratio
 
 ## Product note
 
-Produkt **B**. Do not fold medical free-vision logic into `packages/bookkit`.
+Produkt **B**. Do not fold medical free-vision logic into `packages/bookkit`. Assets SoT under `domains/medical/assets/` (CANONICAL). Print embed is **A** (`compose-chapter`); web derivatives are **W** with provenance back to B MANIFEST — not a second asset SoT.
 
-**Background:** `Guides/Medical-Graphics-Playbook.md` · Track `devtracks/_archive/medical-graphics/` · Open-assets wire: `devtracks/_archive/open-assets-production-wire/`
+**Background:** `Guides/Medical-Graphics-Playbook.md` · Track `devtracks/_archive/medical-graphics/` · Open-assets wire: `devtracks/_archive/open-assets-production-wire/` · Boundaries: `devtracks/PRODUCT-BOUNDARIES.md`

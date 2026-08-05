@@ -40,16 +40,19 @@ L0 pins → T* → C* → V* → R* → matrix → S best-of* → (next lab) →
 ```text
 toolset/orchestration/form-lab/
   README.md
-  _templates/
-  <lab-id>/
+  _templates/                    # living SoT
+  portfolio-2026-08-c/           # living harvest exemplar (skill establishment)
+  portfolio-2026-08-d/           # living preferred production-bridge sample
+  portfolio-open-asset-2026-08/  # living Pass O dogfood
+  _archive/                      # completed labs + early portfolios (navigation quarantine)
+  <lab-id>/                      # NEW active labs only (create from _templates/)
     kickoff.md  board.md  run-log.md  route.md  pins.md
     passes/T|C|V|R|S|D/
     comparison/
-    harvest/                 # or portfolio-level
-  portfolio-<wave>/
-    board.md
-    harvest/
+    harvest/                     # or portfolio-level
 ```
+
+**Archive policy:** completed waves live under `_archive/`. Agents load templates + living portfolios by default; open `_archive/` only for provenance. Archive is for clarity, not clone-size reduction.
 
 ### Templates (`_templates/`)
 
@@ -62,7 +65,7 @@ toolset/orchestration/form-lab/
 | `form-vocabulary.md` / `production-bridge.md` | L7 |
 | `human-s-rank.md` / `sr-log.md` | optional |
 
-**Open-Asset pilot (2026-08):** policy `domains/medical/OPEN-ASSET-POLICY.md` · portfolio `portfolio-open-asset-2026-08/` · labs `*-2026-08-o` · compose `form-lab-*-o`. Parallel to T–S; **not** autodrive COMPLETE requirement.
+**Open-Asset pilot (2026-08):** policy `domains/medical/OPEN-ASSET-POLICY.md` · portfolio `portfolio-open-asset-2026-08/` · labs in `_archive/*-2026-08-o` · compose `toolset/compose/lab/form-lab-*-o`. Parallel to T–S; **not** autodrive COMPLETE requirement.
 
 ---
 
@@ -71,8 +74,8 @@ toolset/orchestration/form-lab/
 ```text
 dist/form-lab/<lab-id>/<pass>/chapter.pdf
 dist/form-lab/<lab-id>/<pass>/p*.png
-toolset/compose/pilots/form-lab-<chapter>-<pass>/
-domains/medical/assets/form-lab/<lab-id>/…   # V/R assets
+toolset/compose/lab/form-lab-<chapter>-<pass>/   # Form Lab runs (not compose/pilots)
+domains/medical/assets/form-lab/<lab-id>/…       # V/R assets — path STABLE (do not relocate)
 ```
 
 ---

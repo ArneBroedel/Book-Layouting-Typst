@@ -328,6 +328,8 @@ If multiple roles in one session: Brief → Feasibility/Graphics Decision → Ac
 | Graphics skill (B) | `domains/medical/skill/medical-graphics/` |
 | Open assets (B) | `domains/medical/skill/open-assets/` |
 | Collaboration Contract | `toolset/skill-pack/COLLABORATION-CONTRACT.md` |
-| Governance | `devtracks/CONSENSUS-v0.md`, `PRODUCT-BOUNDARIES.md` |
+| Governance | `devtracks/CONSENSUS-v0.md`, `PRODUCT-BOUNDARIES.md` v0.3.1 |
+| Release package / tree check | `contracts/` · `./scripts/bookkit boundaries` |
+| Web channel (not this skill) | `channels/web/` (Produkt **W** — only after Accept `channel_scope` includes web) |
 
-Produkt **A** engine is domain-agnostic. Content paths from **C**. Domain briefs/recipes from **B**.
+Produkt **A** engine is domain-agnostic **print** compose. Content paths from **C**. Domain briefs/recipes/assets from **B**. Do **not** implement Astro/web here (**W**).

@@ -68,7 +68,7 @@ Template: `_templates/comparison-matrix.md` · optional `human-s-rank.md`.
 | Omit is a win | Drop whole medium if it never beats type for any job |
 | No new untested media | Do not invent forms not exercised in T–R |
 | Iterative | Draft S → PNG → critique → revise until synthesis-clean (coherence, scan, density, SR on mounts) |
-| Output | `pilots/form-lab-*-S/` + `dist/.../S/` chapter.pdf + p*.png |
+| Output | `toolset/compose/lab/form-lab-*-S/` + `dist/form-lab/.../S/` chapter.pdf + p*.png |
 
 Procedure: `_templates/medium-rules-S.md` · [`craft.md`](craft.md) § Pass S.
 

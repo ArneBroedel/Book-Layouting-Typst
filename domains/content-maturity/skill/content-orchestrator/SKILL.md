@@ -61,7 +61,7 @@ If the user is **unsure of the overall path**, start with **`studio`** (`/studio
 | Point at H1–H5 when Human required | Rewrite claims/body |
 | Enforce max 2 review rounds → H3 | Full Media Brief body while “only orchestrating” |
 | Handoff freeze to Human | Agent-only freeze sign-off |
-| Keep A/B/C boundaries | Genesis score loops / auto-polish |
+| Keep C/B/A/W boundaries (PRODUCT-BOUNDARIES) | Genesis score loops / auto-polish; layout craft as content SoT |
 
 ## Related
 
@@ -75,3 +75,5 @@ If the user is **unsure of the overall path**, start with **`studio`** (`/studio
 | **studio** (guided intake / slash front door) | `toolset/skill-pack/studio/` |
 | **book-production-orchestrator** (full book → print) | `toolset/skill-pack/book-production-orchestrator/` |
 | Track (archived) | `devtracks/_archive/agentic-adaptations/` |
+| Product boundaries | `devtracks/PRODUCT-BOUNDARIES.md` · `contracts/` |
+| book-production / print | handoff only — never own A compose |

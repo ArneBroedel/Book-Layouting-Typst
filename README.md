@@ -1,17 +1,18 @@
 # Book Layouting with Typst
 
-**Mission A first:** a reproducible **Typst layout platform** (packages + CLI + skills) that turns content into print-ready PDFs.
+**Mission A first:** a reproducible **Typst print layout platform** (packages + CLI + skills) that turns frozen content + accepted media into print-ready PDFs — with clear task separation for content, assets, and a future web channel.
 
 Companion layers live in the same modular monorepo until a split trigger fires:
 
 | Produkt | What | Path |
 |---|---|---|
-| **A** | Layout platform — bookkit, form-catalog, compose, CLI | `packages/`, `toolset/`, `scripts/bookkit` |
-| **B** | Domain media (medical briefs, graphics) | `domains/medical/` (split candidate) |
-| **C** | Content works + editorial kit | **external** content + transitional `domains/content-maturity/` |
+| **C** | Content works (text, claims, freeze) | **external** + process kit `domains/content-maturity/` |
+| **B** | Domain media (briefs, open-assets, graphics) | `domains/medical/` (split candidate) |
+| **A** | Print layout — bookkit, form-catalog, compose, CLI | `packages/`, `toolset/`, `scripts/bookkit` |
+| **W** | Web layout (Astro o. ä.) | scaffold `channels/web/` (runtime with pilot) |
 | **R** | Ecosystem survey | `research/` — **not** default agent context |
 
-Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) · modular monorepo (workspace-split archived): [`devtracks/_archive/workspace-split/`](devtracks/_archive/workspace-split/).
+**Boundaries (policy + hard checks):** [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) · shared contracts [`contracts/`](contracts/) · CLI `./scripts/bookkit boundaries` · monorepo history: [`devtracks/_archive/workspace-split/`](devtracks/_archive/workspace-split/).
 
 ---
 
@@ -28,6 +29,8 @@ Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md)
   --genre-minima toolset/compose/fixtures/pass_minimal/genre-minima.yaml \
   --root . --skip-compile
 ./scripts/bookkit catalog check
+./scripts/bookkit boundaries check-tree
+./scripts/bookkit boundaries check-release contracts/fixtures/pass_print_minimal.yaml
 ```
 
 Scaffold a new consumer:
@@ -49,9 +52,12 @@ Pins: bookkit `0.1.0` · form-catalog `0.1.0`.
 
 ```text
 doctor | build | watch | ua | print | init | brief-check
-validate | catalog check | prepress dpi|pdfx
-graphics vision|refine|spike-init|manifest
+validate | catalog check | boundaries check-tree|check-release|check
+prepress dpi|pdfx | graphics vision|refine|spike-init|manifest
 ```
+
+**Task order (production):** C Freeze → B Accept (`channel_scope`) → A print and/or W web.  
+Release package template: [`contracts/templates/chapter-release.template.yaml`](contracts/templates/chapter-release.template.yaml).
 
 ---
 
@@ -75,15 +81,23 @@ Print (needs Ghostscript): `./scripts/build.sh print` or `./scripts/bookkit prin
 ## Project map (short)
 
 ```text
-packages/bookkit/          foundation runtime
-packages/bookkit-didactics/ optional didactic boxes
-toolset/                   compose, form-catalog, starter, skill-pack, examples
+packages/bookkit/          A foundation runtime
+packages/bookkit-didactics/ A optional didactic boxes
+toolset/                   A compose, boundaries, form-catalog, starter, skill-pack
+  compose/pilots/          production/dogfood chapter.typ
+  compose/lab/             Form Lab chapter.typ only (lab-learning)
+  orchestration/…          production boards vs form-lab (+ _archive)
 scripts/bookkit            unified CLI
-src/                       showcase book (not content SoT for other works)
-domains/medical/           Produkt B media + harvested Typst libs
-domains/content-maturity/  Produkt C process kit (transitional)
-pilots/                    dogfood only (see pilots/README.md)
-research/                  ecosystem lab (not default context)
+contracts/                 shared C/B/A/W release + pin contracts
+channels/web/              W web channel scaffold (not bookkit)
+src/                       A showcase book (not content SoT for other works)
+domains/medical/           B media + harvested Typst libs (gold briefs top-level)
+domains/content-maturity/  C process kit (transitional)
+workspaces/                multi-root UX (A+B+C+W)
+pilots/                    consumer dogfood only (≠ compose/pilots)
+research/                  R ecosystem lab (not default context)
+docs/KNOWLEDGE-MAP.md      knowledge + Lab≠Prod layers
+docs/REPO-MAP.md           folder legend
 docs/CONSUMER.md           how to consume this platform
 ```
 
@@ -112,8 +126,8 @@ Prefer **`./scripts/bookkit …`** over hunting ad-hoc scripts.
 - Reproducible: `--ignore-system-fonts --font-path fonts`
 - **theme → styles → components → chapters → main**
 - No medical genre logic in foundation `packages/bookkit`
-- Content SoT stays external (C); no auto-heal compose loops
-- Intermediate AI vision PNGs: CANONICAL policy under `domains/medical/assets/`
+- Content SoT stays external (C); assets SoT in B; print A / web W share pins, not code
+- No auto-heal compose loops; intermediate AI vision PNGs: CANONICAL under `domains/medical/assets/`
 
 ## Related
 

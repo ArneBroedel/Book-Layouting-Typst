@@ -106,7 +106,7 @@ Open assets are a **carrier** (`open-photo` | `open-icon` | `open-vector`), not 
 | Portfolio board | `toolset/orchestration/form-lab/portfolio-open-asset-2026-08/` |
 | Per-lab board | `toolset/orchestration/form-lab/<chapter>-2026-08-o/` |
 | Assets + MANIFEST | `domains/medical/assets/form-lab/<chapter>-2026-08-o/` |
-| Compose pilot | `toolset/compose/pilots/form-lab-<chapter>-o/chapter.typ` |
+| Compose pilot | `toolset/compose/lab/form-lab-<chapter>-o/chapter.typ` |
 | Credits rollup | `domains/medical/assets/form-lab/<chapter>-2026-08-o/CREDITS.md` |
 
 ---
@@ -163,13 +163,13 @@ When the pilot proves value: promote gates into Graphics G0b + skill ALWAYS/NEVE
 # 2) Per chapter: fill source-scan.md, download to assets/…, MANIFEST
 # 3) Compose pilot
 typst compile --root . --ignore-system-fonts --font-path fonts \
-  toolset/compose/pilots/form-lab-gicht-o/chapter.typ \
+  toolset/compose/lab/form-lab-gicht-o/chapter.typ \
   dist/form-lab/gicht-2026-08-o/chapter.pdf
 
 # 4) PNG pages for visual check
 typst compile --root . --ignore-system-fonts --font-path fonts \
   --format png --ppi 150 --pages 1-2 \
-  toolset/compose/pilots/form-lab-gicht-o/chapter.typ \
+  toolset/compose/lab/form-lab-gicht-o/chapter.typ \
   dist/form-lab/gicht-2026-08-o/p{n}.png
 ```
 

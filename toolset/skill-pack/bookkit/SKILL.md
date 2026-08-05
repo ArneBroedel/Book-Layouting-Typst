@@ -103,7 +103,7 @@ Numbered action protocol with visual step weight — prefer over plain `#enum` f
 - Assuming MCP holds skill text — skills are file-first
 - Using plain bullets for multi-step clinical SOPs when `protocol-steps` is available
 
-## CLI (`./scripts/bookkit`, v0.1.2+)
+## CLI (`./scripts/bookkit`, **v0.1.2**+)
 
 One entrypoint for layout **and** gated helpers (workspace-split Phase 1b, D4):
 

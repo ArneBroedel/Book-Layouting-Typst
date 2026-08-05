@@ -29,6 +29,10 @@
 | `skill-pack/` | Platform skills SoT (bookkit, compose-chapter, orchestrator) |
 | `examples/` | Synthetic A-only smoke consumers |
 | `tests/` | Shell + integration smokes |
+| `orchestration/book-production/` | Production boards + release yaml |
+| `orchestration/form-lab/` | Lab boards; completed under `_archive/` |
+| `compose/lab/` | Form Lab chapter.typ runs (not engine) |
+| `compose/pilots/` | Production/dogfood chapter.typ |
 
 ## Related
 

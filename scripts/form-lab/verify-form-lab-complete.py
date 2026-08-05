@@ -86,15 +86,17 @@ def _matrix_score_rows(mt: str) -> list[tuple[str, tuple[int, int, int, int]]]:
 
 
 def _pilot_path(slug: str, pass_id: str, wave: str) -> Path:
+    # Form Lab chapter.typ lives under compose/lab/ (runs), not compose/pilots/ (dogfood)
     if wave == "b":
-        return ROOT / "toolset/compose/pilots" / f"form-lab-{slug}-b-{pass_id}" / "chapter.typ"
-    return ROOT / "toolset/compose/pilots" / f"form-lab-{slug}-{pass_id}" / "chapter.typ"
+        return ROOT / "toolset/compose/lab" / f"form-lab-{slug}-b-{pass_id}" / "chapter.typ"
+    return ROOT / "toolset/compose/lab" / f"form-lab-{slug}-{pass_id}" / "chapter.typ"
 
 
 def _portfolio_path(wave: str) -> Path:
+    # Completed wave a/b portfolios live under form-lab/_archive/
     if wave == "b":
-        return ROOT / "toolset/orchestration/form-lab/portfolio-2026-08-b/board.md"
-    return ROOT / "toolset/orchestration/form-lab/portfolio-2026-08/board.md"
+        return ROOT / "toolset/orchestration/form-lab/_archive/portfolio-2026-08-b/board.md"
+    return ROOT / "toolset/orchestration/form-lab/_archive/portfolio-2026-08/board.md"
 
 
 def _mounted_raster_paths(typ: Path) -> list[str]:
@@ -183,7 +185,8 @@ def main(argv: list[str] | None = None) -> int:
     recompile_done: set[str] = set()
 
     for lab, slug in labs.items():
-        orch = ROOT / "toolset/orchestration/form-lab" / lab
+        # Completed craft labs live under form-lab/_archive/ (living slice = templates + harvest portfolios)
+        orch = ROOT / "toolset/orchestration/form-lab/_archive" / lab
         for name in ("board.md", "route.md", "pins.md", "run-log.md", "comparison/matrix.md"):
             path = orch / name
             if not path.exists():

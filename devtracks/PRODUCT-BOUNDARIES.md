@@ -1,9 +1,17 @@
-# Produkt- & Repo-Grenzen (v0.3)
+# Produkt- & Repo-Grenzen (v0.3.1)
 
-**Status:** accepted direction (2026-08-03)  
+**Status:** accepted direction (2026-08-03); **hard CLI contracts live** (ADR 60)  
 **Supersedes:** v0.2 (2026-07-20) — three products only; print-only presentation  
-**Ergänzt:** [`CONSENSUS-v0.md`](CONSENSUS-v0.md) (Rollen/Workflow) · [`ROLES-AND-FLOW.md`](ROLES-AND-FLOW.md)  
+**Ergänzt:** [`CONSENSUS-v0.md`](CONSENSUS-v0.md) · [`ROLES-AND-FLOW.md`](ROLES-AND-FLOW.md) · [`../contracts/README.md`](../contracts/README.md)  
 **Track (archived):** [`_archive/platform-boundaries/`](_archive/platform-boundaries/) · split deferred [`_archive/workspace-split/phase3-split.md`](_archive/workspace-split/phase3-split.md)
+
+**How to verify boundaries today:**
+
+```bash
+./scripts/bookkit boundaries check-tree
+./scripts/bookkit boundaries check-release contracts/fixtures/pass_print_minimal.yaml
+./scripts/bookkit doctor --root .   # includes tree check on studio root
+```
 
 ---
 

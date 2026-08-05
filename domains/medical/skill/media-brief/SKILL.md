@@ -174,12 +174,14 @@ When Graphics/Tech return candidates — **only after Design CLEAN + Visual CLEA
 10. If **revise**: required changes as artifact.
 11. **Production compose authorized?** only on accept path + freeze.
 12. Exploration may authorize exploration compose **only** with Visual CLEAN; never production.
-13. Write Accept from **`domains/medical/templates/accept-record.template.md`** (CLEAN checkboxes + quality_packet_path + rights row when asset).
+13. **`channel_scope`:** set **`print` \| `web` \| `both`** on the Accept record (template field). Historical Accepts without the field = **print** (ADR 53). Scope must match intended channels before production A compose and/or W web build.
+14. Write Accept from **`domains/medical/templates/accept-record.template.md`** (CLEAN checkboxes + quality_packet_path + rights row when asset + channel_scope).
+15. **Optional chapter release package** (orchestration pin bundle): copy `contracts/templates/chapter-release.template.yaml`, pin `content_revision` + assets + accept paths + scope; validate with `./scripts/bookkit boundaries check-release PATH`.
 
 Suggested path: `domains/medical/briefs/<slug>.accept.md`.
 
-**Compose may run only after Media accept** (or documented smoke exception).  
-**Production compose** also requires content freeze.
+**Compose (A) / Web (W) may run only after Media accept** (or documented smoke exception).  
+**Production** also requires content freeze. **W** requires Accept scope `web` or `both`.
 
 ### Checkpoints (Human)
 
@@ -256,7 +258,8 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | **Visual Critique** | `domains/medical/templates/visual-critique.template.md` |
 | **Quality Packet** | `domains/medical/templates/quality-packet.template.md` |
 | Brief template | `domains/medical/templates/media-brief.template.md` |
-| Accept template | `domains/medical/templates/accept-record.template.md` |
+| Accept template | `domains/medical/templates/accept-record.template.md` (`channel_scope`) |
+| Chapter release package | `contracts/templates/chapter-release.template.yaml` · `bookkit boundaries check-release` |
 | Graphics Decision template | `domains/medical/templates/graphic-decision.template.md` |
 | Graphic Harvest template | `domains/medical/templates/graphic-harvest.template.md` |
 | Design-quality track | `devtracks/_archive/design-quality-system/` |
@@ -267,10 +270,11 @@ If multiple roles appear in one session: **finish Brief (or Accept) as a file fi
 | KL form language (archived) | `devtracks/_archive/kl-form-language/` · ops pipeline `medical-graphics/playbook/10-kl-chapter-pipeline.md` |
 | Ownership | `domains/medical/OWNERSHIP.md` |
 | Knowledge library (archived, compressed) | `devtracks/_archive/medical-knowledge-design-competencies/` |
-| Governance | `devtracks/CONSENSUS-v0.md` (ADR 10–17), `devtracks/media-design/spec.md`, `devtracks/PRODUCT-BOUNDARIES.md` |
+| Governance | `devtracks/CONSENSUS-v0.md` (ADR 10–17) · `devtracks/PRODUCT-BOUNDARIES.md` v0.3.1 · Collaboration Contract |
+| Media-design track (archived) | `devtracks/_archive/media-design/` |
 
 ## Product note
 
-Produkt **B** transitional home: `domains/medical/`. Split-ready; do not fold medical genre logic into `packages/bookkit` foundation.
+Produkt **B** transitional home: `domains/medical/`. Split-ready; do not fold medical genre logic into `packages/bookkit` foundation. Do not own print prepress (**A**) or Astro app SoT (**W**).
 
 **Background:** `Guides/Medical-Presentation-Forms.md` · KL harvest `briefs/_explorations/kl-harvest-and-reuse-plan.md`

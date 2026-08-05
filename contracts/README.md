@@ -1,7 +1,7 @@
 # Shared contracts (C · B · A · W)
 
 **SoT for multi-product coupling** — not presentation code.  
-Policy: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md) v0.3 (ADR 50–59).
+Policy: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md) **v0.3.1** (ADR **50–60**).
 
 | Contract | Consumed by | Engine |
 |---|---|---|

@@ -5,7 +5,7 @@ description: "ALWAYS use as the top-level controller for full-book or multi-chap
 
 # book-production-orchestrator
 
-**Top-level controller** for **book production** (C content → B media/graphics → A compose/print).
+**Top-level controller** for **book production** (C content → B media/graphics → A compose/print; optional **W** web after Accept scope includes web/both).
 
 Keeps **overview**, **documents every step**, answers **where are we / what's next / go back?**, and can **drive autonomously for hours** between Human gates — by writing durable board + run-log files and re-entering specialist skills.
 
@@ -13,6 +13,7 @@ Keeps **overview**, **documents every step**, answers **where are we / what's ne
 **Board runtime:** `toolset/orchestration/book-production/<book-id>/`  
 **Runbook:** `docs/BOOK-PRODUCTION-RUNBOOK.md`  
 **Checkpoints:** `domains/content-maturity/checkpoints.md`  
+**Boundaries:** [`PRODUCT-BOUNDARIES.md`](../../../devtracks/PRODUCT-BOUNDARIES.md) · contracts [`contracts/`](../../../contracts/) · `./scripts/bookkit boundaries`  
 **Does not replace:** `content-review`, `media-brief`, `open-assets`, `medical-graphics`, `compose-chapter` — **routes and logs** them (craft stays in specialists).  
 **Obey:** [`COLLABORATION-CONTRACT.md`](../COLLABORATION-CONTRACT.md) — controllers, greens, session law, done. **When a board already exists under book-production, this skill is the resume owner** (studio must not keep a shadow board).
 
@@ -104,13 +105,14 @@ If user says “analyze what we already did”:
 | Content gate | **P2** | per chapter frozen or exploration policy | `content-orchestrator` / Human **H1** |
 | Media plan | **P3** | brief + **form-spec** + `open_asset_scan` per ambitious unit | `media-brief` |
 | Graphics | **P4** | Design CLEAN → **conditional open-assets** → free→audit→realize | `open-assets` (iff needed) · `medical-graphics` 00–08 |
-| Accept | **P5** | Media Accept + graphic winners (+ rights if asset) | `media-brief` Accept · **H2** production |
-| Compose | **P6** | chapter.typ embed winners + multi-unit **chapter macro VC** | `compose-chapter` |
+| Accept | **P5** | Media Accept + graphic winners (+ rights if asset); set **`channel_scope`** print\|web\|both; optional chapter **release package** | `media-brief` Accept · **H2** production · `bookkit boundaries check-release` |
+| Compose | **P6** | chapter.typ embed winners + multi-unit **chapter macro VC** (**A** print path) | `compose-chapter` |
 | Assembly | **P7** | main book PDF | `./scripts/bookkit build` (configurable `--root`) |
 | Validate | **P8** | claims/compile/UA optional | compose validate |
 | Visual QA | **P9** | multi-chapter assembly sample PNG / Must-see | Human + agent inspect |
 | Prepress | **P10** | print/PDF-X/DPI | scripts + Human |
 | Proof / release | **P11** | proof + imprimatur | Human **H4** / **H5** |
+| Web (optional) | **P6w** | only if Accept `channel_scope` is `web` or `both` — **W** consume same freeze + assets | `channels/web/` (scaffold); not bookkit foundation |
 
 Chapter rows advance **P2→P6** largely independently; **P1** once; **P7–P11** book-level.
 
@@ -268,8 +270,9 @@ via session scheduler if available — board remains SoT.
 ```text
 toolset/orchestration/book-production/<book-id>/
   kickoff.md          # plan + autonomy + content roots
-  board.md            # SoT state
+  board.md            # SoT state (cells: channel_scope, release_package_path, …)
   run-log.md          # append-only history
+  release/            # chapter-release.yaml pins (from contracts/templates/)
   route.md            # current next only
   inventory.md        # optional chapter list from C
   notes.md            # human decisions
@@ -330,3 +333,5 @@ Prefer **`/studio`** if the user has not yet chosen full-book vs single-chapter 
 | Prepress | `prepress/README.md` |
 | Checkpoints | `domains/content-maturity/checkpoints.md` |
 | Collaboration Contract | [`../COLLABORATION-CONTRACT.md`](../COLLABORATION-CONTRACT.md) |
+| Product boundaries + release package | `devtracks/PRODUCT-BOUNDARIES.md` · `contracts/` · `bookkit boundaries` |
+| Web channel (W) | `channels/web/` (scaffold until pilot) |

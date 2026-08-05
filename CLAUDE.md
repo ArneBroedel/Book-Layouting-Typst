@@ -3,8 +3,8 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 > **Mission + boundaries (read first)**  
-> **A** = layout platform (`packages/`, `toolset/`, `scripts/bookkit`) · **B** = medical media (`domains/medical/`) · **C** = content external + process kit (`domains/content-maturity/`) · **R** = `research/` (not default context).  
-> **Start when unsure:** skill **`studio`** (slash `/studio`) — guided intake, then route. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics / **boundaries**. Product map (C/B/A/W): [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md). Contracts: [`contracts/`](contracts/). Consumer guide: [`docs/CONSUMER.md`](docs/CONSUMER.md).
+> **C** = content external + process kit (`domains/content-maturity/`) · **B** = medical media (`domains/medical/`) · **A** = **print** layout platform (`packages/`, `toolset/`, `scripts/bookkit`) · **W** = web layout scaffold (`channels/web/`) · **R** = `research/` (not default context).  
+> **Start when unsure:** skill **`studio`** (slash `/studio`) — guided intake, then route. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics / **boundaries**. Product map: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) v0.3.1 (ADR 50–60). Contracts: [`contracts/`](contracts/). Consumer guide: [`docs/CONSUMER.md`](docs/CONSUMER.md).
 
 ## What this is
 
@@ -48,10 +48,12 @@ When editing a component, change tokens in `theme.typ` rather than inlining colo
 
 ## Product boundaries (generalisable platform)
 
-- **A — this repo:** layout platform (`packages/`, `toolset/form-catalog/core`, `toolset/compose`). Generalisable; no content SoT.
-- **B — domain media:** `domains/medical/` (recipes, briefs, media skill) — split candidate for a separate repo.
-- **C — content works:** external (e.g. Kursbuch); read-only inputs for pilots.
-- Roles/workflow: `devtracks/CONSENSUS-v0.md`. Repo policy: `devtracks/PRODUCT-BOUNDARIES.md`.
+- **C — content works:** external (e.g. Kursbuch); process kit transitional `domains/content-maturity/`; never chapter SoT here.
+- **B — domain media:** `domains/medical/` (recipes, briefs, assets, media/graphics/open-assets skills) — split candidate.
+- **A — print layout (this repo core):** `packages/`, `toolset/` (compose, form-catalog, **boundaries**), CLI. Generalisable; no content SoT.
+- **W — web layout:** scaffold `channels/web/` (Astro runtime only with pilot); **not** under `packages/bookkit`.
+- **Shared contracts:** `contracts/` + `./scripts/bookkit boundaries check-tree|check-release`.
+- Roles/workflow: `devtracks/CONSENSUS-v0.md` · policy: `devtracks/PRODUCT-BOUNDARIES.md` v0.3.1.
 
 ## Skills (read before acting)
 
@@ -61,7 +63,7 @@ When editing a component, change tokens in `theme.typ` rather than inlining colo
 - **typst-extension** — use when importing any `@preview` package, loading JSON/CSV data, or configuring `typst.toml`/CI.
 - **bookkit** — use when building with `/packages/bookkit`, starter/CLI consumers, design-brief, or didactics facet.
 - **book-production-orchestrator** — top-level board (`toolset/orchestration/book-production/`), run-log, autonomous L0–L3; runbook `docs/BOOK-PRODUCTION-RUNBOOK.md`.
-- **form-lab-orchestrator** — **lab-learning only** (not production default): Chapter Form Lab default **L2 autodrive-to-complete** — full iterative T→C→V→R→matrix→**S best-of fusion** + harvest; runtime `toolset/orchestration/form-lab/`; studio situation **9** handoff; track `devtracks/_archive/chapter-form-lab/`. COMPLETE requires S + harvest (form-vocabulary + production-bridge).
+- **form-lab-orchestrator** — **lab-learning only** (not production default): Chapter Form Lab default **L2 autodrive-to-complete** — full iterative T→C→V→R→matrix→**S best-of fusion** + harvest; runtime `toolset/orchestration/form-lab/` (+ `_archive/`); chapter.typ under `toolset/compose/lab/`; studio situation **9** handoff; track `devtracks/_archive/chapter-form-lab/`. COMPLETE requires S + harvest (form-vocabulary + production-bridge).
 - **media-brief** / **medical-graphics** / **open-assets** — domain B (SoT under `domains/medical/skill/`); Design Contract + Design Critic (Design CLEAN) → **open-assets** source scan when realism/icons warrant → free vision → claim audit → harvest → realize → Visual Critic on PNG (Visual CLEAN) → Accept. Playbook `00–11`. **open-assets:** Commons/CDC/icons, license ampule, attribution, MANIFEST/CREDITS. Track: `devtracks/_archive/design-quality-system/`. **KL Illness Script:** ontology + form-space (`media-brief/references/kl-*.md`) · form library (`medical-graphics/references/kl-form-library.md`). Guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`.
 - **pinit-workflow** — use for any `#pin*` / pinit annotation work; self-contained (debug module, regression tests, style guide, and AI playbook ship inside the skill).
 - **skill-creator** — use to create, improve, evaluate, or benchmark a skill (e.g. when harvesting a completed devtrack into a skill).

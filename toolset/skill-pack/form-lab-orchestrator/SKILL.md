@@ -229,7 +229,7 @@ toolset/orchestration/form-lab/<lab-id>/
   kickoff.md  board.md  run-log.md  route.md  pins.md
   passes/<P>/  comparison/  harvest/
 dist/form-lab/<lab-id>/<pass>/          # PDF + p*.png every pass including S
-toolset/compose/pilots/form-lab-*-<pass>/
+toolset/compose/lab/form-lab-*-<pass>/
 domains/medical/assets/form-lab/<lab-id>/…   # V/R for this lab only when clean restart
 ```
 

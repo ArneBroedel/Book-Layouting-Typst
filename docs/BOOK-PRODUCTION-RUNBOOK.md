@@ -1,6 +1,6 @@
 # Book Production Runbook
 
-**From finished text content → print-ready PDF**, with durable state and a top-level orchestrator.
+**From finished text content → print-ready PDF** (and optionally web), with durable state and a top-level orchestrator.
 
 | | |
 |---|---|
@@ -9,6 +9,8 @@
 | **Graphics steps** | `domains/medical/skill/medical-graphics/playbook/` |
 | **Media / Form Spec** | `media-brief` + `Guides/Medical-Presentation-Forms.md` |
 | **Checkpoints** | `domains/content-maturity/checkpoints.md` |
+| **Product boundaries** | `devtracks/PRODUCT-BOUNDARIES.md` (C → B → A‖W) |
+| **Release package** | `contracts/` · `./scripts/bookkit boundaries check-release` |
 
 ---
 
@@ -21,6 +23,8 @@
 | Step-by-step inside graphics? | **medical-graphics** playbook 00–08 |
 | Do I remember the whole flow? | **No** — ask *“status board &lt;book-id&gt;”* or *“what next?”* / `/studio status` |
 | Fully autonomous? | **Yes at L2/L3**, stopping at Human gates |
+| Text vs assets vs layout? | **C** freeze → **B** Accept (`channel_scope`) → **A** print and/or **W** web |
+| Boundary health of monorepo? | `./scripts/bookkit boundaries check-tree` (also via `doctor` on studio root) |
 
 ---
 
@@ -42,7 +46,16 @@ content_root: <path to finished chapters>
 brief_class: production
 autonomy: L2
 print_target: both
+# optional later: web_target when W pilot exists; Accept channel_scope must match
 Create kickoff + board, plan priorities with me, then drive until Human gate.
+```
+
+### Boundary / release package (machine checks)
+
+```bash
+./scripts/bookkit boundaries check-tree
+# after Accept: copy contracts/templates/chapter-release.template.yaml → fill pins
+./scripts/bookkit boundaries check-release path/to/<chapter>.release.yaml
 ```
 
 ### Resume after hours
@@ -87,14 +100,19 @@ Where are we, what's next, any rollback?
 | Kind | Typical path |
 |---|---|
 | Board | `toolset/orchestration/book-production/<id>/board.md` |
-| Form Spec | `domains/medical/briefs/<slug>.form-spec.md` |
+| Run-log | `toolset/orchestration/book-production/<id>/run-log.md` |
+| **Chapter release package** | `toolset/orchestration/book-production/<id>/release/<chapter_id>.yaml` (from `contracts/templates/chapter-release.template.yaml`; board cell `release_package_path`) |
+| Form Spec | `domains/medical/briefs/<slug>.form-spec.md` (gold top-level; campaigns under `_archive/`) |
 | Vision/Graphics/Accept | `domains/medical/briefs/<slug>.{vision,graphics,accept}.md` |
 | Quality packet | B template under `domains/medical/templates/` + per-job path on board |
-| Assets | `domains/medical/assets/<slug>/` |
+| Assets | `domains/medical/assets/<slug>/` (not form-lab unless Lab/Pass O) |
 | Modules | `toolset/compose/spikes/graphics/<slug>/lib/` |
-| Chapter typ | `pilots/…` or consumer tree |
-| Book PDF | `dist/book.pdf` |
+| Chapter typ (production dogfood) | `toolset/compose/pilots/…` or root `pilots/…` or consumer tree |
+| Chapter typ (Form Lab only) | `toolset/compose/lab/form-lab-…` — **not** production default |
+| Book PDF | `dist/book.pdf` or `dist/production/<id>/` |
 | Print | `dist/book-print.pdf` |
+
+**Lab ≠ production:** Form Lab boards live under `toolset/orchestration/form-lab/` (see `docs/KNOWLEDGE-MAP.md`). Do not use Form Lab paths as the default ship tree.
 
 ---
 

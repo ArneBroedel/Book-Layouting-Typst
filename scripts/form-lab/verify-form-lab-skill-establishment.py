@@ -119,8 +119,8 @@ def main() -> None:
     if not re.search(r"PDF/PNG alone|required for COMPLETE|lab-learning", readme, re.I):
         fail("form-lab README must state harvest gate / lab-learning")
     for path in (
-        ROOT / "devtracks/chapter-form-lab/spec.md",
-        ROOT / "devtracks/chapter-form-lab/plan.md",
+        ROOT / "devtracks/_archive/chapter-form-lab/spec.md",
+        ROOT / "devtracks/_archive/chapter-form-lab/plan.md",
     ):
         t = read(path)
         if "form-lab-orchestrator" not in t:

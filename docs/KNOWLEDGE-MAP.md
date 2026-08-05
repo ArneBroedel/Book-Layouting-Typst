@@ -117,6 +117,47 @@ experience
 
 ---
 
+## Runtime vs production runs vs lab (freeze rules)
+
+The monorepo mixes **product code**, **shipping runs**, and **training/lab**. Keep them distinct so agents do not load Form Lab boards as default context.
+
+| Layer | What | Where (living) | Agent default? |
+|---|---|---|---|
+| **Runtime** | bookkit, compose engine, CLI, contracts, skills, templates | `packages/`, `toolset/{boundaries,form-catalog,compose/{fixtures,tests,spikes,scripts},starter,skill-pack}`, `scripts/`, `contracts/`, domain `skill/` + `templates/` | **Yes** |
+| **Production runs** | Full-book / chapter boards, Accept, compose dogfood, release pins | `toolset/orchestration/book-production/<book-id>/` (+ `release/<chapter_id>.yaml`), gold briefs top-level, `domains/medical/assets/<slug>/`, `toolset/compose/pilots/` (non-lab) | Only the **active** book-id / unit |
+| **Lab / training** | Form Lab craft, medium extremes, harvest | `toolset/orchestration/form-lab/` (`_templates/`, living harvest portfolios, `_archive/`), `toolset/compose/lab/`, `domains/medical/assets/form-lab/` (path stable; lab-only) | **Only** studio situation **9** / form-lab-orchestrator |
+| **Knowledge** | Guides, governance, active devtracks | `docs/`, `Guides/`, `devtracks/` (open + governance) | Governance yes; Guides on demand |
+| **Outputs** | PDF/PNG | `dist/` (gitignored) — `form-lab/`, `pilots/`, `production/` by convention | **No** |
+| **Research (R)** | Ecosystem survey | `research/`, `templates/` | **No** |
+
+**Lab ≠ production:** Form Lab learns forms and harvests vocabulary/bridge; it is **not** the default chapter ship path (studio 1–2 / book-production).  
+**Archive = navigation clarity**, not clone-size reduction (`git mv` keeps blobs).  
+**Do not move** `domains/medical/assets/form-lab/` (Typst absolute mounts). Gold briefs stay **flat** top-level per `domains/medical/briefs/INDEX.md`; campaigns live under `briefs/_archive/`.
+
+### Default agent load
+
+| Load | Do not load |
+|---|---|
+| packages, toolset engine + skill-pack, contracts, scripts | `toolset/orchestration/form-lab/_archive/**` |
+| Active `book-production/<id>/` when resuming | Mass `toolset/compose/lab/**` unless Form Lab |
+| Gold briefs + `INDEX.md` | `briefs/_archive`, `_wave*`, `_explorations` unless needed |
+| CANONICAL assets under `domains/medical/assets/<slug>/` | Full `assets/form-lab/**` unless Lab / Pass O |
+| This map + skills for the task | `research/`, `templates/`, `dist/` |
+
+### Artifact quick map
+
+| Artifact | Path |
+|---|---|
+| Production board + run-log | `toolset/orchestration/book-production/<book-id>/` |
+| Chapter release package | `…/<book-id>/release/<chapter_id>.yaml` (from `contracts/templates/chapter-release.template.yaml`) |
+| Form Lab board / harvest | `toolset/orchestration/form-lab/` · living: `_templates/`, `portfolio-2026-08-c|d` |
+| Form Lab chapter.typ | `toolset/compose/lab/form-lab-*` |
+| Production/dogfood chapter.typ | `toolset/compose/pilots/` or root `pilots/` (consumer dogfood) |
+| Gold brief / Accept | `domains/medical/briefs/<unit>.*.md` (INDEX allowlist) |
+| Shared contracts / tree check | `contracts/` · `./scripts/bookkit boundaries` |
+
+---
+
 ## "Where do I put X?" — decision list
 
 - **A rule that should change how an agent writes/fixes `.typ`** → a **skill** (`.github/skills/…`; Grok discovers via `.grok/skills/` symlinks).
@@ -128,6 +169,9 @@ experience
 - **A project-wide convention or build rule** → `CLAUDE.md` (one-liner) + here (full version).
 - **A personal/agent working note** → Claude memory (`~/.claude/projects/.../memory/`). When it
   generalizes into a repeatable practice, **promote it into a skill** and keep the memory as a shortcut.
+- **Production board / release pin** → `toolset/orchestration/book-production/<book-id>/` (not Form Lab).
+- **Form Lab run** → `toolset/orchestration/form-lab/<lab-id>/` + `toolset/compose/lab/` (not default production).
+- **Campaign / dated brief copies** → `domains/medical/briefs/_archive/` (not top-level gold).
 
 ---
 

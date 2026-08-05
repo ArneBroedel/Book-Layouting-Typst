@@ -1,8 +1,10 @@
 # Medical briefs index (Produkt B)
 
-**Policy (2026-07-29, D5):** only **gold** + **form-library** stay in the active agent focus.  
-Historical work lives under [`_archive/`](_archive/) (not deleted).  
-Explorations: [`_explorations/`](_explorations/) · Wave notes: [`_wave5/`](_wave5/).
+**Policy (2026-07-29, D5):** only **gold** + **form-library** stay in the **top-level** agent focus.  
+Historical / dated / batch campaigns: [`_archive/`](_archive/) (incl. `campaigns-flat-2026-08/` from hybrid cleanup).  
+Explorations: [`_explorations/`](_explorations/) · Wave notes: [`_wave5/`](_wave5/) · [`_wave6/`](_wave6/).
+
+**Rule:** top-level flat tree = this INDEX allowlist. New campaign dumps go under `_archive/`, not top-level.
 
 ## Gold chapter units (full pipeline examples)
 

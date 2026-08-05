@@ -8,6 +8,7 @@ autonomy: L0
 scope: full-book   # full-book | single-chapter | explore-portfolio
 brief_class_default: exploration
 print_target: screen
+channel_scope_default: print   # print | web | both (Accept must match; ADR 53)
 playbook_pin: ""           # optional: date or skill rev (advisory)
 production_bridge: "—"     # path | — (advisory; never Accept/CLEAN waive)
 blocked: false
@@ -15,7 +16,8 @@ block_reason: ""
 ```
 
 > **Board = resume index only.** Cells hold enums + paths. Critique text, Design Contracts, Visual Critic notes, MANIFEST bodies, and PNG evidence stay in artifact trees (`domains/medical/…`, pilots, dist).  
-> **`validate` OK ≠ Visual CLEAN ≠ Accept.** Do not mark chapter idle on validate alone.
+> **`validate` OK ≠ Visual CLEAN ≠ Accept.** Do not mark chapter idle on validate alone.  
+> **Release packages** live beside the board: `release/<chapter_id>.yaml` (from `contracts/templates/chapter-release.template.yaml`). Validate with `./scripts/bookkit boundaries check-release PATH`.
 
 ## Book-level phases
 
@@ -34,9 +36,9 @@ status: `todo` \| `in_progress` \| `done` \| `blocked` \| `n/a`
 
 ## Chapters
 
-| chapter_id | priority | content | brief | form_specs | graphics | design_clean | visual_clean | macro_vc | quality_packet | open_assets | accept | compose | pdf | next | notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| | 1 | | | | | | | | | | | | | | |
+| chapter_id | priority | content | brief | form_specs | graphics | design_clean | visual_clean | macro_vc | quality_packet | open_assets | accept | channel_scope | release_package_path | compose | pdf | next | notes |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| | 1 | | | | | | | | | | | print | — | | | | |
 
 ### Cell vocabulary (chapter rollup)
 
@@ -55,6 +57,10 @@ status: `todo` \| `in_progress` \| `done` \| `blocked` \| `n/a`
 - **open_assets:** `n/a` \| `needed` \| `partial` \| `done` \| `blocked`  
   *(chapter rollup of unit open-assets; Media SoT flag is `open_asset_scan: required|optional|skip`)*
 - **accept:** `missing` \| `revise` \| `accepted`
+- **channel_scope:** `print` \| `web` \| `both`  
+  *(from Accept; must match release package `channel_scope`)*
+- **release_package_path:** `—` \| `release/<chapter_id>.yaml` (relative to this board dir) \| absolute path  
+  *(chapter release package pin; schema `contracts/schemas/chapter-release.schema.json`)*
 - **compose:** `missing` \| `draft` \| `done`
 - **pdf:** path or `missing`
 - **next:** short action label
@@ -67,8 +73,10 @@ visual_clean   = clean where graphics units exist (else n/a)
 macro_vc       = clean | n/a
 quality_packet = ready
 accept         = accepted
+channel_scope  = print | web | both (set)
+release_package_path = path present when shipping (or explicit n/a for pure explore)
 compose        = done
-pdf            = path present
+pdf            = path present (print path) when channel_scope includes print
 validate OK    → necessary but NOT sufficient alone
 ```
 

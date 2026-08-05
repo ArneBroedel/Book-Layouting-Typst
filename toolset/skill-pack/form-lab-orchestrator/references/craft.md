@@ -25,7 +25,7 @@ Under **L2 autodrive**, OR runs this loop in-session for each pass (role-separat
 
 ```bash
 typst compile --root . --ignore-system-fonts --font-path fonts \
-  toolset/compose/pilots/form-lab-…/chapter.typ \
+  toolset/compose/lab/form-lab-…/chapter.typ \
   dist/form-lab/<lab-id>/<pass>/chapter.pdf
 # PNG pages for critic eyes
 typst compile --root . --ignore-system-fonts --font-path fonts \
@@ -74,7 +74,7 @@ Full procedure: `toolset/orchestration/form-lab/_templates/medium-rules-S.md`.
 
 | Kind | Pattern |
 |---|---|
-| Pilot source | `toolset/compose/pilots/form-lab-<chapter>-<pass>/` |
+| Pilot source | `toolset/compose/lab/form-lab-<chapter>-<pass>/` |
 | Dist | `dist/form-lab/<lab-id>/<pass>/` |
 | Assets V/R | `domains/medical/assets/form-lab/<lab-id>/…` |
 | Critiques | `…/passes/<P>/critique-rNN.md` |

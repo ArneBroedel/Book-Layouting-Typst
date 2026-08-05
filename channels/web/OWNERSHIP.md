@@ -44,6 +44,6 @@ Validate release package:
 
 ## Related
 
-- `devtracks/PRODUCT-BOUNDARIES.md` (ADR 50–59, 56)  
+- `devtracks/PRODUCT-BOUNDARIES.md` (ADR 50–60)  
 - `channels/README.md`  
 - `contracts/templates/chapter-release.template.yaml`  
