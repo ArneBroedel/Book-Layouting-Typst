@@ -134,11 +134,14 @@ For each chapter on the board, track (full vocabulary in `templates/board.templa
 | **quality_packet** | missing \| path \| **ready** |
 | **open_assets** | n/a \| needed \| partial \| done \| blocked |
 | accept | missing \| revise \| **accepted** |
+| **channel_scope** | print \| web \| **both** (from Accept) |
+| **release_package_path** | `release/<chapter_id>.yaml` \| path \| **n/a** \| **—** (explore / not shipping) |
 | compose | missing \| draft \| **done** |
 | pdf | missing \| path |
 | notes | free text (short labels only — **no critique bodies**) |
 
-**Board YAML header also:** `scope` (`full-book` \| `single-chapter` \| `explore-portfolio`), optional `playbook_pin`, advisory `production_bridge`.
+**Board YAML header also:** `scope` (`full-book` \| `single-chapter` \| `explore-portfolio`), `channel_scope_default`, optional `playbook_pin`, advisory `production_bridge`.  
+**Release packages:** `…/<book-id>/release/<chapter_id>.yaml` — `./scripts/bookkit boundaries check-release PATH`.
 
 **Unit-level** subtable: unit_id, form_spec, design_clean, vision, claim_audit, **needs_open_assets** (yes\|no), **open_assets** (n/a\|needed\|scanning\|manifest_ok\|blocked), **manifest_path**, realize, visual_clean, winner, spikes.
 
@@ -152,8 +155,10 @@ visual_clean   = clean where graphics units exist (else n/a)
 macro_vc       = clean | n/a
 quality_packet = ready
 accept         = accepted
+channel_scope  = print | web | both (set)
+release_package_path = path when shipping; n/a or — for pure explore / non-ship
 compose        = done
-pdf            = path present
+pdf            = path present when channel_scope includes print
 validate OK    → necessary but NOT sufficient alone
 ```
 
@@ -295,7 +300,7 @@ Status CLI: `./scripts/book-production-status.sh <book-id>`
 | Point to specialist playbooks | Rewrite Critical Claims |
 | Document rollback targets | Silent infinite loops past caps |
 | Reconcile FS vs board on resume | Invent chapter freeze status |
-| Chapter done only after design_clean/visual_clean/macro_vc/quality_packet/accept/compose/pdf checklist | Claim done on validate OK alone |
+| Chapter done only after design_clean/visual_clean/macro_vc/quality_packet/accept/channel_scope/release_package_path/compose/pdf checklist | Claim done on validate OK alone |
 | Enums + paths only in board cells | Critique full text or CLEAN proof in board.md |
 
 ---

@@ -68,6 +68,8 @@ Board-gated (enums on chapter row — evidence in artifacts):
 - [ ] `macro_vc` = clean \| n/a (multi-unit quality: full-page PNG macro scan-path + density)  
 - [ ] `quality_packet` = ready  
 - [ ] `accept` = accepted (exploration Accept)  
+- [ ] `channel_scope` set (usually `print` for explore dogfood)  
+- [ ] `release_package_path` = `n/a` or `—` (explore does **not** require a ship package)  
 - [ ] `compose` = done  
 - [ ] `pdf` path present (`dist/pilots/<slug>/chapter.pdf` + PNGs)  
 - [ ] `bookkit validate` OK — **necessary but not sufficient alone**  

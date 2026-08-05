@@ -59,8 +59,8 @@ status: `todo` \| `in_progress` \| `done` \| `blocked` \| `n/a`
 - **accept:** `missing` \| `revise` \| `accepted`
 - **channel_scope:** `print` \| `web` \| `both`  
   *(from Accept; must match release package `channel_scope`)*
-- **release_package_path:** `—` \| `release/<chapter_id>.yaml` (relative to this board dir) \| absolute path  
-  *(chapter release package pin; schema `contracts/schemas/chapter-release.schema.json`)*
+- **release_package_path:** `n/a` \| `—` \| `release/<chapter_id>.yaml` (relative to this board dir) \| absolute path  
+  *(`n/a` and `—` are synonyms for explore / non-ship; real path required when shipping. Schema: `contracts/schemas/chapter-release.schema.json`)*
 - **compose:** `missing` \| `draft` \| `done`
 - **pdf:** path or `missing`
 - **next:** short action label
@@ -74,7 +74,7 @@ macro_vc       = clean | n/a
 quality_packet = ready
 accept         = accepted
 channel_scope  = print | web | both (set)
-release_package_path = path present when shipping (or explicit n/a for pure explore)
+release_package_path = path when shipping; n/a or — for pure explore / non-ship
 compose        = done
 pdf            = path present (print path) when channel_scope includes print
 validate OK    → necessary but NOT sufficient alone

@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Assert Form Lab b-wave four-chapter completion: boards, craft, matrix, recompile.
 
-SoT wave: `*-2026-08-b` (clean restart). Pilots: `form-lab-<slug>-b-<pass>/`.
-Drives real typst compile on shipped pilots — not a mock path.
+SoT wave: `*-2026-08-b` (clean restart).
+Chapter.typ: `toolset/compose/lab/form-lab-<slug>-b-<pass>/` (lab runs, not compose/pilots).
+Boards: `toolset/orchestration/form-lab/_archive/*-2026-08-b/`.
+Drives real typst compile on lab chapter.typ — not a mock path.
 """
 from __future__ import annotations
 
