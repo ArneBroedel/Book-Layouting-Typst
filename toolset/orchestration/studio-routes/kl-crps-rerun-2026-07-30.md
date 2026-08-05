@@ -30,15 +30,15 @@
 |---|---|
 | Route | `toolset/orchestration/studio-routes/kl-crps-rerun-2026-07-30.md` |
 | Content map (R) | `domains/medical/briefs/_wave6/kl-crps-rerun-2026-07-30.content-map.md` |
-| Media Brief | `domains/medical/briefs/kl-crps-rerun-2026-07-30.brief.md` |
-| Form Specs | `domains/medical/briefs/kl-crps-rerun-2026-07-30-*.form-spec.md` |
+| Media Brief | `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps-rerun-2026-07-30.brief.md` |
+| Form Specs | `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps-rerun-2026-07-30-*.form-spec.md` |
 | Vision / audit / graphics | `…-mimic|regional-cues.vision.md` · claim-audit · graphics |
 | Assets | `domains/medical/assets/kl-crps-rerun-mimic/` · `…-regional-cues/` |
 | Typst module | `domains/medical/lib/typst/kl-wave6/crps-rerun.typ` |
 | Spike | `toolset/compose/spikes/graphics/kl-crps-rerun-2026-07-30/` |
 | Pilot chapter | `toolset/compose/pilots/kl-crps-rerun-2026-07-30/chapter.typ` |
 | **Chapter PDF** | **`dist/pilots/kl-crps-rerun-2026-07-30/chapter.pdf`** |
-| Diff-Note | `domains/medical/briefs/kl-crps-rerun-2026-07-30.diff-note.md` |
+| Diff-Note | `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps-rerun-2026-07-30.diff-note.md` |
 
 ## Progress
 

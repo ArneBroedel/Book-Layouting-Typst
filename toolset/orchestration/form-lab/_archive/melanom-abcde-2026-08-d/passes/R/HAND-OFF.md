@@ -10,7 +10,7 @@ Aspects: asymmetric lesion, irregular border, color variegation, large diameter,
 
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-melanom-abcde-d-R/` |
+| source pilot | `toolset/compose/lab/form-lab-melanom-abcde-d-R/` |
 | dist | `dist/form-lab/melanom-abcde-2026-08-d/R/` |
 | assets | `domains/medical/assets/form-lab/melanom-abcde-2026-08-d/R/` |
 

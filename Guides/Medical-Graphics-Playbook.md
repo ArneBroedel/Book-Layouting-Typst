@@ -65,7 +65,7 @@ Icon/scale DRIFT with good layout → **surgical refine** (tile-scoped notes), n
 | Density is two-sided | Block sparse-sprawl *and* squish-compress; page count ≠ quality |
 | Solid unimpressive can Accept | Simple-alternative success after ambition FAIL is a win |
 
-Evidence: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`.
+Evidence: `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps-2026-07-31.process-review.md`.
 
 ### Multi-chapter portfolio 2026-08-01 (ops + layout)
 

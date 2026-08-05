@@ -35,7 +35,7 @@ block_reason: ""
 | chapter_id | priority | content | brief | form_specs | graphics | design_clean | visual_clean | macro_vc | quality_packet | open_assets | accept | compose | pdf | next | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | dogfood-A-skip | 3 | n/a | done | done | none-needed | n/a | n/a | n/a | ready | n/a | accepted | done | toolset/compose/pilots/ii1-drisc-batch-2026-08/ | idle | Scenario A code-only skip |
-| dogfood-B-required | 2 | n/a | done | done | units-done | clean | clean | n/a | ready | done | accepted | done | toolset/compose/pilots/form-lab-gicht-o/ | idle | Scenario B open-assets required path |
+| dogfood-B-required | 2 | n/a | done | done | units-done | clean | clean | n/a | ready | done | accepted | done | toolset/compose/lab/form-lab-gicht-o/ | idle | Scenario B open-assets required path |
 | dogfood-C-multi | 1 | n/a | done | done | units-done | clean | clean | clean | ready | n/a | accepted | done | dist/pilots/kl-gicht-2026-07-31/chapter.pdf | idle | Scenario C multi-unit + macro VC |
 | dogfood-E-sample-2 | 4 | n/a | draft | partial | todo | missing | missing | todo | missing | n/a | missing | missing | missing | media-brief | Scenario E second row (stub only) |
 
@@ -63,11 +63,11 @@ validate OK    → necessary but NOT sufficient alone
 
 | chapter_id | unit_id | form_spec | design_clean | vision | claim_audit | needs_open_assets | open_assets | manifest_path | realize | visual_clean | winner | spikes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| dogfood-A-skip | U-pflicht | domains/medical/briefs/ii1-drisc-batch-2026-08-pflicht.form-spec.md | clean | — | — | no | n/a | — | code | n/a | code | — |
-| dogfood-B-required | U-podagra | domains/medical/briefs/kl-gicht-2026-07-31-hot-joint.form-spec.md | clean | existing | PASS | yes | manifest_ok | domains/medical/assets/form-lab/gicht-2026-08-o/MANIFEST.md | hybrid | clean | asset | — |
-| dogfood-C-multi | U-urgency | domains/medical/briefs/kl-gicht-2026-07-31-urgency.form-spec.md | clean | — | — | no | n/a | — | code | clean | code | — |
-| dogfood-C-multi | U-mimic | domains/medical/briefs/kl-gicht-2026-07-31-mimic.form-spec.md | clean | — | — | no | n/a | — | code | clean | code | — |
-| dogfood-C-multi | U-hot-joint | domains/medical/briefs/kl-gicht-2026-07-31-hot-joint.form-spec.md | clean | domains/medical/briefs/kl-gicht-2026-07-31-hot-joint.vision.md | PASS | no | n/a | — | hybrid | clean | hybrid | — |
+| dogfood-A-skip | U-pflicht | domains/medical/briefs/_archive/campaigns-flat-2026-08/ii1-drisc-batch-2026-08-pflicht.form-spec.md | clean | — | — | no | n/a | — | code | n/a | code | — |
+| dogfood-B-required | U-podagra | domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-gicht-2026-07-31-hot-joint.form-spec.md | clean | existing | PASS | yes | manifest_ok | domains/medical/assets/form-lab/gicht-2026-08-o/MANIFEST.md | hybrid | clean | asset | — |
+| dogfood-C-multi | U-urgency | domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-gicht-2026-07-31-urgency.form-spec.md | clean | — | — | no | n/a | — | code | clean | code | — |
+| dogfood-C-multi | U-mimic | domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-gicht-2026-07-31-mimic.form-spec.md | clean | — | — | no | n/a | — | code | clean | code | — |
+| dogfood-C-multi | U-hot-joint | domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-gicht-2026-07-31-hot-joint.form-spec.md | clean | domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-gicht-2026-07-31-hot-joint.vision.md | PASS | no | n/a | — | hybrid | clean | hybrid | — |
 
 ## Open Human gates
 

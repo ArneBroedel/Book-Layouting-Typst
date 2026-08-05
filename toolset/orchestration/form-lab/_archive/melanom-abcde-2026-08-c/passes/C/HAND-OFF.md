@@ -6,7 +6,7 @@ Reach **medium-optimum** via iterative craft.
 ## Paths
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-melanom-abcde-c-C/` |
+| source pilot | `toolset/compose/lab/form-lab-melanom-abcde-c-C/` |
 | dist | `dist/form-lab/melanom-abcde-2026-08-c/C/` |
 
 ## Current state

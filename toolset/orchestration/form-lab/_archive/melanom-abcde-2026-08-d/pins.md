@@ -35,7 +35,7 @@
 
 ## Wave-d craft constraints
 
-- Pilots: `toolset/compose/pilots/form-lab-melanom-abcde-d-{T,C,V,R,S}/` only (create new)
+- Pilots: `toolset/compose/lab/form-lab-melanom-abcde-d-{T,C,V,R,S}/` only (create new)
 - Dist: `dist/form-lab/melanom-abcde-2026-08-d/<pass>/`
 - Assets: `domains/medical/assets/form-lab/melanom-abcde-2026-08-d/` (V/R as needed)
 - **Ban:** any mount/copy from `form-lab-melanom-abcde-{,b-,c-}*` pilots, `melanom-abcde-2026-08{,-b,-c}` assets/dist

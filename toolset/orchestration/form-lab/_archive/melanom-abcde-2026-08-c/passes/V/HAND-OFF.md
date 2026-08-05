@@ -3,7 +3,7 @@
 ## Paths
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-melanom-abcde-c-V/` |
+| source pilot | `toolset/compose/lab/form-lab-melanom-abcde-c-V/` |
 | dist | `dist/form-lab/melanom-abcde-2026-08-c/V/` |
 
 ## Current state

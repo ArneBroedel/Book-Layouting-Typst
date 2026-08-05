@@ -30,7 +30,7 @@
 - design_clean: yes · visual_clean: yes · accept: yes
 - page_count: 3
 - artifacts:
-  - `domains/medical/briefs/kl-kompartment-batch-2026-08*.md` (brief, form-specs, contracts, critiques, graphics, quality-packet, accept)
+  - `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-kompartment-batch-2026-08*.md` (brief, form-specs, contracts, critiques, graphics, quality-packet, accept)
   - `domains/medical/lib/typst/d-risc-batch-2026-08/kompartment.typ`
   - `toolset/compose/pilots/kl-kompartment-batch-2026-08/chapter.typ`
   - `dist/pilots/kl-kompartment-batch-2026-08/chapter.pdf` + `p1.png`–`p3.png`
@@ -43,7 +43,7 @@
 - design_clean: yes · visual_clean: yes · accept: yes
 - page_count: 3
 - artifacts:
-  - `domains/medical/briefs/ii1-drisc-batch-2026-08*.md` (brief, form-spec, design-contract, design-critique, graphics, visual-critique, quality-packet, accept)
+  - `domains/medical/briefs/_archive/campaigns-flat-2026-08/ii1-drisc-batch-2026-08*.md` (brief, form-spec, design-contract, design-critique, graphics, visual-critique, quality-packet, accept)
   - `domains/medical/lib/typst/d-risc-batch-2026-08/pflichtsequenz.typ` (NEW; not explore R→S→I)
   - `toolset/compose/pilots/ii1-drisc-batch-2026-08/chapter.typ`
   - `dist/pilots/ii1-drisc-batch-2026-08/chapter.pdf` + `p1.png`–`p3.png`

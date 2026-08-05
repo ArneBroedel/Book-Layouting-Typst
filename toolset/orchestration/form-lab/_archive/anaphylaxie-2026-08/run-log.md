@@ -4,7 +4,7 @@
 - Pins frozen to Kursbuch5 monograph; medium-rules copied; route Pass T
 
 ## Pass T craft
-- r1 BUILD `toolset/compose/pilots/form-lab-anaphylaxie-T/chapter.typ` → PDF/PNG `dist/form-lab/anaphylaxie-2026-08/T/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-anaphylaxie-T/chapter.typ` → PDF/PNG `dist/form-lab/anaphylaxie-2026-08/T/p1–p2.png`
 - r1 CRITIQUE revise: action sequence not visually hierarchical enough; case dense
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: system icons OK after FA6 swap
@@ -12,7 +12,7 @@
 - exhaustion.md written; board pass_T=optimum
 
 ## Pass C craft
-- r1 BUILD `toolset/compose/pilots/form-lab-anaphylaxie-C/chapter.typ` → PDF/PNG `dist/form-lab/anaphylaxie-2026-08/C/p1–p3.png`
+- r1 BUILD `toolset/compose/lab/form-lab-anaphylaxie-C/chapter.typ` → PDF/PNG `dist/form-lab/anaphylaxie-2026-08/C/p1–p3.png`
 - r1 CRITIQUE revise: p3 void; action steps 1–4 good hierarchy with solid 112
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: filled enough
@@ -20,7 +20,7 @@
 - exhaustion.md written; board pass_C=optimum
 
 ## Pass V craft
-- r1 BUILD `toolset/compose/pilots/form-lab-anaphylaxie-V/chapter.typ` → PDF/PNG `dist/form-lab/anaphylaxie-2026-08/V/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-anaphylaxie-V/chapter.typ` → PDF/PNG `dist/form-lab/anaphylaxie-2026-08/V/p1–p2.png`
 - r1 CRITIQUE revise: circles text-only somewhat flat; p2 light
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: cascade readable
@@ -28,7 +28,7 @@
 - exhaustion.md written; board pass_V=optimum
 
 ## Pass R craft
-- r1 BUILD `toolset/compose/pilots/form-lab-anaphylaxie-R/chapter.typ` → PDF/PNG `dist/form-lab/anaphylaxie-2026-08/R/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-anaphylaxie-R/chapter.typ` → PDF/PNG `dist/form-lab/anaphylaxie-2026-08/R/p1–p2.png`
 - r1 CRITIQUE revise: cascade atom abstract vs photo atoms; action sequence only text under atoms
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: three atoms sufficient

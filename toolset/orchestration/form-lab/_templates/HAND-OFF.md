@@ -23,7 +23,7 @@ See `../../pins.md`. No claim invention. No clinical rewrite.
 
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-…-<pass>/` |
+| source pilot | `toolset/compose/lab/form-lab-…-<pass>/` |
 | dist | `dist/form-lab/<lab-id>/<pass>/` |
 | critiques | `critique-rNN.md` (this dir) |
 | exhaustion | `exhaustion.md` (when done) |

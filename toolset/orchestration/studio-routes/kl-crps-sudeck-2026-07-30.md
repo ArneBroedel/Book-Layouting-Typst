@@ -23,8 +23,8 @@
 |---|---|
 | Route | `toolset/orchestration/studio-routes/kl-crps-sudeck-2026-07-30.md` |
 | Content map (R) | `domains/medical/briefs/_wave6/kl-crps.content-map.md` |
-| Media Brief | `domains/medical/briefs/kl-crps.brief.md` |
-| Form Specs | `domains/medical/briefs/kl-crps-*.form-spec.md` |
+| Media Brief | `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps.brief.md` |
+| Form Specs | `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps-*.form-spec.md` |
 | Feasibility / Accept / Graphics | `kl-crps.feasibility.md` · `kl-crps.accept.md` · `kl-crps.graphics.md` |
 | Free PNGs (provenance) | `domains/medical/assets/kl-crps-mimic/` · `…/kl-crps-regional-cues/` |
 | Typst module | `domains/medical/lib/typst/kl-wave6/crps.typ` |

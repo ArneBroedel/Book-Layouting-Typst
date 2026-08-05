@@ -14,5 +14,5 @@
 - Stronger speech photo if parent supplies PASS later
 
 ## Artifacts
-- pilot: toolset/compose/pilots/form-lab-schlaganfall-c-S/chapter.typ
+- pilot: toolset/compose/lab/form-lab-schlaganfall-c-S/chapter.typ
 - dist: dist/form-lab/schlaganfall-2026-08-c/S/

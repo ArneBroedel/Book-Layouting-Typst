@@ -12,7 +12,9 @@ description: "ALWAYS use as the controller for Chapter Form Lab (lab-learning): 
 Owns **board + run-log + route**, drives **serial medium passes** with iterative craft floors, **compares**, **fuses best-of into Pass S**, then **harvest**. Sibling of `book-production-orchestrator` (same durable-board idea; different phase machine).
 
 **SoT:** `toolset/skill-pack/form-lab-orchestrator/`  
-**Runtime:** `toolset/orchestration/form-lab/<lab-id>/`  
+**Runtime:** `toolset/orchestration/form-lab/<lab-id>/` (new labs) · completed waves under `…/form-lab/_archive/`  
+**Chapter.typ:** `toolset/compose/lab/form-lab-*-<pass>/` (**not** `compose/pilots/`)  
+**Assets:** `domains/medical/assets/form-lab/<lab-id>/` (path stable — do not relocate)  
 **Track:** `devtracks/_archive/chapter-form-lab/`  
 **README:** `toolset/orchestration/form-lab/README.md`  
 **Autonomy detail:** [`references/autonomy.md`](references/autonomy.md)
@@ -225,15 +227,21 @@ More: [`references/resume.md`](references/resume.md).
 ## Artifacts
 
 ```text
-toolset/orchestration/form-lab/<lab-id>/
-  kickoff.md  board.md  run-log.md  route.md  pins.md
-  passes/<P>/  comparison/  harvest/
-dist/form-lab/<lab-id>/<pass>/          # PDF + p*.png every pass including S
-toolset/compose/lab/form-lab-*-<pass>/
-domains/medical/assets/form-lab/<lab-id>/…   # V/R for this lab only when clean restart
+toolset/orchestration/form-lab/
+  _templates/                         # living SoT
+  portfolio-2026-08-c|d/              # living harvest exemplars
+  portfolio-open-asset-2026-08/       # living Pass O dogfood
+  _archive/<lab-id>/                  # completed craft boards (resume for provenance)
+  <lab-id>/                           # NEW active lab only
+    kickoff.md  board.md  run-log.md  route.md  pins.md
+    passes/<P>/  comparison/  harvest/
+dist/form-lab/<lab-id>/<pass>/        # PDF + p*.png (gitignored)
+toolset/compose/lab/form-lab-*-<pass>/  # chapter.typ runs — not compose/pilots/
+domains/medical/assets/form-lab/<lab-id>/…  # V/R assets (stable mounts)
 ```
 
-Templates: `toolset/orchestration/form-lab/_templates/`.
+Templates: `toolset/orchestration/form-lab/_templates/`.  
+**Resume:** look for board under `form-lab/<id>/` first; if missing, `form-lab/_archive/<id>/`.
 
 ---
 

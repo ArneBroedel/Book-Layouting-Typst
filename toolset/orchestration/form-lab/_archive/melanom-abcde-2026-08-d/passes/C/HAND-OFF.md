@@ -14,7 +14,7 @@ See `../../pins.md`. Jobs as T.
 
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-melanom-abcde-d-C/` |
+| source pilot | `toolset/compose/lab/form-lab-melanom-abcde-d-C/` |
 | dist | `dist/form-lab/melanom-abcde-2026-08-d/C/` |
 
 ## Caps

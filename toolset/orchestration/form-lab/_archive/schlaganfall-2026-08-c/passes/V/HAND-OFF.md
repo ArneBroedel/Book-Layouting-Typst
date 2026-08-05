@@ -9,5 +9,5 @@
 ## Paths
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-schlaganfall-c-V/` |
+| source pilot | `toolset/compose/lab/form-lab-schlaganfall-c-V/` |
 | dist | `dist/form-lab/schlaganfall-2026-08-c/V/` |

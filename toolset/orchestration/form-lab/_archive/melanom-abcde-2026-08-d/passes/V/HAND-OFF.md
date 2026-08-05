@@ -9,7 +9,7 @@ Ugly duckling: field of moles + one different **on skin-like field** (not abstra
 
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-melanom-abcde-d-V/` |
+| source pilot | `toolset/compose/lab/form-lab-melanom-abcde-d-V/` |
 | dist | `dist/form-lab/melanom-abcde-2026-08-d/V/` |
 | assets | `domains/medical/assets/form-lab/melanom-abcde-2026-08-d/V/` if needed |
 

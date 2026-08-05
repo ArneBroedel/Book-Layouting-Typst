@@ -92,7 +92,7 @@ Append-only.
 - **action:** Clean slate Myokardinfarkt/ACS (kl-voll); Design CLEAN; U-urgency nested multi-T1 (4 clusters, T3 collapse, SCOPE, Default-to-Danger) + U-mimic 4-row code; Visual CLEAN p1–p3; exploration accept; validate OK
 - **artifacts:**
   - `_wave6/kl-mi-2026-08-01.content-map.md`
-  - `domains/medical/briefs/kl-mi-2026-08-01.brief.md`
+  - `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-mi-2026-08-01.brief.md`
   - `kl-mi-2026-08-01-{urgency,mimic}.{form-spec,design-contract}.md`
   - `kl-mi-2026-08-01.design-critique.md` · `…visual-critique.md` · `…quality-packet.md` · `…graphics.md` · `…accept.md`
   - `domains/medical/lib/typst/kl-wave6/mi-2026-08-01.typ`

@@ -31,7 +31,7 @@ See `../../pins.md`. No claim invention. No clinical rewrite.
 
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-gicht-d-T/` (**create new**; do not copy a/b/c) |
+| source pilot | `toolset/compose/lab/form-lab-gicht-d-T/` (**create new**; do not copy a/b/c) |
 | dist | `dist/form-lab/gicht-2026-08-d/T/` |
 | critiques | `critique-rNN.md` (this dir) |
 | exhaustion | `exhaustion.md` (when done) |
@@ -40,9 +40,9 @@ See `../../pins.md`. No claim invention. No clinical rewrite.
 
 Do **not** reuse or mount:
 
-- `toolset/compose/pilots/form-lab-gicht-{T,C,V,R,S}/`
-- `toolset/compose/pilots/form-lab-gicht-b-*`
-- `toolset/compose/pilots/form-lab-gicht-c-*`
+- `toolset/compose/lab/form-lab-gicht-{T,C,V,R,S}/`
+- `toolset/compose/lab/form-lab-gicht-b-*`
+- `toolset/compose/lab/form-lab-gicht-c-*`
 - `domains/medical/assets/form-lab/gicht-2026-08{,-b,-c}/`
 - `dist/form-lab/gicht-2026-08{,-b,-c}/`
 

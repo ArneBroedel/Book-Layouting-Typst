@@ -82,4 +82,4 @@
 | Skill | `toolset/skill-pack/form-lab-orchestrator/` |
 | SR SoT | `domains/medical/skill/medical-graphics/references/prompt-and-semantic-read.md` |
 | Dist | `dist/form-lab/*-2026-08-c/` |
-| Pilots | `toolset/compose/pilots/form-lab-*-c-{T,C,V,R,S}/` |
+| Pilots | `toolset/compose/lab/form-lab-*-c-{T,C,V,R,S}/` |

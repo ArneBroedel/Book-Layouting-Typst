@@ -12,7 +12,7 @@ See `../../pins.md`. No claim invention.
 ## Paths
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-anaphylaxie-c-V/` |
+| source pilot | `toolset/compose/lab/form-lab-anaphylaxie-c-V/` |
 | dist | `dist/form-lab/anaphylaxie-2026-08-c/V/` |
 | critiques | `critique-rNN.md` |
 | exhaustion | `exhaustion.md` |

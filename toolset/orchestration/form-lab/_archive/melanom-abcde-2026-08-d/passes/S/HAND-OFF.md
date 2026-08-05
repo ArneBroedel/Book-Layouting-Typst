@@ -8,7 +8,7 @@ Best-of fusion from matrix winners. **omit-is-win**. Mount only SR PASS prepared
 
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-melanom-abcde-d-S/` |
+| source pilot | `toolset/compose/lab/form-lab-melanom-abcde-d-S/` |
 | dist | `dist/form-lab/melanom-abcde-2026-08-d/S/` |
 
 ## Caps

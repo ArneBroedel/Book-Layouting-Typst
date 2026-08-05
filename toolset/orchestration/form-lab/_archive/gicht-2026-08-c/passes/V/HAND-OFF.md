@@ -12,7 +12,7 @@ See `../../pins.md`. No claim invention.
 ## Paths
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-${LAB%-2026-08-c}-c-V/` |
+| source pilot | `toolset/compose/lab/form-lab-${LAB%-2026-08-c}-c-V/` |
 | dist | `dist/form-lab/gicht-2026-08-c/V/` |
 | critiques | `critique-rNN.md` |
 | exhaustion | `exhaustion.md` |

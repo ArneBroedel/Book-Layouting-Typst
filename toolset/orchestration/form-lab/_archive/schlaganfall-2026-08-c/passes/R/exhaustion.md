@@ -17,5 +17,5 @@
 
 ## Artifacts
 - assets: domains/medical/assets/form-lab/schlaganfall-2026-08-c/R/
-- pilot: toolset/compose/pilots/form-lab-schlaganfall-c-R/chapter.typ
+- pilot: toolset/compose/lab/form-lab-schlaganfall-c-R/chapter.typ
 - dist: dist/form-lab/schlaganfall-2026-08-c/R/

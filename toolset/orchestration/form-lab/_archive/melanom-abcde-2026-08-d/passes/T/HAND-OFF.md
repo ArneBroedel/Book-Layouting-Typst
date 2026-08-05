@@ -28,7 +28,7 @@ See `../../pins.md`. No claim invention. No clinical rewrite.
 
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-melanom-abcde-d-T/` (**create new**; do not copy a/b/c) |
+| source pilot | `toolset/compose/lab/form-lab-melanom-abcde-d-T/` (**create new**; do not copy a/b/c) |
 | dist | `dist/form-lab/melanom-abcde-2026-08-d/T/` |
 | critiques | `critique-rNN.md` (this dir) |
 | exhaustion | `exhaustion.md` (when done) |

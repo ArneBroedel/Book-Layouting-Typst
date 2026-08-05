@@ -4,7 +4,7 @@
 - Pins frozen to Kursbuch5 monograph; medium-rules copied; route Pass T
 
 ## Pass T craft
-- r1 BUILD `toolset/compose/pilots/form-lab-schlaganfall-T/chapter.typ` → PDF/PNG `dist/form-lab/schlaganfall-2026-08/T/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-schlaganfall-T/chapter.typ` → PDF/PNG `dist/form-lab/schlaganfall-2026-08/T/p1–p2.png`
 - r1 CRITIQUE revise: FAST table competes with body weight; case density
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: BE-FAST note easy to miss
@@ -12,7 +12,7 @@
 - exhaustion.md written; board pass_T=optimum
 
 ## Pass C craft
-- r1 BUILD `toolset/compose/pilots/form-lab-schlaganfall-C/chapter.typ` → PDF/PNG `dist/form-lab/schlaganfall-2026-08/C/p1–p3.png`
+- r1 BUILD `toolset/compose/lab/form-lab-schlaganfall-C/chapter.typ` → PDF/PNG `dist/form-lab/schlaganfall-2026-08/C/p1–p3.png`
 - r1 CRITIQUE revise: p3 lower void; FAST chips unequal text length
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: NA tier quiet vs 112
@@ -20,7 +20,7 @@
 - exhaustion.md written; board pass_C=optimum
 
 ## Pass V craft
-- r1 BUILD `toolset/compose/pilots/form-lab-schlaganfall-V/chapter.typ` → PDF/PNG `dist/form-lab/schlaganfall-2026-08/V/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-schlaganfall-V/chapter.typ` → PDF/PNG `dist/form-lab/schlaganfall-2026-08/V/p1–p2.png`
 - r1 CRITIQUE revise: face glyph too abstract vs photo R; label 'drift' inside canvas cramped
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: p2 not sparse after chain+mimics
@@ -28,7 +28,7 @@
 - exhaustion.md written; board pass_V=optimum
 
 ## Pass R craft
-- r1 BUILD `toolset/compose/pilots/form-lab-schlaganfall-R/chapter.typ` → PDF/PNG `dist/form-lab/schlaganfall-2026-08/R/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-schlaganfall-R/chapter.typ` → PDF/PNG `dist/form-lab/schlaganfall-2026-08/R/p1–p2.png`
 - r1 CRITIQUE revise: clock atom rendered as abstract nucleus not time cue; speech atom abstract
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: clock still weak but labeled T Time

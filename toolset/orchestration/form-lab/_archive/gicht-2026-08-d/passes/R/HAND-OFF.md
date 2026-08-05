@@ -26,7 +26,7 @@ See `../../pins.md`. No claim invention. No clinical rewrite.
 
 | kind | path |
 |---|---|
-| source pilot | `toolset/compose/pilots/form-lab-gicht-d-R/` |
+| source pilot | `toolset/compose/lab/form-lab-gicht-d-R/` |
 | dist | `dist/form-lab/gicht-2026-08-d/R/` |
 | critiques | `critique-rNN.md` (this dir) |
 | exhaustion | `exhaustion.md` (when done) |

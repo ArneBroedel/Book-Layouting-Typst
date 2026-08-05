@@ -4,7 +4,7 @@
 - Pins frozen to Kursbuch5 monograph; medium-rules copied; route Pass T
 
 ## Pass T craft
-- r1 BUILD `toolset/compose/pilots/form-lab-melanom-abcde-T/chapter.typ` → PDF/PNG `dist/form-lab/melanom-abcde-2026-08/T/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-melanom-abcde-T/chapter.typ` → PDF/PNG `dist/form-lab/melanom-abcde-2026-08/T/p1–p2.png`
 - r1 CRITIQUE revise: p2 sparse after case; ABCDE letters same weight
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: residual air acceptable for short kl-kurz
@@ -12,7 +12,7 @@
 - exhaustion.md written; board pass_T=optimum
 
 ## Pass C craft
-- r1 BUILD `toolset/compose/pilots/form-lab-melanom-abcde-C/chapter.typ` → PDF/PNG `dist/form-lab/melanom-abcde-2026-08/C/p1–p3.png`
+- r1 BUILD `toolset/compose/lab/form-lab-melanom-abcde-C/chapter.typ` → PDF/PNG `dist/form-lab/melanom-abcde-2026-08/C/p1–p3.png`
 - r1 CRITIQUE revise: p3 empty lower half; 112 chrome over-loud for screening chapter
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: void reduced with case move
@@ -20,7 +20,7 @@
 - exhaustion.md written; board pass_C=optimum
 
 ## Pass V craft
-- r1 BUILD `toolset/compose/pilots/form-lab-melanom-abcde-V/chapter.typ` → PDF/PNG `dist/form-lab/melanom-abcde-2026-08/V/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-melanom-abcde-V/chapter.typ` → PDF/PNG `dist/form-lab/melanom-abcde-2026-08/V/p1–p2.png`
 - r1 CRITIQUE revise: D diameter glyph weak (circle only); p2 light
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: icon set complete enough
@@ -28,7 +28,7 @@
 - exhaustion.md written; board pass_V=optimum
 
 ## Pass R craft
-- r1 BUILD `toolset/compose/pilots/form-lab-melanom-abcde-R/chapter.typ` → PDF/PNG `dist/form-lab/melanom-abcde-2026-08/R/p1–p2.png`
+- r1 BUILD `toolset/compose/lab/form-lab-melanom-abcde-R/chapter.typ` → PDF/PNG `dist/form-lab/melanom-abcde-2026-08/R/p1–p2.png`
 - r1 CRITIQUE revise: ABCDE-set atom may imply letter claims in image; only 2 atoms — budget OK but thin vs gicht-3
 - r2 BUILD fixes from blocks → re-export PNG
 - r2 CRITIQUE: claim audit present

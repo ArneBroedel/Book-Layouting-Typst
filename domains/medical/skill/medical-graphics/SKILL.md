@@ -179,7 +179,7 @@ Never accept-asset on claim FAIL. Free vision may invent EN/meta chrome → refi
 Criteria icons may look right while teaching wrong (Melanom B/D) → illustration-semantics + surgical refine.  
 **Quota / 429 fallback to Typst must not be Accept-ed as free vision.** Name the carrier.  
 **Body/anatomy free vision:** **paused by default** (Human 2026-07-29) — H-Gfx to reopen.  
-**CRPS 2026-07-31:** multi-pin labeled limbs fail textbook scrutiny (laterality, arbitrary leaders); demote path must not invent blob theater — solid clinical table is a valid Accept winner. Process review: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`.
+**CRPS 2026-07-31:** multi-pin labeled limbs fail textbook scrutiny (laterality, arbitrary leaders); demote path must not invent blob theater — solid clinical table is a valid Accept winner. Process review: `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps-2026-07-31.process-review.md`.
 
 ## References
 

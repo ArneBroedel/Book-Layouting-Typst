@@ -6,9 +6,15 @@
 
 | Layer | Form Lab role |
 |---|---|
-| **A** platform | Thin: Typst/bookkit compose pilots, board pattern |
-| **B** medical media | Primary: medium craft, SR, free vision atoms, vector glyphs |
+| **A** platform | Thin: Typst/bookkit chapter.typ under `toolset/compose/lab/` (not `compose/pilots/`), board under `form-lab/` |
+| **B** medical media | Primary: medium craft, SR, free vision atoms, vector glyphs; assets under `domains/medical/assets/form-lab/` |
 | **C** content | Read-only pins; no claim rewrite |
+
+| Path | Form Lab | Production dogfood |
+|---|---|---|
+| Chapter.typ | `toolset/compose/lab/form-lab-*` | `toolset/compose/pilots/` or root `pilots/` |
+| Boards | `toolset/orchestration/form-lab/` (+ `_archive/` when complete) | `toolset/orchestration/book-production/` |
+| Briefs (campaign) | usually archived under `briefs/_archive/` | gold top-level per `briefs/INDEX.md` |
 
 ## Hard separations
 

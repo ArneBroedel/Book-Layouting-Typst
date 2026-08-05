@@ -45,7 +45,7 @@ Defaults — override only with a written reason in `*.vision.md` / Decision Not
 | **Typst owns German claim text** | Maintainable, C-pin faithful | Hybrid labels-on-nodes after PASS composition |
 | **Pretty ≠ ready** | First-glance polish failed expert textbook scrutiny | Human H-Explore / H-Gfx may still pass a PASS audit |
 
-Negative gold: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md` · assets `domains/medical/assets/kl-crps-2026-07-31/` (provenance only).
+Negative gold: `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps-2026-07-31.process-review.md` · assets `domains/medical/assets/kl-crps-2026-07-31/` (provenance only).
 
 ## Prompt layers
 

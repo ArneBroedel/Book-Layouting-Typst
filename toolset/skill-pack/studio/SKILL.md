@@ -185,7 +185,7 @@ content ready?
 open-assets is **unit-conditional** only — never always-on. If a production-bridge harvest exists for the topic, specialists cite-if-present (advisory).
 
 At each Human gate: **stop**, state exactly what the user must decide/sign, paths, then wait.  
-Process evidence: `domains/medical/briefs/kl-crps-2026-07-31.process-review.md`.
+Process evidence: `domains/medical/briefs/_archive/campaigns-flat-2026-08/kl-crps-2026-07-31.process-review.md`.
 
 ### Full book (situation 1)
 
