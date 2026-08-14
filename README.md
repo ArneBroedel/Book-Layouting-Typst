@@ -118,7 +118,7 @@ When the path is unclear, start with **`/studio`**. Full routing table: [`AGENTS
 | `bookkit` / `compose-chapter` / `typst-writer` | packages, chapter.typ, any `.typ` edit |
 | Domain B / C | `media-brief`, `medical-graphics`, `open-assets`, `content-review` — see AGENTS |
 
-Prefer **`./scripts/bookkit …`** over hunting ad-hoc scripts. Discovery: `.github/skills/` · Grok: `.grok/skills/` (symlinks to SoT).
+Prefer **`./scripts/bookkit …`** over hunting ad-hoc scripts. Skill SoT: `toolset/skill-pack/` · discovery: `.agents/skills/` (Grok) · `.github/skills/` (Copilot).
 
 ---
 

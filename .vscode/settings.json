@@ -1,4 +1,10 @@
 {
+  "files.exclude": {
+    "**/.claude": true,
+    "**/.grok/skills": true,
+    "**/.github/skills": true
+  },
+
   "[typst]": { "editor.formatOnSave": true },
 
   "tinymist.exportPdf": "onSave",

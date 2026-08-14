@@ -125,15 +125,16 @@ Calibri / Segoe / Inconsolata.
 - **B — domain media:** `domains/medical/` (recipes, briefs, assets, media/graphics/open-assets skills) — split candidate.
 - **A — print layout (this repo core):** `packages/`, `toolset/` (compose, form-catalog, **boundaries**), CLI. Generalisable; no content SoT.
 - **W — web layout:** isolated Astro PoC in `channels/web/` (own `package.json`, pins only); **not** under `packages/bookkit`.
+- **Lab ≠ production:** Form Lab is lab-learning (studio **9** / `form-lab-orchestrator`), not the default chapter ship path.
 - **Shared contracts:** `contracts/` + `./scripts/bookkit boundaries check-tree|check-release`.
 - Roles/workflow: [`devtracks/ROLES-AND-FLOW.md`](devtracks/ROLES-AND-FLOW.md) · policy: `devtracks/PRODUCT-BOUNDARIES.md` v0.3.1 · role theory: `devtracks/CONSENSUS-v0.md`.
 
 ## Skills (read before acting)
 
 Routing table and discovery rules: [`AGENTS.md`](AGENTS.md). Load the matching skill
-before acting in its domain. Grok discovers via `.grok/skills/` symlinks — edit SoT
-only (platform: `.github/skills/` or `toolset/skill-pack/`; domain B:
-`domains/medical/skill/…`); never fork under `.grok/`.
+before acting in its domain. Grok discovers via `.agents/skills/` (relative
+symlinks to SoT). Edit SoT only (`toolset/skill-pack/`; domain B:
+`domains/medical/skill/…`); never fork under discovery paths.
 
 Graphics playbook: `domains/medical/skill/medical-graphics/playbook/` **`00–11`**.
 Guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`.

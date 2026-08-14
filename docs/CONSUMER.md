@@ -158,7 +158,7 @@ Details: [`../channels/web/README.md`](../channels/web/README.md).
 | `typst-writer` | A | Any `.typ` create/edit or layout debug |
 
 Full routing (including domain B/C and Form Lab): [`../AGENTS.md`](../AGENTS.md).  
-Platform skills: `toolset/skill-pack/` (also mirrored under `.github/skills/`).  
+Platform skills: `toolset/skill-pack/` (discovery symlinks under `.agents/skills/` and `.github/skills/`).  
 Do **not** put medical genre logic into foundation `packages/bookkit`.
 
 ---

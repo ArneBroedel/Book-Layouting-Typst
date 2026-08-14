@@ -26,7 +26,7 @@ When split triggers fire (`devtracks/_archive/content-maturity/SPLIT-CHECKLIST.m
 ## Remove from A after move
 
 - Process kit tree (or leave stub README)
-- `.github/skills/content-review` and `.grok/skills/content-review` symlinks (or retarget stub)
+- `.github/skills/content-review` and `.agents/skills/content-review` symlinks (or retarget stub)
 
 ## Verify
 

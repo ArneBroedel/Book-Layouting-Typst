@@ -15,7 +15,7 @@ Rules (mandatory):
 1. You are book-production-orchestrator for this board only.
 2. Read in order: kickoff.md → board.md → route.md → run-log.md (tail) → this SESSION-START.md.
 3. Load and FOLLOW the specialist skill SKILL.md for each step (do not improvise a private pipeline):
-   - media-brief: domains/medical/skill/media-brief/SKILL.md (or .grok/skills/media-brief)
+   - media-brief: domains/medical/skill/media-brief/SKILL.md (or .agents/skills/media-brief)
    - medical-graphics: domains/medical/skill/medical-graphics/SKILL.md + playbook/
    - compose-chapter: toolset/skill-pack/compose-chapter/SKILL.md
 4. Per chapter use the track pipeline in:
@@ -71,8 +71,8 @@ board.route next_skill
 
 | Agent | How skills load |
 |---|---|
-| **Grok** | Project skills via `.grok/skills/` symlinks → SoT bodies |
-| **Claude / Copilot** | `.github/skills/` or skill-pack / domain paths in AGENTS.md / CLAUDE.md |
+| **Grok** | Project skills via `.agents/skills/` → SoT bodies |
+| **Copilot** | `.github/skills/` or skill-pack / domain paths in AGENTS.md |
 | **Any** | If skill not auto-loaded: **read the SKILL.md path above explicitly** before acting |
 
 Orchestrator does **not** replace specialists — it only routes and logs.

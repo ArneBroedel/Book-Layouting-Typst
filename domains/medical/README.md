@@ -27,12 +27,12 @@ domains/medical/
 |---|---|
 | **Body** | [`skill/media-brief/SKILL.md`](skill/media-brief/SKILL.md) |
 | **B-core (lean)** | [`skill/media-brief/references/design-reasoning.md`](skill/media-brief/references/design-reasoning.md) — unit→hypothesis, scan rules, Accept rubric |
-| **Discovery** | `.github/skills/media-brief`, `.grok/skills/media-brief`, `toolset/skill-pack/media-brief` → this directory |
+| **Discovery** | `.agents/skills/media-brief`, `.github/skills/media-brief`, `toolset/skill-pack/media-brief` → this directory |
 | **Provision** | `toolset/skill-pack/provision.sh` (resolves domain SoT first) |
 | **Templates** | `templates/media-brief.template.md`, `templates/accept-record.template.md` |
 | **Library (archived)** | `devtracks/_archive/medical-knowledge-design-competencies/` (COMPENDIUM) |
 
-Edit the skill **only** under `domains/medical/skill/media-brief/`. Do not duplicate under `.grok/`.
+Edit the skill **only** under `domains/medical/skill/media-brief/`. Do not fork under discovery paths.
 
 ## Skill `medical-graphics` (SoT)
 
@@ -42,7 +42,7 @@ Edit the skill **only** under `domains/medical/skill/media-brief/`. Do not dupli
 | **Role** | Graphics — after Brief: code first, asset/hybrid considered, A/B when unsure |
 | **Template** | [`templates/graphic-decision.template.md`](templates/graphic-decision.template.md) |
 | **Assets** | [`assets/`](assets/) |
-| **Discovery** | `.github/skills/medical-graphics`, `.grok/skills/medical-graphics`, `toolset/skill-pack/medical-graphics` |
+| **Discovery** | `.agents/skills/medical-graphics`, `.github/skills/medical-graphics`, `toolset/skill-pack/medical-graphics` |
 | **Track (archived)** | `devtracks/_archive/medical-graphics/` · active expansion: `devtracks/kl-form-language/` |
 
 Edit only under `domains/medical/skill/medical-graphics/`.

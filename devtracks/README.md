@@ -11,7 +11,7 @@ Plan.md typically describes different phases of the development process. For a s
 ## Lifecycle: devtracks are working memory, skills are long-term memory
 
 A devtrack holds **forward-looking work only**. It is *not* a place to permanently document
-completed work or learnings — those belong in skills (`.github/skills/`) and guides (`Guides/`).
+completed work or learnings — those belong in skills (`toolset/skill-pack/` / domain skill dirs) and guides (`Guides/`).
 The full system is described in `docs/KNOWLEDGE-MAP.md`. A track moves through:
 
 1. **Open** — create `devtracks/<name>/` with `spec.md` + `plan.md`. Active work only.

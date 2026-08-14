@@ -60,10 +60,10 @@ def main() -> None:
             fail(f"missing reference {rp.relative_to(ROOT)}")
     ok("skill SoT + references")
 
-    # Discovery: .github and .grok resolve to skill-pack (symlink preferred)
+    # Discovery: .github and .agents resolve to skill-pack (symlink preferred)
     for link in (
         ROOT / ".github/skills/form-lab-orchestrator",
-        ROOT / ".grok/skills/form-lab-orchestrator",
+        ROOT / ".agents/skills/form-lab-orchestrator",
     ):
         if not link.exists():
             fail(f"missing discovery path {link.relative_to(ROOT)}")

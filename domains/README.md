@@ -16,7 +16,7 @@ Presentation channels (**A** print core, **W** web scaffold) are **not** under `
 1. **New medical-specific logic** → `domains/medical/` (not `packages/bookkit`).  
 2. **Generic layout / validate / catalog** → `packages/` / `toolset/`.  
 3. **Real Kursbuch content** stays **external** (Produkt C works); never SoT under `domains/`.  
-4. Skills SoT live under each domain; discovery symlinks under `.github/skills/`, `.grok/skills/` only.  
+4. Skills SoT live under each domain; discovery symlinks under `.agents/skills/` and `.github/skills/` only.  
 5. **Shared contracts** (release package) live under [`contracts/`](../contracts/), not inside domain trees.
 
 ## Ownership

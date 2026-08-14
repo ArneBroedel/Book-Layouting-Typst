@@ -60,15 +60,13 @@ domain. **Collaboration (who leads / done / CLEAN authority):**
 | `pinit-workflow` | Any `#pin*` / pinit annotation work |
 | `skill-creator` | Create, improve, evaluate, or harvest skills |
 
-**Canonical bodies:** platform skills under `.github/skills/<name>/` (or `toolset/skill-pack/`
-for bookkit / compose-chapter / book-production-orchestrator / form-lab-orchestrator / studio).
+**Canonical bodies:** platform skills under `toolset/skill-pack/<name>/`.
 **Domain exception:** `media-brief`, `medical-graphics`, and `open-assets` SoT under
-`domains/medical/skill/`; discovery paths (`.github/skills/…`, `.grok/skills/…`,
-`toolset/skill-pack/…`) are symlinks.
+`domains/medical/skill/`; C skills under `domains/content-maturity/skill/`.
 
-**Grok discovery:** Grok does **not** scan `.github/skills/` by default. Project skills are
-exposed via relative symlinks under `.grok/skills/`. Edit the SoT body only; never fork a
-second copy under `.grok/`.
+**Discovery (symlinks only — do not edit or fork):** `.agents/skills/` (Grok + Agents)
+and `.github/skills/` (Copilot). Optional `--with-claude` / `--with-grok` via
+`toolset/skill-pack/provision.sh`. Edit the SoT body only.
 
 Hard rules that the gate encodes (do not weaken):
 

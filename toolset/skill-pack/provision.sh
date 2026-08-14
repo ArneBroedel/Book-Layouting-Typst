@@ -1,35 +1,93 @@
 #!/usr/bin/env bash
-# Provision skill-pack into multi-agent discovery paths.
-# SoT map:
-#   bookkit                      → toolset/skill-pack/bookkit  (Produkt A)
-#   compose-chapter              → toolset/skill-pack/compose-chapter  (Produkt A)
-#   studio                       → toolset/skill-pack/studio  (A meta)
-#   book-production-orchestrator → toolset/skill-pack/book-production-orchestrator  (A meta)
-#   form-lab-orchestrator        → toolset/skill-pack/form-lab-orchestrator  (lab-learning meta)
-#   media-brief                  → domains/medical/skill/media-brief  (Produkt B)
-#   medical-graphics             → domains/medical/skill/medical-graphics  (Produkt B)
-#   open-assets                  → domains/medical/skill/open-assets  (Produkt B)
-#   content-orchestrator         → domains/content-maturity/skill/content-orchestrator  (Produkt C)
-#   content-review               → domains/content-maturity/skill/content-review  (Produkt C)
-#   generic                      → studio .github/skills/* (typst-writer, typst-extension, pinit-workflow)
+# Provision skill-pack into agent discovery paths.
+#
+# SoT (edit here only):
+#   bookkit compose-chapter studio
+#   book-production-orchestrator form-lab-orchestrator
+#   typst-writer typst-extension pinit-workflow skill-creator
+#     → toolset/skill-pack/<name>
+#   media-brief medical-graphics open-assets
+#     → domains/medical/skill/<name>
+#   content-orchestrator content-review
+#     → domains/content-maturity/skill/<name>
+#
+# Default discovery (relative one-hop links to SoT):
+#   .agents/skills/   Grok + Agents-compatible tools
+#   .github/skills/   Copilot / generic
+#
+# Optional vendor clones (off by default):
+#   --with-claude     also .claude/skills/
+#   --with-grok       also .grok/skills/  (redundant if .agents exists)
 set -euo pipefail
+
 Root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-Target="${1:-.}"
-Target="$(cd "$Target" && pwd)"
+WithClaude=0
+WithGrok=0
+Target=""
 
-mkdir -p "$Target/.github/skills" "$Target/.grok/skills" "$Target/.agents/skills" "$Target/.claude/skills"
-
-link_or_copy() {
-  local src="$1" dest="$2"
-  mkdir -p "$(dirname "$dest")"
-  if [[ -e "$dest" || -L "$dest" ]]; then return 0; fi
-  ln -s "$src" "$dest" 2>/dev/null || cp -a "$src" "$dest"
+usage() {
+  echo "Usage: $0 [--with-claude] [--with-grok] [TARGET_DIR]" >&2
+  exit 2
 }
 
-# Resolve a skill directory preferring an explicit SoT, then skill-pack symlink/copy
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --with-claude) WithClaude=1; shift ;;
+    --with-grok) WithGrok=1; shift ;;
+    -h|--help) usage ;;
+    --) shift; break ;;
+    -*) echo "Unknown option: $1" >&2; usage ;;
+    *)
+      if [[ -n "$Target" ]]; then
+        echo "Unexpected argument: $1" >&2
+        usage
+      fi
+      Target="$1"
+      shift
+      ;;
+  esac
+done
+
+Target="${Target:-.}"
+Target="$(cd "$Target" && pwd)"
+
+mkdir -p "$Target/.github/skills" "$Target/.agents/skills"
+if [[ "$WithGrok" -eq 1 ]]; then
+  mkdir -p "$Target/.grok/skills"
+fi
+if [[ "$WithClaude" -eq 1 ]]; then
+  mkdir -p "$Target/.claude/skills"
+fi
+
+# Relative when dest lives in this checkout; absolute when provisioning a consumer.
+link_spec() {
+  local src="$1" dest="$2"
+  if [[ "$Target" == "$Root" ]]; then
+    realpath --relative-to="$(dirname "$dest")" "$src"
+  else
+    echo "$src"
+  fi
+}
+
+# Replace wrong/missing links; never clobber a real directory.
+relink() {
+  local src="$1" dest="$2"
+  mkdir -p "$(dirname "$dest")"
+  local spec
+  spec="$(link_spec "$src" "$dest")"
+  if [[ -L "$dest" ]]; then
+    if [[ "$(readlink "$dest")" == "$spec" ]]; then
+      return 0
+    fi
+    rm -f "$dest"
+  elif [[ -e "$dest" ]]; then
+    echo "skip existing non-link $dest" >&2
+    return 0
+  fi
+  ln -s "$spec" "$dest" 2>/dev/null || cp -a "$src" "$dest"
+}
+
 resolve_skill_src() {
-  local name="$1"
-  shift
   local candidate
   for candidate in "$@"; do
     if [[ -d "$candidate" ]]; then
@@ -43,81 +101,80 @@ resolve_skill_src() {
 provision_skill() {
   local name="$1"
   local src="$2"
-  link_or_copy "$src" "$Target/.github/skills/$name"
-  link_or_copy "$Target/.github/skills/$name" "$Target/.grok/skills/$name"
-  link_or_copy "$Target/.github/skills/$name" "$Target/.agents/skills/$name"
-  link_or_copy "$Target/.github/skills/$name" "$Target/.claude/skills/$name"
+  relink "$src" "$Target/.github/skills/$name"
+  relink "$src" "$Target/.agents/skills/$name"
+  if [[ "$WithGrok" -eq 1 ]]; then
+    relink "$src" "$Target/.grok/skills/$name"
+  fi
+  if [[ "$WithClaude" -eq 1 ]]; then
+    relink "$src" "$Target/.claude/skills/$name"
+  fi
 }
 
-# Package skill (A)
-if src="$(resolve_skill_src bookkit \
+if src="$(resolve_skill_src \
     "$Root/toolset/skill-pack/bookkit")"; then
   provision_skill bookkit "$src"
 fi
 
-# Tech compose skill (A) — SoT under skill-pack
-if src="$(resolve_skill_src compose-chapter \
+if src="$(resolve_skill_src \
     "$Root/toolset/skill-pack/compose-chapter")"; then
   provision_skill compose-chapter "$src"
 fi
 
-# Guided front door (A meta) — intake / slash /studio
-if src="$(resolve_skill_src studio \
+if src="$(resolve_skill_src \
     "$Root/toolset/skill-pack/studio")"; then
   provision_skill studio "$src"
 fi
 
-# Full-book board orchestrator (A meta)
-if src="$(resolve_skill_src book-production-orchestrator \
+if src="$(resolve_skill_src \
     "$Root/toolset/skill-pack/book-production-orchestrator")"; then
   provision_skill book-production-orchestrator "$src"
 fi
 
-# Form Lab orchestrator (lab-learning meta — not production default)
-if src="$(resolve_skill_src form-lab-orchestrator \
+if src="$(resolve_skill_src \
     "$Root/toolset/skill-pack/form-lab-orchestrator")"; then
   provision_skill form-lab-orchestrator "$src"
 fi
 
-# Domain Media skill (B) — SoT under domains/medical; skill-pack may hold a symlink
-if src="$(resolve_skill_src media-brief \
+if src="$(resolve_skill_src \
     "$Root/domains/medical/skill/media-brief" \
     "$Root/toolset/skill-pack/media-brief")"; then
   provision_skill media-brief "$src"
 fi
 
-# Domain Graphics skill (B) — SoT under domains/medical
-if src="$(resolve_skill_src medical-graphics \
+if src="$(resolve_skill_src \
     "$Root/domains/medical/skill/medical-graphics" \
     "$Root/toolset/skill-pack/medical-graphics")"; then
   provision_skill medical-graphics "$src"
 fi
 
-# Open assets skill (B) — search/license/attribution/docs for third-party visuals
-if src="$(resolve_skill_src open-assets \
+if src="$(resolve_skill_src \
     "$Root/domains/medical/skill/open-assets" \
     "$Root/toolset/skill-pack/open-assets")"; then
   provision_skill open-assets "$src"
 fi
 
-# Content maturity skills (C) — SoT under domains/content-maturity
-if src="$(resolve_skill_src content-orchestrator \
+if src="$(resolve_skill_src \
     "$Root/domains/content-maturity/skill/content-orchestrator" \
     "$Root/toolset/skill-pack/content-orchestrator")"; then
   provision_skill content-orchestrator "$src"
 fi
 
-if src="$(resolve_skill_src content-review \
+if src="$(resolve_skill_src \
     "$Root/domains/content-maturity/skill/content-review" \
     "$Root/toolset/skill-pack/content-review")"; then
   provision_skill content-review "$src"
 fi
 
-# Generic skills from studio (if present)
-for s in typst-writer typst-extension pinit-workflow; do
-  if [[ -d "$Root/.github/skills/$s" ]]; then
-    provision_skill "$s" "$Root/.github/skills/$s"
+for s in typst-writer typst-extension pinit-workflow skill-creator; do
+  if src="$(resolve_skill_src \
+      "$Root/toolset/skill-pack/$s" \
+      "$Root/.github/skills/$s")"; then
+    provision_skill "$s" "$src"
   fi
 done
 
-echo "Provisioned skills under $Target (.github / .grok / .agents / .claude)"
+extra=""
+[[ "$WithGrok" -eq 1 ]] && extra+=" + .grok"
+[[ "$WithClaude" -eq 1 ]] && extra+=" + .claude"
+echo "Provisioned skills under $Target (.agents + .github${extra})"

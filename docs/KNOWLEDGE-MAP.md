@@ -16,7 +16,7 @@ faster. This document is the source of truth for **where knowledge lives and how
 |---|---|---|
 | **Governance / conventions** | `CLAUDE.md` + `AGENTS.md` + this map | How to *work in this repo* (build, architecture, this system itself). Product boundaries SoT: `devtracks/PRODUCT-BOUNDARIES.md` v0.3.1. Roles/flow: `devtracks/ROLES-AND-FLOW.md`. |
 | **Durable reference** (human, long-form) | `Guides/` | Stable Typst know-how + lessons-learned. The **why**. |
-| **Executable skills** (agent-facing) | `.github/skills/` (Grok via `.grok/skills/` symlinks); platform SoT also under `toolset/skill-pack/` | Imperative procedures. The **what**. Routing: `AGENTS.md`. |
+| **Executable skills** (agent-facing) | SoT: `toolset/skill-pack/` (+ domain skill dirs); discovery: `.agents/skills/` (Grok) · `.github/skills/` (Copilot) | Imperative procedures. The **what**. Routing: `AGENTS.md`. |
 | **Product runtime** | `packages/bookkit`, `packages/bookkit-didactics`, `toolset/starter`, `scripts/bookkit` | Consumable layout product. Consumer guide: [`CONSUMER.md`](CONSUMER.md). Front door: skill **`studio`**. |
 | **Active dev plans** | `devtracks/` | Spec/plan for work *not yet finished*. Nothing completed stays here. Index: `devtracks/README.md`. |
 | **External / generated data** | `research/` (+ `templates/` as study corpus) | Script-generated ecosystem data and downloaded third-party material. **Not** default agent context. |
@@ -83,7 +83,7 @@ experience
 
 ### Skill quality after harvest
 
-- Always: `python3 .github/skills/skill-creator/scripts/quick_validate.py <skill-dir>`
+- Always: `python3 toolset/skill-pack/skill-creator/scripts/quick_validate.py <skill-dir>`
 - Full graded baseline: `run_eval.py` when API keys available. Static fallback report:
   `devtracks/_archive/skill-eval-baseline/reports/static-baseline-2026-07-19.md`.
 
@@ -146,7 +146,7 @@ The monorepo mixes **product code**, **shipping runs**, and **training/lab**. Ke
 
 ## "Where do I put X?" — decision list
 
-- **A rule that should change how an agent writes/fixes `.typ`** → a **skill** (`.github/skills/…`; Grok discovers via `.grok/skills/` symlinks).
+- **A rule that should change how an agent writes/fixes `.typ`** → a **skill** (`toolset/skill-pack/…`; Grok discovers via `.agents/skills/`).
 - **A long explanation, theory, or a "mistake → fix" story** → a **guide** (`Guides/…`).
 - **A plan for work not yet built** → a **devtrack** (`devtracks/<name>/spec.md` + `plan.md`).
 - **A completed feature's learnings** → harvest into skill+guide, then `devtracks/_archive/`.

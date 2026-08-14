@@ -68,8 +68,8 @@ Tags: `fach` · `didaktik` · `struktur` · `sprache` · `konsistenz` · `claims
 
 Symlinks (do not fork skill body):
 
-- `.github/skills/content-review` · `.grok/skills/content-review`
-- `.github/skills/content-orchestrator` · `.grok/skills/content-orchestrator`
+- `.agents/skills/content-review` · `.github/skills/content-review`
+- `.agents/skills/content-orchestrator` · `.github/skills/content-orchestrator`
 
 ## A/B coupling
 

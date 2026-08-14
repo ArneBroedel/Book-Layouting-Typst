@@ -1,5 +1,5 @@
 # Provisioned skills for this project (edit freely, then re-run provision.sh)
-# Source of truth for opt-in hub skills (sh-*). Project Typst skills live under
-# .github/skills/ and are exposed to Grok via .grok/skills/ symlinks separately.
+# Source of truth for opt-in hub skills (sh-*). Project skills SoT lives under
+# toolset/skill-pack/ and domains/*/skill/; Grok loads them via .agents/skills/.
 sh-gemini-chat           all
 sh-antigravity-subagent  all

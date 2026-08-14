@@ -16,6 +16,10 @@ __pycache__/
 Thumbs.db
 .vscode/*.log
 
+# Optional vendor skill clones (recreate with toolset/skill-pack/provision.sh --with-claude / --with-grok)
+.claude/
+.grok/skills/
+
 # Local setup artifacts
 *.tmp
 tmp/
