@@ -7,4 +7,4 @@ license = "MIT"
 description = "Optional medical-didactic facet for bookkit (boxes, exam, clinical-case-spread)."
 keywords = ["medical", "didactics", "textbook"]
 categories = ["components"]
-compiler = "0.13.0"
+compiler = "0.15.0"

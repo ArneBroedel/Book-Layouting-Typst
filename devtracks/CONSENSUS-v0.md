@@ -1,10 +1,15 @@
 # Architektur-Konsens — Composition & Verlagsrollen
 
-**Status:** **v0.2 accepted** (2026-07-20) — Rollen v0.1 + Produkt-/Repo-Grenzen  
+**Status:** **v0.2 accepted** (2026-07-20) — Rollen-Kern und Composition-ADRs weiter gültig.  
+**Multi-channel / Freeze / contracts:** living SoT is [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) **v0.3.1** (ADR 50–60), not this file.  
+**Kurzüberblick (ohne Schritt-Buchstaben):** [`ROLES-AND-FLOW.md`](ROLES-AND-FLOW.md).  
 **Supersedes within this file:** pure „nur Single-Shot Composition“ als *alleiniger* Qualitätsweg  
 **Retains from v0:** no YAML-Assembler primary path; whitelist validation; fail-fast; no auto-heal loops  
 
-**Related:** [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) · Track [`platform-boundaries/`](platform-boundaries/)
+**Related:** [`PRODUCT-BOUNDARIES.md`](PRODUCT-BOUNDARIES.md) · archived track [`_archive/platform-boundaries/`](_archive/platform-boundaries/)  
+
+Note: step letters in the workflow below (`[A]` Media, `[B]` Tech, `[C1]` Compose) are **not**
+product IDs. Products are **C** content / **B** media / **A** print / **W** web.
 
 **Process:**  
 - Gemini 3-Runden (Effizienz, Verlässlichkeit) → v0 lock  
@@ -43,7 +48,7 @@ Lücken werden **gebaut oder bewusst verworfen**, nicht still zu „nur Tabelle�
 - Beantwortet gezielte Rückfragen aus dem Media-Brief (Human-in-the-loop).  
 - **Nicht:** Typst, bookkit, Form-Whitelist.
 
-### Media (Medizinpädagogik + Mediendesign) — Track [`media-design`](media-design/)
+### Media (Medizinpädagogik + Mediendesign) — Track [`_archive/media-design`](_archive/media-design/) (archived; skill `media-brief` live)
 
 - Denkt **zuerst frei**: hypothetisch bestes Medien-/Didaktik-Konzept (lern-/handlungstheoretisch).  
 - Darf Wünsche **außerhalb** des aktuellen Katalogs formulieren.  
@@ -51,7 +56,7 @@ Lücken werden **gebaut oder bewusst verworfen**, nicht still zu „nur Tabelle�
 - Bewertet Tech-Vorschläge und Spikes: **accept / revise / reject**.  
 - **Nicht:** Production-`.typ` setzen; Claims umschreiben; endlose Chat-Debatten ohne Artefakt.
 
-### Tech (Technische Umsetzung) — Track [`compose-pipeline`](compose-pipeline/)
+### Tech (Technische Umsetzung) — Track [`_archive/compose-pipeline`](_archive/compose-pipeline/) (archived; skill `compose-chapter` live)
 
 - Mappt Brief → Realization (`mapped` / `custom` / `approx` / `gap` / `experiment`) + optional **`graphic_mode`**.  
 - Optional **Spike**: kleines Experiment für neue/unsichere Wege → PDF/PNG (code, asset, ab-pair).  
@@ -70,7 +75,7 @@ Lücken werden **gebaut oder bewusst verworfen**, nicht still zu „nur Tabelle�
 - Human: kritische Accepts, medizinische/rechtliche Freigaben (Content-Workspace).  
 - **Nicht:** Multi-Agent-Verhandlung; Auto-Correction-Loops (v0/v0.1 verboten als Default).
 
-### Form-Catalog (Shared Spine) — Track [`form-catalog`](form-catalog/)
+### Form-Catalog (Shared Spine) — Track [`_archive/form-catalog`](_archive/form-catalog/) (archived; living `toolset/form-catalog/`)
 
 - Whitelist + Genre-Rezepte + `planned`-Lücken.  
 - Wächst aus **akzeptierten Gaps** (Media+Tech), nicht nur aus dem, was Compose schon kann.

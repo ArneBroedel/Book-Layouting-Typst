@@ -1,90 +1,81 @@
-# Typst Showcase v2
+# Typst Showcase — Medizinische Didaktik
 
-A publication-grade, 30-page showcase of Typst's layout capabilities.
-German content with a medical/didactic theme, A4 format.
-Chapters 01–07 have zero external dependencies; chapters 08–10 demonstrate optional @preview ecosystem packages.
+A publication-grade showcase of Typst layout capabilities. German content with a
+medical/didactic theme, A4 format. The book **dogfoods** `packages/bookkit` and
+`packages/bookkit-didactics` via thin re-exports in `src/styles/` and foundation
+`src/components/`.
 
-## Quick Start
+## Quick start
 
-```sh
-typst compile src/main.typ dist/book.pdf --ignore-system-fonts --font-path fonts
-```
-
-## PNG Export
+Always from the **repo root**, with repro flags:
 
 ```sh
-typst compile --format png --ppi 200 src/main.typ "png_output/page-{0p}.png"
+typst compile --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf
+# or:
+./scripts/bookkit build --root . --entry src/main.typ --out dist/book.pdf
 ```
 
-## Key Metrics
+PNG export (same flags):
 
-| Metric | Value |
-|--------|-------|
-| Pages | ~83 |
-| Components | 28 |
-| Layout patterns | 15 |
-| Core deps (Ch. 01–07) | 0 |
-| Ecosystem demos (Ch. 08–10) | CeTZ, Fletcher, Codly, Showybox, Tablem |
+```sh
+typst compile --root . --ignore-system-fonts --font-path fonts \
+  --format png --ppi 200 --pages 1 \
+  src/main.typ dist/preview/p1.png
+```
+
+## Book map
+
+| Teil | Title | Chapters |
+|---|---|---|
+| Cover | Full-bleed cover | `00` |
+| **I** | Grundlagen | `01` intro · `02` typography · `03` structure |
+| **II** | Komponenten & Layouts | `04` components · `05` layout · `06` advanced |
+| **III** | Erweiterbarkeit | `08` packages · `09` data-driven · `10` tooling |
+| **IV** | Community-Pakete | `11` academic · `12` beyond-flow · `13` wasm-meta · `14` templates · `18` pinit |
+| **V** | Template-Muster und Architektur | `15` book-patterns · `16` margin-patterns · `17` visual-hierarchy |
+| **VI** | Medizinische Fachbuch-Fähigkeiten | `19` Didaktik · `20` Datenvisualisierung · `21` Diagramme · `22` Bildintegration |
+| **VII** | Seitengestaltung, Hintergrund & Kunststücke | `23` Seitengestaltung · `24` Kunststücke |
+| **VIII** | Berufs- und Rechtskunde | `25` Rechtskunde |
+| Back matter | Glossary, index, bibliography | `07` |
+
+Chapters **01–06** have zero `@preview` dependencies. **08+** deliberately demonstrate
+ecosystem packages (CeTZ, Fletcher, Codly, Showybox, Tablem, pinit, …).
+
+Assembly lives in `src/main.typ`: cover (zero margins) → `setup-pages()` →
+`part-page(...)` + `#include` per chapter. `07` is included last.
 
 ## Architecture
 
 ```
 src/
-├── main.typ              ← Assembly file
-├── styles/
-│   ├── theme.typ          ← Design tokens (colors, fonts, spacing)
-│   ├── typography.typ     ← Typography set/show rules
-│   └── page.typ           ← Page geometry, headers, footers
-├── components/
-│   ├── blocks.typ         ← Callout, card, blockquote, pull-quote, side-note, code-block, key-concept
-│   ├── inline.typ         ← Badge, tag, highlight-text, kbd, icon-text
-│   ├── tables.typ         ← Styled-table, comparison-table
-│   ├── layouts.typ        ← Sidebar, magazine, scientific-paper, comparison, adaptive, breakout
-│   ├── grids.typ          ← Gallery-grid, feature-grid, stats-grid, comparison-grid
-│   └── spreads.typ        ← Book-cover, chapter-opener, section-break, part-page
-├── chapters/
-│   ├── 00-cover.typ       ← Full-bleed book cover
-│   ├── 01-intro.typ       ← Introduction & conventions
-│   ├── 02-typography.typ  ← Typography & readability
-│   ├── 03-structure.typ   ← Document structure & cognitive load
-│   ├── 04-components.typ  ← Component showcase
-│   ├── 05-layout.typ      ← Layout patterns
-│   ├── 06-advanced.typ    ← Advanced techniques
-│   ├── 07-backmatter.typ  ← Glossary, index, bibliography
-│   ├── 08-packages.typ    ← @preview package demos (CeTZ, Fletcher, Codly, Showybox, Tablem)
-│   ├── 09-data-driven.typ ← Data-driven documents (JSON/CSV)
-│   └── 10-tooling.typ     ← IDE, CI/CD, PDF/UA, enterprise patterns
-└── data/
-    ├── glossary.yml       ← German medical terms
-    ├── references.bib     ← Academic references
-    ├── sample-patients.json ← Sample patient data
-    └── sample-study.csv   ← Sample study results
+├── main.typ
+├── SHOWCASE-README.md     ← this file
+├── styles/                ← re-exports of packages/bookkit
+│   ├── theme.typ
+│   ├── typography.typ
+│   ├── page.typ
+│   └── print.typ
+├── components/            ← foundation = package re-export; rest = showcase-only
+│   ├── blocks.typ, inline.typ, tables.typ, grids.typ, layouts.typ, spreads.typ
+│   ├── didactics.typ, exam.typ          ← bookkit-didactics
+│   ├── charts.typ, diagrams.typ, pedigree.typ, figures.typ
+│   ├── page-design.typ, art.typ, legal.typ
+├── chapters/              ← 00–25 (see table)
+├── data/                  ← glossary.yml, *.bib, sample-patients.json, sample-study.csv
+└── assets/                ← e.g. anatomy/*.svg (root-absolute paths from figures.typ)
 ```
 
-## 15 Layout Patterns Demonstrated
+Component inventory and token rules: [`../CLAUDE.md`](../CLAUDE.md) → Architecture.
 
-1. Full-bleed book cover
-2. Chapter opener with decorative number + gradient bar
-3. Classic sidebar layout
-4. Magazine layout with hero + columns
-5. Scientific two-column paper
-6. Pull quote (editorial style)
-7. Dynamic gallery grid
-8. Adaptive layout (width-responsive)
-9. Inside/outside binding margins
-10. Context-aware running headers
-11. Zebra-striped semantic table
-12. Full-width breakout in column context
-13. Decorative overlay elements
-14. Comparison/feature grid
-15. Stats/KPI display
+## Design system
 
-## Design System
+- **Fonts** (under `--ignore-system-fonts`): Libertinus Serif (body + headings),
+  DejaVu Sans Mono (code), Font Awesome 6 from `fonts/`. No bundled sans.
+- **Colors:** teal primary `#0d7377`, amber accent `#d4a039`.
+- **Tokens:** change `packages/bookkit/theme.typ` (re-exported as `src/styles/theme.typ`),
+  not hardcoded colors in chapters.
 
-- **Fonts**: Libertinus Serif (body), Calibri (headings), Inconsolata (code)
-- **Colors**: Teal primary (#0d7377), amber accent (#d4a039), clinical white background
-- **Content**: German medical/didactic theme with authentic terminology
+## Related
 
-## Devtrack
-
-See `devtracks/` for the development methodology.
+- Platform / consumer: [`../docs/CONSUMER.md`](../docs/CONSUMER.md)
+- Agent rules: [`../AGENTS.md`](../AGENTS.md) · [`../CLAUDE.md`](../CLAUDE.md)

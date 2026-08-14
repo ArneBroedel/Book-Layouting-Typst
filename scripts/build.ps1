@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("fast", "watch", "ua", "print", "print-rgb", "test", "test-watch")]
+    [ValidateSet("fast", "watch", "ua", "print", "print-rgb")]
     [string]$Mode = "fast"
 )
 
@@ -34,11 +34,8 @@ if (-not $typstExe) {
     Write-Error "Typst CLI nicht gefunden. Bitte Typst installieren und PATH prüfen."
 }
 
-if ($Mode -notin @("test", "test-watch") -and -not (Test-Path "src/main.typ")) {
+if (-not (Test-Path "src/main.typ")) {
     Write-Error "Einstiegsdatei fehlt: src/main.typ"
-}
-if ($Mode -in @("test", "test-watch") -and -not (Test-Path "test/main.typ")) {
-    Write-Error "Einstiegsdatei fehlt: test/main.typ"
 }
 
 New-Item -ItemType Directory -Force -Path "dist" | Out-Null
@@ -63,11 +60,5 @@ switch ($Mode) {
     "print" {
         & $typstExe compile --root . --ignore-system-fonts --font-path fonts --input print=true src/main.typ dist/book-print-rgb.pdf
         & (Join-Path $PSScriptRoot "print-pdfx.ps1") -InputPdf "dist/book-print-rgb.pdf" -OutputPdf "dist/book-print.pdf"
-    }
-    "test" {
-        & $typstExe compile --root . --ignore-system-fonts --font-path fonts test/main.typ dist/test.pdf
-    }
-    "test-watch" {
-        & $typstExe watch --root . --ignore-system-fonts --font-path fonts test/main.typ dist/test.pdf
     }
 }

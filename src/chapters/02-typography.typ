@@ -50,22 +50,25 @@ rein ästhetische Frage. Serifenschriften#index[Serifenschrift] wie die hier ver
 _Libertinus Serif_ eignen sich hervorragend für längere Fließtexte, weil
 die Serifen als subtile horizontale Führung für das Auge dienen.
 
-Serifenlose Schriften wie _Calibri_ kommen dort zum Einsatz, wo
-Übersichtlichkeit und schnelle Erfassung gefragt sind: Überschriften,
-Tabellenbeschriftungen, Beschriftungen medizinischer Abbildungen.
+Serifenlose Schriften eignen sich dort, wo schnelle Erfassung zählt:
+Überschriften, Tabellenbeschriftungen, Bildlegenden. Dieses Buch
+bindet keine Sans ein: Überschriften nutzen dieselbe Libertinus-Familie
+wie der Fließtext. Hierarchie entsteht über Größe, Gewicht und Farbe,
+nicht über einen zweiten Schnitt. Eine Systemschrift wie Calibri würde
+den Satz auf jedem Rechner anders aussehen lassen.
 
 #comparison-layout(
   left-title: [Serifen (Fließtext)],
-  right-title: [Serifenlos (Überschriften)],
+  right-title: [Eine Familie, klare Stufen],
   [
     Die Serife — der kleine Querstrich am Ende eines Buchstabenstrichs —
     erzeugt eine optische Grundlinie, der das Auge folgt. In Druckwerken
     mit langen Textpassagen ist dies messbar von Vorteil.
   ],
   [
-    Serifenlose Schriften wirken moderner und klarer. Sie eignen sich für
-    kurze, strukturierte Informationseinheiten wie Beschriftungen,
-    Hinweiskästen und Bildschirmdarstellungen.
+    Ohne eingebettete Sans tragen Überschriften dieselbe Familie.
+    Fett, größere Grade und die Primärfarbe trennen die Ebenen
+    zuverlässig — reproduzierbar auf jedem Rechner.
   ],
 )
 
@@ -84,9 +87,9 @@ unruhig wird.
 
 In diesem Buch verwenden wir fünf Ebenen:
 
-- *Ebene 1*: Kapitelüberschriften — groß, farbig, serifenlos
-- *Ebene 2*: Abschnitte — mittelgroß, dunkel, serifenlos
-- *Ebene 3*: Unterabschnitte — Standardgröße, fett, serifenlos
+- *Ebene 1*: Kapitelüberschriften — groß, farbig, fett
+- *Ebene 2*: Abschnitte — mittelgroß, dunkel, fett
+- *Ebene 3*: Unterabschnitte — Standardgröße, fett
 - *Ebene 4*: Nebenüberschriften — kompakt, fett
 - *Ebene 5*: Einlaufende Überschriften — kursiv, dezent
 

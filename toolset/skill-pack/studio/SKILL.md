@@ -63,7 +63,7 @@ If the user **is** unclear, **start here even if** a specialist might also match
 
 When this skill starts (slash or trigger), **do not** dump the whole monorepo.
 
-1. One short orientation sentence (C content external → B media/assets → A print layout; optional W web scaffold).  
+1. One short orientation sentence (C content external → B media/assets → A print layout; W is a reserved web scaffold — Astro not started).  
 2. Ask **what they want to achieve now** (if not already in the message / args).  
 3. Use a **small menu** of situations (see below). Prefer structured options when the product supports them; otherwise number the choices in chat.  
 4. After the choice: run the **intake checklist** for that situation (only missing fields).  
@@ -117,7 +117,7 @@ After situation is known, collect (skip known answers):
 | **book_id** | for multi-chapter board |
 | **project_root** | consumer dir or monorepo studio root |
 | **print_target** | screen \| print-pdfx \| both |
-| **channel_scope** (after Accept intent) | print \| web \| both — default historical **print**; web only when W pilot needed |
+| **channel_scope** (after Accept intent) | print \| web \| both — default historical **print**; `web`/`both` only if a W (Astro) pilot exists — none today |
 | **autonomy** | L0 guided (ask each step) \| L1 semi \| L2 auto between Human gates |
 | **existing artifacts** | freeze, brief, form-spec, accept, typ, pdf, board paths if any |
 
@@ -271,7 +271,7 @@ For full-book or sit.2 durable resume, prefer board `route.md` from book-product
 | Book board status | `./scripts/book-production-status.sh <book-id>` |
 | Gold briefs | `domains/medical/briefs/INDEX.md` |
 | KL modules | `domains/medical/lib/typst/` |
-| Web channel (scaffold) | `channels/web/` |
+| Web channel (reserved scaffold; Astro not started) | `channels/web/` |
 | Consumer guide | `docs/CONSUMER.md` |
 | Full-book runbook | `docs/BOOK-PRODUCTION-RUNBOOK.md` |
 | Product map | `devtracks/PRODUCT-BOUNDARIES.md` |

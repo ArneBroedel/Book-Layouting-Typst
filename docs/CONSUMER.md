@@ -9,7 +9,7 @@ consume packages, catalog, CLI, and skills — they do **not** treat studio
 | **A** | Print layout platform (bookkit, form-catalog core, compose, starter, CLI) | this repo |
 | **B** | Domain media (e.g. medical recipes, `media-brief`, assets) | `domains/medical/` (optional; split candidate) |
 | **C** | Content works (author Markdown, claims) | **external** — never SoT here |
-| **W** | Web layout (Astro o. ä.) | scaffold `channels/web/` — not bookkit foundation |
+| **W** | Web layout (Astro o. ä.) | reserved scaffold `channels/web/` — Astro not started; not bookkit foundation |
 
 Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md).  
 Shared release package: [`contracts/`](../contracts/) · `./scripts/bookkit boundaries check-tree|check-release`.
@@ -18,13 +18,15 @@ Shared release package: [`contracts/`](../contracts/) · `./scripts/bookkit boun
 
 ## Pin versions
 
-Consumers pin **both**:
+Consumers pin **package + catalog** versions (and record the Typst compiler they build with):
 
 | Artifact | Current pin | Where |
 |---|---|---|
 | **bookkit** (foundation) | `0.1.0` | `packages/bookkit/typst.toml` |
 | **bookkit-didactics** (optional facet) | `0.1.0` | `packages/bookkit-didactics/typst.toml` |
 | **form-catalog** | `0.1.0` | `toolset/form-catalog/VERSION` (must match `core/forms.yaml` → `version:`) |
+| **Typst** (studio / package / CI) | `0.15.0` | `.github/workflows/build.yml` · `packages/bookkit/typst.toml` |
+| **bookkit CLI** (tool, not a pin) | `0.1.2` | `scripts/bookkit` `VERSION` |
 
 Pin policy details: [`toolset/form-catalog/README.md`](../toolset/form-catalog/README.md) § VERSION / pin policy.
 
@@ -42,7 +44,7 @@ my-book/
   packages/
     bookkit/                 # copy or submodule of packages/bookkit @ 0.1.0
     bookkit-didactics/       # optional facet
-  fonts/                     # licensed fonts required by theme tokens
+  fonts/                     # extra licensed faces (e.g. FA6); body/mono = Typst bundle
   dist/
 ```
 
@@ -136,13 +138,12 @@ Fail-fast, no auto-heal. Full options: [`toolset/compose/README.md`](../toolset/
 
 | Skill | Produkt | When |
 |---|---|---|
-| **`studio`** (`/studio`) | A meta | **Default intake** when the path is unclear; routes full-book / chapter / content / graphics |
-| `book-production-orchestrator` | A meta | Multi-chapter board → print |
+| **`studio`** (`/studio`) | A meta | **Default intake** when the path is unclear |
 | `bookkit` | A | Importing packages, starter/CLI, design-brief, didactics facet |
-| `compose-chapter` | A | Feasibility, creative-first `chapter.typ` (full toolkit), spike, validate |
+| `compose-chapter` | A | Feasibility, creative-first `chapter.typ`, spike, validate |
 | `typst-writer` | A | Any `.typ` create/edit or layout debug |
-| `media-brief` | B | Media Brief / gold brief / Accept — **domain optional**; SoT under `domains/medical/skill/media-brief/` |
 
+Full routing (including domain B/C and Form Lab): [`../AGENTS.md`](../AGENTS.md).  
 Platform skills: `toolset/skill-pack/` (also mirrored under `.github/skills/`).  
 Do **not** put medical genre logic into foundation `packages/bookkit`.
 

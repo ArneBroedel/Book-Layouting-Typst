@@ -1,7 +1,7 @@
 # domains/ — companion products (not foundation)
 
 Specializations **above** the print layout platform (Produkt **A**).  
-Full map: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md) v0.3 (C/B/A + Web **W**).  
+Full map: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md) v0.3.1 (C/B/A + Web **W**).  
 Candidates for physical extract (deferred; checklist `devtracks/_archive/workspace-split/phase3-split.md`, trigger-only D2).
 
 | Ordner | Produkt | Inhalt |

@@ -104,7 +104,7 @@ If user says “analyze what we already did”:
 | Design SoT | **P1** | theme/fonts/main skeleton once | `bookkit` / Human design |
 | Content gate | **P2** | per chapter frozen or exploration policy | `content-orchestrator` / Human **H1** |
 | Media plan | **P3** | brief + **form-spec** + `open_asset_scan` per ambitious unit | `media-brief` |
-| Graphics | **P4** | Design CLEAN → **conditional open-assets** → free→audit→realize | `open-assets` (iff needed) · `medical-graphics` 00–08 |
+| Graphics | **P4** | Design CLEAN → **conditional open-assets** → free→audit→realize | `open-assets` (iff needed) · `medical-graphics` playbook `00–11` |
 | Accept | **P5** | Media Accept + graphic winners (+ rights if asset); set **`channel_scope`** print\|web\|both; optional chapter **release package** | `media-brief` Accept · **H2** production · `bookkit boundaries check-release` |
 | Compose | **P6** | chapter.typ embed winners + multi-unit **chapter macro VC** (**A** print path) | `compose-chapter` |
 | Assembly | **P7** | main book PDF | `./scripts/bookkit build` (configurable `--root`) |
@@ -112,7 +112,7 @@ If user says “analyze what we already did”:
 | Visual QA | **P9** | multi-chapter assembly sample PNG / Must-see | Human + agent inspect |
 | Prepress | **P10** | print/PDF-X/DPI | scripts + Human |
 | Proof / release | **P11** | proof + imprimatur | Human **H4** / **H5** |
-| Web (optional) | **P6w** | only if Accept `channel_scope` is `web` or `both` — **W** consume same freeze + assets | `channels/web/` (scaffold); not bookkit foundation |
+| Web (optional) | **P6w** | only if Accept `channel_scope` is `web` or `both` — **W** consume same freeze + assets | `channels/web/` reserved scaffold (**Astro not started**); not bookkit foundation |
 
 Chapter rows advance **P2→P6** largely independently; **P1** once; **P7–P11** book-level.
 
@@ -330,7 +330,7 @@ Prefer **`/studio`** if the user has not yet chosen full-book vs single-chapter 
 | Multi-chapter explore ops | [`references/multi-chapter-explore.md`](references/multi-chapter-explore.md) |
 | Autonomy / L2 idle | [`references/autonomy.md`](references/autonomy.md) |
 | Phase machine detail | [`references/phase-machine.md`](references/phase-machine.md) |
-| Graphics playbook | `domains/medical/skill/medical-graphics/playbook/` |
+| Graphics playbook | `domains/medical/skill/medical-graphics/playbook/` (`00–11`) |
 | Media | `domains/medical/skill/media-brief/` |
 | Open assets (conditional) | `domains/medical/skill/open-assets/` |
 | Compose | `toolset/skill-pack/compose-chapter/` |
@@ -339,4 +339,4 @@ Prefer **`/studio`** if the user has not yet chosen full-book vs single-chapter 
 | Checkpoints | `domains/content-maturity/checkpoints.md` |
 | Collaboration Contract | [`../COLLABORATION-CONTRACT.md`](../COLLABORATION-CONTRACT.md) |
 | Product boundaries + release package | `devtracks/PRODUCT-BOUNDARIES.md` · `contracts/` · `bookkit boundaries` |
-| Web channel (W) | `channels/web/` (scaffold until pilot) |
+| Web channel (W) | `channels/web/` (reserved scaffold; Astro not started) |

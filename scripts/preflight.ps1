@@ -131,7 +131,7 @@ $pythonVersion = Parse-VersionObject -RawText $pythonRaw -Pattern '([0-9]+\.[0-9
 $pwshVersion = [version]$pwshRaw
 
 Assert-MinVersion -Name "git" -Current $gitVersion -Minimum ([version]"2.40.0")
-Assert-MinVersion -Name "typst" -Current $typstVersion -Minimum ([version]"0.14.2")
+Assert-MinVersion -Name "typst" -Current $typstVersion -Minimum ([version]"0.15.0")
 Assert-MinVersion -Name "node" -Current $nodeVersion -Minimum ([version]"20.0.0")
 Assert-MinVersion -Name "python" -Current $pythonVersion -Minimum ([version]"3.10.0")
 Assert-MinVersion -Name "pwsh" -Current $pwshVersion -Minimum ([version]"7.0.0")

@@ -31,7 +31,7 @@ P4 unit tick:
        optional → light scan when realism/icons may help
        skip     → document n/a (code/schema units — no MANIFEST ceremony)
      → board: needs_open_assets yes|no; open_assets n/a|needed|scanning|manifest_ok|blocked; manifest_path
-  3. medical-graphics playbook 00→08 (G0b already resolved when required)
+  3. medical-graphics playbook 00→11 (G0b already resolved when required)
        free → claim audit → recreate/hybrid/refine
   4. unit Visual CLEAN on PNG
      → board unit visual_clean = clean; chapter visual_clean rollup

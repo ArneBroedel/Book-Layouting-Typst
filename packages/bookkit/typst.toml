@@ -8,4 +8,4 @@ description = "Foundation book layout runtime: theme tokens, typography, page se
 repository = "https://github.com/local/bookkit"
 keywords = ["book", "layout", "theme", "typography"]
 categories = ["layout", "book"]
-compiler = "0.13.0"
+compiler = "0.15.0"

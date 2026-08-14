@@ -330,6 +330,6 @@ If multiple roles in one session: Brief → Feasibility/Graphics Decision → Ac
 | Collaboration Contract | `toolset/skill-pack/COLLABORATION-CONTRACT.md` |
 | Governance | `devtracks/CONSENSUS-v0.md`, `PRODUCT-BOUNDARIES.md` v0.3.1 |
 | Release package / tree check | `contracts/` · `./scripts/bookkit boundaries` |
-| Web channel (not this skill) | `channels/web/` (Produkt **W** — only after Accept `channel_scope` includes web) |
+| Web channel (not this skill) | `channels/web/` (Produkt **W** reserved scaffold, Astro not started — only after Accept `channel_scope` includes web) |
 
 Produkt **A** engine is domain-agnostic **print** compose. Content paths from **C**. Domain briefs/recipes/assets from **B**. Do **not** implement Astro/web here (**W**).

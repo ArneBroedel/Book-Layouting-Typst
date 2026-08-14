@@ -39,10 +39,8 @@
 )
 
 // ── Part colors ────────────────────────────────────────────────
-// One distinguishable hue per book part (Teil I–VI). Drives the
-// page-design showcase: thumb-index tabs, full-height margin bands and
-// any per-part color coding. Ordered list → index i == Teil (i+1), so a
-// thumb register can step by counter without a name lookup.
+// Distinguishable hues keyed by part index (i == Teil i+1). Showcase has
+// eight parts (I–VIII). Drives thumb-index tabs, margin bands, part coding.
 #let part-colors = (
   rgb("#0d7377"), // I   — Grundlagen (teal / primary)
   rgb("#2563eb"), // II  — Komponenten & Layouts (blue)
@@ -50,6 +48,8 @@
   rgb("#16a34a"), // IV  — Community-Pakete (green)
   rgb("#d4a039"), // V   — Template-Muster (amber / accent)
   rgb("#dc2626"), // VI  — Medizinische Fachbuch-Fähigkeiten (red)
+  rgb("#475569"), // VII — Seitengestaltung & Kunst (slate)
+  rgb("#1f3a5f"), // VIII — Berufs- und Rechtskunde (navy / legal)
 )
 
 // ── Type Scale ─────────────────────────────────────────────────

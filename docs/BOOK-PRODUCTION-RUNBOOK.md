@@ -20,7 +20,7 @@
 |---|---|
 | **Where do I start if unsure?** | Slash **`/studio`** (skill `studio`) — intake menu, then routes here or to specialists |
 | Who keeps the full-book overview? | **`book-production-orchestrator`** via `board.md` + `run-log.md` |
-| Step-by-step inside graphics? | **medical-graphics** playbook 00–08 |
+| Step-by-step inside graphics? | **medical-graphics** playbook `00–11` |
 | Do I remember the whole flow? | **No** — ask *“status board &lt;book-id&gt;”* or *“what next?”* / `/studio status` |
 | Fully autonomous? | **Yes at L2/L3**, stopping at Human gates |
 | Text vs assets vs layout? | **C** freeze → **B** Accept (`channel_scope`) → **A** print and/or **W** web |
@@ -46,7 +46,7 @@ content_root: <path to finished chapters>
 brief_class: production
 autonomy: L2
 print_target: both
-# optional later: web_target when W pilot exists; Accept channel_scope must match
+# optional later: web_target only when a W (Astro) pilot exists; Accept channel_scope must match
 Create kickoff + board, plan priorities with me, then drive until Human gate.
 ```
 
@@ -179,7 +179,7 @@ Validate can soft-check that a Quality Packet file and its referenced paths exis
 - **Default off** — without `--quality-packet`, pure A smoke stays green (no medical packet required).
 - **WARN only** — missing packet or missing listed PNG/MD paths surface as `[WARN] quality_packet`; they do **not** hard-fail validate.
 - **Presence only** — this does **not** certify Design CLEAN, Visual CLEAN, or Media Accept. Board cells + Human gates remain authoritative for quality.
-- Spec: `devtracks/quality-packet-soft-gate/`.
+- Spec (archived): `devtracks/_archive/quality-packet-soft-gate/`.
 
 ## Human gates (cannot be agent-signed)
 

@@ -19,14 +19,9 @@ case "$Mode" in
       exit 1
     fi
     ;;
-  test|test-watch)
-    if [[ ! -f test/main.typ ]]; then
-      echo "error: missing test/main.typ (test/ holds standalone experiments; compile them directly)" >&2
-      exit 1
-    fi
-    ;;
   *)
-    echo "usage: $0 <fast|watch|ua|print|print-rgb|test|test-watch>" >&2
+    echo "usage: $0 <fast|watch|ua|print|print-rgb>" >&2
+    echo "note: test/ holds standalone experiments — compile a .typ there directly" >&2
     exit 1
     ;;
 esac
@@ -57,11 +52,5 @@ case "$Mode" in
     # Full print pipeline: Typst print-RGB → Ghostscript PDF/X CMYK.
     typst compile "${flags[@]}" --input print=true src/main.typ dist/book-print-rgb.pdf
     ./scripts/print-pdfx.sh dist/book-print-rgb.pdf dist/book-print.pdf
-    ;;
-  test)
-    typst compile "${flags[@]}" test/main.typ dist/test.pdf
-    ;;
-  test-watch)
-    typst watch "${flags[@]}" test/main.typ dist/test.pdf
     ;;
 esac

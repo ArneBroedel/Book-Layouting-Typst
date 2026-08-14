@@ -15,8 +15,8 @@ One-page legend. Knowledge lifecycle: [`KNOWLEDGE-MAP.md`](KNOWLEDGE-MAP.md). Bo
 | `scripts/bookkit` | Runtime | unified CLI |
 | `domains/medical/` | B | skill, gold briefs, assets; campaigns in `briefs/_archive/` |
 | `domains/content-maturity/` | C process kit | no content SoT |
-| `channels/web/` | W scaffold | |
-| `src/` | A showcase | dogfood book |
+| `channels/web/` | W reserved scaffold | Astro not started |
+| `src/` | A showcase | dogfood book · map `src/SHOWCASE-README.md` |
 | `pilots/` | A consumer dogfood | ≠ compose pilots |
 | `docs/` `Guides/` `devtracks/` | Knowledge | |
 | `research/` `templates/` | R | not default agent context |

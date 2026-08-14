@@ -9,10 +9,10 @@ Companion layers live in the same modular monorepo until a split trigger fires:
 | **C** | Content works (text, claims, freeze) | **external** + process kit `domains/content-maturity/` |
 | **B** | Domain media (briefs, open-assets, graphics) | `domains/medical/` (split candidate) |
 | **A** | Print layout — bookkit, form-catalog, compose, CLI | `packages/`, `toolset/`, `scripts/bookkit` |
-| **W** | Web layout (Astro o. ä.) | scaffold `channels/web/` (runtime with pilot) |
+| **W** | Web layout (Astro o. ä.) | reserved scaffold `channels/web/` — **Astro not started** |
 | **R** | Ecosystem survey | `research/` — **not** default agent context |
 
-**Boundaries (policy + hard checks):** [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) · shared contracts [`contracts/`](contracts/) · CLI `./scripts/bookkit boundaries` · monorepo history: [`devtracks/_archive/workspace-split/`](devtracks/_archive/workspace-split/).
+**Boundaries (policy + hard checks):** [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) v0.3.1 · shared contracts [`contracts/`](contracts/) · CLI `./scripts/bookkit boundaries` · monorepo history: [`devtracks/_archive/workspace-split/`](devtracks/_archive/workspace-split/).
 
 ---
 
@@ -45,10 +45,13 @@ Scaffold a new consumer:
 typst compile --root . --ignore-system-fonts --font-path fonts main.typ dist/book.pdf
 ```
 
-Full consumer guide: **[`docs/CONSUMER.md`](docs/CONSUMER.md)**  
-Pins: bookkit `0.1.0` · form-catalog `0.1.0`.
+Studio compiler pin: **Typst 0.15.0** (CI and `packages/bookkit/typst.toml`).  
+Package pins: bookkit `0.1.0` · bookkit-didactics `0.1.0` · form-catalog `0.1.0`.  
+CLI tool version: `bookkit` **0.1.2** (not a package pin).
 
-### CLI surface (`./scripts/bookkit`)
+Full consumer guide: **[`docs/CONSUMER.md`](docs/CONSUMER.md)**
+
+### CLI surface (`./scripts/bookkit` v0.1.2)
 
 ```text
 doctor | build | watch | ua | print | init | brief-check
@@ -56,23 +59,24 @@ validate | catalog check | boundaries check-tree|check-release|check
 prepress dpi|pdfx | graphics vision|refine|spike-init|manifest
 ```
 
-**Task order (production):** C Freeze → B Accept (`channel_scope`) → A print and/or W web.  
+**Task order (production):** C Freeze → B Accept (`channel_scope`) → A print (W web when a pilot exists).  
 Release package template: [`contracts/templates/chapter-release.template.yaml`](contracts/templates/chapter-release.template.yaml).
 
 ---
 
 ## Showcase (dogfood)
 
-The multi-part medical-didactic book under `src/` dogfoods the packages via thin re-exports.
+The multi-part medical-didactic book under `src/` (8 Teile, chapters `00`–`25`) dogfoods the packages via thin re-exports. Chapter map: [`src/SHOWCASE-README.md`](src/SHOWCASE-README.md).
 
 ```bash
-# Linux / this workspace
-./scripts/build.sh fast
+# Linux / this workspace — prefer the unified CLI
+./scripts/bookkit build --root . --entry src/main.typ --out dist/book.pdf
 # or:
+./scripts/build.sh fast
 typst compile --root . --ignore-system-fonts --font-path fonts src/main.typ dist/book.pdf
 ```
 
-Windows: `./scripts/setup.ps1` then `./scripts/preflight.ps1 -RunBuildTest` · `./scripts/build.ps1 -Mode fast`.
+Windows: `./scripts/setup.ps1` then `./scripts/preflight.ps1 -RunBuildTest` · `./scripts/build.ps1 -Mode fast`. Setup notes: [`SETUP-WINDOWS.md`](SETUP-WINDOWS.md).
 
 Print (needs Ghostscript): `./scripts/build.sh print` or `./scripts/bookkit print --entry src/main.typ`.
 
@@ -87,16 +91,16 @@ toolset/                   A compose, boundaries, form-catalog, starter, skill-p
   compose/pilots/          production/dogfood chapter.typ
   compose/lab/             Form Lab chapter.typ only (lab-learning)
   orchestration/…          production boards vs form-lab (+ _archive)
-scripts/bookkit            unified CLI
+scripts/bookkit            unified CLI (v0.1.2)
 contracts/                 shared C/B/A/W release + pin contracts
-channels/web/              W web channel scaffold (not bookkit)
+channels/web/              W reserved scaffold (no Astro runtime yet)
 src/                       A showcase book (not content SoT for other works)
 domains/medical/           B media + harvested Typst libs (gold briefs top-level)
 domains/content-maturity/  C process kit (transitional)
 workspaces/                multi-root UX (A+B+C+W)
 pilots/                    consumer dogfood only (≠ compose/pilots)
 research/                  R ecosystem lab (not default context)
-docs/KNOWLEDGE-MAP.md      knowledge + Lab≠Prod layers
+docs/KNOWLEDGE-MAP.md      knowledge layers + Lab≠Prod
 docs/REPO-MAP.md           folder legend
 docs/CONSUMER.md           how to consume this platform
 ```
@@ -105,25 +109,23 @@ docs/CONSUMER.md           how to consume this platform
 
 ## Agent skills
 
-Prefer **project skills** over generic Typst advice. Discovery: `.github/skills/` · Grok: `.grok/skills/` (symlinks to SoT).
+When the path is unclear, start with **`/studio`**. Full routing table: [`AGENTS.md`](AGENTS.md).
 
 | Skill | When |
 |---|---|
-| **`studio`** (`/studio`) | **Start here** — guided intake, situation menu, routes the right workflow |
-| `book-production-orchestrator` | full-book board → print (after studio or direct kickoff) |
-| `bookkit` | packages, starter, full CLI |
-| `compose-chapter` | feasibility → compose → `bookkit validate` |
-| `typst-writer` | any `.typ` edit / layout debug |
-| `media-brief` / `medical-graphics` | domain B (SoT under `domains/medical/skill/`) |
-| `content-orchestrator` / `content-review` | content maturity (C) |
+| **`studio`** (`/studio`) | Guided intake, situation menu, routes the right workflow |
+| `book-production-orchestrator` | full-book board → print |
+| `bookkit` / `compose-chapter` / `typst-writer` | packages, chapter.typ, any `.typ` edit |
+| Domain B / C | `media-brief`, `medical-graphics`, `open-assets`, `content-review` — see AGENTS |
 
-Prefer **`./scripts/bookkit …`** over hunting ad-hoc scripts.
+Prefer **`./scripts/bookkit …`** over hunting ad-hoc scripts. Discovery: `.github/skills/` · Grok: `.grok/skills/` (symlinks to SoT).
 
 ---
 
 ## Principles
 
 - Reproducible: `--ignore-system-fonts --font-path fonts`
+- Fonts: Typst-bundled Libertinus Serif + DejaVu Sans Mono; `fonts/` holds Font Awesome 6
 - **theme → styles → components → chapters → main**
 - No medical genre logic in foundation `packages/bookkit`
 - Content SoT stays external (C); assets SoT in B; print A / web W share pins, not code
@@ -132,5 +134,6 @@ Prefer **`./scripts/bookkit …`** over hunting ad-hoc scripts.
 ## Related
 
 - Knowledge map: [`docs/KNOWLEDGE-MAP.md`](docs/KNOWLEDGE-MAP.md)
-- Agent instructions: [`AGENTS.md`](AGENTS.md) · architecture detail: [`CLAUDE.md`](CLAUDE.md)
+- Agent instructions: [`AGENTS.md`](AGENTS.md) · architecture: [`CLAUDE.md`](CLAUDE.md)
+- Roles / flow: [`devtracks/ROLES-AND-FLOW.md`](devtracks/ROLES-AND-FLOW.md)
 - Prepress: [`prepress/README.md`](prepress/README.md)

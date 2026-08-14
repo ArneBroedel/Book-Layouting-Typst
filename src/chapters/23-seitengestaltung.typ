@@ -154,7 +154,7 @@ Hintergrund für Hinweisflächen.
   }))
 ]
 
-#margin-band(color: part-colors.at(5), width: 11mm)[
+#margin-band(color: part-colors.at(6), width: 11mm)[
   == Rand-Farbbänder#index[Randmarkierung]
 
   Ein durchgehendes Farbband am Außenrand zieht sich über alle Seiten
@@ -165,7 +165,7 @@ Hintergrund für Hinweisflächen.
   #lorem(80)
 ]
 
-#thumb-index(active: 6, parts: book-parts)[
+#thumb-index(active: 7, parts: book-parts)[
   == Daumenregister / Griffregister#index[Daumenregister]#index[Griffregister]
 
   Das Griffregister ist die Krönung der Randmarkierung: je eine farbige
@@ -174,7 +174,7 @@ Hintergrund für Hinweisflächen.
   Übergang von einem Teil zum nächsten von außen, _wie die Reiter in
   einem Ordner_.
 
-  Auf dieser Seite ist die Marke von #text(fill: part-colors.at(5), weight: "bold")[Teil VI]
+  Auf dieser Seite ist die Marke von #text(fill: part-colors.at(6), weight: "bold")[Teil VII]
   hervorgehoben (breit und gefüllt), die übrigen Teile stehen blass
   daneben. Buchweit wandert die aktive Marke mit jedem Teil eine Stufe
   tiefer.

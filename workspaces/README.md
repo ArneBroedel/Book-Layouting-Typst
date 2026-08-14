@@ -3,7 +3,7 @@
 These files help open the product roots side by side. They are **not** a fifth product:
 no business logic, no source of truth.
 
-Policy: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md) v0.3.
+Policy: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md) v0.3.1.
 
 | File | Folders |
 |---|---|

@@ -99,7 +99,7 @@ Claims, accept, freeze (production profile), and compile stay hard in both modes
 ## Skills
 
 - Media: `domains/medical/skill/media-brief/` (+ Form Spec)
-- Graphics: `domains/medical/skill/medical-graphics/` (playbook 00–09; free → audit → recreate/hybrid/refine)
+- Graphics: `domains/medical/skill/medical-graphics/` (playbook 00–11; free → audit → recreate/hybrid/refine)
 - Guides: `Guides/Medical-Presentation-Forms.md`, `Guides/Medical-Graphics-Playbook.md`
 - Tech: `toolset/skill-pack/compose-chapter/`
 - Engine: this directory + `validate/`

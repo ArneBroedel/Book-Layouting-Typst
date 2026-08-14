@@ -2,7 +2,7 @@
 
 This repo is two things at once: a **reproducible Typst book** *and* a **meta-workshop** that
 distills hands-on Typst experience into reusable skills, guides, and tools so future projects move
-faster. This document is the single source of truth for **where knowledge lives and how it flows**.
+faster. This document is the source of truth for **where knowledge lives and how it flows**.
 
 > Guiding rule: **Devtracks are working memory, skills are long-term memory.**
 > A development track is not "done" when the code works — it is done when its learnings have been
@@ -10,37 +10,32 @@ faster. This document is the single source of truth for **where knowledge lives 
 
 ---
 
-## The five knowledge types
+## Living knowledge layers
 
 | Type | Lives in | Rule — "what goes here" |
 |---|---|---|
-| **Governance / conventions** | `CLAUDE.md` + `AGENTS.md` + this `docs/KNOWLEDGE-MAP.md` | How to *work in this repo* (build, architecture, this system itself). The "schema" layer. |
-| **Durable reference knowledge** (human, long-form) | `Guides/` | Stable Typst know-how + lessons-learned that a future project would want to read. The **why**. |
-| **Executable skills** (agent-facing) | `.github/skills/` (Grok also via `.grok/skills/` symlinks); package skill SoT also under `toolset/skill-pack/` | Imperative procedures that change *what an agent does* in a domain. The **what**. |
-| **Product runtime (toolset)** | `packages/bookkit`, `packages/bookkit-didactics`, `toolset/starter`, `scripts/bookkit` | Consumable layout product for other workspaces — not the showcase content tree. External consumer guide: [`docs/CONSUMER.md`](CONSUMER.md). Guided front door: skill **`studio`** (`/studio`) under `toolset/skill-pack/studio/`. |
-| **Forward-looking dev plans** (active only) | `devtracks/` | Spec/plan for work *not yet finished*. Nothing completed stays here — it is harvested and archived. |
-| **Publishing-roles + boundaries (active)** | `CONSENSUS-v0`, `PRODUCT-BOUNDARIES` v0.3+ (ADR 50–60), `contracts/`, `toolset/boundaries`, archived platform-boundaries | **C** content / **B** media / **A** print / **W** web scaffold; hard CLI `bookkit boundaries`; Freeze → Accept → A‖W. |
-| **External / generated data** | `research/` (+ `templates/` as study corpus) | Script-generated ecosystem data and downloaded third-party material. Never hand-curated. **Not** default agent context for book production. |
-| **Structure track (archived)** | `devtracks/_archive/workspace-split/` | Modular monorepo hygiene + unified `bookkit` CLI delivered; physical multi-repo split **deferred** (D2). Inventory snapshot: `devtracks/_archive/workspace-inventory/`. |
+| **Governance / conventions** | `CLAUDE.md` + `AGENTS.md` + this map | How to *work in this repo* (build, architecture, this system itself). Product boundaries SoT: `devtracks/PRODUCT-BOUNDARIES.md` v0.3.1. Roles/flow: `devtracks/ROLES-AND-FLOW.md`. |
+| **Durable reference** (human, long-form) | `Guides/` | Stable Typst know-how + lessons-learned. The **why**. |
+| **Executable skills** (agent-facing) | `.github/skills/` (Grok via `.grok/skills/` symlinks); platform SoT also under `toolset/skill-pack/` | Imperative procedures. The **what**. Routing: `AGENTS.md`. |
+| **Product runtime** | `packages/bookkit`, `packages/bookkit-didactics`, `toolset/starter`, `scripts/bookkit` | Consumable layout product. Consumer guide: [`CONSUMER.md`](CONSUMER.md). Front door: skill **`studio`**. |
+| **Active dev plans** | `devtracks/` | Spec/plan for work *not yet finished*. Nothing completed stays here. Index: `devtracks/README.md`. |
+| **External / generated data** | `research/` (+ `templates/` as study corpus) | Script-generated ecosystem data and downloaded third-party material. **Not** default agent context. |
 
-Each type has a distinct **audience** (human vs Claude), **lifespan** (transient vs durable), and
+Each type has a distinct **audience** (human vs agent), **lifespan** (transient vs durable), and
 **authorship** (curated vs generated). Mixing them is what caused the original confusion.
 
 ### Mapping to the raw → wiki → schema mental model
-For reference, the layers map cleanly onto the classic knowledge-base triad:
-`research/` ≈ **raw** (immutable inputs) · `Guides/` ≈ **wiki** (distilled, human-readable) ·
-`CLAUDE.md`/`KNOWLEDGE-MAP.md` ≈ **schema** (the rules). Skills are the executable distillation that
-sits beside the wiki layer.
+
+`research/` ≈ **raw** · `Guides/` ≈ **wiki** · `CLAUDE.md` / this map ≈ **schema**.
+Skills are the executable distillation beside the wiki layer.
 
 ---
 
 ## Guides ↔ Skills — a boundary, not a merger
 
-- A **skill** tells you *what to do* ("when importing a `@preview` package, avoid the i-figured/subpar
-  conflict by …"). Optimized for an agent loading minimal context before acting. Keep them imperative
-  and bounded — they must not absorb long prose.
-- A **guide** tells you *why it works* (the full layout model, every mistake and its root cause).
-  Optimized for a human (or an agent doing deep research) building a mental model.
+- A **skill** tells you *what to do*. Optimized for an agent loading minimal context. Keep them
+  imperative and bounded — they must not absorb long prose.
+- A **guide** tells you *why it works*. Optimized for a human (or an agent doing deep research).
 
 When a skill needs to justify itself at length, it **links to a guide section** instead of inlining.
 Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; each guide carries an
@@ -58,25 +53,19 @@ Cross-links are bidirectional: each `SKILL.md` carries a `Background:` footer; e
 | `docs/BOOK-PRODUCTION-RUNBOOK.md` (full book → print, board/resume) | `book-production-orchestrator` |
 | Form Lab runtime README + harvest docs (lab-learning, not production default) | `form-lab-orchestrator` |
 
-### Domain B — Krankheitslehre form language (harvested 2026-07)
+### Living SoT after harvest (do not read `_archive/` for guidance)
 
-| Agent entry | Path |
-|---|---|
-| **Guide (why + ops)** | `Guides/KL-Form-Language.md` |
-| Ontology v1.1 | `domains/medical/skill/media-brief/references/kl-illness-script-ontology.md` |
-| Form-space process | `domains/medical/skill/media-brief/references/kl-form-space-process.md` |
-| Form library (unit→module/asset) | `domains/medical/skill/medical-graphics/references/kl-form-library.md` |
-| Exploration index (provenance) | `domains/medical/briefs/_explorations/README.md` |
-| KL form language (archived) | `devtracks/_archive/kl-form-language/` · ops `playbook/10-kl-chapter-pipeline.md` |
-| Spike modules | `toolset/compose/spikes/graphics/kl-script-system/README.md` |
-| Transfer eval (Melanom) | `spike-melanom.typ` · briefs `kl-melanom*.md` · PDF `melanom.pdf` |
-| Skill evals | `domains/medical/skill/*-workspace/` + `*/evals/evals.json` |
-| **Skill collaboration trilogy (archived 2026-08-03)** | Index `devtracks/skill-collaboration/` · provenance `_archive/{collab-control-plane,open-assets-production-wire,orchestration-quality-state}/` · **living SoT:** `toolset/skill-pack/COLLABORATION-CONTRACT.md` + studio/book-production wire + board templates |
-| **Post-trilogy residuals (archived)** | R1 `devtracks/_archive/collab-wire-dogfood/` (GO) · R2 `devtracks/_archive/quality-packet-soft-gate/` · CLI: `bookkit validate --quality-packet PATH` |
-| Design-quality (archived 2026-08-03) | Provenance `devtracks/_archive/design-quality-system/` · **living SoT:** media-brief + medical-graphics + templates |
-| Chapter Form Lab (archived 2026-08-03) | Provenance `devtracks/_archive/chapter-form-lab/` · **living SoT:** `form-lab-orchestrator` + `toolset/orchestration/form-lab/` · studio **9** |
-| Multi-chapter explore (archived 2026-08-03) | Provenance `devtracks/_archive/multi-chapter-explore-layout/` · **living SoT:** book-production-orchestrator multi-chapter-explore ops |
-| Free-vision harvest (archived) | `devtracks/_archive/free-vision-harvest/` |
+| Topic | Living SoT | Provenance (frozen) |
+|---|---|---|
+| KL form language | `Guides/KL-Form-Language.md` · ontology / form-space under `domains/medical/skill/media-brief/references/` · form library `domains/medical/skill/medical-graphics/references/kl-form-library.md` | `devtracks/_archive/kl-form-language/` |
+| Skill collaboration / CLEAN authority | `toolset/skill-pack/COLLABORATION-CONTRACT.md` | `devtracks/skill-collaboration/` (index) · `_archive/{collab-control-plane,open-assets-production-wire,orchestration-quality-state,collab-wire-dogfood,quality-packet-soft-gate}/` |
+| Design quality / CLEAN doctrine | `media-brief` + `medical-graphics` + templates | `_archive/design-quality-system/` |
+| Chapter Form Lab | `form-lab-orchestrator` + `toolset/orchestration/form-lab/` · studio **9** | `_archive/chapter-form-lab/` |
+| Multi-chapter explore | book-production-orchestrator multi-chapter ops | `_archive/multi-chapter-explore-layout/` |
+| Free-vision harvest | `medical-graphics` harvest/proximity | `_archive/free-vision-harvest/` |
+| Modular monorepo / split deferred | OWNERSHIP files + `bookkit boundaries` | `_archive/workspace-split/` · `_archive/workspace-inventory/` |
+
+Soft quality-packet path check (WARN only): `./scripts/bookkit validate --quality-packet PATH`.
 
 ---
 
@@ -89,29 +78,26 @@ experience
         · reusable rule / gotcha-avoidance   → update the relevant SKILL (via skill-creator)
         · long-form "why" / narrative        → append to the relevant GUIDE (lessons ledger)
         · add a "Harvested into:" footer to the track's plan.md (auditable)
-  → devtracks/_archive/<name>/ (frozen provenance record — evidence for why a skill says what it says)
+  → devtracks/_archive/<name>/ (frozen provenance — evidence for why a skill says what it says)
 ```
 
 ### Skill quality after harvest
 
 - Always: `python3 .github/skills/skill-creator/scripts/quick_validate.py <skill-dir>`
-- Full graded baseline: `run_eval.py` when API keys available; store under
-  `devtracks/skill-eval-baseline/reports/` (or archive after harvest). See static fallback report
-  `static-baseline-2026-07-19.md` for the headless path.
+- Full graded baseline: `run_eval.py` when API keys available. Static fallback report:
+  `devtracks/_archive/skill-eval-baseline/reports/static-baseline-2026-07-19.md`.
 
 ### Harvest checklist (run before archiving a completed track)
+
 1. **Extract every durable learning** from the track's `spec.md`/`plan.md`/`phaseN.md`.
 2. **Route each learning:**
-   - Actionable "always/never" rule or gotcha → the matching **skill** (`typst-writer`,
-     `typst-extension`, `bookkit`, `pinit-workflow`).
+   - Actionable "always/never" rule or gotcha → the matching **skill**.
    - Narrative "we hit X, root cause Y, fix Z" → **`Guides/Working_With_Typst-Theory_To_Practice.md`**.
 3. **Use `skill-creator`** to draft and (for substantive changes) eval/grade the skill edits.
    - *Tiered rigor:* trivial gotcha additions = light skill edit + lint; substantive skill changes =
      full `skill-creator` eval/grading run (or documented static fallback if no API).
-4. **Record provenance:** add a `## Harvested into` footer to the track's `plan.md` listing the exact
-   skill/guide sections updated.
-5. **Archive:** `git mv devtracks/<name> devtracks/_archive/<name>`. Never delete — the archived track
-   is the evidence behind the skill's rules.
+4. **Record provenance:** add a `## Harvested into` footer to the track's `plan.md`.
+5. **Archive:** `git mv devtracks/<name> devtracks/_archive/<name>`. Never delete.
 
 `devtracks/_archive/` is frozen history: nobody reads it for guidance, only for provenance.
 
@@ -150,7 +136,7 @@ The monorepo mixes **product code**, **shipping runs**, and **training/lab**. Ke
 |---|---|
 | Production board + run-log | `toolset/orchestration/book-production/<book-id>/` |
 | Chapter release package | `…/<book-id>/release/<chapter_id>.yaml` (from `contracts/templates/chapter-release.template.yaml`) |
-| Form Lab board / harvest | `toolset/orchestration/form-lab/` · living: `_templates/`, `portfolio-2026-08-c|d` |
+| Form Lab board / harvest | `toolset/orchestration/form-lab/` · living: `_templates/`, `portfolio-2026-08-c\|d` |
 | Form Lab chapter.typ | `toolset/compose/lab/form-lab-*` |
 | Production/dogfood chapter.typ | `toolset/compose/pilots/` or root `pilots/` (consumer dogfood) |
 | Gold brief / Accept | `domains/medical/briefs/<unit>.*.md` (INDEX allowlist) |

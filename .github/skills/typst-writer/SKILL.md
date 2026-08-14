@@ -198,7 +198,7 @@ place(float: true, top, scope: "parent")[...]
 ### `set` rules — defaults for elements
 
 ```typst
-#set text(font: "Linux Libertine", size: 11pt, lang: "de")
+#set text(font: "Libertinus Serif", size: 11pt, lang: "de")
 #set par(justify: true, leading: 1.35em, spacing: 1.2em)
 #set page(paper: "a4", margin: (top: 20mm, bottom: 22mm, inside: 22mm, outside: 18mm))
 ```
@@ -736,15 +736,22 @@ In output paths, these placeholders are available:
 - `{0p}` — zero-padded page number
 - `{t}` — total page count
 
-### This project's build script
+### This project's build
 
-The workspace includes `scripts/build.ps1` with modes:
+Prefer `./scripts/bookkit` (enforces repro flags). Studio compiler pin: **Typst 0.15.0**.
+
+Wrappers (`scripts/build.sh` / `scripts/build.ps1`) accept:
 
 - `fast` — compile PDF to `dist/book.pdf`
 - `watch` — watch mode, auto-recompile
-- `ua` — compile to PDF/UA-1 standard
+- `ua` — compile to PDF/UA-1
+- `print` / `print-rgb` — bleed + crop marks (print needs Ghostscript)
 
-```powershell
+There is **no** `test` mode (`test/` is standalone experiments — compile a `.typ` there directly).
+
+```bash
+./scripts/bookkit build --root . --entry src/main.typ --out dist/book.pdf
+# Windows wrapper:
 pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -Mode fast
 ```
 

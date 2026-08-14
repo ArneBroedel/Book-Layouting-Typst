@@ -491,7 +491,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: typst-community/setup-typst@v4
         with:
-          typst-version: latest
+          typst-version: "0.15.0"   # this repo pins 0.15.0 — never "latest"
       - run: typst compile --root . main.typ output.pdf
       - uses: actions/upload-artifact@v4
         with:
@@ -709,7 +709,7 @@ Typst has no native text-wrap-around-image (typst/typst#553). Stack:
 
 ### Version-bump gotchas (verify against `packages.typst.org/preview/index.json`)
 - Phantom versions are silent: `codly:1.3.1`, `biceps:0.2.0` do NOT exist (latest `1.3.0` / `0.0.1`). A bad pin only fails when actually compiled.
-- **Compiler gates:** `codly` needs compiler ≥ 0.13.1; check a package's `typst.toml` `[package] compiler` before bumping. Pin the compiler FIRST (highest-leverage step), and pin ≥ 0.14.2 — it fixes a WASM use-after-free relevant to any WASM plugin (diagraph, ctxjs, badformer, soviet-matrix).
+- **Compiler gates:** `codly` needs compiler ≥ 0.13.1; check a package's `typst.toml` `[package] compiler` before bumping. Pin the compiler FIRST (highest-leverage step). This repo pins **Typst 0.15.0** (CI + `packages/bookkit/typst.toml`). Floor for WASM plugins was 0.14.2 (use-after-free fix: diagraph, ctxjs, badformer, soviet-matrix).
 - **Breaking changes:** `ctxjs` 0.3.x→0.5.0: `new-context(module)` + `ctx.eval()` returns a `(context, value)` tuple to destructure (update live call-sites AND displayed snippets). `fletcher` 0.5.7→0.5.8 halves `node-inset` internally → adjust hardcoded `8pt`→`4pt`. `tablem` 0.3.0 auto-detects `|---|` header rows — re-verify tables. `fontawesome:0.6.1` bundles FA6 and needs `fa-version("6")`.
 - Audit first: many "outdated" imports live only inside ` ```typ ` code blocks (never compiled, zero risk). Separate compiled imports from documentation-only ones. Run two independent research sources and diff — disagreements are where the real risk lives.
 

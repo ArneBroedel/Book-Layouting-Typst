@@ -24,7 +24,10 @@ Always load **`typst-writer`** first for syntax/layout rules. Load this skill fo
 #import "/packages/bookkit-didactics/lib.typ": *
 ```
 
-Compile root must contain `packages/bookkit/` (and fonts). Prefer CLI:
+Compile root must contain `packages/bookkit/`. Studio/package pin: **Typst 0.15.0**.
+Fonts under `--ignore-system-fonts`: Typst-bundled Libertinus Serif + DejaVu Sans Mono;
+`fonts/` holds Font Awesome 6. Do **not** reintroduce Calibri / Segoe / Inconsolata.
+`part-colors` has eight hues (Teil I–VIII). Prefer CLI:
 
 ```bash
 bookkit build --root . --entry main.typ
@@ -99,6 +102,7 @@ Numbered action protocol with visual step weight — prefer over plain `#enum` f
 - Cloning studio `src/chapters` or `research/` into a consumer
 - Duplicate headings after `chapter-opener`
 - Building without `--ignore-system-fonts --font-path fonts`
+- Reintroducing Calibri / Segoe / Inconsolata (or any host sans) as theme fonts
 - Putting didactic box implementations into foundation consumers when a facet import exists
 - Assuming MCP holds skill text — skills are file-first
 - Using plain bullets for multi-step clinical SOPs when `protocol-steps` is available
@@ -139,4 +143,4 @@ Direct engines (`toolset/compose/scripts/run_validate.py`, `scripts/graphics-*.s
 
 - Token/color change → package/theme (or named args), not skill rewrites
 - Agent gotcha fix → skill, not silent API break
-- Content SoT → **C** (external); media assets → **B**; print → **A**; web → **W** (`channels/web/`) — never fold W into foundation
+- Content SoT → **C** (external); media assets → **B**; print → **A**; web → **W** (`channels/web/` reserved scaffold, Astro not started) — never fold W into foundation

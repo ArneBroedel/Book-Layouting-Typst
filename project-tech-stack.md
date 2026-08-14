@@ -1,3 +1,8 @@
+> **Historical planning notes** (pre-platform). Not agent autoload and not the current
+> setup contract. Living entry: [`README.md`](README.md) · Windows: [`SETUP-WINDOWS.md`](SETUP-WINDOWS.md) ·
+> Studio Typst pin **0.15.0** · CLI `./scripts/bookkit`. Do not treat the folder tree or
+> LaTeX/Docker recommendations below as repo policy.
+
 Alles klar – wir bauen dir einen **robusten, reproduzierbaren “Publishing-Stack”** (Windows 11 + optional WSL2), der sowohl **Typst** (schnell, modern) als auch **LaTeX** (falls nötig) und eine saubere Asset-Pipeline abdeckt. Fokus: **KISS, aber production-tauglich**.
 
 ## 1) Grundsystem: das “Fundament”

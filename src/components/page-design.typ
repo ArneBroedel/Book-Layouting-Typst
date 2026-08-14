@@ -131,14 +131,12 @@
 // Zähler ableiten (siehe `register-active-from-headings` unten) — wichtig:
 // `counter(heading).at(loc)` nutzen, NICHT einen eigenen `.where()`-Zähler
 // (der wird nicht automatisch hochgezählt).
-#let book-parts = (
-  (label: "I", color: part-colors.at(0)),
-  (label: "II", color: part-colors.at(1)),
-  (label: "III", color: part-colors.at(2)),
-  (label: "IV", color: part-colors.at(3)),
-  (label: "V", color: part-colors.at(4)),
-  (label: "VI", color: part-colors.at(5)),
-)
+// Derived from theme.part-colors so the register cannot drift from the token list.
+#let _part-roman = ("I", "II", "III", "IV", "V", "VI", "VII", "VIII")
+#let book-parts = part-colors.enumerate().map(((i, c)) => (
+  label: _part-roman.at(i, default: str(i + 1)),
+  color: c,
+))
 
 #let thumb-index(
   body,
