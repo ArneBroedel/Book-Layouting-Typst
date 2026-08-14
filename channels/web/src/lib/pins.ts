@@ -1,6 +1,7 @@
 /**
  * Load W-local pin snapshots. Never import C SoT or bookkit from here.
  */
+import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -31,11 +32,23 @@ export type Pin = {
   contentMd: string;
   contentHtml: string;
   title: string;
+  sourceNote: string | null;
 };
 
 function titleFromMarkdown(md: string, fallback: string): string {
   const m = md.match(/^#\s+(.+)$/m);
   return m ? m[1].trim() : fallback;
+}
+
+function assertSha256Pin(revision: string, content: Buffer, id: string): void {
+  const m = /^sha256:([0-9a-fA-F]{64})$/.exec(revision.trim());
+  if (!m) return;
+  const actual = createHash("sha256").update(content).digest("hex");
+  if (actual !== m[1].toLowerCase()) {
+    throw new Error(
+      `pin ${id}: content.md sha256 ${actual} != release content_revision ${revision}`,
+    );
+  }
 }
 
 export function listPinIds(): string[] {
@@ -59,8 +72,18 @@ export function loadPin(id: string): Pin {
       `pin ${id}: channel_scope=${release.channel_scope} is not web|both — W must not render print-only accepts`,
     );
   }
-  const contentMd = readFileSync(contentPath, "utf8");
+  const contentBuf = readFileSync(contentPath);
+  assertSha256Pin(release.content_revision, contentBuf, id);
+  const contentMd = contentBuf.toString("utf8");
   const contentHtml = marked.parse(contentMd, { async: false }) as string;
+  const sourcePath = join(dir, "SOURCE.md");
+  let sourceNote: string | null = null;
+  if (existsSync(sourcePath)) {
+    const src = readFileSync(sourcePath, "utf8");
+    const soT = src.match(/\*\*C body \(SoT\)\*\*\s*\|\s*`([^`]+)`/);
+    const freeze = src.match(/\*\*H1 freeze\*\*\s*\|\s*`([^`]+)`/);
+    sourceNote = [soT?.[1], freeze?.[1]].filter(Boolean).join(" · ") || "see SOURCE.md";
+  }
   return {
     id: release.chapter_id || id,
     dir,
@@ -68,6 +91,7 @@ export function loadPin(id: string): Pin {
     contentMd,
     contentHtml,
     title: titleFromMarkdown(contentMd, id),
+    sourceNote,
   };
 }
 

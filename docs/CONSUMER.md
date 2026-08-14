@@ -134,7 +134,7 @@ Fail-fast, no auto-heal. Full options: [`toolset/compose/README.md`](../toolset/
 
 ### Web channel (Produkt W, isolated PoC)
 
-Astro lives only under `channels/web/` (own `package.json`, gitignored `node_modules/` / `dist/`). It renders **pin snapshots**, not C SoT.
+Astro lives only under `channels/web/` (own `package.json`, gitignored `node_modules/` / `dist/`). It renders **pin snapshots**, not C SoT. Two demo pins: `poc-mscc` (W fixture) and `demo-anaphylaxis-lite` (C freeze snapshot).
 
 ```bash
 cd channels/web

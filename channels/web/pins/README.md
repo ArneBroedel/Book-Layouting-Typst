@@ -6,8 +6,11 @@ Each folder is a **frozen snapshot** that W is allowed to render:
 pins/<chapter_id>/
   release.yaml   # contracts chapter-release package (validate with bookkit)
   content.md     # C body copy at content_revision — not the C repo
-  accept.md      # B Accept excerpt; must include channel_scope web|both
+  SOURCE.md      # optional: pointer to freeze / C path (no second manuscript)
 ```
+
+Accept SoT lives in **B** (`accept_paths` in `release.yaml`). A pin-local `accept.md` is
+optional only when there is no B file yet (see `poc-mscc`).
 
 **Rules**
 

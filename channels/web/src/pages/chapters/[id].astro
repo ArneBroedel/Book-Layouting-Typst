@@ -24,6 +24,12 @@ const web = pin.release.channels?.web;
     <dd>{pin.release.channel_scope}</dd>
     <dt>web.status</dt>
     <dd>{web?.status ?? "—"}</dd>
+    {pin.sourceNote && (
+      <>
+        <dt>Quelle (C)</dt>
+        <dd>{pin.sourceNote}</dd>
+      </>
+    )}
   </dl>
   <article class="prose" set:html={pin.contentHtml} />
 </Base>

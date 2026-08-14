@@ -1,0 +1,18 @@
+# Chapter release package — C freeze → W pin
+# Validate from repo root:
+#   ./scripts/bookkit boundaries check-release \
+#     channels/web/pins/demo-anaphylaxis-lite/release.yaml --check-paths
+schema_version: "1"
+chapter_id: demo-anaphylaxis-lite
+content_revision: "sha256:b30e429b8f291e8a6d0b28120d1e5679ec848955461a5ab807ed5ddf1df775e2"
+channel_scope: web
+assets: []
+accept_paths:
+  - domains/medical/briefs/_poc/demo-anaphylaxis-lite.accept.md
+channels:
+  web:
+    status: built
+    outputs:
+      - channels/web/dist/chapters/demo-anaphylaxis-lite/index.html
+design_clean: null
+visual_clean: null

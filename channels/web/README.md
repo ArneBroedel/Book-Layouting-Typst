@@ -37,11 +37,14 @@ npm run build
 npm run preview
 ```
 
+Current pins: `poc-mscc` (W-internal fixture) · `demo-anaphylaxis-lite` (C gold freeze → W).
+
 ## Add a chapter pin
 
-1. Freeze in **C**; copy the body to `pins/<id>/content.md`.
-2. Hash: `sha256sum pins/<id>/content.md` → `content_revision: sha256:…`
-3. Copy Accept with `channel_scope: web` or `both` to `pins/<id>/accept.md`.
+1. Freeze in **C**; `cp` the frozen body to `pins/<id>/content.md` (same bytes).
+2. `content_revision` must be that file's `sha256:…` (or `git:<short>` from C). The
+   Astro loader **fails the build** if a `sha256:` pin does not match `content.md`.
+3. Write a B Accept (`channel_scope: web` or `both`) and point `accept_paths` at it.
 4. Fill `pins/<id>/release.yaml` from `contracts/templates/chapter-release.template.yaml`.
 5. From repo root:
 

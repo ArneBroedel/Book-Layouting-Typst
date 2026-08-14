@@ -34,6 +34,10 @@ Reusable grammar — not full chapter gold, but **transfer templates**:
 - Related: `kl-compartment` (brief + urgency/mimic specs), `kl-stroke` (non-fast siblings)
 - Wave notes: `_wave5/` · `_wave6/`
 
+## Channel PoC (not gold)
+
+Web-pin Accepts only: [`_poc/`](_poc/). Do not treat as gold Media Accept.
+
 ## Active top-level files
 
 See directory listing; prefer opening only gold prefixes + form-library when loading agent context.
