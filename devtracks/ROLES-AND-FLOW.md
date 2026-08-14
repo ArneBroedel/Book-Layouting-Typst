@@ -13,7 +13,7 @@ Content-Reife live kit: `domains/content-maturity/` (track archived: [`_archive/
 | **C** | Content-Werk | externes Repo (Kursbuch) = **Inhalts-SoT**; Prozess-Kit übergangsweise `domains/content-maturity/` |
 | **B** | Domain-Media (Medizin) | `domains/medical/` → später eigenes Repo |
 | **A** | Print-Layout-Plattform | **dieses Repo** (`packages/`, `toolset/`) |
-| **W** | Web-Layout (Astro o. ä.) | reserved scaffold `channels/web/` — **Astro not started**; contracts + `bookkit boundaries` |
+| **W** | Web-Layout (Astro) | isolated PoC `channels/web/` · contracts + `bookkit boundaries` |
 
 ## Rollen
 
@@ -57,7 +57,7 @@ C  Proof / Imprimatur (per channel or joint)  │
 ```
 
 **Heute implementiert:** Freeze → B → Accept → **A** Print → Proof.  
-**W:** Scaffold only — kein Astro-Runtime; gleicher Contract, sobald ein Pilot startet.  
+**W:** Isolated Astro PoC under `channels/web/` (pins, not C SoT). Print remains A.  
 **Historisch (v0.2):** Brief → Feasibility/Spike → Accept ohne Freeze-Pflicht als Default.
 
 Release package: `contracts/` · `./scripts/bookkit boundaries check-release …` · tree: `check-tree`.

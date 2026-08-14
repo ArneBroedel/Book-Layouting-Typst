@@ -31,7 +31,7 @@
 | **C** | Content-Werk | Fachtext, Claims, Quellen, Review, Freeze, Proof/Imprimatur | Content-Repo (z. B. Kursbuch) | **extern**; Prozess-Kit transitional `domains/content-maturity/` |
 | **B** | Domain-Media | Mediendesign-Intent, open-assets, Graphics, freigegebene Assets + Rechte | eigenes Repo *später* | `domains/medical/` hier (auslagerbar) |
 | **A** | Print-Layout-Plattform | Typst/bookkit, compose, validate, prepress, PDF/X | **dieses Repo** | dieses Repo (`packages/`, `toolset/`, …) |
-| **W** | Web-Layout | Astro (o. ä.) HTML/CSS, Web-Komponenten, Routing, Web-Build | eigenes Repo *oder* `channels/web/` | **Scaffold** `channels/web/` + OWNERSHIP; Runtime/Astro erst mit Web-Pilot |
+| **W** | Web-Layout | Astro HTML/CSS, Routing, Web-Build | eigenes Repo *oder* `channels/web/` | isolated Astro **PoC** in `channels/web/` (own npm + `pins/`; not bookkit) |
 
 Optional: Multi-root **Workspace-Datei** nur als UX (kein fünftes Produkt mit Business-Logik).
 

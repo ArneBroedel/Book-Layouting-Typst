@@ -1,0 +1,17 @@
+# Chapter release package — W PoC pin
+# Validate from repo root:
+#   ./scripts/bookkit boundaries check-release channels/web/pins/poc-mscc/release.yaml --check-paths
+schema_version: "1"
+chapter_id: poc-mscc
+content_revision: "sha256:844d601c01d6ecda10ffdf83081aa542b6a5725c1033560732175e6b0288d0ff"
+channel_scope: web
+assets: []
+accept_paths:
+  - channels/web/pins/poc-mscc/accept.md
+channels:
+  web:
+    status: built
+    outputs:
+      - channels/web/dist/chapters/poc-mscc/index.html
+design_clean: null
+visual_clean: null

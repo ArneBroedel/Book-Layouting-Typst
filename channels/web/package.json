@@ -1,0 +1,20 @@
+{
+  "name": "bookkit-web-channel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Produkt W — isolated Astro PoC. Not bookkit. Not content SoT.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4321",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 4321"
+  },
+  "dependencies": {
+    "astro": "^5.13.0",
+    "marked": "^15.0.12",
+    "yaml": "^2.8.0"
+  }
+}

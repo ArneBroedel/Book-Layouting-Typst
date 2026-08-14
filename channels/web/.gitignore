@@ -1,0 +1,6 @@
+# Channel-local Node/Astro only — never commit these
+node_modules/
+dist/
+.astro/
+.cache/
+*.log

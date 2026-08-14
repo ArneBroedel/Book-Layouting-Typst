@@ -65,7 +65,7 @@ Runtime products (not tracks):
 | **C** content + editorial process | external SoT (e.g. Kursbuch); process kit transitional: `domains/content-maturity/` |
 | **B** medical media | `domains/medical/` |
 | **A** print layout (form-catalog / compose / bookkit) | `toolset/form-catalog/`, `toolset/compose/`, `packages/bookkit*` |
-| **W** web layout | Reserved scaffold `channels/web/` (v0.3.1); Astro not started; contracts + `bookkit boundaries` |
+| **W** web layout | Isolated Astro PoC `channels/web/` (v0.3.1); contracts + `bookkit boundaries` |
 | Shared contracts | `contracts/` · engine `toolset/boundaries/` |
 
 **Flow (target v0.3 + multi-channel):** Content draft (C) → **Content-Review / Freeze (C)** → Media Brief (B) → Feasibility/Spike (A) ↔ Graphics (B) → **Accept (B, scope print\|web\|both)** → Compose/Validate (**A**) and/or Web build (**W**) → **Proof / Imprimatur (C)**.  

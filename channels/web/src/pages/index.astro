@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import { loadAllPins } from "../lib/pins";
+
+const pins = loadAllPins();
+---
+
+<Base title="Web-Kanal — Kapitelpins">
+  <h1>Eingefrorene Kapitel (Pins)</h1>
+  <p class="lede">
+    Diese Liste kommt aus <code>channels/web/pins/</code>, nicht aus dem
+    Content-Repo und nicht aus dem Showcase-Buch. Jeder Eintrag braucht ein
+    Release-Paket mit <code>channel_scope: web</code> oder <code>both</code>.
+  </p>
+
+  {
+    pins.length === 0 ? (
+      <p class="note">Keine Pins. Siehe pins/README.md.</p>
+    ) : (
+      <ul class="chapter-list">
+        {pins.map((pin) => (
+          <li>
+            <a href={`/chapters/${pin.id}/`}>
+              <h2>{pin.title}</h2>
+              <p class="note">
+                {pin.id} · {pin.release.channel_scope} · {pin.release.content_revision}
+              </p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Base>

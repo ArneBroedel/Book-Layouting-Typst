@@ -112,7 +112,7 @@ If user says “analyze what we already did”:
 | Visual QA | **P9** | multi-chapter assembly sample PNG / Must-see | Human + agent inspect |
 | Prepress | **P10** | print/PDF-X/DPI | scripts + Human |
 | Proof / release | **P11** | proof + imprimatur | Human **H4** / **H5** |
-| Web (optional) | **P6w** | only if Accept `channel_scope` is `web` or `both` — **W** consume same freeze + assets | `channels/web/` reserved scaffold (**Astro not started**); not bookkit foundation |
+| Web (optional) | **P6w** | only if Accept `channel_scope` is `web` or `both` — **W** consume same freeze + assets | `channels/web/` isolated Astro PoC; not bookkit foundation |
 
 Chapter rows advance **P2→P6** largely independently; **P1** once; **P7–P11** book-level.
 
@@ -339,4 +339,4 @@ Prefer **`/studio`** if the user has not yet chosen full-book vs single-chapter 
 | Checkpoints | `domains/content-maturity/checkpoints.md` |
 | Collaboration Contract | [`../COLLABORATION-CONTRACT.md`](../COLLABORATION-CONTRACT.md) |
 | Product boundaries + release package | `devtracks/PRODUCT-BOUNDARIES.md` · `contracts/` · `bookkit boundaries` |
-| Web channel (W) | `channels/web/` (reserved scaffold; Astro not started) |
+| Web channel (W) | `channels/web/` (isolated Astro PoC; pins + own npm) |

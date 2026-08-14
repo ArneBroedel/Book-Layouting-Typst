@@ -7,7 +7,7 @@ Policy: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md) 
 
 | File | Folders |
 |---|---|
-| `kursbuch-layout.code-workspace` | **A** repo root · **B** `domains/medical` · **C** Kursbuch5 sibling · **W** `channels/web` scaffold |
+| `kursbuch-layout.code-workspace` | **A** repo root · **B** `domains/medical` · **C** Kursbuch5 sibling · **W** `channels/web` PoC |
 
 ## Roots
 
@@ -16,7 +16,7 @@ Policy: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md) 
 | A — Print layout platform | **A** | this repo (`..` from `workspaces/`) |
 | B — Media & assets | **B** | `../domains/medical` (same clone until B-split) |
 | C — Kursbuch content | **C** | `../../Kursbuch5` (adjust if your clone differs) |
-| W — Web layout (scaffold) | **W** | `../channels/web` |
+| W — Web layout (PoC) | **W** | `../channels/web` |
 
 When B or W move to sibling repos, update the `path` entries only — contracts stay in `contracts/` + `bookkit boundaries`.
 

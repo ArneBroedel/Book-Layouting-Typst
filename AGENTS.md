@@ -28,8 +28,8 @@ thin re-exports in `src/styles/*` and foundation `src/components/*`.
 
 **Prefer `./scripts/bookkit`** for build, validate, catalog, prepress, graphics, and
 **boundaries**. Product map: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md)
-v0.3.1. Contracts: [`contracts/`](contracts/). W is a **reserved scaffold**
-[`channels/web/`](channels/web/) (Astro not started) — not under `packages/bookkit`.
+v0.3.1. Contracts: [`contracts/`](contracts/). W is an **isolated Astro PoC**
+under [`channels/web/`](channels/web/) — not under `packages/bookkit`.
 Do **not** load `research/` or `templates/` into default book-production context (Produkt R).
 
 ## Language

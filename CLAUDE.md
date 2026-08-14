@@ -3,7 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 > **Mission + boundaries (read first)**  
-> **C** = content external + process kit (`domains/content-maturity/`) · **B** = medical media (`domains/medical/`) · **A** = **print** layout platform (`packages/`, `toolset/`, `scripts/bookkit`) · **W** = reserved web scaffold (`channels/web/`, Astro not started) · **R** = `research/` (not default context).  
+> **C** = content external + process kit (`domains/content-maturity/`) · **B** = medical media (`domains/medical/`) · **A** = **print** layout platform (`packages/`, `toolset/`, `scripts/bookkit`) · **W** = isolated Astro PoC (`channels/web/`) · **R** = `research/` (not default context).  
 > **Start when unsure:** skill **`studio`** (slash `/studio`) — guided intake, then route. Prefer **`./scripts/bookkit`** for build / validate / prepress / graphics / **boundaries**. Product map: [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) v0.3.1 (ADR 50–60). Contracts: [`contracts/`](contracts/). Consumer guide: [`docs/CONSUMER.md`](docs/CONSUMER.md). Skill routing: [`AGENTS.md`](AGENTS.md).
 
 ## What this is
@@ -124,7 +124,7 @@ Calibri / Segoe / Inconsolata.
 - **C — content works:** external (e.g. Kursbuch); process kit transitional `domains/content-maturity/`; never chapter SoT here.
 - **B — domain media:** `domains/medical/` (recipes, briefs, assets, media/graphics/open-assets skills) — split candidate.
 - **A — print layout (this repo core):** `packages/`, `toolset/` (compose, form-catalog, **boundaries**), CLI. Generalisable; no content SoT.
-- **W — web layout:** reserved scaffold `channels/web/` (Astro not started); **not** under `packages/bookkit`.
+- **W — web layout:** isolated Astro PoC in `channels/web/` (own `package.json`, pins only); **not** under `packages/bookkit`.
 - **Shared contracts:** `contracts/` + `./scripts/bookkit boundaries check-tree|check-release`.
 - Roles/workflow: [`devtracks/ROLES-AND-FLOW.md`](devtracks/ROLES-AND-FLOW.md) · policy: `devtracks/PRODUCT-BOUNDARIES.md` v0.3.1 · role theory: `devtracks/CONSENSUS-v0.md`.
 

@@ -9,7 +9,7 @@ Companion layers live in the same modular monorepo until a split trigger fires:
 | **C** | Content works (text, claims, freeze) | **external** + process kit `domains/content-maturity/` |
 | **B** | Domain media (briefs, open-assets, graphics) | `domains/medical/` (split candidate) |
 | **A** | Print layout — bookkit, form-catalog, compose, CLI | `packages/`, `toolset/`, `scripts/bookkit` |
-| **W** | Web layout (Astro o. ä.) | reserved scaffold `channels/web/` — **Astro not started** |
+| **W** | Web layout (Astro) | isolated PoC `channels/web/` — not bookkit |
 | **R** | Ecosystem survey | `research/` — **not** default agent context |
 
 **Boundaries (policy + hard checks):** [`devtracks/PRODUCT-BOUNDARIES.md`](devtracks/PRODUCT-BOUNDARIES.md) v0.3.1 · shared contracts [`contracts/`](contracts/) · CLI `./scripts/bookkit boundaries` · monorepo history: [`devtracks/_archive/workspace-split/`](devtracks/_archive/workspace-split/).
@@ -93,7 +93,7 @@ toolset/                   A compose, boundaries, form-catalog, starter, skill-p
   orchestration/…          production boards vs form-lab (+ _archive)
 scripts/bookkit            unified CLI (v0.1.2)
 contracts/                 shared C/B/A/W release + pin contracts
-channels/web/              W reserved scaffold (no Astro runtime yet)
+channels/web/              W isolated Astro PoC (pins + npm in this folder only)
 src/                       A showcase book (not content SoT for other works)
 domains/medical/           B media + harvested Typst libs (gold briefs top-level)
 domains/content-maturity/  C process kit (transitional)

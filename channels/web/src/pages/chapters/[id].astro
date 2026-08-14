@@ -1,0 +1,29 @@
+---
+import Base from "../../layouts/Base.astro";
+import { listPinIds, loadPin } from "../../lib/pins";
+
+export function getStaticPaths() {
+  return listPinIds().map((id) => ({ params: { id } }));
+}
+
+const { id } = Astro.params;
+if (!id) throw new Error("missing chapter id");
+const pin = loadPin(id);
+const web = pin.release.channels?.web;
+---
+
+<Base title={pin.title} description={`W-Pin ${pin.id}`}>
+  <a class="back" href="/">← alle Pins</a>
+  <h1>{pin.title}</h1>
+  <dl class="pin-meta">
+    <dt>chapter_id</dt>
+    <dd>{pin.release.chapter_id}</dd>
+    <dt>content_revision</dt>
+    <dd>{pin.release.content_revision}</dd>
+    <dt>channel_scope</dt>
+    <dd>{pin.release.channel_scope}</dd>
+    <dt>web.status</dt>
+    <dd>{web?.status ?? "—"}</dd>
+  </dl>
+  <article class="prose" set:html={pin.contentHtml} />
+</Base>

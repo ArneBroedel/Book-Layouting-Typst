@@ -15,7 +15,7 @@ One-page legend. Knowledge lifecycle: [`KNOWLEDGE-MAP.md`](KNOWLEDGE-MAP.md). Bo
 | `scripts/bookkit` | Runtime | unified CLI |
 | `domains/medical/` | B | skill, gold briefs, assets; campaigns in `briefs/_archive/` |
 | `domains/content-maturity/` | C process kit | no content SoT |
-| `channels/web/` | W reserved scaffold | Astro not started |
+| `channels/web/` | W isolated Astro PoC | own npm tree + `pins/`; not bookkit |
 | `src/` | A showcase | dogfood book · map `src/SHOWCASE-README.md` |
 | `pilots/` | A consumer dogfood | ≠ compose pilots |
 | `docs/` `Guides/` `devtracks/` | Knowledge | |

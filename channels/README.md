@@ -6,7 +6,7 @@ Additional **presentation channels** that consume the same **C** freeze pin and 
 | Path | Produkt | Status |
 |---|---|---|
 | *(this monorepo core)* | **A** Print (Typst) | implemented |
-| `web/` | **W** Web (Astro o. ä.) | **scaffold only** — no runtime yet |
+| `web/` | **W** Web (Astro) | **PoC** — isolated app + pin snapshots |
 
 ## Rules
 

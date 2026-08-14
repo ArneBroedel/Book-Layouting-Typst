@@ -9,7 +9,7 @@ consume packages, catalog, CLI, and skills — they do **not** treat studio
 | **A** | Print layout platform (bookkit, form-catalog core, compose, starter, CLI) | this repo |
 | **B** | Domain media (e.g. medical recipes, `media-brief`, assets) | `domains/medical/` (optional; split candidate) |
 | **C** | Content works (author Markdown, claims) | **external** — never SoT here |
-| **W** | Web layout (Astro o. ä.) | reserved scaffold `channels/web/` — Astro not started; not bookkit foundation |
+| **W** | Web layout (Astro) | isolated PoC `channels/web/` — not bookkit foundation |
 
 Boundaries: [`devtracks/PRODUCT-BOUNDARIES.md`](../devtracks/PRODUCT-BOUNDARIES.md).  
 Shared release package: [`contracts/`](../contracts/) · `./scripts/bookkit boundaries check-tree|check-release`.
@@ -131,6 +131,20 @@ Fail-fast, no auto-heal. Full options: [`toolset/compose/README.md`](../toolset/
 # Domain B free vision (gated; skill medical-graphics owns caps):
 ./scripts/bookkit graphics vision --backend gemini --brief … --out …
 ```
+
+### Web channel (Produkt W, isolated PoC)
+
+Astro lives only under `channels/web/` (own `package.json`, gitignored `node_modules/` / `dist/`). It renders **pin snapshots**, not C SoT.
+
+```bash
+cd channels/web
+npm install
+npm run dev      # http://127.0.0.1:4321/
+# from repo root:
+./scripts/bookkit boundaries check-release channels/web/pins/poc-mscc/release.yaml --check-paths
+```
+
+Details: [`../channels/web/README.md`](../channels/web/README.md).
 
 ---
 

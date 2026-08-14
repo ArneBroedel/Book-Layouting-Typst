@@ -143,4 +143,4 @@ Direct engines (`toolset/compose/scripts/run_validate.py`, `scripts/graphics-*.s
 
 - Token/color change → package/theme (or named args), not skill rewrites
 - Agent gotcha fix → skill, not silent API break
-- Content SoT → **C** (external); media assets → **B**; print → **A**; web → **W** (`channels/web/` reserved scaffold, Astro not started) — never fold W into foundation
+- Content SoT → **C** (external); media assets → **B**; print → **A**; web → **W** (`channels/web/` isolated Astro PoC) — never fold W into foundation

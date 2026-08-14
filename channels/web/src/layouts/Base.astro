@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Produkt W — Web channel (PoC)" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Kursbuch Web</a>
+      <span class="badge">Produkt W · PoC</span>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      Präsentationskanal W. Inhalt ist ein Freeze-Pin, keine Content-SoT.
+      Print bleibt Produkt A (Typst/bookkit).
+    </footer>
+  </body>
+</html>
