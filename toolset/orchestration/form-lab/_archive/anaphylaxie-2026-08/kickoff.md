@@ -10,7 +10,7 @@
 |---|---|
 | lab_id | anaphylaxie-2026-08 |
 | chapter title | Anaphylaxie und schwere allergische Reaktion |
-| content pin | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-12-anaphylaxie.md` |
+| content pin | `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-12-anaphylaxie.md` |
 | prior pilots | reference only, not SoT |
 
 ## Decisions

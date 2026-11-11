@@ -11,7 +11,7 @@
 |---|---|
 | lab_id | anaphylaxie-2026-08-b |
 | chapter title | Anaphylaxie |
-| content pin | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-12-anaphylaxie.md` |
+| content pin | `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-12-anaphylaxie.md` |
 | prior pilots | `form-lab-anaphylaxie-{T,C,V,R,S}` — reference only, not SoT for R assets |
 
 ## Decisions

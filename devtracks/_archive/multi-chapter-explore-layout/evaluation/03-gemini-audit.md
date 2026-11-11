@@ -3,7 +3,7 @@
 - **model:** pro  
 - **date:** 2026-08-01  
 - **permalink:** https://gemini.google.com/app/42c321eea8525011  
-- **record:** `/home/arneb/.local/share/gemini-chat/d1bd3638263b9bb8.json`  
+- **record:** `~/.local/share/gemini-chat/d1bd3638263b9bb8.json`  
 - **inputs:** 10× p1 + 5× key p2 PNGs (see prompt in record)  
 - **rubric:** [00-RUBRIC.md](00-RUBRIC.md)  
 

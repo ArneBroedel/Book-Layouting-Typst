@@ -17,7 +17,7 @@
 
 | field | value |
 |---|---|
-| content_root (C) | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-08-d-risc-batch` |
+| content_root (C) | `<kursbuch-repo>/content/chapters/staging/pilots/2026-08-d-risc-batch` |
 | chapter list | II-1 D-RISC · IV-2 Rückenschmerz · V-3 Gicht · V-3 Kompartmentsyndrom |
 | content_status expected | draft-s2 (exploration) |
 | content_revision pin | n/a exploration |

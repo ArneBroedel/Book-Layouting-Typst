@@ -2,7 +2,7 @@
 
 **Frozen:** 2026-08-02  
 **Content SoT (read-only):**  
-`/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-12-anaphylaxie.md`
+`<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-12-anaphylaxie.md`
 
 ## Claim floor
 - No clinical rewrite; layout/media only

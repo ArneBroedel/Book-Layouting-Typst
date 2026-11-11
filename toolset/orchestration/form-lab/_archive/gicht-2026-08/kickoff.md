@@ -10,7 +10,7 @@
 |---|---|
 | lab_id | gicht-2026-08 |
 | chapter title | Gicht – hochakute Monarthritis |
-| content pin | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-gicht.md` |
+| content pin | `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-gicht.md` |
 | prior pilots | reference only, not SoT |
 
 ## Decisions
