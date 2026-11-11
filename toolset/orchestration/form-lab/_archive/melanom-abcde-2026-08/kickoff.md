@@ -10,7 +10,7 @@
 |---|---|
 | lab_id | melanom-abcde-2026-08 |
 | chapter title | Melanom – ABCDE-Hautscreening |
-| content pin | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md` |
+| content pin | `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md` |
 | prior pilots | reference only, not SoT |
 
 ## Decisions

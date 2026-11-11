@@ -371,9 +371,9 @@ If Human finds a `block`-class issue, that is a **process incident** → root-ca
 
 **Human view (absolute paths):**
 
-- `/home/arneb/repos/company/Book-Layouting-Typst/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/p1.png`  
-- `/home/arneb/repos/company/Book-Layouting-Typst/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/p2.png`  
-- `/home/arneb/repos/company/Book-Layouting-Typst/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/unit.pdf`  
+- `<repo-root>/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/p1.png`  
+- `<repo-root>/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/p2.png`  
+- `<repo-root>/toolset/compose/pilots/kl-crps-wp9-2026-07-31/preview/unit.pdf`  
 
 #### Outcomes
 

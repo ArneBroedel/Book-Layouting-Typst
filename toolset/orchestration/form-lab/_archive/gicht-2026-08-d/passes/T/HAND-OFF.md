@@ -16,7 +16,7 @@ See `medium-rules.md` in this directory. Critic enforces allow/deny.
 See `../../pins.md`. No claim invention. No clinical rewrite.
 
 **Content SoT (read-only):**  
-`/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-gicht.md`
+`<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-gicht.md`
 
 ## Learner jobs (must stay teachable)
 

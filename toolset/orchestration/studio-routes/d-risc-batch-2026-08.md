@@ -4,7 +4,7 @@
 - **situation:** 1 (multi-chapter)
 - **brief_class:** exploration
 - **autonomy:** L2
-- **content:** `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-08-d-risc-batch`
+- **content:** `<kursbuch-repo>/content/chapters/staging/pilots/2026-08-d-risc-batch`
 - **project_root:** monorepo `.` (Book-Layouting-Typst)
 - **book_id:** `d-risc-batch-2026-08`
 - **graphics_track:** mixed (code OS/flow/urgency; free vision only if gain clear)

@@ -16,8 +16,8 @@
 
 | field | value |
 |---|---|
-| content_root (C) R6 | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs` |
-| content_root (C) R4 | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-04-fullbook` |
+| content_root (C) R6 | `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs` |
+| content_root (C) R4 | `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-04-fullbook` |
 | chapter list | `devtracks/_archive/multi-chapter-explore-layout/portfolio.md` (N=10 locked) |
 | content_status expected | exploration mixed (format-ok pilots / monographs) |
 | content_revision pin | n/a exploration |

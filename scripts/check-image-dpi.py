@@ -94,13 +94,36 @@ def dpi_for_display(path: Path, display_mm: float | None, min_dpi: float) -> tup
     return dpi, f"{w}×{h}px @ {display_mm:.1f} mm → {dpi:.0f} dpi"
 
 
-def scan_rasters(paths: list[Path], min_dpi: float, assume_width_mm: float | None) -> list[dict]:
+def display_path(p: Path, root: Path | None) -> str:
+    """Render a path for reports without leaking machine-specific prefixes.
+
+    Paths under the project root become repo-relative; paths under the home
+    directory are shown as ``~/…``; anything else is left unchanged.
+    """
+    p = Path(p)
+    if root is not None:
+        try:
+            return p.resolve().relative_to(root.resolve()).as_posix()
+        except ValueError:
+            pass
+    try:
+        return "~/" + p.resolve().relative_to(Path.home().resolve()).as_posix()
+    except (ValueError, RuntimeError):
+        return str(p)
+
+
+def scan_rasters(
+    paths: list[Path],
+    min_dpi: float,
+    assume_width_mm: float | None,
+    root: Path | None = None,
+) -> list[dict]:
     findings: list[dict] = []
-    for root in paths:
-        if root.is_file():
-            candidates = [root]
-        elif root.is_dir():
-            candidates = [p for p in root.rglob("*") if p.is_file()]
+    for scan_path in paths:
+        if scan_path.is_file():
+            candidates = [scan_path]
+        elif scan_path.is_dir():
+            candidates = [p for p in scan_path.rglob("*") if p.is_file()]
         else:
             continue
         for p in candidates:
@@ -109,7 +132,7 @@ def scan_rasters(paths: list[Path], min_dpi: float, assume_width_mm: float | Non
                 if ext == ".svg":
                     findings.append(
                         {
-                            "path": str(p),
+                            "path": display_path(p, root),
                             "status": "ok",
                             "kind": "vector",
                             "detail": "SVG (resolution-independent)",
@@ -122,7 +145,7 @@ def scan_rasters(paths: list[Path], min_dpi: float, assume_width_mm: float | Non
             if dpi is None:
                 findings.append(
                     {
-                        "path": str(p),
+                        "path": display_path(p, root),
                         "status": "info",
                         "kind": "raster",
                         "detail": note,
@@ -131,7 +154,7 @@ def scan_rasters(paths: list[Path], min_dpi: float, assume_width_mm: float | Non
             elif dpi + 1e-6 < min_dpi:
                 findings.append(
                     {
-                        "path": str(p),
+                        "path": display_path(p, root),
                         "status": "fail",
                         "kind": "raster",
                         "detail": f"{note}  < {min_dpi:.0f} dpi target",
@@ -140,7 +163,7 @@ def scan_rasters(paths: list[Path], min_dpi: float, assume_width_mm: float | Non
             else:
                 findings.append(
                     {
-                        "path": str(p),
+                        "path": display_path(p, root),
                         "status": "ok",
                         "kind": "raster",
                         "detail": note,
@@ -202,11 +225,11 @@ def main() -> int:
     paths = args.paths or [root / "src" / "assets"]
     paths = [p if p.is_absolute() else (root / p) for p in paths]
 
-    findings = scan_rasters(paths, args.min_dpi, args.assume_width_mm)
+    findings = scan_rasters(paths, args.min_dpi, args.assume_width_mm, root)
     if not findings:
         findings.append(
             {
-                "path": str(paths),
+                "path": ", ".join(display_path(p, root) for p in paths),
                 "status": "info",
                 "kind": "none",
                 "detail": "No image assets found under scan paths",

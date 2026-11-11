@@ -4,7 +4,7 @@
 **Wave:** 2026-08-d (clean restart — content pin only; no pilot/asset copy from a/b/c)
 
 **Content SoT (read-only):**  
-`/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-gicht.md`
+`<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-gicht.md`
 
 ## Claim floor
 

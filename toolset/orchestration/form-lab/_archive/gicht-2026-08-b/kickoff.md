@@ -11,7 +11,7 @@
 |---|---|
 | lab_id | gicht-2026-08-b |
 | chapter title | Gicht |
-| content pin | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-gicht.md` |
+| content pin | `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-gicht.md` |
 | prior pilots | `form-lab-gicht-{T,C,V,R,S}` — reference only, not SoT for R assets |
 
 ## Decisions

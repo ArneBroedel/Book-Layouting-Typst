@@ -14,7 +14,7 @@ Do not use kursbuch-explore-2026-08 as done SoT — this is a clean-slate batch.
 | | |
 |---|---|
 | Board | `toolset/orchestration/book-production/d-risc-batch-2026-08/board.md` |
-| Content (C) | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-08-d-risc-batch` |
+| Content (C) | `<kursbuch-repo>/content/chapters/staging/pilots/2026-08-d-risc-batch` |
 | Briefs | `domains/medical/briefs/*-batch-2026-08*` |
 | Pilots | `toolset/compose/pilots/*-batch-2026-08/` |
 | PDF | `dist/pilots/*-batch-2026-08/` |

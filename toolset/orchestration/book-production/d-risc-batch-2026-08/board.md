@@ -10,7 +10,7 @@ print_target: screen
 blocked: false
 block_reason: ""
 studio_route: toolset/orchestration/studio-routes/d-risc-batch-2026-08.md
-content_root: /home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-08-d-risc-batch
+content_root: <kursbuch-repo>/content/chapters/staging/pilots/2026-08-d-risc-batch
 ```
 
 ## Banner

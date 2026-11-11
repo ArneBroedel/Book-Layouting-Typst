@@ -4,7 +4,7 @@
 - **situation:** 2 (one chapter mini-pipeline)
 - **brief_class:** exploration (no production compose authorization)
 - **autonomy:** L2 (drive between Human gates)
-- **content:** `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-crps-sudeck.md`
+- **content:** `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-3-crps-sudeck.md`
 - **content_status:** draft (C meta: format-ok · ampel GRÜN · human_review required)
 - **genre:** kl-kurz (illness-script Master V-3-crps-sudeck)
 - **project_root:** monorepo studio `.`

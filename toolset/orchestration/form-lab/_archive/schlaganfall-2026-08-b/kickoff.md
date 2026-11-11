@@ -11,7 +11,7 @@
 |---|---|
 | lab_id | schlaganfall-2026-08-b |
 | chapter title | Schlaganfall |
-| content pin | `/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-4-schlaganfall.md` |
+| content pin | `<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-4-schlaganfall.md` |
 | prior pilots | `form-lab-schlaganfall-{T,C,V,R,S}` — reference only, not SoT for R assets |
 
 ## Decisions

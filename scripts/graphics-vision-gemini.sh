@@ -17,12 +17,13 @@ MODEL=""
 MAX_POLLS="${GRAPHICS_GEMINI_MAX_POLLS:-90}"
 GEMINI_CLI="${GEMINI_CHAT_CLI:-}"
 
-# Default: shared-agent-config skill path (override with GEMINI_CHAT_CLI)
+# Locate the sh-gemini-chat skill CLI. Set GEMINI_CHAT_CLI=/path/to/cli.py to
+# choose it explicitly; otherwise look for a local checkout of the agent-config
+# repo that ships the skill under ~/repos/{private,company}/<repo>/.
 if [[ -z "$GEMINI_CLI" ]]; then
   for cand in \
-    "$HOME/repos/private/shared-agent-config/.agents/skills/sh-gemini-chat/scripts/gemini_chat/cli.py" \
-    "$HOME/repos/company/shared-agent-config/.agents/skills/sh-gemini-chat/scripts/gemini_chat/cli.py" \
-    "/home/arneb/repos/private/shared-agent-config/.agents/skills/sh-gemini-chat/scripts/gemini_chat/cli.py"
+    "$HOME"/repos/private/*/.agents/skills/sh-gemini-chat/scripts/gemini_chat/cli.py \
+    "$HOME"/repos/company/*/.agents/skills/sh-gemini-chat/scripts/gemini_chat/cli.py
   do
     if [[ -f "$cand" ]]; then GEMINI_CLI="$cand"; break; fi
   done

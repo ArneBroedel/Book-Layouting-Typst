@@ -1,7 +1,7 @@
 # Form Lab — Kapitel-Portfolio (Welle-06 pin)
 
 **Content root:**  
-`/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/`  
+`<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/`  
 
 **Locked:** 2026-08-02 · N=**4** · diversity for media extremes (T/C/V/R)  
 **Source wave:** `2026-07-welle-06-kl-full` (INDEX GRÜN / done)  

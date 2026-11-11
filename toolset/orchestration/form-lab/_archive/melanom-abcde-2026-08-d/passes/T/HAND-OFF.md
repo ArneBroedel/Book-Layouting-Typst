@@ -12,7 +12,7 @@ Reach **medium-optimum** for Pass T via **iterative** craft (build → PNG → c
 See `../../pins.md`. No claim invention. No clinical rewrite.
 
 **Content SoT (read-only):**  
-`/home/arneb/repos/company/Kursbuch5/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md`
+`<kursbuch-repo>/content/chapters/staging/pilots/2026-07-welle-06-kl-full/monographs/chapter-v-10-melanom-abcde-hautscreening.md`
 
 ## Learner jobs (must stay teachable)
 
