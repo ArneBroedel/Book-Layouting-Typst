@@ -17,6 +17,10 @@ on:
       - ".github/workflows/build.yml"
   workflow_dispatch:
 
+# Checkout only; the PDF upload uses the Actions artifact service, not GITHUB_TOKEN scopes.
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
